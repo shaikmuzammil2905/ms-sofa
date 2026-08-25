@@ -302,30 +302,210 @@
         <!-- End header -->
 
 
-<!-- Hero Section -->
-<section class="hero-section position-relative text-white overflow-hidden py-5" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('images/sections/s-lookbook-1.jpg') center/cover no-repeat; min-height: 85vh; display: flex; align-items: center;">
-    <div class="tf-container">
-        <div class="row align-items-center">
+<!-- Animated Hero Section -->
+<section class="hero-animated-section position-relative text-white overflow-hidden py-5 d-flex align-items-center" style="min-height: 88vh;">
+    <!-- Animated Background Image Container -->
+    <div class="hero-bg-animated-wrapper">
+        <img src="images/sections/hero-workspace.jpg" alt="Vishista Modern Office Solutions" class="hero-bg-img">
+        <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="tf-container position-relative py-5" style="z-index: 2;">
+        <div class="row align-items-center g-4">
             <div class="col-lg-9 col-xl-8">
-                <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-bold tracking-widest fs-7" style="border-radius: 4px;">Vishista Office Solutions</span>
-                <h1 class="display-3 fw-extrabold text-white mb-4" style="line-height: 1.15; font-family: 'Inter', sans-serif;">
-                    Transforming Workspaces.<br>Elevating Possibilities.
+                
+                <!-- Animated Badge -->
+                <div class="hero-badge-wrap mb-4">
+                    <span class="badge hero-badge text-uppercase px-3 py-2 fw-bold tracking-widest fs-7">
+                        <i class="icon icon-storefront me-2"></i> Vishista Office Solutions Pvt Ltd
+                    </span>
+                </div>
+
+                <!-- Animated Main Heading -->
+                <h1 class="display-3 fw-extrabold text-white mb-4 hero-title" style="line-height: 1.12; font-family: 'Inter', sans-serif;">
+                    Transforming Workspaces.<br>
+                    <span class="text-gradient-red">Elevating Possibilities.</span>
                 </h1>
-                <p class="fs-5 text-white-50 mb-5" style="max-width: 650px; line-height: 1.6;">
-                    Premium office furniture, interior systems, and turnkey workspace solutions designed for modern businesses, MNCs, educational institutions, and professional environments across Telangana and Andhra Pradesh.
+
+                <!-- Animated Subheading -->
+                <p class="fs-5 text-white-50 mb-5 hero-subtitle" style="max-width: 680px; line-height: 1.6;">
+                    Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments across Telangana and Andhra Pradesh.
                 </p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="product-categories.html" class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase" style="border-radius: 4px; background-color: #d32f2f; border: none; font-size: 15px;">
+
+                <!-- Animated Buttons -->
+                <div class="d-flex flex-wrap gap-3 mb-5 hero-actions">
+                    <a href="product-categories.html" class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase hero-btn-primary">
                         Explore Products &rarr;
                     </a>
-                    <button type="button" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase" style="border-radius: 4px; font-size: 15px;" data-bs-toggle="modal" data-bs-target="#enquireModal">
+                    <button type="button" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase hero-btn-secondary" data-bs-toggle="modal" data-bs-target="#enquireModal">
                         Contact Us / Enquire
                     </button>
                 </div>
+
+                <!-- Floating Stats Badges -->
+                <div class="row g-3 pt-3 border-top border-secondary-subtle hero-stats">
+                    <div class="col-auto">
+                        <div class="glass-stat-chip">
+                            <span class="fw-bold text-white fs-5">25+ Years</span>
+                            <span class="text-white-50 fs-7 ms-1">Industry Expertise</span>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="glass-stat-chip">
+                            <span class="fw-bold text-white fs-5">Turnkey</span>
+                            <span class="text-white-50 fs-7 ms-1">End-to-End Solutions</span>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="glass-stat-chip">
+                            <span class="fw-bold text-white fs-5">OEM Partners</span>
+                            <span class="text-white-50 fs-7 ms-1">VIAK, ESS, Durian</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    .hero-animated-section {
+        background-color: #0f0f0f;
+    }
+    .hero-bg-animated-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .hero-bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: heroKenBurns 22s infinite alternate ease-in-out;
+    }
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.78) 55%, rgba(15,15,15,0.45) 100%);
+    }
+
+    @keyframes heroKenBurns {
+        0% {
+            transform: scale(1) translate(0, 0);
+        }
+        100% {
+            transform: scale(1.08) translate(-15px, -10px);
+        }
+    }
+
+    .hero-badge-wrap {
+        animation: fadeInDown 0.8s ease-out forwards;
+    }
+    .hero-badge {
+        background: rgba(211, 47, 47, 0.25);
+        border: 1px solid rgba(211, 47, 47, 0.6);
+        color: #ff5252;
+        border-radius: 50px;
+        backdrop-filter: blur(8px);
+        letter-spacing: 1px;
+    }
+
+    .hero-title {
+        animation: fadeInUp 0.9s ease-out 0.2s both;
+    }
+    .text-gradient-red {
+        background: linear-gradient(135deg, #ff5252 0%, #ff1744 50%, #ff8a80 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+        animation: fadeInUp 0.9s ease-out 0.4s both;
+    }
+
+    .hero-actions {
+        animation: fadeInUp 0.9s ease-out 0.6s both;
+    }
+
+    .hero-btn-primary {
+        background-color: #d32f2f;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+        transition: all 0.3s ease;
+    }
+    .hero-btn-primary:hover {
+        background-color: #b71c1c;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(211, 47, 47, 0.6);
+    }
+
+    .hero-btn-secondary {
+        border-radius: 6px;
+        font-size: 15px;
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+    }
+    .hero-btn-secondary:hover {
+        background-color: rgba(255,255,255,0.15);
+        transform: translateY(-3px);
+    }
+
+    .hero-stats {
+        animation: fadeInUp 0.9s ease-out 0.8s both;
+    }
+
+    .glass-stat-chip {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 8px 16px;
+        border-radius: 50px;
+        backdrop-filter: blur(10px);
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        animation: heroFloat 4s infinite ease-in-out;
+    }
+    .glass-stat-chip:hover {
+        background: rgba(255, 255, 255, 0.16);
+        border-color: rgba(255, 82, 82, 0.5);
+    }
+
+    @keyframes heroFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
 
 <!-- Company Introduction Section -->
 <section class="py-5 bg-light">
@@ -353,7 +533,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="position-relative rounded-4 overflow-hidden shadow-lg">
-                    <img src="images/collection/collection-1.jpg" alt="Modern Corporate Office Furniture" class="img-fluid w-100" style="object-fit: cover; min-height: 380px;">
+                    <img src="images/sections/hero-workspace.jpg" alt="Modern Corporate Office Furniture" class="img-fluid w-100" style="object-fit: cover; min-height: 380px;">
                     <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.85));">
                         <span class="text-white-50 text-uppercase fs-7 fw-semibold">Turnkey Execution</span>
                         <h4 class="text-white fw-bold mb-0">End-to-End Office Interior Systems</h4>
@@ -415,7 +595,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/sections/s-lookbook-2.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/collection/collection-1.jpg'">
+                        <img src="images/sections/s-lookbook-2.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/hero-workspace.jpg'">
                         <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK Catalogue</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -451,7 +631,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/collection/collection-1.jpg" alt="Soft Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/sections/hero-workspace.jpg" alt="Soft Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">Soft Seating PDF</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -487,7 +667,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/sections/lookbook-item-1.jpg" alt="Carpets" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/collection/collection-1.jpg'">
+                        <img src="images/sections/lookbook-item-1.jpg" alt="Carpets" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/hero-workspace.jpg'">
                         <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">INTERFACE</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
