@@ -64,10 +64,8 @@ const pages = [
 pages.forEach(page => {
     const compiledHtml = compileFullHtml(page.src);
     if (compiledHtml) {
-        // Write to distHtml (.html)
+        // Write to distHtml (.html) for static hostings & Vercel
         fs.writeFileSync(path.join(ROOT_DIR, page.distHtml), compiledHtml, 'utf8');
-        // Also overwrite page.src (.php) with full compiled HTML so both .php and .html serve complete HTML on Vercel
-        fs.writeFileSync(path.join(ROOT_DIR, page.src), compiledHtml, 'utf8');
-        console.log(`Compiled ${page.src} and ${page.distHtml} successfully.`);
+        console.log(`Compiled ${page.src} -> ${page.distHtml} successfully.`);
     }
 });
