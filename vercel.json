@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/index.php", "destination": "/index.html" },
+    { "source": "/product-categories.php", "destination": "/product-categories.html" },
+    { "source": "/product-sofas.php", "destination": "/product-sofas.html" }
+  ]
+}
