@@ -8,14 +8,14 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="footer-about">
                                 <div class="site-brand-logo mb-3">
-                                    <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 44px;">
+                                    <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 42px;">
                                     <div class="brand-text-wrapper">
                                         <span class="brand-main-title text-white">VISHISTA</span>
                                         <span class="brand-sub-title text-white-50">OFFICE SOLUTIONS</span>
                                     </div>
                                 </div>
                                 <p class="text-white-50 fs-7 mb-3" style="line-height: 1.6;">
-                                    Vishista Office Solutions Pvt Ltd is a premier provider of high-end office furniture, modular workstation systems, executive seating, and turnkey corporate interior solutions across Telangana and Andhra Pradesh.
+                                    Vishista Office Solutions Pvt Ltd is a premier provider of high-end office furniture, ArchLabs seating collections, modular workstation systems, executive seating, and turnkey corporate interior solutions across Telangana and Andhra Pradesh.
                                 </p>
                                 <a href="about.html" class="btn btn-outline-light btn-sm text-uppercase fw-semibold px-3 py-2" style="border-radius: 4px; font-size: 12px;">
                                     Discover Our Story &rarr;
@@ -29,32 +29,32 @@
                             <ul class="list-unstyled d-flex flex-column gap-2 mb-0 fs-7">
                                 <li><a href="index.html" class="text-white-50 text-decoration-none hover-white">&bull; Home</a></li>
                                 <li><a href="about.html" class="text-white-50 text-decoration-none hover-white">&bull; About Us</a></li>
+                                <li><a href="archlabs-catalogue.html" class="text-danger text-decoration-none fw-bold">&bull; ArchLabs Catalogue</a></li>
                                 <li><a href="product-categories.html" class="text-white-50 text-decoration-none hover-white">&bull; Products Catalogue</a></li>
                                 <li><a href="contact.html" class="text-white-50 text-decoration-none hover-white">&bull; Contact Us</a></li>
-                                <li><a href="contact.html#directions" class="text-white-50 text-decoration-none hover-white">&bull; Get Directions</a></li>
                             </ul>
                         </div>
 
                         <!-- Workspace Solutions -->
                         <div class="col-lg-3 col-md-6">
-                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Solutions</h5>
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Catalogues &amp; Series</h5>
                             <div class="row g-2 fs-7">
+                                <div class="col-6">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        <li><a href="archlabs-catalogue.html#mesh-series" class="text-white-50 text-decoration-none">&bull; Mesh Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#leather-series" class="text-white-50 text-decoration-none">&bull; Leather Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#training-series" class="text-white-50 text-decoration-none">&bull; Training Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#metro-linea" class="text-white-50 text-decoration-none">&bull; Metro Linea</a></li>
+                                        <li><a href="archlabs-catalogue.html#cafeteria-series" class="text-white-50 text-decoration-none">&bull; Cafeteria Series</a></li>
+                                    </ul>
+                                </div>
                                 <div class="col-6">
                                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
                                         <li><a href="product-categories.html#workstations" class="text-white-50 text-decoration-none">&bull; Workstations</a></li>
                                         <li><a href="product-categories.html#tables" class="text-white-50 text-decoration-none">&bull; Tables</a></li>
                                         <li><a href="product-categories.html#storage" class="text-white-50 text-decoration-none">&bull; Storage</a></li>
-                                        <li><a href="product-categories.html#seating" class="text-white-50 text-decoration-none">&bull; Seating</a></li>
-                                        <li><a href="product-categories.html#soft-seating" class="text-white-50 text-decoration-none">&bull; Soft Seating</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-6">
-                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                        <li><a href="product-categories.html#pods" class="text-white-50 text-decoration-none">&bull; Pods</a></li>
-                                        <li><a href="product-categories.html#carpets" class="text-white-50 text-decoration-none">&bull; Carpets</a></li>
-                                        <li><a href="product-categories.html#outdoor" class="text-white-50 text-decoration-none">&bull; Outdoor</a></li>
-                                        <li><a href="product-categories.html#educational" class="text-white-50 text-decoration-none">&bull; Educational</a></li>
-                                        <li><a href="product-categories.html#accessories" class="text-white-50 text-decoration-none">&bull; Accessories</a></li>
+                                        <li><a href="product-sofas.html" class="text-white-50 text-decoration-none">&bull; Soft Seating</a></li>
+                                        <li><a href="product-categories.html#pods" class="text-white-50 text-decoration-none">&bull; Acoustic Pods</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                     <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white-50 text-decoration-none">kvramana.reddy@vishistaofficesolutions.com</a>
                                 </div>
                                 <div class="mt-1">
-                                    <strong class="text-white">WhatsApp & Sales:</strong><br>
+                                    <strong class="text-white">WhatsApp &amp; Sales:</strong><br>
                                     <a href="https://wa.me/919849058444" target="_blank" class="text-danger fw-bold text-decoration-none">+91 9849058444</a>
                                 </div>
                                 <div class="mt-2">
@@ -97,7 +97,7 @@
                 <div class="tf-container">
                     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-2">
                         <p class="mb-0">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
-                        <p class="mb-0">Designed for Corporate & Institutional Workspaces.</p>
+                        <p class="mb-0">Designed for Corporate &amp; Institutional Workspaces.</p>
                     </div>
                 </div>
             </div>
@@ -107,19 +107,19 @@
     </div>
     <!-- /wrapper -->
 
-    <!-- Mobile Menu Offcanvas -->
-    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
+    <!-- Mobile Menu Offcanvas (Fixed size per image copy 5.png) -->
+    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" style="width: 320px; max-width: 85vw;">
         <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
-            <a href="index.html" class="site-brand-logo">
-                <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 38px;">
-                <div class="brand-text-wrapper">
-                    <span class="brand-main-title" style="font-size: 16px;">VISHISTA</span>
-                    <span class="brand-sub-title" style="font-size: 8px;">OFFICE SOLUTIONS</span>
+            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 220px;">
+                <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 34px; width: auto; flex-shrink: 0;">
+                <div style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
+                    <span style="font-size: 15px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
+                    <span style="font-size: 7.5px; font-weight: 700; color: #555555; letter-spacing: 1.2px; margin-top: 2px;">OFFICE SOLUTIONS</span>
                 </div>
             </a>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close text-reset ms-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body p-4">
+        <div class="offcanvas-body p-3">
             <ul class="nav flex-column gap-3 mb-4">
                 <li class="nav-item">
                     <a class="nav-link fs-6 fw-bold text-dark p-0" href="index.html">Home</a>
@@ -127,34 +127,51 @@
                 <li class="nav-item">
                     <a class="nav-link fs-6 fw-bold text-dark p-0" href="about.html">About Us</a>
                 </li>
+                
+                <!-- ArchLabs Seating Catalogue Accordion -->
+                <li class="nav-item">
+                    <a class="nav-link fs-6 fw-bold text-danger p-0 d-flex align-items-center justify-content-between" data-bs-toggle="collapse" href="#mobileArchLabsCollapse" role="button" aria-expanded="true">
+                        ArchLabs Catalogue <i class="icon-caret-down fs-7"></i>
+                    </a>
+                    <div class="collapse show mt-2 ps-2" id="mobileArchLabsCollapse">
+                        <ul class="nav flex-column gap-2 border-start border-danger ps-3 fs-7">
+                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#mesh-series">&bull; Mesh Series (30 Models)</a></li>
+                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
+                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
+                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
+                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Other Products Accordion -->
                 <li class="nav-item">
                     <a class="nav-link fs-6 fw-bold text-dark p-0 d-flex align-items-center justify-content-between" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="false">
-                        Products <i class="icon-caret-down fs-7"></i>
+                        Products &amp; Solutions <i class="icon-caret-down fs-7"></i>
                     </a>
-                    <div class="collapse mt-2 ps-3" id="mobileProductsCollapse">
+                    <div class="collapse mt-2 ps-2" id="mobileProductsCollapse">
                         <ul class="nav flex-column gap-2 border-start ps-3 fs-7">
                             <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#workstations">Workstations</a></li>
                             <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#tables">Tables</a></li>
                             <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#storage">Storage</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#seating">Seating</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#soft-seating">Soft Seating</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-sofas.html">Soft Seating &amp; Lounge</a></li>
                             <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#pods">Pods</a></li>
                             <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#carpets">Carpets</a></li>
                             <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#outdoor">Outdoor</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#educational">Educational</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#accessories">Accessories</a></li>
                         </ul>
                     </div>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link fs-6 fw-bold text-dark p-0" href="contact.html">Contact Us</a>
                 </li>
             </ul>
+
             <div class="d-grid gap-2 pt-3 border-top">
-                <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
-                    Enquire Now
+                <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase" style="background-color: #d32f2f; border: none; border-radius: 6px;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
+                    ENQUIRE NOW
                 </button>
-                <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold py-2 d-flex align-items-center justify-content-center gap-2">
+                <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold py-2 d-flex align-items-center justify-content-center gap-2" style="border-radius: 6px;">
                     Chat on WhatsApp
                 </a>
             </div>
@@ -163,7 +180,7 @@
     <!-- /Mobile Menu Offcanvas -->
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919849058444?text=Hi%20Vishista%20Office%20Solutions,%20I%20am%20interested%20in%20your%20workspace%20furniture%20and%20turnkey%20solutions." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" title="Chat on WhatsApp">
+    <a href="https://wa.me/919849058444?text=Hi%20Vishista%20Office%20Solutions,%20I%20am%20interested%20in%20your%20ArchLabs%20seating%20and%20workspace%20furniture." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" title="Chat on WhatsApp">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382C17.015 14.155 14.764 13.045 14.341 12.891C13.918 12.737 13.612 12.66 13.306 13.118C13 13.576 12.115 14.614 11.848 14.92C11.58 15.226 11.312 15.265 10.855 15.038C10.398 14.811 8.928 14.33 7.18 12.772C5.811 11.554 4.887 10.05 4.619 9.593C4.351 9.135 4.59 8.887 4.819 8.659C5.025 8.454 5.277 8.125 5.506 7.857C5.735 7.589 5.812 7.398 5.965 7.092C6.118 6.786 6.041 6.518 5.926 6.289C5.812 6.06 4.895 3.805 4.512 2.889C4.14 1.998 3.762 2.118 3.486 2.104C3.226 2.091 2.92 2.091 2.614 2.091C2.308 2.091 1.811 2.206 1.391 2.664C0.971 3.122 0 4.032 0 5.867C0 7.702 1.336 9.475 1.527 9.735C1.718 9.995 4.155 13.748 7.876 15.356C8.761 15.738 9.452 15.967 9.993 16.139C10.88 16.421 11.688 16.381 12.33 16.285C13.046 16.178 14.536 15.383 14.842 14.524C15.148 13.665 15.148 12.939 15.056 12.786C14.964 12.633 14.658 12.556 14.201 12.329H17.472Z" fill="white" transform="translate(3, 3)"/>
         </svg>
@@ -185,7 +202,7 @@
                     <form id="modalEnquiryForm" onsubmit="event.preventDefault(); alert('Thank you for your enquiry! Our workspace team will contact you shortly.'); bootstrap.Modal.getInstance(document.getElementById('enquireModal')).hide();">
                         <div class="mb-3">
                             <label class="form-label text-dark fw-medium fs-7 mb-1">Product / Service of Interest</label>
-                            <input type="text" id="modalProductInput" class="form-control" placeholder="Office Workstations, Executive Seating, Turnkey Interiors, etc." style="border-radius: 6px; padding: 10px 14px;">
+                            <input type="text" id="modalProductInput" class="form-control" placeholder="ArchLabs Seating, Workstations, Turnkey Interiors, etc." style="border-radius: 6px; padding: 10px 14px;">
                         </div>
                         <div class="row g-3 mb-3">
                             <div class="col-md-6">

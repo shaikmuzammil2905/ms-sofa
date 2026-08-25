@@ -13,8 +13,8 @@
 
     <meta name="author" content="Vishista Office Solutions Pvt Ltd">
     <title>Vishista Office Solutions - Premium Office Furniture & Turnkey Workspaces</title>
-    <meta name="description" content="Vishista Office Solutions Pvt Ltd offers premium office furniture, interior systems, and turnkey workspace solutions across Telangana and Andhra Pradesh.">
-    <meta name="keywords" content="office furniture, workstations, executive tables, mesh chairs, lounge sofas, corporate interiors, Hyderabad, Secunderabad">
+    <meta name="description" content="Vishista Office Solutions Pvt Ltd offers premium office furniture, ArchLabs seating, interior systems, and turnkey workspace solutions across Telangana and Andhra Pradesh.">
+    <meta name="keywords" content="office furniture, ArchLabs seating, mesh chairs, leather chairs, workstations, executive tables, Hyderabad, Secunderabad">
     
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -37,21 +37,24 @@
         .site-brand-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none !important;
+            max-width: 100%;
         }
         .site-brand-logo img {
-            height: 48px;
+            height: 42px;
             width: auto;
             object-fit: contain;
+            flex-shrink: 0;
         }
         .brand-text-wrapper {
             display: flex;
             flex-direction: column;
+            white-space: nowrap;
         }
         .brand-main-title {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             color: #d32f2f;
             line-height: 1;
@@ -59,19 +62,19 @@
         }
         .brand-sub-title {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: 9.5px;
+            font-size: 8.5px;
             font-weight: 700;
             color: #555555;
-            letter-spacing: 1.6px;
-            margin-top: 3px;
+            letter-spacing: 1.4px;
+            margin-top: 2px;
         }
         .nav-enquire-btn {
             background-color: #d32f2f;
             color: #ffffff !important;
-            padding: 10px 22px;
+            padding: 9px 20px;
             border-radius: 4px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
@@ -89,7 +92,7 @@
         .mega-menu-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 24px;
+            gap: 20px;
             padding: 24px;
         }
         @media (max-width: 1200px) {
@@ -98,11 +101,11 @@
             }
         }
         .mega-category-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: #111;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
             border-bottom: 2px solid #d32f2f;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -113,11 +116,11 @@
             margin: 0;
         }
         .mega-subcategory-list li {
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
         .mega-subcategory-list a {
             color: #555;
-            font-size: 13px;
+            font-size: 12.5px;
             text-decoration: none;
             transition: color 0.2s ease;
         }
@@ -170,11 +173,23 @@
                                 <a href="about.html" class="item-link fw-semibold">About Us</a>
                             </li>
                             <li class="has-child text-menu menu-item position-relative">
-                                <a href="product-categories.html" class="item-link fw-semibold">Products</a>
+                                <a href="product-categories.html" class="item-link fw-semibold">Products &amp; Catalogues</a>
                                 <div class="submenu sub-menu mega-menu" style="width: 100%; left: 0; right: 0;">
                                     <div class="tf-container w-1750">
                                         <div class="mega-menu-grid bg-white shadow-lg rounded-3">
                                             
+                                            <!-- ArchLabs Seating Catalogue (Featured) -->
+                                            <div class="bg-light p-3 rounded-2 border">
+                                                <a href="archlabs-catalogue.html" class="mega-category-title d-block text-danger">ArchLabs Seating Catalogue</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="archlabs-catalogue.html#mesh-series" class="fw-bold text-dark">&bull; Mesh Series (30 Models)</a></li>
+                                                    <li><a href="archlabs-catalogue.html#leather-series" class="fw-bold text-dark">&bull; Leather Series (5 Models)</a></li>
+                                                    <li><a href="archlabs-catalogue.html#training-series" class="fw-bold text-dark">&bull; Training Series (7 Models)</a></li>
+                                                    <li><a href="archlabs-catalogue.html#metro-linea" class="fw-bold text-dark">&bull; Metro Linea Public Seating</a></li>
+                                                    <li><a href="archlabs-catalogue.html#cafeteria-series" class="fw-bold text-dark">&bull; Cafeteria Series (7 Models)</a></li>
+                                                </ul>
+                                            </div>
+
                                             <!-- Workstations -->
                                             <div>
                                                 <a href="product-categories.html#workstations" class="mega-category-title d-block">Workstations</a>
@@ -207,76 +222,24 @@
                                                 </ul>
                                             </div>
 
-                                            <!-- Seating -->
+                                            <!-- Soft Seating & Pods -->
                                             <div>
-                                                <a href="product-categories.html#seating" class="mega-category-title d-block">Seating</a>
+                                                <a href="product-sofas.html" class="mega-category-title d-block">Soft Seating &amp; Pods</a>
                                                 <ul class="mega-subcategory-list">
-                                                    <li><a href="product-categories.html#seating">Mesh Chair</a></li>
-                                                    <li><a href="product-categories.html#seating">Leather Chair</a></li>
-                                                    <li><a href="product-categories.html#seating">Training Chair</a></li>
-                                                    <li><a href="product-categories.html#seating">Cafe Chair</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <!-- Soft Seating -->
-                                            <div>
-                                                <a href="product-categories.html#soft-seating" class="mega-category-title d-block">Soft Seating</a>
-                                                <ul class="mega-subcategory-list">
-                                                    <li><a href="product-categories.html#soft-seating">Lounge</a></li>
-                                                    <li><a href="product-categories.html#soft-seating">Sofa</a></li>
-                                                    <li><a href="product-categories.html#soft-seating">Collaborative</a></li>
-                                                    <li><a href="product-categories.html#soft-seating">Pouffe</a></li>
-                                                    <li><a href="product-categories.html#soft-seating">Occasional Tables</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <!-- Pods -->
-                                            <div>
-                                                <a href="product-categories.html#pods" class="mega-category-title d-block">Pods</a>
-                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-sofas.html">Executive Sofas &amp; Lounge</a></li>
+                                                    <li><a href="product-sofas.html">Collaborative Seating</a></li>
                                                     <li><a href="product-categories.html#pods">Acoustic Work Pods</a></li>
-                                                    <li><a href="product-categories.html#pods">Meeting Pods</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <!-- Carpets -->
-                                            <div>
-                                                <a href="product-categories.html#carpets" class="mega-category-title d-block">Carpets</a>
-                                                <ul class="mega-subcategory-list">
-                                                    <li><a href="product-categories.html#carpets">Interface Carpet Tiles</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <!-- Outdoor -->
-                                            <div>
-                                                <a href="product-categories.html#outdoor" class="mega-category-title d-block">Outdoor</a>
-                                                <ul class="mega-subcategory-list">
-                                                    <li><a href="product-categories.html#outdoor">Loom Crafts Furniture</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <!-- Educational -->
-                                            <div>
-                                                <a href="product-categories.html#educational" class="mega-category-title d-block">Educational</a>
-                                                <ul class="mega-subcategory-list">
-                                                    <li><a href="product-categories.html#educational">Classroom</a></li>
-                                                    <li><a href="product-categories.html#educational">Library</a></li>
-                                                    <li><a href="product-categories.html#educational">Hostel</a></li>
-                                                    <li><a href="product-categories.html#educational">Auditorium</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <!-- Accessories -->
-                                            <div>
-                                                <a href="product-categories.html#accessories" class="mega-category-title d-block">Accessories</a>
-                                                <ul class="mega-subcategory-list">
-                                                    <li><a href="product-categories.html#accessories">Monitor Arms & Power Modules</a></li>
+                                                    <li><a href="product-categories.html#carpets">Interface Carpets</a></li>
+                                                    <li><a href="product-categories.html#outdoor">Outdoor Furniture</a></li>
                                                 </ul>
                                             </div>
 
                                         </div>
                                     </div>
                                 </div>
+                            </li>
+                            <li class="text-menu menu-item">
+                                <a href="archlabs-catalogue.html" class="item-link fw-semibold text-danger">ArchLabs Catalogue</a>
                             </li>
                             <li class="text-menu menu-item">
                                 <a href="contact.html" class="item-link fw-semibold">Contact Us</a>
