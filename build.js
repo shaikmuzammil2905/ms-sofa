@@ -3,49 +3,65 @@ const path = require('path');
 
 const ROOT_DIR = __dirname;
 
-function renderPhpFile(filePath) {
-    if (!fs.existsSync(filePath)) {
-        return null;
+function compileFullHtml(pageFileName) {
+    const srcPath = path.join(ROOT_DIR, pageFileName);
+    if (!fs.existsSync(srcPath)) return null;
+
+    let pageContent = fs.readFileSync(srcPath, 'utf8');
+
+    // Read raw header.php and footer.php
+    let headerContent = '';
+    const headerPath = path.join(ROOT_DIR, 'header.php');
+    if (fs.existsSync(headerPath)) {
+        headerContent = fs.readFileSync(headerPath, 'utf8');
+        // Remove php tags from header
+        headerContent = headerContent.replace(/<\?php[\s\S]*?\?>/gi, '');
     }
 
-    let content = fs.readFileSync(filePath, 'utf8');
+    let footerContent = '';
+    const footerPath = path.join(ROOT_DIR, 'footer.php');
+    if (fs.existsSync(footerPath)) {
+        footerContent = fs.readFileSync(footerPath, 'utf8');
+        // Remove php tags from footer
+        footerContent = footerContent.replace(/<\?php[\s\S]*?\?>/gi, '');
+    }
 
-    // Recursively resolve PHP includes (e.g. <?php include('header.php');?> or include_once "...")
+    // Resolve PHP includes inside page content
     const includeRegex = /<\?php\s+include(?:_once)?\s*[\('"]+([^'"]+)['"]+\)?;?\s*\?>/gi;
-    
-    content = content.replace(includeRegex, (match, includedFileName) => {
-        const targetPath = path.resolve(path.dirname(filePath), includedFileName);
+    pageContent = pageContent.replace(includeRegex, (match, includedFileName) => {
+        if (includedFileName === 'header.php') return headerContent;
+        if (includedFileName === 'footer.php') return footerContent;
+        const targetPath = path.join(ROOT_DIR, includedFileName);
         if (fs.existsSync(targetPath)) {
-            return renderPhpFile(targetPath);
+            return fs.readFileSync(targetPath, 'utf8').replace(/<\?php[\s\S]*?\?>/gi, '');
         }
         return '';
     });
 
-    // Remove any remaining PHP tags or blocks
-    content = content.replace(/<\?php[\s\S]*?\?>/gi, '');
+    // Remove any leftover PHP tags
+    pageContent = pageContent.replace(/<\?php[\s\S]*?\?>/gi, '');
 
-    // Replace .php link references with .html for static deployment compatibility
-    content = content.replace(/href="index\.php"/g, 'href="index.html"');
-    content = content.replace(/href="product-categories\.php"/g, 'href="product-categories.html"');
-    content = content.replace(/href="product-sofas\.php"/g, 'href="product-sofas.html"');
+    // Standardize page links
+    pageContent = pageContent.replace(/href="index\.php"/g, 'href="index.html"');
+    pageContent = pageContent.replace(/href="product-categories\.php"/g, 'href="product-categories.html"');
+    pageContent = pageContent.replace(/href="product-sofas\.php"/g, 'href="product-sofas.html"');
 
-    return content;
+    return pageContent;
 }
 
-const filesToBuild = [
-    { src: 'index.php', dist: 'index.html' },
-    { src: 'product-categories.php', dist: 'product-categories.html' },
-    { src: 'product-sofas.php', dist: 'product-sofas.html' }
+const pages = [
+    { src: 'index.php', distHtml: 'index.html' },
+    { src: 'product-categories.php', distHtml: 'product-categories.html' },
+    { src: 'product-sofas.php', distHtml: 'product-sofas.html' }
 ];
 
-filesToBuild.forEach(file => {
-    const srcPath = path.join(ROOT_DIR, file.src);
-    const distPath = path.join(ROOT_DIR, file.dist);
-    const renderedContent = renderPhpFile(srcPath);
-    if (renderedContent) {
-        fs.writeFileSync(distPath, renderedContent, 'utf8');
-        console.log(`Generated ${file.dist} from ${file.src}`);
-    } else {
-        console.error(`Failed to generate ${file.dist}`);
+pages.forEach(page => {
+    const compiledHtml = compileFullHtml(page.src);
+    if (compiledHtml) {
+        // Write to distHtml (.html)
+        fs.writeFileSync(path.join(ROOT_DIR, page.distHtml), compiledHtml, 'utf8');
+        // Also overwrite page.src (.php) with full compiled HTML so both .php and .html serve complete HTML on Vercel
+        fs.writeFileSync(path.join(ROOT_DIR, page.src), compiledHtml, 'utf8');
+        console.log(`Compiled ${page.src} and ${page.distHtml} successfully.`);
     }
 });
