@@ -107,63 +107,66 @@
     </div>
     <!-- /wrapper -->
 
-    <!-- Mobile Menu Offcanvas (Fixed size per image copy 5.png) -->
-    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" style="width: 320px; max-width: 85vw;">
+    <!-- Mobile Menu Offcanvas Drawer (Increased Size & Styled matching image copy 8.png) -->
+    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" style="width: 360px; max-width: 88vw;">
         <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
-            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 220px;">
-                <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 34px; width: auto; flex-shrink: 0;">
+            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 240px;">
+                <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 38px; width: auto; flex-shrink: 0;">
                 <div style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
-                    <span style="font-size: 15px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
-                    <span style="font-size: 7.5px; font-weight: 700; color: #555555; letter-spacing: 1.2px; margin-top: 2px;">OFFICE SOLUTIONS</span>
+                    <span style="font-size: 16px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
+                    <span style="font-size: 8px; font-weight: 700; color: #555555; letter-spacing: 1.3px; margin-top: 2px;">OFFICE SOLUTIONS</span>
                 </div>
             </a>
             <button type="button" class="btn-close text-reset ms-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body p-3">
-            <ul class="nav flex-column gap-3 mb-4">
+            <ul class="nav flex-column gap-1 mb-4">
                 <li class="nav-item">
-                    <a class="nav-link fs-6 fw-bold text-dark p-0" href="index.html">Home</a>
+                    <a class="mobile-nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-6 fw-bold text-dark p-0" href="about.html">About Us</a>
+                    <a class="mobile-nav-link" href="about.html">About Us</a>
                 </li>
                 
                 <!-- ArchLabs Seating Catalogue Accordion -->
                 <li class="nav-item">
-                    <a class="nav-link fs-6 fw-bold text-danger p-0 d-flex align-items-center justify-content-between" data-bs-toggle="collapse" href="#mobileArchLabsCollapse" role="button" aria-expanded="true">
-                        ArchLabs Catalogue <i class="icon-caret-down fs-7"></i>
+                    <a class="mobile-nav-link text-danger" data-bs-toggle="collapse" href="#mobileArchLabsCollapse" role="button" aria-expanded="true">
+                        ArchLabs Seating Catalogue <i class="icon-caret-down fs-7"></i>
                     </a>
                     <div class="collapse show mt-2 ps-2" id="mobileArchLabsCollapse">
-                        <ul class="nav flex-column gap-2 border-start border-danger ps-3 fs-7">
-                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#mesh-series">&bull; Mesh Series (30 Models)</a></li>
-                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
-                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
-                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
-                            <li><a class="text-dark text-decoration-none fw-bold" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
+                        <ul class="nav flex-column gap-1 border-start border-danger border-2 ps-3">
+                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#mesh-series">&bull; Mesh Series (30 Models)</a></li>
+                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
+                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
+                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
+                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
                         </ul>
                     </div>
                 </li>
 
-                <!-- Other Products Accordion -->
+                <!-- Products & Solutions Accordion (Matching image copy 8.png) -->
                 <li class="nav-item">
-                    <a class="nav-link fs-6 fw-bold text-dark p-0 d-flex align-items-center justify-content-between" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="false">
+                    <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="false">
                         Products &amp; Solutions <i class="icon-caret-down fs-7"></i>
                     </a>
                     <div class="collapse mt-2 ps-2" id="mobileProductsCollapse">
-                        <ul class="nav flex-column gap-2 border-start ps-3 fs-7">
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#workstations">Workstations</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#tables">Tables</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#storage">Storage</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-sofas.html">Soft Seating &amp; Lounge</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#pods">Pods</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#carpets">Carpets</a></li>
-                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#outdoor">Outdoor</a></li>
+                        <ul class="nav flex-column gap-1 border-start ps-3">
+                            <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Workstations</a></li>
+                            <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Tables</a></li>
+                            <li><a class="mobile-sub-link" href="product-categories.html#storage">&bull; Storage Systems</a></li>
+                            <li><a class="mobile-sub-link" href="product-categories.html#seating">&bull; Ergonomic Seating</a></li>
+                            <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Soft Seating &amp; Sofas</a></li>
+                            <li><a class="mobile-sub-link" href="product-categories.html#pods">&bull; Acoustic Pods</a></li>
+                            <li><a class="mobile-sub-link" href="product-categories.html#carpets">&bull; Interface Carpets</a></li>
+                            <li><a class="mobile-sub-link" href="product-categories.html#outdoor">&bull; Outdoor Furniture</a></li>
+                            <li><a class="mobile-sub-link" href="product-categories.html#educational">&bull; Educational Solutions</a></li>
+                            <li><a class="mobile-sub-link" href="product-categories.html#accessories">&bull; Workspace Accessories</a></li>
                         </ul>
                     </div>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link fs-6 fw-bold text-dark p-0" href="contact.html">Contact Us</a>
+                    <a class="mobile-nav-link" href="contact.html">Contact Us</a>
                 </li>
             </ul>
 
