@@ -5,20 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <!--<![endif]-->
 
-
-
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-    <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
 
-    <meta name="author" content="themesflat.com">
-    <title>Welcome to Vishista Office Solutions - Modern Office Furniture</title>
-    <meta name="description"
-        content="">
-    <meta name="keywords"
-        content="">
+    <meta name="author" content="Vishista Office Solutions Pvt Ltd">
+    <title>Vishista Office Solutions - Premium Office Furniture & Turnkey Workspaces</title>
+    <meta name="description" content="Vishista Office Solutions Pvt Ltd offers premium office furniture, interior systems, and turnkey workspace solutions across Telangana and Andhra Pradesh.">
+    <meta name="keywords" content="office furniture, workstations, executive tables, mesh chairs, lounge sofas, corporate interiors, Hyderabad, Secunderabad">
+    
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -29,13 +24,106 @@
     <link rel="stylesheet" type="text/css" href="css/sib-styles.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css">
 
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="images/.svg">
-    <link rel="apple-touch-icon-precomposed" href="images/.svg">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/logo/logo-mark.png">
+    <link rel="apple-touch-icon-precomposed" href="images/logo/logo-mark.png">
+
+    <style>
+        .site-brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none !important;
+        }
+        .site-brand-logo img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+        .brand-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .brand-main-title {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #d32f2f;
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
+        .brand-sub-title {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 9.5px;
+            font-weight: 700;
+            color: #555555;
+            letter-spacing: 1.6px;
+            margin-top: 3px;
+        }
+        .nav-enquire-btn {
+            background-color: #d32f2f;
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-enquire-btn:hover {
+            background-color: #b71c1c;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+        }
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            padding: 24px;
+        }
+        @media (max-width: 1200px) {
+            .mega-menu-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .mega-category-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #d32f2f;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .mega-subcategory-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .mega-subcategory-list li {
+            margin-bottom: 6px;
+        }
+        .mega-subcategory-list a {
+            color: #555;
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .mega-subcategory-list a:hover {
+            color: #d32f2f;
+            font-weight: 600;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,269 +144,150 @@
         </div>
         <!-- /preload -->
 
-
-        <!-- .top-bar -->
-        <div class="top-bar style-default d-flex align-items-center justify-content-center">
-            <div>Enjoy up to 30% OFF on selected office chairs, workstations, desks, and storage solutions. Limited period offer!
-              <!--iv class="tf-countdown style-default">
-                    <div class="js-countdown" data-timer="1007500" data-labels=" : DAYS, : HOURS, : MINUTES, : SECONDS">
-                    </div>
-                </div>-->
-            </div>
-        </div>
-        <!-- End top-bar -->
-
         <!-- .header -->
-        <header class="header  has-currencies header-sticky">
+        <header class="header header-sticky py-2">
             <div class="tf-container w-1750">
-                <div class="header-inner">
-                    <a href="#" class="site-logo">
-                        <img class="logo_header" alt="logo" width="165" height="32" src="images/logo/logo.png">
+                <div class="header-inner d-flex align-items-center justify-content-between">
+                    
+                    <!-- Site Logo -->
+                    <a href="index.html" class="site-brand-logo">
+                        <img src="images/logo/logo-mark.png" alt="Vishista Logo">
+                        <div class="brand-text-wrapper">
+                            <span class="brand-main-title">VISHISTA</span>
+                            <span class="brand-sub-title">OFFICE SOLUTIONS</span>
+                        </div>
                     </a>
-                    <nav class="main-menu">
-                        <ul class="navigation box-nav-menu">
-                            <li class=" text-menu menu-item"><a href="index.html"
-                                    class="link-no-action  splitting item-link">
-                                    Home
-                                </a>
-                               
+
+                    <!-- Navigation Bar -->
+                    <nav class="main-menu d-none d-xl-block">
+                        <ul class="navigation box-nav-menu d-flex align-items-center gap-4 list-unstyled mb-0">
+                            <li class="text-menu menu-item">
+                                <a href="index.html" class="item-link fw-semibold">Home</a>
                             </li>
-                              <li class=" text-menu menu-item"><a href="product-categories.html"
-                                    class="link-no-action  splitting item-link">
-                                    About Us
-                                </a>
-                               
+                            <li class="text-menu menu-item">
+                                <a href="about.html" class="item-link fw-semibold">About Us</a>
                             </li>
-                           
-                            <li class="has-child text-menu menu-item "><a href="product-categories.html"
-                                    class="link-no-action toggle splitting item-link">
-                                    Products
-                                </a>
-                                <div class="submenu sub-menu mega-menu mega-product ">
+                            <li class="has-child text-menu menu-item position-relative">
+                                <a href="product-categories.html" class="item-link fw-semibold">Products</a>
+                                <div class="submenu sub-menu mega-menu" style="width: 100%; left: 0; right: 0;">
                                     <div class="tf-container w-1750">
-                                        <div class="wrap-nav-link">
-                                            <div class="col-nav-link mega-menu-item">
-                                                <div class="h6 fw-5 mb_23 text_black menu-heading">
-                                                    Office Furniture
-                                                </div>
-                                                <ul class="sub-menu_list d-grid gap_10">
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Product
-                                                            Office Furniture
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Product
-                                                            Office Furniture
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Product
-                                                            Office Furniture
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Product
-                                                           Office Furniture
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Product
-                                                            Office Furniture
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Product
-                                                           Office Furniture
-                                                        </a>
-                                                    </li>
+                                        <div class="mega-menu-grid bg-white shadow-lg rounded-3">
+                                            
+                                            <!-- Workstations -->
+                                            <div>
+                                                <a href="product-categories.html#workstations" class="mega-category-title d-block">Workstations</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#workstations">Height Adjustable Series</a></li>
+                                                    <li><a href="product-categories.html#workstations">Desking Series</a></li>
+                                                    <li><a href="product-categories.html#workstations">Panel Series</a></li>
                                                 </ul>
                                             </div>
-                                            <div class="col-nav-link mega-menu-item">
-                                                <div class="h6 fw-5 mb_23 text_black menu-heading">
-                                                    Home Furniture
-                                                </div>
-                                                <ul class="sub-menu_list d-grid gap_10">
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link"> Home Furniture</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link"> Home Furniture</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link"> Home Furniture</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-nav-link mega-menu-item">
-                                                <div class="h6 fw-5 mb_23 text_black menu-heading">
-                                                     Office Furniture
-                                                </div>
-                                                <ul class="sub-menu_list d-grid gap_10">
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Office Furniture</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Office Furniture</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Office Furniture</a>
-                                                    </li>
 
+                                            <!-- Tables -->
+                                            <div>
+                                                <a href="product-categories.html#tables" class="mega-category-title d-block">Tables</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#tables">Cabin Tables</a></li>
+                                                    <li><a href="product-categories.html#tables">Meeting Tables</a></li>
+                                                    <li><a href="product-categories.html#tables">Cafe Tables</a></li>
+                                                    <li><a href="product-categories.html#tables">Training Tables</a></li>
+                                                </ul>
+                                            </div>
 
+                                            <!-- Storage -->
+                                            <div>
+                                                <a href="product-categories.html#storage" class="mega-category-title d-block">Storage</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#storage">Prelam Storage</a></li>
+                                                    <li><a href="product-categories.html#storage">Metal Storage</a></li>
+                                                    <li><a href="product-categories.html#storage">Compactor Storage</a></li>
+                                                    <li><a href="product-categories.html#storage">Locker</a></li>
                                                 </ul>
                                             </div>
-                                            <div class="col-nav-link mega-menu-item">
-                                                <div class="h6 fw-5 mb_23 text_black menu-heading">
-                                                    Office Furniture
-                                                </div>
-                                                <ul class="sub-menu_list d-grid gap_10">
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Pickup
-                                                            Office Furnituree</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-swatch-image.html"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Office Furniture</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Office Furniture</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="link text-body-default text_heading-color sub-menu_link">Office Furniture</a>
-                                                    </li>
+
+                                            <!-- Seating -->
+                                            <div>
+                                                <a href="product-categories.html#seating" class="mega-category-title d-block">Seating</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#seating">Mesh Chair</a></li>
+                                                    <li><a href="product-categories.html#seating">Leather Chair</a></li>
+                                                    <li><a href="product-categories.html#seating">Training Chair</a></li>
+                                                    <li><a href="product-categories.html#seating">Cafe Chair</a></li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="wrap-prd d-flex gap_24 mn-none">
-                                            <div class="list-ver">
-                                                <div class="prd-nav-item hover-image">
-                                                    <div class="img-style">
-                                                        <img width="240" height="240" loading="lazy" decoding="async"
-                                                            src="images/header/prd-nav-1.jpg" alt="product">
-                                                        <a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-top box-icon">
-                                                            <span class="icon icon-view"></span>
-                                                            <span class="tooltip">Quick view</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="">
-                                                        <a href="#"
-                                                            class="h6 link text_heading-color mb_5">
-                                                            Cub Chair
-                                                        </a>
-                                                        <div class="price">
-                                                            <span class="text-body-2">2,499.00</span><span
-                                                                class="old-price">2,899.00</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="prd-nav-item hover-image">
-                                                    <div class="img-style">
-                                                        <img width="240" height="240" loading="lazy" decoding="async"
-                                                            src="images/header/prd-nav-2.jpg" alt="product">
-                                                        <a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-top box-icon">
-                                                            <span class="icon icon-view"></span>
-                                                            <span class="tooltip">Quick view</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="">
-                                                        <a href="#"
-                                                            class="h6 link  text_heading-color mb_5">
-                                                            Virgule Armchair
-                                                        </a>
-                                                        <div class="price">
-                                                            <span class="text-body-2">2,499.00</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
+                                            <!-- Soft Seating -->
+                                            <div>
+                                                <a href="product-categories.html#soft-seating" class="mega-category-title d-block">Soft Seating</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#soft-seating">Lounge</a></li>
+                                                    <li><a href="product-categories.html#soft-seating">Sofa</a></li>
+                                                    <li><a href="product-categories.html#soft-seating">Collaborative</a></li>
+                                                    <li><a href="product-categories.html#soft-seating">Pouffe</a></li>
+                                                    <li><a href="product-categories.html#soft-seating">Occasional Tables</a></li>
+                                                </ul>
                                             </div>
+
+                                            <!-- Pods -->
+                                            <div>
+                                                <a href="product-categories.html#pods" class="mega-category-title d-block">Pods</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#pods">Acoustic Work Pods</a></li>
+                                                    <li><a href="product-categories.html#pods">Meeting Pods</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Carpets -->
+                                            <div>
+                                                <a href="product-categories.html#carpets" class="mega-category-title d-block">Carpets</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#carpets">Interface Carpet Tiles</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Outdoor -->
+                                            <div>
+                                                <a href="product-categories.html#outdoor" class="mega-category-title d-block">Outdoor</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#outdoor">Loom Crafts Furniture</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Educational -->
+                                            <div>
+                                                <a href="product-categories.html#educational" class="mega-category-title d-block">Educational</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#educational">Classroom</a></li>
+                                                    <li><a href="product-categories.html#educational">Library</a></li>
+                                                    <li><a href="product-categories.html#educational">Hostel</a></li>
+                                                    <li><a href="product-categories.html#educational">Auditorium</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Accessories -->
+                                            <div>
+                                                <a href="product-categories.html#accessories" class="mega-category-title d-block">Accessories</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#accessories">Monitor Arms & Power Modules</a></li>
+                                                </ul>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="has-child text-menu menu-item"><a href="#"
-                                    class="link-no-action toggle splitting item-link">
-                                    Projects
-                                </a>
-                                <div class="submenu sub-menu mega-menu mega-page">
-                                    <div class="wrap-nav-link">
-                                        <div class="col-nav-link">
-                                            <div class="d-grid gap_10">
-                                                <a href="#"
-                                                    class="link text-body-default text_heading-color sub-menu_link">Project 1</a>
-                                                 <a href="#"
-                                                    class="link text-body-default text_heading-color sub-menu_link">Project 2</a>
-                                                 <a href="#"
-                                                    class="link text-body-default text_heading-color sub-menu_link">Project 3</a>
-                                                
-                                                 <a href="#"
-                                                    class="link text-body-default text_heading-color sub-menu_link">Project 4</a>
-                                                
-                                                
-                                                 <a href="#"
-                                                    class="link text-body-default text_heading-color sub-menu_link">Project 5</a>
-                                                
-                                                
-                                                 <a href="#"
-                                                    class="link text-body-default text_heading-color sub-menu_link">Project 6</a>
-                                                
-                                                 <a href="#"
-                                                    class="link text-body-default text_heading-color sub-menu_link">Project 7</a>
-                                                
-                                                 <a href="#"
-                                                    class="link text-body-default text_heading-color sub-menu_link">Project 8</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </li>
-                            <li class=" text-menu menu-item"><a href="#"
-                                    class="link-no-action  splitting item-link">
-                                    Contact Us
-                                </a>
-                               
+                            <li class="text-menu menu-item">
+                                <a href="contact.html" class="item-link fw-semibold">Contact Us</a>
                             </li>
                         </ul>
                     </nav>
-                    <div class="header-right d-flex align-items-center ">
-                       
-                        <ul class="nav-icon-list">
-                    <!--   <li class="d-none d-md-flex">
-                                <a class="nav-icon-item link" href="#search" data-bs-toggle="modal">
-                                    <i class="icon icon-magnifying-glass"></i>
-                                </a>
-                            </li>-->
-                            <li class="d-none d-lg-flex">
-                                <a href="#login" data-bs-toggle="offcanvas" class="nav-icon-item link"> <i
-                                        class="icon icon-instagram"></i>
-                                </a>
-                            </li>
-                            <li class="d-none d-lg-flex">
-                                <a href="#login" data-bs-toggle="offcanvas" class="nav-icon-item link"> <i
-                                        class="icon icon-facebook"></i>
-                                </a>
-                            </li>
-                          
-                        </ul>
-                        <a href="#mobileMenu" data-bs-toggle="offcanvas" class="mobile-button d-xl-none">
+
+                    <!-- Header Right CTA -->
+                    <div class="header-right d-flex align-items-center gap-3">
+                        <button type="button" class="nav-enquire-btn" data-bs-toggle="modal" data-bs-target="#enquireModal">
+                            Enquire Now
+                        </button>
+                        <a href="#mobileMenu" data-bs-toggle="offcanvas" class="mobile-button d-xl-none text-dark fs-3">
                             <div class="burger">
                                 <span></span>
                                 <span></span>
@@ -326,2115 +295,457 @@
                             </div>
                         </a>
                     </div>
+
                 </div>
             </div>
         </header>
         <!-- End header -->
 
-        <!-- page-title -->
-        <div class="hero-banner-v04 sw-layout">
-            <div class="swiper slider_effect_fade" data-preview="1" data-tablet="1" data-mobile-sm="1" data-mobile="1"
-                data-space-lg="0" data-space-md="0" data-space="0" data-effect="fade" data-autoplay="true">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="thumb">
-                            <img class="img-cover" width="1920" height="858" loading="eager"
-                                src="images/sections/hero-banner-4.jpg" alt="hero-banner">
-                        </div>
-                        <div class="content">
-                            <div class="tf-container">
-                                <div class="content-inner text-center">
-                                    <h1 class=" title text_white text-uppercase mb_24 fade-item fade-item-1">Create Your 
-                                        <br class="md-hide">
-                                        Perfect Workspace
-                                    </h1>
-                                    <p class="text_white desc mb_40 fade-item fade-item-2">Clean silhouettes and calm
-                                        Exclusive Furniture Deals.
-                                    </p>
-                                    <a href="#"
-                                        class="btn_link hover-underline-link text_white text-body-default fw-5 text-uppercase fade-item fade-item-3">
-                                        Explore Our Furniture
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="thumb">
-                            <img class="img-cover" width="1920" height="858" loading="eager"
-                                src="images/sections/hero-banner-3.jpg" alt="hero-banner">
-                        </div>
-                        <div class="content">
-                            <div class="tf-container">
-                                <div class="content-inner text-center">
-                                    <h1 class=" title text_white text-uppercase mb_24 fade-item fade-item-1">Form Meets
-                                        <br class="md-hide">
-                                        Function
-                                    </h1>
-                                    <p class="text_white desc mb_40 fade-item fade-item-2">Clean silhouettes and calm
-                                        tones for modern spaces.
-                                    </p>
-                                    <a href="#"
-                                        class="btn_link hover-underline-link text_white text-body-default fade-item fade-item-3">
-                                        Browse The Collection
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="thumb">
-                            <img class="img-cover" width="1920" height="858" loading="eager"
-                                src="images/sections/hero-banner-6.jpg" alt="hero-banner">
-                        </div>
-                        <div class="content">
-                            <div class="tf-container">
-                                <div class="content-inner text-center">
-                                    <h1 class=" title text_white text-uppercase mb_24 fade-item fade-item-1">Form Meets
-                                        <br class="md-hide">
-                                        Function
-                                    </h1>
-                                    <p class="text_white desc mb_40 fade-item fade-item-2">Clean silhouettes and calm
-                                        tones for modern spaces.
-                                    </p>
-                                    <a href="#"
-                                        class="btn_link hover-underline-link text_white text-body-default fade-item fade-item-3">
-                                        Browse The Collection
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+<!-- Hero Section -->
+<section class="hero-section position-relative text-white overflow-hidden py-5" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('images/sections/s-lookbook-1.jpg') center/cover no-repeat; min-height: 85vh; display: flex; align-items: center;">
+    <div class="tf-container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 col-xl-8">
+                <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-bold tracking-widest fs-7" style="border-radius: 4px;">Vishista Office Solutions</span>
+                <h1 class="display-3 fw-extrabold text-white mb-4" style="line-height: 1.15; font-family: 'Inter', sans-serif;">
+                    Transforming Workspaces.<br>Elevating Possibilities.
+                </h1>
+                <p class="fs-5 text-white-50 mb-5" style="max-width: 650px; line-height: 1.6;">
+                    Premium office furniture, interior systems, and turnkey workspace solutions designed for modern businesses, MNCs, educational institutions, and professional environments across Telangana and Andhra Pradesh.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="product-categories.html" class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase" style="border-radius: 4px; background-color: #d32f2f; border: none; font-size: 15px;">
+                        Explore Products &rarr;
+                    </a>
+                    <button type="button" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase" style="border-radius: 4px; font-size: 15px;" data-bs-toggle="modal" data-bs-target="#enquireModal">
+                        Contact Us / Enquire
+                    </button>
                 </div>
-                <div class="sw-dots sw-pagination-layout style-border text-center mt_24">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Company Introduction Section -->
+<section class="py-5 bg-light">
+    <div class="tf-container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="pe-lg-4">
+                    <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Corporate Overview</span>
+                    <h2 class="display-6 fw-bold text-dark mb-4" style="line-height: 1.2;">
+                        Creating Workspaces That Work for You
+                    </h2>
+                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
+                        <strong>Vishista Office Solutions Pvt Ltd</strong> is a leading provider of premium office furniture, interior systems, and turnkey workspace solutions, serving corporate, commercial, and institutional clients across Telangana and Andhra Pradesh.
+                    </p>
+                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
+                        With a strong focus on quality, innovation, and customer satisfaction, the company delivers modern, efficient, and future-ready work environments tailored to the evolving needs of today's businesses.
+                    </p>
+                    <p class="text-secondary fs-6 mb-4" style="line-height: 1.7;">
+                        Our expertise spans design consultation, product selection, multi-vendor coordination, installation, and dedicated after-sales support — making us a trusted partner for organizations seeking reliable and professional workspace transformation.
+                    </p>
+                    <a href="about.html" class="btn btn-dark btn-lg px-4 py-2 fw-semibold text-uppercase" style="border-radius: 4px; font-size: 14px;">
+                        Discover Our Story &rarr;
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative rounded-4 overflow-hidden shadow-lg">
+                    <img src="images/collection/collection-1.jpg" alt="Modern Corporate Office Furniture" class="img-fluid w-100" style="object-fit: cover; min-height: 380px;">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.85));">
+                        <span class="text-white-50 text-uppercase fs-7 fw-semibold">Turnkey Execution</span>
+                        <h4 class="text-white fw-bold mb-0">End-to-End Office Interior Systems</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Explore Our Workspace Solutions (Product Categories Grid) -->
+<section class="py-5 bg-white">
+    <div class="tf-container py-4">
+        <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+            <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Product Categories</span>
+            <h2 class="display-6 fw-bold text-dark mt-2 mb-3">Explore Our Workspace Solutions</h2>
+            <p class="text-secondary">Discover our comprehensive collection of modular office furniture, ergonomic seating, acoustic pods, and turnkey architectural products.</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <!-- Workstations -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/sections/s-lookbook-1.jpg" alt="Workstations" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK Catalogue</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Workstations</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Height Adjustable Series, Desking Series, and Panel Series designed for collaborative and ergonomic team layouts.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#workstations" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Workstations Series')">Enquire &rarr;</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Tables -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Tables" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK Catalogue</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Tables</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Executive Cabin Tables, Conference Meeting Tables, Cafe Tables, and Modular Training Tables for modern corporate suites.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#tables" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Corporate Tables')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Storage -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/sections/s-lookbook-2.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/collection/collection-1.jpg'">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK Catalogue</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Storage Systems</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Prelam Storage Credenzas, Heavy-Duty Metal Filing Cabinets, High-Density Compactor Storage, and Personal Lockers.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#storage" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Storage Systems')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seating -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/header/prd-nav-2.jpg" alt="Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">ESS & VIAK Chair</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Ergonomic Seating</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Premium High-Back Mesh Chairs, Genuine Leather Executive Armchairs, Training Chairs, and Cafe Seating.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#seating" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Ergonomic Chairs')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Seating -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/collection/collection-1.jpg" alt="Soft Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">Soft Seating PDF</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Soft Seating & Lounge</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Lounge Chairs, Executive Sofas, Modular Collaborative Seating, Pouffes, and Occasional Center Tables.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-sofas.html" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Soft Seating & Sofas')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pods -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/sections/s-lookbook-1.jpg" alt="Pods" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">DURIAN</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Acoustic Work Pods</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Private Acoustic Phone Pods and Collaborative Meeting Pods engineered for sound isolation and distraction-free calls.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#pods" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Acoustic Work Pods')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carpets -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/sections/lookbook-item-1.jpg" alt="Carpets" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/collection/collection-1.jpg'">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">INTERFACE</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Interface Carpets</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">High-performance Interface Carpet Tiles designed for heavy traffic commercial office floors.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#carpets" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Interface Carpet Tiles')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outdoor -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/sections/lookbook-item-2.jpg" alt="Outdoor" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">LOOM CRAFTS</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Outdoor Furniture</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Weatherproof Loom Crafts outdoor lounge sets, patio tables, and terrace seating for corporate cafeterias.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#outdoor" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Outdoor Loom Crafts Furniture')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Educational" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK & DURIAN</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Educational Solutions</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Ergonomic Classroom Desks, Library Furniture, Hostel Storage Units, and Heavy-Duty Auditorium Seating.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#educational" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Educational Furniture')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <!-- /page-title -->
-        
-        
-        
+    </div>
+</section>
 
-        <!-- main-content -->
-        <div class="main-content">
-
-            <!-- s-about -->
-            <section class="s-about-v01 tf-spacing-11">
-                <div class="tf-container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 mb-md-0 mb_40">
-                            <div class="heading-section mb_40 wow fadeInUp ">
-                                <h2 class="title text-uppercase  ">Vishista Office Solutions</h2>
-                                <p class="desc">Your trusted partner for premium office furniture and workspace solutions. We specialize in providing high-quality, functional, and stylish office furniture designed to create productive, comfortable, and modern work environments.<br><br></p>
-                                
-                                <p class="desc">
-
-At Vishista Office Solutions, we understand that every workspace is unique. Whether it’s a corporate office, startup, educational institution, coworking space, or home office setup, we offer customized furniture solutions tailored to your business needs and budget.
-                                </p>
-                            </div>
-                            <a href="#"
-                                class="text-body-default fw-5 hover-underline-link btn_link">Explore Our Furniture</a>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="thumbs-about">
-                                <img class="wow fadeInRight" loading="lazy" decoding="async" width="460" height="598"
-                                    src="images/sections/s-about-1.png" alt="about">
-                                <div class="shape-1"></div>
-                                <div class="shape-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- /s-about -->
-
-            <!-- Product Main -->
-            <section class="s-product-main  tf-container tf-spacing-1 pt-0 flat-animate-tab wow fadeInUp">
-                <div
-                    class="heading-seciton text-center mb_50 d-flex justify-content-center justify-content-md-between flex-md-row flex-column align-items-sm-center gap_10 ">
-                    <h2 class="text-uppercase">Featured New Collection</h2>
-                    <ul class="tab-product_list menu-tab-2" role="tablist">
-                        <li class="nav-tab-item" role="presentation">
-                            <a href="#table" data-bs-toggle="tab"
-                                class="tf-btn-line h4 text-uppercase tf-btn-tab active">table
-                            </a>
-                        </li>
-                        <li class="nav-tab-item" role="presentation">
-                            <a href="#lighting" data-bs-toggle="tab"
-                                class="tf-btn-line h4 text-uppercase tf-btn-tab">Lighting
-                            </a>
-                        </li>
-                        <li class="nav-tab-item" role="presentation">
-                            <a href="#seating" data-bs-toggle="tab"
-                                class="tf-btn-line h4 text-uppercase tf-btn-tab">seating
-                            </a>
-                        </li>
-                        <li class="nav-tab-item" role="presentation">
-                            <a href="#decor" data-bs-toggle="tab" class="tf-btn-line h4 text-uppercase tf-btn-tab">decor
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div class="tab-content">
-
-
-                    <div class="tab-pane active show" id="table" role="tabpanel">
-                        <div class="position-relative sw-layout">
-                            <div class="swiper" data-preview="4" data-tablet="3" data-mobile-sm="2" data-mobile="2"
-                                data-space-lg="30" data-space-md="20" data-space="15" data-pagination="2"
-                                data-pagination-md="2" data-pagination-lg="2">
-                                <div class="swiper-wrapper">
-
-                                    <!-- ① Altair Lounge Chair -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-1.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-1-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Altair
-                                                    Lounge Chair</a>
-                                                <div class="wrap-price">
-                                                    <div class="price-wrap text-body-default fw-5">from <span
-                                                            class="price-new">849.00</span></div>
-                                                </div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Gray</span><span
-                                                            class="swatch-value bg-warmgray"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Rose</span><span
-                                                            class="swatch-value bg-palerose"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1-3.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-rustybrown"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1-4.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ② PIA Curved Sofa -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-2.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-2-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">PIA Curved
-                                                    Sofa</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,249.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ③ Oak Pendant -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-3.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-3.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Oak
-                                                    Pendant</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">620.00</span></div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Black</span><span
-                                                            class="swatch-value bg-black"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-3.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-caramelbrown"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-3-1.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ④ Nuvola Floor Lamp -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-4.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-4-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Nuvola
-                                                    Floor Lamp</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,799.00</span></div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-chestnutbrown"></span><img
-                                                            width="338" height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Blue</span><span
-                                                            class="swatch-value bg-midnightblue"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4-2.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Gray</span><span
-                                                            class="swatch-value bg-mochagray"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4-3.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ⑤ Core Chair -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-1.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-1-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Core
-                                                    Chair</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">990.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ⑥ Phase Pendant Lamp -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-11.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-11-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Phase
-                                                    Pendant Lamp</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,299.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="sw-dots sw-pagination-layout text-center mt_24 d-lg-none"></div>
-                            </div>
-                            <div class="wrap-sw-button">
-                                <div class="sw-button style-default nav-prev-layout"><i class="icon-caret-left"></i>
-                                </div>
-                                <div class="sw-button style-default nav-next-layout"><i class="icon-caret-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane" id="lighting" role="tabpanel">
-                        <div class="position-relative sw-layout">
-                            <div class="swiper" data-preview="4" data-tablet="3" data-mobile-sm="2" data-mobile="2"
-                                data-space-lg="30" data-space-md="20" data-space="15" data-pagination="2"
-                                data-pagination-md="2" data-pagination-lg="2">
-                                <div class="swiper-wrapper">
-
-                                    <!-- ③ Oak Pendant (1st) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-3.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-3.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Oak
-                                                    Pendant</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Black</span><span
-                                                            class="swatch-value bg-black"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-3.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-caramelbrown"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-3-1.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ④ Nuvola Floor Lamp (2nd) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-4.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-4-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Nuvola
-                                                    Floor Lamp</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-chestnutbrown"></span><img
-                                                            width="338" height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Blue</span><span
-                                                            class="swatch-value bg-midnightblue"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4-2.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Gray</span><span
-                                                            class="swatch-value bg-mochagray"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4-3.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ⑥ Phase Pendant Lamp (3rd) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-11.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-11-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Phase
-                                                    Pendant Lamp</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ① Altair Lounge Chair (4th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-1.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-1-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Office Table</a>
-                                                <div class="wrap-price">
-                                                    <div class="price-wrap text-body-default fw-5">from <span
-                                                            class="price-new">1,099.00</span></div>
-                                                </div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Gray</span><span
-                                                            class="swatch-value bg-warmgray"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Rose</span><span
-                                                            class="swatch-value bg-palerose"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1-3.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-rustybrown"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1-4.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ⑤ Core Chair (5th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-1.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-1-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Office Table</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ② PIA Curved Sofa (6th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-2.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-2-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Office Table</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="sw-dots sw-pagination-layout text-center mt_24 d-lg-none"></div>
-                            </div>
-                            <div class="wrap-sw-button">
-                                <div class="sw-button style-default nav-prev-layout"><i class="icon-caret-left"></i>
-                                </div>
-                                <div class="sw-button style-default nav-next-layout"><i class="icon-caret-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane" id="seating" role="tabpanel">
-                        <div class="position-relative sw-layout">
-                            <div class="swiper" data-preview="4" data-tablet="3" data-mobile-sm="2" data-mobile="2"
-                                data-space-lg="30" data-space-md="20" data-space="15" data-pagination="2"
-                                data-pagination-md="2" data-pagination-lg="2">
-                                <div class="swiper-wrapper">
-
-                                    <!-- ① Altair Lounge Chair (1st) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-1.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-1-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Office Table</a>
-                                                <div class="wrap-price">
-                                                    <div class="price-wrap text-body-default fw-5">from <span
-                                                            class="price-new">1,099.00</span></div>
-                                                </div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Gray</span><span
-                                                            class="swatch-value bg-warmgray"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Rose</span><span
-                                                            class="swatch-value bg-palerose"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1-3.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-rustybrown"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1-4.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ② PIA Curved Sofa (2nd) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-2.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-2-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Office Table</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">---</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ⑤ Core Chair (3rd) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-1.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-1-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Office Table</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ⑥ Phase Pendant Lamp (4th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-11.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-11-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Phase
-                                                    Pendant Lamp</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ③ Oak Pendant (5th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-3.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-3.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Oak
-                                                    Pendant</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Black</span><span
-                                                            class="swatch-value bg-black"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-3.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-caramelbrown"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-3-1.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ④ Nuvola Floor Lamp (6th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-4.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-4-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Nuvola
-                                                    Floor Lamp</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-chestnutbrown"></span><img
-                                                            width="338" height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Blue</span><span
-                                                            class="swatch-value bg-midnightblue"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4-2.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Gray</span><span
-                                                            class="swatch-value bg-mochagray"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4-3.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="sw-dots sw-pagination-layout text-center mt_24 d-lg-none"></div>
-                            </div>
-                            <div class="wrap-sw-button">
-                                <div class="sw-button style-default nav-prev-layout"><i class="icon-caret-left"></i>
-                                </div>
-                                <div class="sw-button style-default nav-next-layout"><i class="icon-caret-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane" id="decor" role="tabpanel">
-                        <div class="position-relative sw-layout">
-                            <div class="swiper" data-preview="4" data-tablet="3" data-mobile-sm="2" data-mobile="2"
-                                data-space-lg="30" data-space-md="20" data-space="15" data-pagination="2"
-                                data-pagination-md="2" data-pagination-lg="2">
-                                <div class="swiper-wrapper">
-
-                                    <!-- ⑥ Phase Pendant Lamp (1st) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-11.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-11-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Phase
-                                                    Pendant Lamp</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ⑤ Core Chair (2nd) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-1.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/product-1-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Core
-                                                    Chair</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ④ Nuvola Floor Lamp (3rd) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-4.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-4-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Nuvola
-                                                    Floor Lamp</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-chestnutbrown"></span><img
-                                                            width="338" height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Blue</span><span
-                                                            class="swatch-value bg-midnightblue"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4-2.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Gray</span><span
-                                                            class="swatch-value bg-mochagray"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-4-3.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ② PIA Curved Sofa (4th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-2.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-2-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#shoppingCart"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Add To Cart</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">PIA Curved
-                                                    Sofa</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ① Altair Lounge Chair (5th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-1.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-1-1.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Altair
-                                                    Lounge Chair</a>
-                                                <div class="wrap-price">
-                                                    <div class="price-wrap text-body-default fw-5">from <span
-                                                            class="price-new">1,099.00</span></div>
-                                                </div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Gray</span><span
-                                                            class="swatch-value bg-warmgray"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Rose</span><span
-                                                            class="swatch-value bg-palerose"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1-3.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-rustybrown"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-1-4.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ③ Oak Pendant (6th) -->
-                                    <div class="swiper-slide">
-                                        <div class="card-product has-price-default">
-                                            <div class="card-product_wrapper">
-                                                <a href="#" class="product-img">
-                                                    <img class="img-product" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-3.jpg"
-                                                        alt="Product">
-                                                    <img class="img-hover" width="338" height="338" loading="lazy"
-                                                        decoding="async" src="images/products/prd-related-3.jpg"
-                                                        alt="Product">
-                                                </a>
-                                                <ul class="product-action_list">
-                                                    <li><a href="#quickAdd" class="hover-tooltip tooltip-left box-icon"
-                                                            data-bs-toggle="modal"><span
-                                                                class="icon icon-shopping-cart-simple"></span><span
-                                                                class="tooltip">Quick Add</span></a></li>
-                                                    <li class="wishlist"><a href="javascript:void(0);"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-heart"></span><span class="tooltip">Add
-                                                                to Wishlist</span></a></li>
-                                                    <li class="compare"><a href="#compare" data-bs-toggle="modal"
-                                                            aria-controls="compare"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-compare"></span><span
-                                                                class="tooltip">Compare</span></a></li>
-                                                    <li><a href="#quickView" data-bs-toggle="modal"
-                                                            class="hover-tooltip tooltip-left box-icon"><span
-                                                                class="icon icon-view"></span><span
-                                                                class="tooltip">Quick view</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="card-product_info">
-                                                <a href="#" class="name-product h6 link">Oak
-                                                    Pendant</a>
-                                                <div class="price-wrap text-body-default fw-5">from <span
-                                                        class="price-new">1,099.00</span></div>
-                                                <ul class="product-color_list justify-content-center">
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large active">
-                                                        <span class="tooltip color-filter">Black</span><span
-                                                            class="swatch-value bg-black"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-3.jpg" alt="Product">
-                                                    </li>
-                                                    <li
-                                                        class="product-color-item color-swatch hover-tooltip tooltip-bot sz-large">
-                                                        <span class="tooltip color-filter">Brown</span><span
-                                                            class="swatch-value bg-caramelbrown"></span><img width="338"
-                                                            height="338" loading="lazy" decoding="async"
-                                                            src="images/products/prd-related-3-1.jpg" alt="Product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="sw-dots sw-pagination-layout text-center mt_24 d-lg-none"></div>
-                            </div>
-                            <div class="wrap-sw-button">
-                                <div class="sw-button style-default nav-prev-layout"><i class="icon-caret-left"></i>
-                                </div>
-                                <div class="sw-button style-default nav-next-layout"><i class="icon-caret-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-            </section>
-            <!-- /Product Main -->
-
-            <!-- s-colection -->
-            <section class="s-colection-v01 ">
-                <div class="tf-container w-1462  sw-layout">
-                    <div class="heading-section mb_48 wow fadeInUp">
-                        <h2 class="text-uppercase">Featured collections</h2>
-                    </div>
-                    <div class="swiper" data-preview="3" data-tablet="2" data-mobile-sm="2" data-mobile="1"
-                        data-space-lg="30" data-space-md="20" data-space="15">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide wow fadeInLeft">
-                                <div class="collection-item hover-image">
-                                    <a href="#" class="img-style mb_24">
-                                        <img class="img-cover" width="460" height="608" loading="lazy" decoding="async"
-                                            src="images/collection/collection-item-1.jpg" alt="collection">
-                                    </a>
-                                    <div class="content ">
-                                        <a href="#" class="h4 link text-uppercase d-block mb_10">Modern
-                                            Living</a>
-                                        <a href="#"
-                                            class="text-body-default fw-5 hover-underline-link btn_link">Explore
-                                            the Collection</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide wow fadeInLeft">
-                                <div class="collection-item hover-image">
-                                    <a href="#" class="img-style mb_24">
-                                        <img class="img-cover" width="460" height="608" loading="lazy" decoding="async"
-                                            src="images/collection/collection-item-2.jpg" alt="collection">
-                                    </a>
-                                    <div class="content ">
-                                        <a href="#" class="h4 link text-uppercase d-block mb_10">Cozy
-                                            Corners</a>
-                                        <a href="#"
-                                            class="text-body-default fw-5 hover-underline-link btn_link">Explore
-                                            the Collection</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide wow fadeInLeft">
-                                <div class="collection-item hover-image">
-                                    <a href="#" class="img-style mb_24">
-                                        <img class="img-cover" width="460" height="608" loading="lazy" decoding="async"
-                                            src="images/collection/collection-item-3.jpg" alt="collection">
-                                    </a>
-                                    <div class="content ">
-                                        <a href="#"
-                                            class="h4 link text-uppercase d-block mb_10">Timeless Classics</a>
-                                        <a href="#"
-                                            class="text-body-default fw-5 hover-underline-link btn_link">Explore
-                                            the Collection</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sw-dots sw-pagination-layout  text-center mt_24 d-lg-none">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- /s-colection -->
-
-          
-
-
-            <!-- s-testimonials -->
-            <section class="s-testimonials tf-spacing-1 sw-layout">
-                <div class="tf-container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 col-md-6">
-                            <div class="content-inner">
-                                <div class="heading">
-                                    <div class="icon">
-                                        <i class="icon-quote"></i>
-                                    </div>
-                                    <h2 class="text-uppercase">testimonials</h2>
-                                </div>
-                                <div class="swiper" data-preview="1" data-tablet="1" data-mobile-sm="1" data-mobile="1"
-                                    data-space-lg="15" data-space-md="15" data-space="15">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="testimonial-item">
-                                                <div class="rating d-flex gap_5 ">
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                </div>
-                                                <p class="h5 fw-4 desc">"Excellent quality office furniture and professional service. The team helped us choose the perfect workstation setup for our office. Highly recommended!"
-                                                </p>
-                                                <div class="author">
-                                                    <span class="name mb_4 text-body-default fw-5">Rakesh </span>
-                                                    <p class="sub text-caption-1 d-flex align-items-center gap_6">
-                                                        Location:
-                                                        <a href="#"
-                                                            class="link text-body-default fw-5 text_secondary-color">Hyderabad
-                                                            Chair</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="testimonial-item">
-                                                <div class="rating d-flex gap_5 ">
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                </div>
-                                                <p class="h5 fw-4 desc">"Beautiful craftsmanship and fast delivery! The
-                                                    sofa
-                                                    looks
-                                                    even
-                                                    better in person — super comfortable and exactly what I was hoping
-                                                    for."
-                                                </p>
-                                                <div class="author">
-                                                    <span class="name mb_4 text-body-default fw-5">Emily R.</span>
-                                                    <p class="sub text-caption-1 d-flex align-items-center gap_6">
-                                                        Purchased
-                                                        item:
-                                                        <a href="#"
-                                                            class="link text-body-default fw-5 text_secondary-color">Altair
-                                                            Lounge
-                                                            Chair</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="testimonial-item">
-                                                <div class="rating d-flex gap_5 ">
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                    <i class="icon-star"></i>
-                                                </div>
-                                                <p class="h5 fw-4 desc">"Beautiful craftsmanship and fast delivery! The
-                                                    sofa
-                                                    looks
-                                                    even
-                                                    better in person — super comfortable and exactly what I was hoping
-                                                    for."
-                                                </p>
-                                                <div class="author">
-                                                    <span class="name mb_4 text-body-default fw-5">Emily R.</span>
-                                                    <p class="sub text-caption-1 d-flex align-items-center gap_6">
-                                                        Purchased
-                                                        item:
-                                                        <a href="#"
-                                                            class="link text-body-default fw-5 text_secondary-color">Altair
-                                                            Lounge
-                                                            Chair</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wrap-sw-button d-flex gap_15">
-                                        <div class="sw-button style-border nav-prev-layout">
-                                            <i class="icon-caret-left"></i>
-                                        </div>
-                                        <div class="sw-button style-border nav-next-layout">
-                                            <i class="icon-caret-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-6">
-                            <div class="wrap-gallery tf-grid-layout sm-col-2 ">
-                                <div class="infiniteslide" data-clone="2" data-style="up">
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-1.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-2.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-3.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-4.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-1.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-2.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-3.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-4.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-1.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-2.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-3.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-4.jpg" alt="testimonials">
-                                    </div>
-                                </div>
-                                <div class="infiniteslide" data-clone="2" data-style="down">
-
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-3.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-4.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-1.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-2.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-3.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-4.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-1.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-2.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-1.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-2.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-3.jpg" alt="testimonials">
-                                    </div>
-                                    <div class="gallery">
-                                        <img class="img-cover" width="284" height="425" loading="lazy" decoding="async"
-                                            src="images/sections/s-testimonials-4.jpg" alt="testimonials">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- /s-testimonials -->
-
-          
-
-         <!-- s-banner-lookbook -->
-            <section class="tf-spacing-3 s-banner-lookbook sw-layout ">
-                <div class=" tf-container position-relative">
-                    <div class="heading-seciton mb_57 text-center">
-                        <h2 class="title">Reach Us</h2>
-                    </div>
-                    <div class="swiper" data-preview="1" data-tablet="1" data-mobile-sm="1" data-mobile="1"
-                        data-space-lg="15" data-space-md="15" data-space="15">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="position-relative">
-                                    <img class="img-banner" src="images/sections/s-lookbook-1.jpg"
-                                        data-src="images/banner/furniture.jpg" alt="">
-                                    <div class="lookbook-item position1">
-                                        <div class="dropdown dropup-center dropdown-custom">
-                                            <div role="dialog" class="tf-pin-btn" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <span></span>
-                                            </div>
-                                            <div class="dropdown-menu">
-                                                <div class="loobook-product style-row">
-                                                    <div class="img-style">
-                                                        <img height="71" width="71"
-                                                            src="images/sections/lookbook-item-1.jpg" alt="img">
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="info">
-                                                            <a href="#"
-                                                                class="text-body-default link mb_3">Altair Lounge
-                                                                Chair</a>
-                                                            <p class="price-wrap text-md fw-medium">
-                                                                <span class="text-body-default">29.00</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="lookbook-item position2">
-                                        <div class="dropdown dropup-center dropdown-custom">
-                                            <div role="dialog" class="tf-pin-btn" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <span></span>
-                                            </div>
-                                            <div class="dropdown-menu">
-                                                <div class="loobook-product style-row">
-                                                    <div class="img-style">
-                                                        <img height="71" width="71"
-                                                            src="images/sections/lookbook-item-2.jpg" alt="img">
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="info">
-                                                            <a href="#"
-                                                                class="text-body-default link mb_3">Gachibowli <br>
-                                                                Hyderabad</a>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="position-relative">
-                                    <img class="img-banner" src="images/sections/s-lookbook-1.jpg"
-                                        data-src="images/banner/furniture.jpg" alt="">
-                                    <div class="lookbook-item position1">
-                                        <div class="dropdown dropup-center dropdown-custom">
-                                            <div role="dialog" class="tf-pin-btn" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <span></span>
-                                            </div>
-                                            <div class="dropdown-menu">
-                                                <div class="loobook-product style-row">
-                                                    <div class="img-style">
-                                                        <img height="71" width="71"
-                                                            src="images/sections/lookbook-item-1.jpg" alt="img">
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="info">
-                                                            <a href="#"
-                                                                class="text-body-default link mb_3">Mini
-                                                                Elixir Ultime <br>
-                                                                Hydrating Hair Oil</a>
-                                                            <p class="price-wrap text-md fw-medium">
-                                                                <span class="text-body-default">299.00</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="lookbook-item position2">
-                                        <div class="dropdown dropup-center dropdown-custom">
-                                            <div role="dialog" class="tf-pin-btn" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <span></span>
-                                            </div>
-                                            <div class="dropdown-menu">
-                                                <div class="loobook-product style-row">
-                                                    <div class="img-style">
-                                                        <img height="71" width="71"
-                                                            src="images/sections/lookbook-item-2.jpg" alt="img">
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="info">
-                                                            <a href="#"
-                                                                class="text-body-default link mb_3">Mini
-                                                                Elixir Ultime <br>
-                                                                Hydrating Hair Oil</a>
-                                                            <p class="price-wrap text-md fw-medium">
-                                                                <span class="text-body-default">299.00</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrap-sw-button d-flex gap_15">
-                        <div class="sw-button style-default nav-prev-layout">
-                            <i class="icon-caret-left"></i>
-                        </div>
-                        <div class="sw-button style-default nav-next-layout">
-                            <i class="icon-caret-right"></i>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-            <!-- /s-banner-lookbook -->
-
-            
-            <!-- s-instagram -->
-            <section class="flat-spacing pt-0 pb-xl-0 sw-layout tf-spacing-3">
-                <div class="container">
-                    <div class="sect-title text-center wow fadeInUp mb_48">
-                        <h2 class="text-uppercase">follow our Instagram</h2>
-                    </div>
-                </div>
-                <div dir="ltr" class="swiper tf-swiper wow fadeInUp" data-screen-xl="6" data-preview="5" data-tablet="4"
-                    data-mobile-sm="3" data-mobile="2" data-space-lg="0" data-space-md="0" data-space="0"
-                    data-pagination="2">
-                    <div class="swiper-wrapper">
-                        <!-- item 1 -->
-                        <div class="swiper-slide">
-                            <div class="gallery-item hover-img hover-overlay">
-                                <div class="image img-style">
-                                    <img loading="lazy" decoding="async" width="320" height="320"
-                                        src="images/sections/ins-1.jpg" alt="Image">
-                                </div>
-                                <a href="#" class="box-icon hover-tooltip">
-                                    <span class="icon icon-instagram"></span>
-                                    <span class="tooltip">View product</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- item 2 -->
-                        <div class="swiper-slide">
-                            <div class="gallery-item hover-img hover-overlay">
-                                <div class="image img-style">
-                                    <img loading="lazy" decoding="async" width="320" height="320"
-                                        src="images/sections/ins-2.jpg" alt="Image">
-                                </div>
-                                <a href="#" class="box-icon hover-tooltip">
-                                    <span class="icon icon-instagram"></span>
-                                    <span class="tooltip">View product</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- item 3 -->
-                        <div class="swiper-slide">
-                            <div class="gallery-item hover-img hover-overlay">
-                                <div class="image img-style">
-                                    <img loading="lazy" decoding="async" width="320" height="320"
-                                        src="images/sections/ins-3.jpg" alt="Image">
-                                </div>
-                                <a href="#" class="box-icon hover-tooltip">
-                                    <span class="icon icon-instagram"></span>
-                                    <span class="tooltip">View product</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- item 4 -->
-                        <div class="swiper-slide">
-                            <div class="gallery-item hover-img hover-overlay">
-                                <div class="image img-style">
-                                    <img loading="lazy" decoding="async" width="320" height="320"
-                                        src="images/sections/ins-4.jpg" alt="Image">
-                                </div>
-                                <a href="#" class="box-icon hover-tooltip">
-                                    <span class="icon icon-instagram"></span>
-                                    <span class="tooltip">View product</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- item 5 -->
-                        <div class="swiper-slide">
-                            <div class="gallery-item hover-img hover-overlay">
-                                <div class="image img-style">
-                                    <img loading="lazy" decoding="async" width="320" height="320"
-                                        src="images/sections/ins-5.jpg" alt="Image">
-                                </div>
-                                <a href="#" class="box-icon hover-tooltip">
-                                    <span class="icon icon-instagram"></span>
-                                    <span class="tooltip">View product</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- item 6 -->
-                        <div class="swiper-slide">
-                            <div class="gallery-item hover-img hover-overlay">
-                                <div class="image img-style">
-                                    <img loading="lazy" decoding="async" width="320" height="320"
-                                        src="images/sections/ins-6.jpg" alt="Image">
-                                </div>
-                                <a href="#" class="box-icon hover-tooltip">
-                                    <span class="icon icon-instagram"></span>
-                                    <span class="tooltip">View product</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sw-dots sw-pagination-layout text-center mt_24">
-                    </div>
-                </div>
-            </section>
-            <!-- /s-instagram -->
-
+<!-- Why Choose Us Section -->
+<section class="py-5 bg-light">
+    <div class="tf-container py-4">
+        <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+            <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Our Excellence</span>
+            <h2 class="display-6 fw-bold text-dark mt-2 mb-3">Why Choose Vishista Office Solutions</h2>
+            <p class="text-secondary">We combine deep domain experience with premium product lines to deliver world-class turnkey workspace environments.</p>
         </div>
-        <!-- /main-content -->
-        
-        
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">01</span>
+                    <h5 class="fw-bold text-dark mb-2">20+ Years of Industry Expertise</h5>
+                    <p class="text-secondary fs-7 mb-0">Decades of leadership delivering complex, large-scale MNC and enterprise workspace projects across South India.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">02</span>
+                    <h5 class="fw-bold text-dark mb-2">End-to-End Workspace Solutions</h5>
+                    <p class="text-secondary fs-7 mb-0">Complete single-window support from initial space planning and product selection to installation and after-sales care.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">03</span>
+                    <h5 class="fw-bold text-dark mb-2">Trusted by Large MNCs</h5>
+                    <p class="text-secondary fs-7 mb-0">Proven track record of fulfilling strict architectural standards and multi-vendor requirements for global corporations.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">04</span>
+                    <h5 class="fw-bold text-dark mb-2">Premium OEM Partnerships</h5>
+                    <p class="text-secondary fs-7 mb-0">Direct access to industry-leading manufacturers including VIAK, ESS, DURIAN, Interface, and Loom Crafts.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">05</span>
+                    <h5 class="fw-bold text-dark mb-2">Customer-Centric Approach</h5>
+                    <p class="text-secondary fs-7 mb-0">Customized layout proposals tailored specifically to your floor plan, corporate identity, and budget targets.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">06</span>
+                    <h5 class="fw-bold text-dark mb-2">Strong Leadership Execution</h5>
+                    <p class="text-secondary fs-7 mb-0">Guided by seasoned executives with extensive background in Godrej Interio, HNI India, BP Ergo, and Gyproc.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">07</span>
+                    <h5 class="fw-bold text-dark mb-2">Timely Delivery, Every Time</h5>
+                    <p class="text-secondary fs-7 mb-0">Rigorous project tracking ensures your workspace is fully operational on time without project delays.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">08</span>
+                    <h5 class="fw-bold text-dark mb-2">Commitment to Quality</h5>
+                    <p class="text-secondary fs-7 mb-0">Uncompromising material standards, ergonomic certifications, and dedicated ongoing maintenance support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-5 text-white" style="background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);">
+    <div class="tf-container text-center py-4">
+        <h2 class="display-6 fw-bold text-white mb-3">Ready to Elevate Your Workspace?</h2>
+        <p class="fs-5 text-white-50 mb-4" style="max-width: 650px; margin: 0 auto;">
+            Connect with our workspace design specialists today to schedule a consultation or receive a detailed corporate proposal.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+            <button type="button" class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase" style="border-radius: 4px; background-color: #d32f2f; border: none; font-size: 15px;" data-bs-toggle="modal" data-bs-target="#enquireModal">
+                Enquire About Workspaces &rarr;
+            </button>
+            <a href="https://wa.me/919849058444" target="_blank" class="btn btn-success btn-lg px-4 py-3 fw-bold text-uppercase d-inline-flex align-items-center gap-2" style="border-radius: 4px; font-size: 15px;">
+                Chat on WhatsApp (+91 9849058444)
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .product-cat-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
+    }
+    .product-cat-card:hover img {
+        transform: scale(1.05);
+    }
+</style>
+
          <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer bg-dark text-white pt-5 pb-3">
             <div class="footer-body">
                 <div class="tf-container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
+                    <div class="row g-4">
+                        
+                        <!-- Company Overview -->
+                        <div class="col-lg-4 col-md-6">
                             <div class="footer-about">
-                                <div class="h5 text-uppercase mb_24 footer-title text_white">about</div>
-                                <p class="text-body-default text_white mb_24">At Vishista Office Solutions, we don’t just sell furniture — we create efficient workspaces that inspire growth, collaboration, and success.</p>
-                                <a href="#"
-                                    class="hover-underline-link text_white text-body-default text-uppercase">learn
-                                    more</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-6">
-                            <div class="wrap-footer-col-block">
-                                <div class="footer-col-block">
-                                    <div class="h5 footer-heading footer-heading-mobile footer-title text_white mb_24">
-                                        Quick
-                                        Link</div>
-                                    <div class="tf-collapse-content">
-                                        <ul class="footer-menu-list d-grid gap_12">
-                                            <li>
-                                                <a href="#" class="link-2 text-body-default text_white">Our
-                                                    Story</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                    class="link-2 text-body-default text_white">Visit Our
-                                                    Store</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                    class="link-2 text-body-default text_white">Contact
-                                                    Us</a>
-                                            </li>
-                                           
-                                        </ul>
+                                <div class="site-brand-logo mb-3">
+                                    <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 44px;">
+                                    <div class="brand-text-wrapper">
+                                        <span class="brand-main-title text-white">VISHISTA</span>
+                                        <span class="brand-sub-title text-white-50">OFFICE SOLUTIONS</span>
                                     </div>
                                 </div>
-                                <div class="footer-col-block">
-                                    <div class="h5 footer-heading footer-heading-mobile footer-title text_white mb_24">
-                                        Connect Us</div>
-                                    <div class="tf-collapse-content">
-                                        <ul class="footer-menu-list d-grid gap_12">
-                                            
-                                            <li>
-                                                <a href="https://www.instagram.com/" target="_blank"
-                                                    class="link-2 text-body-default text_white">Instagram</a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.tiktok.com/" target="_blank"
-                                                    class="link-2 text-body-default text_white">Youtube</a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.pinterest.com/" target="_blank"
-                                                    class="link-2 text-body-default text_white">Facebook</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <p class="text-white-50 fs-7 mb-3" style="line-height: 1.6;">
+                                    Vishista Office Solutions Pvt Ltd is a premier provider of high-end office furniture, modular workstation systems, executive seating, and turnkey corporate interior solutions across Telangana and Andhra Pradesh.
+                                </p>
+                                <a href="about.html" class="btn btn-outline-light btn-sm text-uppercase fw-semibold px-3 py-2" style="border-radius: 4px; font-size: 12px;">
+                                    Discover Our Story &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Quick Links</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-2 mb-0 fs-7">
+                                <li><a href="index.html" class="text-white-50 text-decoration-none hover-white">&bull; Home</a></li>
+                                <li><a href="about.html" class="text-white-50 text-decoration-none hover-white">&bull; About Us</a></li>
+                                <li><a href="product-categories.html" class="text-white-50 text-decoration-none hover-white">&bull; Products Catalogue</a></li>
+                                <li><a href="contact.html" class="text-white-50 text-decoration-none hover-white">&bull; Contact Us</a></li>
+                                <li><a href="contact.html#directions" class="text-white-50 text-decoration-none hover-white">&bull; Get Directions</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Workspace Solutions -->
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Solutions</h5>
+                            <div class="row g-2 fs-7">
+                                <div class="col-6">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        <li><a href="product-categories.html#workstations" class="text-white-50 text-decoration-none">&bull; Workstations</a></li>
+                                        <li><a href="product-categories.html#tables" class="text-white-50 text-decoration-none">&bull; Tables</a></li>
+                                        <li><a href="product-categories.html#storage" class="text-white-50 text-decoration-none">&bull; Storage</a></li>
+                                        <li><a href="product-categories.html#seating" class="text-white-50 text-decoration-none">&bull; Seating</a></li>
+                                        <li><a href="product-categories.html#soft-seating" class="text-white-50 text-decoration-none">&bull; Soft Seating</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        <li><a href="product-categories.html#pods" class="text-white-50 text-decoration-none">&bull; Pods</a></li>
+                                        <li><a href="product-categories.html#carpets" class="text-white-50 text-decoration-none">&bull; Carpets</a></li>
+                                        <li><a href="product-categories.html#outdoor" class="text-white-50 text-decoration-none">&bull; Outdoor</a></li>
+                                        <li><a href="product-categories.html#educational" class="text-white-50 text-decoration-none">&bull; Educational</a></li>
+                                        <li><a href="product-categories.html#accessories" class="text-white-50 text-decoration-none">&bull; Accessories</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="footer-newsletter">
-                                <div class="footer-title text_white mb_28">
-                                    <div class="h5 text-uppercase mb_10 text_white">subscribe to get 15% off</div>
-                                    <p class="text-body-default text_white">Subscribe for store updates and discounts.
-                                    </p>
+
+                        <!-- Contact Details -->
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Contact Us</h5>
+                            <div class="d-flex flex-column gap-2 fs-7 text-white-50">
+                                <div>
+                                    <strong class="text-white">Head Office:</strong><br>
+                                    Saishruthi Nilyam, Street No. 4,<br>
+                                    Sri Sathya Sai Enclave, Plot No. 109,<br>
+                                    Old Bowenpally, Secunderabad, Telangana 500009
                                 </div>
-                                <form method="post" class="form-newsletter mb_20" action="#" accept-charset="utf-8">
-                                    <div class="wrap">
-                                        <fieldset class=" position-relative">
-                                            <input type="email" class="tb-my-input style-border" name="email"
-                                                placeholder="Enter Your Email" required="">
-                                        </fieldset>
-                                        <button name="submit" type="submit" class="btn-submit animate-btn">
-                                            <span class="text-body-default fw-5">Submit</span><i
-                                                class="icon-arrow-right-up2"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                             <!--   <p class="text-caption-1 text_white">By subscribing you agree to the <a
-                                        href="terms-conditions.html" class="hover-underline-link">Terms of Use</a> & <a
-                                        href="privacy-policy.html" class="hover-underline-link">Privacy Policy</a>.</p>-->
+                                <div class="mt-1">
+                                    <strong class="text-white">Emails:</strong><br>
+                                    <a href="mailto:info@vishistaofficesolutions.com" class="text-white-50 text-decoration-none">info@vishistaofficesolutions.com</a><br>
+                                    <a href="mailto:sales@vishistaofficesolutions.com" class="text-white-50 text-decoration-none">sales@vishistaofficesolutions.com</a><br>
+                                    <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white-50 text-decoration-none">kvramana.reddy@vishistaofficesolutions.com</a>
+                                </div>
+                                <div class="mt-1">
+                                    <strong class="text-white">WhatsApp & Sales:</strong><br>
+                                    <a href="https://wa.me/919849058444" target="_blank" class="text-danger fw-bold text-decoration-none">+91 9849058444</a>
+                                </div>
+                                <div class="mt-2">
+                                    <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-semibold px-3" style="border-radius: 4px; font-size: 11px;">
+                                        Get Directions &rarr;
+                                    </a>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom mt-5 pt-3 border-top border-secondary">
                 <div class="tf-container">
-                    <div class="wrap-footer-bottom">
-                        <p class="text_white">All Rights Reserved 2026 vishista Office Solutions.</p>
-                       
-                        <div class="right d-flex ">
-                          <!--  <a href="terms-conditions.html" class="text-body-default link-2 text_white ">Terms</a>
-                            <a href="privacy-policy.html" class="text-body-default link-2 text_white">Privacy</a>-->
-                        </div>
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-2">
+                        <p class="mb-0">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
+                        <p class="mb-0">Designed for Corporate & Institutional Workspaces.</p>
                     </div>
                 </div>
             </div>
@@ -2444,283 +755,159 @@ At Vishista Office Solutions, we understand that every workspace is unique. Whet
     </div>
     <!-- /wrapper -->
 
-    <!-- Toolbar -->
-    <div class="tf-toolbar-bottom">
-        <div class="toolbar-item">
-            <a href="#">
-                <span class="toolbar-icon">
-                    <i class="icon icon-storefront"></i>
-                </span>
-                <span class="toolbar-label">Shop</span>
-            </a>
-        </div>
-        <div class="toolbar-item">
-            <a href="#search" data-bs-toggle="modal">
-                <span class="toolbar-icon">
-                    <i class="icon icon-magnifying-glass"></i>
-                </span>
-                <span class="toolbar-label">Search</span>
-            </a>
-        </div>
-        <div class="toolbar-item">
-            <a href="#">
-                <span class="toolbar-icon">
-                    <i class="icon icon-user"></i>
-                </span>
-                <span class="toolbar-label">Account</span>
-            </a>
-        </div>
-        <div class="toolbar-item">
-            <a href="#">
-                <span class="toolbar-icon">
-                    <i class="icon icon-heart"></i>
-                    <span class="toolbar-count">7</span>
-                </span>
-                <span class="toolbar-label">Wishlist</span>
-            </a>
-        </div>
-        <div class="toolbar-item">
-            <a href="#">
-                <span class="toolbar-icon">
-                    <i class="icon icon-bag"></i>
-                    <span class="toolbar-count">4</span>
-                </span>
-                <span class="toolbar-label">Cart</span>
-            </a>
-        </div>
-    </div>
-    <!-- /Toolbar -->
-
-    <!-- Mobile Menu -->
+    <!-- Mobile Menu Offcanvas -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
-        <span class="icon-close-popup" data-bs-dismiss="offcanvas">
-            <i class="icon-close"></i>
-        </span>
-        <div class="canvas-header">
-            <a href="#" class="site-logo">
-                <img class="logo_header" alt="logo" width="165" height="32" src="images/logo/logo.svg">
-            </a>
-            <a href="#login" data-bs-toggle="offcanvas" class="tf-btn btn-bg-secondary">
-                Login
-                <i class="icon icon-user"></i>
-            </a>
-            <span class="br-line"></span>
-        </div>
-        <div class="canvas-body">
-            <div class="mb-content-top">
-                <ul class="nav-ul-mb" id="wrapper-menu-navigation"></ul>
-            </div>
-            <div class="group-btn">
-                <a href="#" class="tf-btn btn-bg-primary style-2">
-                    Wishlist
-                    <i class="icon icon-heart"></i>
-                </a>
-                <div data-bs-dismiss="offcanvas">
-                    <a href="#search" data-bs-toggle="modal" class="tf-btn btn-bg-primary style-2">
-                        Search
-                        <i class="icon icon-magnifying-glass"></i>
-                    </a>
+        <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
+            <a href="index.html" class="site-brand-logo">
+                <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 38px;">
+                <div class="brand-text-wrapper">
+                    <span class="brand-main-title" style="font-size: 16px;">VISHISTA</span>
+                    <span class="brand-sub-title" style="font-size: 8px;">OFFICE SOLUTIONS</span>
                 </div>
-            </div>
-            <div class="flow-us-wrap">
-                <div class="h5 title">Follow us on</div>
-                <ul class="tf-social-icon d-flex gap_8">
-                    <li><a href="https://www.facebook.com/" target="_blank" class="social-facebook">
-                            <span class="icon-facebook"></span>
-                        </a></li>
-                    <li><a href="https://www.pinterest.com/" target="_blank" class="social-pinterest">
-                            <span class="icon-pinterest"></span>
-                        </a></li>
-                    <li><a href="https://x.com/" target="_blank" class=" social-x">
-                            <span class="icon-xlogo"></span>
-                        </a></li>
-                    <li><a href="https://www.tiktok.com/" target="_blank" class="social-linkin ">
-                            <span class="icon-tiktok"></span>
-                        </a></li>
-                </ul>
-            </div>
-            <div class="payment-wrap">
-                <div class="title">Payment:</div>
-                <ul class="payment-method-list d-flex gap_8">
-                    <li>
-                        <a href="#"><img width="40" height="25" src="images/payment/amex.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img width="40" height="25" src="images/payment/payment-1.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img width="40" height="25" src="images/payment/payment-2.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img width="40" height="25" src="images/payment/payment-3.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img width="40" height="25" src="images/payment/payment-4.png" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img width="40" height="25" src="images/payment/payment-5.png" alt=""></a>
-                    </li>
-
-                </ul>
-            </div>
+            </a>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="canvas-footer">
-            <div class="tf-currencies">
-                <select class="tf-dropdown-select style-default type-currencies">
-                    <option selected data-thumbnail="images/country/us.png">USD</option>
-                    <option data-thumbnail="images/country/vie.png">VND</option>
-                </select>
-            </div>
-            <span class="br-line"></span>
-            <div class="tf-languages">
-                <select class="tf-dropdown-select style-default type-languages">
-                    <option>English</option>
-                    <option>العربية</option>
-                    <option>简体中文</option>
-                    <option>اردو</option>
-                </select>
+        <div class="offcanvas-body p-4">
+            <ul class="nav flex-column gap-3 mb-4">
+                <li class="nav-item">
+                    <a class="nav-link fs-6 fw-bold text-dark p-0" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-6 fw-bold text-dark p-0" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-6 fw-bold text-dark p-0 d-flex align-items-center justify-content-between" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="false">
+                        Products <i class="icon-caret-down fs-7"></i>
+                    </a>
+                    <div class="collapse mt-2 ps-3" id="mobileProductsCollapse">
+                        <ul class="nav flex-column gap-2 border-start ps-3 fs-7">
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#workstations">Workstations</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#tables">Tables</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#storage">Storage</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#seating">Seating</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#soft-seating">Soft Seating</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#pods">Pods</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#carpets">Carpets</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#outdoor">Outdoor</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#educational">Educational</a></li>
+                            <li><a class="text-secondary text-decoration-none fw-semibold" href="product-categories.html#accessories">Accessories</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-6 fw-bold text-dark p-0" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+            <div class="d-grid gap-2 pt-3 border-top">
+                <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
+                    Enquire Now
+                </button>
+                <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold py-2 d-flex align-items-center justify-content-center gap-2">
+                    Chat on WhatsApp
+                </a>
             </div>
         </div>
     </div>
-    <!-- /Mobile Menu -->
+    <!-- /Mobile Menu Offcanvas -->
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919849058444?text=Hi%20Vishista%20Office%20Solutions,%20I%20am%20interested%20in%20your%20workspace%20furniture%20and%20turnkey%20solutions." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" title="Chat on WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382C17.015 14.155 14.764 13.045 14.341 12.891C13.918 12.737 13.612 12.66 13.306 13.118C13 13.576 12.115 14.614 11.848 14.92C11.58 15.226 11.312 15.265 10.855 15.038C10.398 14.811 8.928 14.33 7.18 12.772C5.811 11.554 4.887 10.05 4.619 9.593C4.351 9.135 4.59 8.887 4.819 8.659C5.025 8.454 5.277 8.125 5.506 7.857C5.735 7.589 5.812 7.398 5.965 7.092C6.118 6.786 6.041 6.518 5.926 6.289C5.812 6.06 4.895 3.805 4.512 2.889C4.14 1.998 3.762 2.118 3.486 2.104C3.226 2.091 2.92 2.091 2.614 2.091C2.308 2.091 1.811 2.206 1.391 2.664C0.971 3.122 0 4.032 0 5.867C0 7.702 1.336 9.475 1.527 9.735C1.718 9.995 4.155 13.748 7.876 15.356C8.761 15.738 9.452 15.967 9.993 16.139C10.88 16.421 11.688 16.381 12.33 16.285C13.046 16.178 14.536 15.383 14.842 14.524C15.148 13.665 15.148 12.939 15.056 12.786C14.964 12.633 14.658 12.556 14.201 12.329H17.472Z" fill="white" transform="translate(3, 3)"/>
+        </svg>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+    </a>
 
-    <!-- Auto Newsletter -->
-    <div class="modal modalCentered fade auto-popup modal-auto-newletter" id="autoNewletter">
+    <!-- Corporate Enquiry Modal -->
+    <div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <span class="icon-close-popup" data-bs-dismiss="modal">
-                    <i class="icon-close"></i>
-                </span>
-                <div class="modal-body">
-                    <div class="image">
-                        <img src="images/sections/banner-newletter.jpg" alt="">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 12px; overflow: hidden;">
+                <div class="modal-header bg-dark text-white border-0 px-4 py-3" style="background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);">
+                    <div>
+                        <h5 class="modal-title fw-bold text-white mb-0" id="enquireModalLabel">Workspace Solution Enquiry</h5>
+                        <small class="text-white-50">Vishista Office Solutions Pvt Ltd</small>
                     </div>
-                    <div class="content text-center">
-                        <div class="heading">
-                            <h3 class="title text-uppercase">Get 15% OFF</h3>
-                            <p class="sub-title">Subcribe to our newsletter & receive a coupon</p>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 bg-white">
+                    <form id="modalEnquiryForm" onsubmit="event.preventDefault(); alert('Thank you for your enquiry! Our workspace team will contact you shortly.'); bootstrap.Modal.getInstance(document.getElementById('enquireModal')).hide();">
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium fs-7 mb-1">Product / Service of Interest</label>
+                            <input type="text" id="modalProductInput" class="form-control" placeholder="Office Workstations, Executive Seating, Turnkey Interiors, etc." style="border-radius: 6px; padding: 10px 14px;">
                         </div>
-                        <div class="sib-form">
-                            <div id="sib-form-container" class="sib-form-container">
-                                <div id="error-message" class="sib-form-message-panel">
-                                    <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                                        <span class="sib-form-message-panel__inner-text">Your subscription could not be
-                                            saved. Please try again.
-                                        </span>
-                                    </div>
-                                </div>
-                                <div id="success-message" class="sib-form-message-panel">
-                                    <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                                        <span class="sib-form-message-panel__inner-text">Your subscription has been
-                                            successful.
-                                        </span>
-                                    </div>
-                                </div>
-                                <div id="sib-container" class="sib-container--large sib-container--vertical">
-                                    <form id="sib-form" method="POST" class="form-newsletter"
-                                        action="https://3c02c1a1.sibforms.com/serve/MUIFAOAhSCDRnPhdPWLTpLBkaFR0CvSbJ_okYrjCbXQRLkZZU67Hn2jdn18hTWJuGupI4VUfB4deuJIyP5yRoHWVb9pIrENAMcal9Jtz8q_qN4dpHNMIG454DwSVNVmnLXuePoOCvDqN_Vvs0ga_kzg7ouD63HjCaukRz3LGCQsfnQJBN4-KS2D3DVitqvFsDHSqevjjqLk2xFO4"
-                                        data-type="subscription">
-                                        <div>
-                                            <div class="sib-form-block">
-                                                <p></p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="sib-form-block">
-                                                <div class="sib-text-form-block">
-                                                    <p></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="sib-input sib-form-block">
-                                                <div class="form__entry entry_block">
-                                                    <div class="form__label-row ">
-                                                        <label class="entry__label" for="EMAIL"></label>
-                                                        <div class="entry__field">
-                                                            <input class="input" type="text" id="EMAIL" name="EMAIL"
-                                                                autocomplete="off"
-                                                                placeholder="Enter your email where we send you 15% off"
-                                                                data-required="true" required>
-                                                        </div>
-                                                    </div>
-                                                    <label
-                                                        class="entry__error entry__error--primary text-center"></label>
-                                                    <label class="entry__specification"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="sib-optin sib-form-block">
-                                                <div class="form__entry entry_mcq">
-                                                    <div class="form__label-row mb-0">
-                                                        <div class="entry__choice">
-                                                            <label>
-                                                                <input type="checkbox" class="input_replaced" value="1"
-                                                                    id="OPT_IN" name="OPT_IN">
-                                                                <span class="checkbox checkbox_tick_positive"></span>
-                                                                <span></span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <label class="entry__error entry__error--primary"></label>
-                                                    <label class="entry__specification"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="btn-group">
-                                            <div class="sib-form-block">
-                                                <button
-                                                    class="sib-form-block__button sib-form-block__button-with-loader subscribe-button tf-btn btn-bg-secondary animate-btn btn-h-52 w-full font-main"
-                                                    form="sib-form" type="submit">
-                                                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z">
-                                                        </path>
-                                                    </svg>
-                                                    <span class="fw-medium">GET IT NOW!</span>
-                                                </button>
-                                                <!-- <button
-                                                    class="sib-form-block__button sib-form-block__button-with-loader btn-style-2 radius-12 w-100 justify-content-center"
-                                                    form="sib-form" type="submit">
-                                                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z">
-                                                        </path>
-                                                    </svg>
-                                                    <span class="text text-btn-uppercase">SUBSCRIBE</span>
-                                                </button> -->
-                                            </div>
-                                            <a href="#" data-bs-dismiss="modal"
-                                                class="tf-btn btn-border-secondary animate-fill btn-h-52 w-full close-modal">
-                                                <span class="fw-medium">NO THANKS!</span>
-                                            </a>
-                                        </div>
-                                        <input type="text" name="email_address_check" value="" class="input--hidden">
-                                        <input type="hidden" name="locale" value="en">
-                                    </form>
-                                </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Your Name *</label>
+                                <input type="text" class="form-control" required placeholder="Full Name" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Company Name</label>
+                                <input type="text" class="form-control" placeholder="Organization" style="border-radius: 6px; padding: 10px 14px;">
                             </div>
                         </div>
-                        <!--<p class="privacy text-main-6">
-                            Will be used in accordance with our
-                            <a href="privacy-policy.html" class="hover-underline-link text-main link">
-                                <span class="text-body">Privacy Policy</span>
-                            </a>.-->
-                        </p>
-                    </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Phone Number *</label>
+                                <input type="tel" class="form-control" required placeholder="Mobile Number" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Email Address *</label>
+                                <input type="email" class="form-control" required placeholder="name@company.com" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium fs-7 mb-1">Message / Project Requirements</label>
+                            <textarea class="form-control" rows="3" placeholder="Specify floor size, seating capacity, timeline, or location..." style="border-radius: 6px; padding: 10px 14px;"></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger w-100 justify-content-center text-uppercase fw-bold" style="padding: 12px; border-radius: 6px; background-color: #d32f2f; border: none;">Submit Enquiry</button>
+                            <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold d-flex align-items-center justify-content-center gap-2" style="padding: 10px; border-radius: 6px;">
+                                Chat Directly on WhatsApp (+91 9849058444)
+                            </a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- /Auto Newsletter -->
 
-  
-
-   
+    <style>
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #25d366;
+            color: #ffffff !important;
+            border-radius: 50px;
+            padding: 10px 18px 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .whatsapp-float-btn:hover {
+            background-color: #128c7e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+        }
+        @media (max-width: 576px) {
+            .whatsapp-float-btn .whatsapp-text {
+                display: none;
+            }
+            .whatsapp-float-btn {
+                padding: 12px;
+                border-radius: 50%;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
 
     <!-- Javascript -->
     <script src="js/bootstrap.min.js"></script>
@@ -2729,15 +916,18 @@ At Vishista Office Solutions, we understand that every workspace is unique. Whet
     <script src="js/wow.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/carousel.js"></script>
-    <script src="js/count-down.js"></script>
-    <script src="js/infinityslide.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/sibforms.js" defer></script>
 
-    <!-- /Javascript -->
+    <script>
+        function openEnquiryModal(productName) {
+            if (productName) {
+                document.getElementById('modalProductInput').value = productName;
+            }
+            var modal = new bootstrap.Modal(document.getElementById('enquireModal'));
+            modal.show();
+        }
+    </script>
 
 </body>
-
-
 
 </html>

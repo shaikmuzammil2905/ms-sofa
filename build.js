@@ -43,16 +43,20 @@ function compileFullHtml(pageFileName) {
 
     // Standardize page links
     pageContent = pageContent.replace(/href="index\.php"/g, 'href="index.html"');
+    pageContent = pageContent.replace(/href="about\.php"/g, 'href="about.html"');
     pageContent = pageContent.replace(/href="product-categories\.php"/g, 'href="product-categories.html"');
     pageContent = pageContent.replace(/href="product-sofas\.php"/g, 'href="product-sofas.html"');
+    pageContent = pageContent.replace(/href="contact\.php"/g, 'href="contact.html"');
 
     return pageContent;
 }
 
 const pages = [
     { src: 'index.php', distHtml: 'index.html' },
+    { src: 'about.php', distHtml: 'about.html' },
     { src: 'product-categories.php', distHtml: 'product-categories.html' },
-    { src: 'product-sofas.php', distHtml: 'product-sofas.html' }
+    { src: 'product-sofas.php', distHtml: 'product-sofas.html' },
+    { src: 'contact.php', distHtml: 'contact.html' }
 ];
 
 pages.forEach(page => {
