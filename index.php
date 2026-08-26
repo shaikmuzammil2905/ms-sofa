@@ -94,7 +94,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.78) 55%, rgba(15,15,15,0.45) 100%);
+        background: linear-gradient(90deg, rgba(15,15,15,0.55) 0%, rgba(15,15,15,0.35) 55%, rgba(0,0,0,0.2) 100%);
     }
 
     @keyframes heroKenBurns {
