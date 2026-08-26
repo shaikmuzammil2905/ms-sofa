@@ -21,7 +21,7 @@
             <!-- Lounge Chair -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/sections/s-lookbook-1.jpg" alt="Executive Lounge Chair" class="card-img-top" style="height: 240px; object-fit: cover;">
+                    <img src="images/sections/s-lookbook-1.jpg" alt="Executive Lounge Chair" class="card-img-top" style="background: #ffffff;">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
                         <h4 class="fw-bold text-dark mb-2">Executive Lounge Armchairs</h4>
@@ -34,7 +34,7 @@
             <!-- Executive Sofas -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/collection/collection-1.jpg" alt="Executive Sofas" class="card-img-top" style="height: 240px; object-fit: cover;">
+                    <img src="images/collection/collection-1.jpg" alt="Executive Sofas" class="card-img-top" style="background: #ffffff;">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
                         <h4 class="fw-bold text-dark mb-2">2 & 3-Seater Executive Sofas</h4>
@@ -47,7 +47,7 @@
             <!-- Collaborative Booths -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/header/prd-nav-1.jpg" alt="Collaborative Seating" class="card-img-top" style="height: 240px; object-fit: cover;">
+                    <img src="images/header/prd-nav-1.jpg" alt="Collaborative Seating" class="card-img-top" style="background: #ffffff;">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
                         <h4 class="fw-bold text-dark mb-2">Collaborative Booth Seating</h4>
@@ -60,7 +60,7 @@
             <!-- Pouffes -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/header/prd-nav-2.jpg" alt="Modular Pouffes" class="card-img-top" style="height: 240px; object-fit: cover;">
+                    <img src="images/header/prd-nav-2.jpg" alt="Modular Pouffes" class="card-img-top" style="background: #ffffff;">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
                         <h4 class="fw-bold text-dark mb-2">Geometrical Pouffes & Ottomans</h4>
@@ -73,7 +73,7 @@
             <!-- Occasional Tables -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/sections/lookbook-item-1.jpg" alt="Occasional Tables" class="card-img-top" style="height: 240px; object-fit: cover;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
+                    <img src="images/sections/lookbook-item-1.jpg" alt="Occasional Tables" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
                         <h4 class="fw-bold text-dark mb-2">Occasional Center Tables</h4>

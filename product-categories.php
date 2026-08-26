@@ -65,7 +65,7 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/s-lookbook-1.jpg" alt="Height Adjustable Series" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <img src="images/sections/s-lookbook-1.jpg" alt="Height Adjustable Series" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">VIAK Catalogue</span>
                             <h4 class="fw-bold text-dark mb-2">Height Adjustable Series</h4>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/collection/collection-1.jpg" alt="Desking Series" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <img src="images/collection/collection-1.jpg" alt="Desking Series" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">VIAK Catalogue</span>
                             <h4 class="fw-bold text-dark mb-2">Desking Series</h4>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-1.jpg" alt="Panel Series" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Panel Series" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">VIAK Catalogue</span>
                             <h4 class="fw-bold text-dark mb-2">Panel Series</h4>
@@ -117,7 +117,7 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-1.jpg" alt="Cabin Tables" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Cabin Tables" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Cabin Tables</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Executive director and managerial desk setups with attached side return credenzas.</p>
@@ -127,7 +127,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-2.jpg" alt="Meeting Tables" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <img src="images/header/prd-nav-2.jpg" alt="Meeting Tables" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Meeting Tables</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Large boardroom conference tables equipped with pop-up connectivity boxes and cable trays.</p>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/lookbook-item-1.jpg" alt="Cafe Tables" class="card-img-top" style="height: 200px; object-fit: cover;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
+                        <img src="images/sections/lookbook-item-1.jpg" alt="Cafe Tables" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Cafe Tables</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Stylish cafeteria and pantry dining tables available in round, square, and high-counter designs.</p>
@@ -147,7 +147,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/collection/collection-1.jpg" alt="Training Tables" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <img src="images/collection/collection-1.jpg" alt="Training Tables" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Training Tables</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Foldable tilt-top training desks on lockable castors for reconfigurable seminar halls.</p>
@@ -170,7 +170,7 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/s-lookbook-2.jpg" alt="Prelam Storage" class="card-img-top" style="height: 200px; object-fit: cover;" onerror="this.src='images/collection/collection-1.jpg'">
+                        <img src="images/sections/s-lookbook-2.jpg" alt="Prelam Storage" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/collection/collection-1.jpg'">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Prelam Storage</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Laminate wood credenzas, pedestals, and tall storage units matching workstation finishes.</p>
@@ -180,7 +180,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/s-lookbook-1.jpg" alt="Metal Storage" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <img src="images/sections/s-lookbook-1.jpg" alt="Metal Storage" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Metal Storage</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Powder-coated steel filing cabinets, lateral drawers, and central archive units.</p>
@@ -190,7 +190,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-1.jpg" alt="Compactor Storage" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Compactor Storage" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Compactor Storage</h5>
                             <p class="text-secondary fs-7 flex-grow-1">High-density mobile rail compactor storage systems maximizing floor space utilization.</p>
@@ -200,7 +200,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-2.jpg" alt="Lockers" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <img src="images/header/prd-nav-2.jpg" alt="Lockers" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Locker Systems</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Personal employee lockers with mechanical keypads, RFID locks, and ventilation slots.</p>
@@ -223,7 +223,7 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/archlabs/pages/page_4.png" alt="Mesh Chair" class="card-img-top" style="height: 200px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_4.png" alt="Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Mesh Chairs (30 Models)</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Breathable lumbar-support task chairs with synchro-tilt mechanism and adjustable 3D armrests.</p>
@@ -233,7 +233,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/archlabs/pages/page_36.png" alt="Leather Chair" class="card-img-top" style="height: 200px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_36.png" alt="Leather Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Leather Chairs (5 Models)</h5>
                             <p class="text-secondary fs-7 flex-grow-1">High-back executive leather armchairs with diamond stitch quilting and chrome base control.</p>
@@ -243,7 +243,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/archlabs/pages/page_43.png" alt="Training Chair" class="card-img-top" style="height: 200px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_43.png" alt="Training Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Training Chairs (7 Models)</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Nesting training chairs equipped with writing tablets, wire baskets, and castor wheels.</p>
@@ -253,7 +253,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/archlabs/pages/page_57.png" alt="Cafe Chair" class="card-img-top" style="height: 200px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_57.png" alt="Cafe Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Cafe Chairs (7 Models)</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Vibrant polypropelene and metal frame dining chairs for pantry breakouts.</p>
@@ -276,7 +276,7 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/collection/collection-1.jpg" alt="Lounge & Sofas" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <img src="images/collection/collection-1.jpg" alt="Lounge & Sofas" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <h4 class="fw-bold text-dark mb-2">Lounge &amp; Executive Sofas</h4>
                             <p class="text-secondary fs-7 flex-grow-1">Single, two, and three-seater plush upholstered couches for reception areas and executive suites.</p>
@@ -286,7 +286,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/s-lookbook-1.jpg" alt="Collaborative Seating" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <img src="images/sections/s-lookbook-1.jpg" alt="Collaborative Seating" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <h4 class="fw-bold text-dark mb-2">Collaborative Seating</h4>
                             <p class="text-secondary fs-7 flex-grow-1">Modular curved sofas and high-back acoustic booth seating for agile team huddles.</p>
@@ -296,7 +296,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-1.jpg" alt="Pouffes & Tables" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Pouffes & Tables" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <h4 class="fw-bold text-dark mb-2">Pouffes &amp; Occasional Tables</h4>
                             <p class="text-secondary fs-7 flex-grow-1">Geometrical soft pouffes, ottomans, and companion coffee center tables.</p>
@@ -319,7 +319,7 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/s-lookbook-1.jpg" alt="Single Phone Pod" class="card-img-top" style="height: 260px; object-fit: cover;">
+                        <img src="images/sections/s-lookbook-1.jpg" alt="Single Phone Pod" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <h4 class="fw-bold text-dark mb-2">Single Acoustic Phone Pod</h4>
                             <p class="text-secondary fs-7 flex-grow-1">Sound-insulated solo booth equipped with air ventilation, LED lighting, power outlets, and laptop shelf for private calls.</p>
@@ -329,7 +329,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/collection/collection-1.jpg" alt="Meeting Pod" class="card-img-top" style="height: 260px; object-fit: cover;">
+                        <img src="images/collection/collection-1.jpg" alt="Meeting Pod" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <h4 class="fw-bold text-dark mb-2">4-6 Person Meeting Pod</h4>
                             <p class="text-secondary fs-7 flex-grow-1">Fully enclosed acoustic meeting booth complete with integrated sofa seating, TV monitor mounting bracket, and power hubs.</p>
@@ -352,7 +352,7 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/lookbook-item-1.jpg" alt="Interface Carpet Tiles" class="card-img-top" style="height: 240px; object-fit: cover;" onerror="this.src='images/collection/collection-1.jpg'">
+                        <img src="images/sections/lookbook-item-1.jpg" alt="Interface Carpet Tiles" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/collection/collection-1.jpg'">
                         <div class="card-body p-4 d-flex flex-column">
                             <h4 class="fw-bold text-dark mb-2">Interface Carpet Tiles</h4>
                             <p class="text-secondary fs-7 flex-grow-1">Modular acoustic carpet tiles available in contemporary geometric patterns, stain-resistant fibers, and sound dampening backing.</p>
@@ -375,7 +375,7 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/lookbook-item-2.jpg" alt="Loom Crafts Outdoor" class="card-img-top" style="height: 240px; object-fit: cover;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
+                        <img src="images/sections/lookbook-item-2.jpg" alt="Loom Crafts Outdoor" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
                         <div class="card-body p-4 d-flex flex-column">
                             <h4 class="fw-bold text-dark mb-2">Loom Crafts Terrace &amp; Cafe Seating</h4>
                             <p class="text-secondary fs-7 flex-grow-1">Weather-resistant synthetic wicker and aluminum outdoor lounge sets, patio umbrellas, and dining tables.</p>
@@ -398,7 +398,7 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-1.jpg" alt="Classroom Desks" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Classroom Desks" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Classroom Desks</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Single and dual-bench student desks with bag hooks and book shelves.</p>
@@ -408,7 +408,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-2.jpg" alt="Library Units" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <img src="images/header/prd-nav-2.jpg" alt="Library Units" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Library Furniture</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Study carrels, reading tables, and heavy-duty double-sided book racks.</p>
@@ -418,7 +418,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/sections/s-lookbook-2.jpg" alt="Hostel Furniture" class="card-img-top" style="height: 180px; object-fit: cover;" onerror="this.src='images/collection/collection-1.jpg'">
+                        <img src="images/sections/s-lookbook-2.jpg" alt="Hostel Furniture" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/collection/collection-1.jpg'">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Hostel Furniture</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Metal bunk beds, study tables, and wardrobe locker units.</p>
@@ -428,7 +428,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/collection/collection-1.jpg" alt="Auditorium Seating" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <img src="images/collection/collection-1.jpg" alt="Auditorium Seating" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-3 d-flex flex-column">
                             <h5 class="fw-bold text-dark mb-1">Auditorium Seating</h5>
                             <p class="text-secondary fs-7 flex-grow-1">Cushioned tip-up auditorium chairs with writing tablets and row numbering.</p>
@@ -451,7 +451,7 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                        <img src="images/header/prd-nav-1.jpg" alt="Workspace Accessories" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Workspace Accessories" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <h4 class="fw-bold text-dark mb-2">Ergonomic Arms &amp; Power Management</h4>
                             <p class="text-secondary fs-7 flex-grow-1">Gas-spring dual monitor arms, under-desk cable trays, vertical wire serpents, and pop-up power modules.</p>

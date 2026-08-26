@@ -45,7 +45,7 @@
                 <!-- Veloz -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_4.png" alt="Veloz Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_4.png" alt="Veloz Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Veloz</h4>
@@ -62,7 +62,7 @@
                 <!-- Feather -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_5.png" alt="Feather Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_5.png" alt="Feather Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Feather</h4>
@@ -79,7 +79,7 @@
                 <!-- Eiffel -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_6.png" alt="Eiffel Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_6.png" alt="Eiffel Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Eiffel</h4>
@@ -96,7 +96,7 @@
                 <!-- Mustang -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_7.png" alt="Mustang Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_7.png" alt="Mustang Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Mustang</h4>
@@ -113,7 +113,7 @@
                 <!-- Bravo -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_8.png" alt="Bravo Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_8.png" alt="Bravo Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Bravo</h4>
@@ -130,7 +130,7 @@
                 <!-- Polar -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_9.png" alt="Polar Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_9.png" alt="Polar Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Polar</h4>
@@ -147,7 +147,7 @@
                 <!-- Glanza -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_10.png" alt="Glanza Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_10.png" alt="Glanza Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Glanza</h4>
@@ -164,7 +164,7 @@
                 <!-- Yaris -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_11.png" alt="Yaris Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_11.png" alt="Yaris Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Yaris</h4>
@@ -181,7 +181,7 @@
                 <!-- Quartz -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_12.png" alt="Quartz Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_12.png" alt="Quartz Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Quartz</h4>
@@ -198,7 +198,7 @@
                 <!-- Ditto -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_13.png" alt="Ditto Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_13.png" alt="Ditto Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Ditto</h4>
@@ -215,7 +215,7 @@
                 <!-- Velfire -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_14.png" alt="Velfire Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_14.png" alt="Velfire Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Velfire</h4>
@@ -232,7 +232,7 @@
                 <!-- Optimus -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_15.png" alt="Optimus Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_15.png" alt="Optimus Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Optimus</h4>
@@ -249,7 +249,7 @@
                 <!-- Zoom -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_16.png" alt="Zoom Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_16.png" alt="Zoom Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Zoom</h4>
@@ -266,7 +266,7 @@
                 <!-- Comfy -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_17.png" alt="Comfy Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_17.png" alt="Comfy Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Comfy</h4>
@@ -283,7 +283,7 @@
                 <!-- Rio -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_18.png" alt="Rio Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_18.png" alt="Rio Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Rio</h4>
@@ -300,7 +300,7 @@
                 <!-- Hilite -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_19.png" alt="Hilite Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_19.png" alt="Hilite Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Hilite</h4>
@@ -317,7 +317,7 @@
                 <!-- Ecco -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_20.png" alt="Ecco Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_20.png" alt="Ecco Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Ecco</h4>
@@ -334,7 +334,7 @@
                 <!-- Vento -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_21.png" alt="Vento Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_21.png" alt="Vento Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Vento</h4>
@@ -351,7 +351,7 @@
                 <!-- Aura -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_22.png" alt="Aura Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_22.png" alt="Aura Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Aura</h4>
@@ -368,7 +368,7 @@
                 <!-- Dynamic -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_23.png" alt="Dynamic Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_23.png" alt="Dynamic Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Dynamic</h4>
@@ -385,7 +385,7 @@
                 <!-- Butterfly -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_24.png" alt="Butterfly Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_24.png" alt="Butterfly Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Butterfly</h4>
@@ -402,7 +402,7 @@
                 <!-- Mystic -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_25.png" alt="Mystic Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_25.png" alt="Mystic Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Mystic</h4>
@@ -419,7 +419,7 @@
                 <!-- Breeze -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_26.png" alt="Breeze Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_26.png" alt="Breeze Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Breeze</h4>
@@ -436,7 +436,7 @@
                 <!-- Matrix -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_27.png" alt="Matrix Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_27.png" alt="Matrix Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Matrix 1</h4>
@@ -453,7 +453,7 @@
                 <!-- Marvel 1 & 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_29.png" alt="Marvel Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_29.png" alt="Marvel Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Marvel 1 &amp; 2</h4>
@@ -470,7 +470,7 @@
                 <!-- Jazz -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_30.png" alt="Jazz Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_30.png" alt="Jazz Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Jazz</h4>
@@ -487,7 +487,7 @@
                 <!-- Flash -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_31.png" alt="Flash Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_31.png" alt="Flash Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Flash</h4>
@@ -504,7 +504,7 @@
                 <!-- Bonai -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_32.png" alt="Bonai Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_32.png" alt="Bonai Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Bonai</h4>
@@ -521,7 +521,7 @@
                 <!-- X Mesh -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_33.png" alt="X Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_33.png" alt="X Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">X Mesh</h4>
@@ -538,7 +538,7 @@
                 <!-- Spenser -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_34.png" alt="Spenser Mesh Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_34.png" alt="Spenser Mesh Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Spenser</h4>
@@ -571,7 +571,7 @@
                 <!-- Luxe -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_36.png" alt="Luxe Leather Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_36.png" alt="Luxe Leather Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Luxe</h4>
@@ -588,7 +588,7 @@
                 <!-- Elara -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_37.png" alt="Elara Leather Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_37.png" alt="Elara Leather Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Elara</h4>
@@ -605,7 +605,7 @@
                 <!-- Regent -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_38.png" alt="Regent Leather Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_38.png" alt="Regent Leather Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Regent</h4>
@@ -622,7 +622,7 @@
                 <!-- Forma -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_39.png" alt="Forma Leather Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_39.png" alt="Forma Leather Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Forma</h4>
@@ -639,7 +639,7 @@
                 <!-- Nero -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_40.png" alt="Nero Leather Chair" class="card-img-top" style="height: 280px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_40.png" alt="Nero Leather Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Nero</h4>
@@ -672,7 +672,7 @@
                 <!-- Arc Standard -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_43.png" alt="Arc Standard Training Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_43.png" alt="Arc Standard Training Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Arc Standard</h4>
@@ -689,7 +689,7 @@
                 <!-- Cove Cushioned -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_44.png" alt="Cove Cushioned Training Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_44.png" alt="Cove Cushioned Training Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Cove Cushioned</h4>
@@ -706,7 +706,7 @@
                 <!-- Pivot Writing Table -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_45.png" alt="Pivot Writing Table Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_45.png" alt="Pivot Writing Table Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Pivot Writing Table</h4>
@@ -723,7 +723,7 @@
                 <!-- Pivot Full Writing Table -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_46.png" alt="Pivot Full Writing Table Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_46.png" alt="Pivot Full Writing Table Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Pivot Full Writing Table</h4>
@@ -740,7 +740,7 @@
                 <!-- Stack Storage Variants -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_47.png" alt="Stack Storage Training Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_47.png" alt="Stack Storage Training Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Stack Storage Variants</h4>
@@ -757,7 +757,7 @@
                 <!-- ArchTwin -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_49.png" alt="ArchTwin Training Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_49.png" alt="ArchTwin Training Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">ArchTwin</h4>
@@ -774,7 +774,7 @@
                 <!-- ArchTwin Flip-up Table -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_50.png" alt="ArchTwin with Flip-up Table" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_50.png" alt="ArchTwin with Flip-up Table" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">ArchTwin Flip-Up Table</h4>
@@ -807,7 +807,7 @@
                 <!-- Metro Linea 2 Seater -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_53.png" alt="Metro Linea 2 Seater" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_53.png" alt="Metro Linea 2 Seater" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Metro Linea 2 Seater</h4>
@@ -824,7 +824,7 @@
                 <!-- Metro Linea 3 Seater -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_54.png" alt="Metro Linea 3 Seater" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_54.png" alt="Metro Linea 3 Seater" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Metro Linea 3 Seater</h4>
@@ -841,7 +841,7 @@
                 <!-- Metro Linea 5 Seater -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_55.png" alt="Metro Linea 5 Seater" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_55.png" alt="Metro Linea 5 Seater" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Metro Linea 5 Seater</h4>
@@ -874,7 +874,7 @@
                 <!-- AC01 Stack Chair -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_57.png" alt="AC01 Stack Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_57.png" alt="AC01 Stack Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC01 Stack Chair</h4>
@@ -891,7 +891,7 @@
                 <!-- AC02 Curve Chair -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_58.png" alt="AC02 Curve Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_58.png" alt="AC02 Curve Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC02 Curve Chair</h4>
@@ -908,7 +908,7 @@
                 <!-- AC03 Arc Chair -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_59.png" alt="AC03 Arc Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_59.png" alt="AC03 Arc Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC03 Arc Chair</h4>
@@ -925,7 +925,7 @@
                 <!-- AC04 Spindle Chair -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_60.png" alt="AC04 Spindle Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_60.png" alt="AC04 Spindle Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC04 Spindle Chair</h4>
@@ -942,7 +942,7 @@
                 <!-- AC06 Timber Chair -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_61.png" alt="AC06 Timber Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_61.png" alt="AC06 Timber Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC06 Timber Chair</h4>
@@ -959,7 +959,7 @@
                 <!-- AC07 Lounge Chair -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_62.png" alt="AC07 Lounge Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_62.png" alt="AC07 Lounge Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC07 Lounge Chair</h4>
@@ -976,7 +976,7 @@
                 <!-- AC08 Crest Chair -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card border h-100 shadow-sm rounded-3 overflow-hidden product-card-hover">
-                        <img src="images/archlabs/pages/page_63.png" alt="AC08 Crest Chair" class="card-img-top" style="height: 260px; object-fit: cover; object-position: top;">
+                        <img src="images/archlabs/pages/page_63.png" alt="AC08 Crest Chair" class="card-img-top" style="background: #ffffff;">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC08 Crest Chair</h4>
