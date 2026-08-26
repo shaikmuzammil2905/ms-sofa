@@ -30,8 +30,8 @@
     <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/logo/logo-mark.png">
-    <link rel="apple-touch-icon-precomposed" href="images/logo/logo-mark.png">
+    <link rel="shortcut icon" href="images/logo/logo-mark.png?v=2">
+    <link rel="apple-touch-icon-precomposed" href="images/logo/logo-mark.png?v=2">
 
     <style>
         /* Site Logo Header Styling */
@@ -355,7 +355,7 @@
                     
                     <!-- Site Logo -->
                     <a href="index.html" class="site-brand-logo">
-                        <img src="images/logo/logo-mark.png" alt="Vishista Logo">
+                        <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo">
                         <div class="brand-text-wrapper">
                             <span class="brand-main-title">VISHISTA</span>
                             <span class="brand-sub-title">OFFICE SOLUTIONS</span>

@@ -8,7 +8,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="footer-about">
                                 <div class="site-brand-logo mb-3">
-                                    <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 42px;">
+                                    <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 42px;">
                                     <div class="brand-text-wrapper">
                                         <span class="brand-main-title text-white">VISHISTA</span>
                                         <span class="brand-sub-title text-white-50">OFFICE SOLUTIONS</span>
@@ -111,7 +111,7 @@
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 380px; max-width: 90vw;">
         <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
             <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 230px;">
-                <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 40px; width: auto; flex-shrink: 0;">
+                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 40px; width: auto; flex-shrink: 0;">
                 <div style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
                     <span style="font-size: 17px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
                     <span style="font-size: 8.5px; font-weight: 700; color: #555555; letter-spacing: 1.3px; margin-top: 2px;">OFFICE SOLUTIONS</span>

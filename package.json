@@ -1,5 +1,9 @@
 {
   "name": "ms-sofa",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "start": "node server.js"
+  }
 }
