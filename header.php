@@ -20,23 +20,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css?v=6">
-    <link rel="stylesheet" type="text/css" href="/css/animate.min.css?v=6">
-    <link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css?v=6">
-    <link rel="stylesheet" type="text/css" href="/css/sib-styles.css?v=6">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css?v=6">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sib-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
     <!-- Icon -->
-    <link rel="stylesheet" type="text/css" href="/icons/icomoon/style.css?v=6">
+    <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/images/logo/logo-mark.png?v=2">
-    <link rel="apple-touch-icon-precomposed" href="/images/logo/logo-mark.png?v=2">
+    <link rel="shortcut icon" href="images/logo/logo-mark.png?v=2">
+    <link rel="apple-touch-icon-precomposed" href="images/logo/logo-mark.png?v=2">
 
     <!-- Supabase SDK & CMS Public Sync Engine -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-    <script src="/js/supabase-config.js" defer></script>
-    <script src="/js/public-sync.js" defer></script>
+    <script src="js/supabase-config.js" defer></script>
+    <script src="js/public-sync.js" defer></script>
 
     <style>
         /* Site Logo Header Styling */
