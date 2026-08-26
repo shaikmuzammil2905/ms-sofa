@@ -136,7 +136,7 @@
 
                 <!-- 2. About Us Accordion Dropdown -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileAboutCollapse" role="button" aria-expanded="false" aria-controls="mobileAboutCollapse">
+                    <a class="mobile-nav-link" href="#mobileAboutCollapse" role="button" aria-expanded="false" aria-controls="mobileAboutCollapse">
                         <span>About Us</span>
                         <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                     </a>
@@ -153,7 +153,7 @@
 
                 <!-- 3. Products Accordion Dropdown -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="false" aria-controls="mobileProductsCollapse">
+                    <a class="mobile-nav-link" href="#mobileProductsCollapse" role="button" aria-expanded="false" aria-controls="mobileProductsCollapse">
                         <span>Products</span>
                         <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                     </a>
@@ -340,8 +340,8 @@
     </style>
 
     <!-- Javascript -->
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
@@ -356,6 +356,44 @@
             var modal = new bootstrap.Modal(document.getElementById('enquireModal'));
             modal.show();
         }
+
+        // Guaranteed Mobile Menu Accordion Toggle Handler
+        document.addEventListener('DOMContentLoaded', function () {
+            var mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                var toggleBtns = mobileMenu.querySelectorAll('.mobile-nav-link');
+                toggleBtns.forEach(function (btn) {
+                    btn.addEventListener('click', function (e) {
+                        var targetSelector = this.getAttribute('href') || this.getAttribute('data-bs-target');
+                        if (targetSelector && targetSelector.startsWith('#')) {
+                            e.preventDefault();
+                            var targetEl = document.querySelector(targetSelector);
+                            if (targetEl) {
+                                if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                                    var bsCollapse = bootstrap.Collapse.getOrCreateInstance(targetEl, { toggle: false });
+                                    if (targetEl.classList.contains('show')) {
+                                        bsCollapse.hide();
+                                        this.setAttribute('aria-expanded', 'false');
+                                    } else {
+                                        bsCollapse.show();
+                                        this.setAttribute('aria-expanded', 'true');
+                                    }
+                                } else {
+                                    var isShown = targetEl.classList.contains('show');
+                                    if (isShown) {
+                                        targetEl.classList.remove('show');
+                                        this.setAttribute('aria-expanded', 'false');
+                                    } else {
+                                        targetEl.classList.add('show');
+                                        this.setAttribute('aria-expanded', 'true');
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            }
+        });
     </script>
 
 </body>
