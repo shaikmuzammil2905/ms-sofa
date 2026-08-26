@@ -1,0 +1,1047 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
+
+    <meta name="author" content="Vishista Office Solutions Pvt Ltd">
+    <title>Vishista Office Solutions - Premium Office Furniture & Turnkey Workspaces</title>
+    <meta name="description" content="Vishista Office Solutions Pvt Ltd offers premium office furniture, ArchLabs seating collections, modular workstation systems, executive seating, and turnkey corporate interior solutions across Telangana and Andhra Pradesh.">
+    <meta name="keywords" content="office furniture, ArchLabs seating, mesh chairs, leather chairs, workstations, executive tables, Hyderabad, Secunderabad">
+    
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sib-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/logo/logo-mark.png?v=2">
+    <link rel="apple-touch-icon-precomposed" href="images/logo/logo-mark.png?v=2">
+
+    <!-- Supabase SDK & CMS Public Sync Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="js/supabase-config.js" defer></script>
+    <script src="js/public-sync.js" defer></script>
+
+    <style>
+        /* Site Logo Header Styling */
+        .site-brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none !important;
+            max-width: 100%;
+        }
+        .site-brand-logo img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .brand-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+        }
+        .brand-main-title {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: #d32f2f;
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
+        .brand-sub-title {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 8.5px;
+            font-weight: 700;
+            color: #555555;
+            letter-spacing: 1.4px;
+            margin-top: 2px;
+        }
+        .nav-enquire-btn {
+            background-color: #d32f2f;
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-enquire-btn:hover {
+            background-color: #b71c1c;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+        }
+
+        /* Desktop Mega Menu Positioning & Full Width Layout Fix */
+        .header-inner {
+            position: relative !important;
+        }
+        .main-menu .navigation > li.has-child {
+            position: static !important;
+        }
+        .mega-menu {
+            position: absolute !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 1280px !important;
+            max-width: 95vw !important;
+            top: 100% !important;
+            padding: 0 !important;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18) !important;
+            border-radius: 12px !important;
+            overflow: visible !important;
+            background: #ffffff !important;
+            z-index: 99999 !important;
+            border: 1px solid rgba(0,0,0,0.08) !important;
+        }
+        .mega-menu-grid {
+            display: grid !important;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr 1.1fr !important;
+            gap: 24px !important;
+            padding: 30px 32px !important;
+            background: #ffffff !important;
+            border-radius: 12px !important;
+        }
+        @media (max-width: 1200px) {
+            .mega-menu-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+        .mega-category-title {
+            font-size: 13.5px !important;
+            font-weight: 700 !important;
+            color: #111111 !important;
+            margin-bottom: 12px !important;
+            padding-bottom: 6px !important;
+            border-bottom: 2px solid #d32f2f !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+        .mega-subcategory-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .mega-subcategory-list li {
+            margin-bottom: 8px !important;
+        }
+        .mega-subcategory-list a {
+            color: #444444 !important;
+            font-size: 13px !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease, font-weight 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .mega-subcategory-list a:hover {
+            color: #d32f2f !important;
+            font-weight: 600 !important;
+            transform: translateX(3px);
+        }
+
+        /* Mobile Offcanvas Drawer Sizing & Accordion Styling (Matching image copy 8.png) */
+        .offcanvas.canvas-mb {
+            width: 380px !important;
+            max-width: 90vw !important;
+            background-color: #ffffff !important;
+        }
+        .offcanvas-header {
+            padding: 16px 20px !important;
+            border-bottom: 1px solid #e9ecef !important;
+            background-color: #ffffff !important;
+        }
+        
+        /* Mobile Menu Main Link */
+        .mobile-nav-link {
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            color: #111111 !important;
+            padding: 14px 8px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+        }
+        .mobile-nav-link:hover,
+        .mobile-nav-link[aria-expanded="true"] {
+            color: #d32f2f !important;
+        }
+        .mobile-nav-link .chevron-icon {
+            font-size: 12px !important;
+            transition: transform 0.3s ease !important;
+            color: #555555 !important;
+        }
+        .mobile-nav-link[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Prominent Dropdown Chevron Button Styling */
+        .chevron-box {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 28px !important;
+            height: 28px !important;
+            min-width: 28px !important;
+            border-radius: 50% !important;
+            background-color: #f0f0f0 !important;
+            color: #333333 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+        }
+        [aria-expanded="true"] .chevron-box {
+            transform: rotate(180deg) !important;
+            background-color: #d32f2f !important;
+            color: #ffffff !important;
+        }
+        .desktop-arrow {
+            font-size: 10px !important;
+            margin-left: 3px !important;
+            transition: transform 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .menu-item:hover .desktop-arrow {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Mobile Level 1 Subcategory Link (Accordion Header inside Products) */
+        .mobile-sub-accordion-link {
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            color: #222222 !important;
+            padding: 11px 10px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            text-decoration: none !important;
+            border-radius: 6px !important;
+            transition: all 0.2s ease !important;
+        }
+        .mobile-sub-accordion-link:hover,
+        .mobile-sub-accordion-link[aria-expanded="true"] {
+            color: #d32f2f !important;
+            background-color: rgba(211, 47, 47, 0.05) !important;
+        }
+        .mobile-sub-accordion-link .chevron-icon {
+            font-size: 11px !important;
+            transition: transform 0.3s ease !important;
+            color: #777777 !important;
+        }
+        .mobile-sub-accordion-link[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Mobile Level 2 Item Link */
+        .mobile-sub-link {
+            font-size: 14px !important;
+            color: #444444 !important;
+            padding: 8px 12px !important;
+            display: block !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+            border-radius: 4px !important;
+        }
+        .mobile-sub-link:hover {
+            color: #d32f2f !important;
+            font-weight: 600 !important;
+            background-color: #f8f9fa !important;
+            padding-left: 16px !important;
+        }
+        
+        /* Indentation Lines matching image 8 */
+        .mobile-accordion-group {
+            padding-left: 8px !important;
+            margin-top: 4px !important;
+            margin-bottom: 6px !important;
+        }
+        .mobile-nested-group {
+            padding-left: 12px !important;
+            border-left: 2px solid #e2e8f0 !important;
+            margin-left: 10px !important;
+            margin-top: 4px !important;
+            margin-bottom: 8px !important;
+        }
+        .mobile-nested-group.archlabs-border {
+            border-left-color: #d32f2f !important;
+        }
+
+        /* Universal Attractive Product & Catalogue Card Image Fitting (Fixes Mobile Cropping) */
+        .card-img-top,
+        .product-card-hover img,
+        .card img.card-img-top {
+            height: 270px !important;
+            max-height: 270px !important;
+            width: 100% !important;
+            object-fit: contain !important;
+            object-position: center !important;
+            background-color: #ffffff !important;
+            padding: 10px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+            transition: transform 0.3s ease !important;
+        }
+        .card {
+            background-color: #ffffff !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+        }
+        .product-card-hover:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+            transform: translateY(-4px) !important;
+        }
+        .product-card-hover:hover .card-img-top,
+        .product-card-hover:hover img {
+            transform: scale(1.03) !important;
+        }
+        @media (max-width: 576px) {
+            .card-img-top,
+            .product-card-hover img,
+            .card img.card-img-top {
+                height: 240px !important;
+                max-height: 240px !important;
+                padding: 6px !important;
+                object-fit: contain !important;
+                object-position: center !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- Scroll Top -->
+        <button id="goTop">
+            <span class="border-progress"></span>
+            <span class="icon icon-caret-up"></span>
+        </button>
+
+        <!-- Preloader Disabled for Instant Crisp Page Loading -->
+
+        <!-- .header -->
+        <header class="header header-sticky py-2">
+            <div class="tf-container w-1750">
+                <div class="header-inner d-flex align-items-center justify-content-between">
+                    
+                    <!-- Site Logo -->
+                    <a href="index.html" class="site-brand-logo">
+                        <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo">
+                        <div class="brand-text-wrapper">
+                            <span class="brand-main-title">VISHISTA</span>
+                            <span class="brand-sub-title">OFFICE SOLUTIONS</span>
+                        </div>
+                    </a>
+
+                    <!-- Navigation Bar -->
+                    <nav class="main-menu d-none d-xl-block">
+                        <ul class="navigation box-nav-menu d-flex align-items-center gap-4 list-unstyled mb-0">
+                            <!-- 1. Home -->
+                            <li class="text-menu menu-item">
+                                <a href="index.html" class="item-link fw-semibold">Home</a>
+                            </li>
+
+                            <!-- 2. About Us (Dropdown with Chevron Icon) -->
+                            <li class="has-child text-menu menu-item">
+                                <a href="about.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">About Us <span class="desktop-arrow">▼</span></a>
+                                <div class="submenu sub-menu p-3 rounded-3 shadow-lg" style="min-width: 260px;">
+                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fs-7">
+                                        <li><a href="about.html#company-profile" class="fw-bold text-dark text-decoration-none">&bull; Company Profile</a></li>
+                                        <li><a href="about.html#director-profile" class="fw-bold text-danger text-decoration-none">&bull; Director Journey (K V Ramana Reddy)</a></li>
+                                        <li><a href="about.html#mission-vision" class="fw-semibold text-dark text-decoration-none">&bull; Mission &amp; Vision</a></li>
+                                        <li><a href="about.html#core-values" class="fw-semibold text-dark text-decoration-none">&bull; Core Values</a></li>
+                                        <li><a href="about.html#why-choose-us" class="fw-semibold text-dark text-decoration-none">&bull; Why Choose Us</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- 3. Products (Mega Menu Dropdown with Chevron Icon) -->
+                            <li class="has-child text-menu menu-item">
+                                <a href="product-categories.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">Products <span class="desktop-arrow">▼</span></a>
+                                <div class="submenu sub-menu mega-menu">
+                                    <div class="mega-menu-grid">
+                                        
+                                        <!-- ArchLabs Seating Catalogue (Featured Column) -->
+                                        <div class="bg-light p-3 rounded-3 border">
+                                            <a href="archlabs-catalogue.html" class="mega-category-title d-block text-danger">ArchLabs Seating Catalogue</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="archlabs-catalogue.html#mesh-series" class="fw-bold text-dark">&bull; Mesh Series (30 Models)</a></li>
+                                                <li><a href="archlabs-catalogue.html#leather-series" class="fw-bold text-dark">&bull; Leather Series (5 Models)</a></li>
+                                                <li><a href="archlabs-catalogue.html#training-series" class="fw-bold text-dark">&bull; Training Series (7 Models)</a></li>
+                                                <li><a href="archlabs-catalogue.html#metro-linea" class="fw-bold text-dark">&bull; Metro Linea Public Seating</a></li>
+                                                <li><a href="archlabs-catalogue.html#cafeteria-series" class="fw-bold text-dark">&bull; Cafeteria Series (7 Models)</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Workstations -->
+                                        <div>
+                                            <a href="product-categories.html#workstations" class="mega-category-title d-block">Workstations</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html#workstations">Height Adjustable Series</a></li>
+                                                <li><a href="product-categories.html#workstations">Desking Series</a></li>
+                                                <li><a href="product-categories.html#workstations">Panel Series</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Tables -->
+                                        <div>
+                                            <a href="product-categories.html#tables" class="mega-category-title d-block">Tables</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html#tables">Cabin Tables</a></li>
+                                                <li><a href="product-categories.html#tables">Meeting Tables</a></li>
+                                                <li><a href="product-categories.html#tables">Cafe Tables</a></li>
+                                                <li><a href="product-categories.html#tables">Training Tables</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Storage -->
+                                        <div>
+                                            <a href="product-categories.html#storage" class="mega-category-title d-block">Storage</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html#storage">Prelam Storage</a></li>
+                                                <li><a href="product-categories.html#storage">Metal Storage</a></li>
+                                                <li><a href="product-categories.html#storage">Compactor Storage</a></li>
+                                                <li><a href="product-categories.html#storage">Locker Systems</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Soft Seating & Pods -->
+                                        <div>
+                                            <a href="product-sofas.html" class="mega-category-title d-block">Soft Seating &amp; Pods</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-sofas.html">Executive Sofas &amp; Lounge</a></li>
+                                                <li><a href="product-sofas.html">Collaborative Seating</a></li>
+                                                <li><a href="product-categories.html#pods">Acoustic Work Pods</a></li>
+                                                <li><a href="product-categories.html#carpets">Interface Carpets</a></li>
+                                                <li><a href="product-categories.html#outdoor">Outdoor Furniture</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- 4. Contact Us -->
+                            <li class="text-menu menu-item">
+                                <a href="contact.html" class="item-link fw-semibold">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Header Right CTA -->
+                    <div class="header-right d-flex align-items-center gap-3">
+                        <button type="button" class="nav-enquire-btn" data-bs-toggle="modal" data-bs-target="#enquireModal">
+                            Enquire Now
+                        </button>
+                        <a href="#mobileMenu" data-bs-toggle="offcanvas" class="mobile-button d-xl-none text-dark fs-3">
+                            <div class="burger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- End header -->
+
+
+
+<!-- Page Header Banner -->
+<section class="py-5 bg-dark text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/sections/s-lookbook-1.jpg') center/cover no-repeat;">
+    <div class="tf-container py-4">
+        <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Get in Touch</span>
+        <h1 class="display-4 fw-bold text-white mt-2 mb-3">Let's Build Better Workspaces Together</h1>
+        <p class="fs-5 text-white-50 max-w-700 mx-auto" style="max-width: 700px;">
+            Have a new office setup, furniture replacement, or turnkey workspace requirement? Contact our team of experts today.
+        </p>
+    </div>
+</section>
+
+<!-- Main Contact Section -->
+<section class="py-5 bg-white">
+    <div class="tf-container py-4">
+        <div class="row g-5">
+            
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="bg-light p-4 p-md-5 rounded-4 shadow-sm border">
+                    <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Corporate Inquiry</span>
+                    <h3 class="fw-bold text-dark mb-4">Send Us Your Requirement</h3>
+
+                    <form id="mainContactForm" onsubmit="event.preventDefault(); alert('Thank you for submitting your enquiry to Vishista Office Solutions! Our representative will get back to you shortly.'); this.reset();">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-semibold fs-7 mb-1">Your Full Name *</label>
+                                <input type="text" class="form-control" required placeholder="Enter full name" style="border-radius: 6px; padding: 12px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-semibold fs-7 mb-1">Company Name</label>
+                                <input type="text" class="form-control" placeholder="Organization name" style="border-radius: 6px; padding: 12px 14px;">
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-semibold fs-7 mb-1">Phone Number *</label>
+                                <input type="tel" class="form-control" required placeholder="Mobile or landline" style="border-radius: 6px; padding: 12px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-semibold fs-7 mb-1">Email Address *</label>
+                                <input type="email" class="form-control" required placeholder="name@company.com" style="border-radius: 6px; padding: 12px 14px;">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-semibold fs-7 mb-1">Product / Service Interested In</label>
+                            <select class="form-select" style="border-radius: 6px; padding: 12px 14px;">
+                                <option value="">Select a Category / Service</option>
+                                <option value="Workstations">Modular Workstations (Desking / Height Adjustable / Panel)</option>
+                                <option value="Tables">Executive & Conference Tables</option>
+                                <option value="Storage">Storage Systems & Lockers</option>
+                                <option value="Seating">Ergonomic Mesh & Leather Chairs</option>
+                                <option value="Soft Seating">Soft Seating & Executive Sofas</option>
+                                <option value="Pods">Acoustic Work Pods</option>
+                                <option value="Carpets">Interface Carpet Tiles</option>
+                                <option value="Outdoor">Outdoor Loom Crafts Furniture</option>
+                                <option value="Educational">Educational & Classroom Furniture</option>
+                                <option value="Turnkey">Turnkey Workspace Interiors</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label text-dark fw-semibold fs-7 mb-1">Message / Requirements *</label>
+                            <textarea class="form-control" rows="4" required placeholder="Please describe your space area, floor plan details, seating capacity, or estimated timeline..." style="border-radius: 6px; padding: 12px 14px;"></textarea>
+                        </div>
+
+                        <div class="d-grid gap-3">
+                            <button type="submit" class="btn btn-danger btn-lg text-uppercase fw-bold" style="border-radius: 6px; background-color: #d32f2f; border: none; padding: 14px;">
+                                Submit Enquiry &rarr;
+                            </button>
+                            <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success btn-lg fw-bold d-flex align-items-center justify-content-center gap-2" style="border-radius: 6px; padding: 12px;">
+                                Quick Connect on WhatsApp (+91 9849058444)
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Office Details & Address -->
+            <div class="col-lg-5">
+                <div class="d-flex flex-column gap-4 h-100">
+                    
+                    <!-- Head Office Box -->
+                    <div class="card border-0 shadow-sm p-4 rounded-4 bg-dark text-white">
+                        <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Corporate Office</span>
+                        <h4 class="fw-bold text-white mb-3">Vishista Office Solutions Pvt Ltd</h4>
+                        
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="text-danger fs-4"><i class="icon icon-storefront"></i></div>
+                            <div>
+                                <strong class="text-white">Registered Address:</strong>
+                                <p class="text-white-50 mb-0 fs-7" style="line-height: 1.6;">
+                                    Saishruthi Nilyam, Street No. 4,<br>
+                                    Sri Sathya Sai Enclave, Plot No. 109,<br>
+                                    Satya Sai Enclave Main Rd, Old Bowenpally,<br>
+                                    Secunderabad, Telangana 500009
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3 mb-3" id="directions">
+                            <div class="text-danger fs-4"><i class="icon icon-caret-right"></i></div>
+                            <div>
+                                <strong class="text-white">Google Maps Directions:</strong><br>
+                                <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-bold mt-2" style="border-radius: 4px; font-size: 12px;">
+                                    Get Directions on Google Maps &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Communication Box -->
+                    <div class="card border-0 shadow-sm p-4 rounded-4 bg-light border">
+                        <h5 class="fw-bold text-dark mb-3">Direct Contact Channels</h5>
+                        
+                        <div class="mb-3">
+                            <strong class="text-dark d-block mb-1 fs-7">Official Email Addresses:</strong>
+                            <ul class="list-unstyled mb-0 fs-7 d-flex flex-column gap-1">
+                                <li>&bull; <a href="mailto:info@vishistaofficesolutions.com" class="text-danger text-decoration-none fw-semibold">info@vishistaofficesolutions.com</a></li>
+                                <li>&bull; <a href="mailto:sales@vishistaofficesolutions.com" class="text-danger text-decoration-none fw-semibold">sales@vishistaofficesolutions.com</a></li>
+                                <li>&bull; <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-danger text-decoration-none fw-semibold">kvramana.reddy@vishistaofficesolutions.com</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <strong class="text-dark d-block mb-1 fs-7">Phone / WhatsApp Support:</strong>
+                            <a href="https://wa.me/919849058444" target="_blank" class="fs-5 fw-bold text-success text-decoration-none d-inline-flex align-items-center gap-2">
+                                +91 9849058444
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Regional Coverage -->
+                    <div class="card border-0 shadow-sm p-4 rounded-4 bg-white border">
+                        <h6 class="fw-bold text-dark mb-2">Regional Service Coverage</h6>
+                        <p class="text-secondary fs-7 mb-0">Serving corporate hubs across Telangana (Hyderabad, Secunderabad, Gachibowli, HITEC City) and Andhra Pradesh (Vijayawada, Visakhapatnam, Tirupati).</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+         <!-- Footer -->
+        <footer class="footer bg-dark text-white pt-5 pb-3">
+            <div class="footer-body">
+                <div class="tf-container">
+                    <div class="row g-4">
+                        
+                        <!-- Company Overview -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="footer-about">
+                                <div class="site-brand-logo mb-3">
+                                    <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 42px;">
+                                    <div class="brand-text-wrapper">
+                                        <span class="brand-main-title text-white">VISHISTA</span>
+                                        <span class="brand-sub-title text-white-50">OFFICE SOLUTIONS</span>
+                                    </div>
+                                </div>
+                                <p class="text-white-50 fs-7 mb-3" style="line-height: 1.6;">
+                                    Vishista Office Solutions Pvt Ltd is a premier provider of high-end office furniture, ArchLabs seating collections, modular workstation systems, executive seating, and turnkey corporate interior solutions across Telangana and Andhra Pradesh.
+                                </p>
+                                <a href="about.html" class="btn btn-outline-light btn-sm text-uppercase fw-semibold px-3 py-2" style="border-radius: 4px; font-size: 12px;">
+                                    Discover Our Story &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                         <!-- Quick Links -->
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Quick Links</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-7">
+                                <li><a href="index.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Home</a></li>
+                                <li><a href="about.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; About Us</a></li>
+                                <li><a href="archlabs-catalogue.html" class="text-danger text-decoration-none fw-bold py-1 d-block">&bull; ArchLabs Catalogue</a></li>
+                                <li><a href="product-categories.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Products Catalogue</a></li>
+                                <li><a href="contact.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Workspace Solutions -->
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Catalogues &amp; Series</h5>
+                            <div class="row g-3 fs-7">
+                                <div class="col-6">
+                                    <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                        <li><a href="archlabs-catalogue.html#mesh-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Mesh Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#leather-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Leather Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#training-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Training Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#metro-linea" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Metro Linea</a></li>
+                                        <li><a href="archlabs-catalogue.html#cafeteria-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Cafeteria Series</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                        <li><a href="product-categories.html#workstations" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Workstations</a></li>
+                                        <li><a href="product-categories.html#tables" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Tables</a></li>
+                                        <li><a href="product-categories.html#storage" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Storage</a></li>
+                                        <li><a href="product-sofas.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Soft Seating</a></li>
+                                        <li><a href="product-categories.html#pods" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Acoustic Pods</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Contact Us</h5>
+                            <div class="d-flex flex-column gap-3 fs-7 text-white-50">
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; Head Office:</strong>
+                                    <span style="line-height: 1.7; display: block;">
+                                        Saishruthi Nilyam, Street No. 4,<br>
+                                        Sri Sathya Sai Enclave, Plot No. 109,<br>
+                                        Old Bowenpally, Secunderabad, Telangana 500009
+                                    </span>
+                                </div>
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; Emails:</strong>
+                                    <div class="d-flex flex-column gap-1">
+                                        <a href="mailto:info@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; info@vishistaofficesolutions.com</a>
+                                        <a href="mailto:sales@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; sales@vishistaofficesolutions.com</a>
+                                        <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; kvramana.reddy@vishistaofficesolutions.com</a>
+                                    </div>
+                                </div>
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; WhatsApp &amp; Sales:</strong>
+                                    <a href="https://wa.me/919849058444" target="_blank" class="text-danger fs-6 fw-bold text-decoration-none d-inline-block">&bull; +91 9849058444</a>
+                                </div>
+                                <div class="pt-1">
+                                    <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-semibold px-3 py-2" style="border-radius: 6px; font-size: 12px; letter-spacing: 0.5px;">
+                                        Get Directions &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
+                <div class="tf-container">
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-3 py-2">
+                        <p class="mb-0">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
+                        <p class="mb-0">Designed for Corporate &amp; Institutional Workspaces.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /Footer -->
+
+    </div>
+    <!-- /wrapper -->
+
+    <!-- Mobile Menu Offcanvas Drawer -->
+    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 380px; max-width: 90vw;">
+        <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
+            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 230px;">
+                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 40px; width: auto; flex-shrink: 0;">
+                <div style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
+                    <span style="font-size: 17px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
+                    <span style="font-size: 8.5px; font-weight: 700; color: #555555; letter-spacing: 1.3px; margin-top: 2px;">OFFICE SOLUTIONS</span>
+                </div>
+            </a>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-danger btn-sm fw-bold px-3 py-1 text-uppercase" style="font-size: 12px; border-radius: 4px; background-color: #d32f2f; border: none;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
+                    Enquire
+                </button>
+                <button type="button" class="btn-close text-reset ms-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <div class="offcanvas-body p-3">
+            <ul class="nav flex-column gap-1 mb-4 list-unstyled">
+                <!-- 1. Home -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="index.html">
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <!-- 2. About Us Accordion Dropdown -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="#mobileAboutCollapse" role="button" aria-expanded="false" aria-controls="mobileAboutCollapse">
+                        <span>About Us</span>
+                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    </a>
+                    <div class="collapse mt-2" id="mobileAboutCollapse">
+                        <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled border-start ps-3 ms-2 border-danger">
+                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#company-profile">&bull; Company Profile</a></li>
+                            <li><a class="mobile-sub-link fw-bold text-danger" href="about.html#director-profile">&bull; Director Journey (K V Ramana Reddy)</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#mission-vision">&bull; Mission &amp; Vision</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#core-values">&bull; Core Values</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#why-choose-us">&bull; Why Choose Us</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- 3. Products Accordion Dropdown -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="#mobileProductsCollapse" role="button" aria-expanded="false" aria-controls="mobileProductsCollapse">
+                        <span>Products</span>
+                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    </a>
+                    
+                    <div class="collapse mt-2" id="mobileProductsCollapse">
+                        <div class="mobile-accordion-group d-flex flex-column gap-3">
+                            
+                            <!-- Sub Category A: ArchLabs Seating Catalogue -->
+                            <div class="p-2 rounded-3" style="background-color: #fff5f5; border: 1px solid #ffe3e3;">
+                                <a href="archlabs-catalogue.html" class="fw-bold text-danger fs-6 text-decoration-none d-block mb-2">
+                                    ArchLabs Seating Catalogue &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group archlabs-border list-unstyled m-0">
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#mesh-series">&bull; Mesh Series (30 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sub Category B: Office Furniture & Workstations -->
+                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-categories.html#workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
+                                    Office Furniture &amp; Systems &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
+                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Modular Workstations</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Height Adjustable Desks</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cabin &amp; Executive Tables</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Meeting &amp; Conference Tables</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#storage">&bull; Office Storage &amp; Compactors</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sub Category C: Soft Seating & Lounges -->
+                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-sofas.html" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
+                                    Soft Seating &amp; Lounges &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
+                                    <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Executive Sofas &amp; Lounges</a></li>
+                                    <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Collaborative Seating</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#pods">&bull; Acoustic Work Pods</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cafe &amp; Breakout Seating</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sub Category D: Flooring & Accessories -->
+                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-categories.html#carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
+                                    Flooring &amp; Accessories &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
+                                    <li><a class="mobile-sub-link" href="product-categories.html#carpets">&bull; Interface Carpet Tiles</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#outdoor">&bull; Outdoor Workspace Furniture</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#educational">&bull; Educational Solutions</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#accessories">&bull; Workspace Accessories</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 4. Contact Us -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="contact.html">
+                        <span>Contact Us</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Action Buttons -->
+            <div class="d-grid gap-2 pt-3 border-top">
+                <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase shadow-sm" style="background-color: #d32f2f; border: none; border-radius: 6px; font-size: 14px; letter-spacing: 0.5px;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
+                    ENQUIRE NOW
+                </button>
+                <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold py-2 d-flex align-items-center justify-content-center gap-2" style="border-radius: 6px; font-size: 14px;">
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /Mobile Menu Offcanvas -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919849058444?text=Hi%20Vishista%20Office%20Solutions,%20I%20am%20interested%20in%20your%20ArchLabs%20seating%20and%20workspace%20furniture." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" title="Chat on WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382C17.015 14.155 14.764 13.045 14.341 12.891C13.918 12.737 13.612 12.66 13.306 13.118C13 13.576 12.115 14.614 11.848 14.92C11.58 15.226 11.312 15.265 10.855 15.038C10.398 14.811 8.928 14.33 7.18 12.772C5.811 11.554 4.887 10.05 4.619 9.593C4.351 9.135 4.59 8.887 4.819 8.659C5.025 8.454 5.277 8.125 5.506 7.857C5.735 7.589 5.812 7.398 5.965 7.092C6.118 6.786 6.041 6.518 5.926 6.289C5.812 6.06 4.895 3.805 4.512 2.889C4.14 1.998 3.762 2.118 3.486 2.104C3.226 2.091 2.92 2.091 2.614 2.091C2.308 2.091 1.811 2.206 1.391 2.664C0.971 3.122 0 4.032 0 5.867C0 7.702 1.336 9.475 1.527 9.735C1.718 9.995 4.155 13.748 7.876 15.356C8.761 15.738 9.452 15.967 9.993 16.139C10.88 16.421 11.688 16.381 12.33 16.285C13.046 16.178 14.536 15.383 14.842 14.524C15.148 13.665 15.148 12.939 15.056 12.786C14.964 12.633 14.658 12.556 14.201 12.329H17.472Z" fill="white" transform="translate(3, 3)"/>
+        </svg>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Corporate Enquiry Modal -->
+    <div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 12px; overflow: hidden;">
+                <div class="modal-header bg-dark text-white border-0 px-4 py-3" style="background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);">
+                    <div>
+                        <h5 class="modal-title fw-bold text-white mb-0" id="enquireModalLabel">Workspace Solution Enquiry</h5>
+                        <small class="text-white-50">Vishista Office Solutions Pvt Ltd</small>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 bg-white">
+                    <form id="modalEnquiryForm" onsubmit="event.preventDefault(); alert('Thank you for your enquiry! Our workspace team will contact you shortly.'); bootstrap.Modal.getInstance(document.getElementById('enquireModal')).hide();">
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium fs-7 mb-1">Product / Service of Interest</label>
+                            <input type="text" id="modalProductInput" class="form-control" placeholder="ArchLabs Seating, Workstations, Turnkey Interiors, etc." style="border-radius: 6px; padding: 10px 14px;">
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Your Name *</label>
+                                <input type="text" class="form-control" required placeholder="Full Name" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Company Name</label>
+                                <input type="text" class="form-control" placeholder="Organization" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Phone Number *</label>
+                                <input type="tel" class="form-control" required placeholder="Mobile Number" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Email Address *</label>
+                                <input type="email" class="form-control" required placeholder="name@company.com" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium fs-7 mb-1">Message / Project Requirements</label>
+                            <textarea class="form-control" rows="3" placeholder="Specify floor size, seating capacity, timeline, or location..." style="border-radius: 6px; padding: 10px 14px;"></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger w-100 justify-content-center text-uppercase fw-bold" style="padding: 12px; border-radius: 6px; background-color: #d32f2f; border: none;">Submit Enquiry</button>
+                            <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold d-flex align-items-center justify-content-center gap-2" style="padding: 10px; border-radius: 6px;">
+                                Chat Directly on WhatsApp (+91 9849058444)
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #25d366;
+            color: #ffffff !important;
+            border-radius: 50px;
+            padding: 10px 18px 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .whatsapp-float-btn:hover {
+            background-color: #128c7e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+        }
+        @media (max-width: 576px) {
+            .whatsapp-float-btn .whatsapp-text {
+                display: none;
+            }
+            .whatsapp-float-btn {
+                padding: 12px;
+                border-radius: 50%;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+
+    <!-- Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function openEnquiryModal(productName) {
+            if (productName) {
+                document.getElementById('modalProductInput').value = productName;
+            }
+            var modal = new bootstrap.Modal(document.getElementById('enquireModal'));
+            modal.show();
+        }
+
+        // Guaranteed Mobile Menu Nav Links & Accordion Handler
+        document.addEventListener('DOMContentLoaded', function () {
+            var mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                // 1. Accordion Toggle for About Us & Products
+                var toggleBtns = mobileMenu.querySelectorAll('.mobile-nav-link');
+                toggleBtns.forEach(function (btn) {
+                    btn.addEventListener('click', function (e) {
+                        var targetSelector = this.getAttribute('href') || this.getAttribute('data-bs-target');
+                        if (targetSelector && targetSelector.startsWith('#mobile')) {
+                            e.preventDefault();
+                            var targetEl = document.querySelector(targetSelector);
+                            if (targetEl) {
+                                if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                                    var bsCollapse = bootstrap.Collapse.getOrCreateInstance(targetEl, { toggle: false });
+                                    if (targetEl.classList.contains('show')) {
+                                        bsCollapse.hide();
+                                        this.setAttribute('aria-expanded', 'false');
+                                    } else {
+                                        bsCollapse.show();
+                                        this.setAttribute('aria-expanded', 'true');
+                                    }
+                                } else {
+                                    var isShown = targetEl.classList.contains('show');
+                                    if (isShown) {
+                                        targetEl.classList.remove('show');
+                                        this.setAttribute('aria-expanded', 'false');
+                                    } else {
+                                        targetEl.classList.add('show');
+                                        this.setAttribute('aria-expanded', 'true');
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+
+                // 2. Subcategory & Menu Page Links Click Navigation
+                var pageLinks = mobileMenu.querySelectorAll('a[href]');
+                pageLinks.forEach(function (link) {
+                    var href = link.getAttribute('href');
+                    if (href && !href.startsWith('#mobile') && href !== '#') {
+                        link.addEventListener('click', function (e) {
+                            if (typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+                                var bsOffcanvas = bootstrap.Offcanvas.getInstance(mobileMenu);
+                                if (bsOffcanvas) {
+                                    bsOffcanvas.hide();
+                                }
+                            }
+                            window.location.href = href;
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

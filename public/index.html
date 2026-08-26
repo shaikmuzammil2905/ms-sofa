@@ -1,0 +1,1423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
+
+    <meta name="author" content="Vishista Office Solutions Pvt Ltd">
+    <title>Vishista Office Solutions - Premium Office Furniture & Turnkey Workspaces</title>
+    <meta name="description" content="Vishista Office Solutions Pvt Ltd offers premium office furniture, ArchLabs seating collections, modular workstation systems, executive seating, and turnkey corporate interior solutions across Telangana and Andhra Pradesh.">
+    <meta name="keywords" content="office furniture, ArchLabs seating, mesh chairs, leather chairs, workstations, executive tables, Hyderabad, Secunderabad">
+    
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sib-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/logo/logo-mark.png?v=2">
+    <link rel="apple-touch-icon-precomposed" href="images/logo/logo-mark.png?v=2">
+
+    <!-- Supabase SDK & CMS Public Sync Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="js/supabase-config.js" defer></script>
+    <script src="js/public-sync.js" defer></script>
+
+    <style>
+        /* Site Logo Header Styling */
+        .site-brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none !important;
+            max-width: 100%;
+        }
+        .site-brand-logo img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .brand-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+        }
+        .brand-main-title {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: #d32f2f;
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
+        .brand-sub-title {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 8.5px;
+            font-weight: 700;
+            color: #555555;
+            letter-spacing: 1.4px;
+            margin-top: 2px;
+        }
+        .nav-enquire-btn {
+            background-color: #d32f2f;
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-enquire-btn:hover {
+            background-color: #b71c1c;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+        }
+
+        /* Desktop Mega Menu Positioning & Full Width Layout Fix */
+        .header-inner {
+            position: relative !important;
+        }
+        .main-menu .navigation > li.has-child {
+            position: static !important;
+        }
+        .mega-menu {
+            position: absolute !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 1280px !important;
+            max-width: 95vw !important;
+            top: 100% !important;
+            padding: 0 !important;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18) !important;
+            border-radius: 12px !important;
+            overflow: visible !important;
+            background: #ffffff !important;
+            z-index: 99999 !important;
+            border: 1px solid rgba(0,0,0,0.08) !important;
+        }
+        .mega-menu-grid {
+            display: grid !important;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr 1.1fr !important;
+            gap: 24px !important;
+            padding: 30px 32px !important;
+            background: #ffffff !important;
+            border-radius: 12px !important;
+        }
+        @media (max-width: 1200px) {
+            .mega-menu-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+        .mega-category-title {
+            font-size: 13.5px !important;
+            font-weight: 700 !important;
+            color: #111111 !important;
+            margin-bottom: 12px !important;
+            padding-bottom: 6px !important;
+            border-bottom: 2px solid #d32f2f !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+        .mega-subcategory-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .mega-subcategory-list li {
+            margin-bottom: 8px !important;
+        }
+        .mega-subcategory-list a {
+            color: #444444 !important;
+            font-size: 13px !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease, font-weight 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .mega-subcategory-list a:hover {
+            color: #d32f2f !important;
+            font-weight: 600 !important;
+            transform: translateX(3px);
+        }
+
+        /* Mobile Offcanvas Drawer Sizing & Accordion Styling (Matching image copy 8.png) */
+        .offcanvas.canvas-mb {
+            width: 380px !important;
+            max-width: 90vw !important;
+            background-color: #ffffff !important;
+        }
+        .offcanvas-header {
+            padding: 16px 20px !important;
+            border-bottom: 1px solid #e9ecef !important;
+            background-color: #ffffff !important;
+        }
+        
+        /* Mobile Menu Main Link */
+        .mobile-nav-link {
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            color: #111111 !important;
+            padding: 14px 8px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+        }
+        .mobile-nav-link:hover,
+        .mobile-nav-link[aria-expanded="true"] {
+            color: #d32f2f !important;
+        }
+        .mobile-nav-link .chevron-icon {
+            font-size: 12px !important;
+            transition: transform 0.3s ease !important;
+            color: #555555 !important;
+        }
+        .mobile-nav-link[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Prominent Dropdown Chevron Button Styling */
+        .chevron-box {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 28px !important;
+            height: 28px !important;
+            min-width: 28px !important;
+            border-radius: 50% !important;
+            background-color: #f0f0f0 !important;
+            color: #333333 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+        }
+        [aria-expanded="true"] .chevron-box {
+            transform: rotate(180deg) !important;
+            background-color: #d32f2f !important;
+            color: #ffffff !important;
+        }
+        .desktop-arrow {
+            font-size: 10px !important;
+            margin-left: 3px !important;
+            transition: transform 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .menu-item:hover .desktop-arrow {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Mobile Level 1 Subcategory Link (Accordion Header inside Products) */
+        .mobile-sub-accordion-link {
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            color: #222222 !important;
+            padding: 11px 10px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            text-decoration: none !important;
+            border-radius: 6px !important;
+            transition: all 0.2s ease !important;
+        }
+        .mobile-sub-accordion-link:hover,
+        .mobile-sub-accordion-link[aria-expanded="true"] {
+            color: #d32f2f !important;
+            background-color: rgba(211, 47, 47, 0.05) !important;
+        }
+        .mobile-sub-accordion-link .chevron-icon {
+            font-size: 11px !important;
+            transition: transform 0.3s ease !important;
+            color: #777777 !important;
+        }
+        .mobile-sub-accordion-link[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Mobile Level 2 Item Link */
+        .mobile-sub-link {
+            font-size: 14px !important;
+            color: #444444 !important;
+            padding: 8px 12px !important;
+            display: block !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+            border-radius: 4px !important;
+        }
+        .mobile-sub-link:hover {
+            color: #d32f2f !important;
+            font-weight: 600 !important;
+            background-color: #f8f9fa !important;
+            padding-left: 16px !important;
+        }
+        
+        /* Indentation Lines matching image 8 */
+        .mobile-accordion-group {
+            padding-left: 8px !important;
+            margin-top: 4px !important;
+            margin-bottom: 6px !important;
+        }
+        .mobile-nested-group {
+            padding-left: 12px !important;
+            border-left: 2px solid #e2e8f0 !important;
+            margin-left: 10px !important;
+            margin-top: 4px !important;
+            margin-bottom: 8px !important;
+        }
+        .mobile-nested-group.archlabs-border {
+            border-left-color: #d32f2f !important;
+        }
+
+        /* Universal Attractive Product & Catalogue Card Image Fitting (Fixes Mobile Cropping) */
+        .card-img-top,
+        .product-card-hover img,
+        .card img.card-img-top {
+            height: 270px !important;
+            max-height: 270px !important;
+            width: 100% !important;
+            object-fit: contain !important;
+            object-position: center !important;
+            background-color: #ffffff !important;
+            padding: 10px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+            transition: transform 0.3s ease !important;
+        }
+        .card {
+            background-color: #ffffff !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+        }
+        .product-card-hover:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+            transform: translateY(-4px) !important;
+        }
+        .product-card-hover:hover .card-img-top,
+        .product-card-hover:hover img {
+            transform: scale(1.03) !important;
+        }
+        @media (max-width: 576px) {
+            .card-img-top,
+            .product-card-hover img,
+            .card img.card-img-top {
+                height: 240px !important;
+                max-height: 240px !important;
+                padding: 6px !important;
+                object-fit: contain !important;
+                object-position: center !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- Scroll Top -->
+        <button id="goTop">
+            <span class="border-progress"></span>
+            <span class="icon icon-caret-up"></span>
+        </button>
+
+        <!-- Preloader Disabled for Instant Crisp Page Loading -->
+
+        <!-- .header -->
+        <header class="header header-sticky py-2">
+            <div class="tf-container w-1750">
+                <div class="header-inner d-flex align-items-center justify-content-between">
+                    
+                    <!-- Site Logo -->
+                    <a href="index.html" class="site-brand-logo">
+                        <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo">
+                        <div class="brand-text-wrapper">
+                            <span class="brand-main-title">VISHISTA</span>
+                            <span class="brand-sub-title">OFFICE SOLUTIONS</span>
+                        </div>
+                    </a>
+
+                    <!-- Navigation Bar -->
+                    <nav class="main-menu d-none d-xl-block">
+                        <ul class="navigation box-nav-menu d-flex align-items-center gap-4 list-unstyled mb-0">
+                            <!-- 1. Home -->
+                            <li class="text-menu menu-item">
+                                <a href="index.html" class="item-link fw-semibold">Home</a>
+                            </li>
+
+                            <!-- 2. About Us (Dropdown with Chevron Icon) -->
+                            <li class="has-child text-menu menu-item">
+                                <a href="about.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">About Us <span class="desktop-arrow">▼</span></a>
+                                <div class="submenu sub-menu p-3 rounded-3 shadow-lg" style="min-width: 260px;">
+                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fs-7">
+                                        <li><a href="about.html#company-profile" class="fw-bold text-dark text-decoration-none">&bull; Company Profile</a></li>
+                                        <li><a href="about.html#director-profile" class="fw-bold text-danger text-decoration-none">&bull; Director Journey (K V Ramana Reddy)</a></li>
+                                        <li><a href="about.html#mission-vision" class="fw-semibold text-dark text-decoration-none">&bull; Mission &amp; Vision</a></li>
+                                        <li><a href="about.html#core-values" class="fw-semibold text-dark text-decoration-none">&bull; Core Values</a></li>
+                                        <li><a href="about.html#why-choose-us" class="fw-semibold text-dark text-decoration-none">&bull; Why Choose Us</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- 3. Products (Mega Menu Dropdown with Chevron Icon) -->
+                            <li class="has-child text-menu menu-item">
+                                <a href="product-categories.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">Products <span class="desktop-arrow">▼</span></a>
+                                <div class="submenu sub-menu mega-menu">
+                                    <div class="mega-menu-grid">
+                                        
+                                        <!-- ArchLabs Seating Catalogue (Featured Column) -->
+                                        <div class="bg-light p-3 rounded-3 border">
+                                            <a href="archlabs-catalogue.html" class="mega-category-title d-block text-danger">ArchLabs Seating Catalogue</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="archlabs-catalogue.html#mesh-series" class="fw-bold text-dark">&bull; Mesh Series (30 Models)</a></li>
+                                                <li><a href="archlabs-catalogue.html#leather-series" class="fw-bold text-dark">&bull; Leather Series (5 Models)</a></li>
+                                                <li><a href="archlabs-catalogue.html#training-series" class="fw-bold text-dark">&bull; Training Series (7 Models)</a></li>
+                                                <li><a href="archlabs-catalogue.html#metro-linea" class="fw-bold text-dark">&bull; Metro Linea Public Seating</a></li>
+                                                <li><a href="archlabs-catalogue.html#cafeteria-series" class="fw-bold text-dark">&bull; Cafeteria Series (7 Models)</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Workstations -->
+                                        <div>
+                                            <a href="product-categories.html#workstations" class="mega-category-title d-block">Workstations</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html#workstations">Height Adjustable Series</a></li>
+                                                <li><a href="product-categories.html#workstations">Desking Series</a></li>
+                                                <li><a href="product-categories.html#workstations">Panel Series</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Tables -->
+                                        <div>
+                                            <a href="product-categories.html#tables" class="mega-category-title d-block">Tables</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html#tables">Cabin Tables</a></li>
+                                                <li><a href="product-categories.html#tables">Meeting Tables</a></li>
+                                                <li><a href="product-categories.html#tables">Cafe Tables</a></li>
+                                                <li><a href="product-categories.html#tables">Training Tables</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Storage -->
+                                        <div>
+                                            <a href="product-categories.html#storage" class="mega-category-title d-block">Storage</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html#storage">Prelam Storage</a></li>
+                                                <li><a href="product-categories.html#storage">Metal Storage</a></li>
+                                                <li><a href="product-categories.html#storage">Compactor Storage</a></li>
+                                                <li><a href="product-categories.html#storage">Locker Systems</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Soft Seating & Pods -->
+                                        <div>
+                                            <a href="product-sofas.html" class="mega-category-title d-block">Soft Seating &amp; Pods</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-sofas.html">Executive Sofas &amp; Lounge</a></li>
+                                                <li><a href="product-sofas.html">Collaborative Seating</a></li>
+                                                <li><a href="product-categories.html#pods">Acoustic Work Pods</a></li>
+                                                <li><a href="product-categories.html#carpets">Interface Carpets</a></li>
+                                                <li><a href="product-categories.html#outdoor">Outdoor Furniture</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- 4. Contact Us -->
+                            <li class="text-menu menu-item">
+                                <a href="contact.html" class="item-link fw-semibold">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Header Right CTA -->
+                    <div class="header-right d-flex align-items-center gap-3">
+                        <button type="button" class="nav-enquire-btn" data-bs-toggle="modal" data-bs-target="#enquireModal">
+                            Enquire Now
+                        </button>
+                        <a href="#mobileMenu" data-bs-toggle="offcanvas" class="mobile-button d-xl-none text-dark fs-3">
+                            <div class="burger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- End header -->
+
+
+
+<!-- Animated Hero Section -->
+<section class="hero-animated-section position-relative text-white overflow-hidden py-5 d-flex align-items-center" style="min-height: 88vh;">
+    <!-- Animated Background Image Container -->
+    <div class="hero-bg-animated-wrapper">
+        <img src="images/sections/hero-workspace.jpg" alt="Vishista Modern Office Solutions" class="hero-bg-img">
+        <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="tf-container position-relative py-5" style="z-index: 2;">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-9 col-xl-8">
+                
+                <!-- Animated Badge -->
+                <div class="hero-badge-wrap mb-4">
+                    <span class="badge hero-badge text-uppercase px-3 py-2 fw-bold tracking-widest fs-7">
+                        <i class="icon icon-storefront me-2"></i> Vishista Office Solutions Pvt Ltd
+                    </span>
+                </div>
+
+                <!-- Animated Main Heading -->
+                <h1 class="display-3 fw-extrabold text-white mb-4 hero-title" style="line-height: 1.12; font-family: 'Inter', sans-serif;">
+                    Transforming Workspaces.<br>
+                    <span class="text-gradient-red">Elevating Possibilities.</span>
+                </h1>
+
+                <!-- Animated Subheading -->
+                <p class="fs-5 text-white-50 mb-5 hero-subtitle" style="max-width: 680px; line-height: 1.6;">
+                    Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments across Telangana and Andhra Pradesh.
+                </p>
+
+                <!-- Animated Buttons -->
+                <div class="d-flex flex-wrap gap-3 mb-5 hero-actions">
+                    <a href="product-categories.html" class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase hero-btn-primary">
+                        Explore Products &rarr;
+                    </a>
+                    <button type="button" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase hero-btn-secondary" data-bs-toggle="modal" data-bs-target="#enquireModal">
+                        Contact Us / Enquire
+                    </button>
+                </div>
+
+                <!-- Floating Stats Badges -->
+                <div class="row g-3 pt-3 border-top border-secondary-subtle hero-stats">
+                    <div class="col-auto">
+                        <div class="glass-stat-chip">
+                            <span class="fw-bold text-white fs-5">25+ Years</span>
+                            <span class="text-white-50 fs-7 ms-1">Industry Expertise</span>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="glass-stat-chip">
+                            <span class="fw-bold text-white fs-5">Turnkey</span>
+                            <span class="text-white-50 fs-7 ms-1">End-to-End Solutions</span>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="glass-stat-chip">
+                            <span class="fw-bold text-white fs-5">OEM Partners</span>
+                            <span class="text-white-50 fs-7 ms-1">VIAK, ESS, Durian</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-animated-section {
+        background-color: #0f0f0f;
+    }
+    .hero-bg-animated-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .hero-bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: heroKenBurns 22s infinite alternate ease-in-out;
+    }
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(15,15,15,0.55) 0%, rgba(15,15,15,0.35) 55%, rgba(0,0,0,0.2) 100%);
+    }
+
+    @keyframes heroKenBurns {
+        0% {
+            transform: scale(1) translate(0, 0);
+        }
+        100% {
+            transform: scale(1.08) translate(-15px, -10px);
+        }
+    }
+
+    .hero-badge-wrap {
+        animation: fadeInDown 0.8s ease-out forwards;
+    }
+    .hero-badge {
+        background: rgba(211, 47, 47, 0.25);
+        border: 1px solid rgba(211, 47, 47, 0.6);
+        color: #ff5252;
+        border-radius: 50px;
+        backdrop-filter: blur(8px);
+        letter-spacing: 1px;
+    }
+
+    .hero-title {
+        animation: fadeInUp 0.9s ease-out 0.2s both;
+    }
+    .text-gradient-red {
+        background: linear-gradient(135deg, #ff5252 0%, #ff1744 50%, #ff8a80 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+        animation: fadeInUp 0.9s ease-out 0.4s both;
+    }
+
+    .hero-actions {
+        animation: fadeInUp 0.9s ease-out 0.6s both;
+    }
+
+    .hero-btn-primary {
+        background-color: #d32f2f;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+        transition: all 0.3s ease;
+    }
+    .hero-btn-primary:hover {
+        background-color: #b71c1c;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(211, 47, 47, 0.6);
+    }
+
+    .hero-btn-secondary {
+        border-radius: 6px;
+        font-size: 15px;
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+    }
+    .hero-btn-secondary:hover {
+        background-color: rgba(255,255,255,0.15);
+        transform: translateY(-3px);
+    }
+
+    .hero-stats {
+        animation: fadeInUp 0.9s ease-out 0.8s both;
+    }
+
+    .glass-stat-chip {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 8px 16px;
+        border-radius: 50px;
+        backdrop-filter: blur(10px);
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        animation: heroFloat 4s infinite ease-in-out;
+    }
+    .glass-stat-chip:hover {
+        background: rgba(255, 255, 255, 0.16);
+        border-color: rgba(255, 82, 82, 0.5);
+    }
+
+    @keyframes heroFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<!-- Company Introduction Section -->
+<section class="py-5 bg-light">
+    <div class="tf-container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="pe-lg-4">
+                    <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Corporate Overview</span>
+                    <h2 class="display-6 fw-bold text-dark mb-4" style="line-height: 1.2;">
+                        Creating Workspaces That Work for You
+                    </h2>
+                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
+                        <strong>Vishista Office Solutions Pvt Ltd</strong> is a leading provider of premium office furniture, interior systems, and turnkey workspace solutions, serving corporate, commercial, and institutional clients across Telangana and Andhra Pradesh.
+                    </p>
+                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
+                        With a strong focus on quality, innovation, and customer satisfaction, the company delivers modern, efficient, and future-ready work environments tailored to the evolving needs of today's businesses.
+                    </p>
+                    <p class="text-secondary fs-6 mb-4" style="line-height: 1.7;">
+                        Our expertise spans design consultation, product selection, multi-vendor coordination, installation, and dedicated after-sales support — making us a trusted partner for organizations seeking reliable and professional workspace transformation.
+                    </p>
+                    <a href="about.html" class="btn btn-dark btn-lg px-4 py-2 fw-semibold text-uppercase" style="border-radius: 4px; font-size: 14px;">
+                        Discover Our Story &rarr;
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative rounded-4 overflow-hidden shadow-lg">
+                    <img src="images/sections/hero-workspace.jpg" alt="Modern Corporate Office Furniture" class="img-fluid w-100" style="object-fit: cover; min-height: 380px;">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.85));">
+                        <span class="text-white-50 text-uppercase fs-7 fw-semibold">Turnkey Execution</span>
+                        <h4 class="text-white fw-bold mb-0">End-to-End Office Interior Systems</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Explore Our Workspace Solutions (Product Categories Grid) -->
+<section class="py-5 bg-white">
+    <div class="tf-container py-4">
+        <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+            <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Product Categories</span>
+            <h2 class="display-6 fw-bold text-dark mt-2 mb-3">Explore Our Workspace Solutions</h2>
+            <p class="text-secondary">Discover our comprehensive collection of modular office furniture, ergonomic seating, acoustic pods, and turnkey architectural products.</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <!-- Workstations -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/categories/cat_workstations.jpg" alt="Workstations" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Modular Workspace</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Workstations</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Height Adjustable Series, Desking Series, and Panel Series designed for collaborative and ergonomic team layouts.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#workstations" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Workstations Series')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tables -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/categories/cat_tables.jpg" alt="Tables" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Executive Suite</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Tables</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Executive Cabin Tables, Conference Meeting Tables, Cafe Tables, and Modular Training Tables for modern corporate suites.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#tables" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Corporate Tables')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Storage -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/categories/cat_storage.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Storage Systems</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Storage Systems</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Prelam Storage Credenzas, Heavy-Duty Metal Filing Cabinets, High-Density Compactor Storage, and Personal Lockers.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#storage" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Storage Systems')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seating -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/categories/cat_seating.jpg" alt="Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Ergonomic Seating</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Ergonomic Seating</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Premium High-Back Mesh Chairs, Genuine Leather Executive Armchairs, Training Chairs, and Cafe Seating.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#seating" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Ergonomic Chairs')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Seating -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/categories/cat_soft_seating.jpg" alt="Soft Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Lounge &amp; Sofas</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Soft Seating &amp; Lounge</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Lounge Chairs, Executive Sofas, Modular Collaborative Seating, Pouffes, and Occasional Center Tables.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-sofas.html" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Soft Seating & Sofas')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pods -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/categories/cat_pods.jpg" alt="Pods" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Acoustic Pods</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Acoustic Work Pods</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Private Acoustic Phone Pods and Collaborative Meeting Pods engineered for sound isolation and distraction-free calls.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#pods" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Acoustic Work Pods')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carpets -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/sections/lookbook-item-1.jpg" alt="Carpets" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/hero-workspace.jpg'">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Carpet Flooring</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Interface Carpets</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">High-performance Interface Carpet Tiles designed for heavy traffic commercial office floors.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#carpets" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Interface Carpet Tiles')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outdoor -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/sections/lookbook-item-2.jpg" alt="Outdoor" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Terrace &amp; Patio</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Outdoor Furniture</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Weatherproof Loom Crafts outdoor lounge sets, patio tables, and terrace seating for corporate cafeterias.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#outdoor" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Outdoor Loom Crafts Furniture')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 240px;">
+                        <img src="images/header/prd-nav-1.jpg" alt="Educational" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Campus Solutions</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-dark mb-2">Educational Solutions</h4>
+                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Ergonomic Classroom Desks, Library Furniture, Hostel Storage Units, and Heavy-Duty Auditorium Seating.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="product-categories.html#educational" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-bold p-0 text-decoration-none" onclick="openEnquiryModal('Educational Furniture')">Enquire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5 bg-light">
+    <div class="tf-container py-4">
+        <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+            <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Our Excellence</span>
+            <h2 class="display-6 fw-bold text-dark mt-2 mb-3">Why Choose Vishista Office Solutions</h2>
+            <p class="text-secondary">We combine deep domain experience with premium product lines to deliver world-class turnkey workspace environments.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">01</span>
+                    <h5 class="fw-bold text-dark mb-2">20+ Years of Industry Expertise</h5>
+                    <p class="text-secondary fs-7 mb-0">Decades of leadership delivering complex, large-scale MNC and enterprise workspace projects across South India.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">02</span>
+                    <h5 class="fw-bold text-dark mb-2">End-to-End Workspace Solutions</h5>
+                    <p class="text-secondary fs-7 mb-0">Complete single-window support from initial space planning and product selection to installation and after-sales care.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">03</span>
+                    <h5 class="fw-bold text-dark mb-2">Trusted by Large MNCs</h5>
+                    <p class="text-secondary fs-7 mb-0">Proven track record of fulfilling strict architectural standards and multi-vendor requirements for global corporations.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">04</span>
+                    <h5 class="fw-bold text-dark mb-2">Premium OEM Partnerships</h5>
+                    <p class="text-secondary fs-7 mb-0">Direct access to industry-leading manufacturers including VIAK, ESS, DURIAN, Interface, and Loom Crafts.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">05</span>
+                    <h5 class="fw-bold text-dark mb-2">Customer-Centric Approach</h5>
+                    <p class="text-secondary fs-7 mb-0">Customized layout proposals tailored specifically to your floor plan, corporate identity, and budget targets.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">06</span>
+                    <h5 class="fw-bold text-dark mb-2">Strong Leadership Execution</h5>
+                    <p class="text-secondary fs-7 mb-0">Guided by seasoned executives with extensive background in Godrej Interio, HNI India, BP Ergo, and Gyproc.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">07</span>
+                    <h5 class="fw-bold text-dark mb-2">Timely Delivery, Every Time</h5>
+                    <p class="text-secondary fs-7 mb-0">Rigorous project tracking ensures your workspace is fully operational on time without project delays.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                    <span class="fs-1 fw-extrabold text-danger mb-3 d-block">08</span>
+                    <h5 class="fw-bold text-dark mb-2">Commitment to Quality</h5>
+                    <p class="text-secondary fs-7 mb-0">Uncompromising material standards, ergonomic certifications, and dedicated ongoing maintenance support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-5 text-white" style="background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);">
+    <div class="tf-container text-center py-4">
+        <h2 class="display-6 fw-bold text-white mb-3">Ready to Elevate Your Workspace?</h2>
+        <p class="fs-5 text-white-50 mb-4" style="max-width: 650px; margin: 0 auto;">
+            Connect with our workspace design specialists today to schedule a consultation or receive a detailed corporate proposal.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+            <button type="button" class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase" style="border-radius: 4px; background-color: #d32f2f; border: none; font-size: 15px;" data-bs-toggle="modal" data-bs-target="#enquireModal">
+                Enquire About Workspaces &rarr;
+            </button>
+            <a href="https://wa.me/919849058444" target="_blank" class="btn btn-success btn-lg px-4 py-3 fw-bold text-uppercase d-inline-flex align-items-center gap-2" style="border-radius: 4px; font-size: 15px;">
+                Chat on WhatsApp (+91 9849058444)
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .product-cat-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
+    }
+    .product-cat-card:hover img {
+        transform: scale(1.05);
+    }
+</style>         <!-- Footer -->
+        <footer class="footer bg-dark text-white pt-5 pb-3">
+            <div class="footer-body">
+                <div class="tf-container">
+                    <div class="row g-4">
+                        
+                        <!-- Company Overview -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="footer-about">
+                                <div class="site-brand-logo mb-3">
+                                    <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 42px;">
+                                    <div class="brand-text-wrapper">
+                                        <span class="brand-main-title text-white">VISHISTA</span>
+                                        <span class="brand-sub-title text-white-50">OFFICE SOLUTIONS</span>
+                                    </div>
+                                </div>
+                                <p class="text-white-50 fs-7 mb-3" style="line-height: 1.6;">
+                                    Vishista Office Solutions Pvt Ltd is a premier provider of high-end office furniture, ArchLabs seating collections, modular workstation systems, executive seating, and turnkey corporate interior solutions across Telangana and Andhra Pradesh.
+                                </p>
+                                <a href="about.html" class="btn btn-outline-light btn-sm text-uppercase fw-semibold px-3 py-2" style="border-radius: 4px; font-size: 12px;">
+                                    Discover Our Story &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                         <!-- Quick Links -->
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Quick Links</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-7">
+                                <li><a href="index.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Home</a></li>
+                                <li><a href="about.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; About Us</a></li>
+                                <li><a href="archlabs-catalogue.html" class="text-danger text-decoration-none fw-bold py-1 d-block">&bull; ArchLabs Catalogue</a></li>
+                                <li><a href="product-categories.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Products Catalogue</a></li>
+                                <li><a href="contact.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Workspace Solutions -->
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Catalogues &amp; Series</h5>
+                            <div class="row g-3 fs-7">
+                                <div class="col-6">
+                                    <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                        <li><a href="archlabs-catalogue.html#mesh-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Mesh Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#leather-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Leather Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#training-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Training Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#metro-linea" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Metro Linea</a></li>
+                                        <li><a href="archlabs-catalogue.html#cafeteria-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Cafeteria Series</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                        <li><a href="product-categories.html#workstations" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Workstations</a></li>
+                                        <li><a href="product-categories.html#tables" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Tables</a></li>
+                                        <li><a href="product-categories.html#storage" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Storage</a></li>
+                                        <li><a href="product-sofas.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Soft Seating</a></li>
+                                        <li><a href="product-categories.html#pods" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Acoustic Pods</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Contact Us</h5>
+                            <div class="d-flex flex-column gap-3 fs-7 text-white-50">
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; Head Office:</strong>
+                                    <span style="line-height: 1.7; display: block;">
+                                        Saishruthi Nilyam, Street No. 4,<br>
+                                        Sri Sathya Sai Enclave, Plot No. 109,<br>
+                                        Old Bowenpally, Secunderabad, Telangana 500009
+                                    </span>
+                                </div>
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; Emails:</strong>
+                                    <div class="d-flex flex-column gap-1">
+                                        <a href="mailto:info@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; info@vishistaofficesolutions.com</a>
+                                        <a href="mailto:sales@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; sales@vishistaofficesolutions.com</a>
+                                        <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; kvramana.reddy@vishistaofficesolutions.com</a>
+                                    </div>
+                                </div>
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; WhatsApp &amp; Sales:</strong>
+                                    <a href="https://wa.me/919849058444" target="_blank" class="text-danger fs-6 fw-bold text-decoration-none d-inline-block">&bull; +91 9849058444</a>
+                                </div>
+                                <div class="pt-1">
+                                    <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-semibold px-3 py-2" style="border-radius: 6px; font-size: 12px; letter-spacing: 0.5px;">
+                                        Get Directions &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
+                <div class="tf-container">
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-3 py-2">
+                        <p class="mb-0">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
+                        <p class="mb-0">Designed for Corporate &amp; Institutional Workspaces.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /Footer -->
+
+    </div>
+    <!-- /wrapper -->
+
+    <!-- Mobile Menu Offcanvas Drawer -->
+    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 380px; max-width: 90vw;">
+        <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
+            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 230px;">
+                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 40px; width: auto; flex-shrink: 0;">
+                <div style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
+                    <span style="font-size: 17px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
+                    <span style="font-size: 8.5px; font-weight: 700; color: #555555; letter-spacing: 1.3px; margin-top: 2px;">OFFICE SOLUTIONS</span>
+                </div>
+            </a>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-danger btn-sm fw-bold px-3 py-1 text-uppercase" style="font-size: 12px; border-radius: 4px; background-color: #d32f2f; border: none;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
+                    Enquire
+                </button>
+                <button type="button" class="btn-close text-reset ms-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <div class="offcanvas-body p-3">
+            <ul class="nav flex-column gap-1 mb-4 list-unstyled">
+                <!-- 1. Home -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="index.html">
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <!-- 2. About Us Accordion Dropdown -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="#mobileAboutCollapse" role="button" aria-expanded="false" aria-controls="mobileAboutCollapse">
+                        <span>About Us</span>
+                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    </a>
+                    <div class="collapse mt-2" id="mobileAboutCollapse">
+                        <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled border-start ps-3 ms-2 border-danger">
+                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#company-profile">&bull; Company Profile</a></li>
+                            <li><a class="mobile-sub-link fw-bold text-danger" href="about.html#director-profile">&bull; Director Journey (K V Ramana Reddy)</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#mission-vision">&bull; Mission &amp; Vision</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#core-values">&bull; Core Values</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#why-choose-us">&bull; Why Choose Us</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- 3. Products Accordion Dropdown -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="#mobileProductsCollapse" role="button" aria-expanded="false" aria-controls="mobileProductsCollapse">
+                        <span>Products</span>
+                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    </a>
+                    
+                    <div class="collapse mt-2" id="mobileProductsCollapse">
+                        <div class="mobile-accordion-group d-flex flex-column gap-3">
+                            
+                            <!-- Sub Category A: ArchLabs Seating Catalogue -->
+                            <div class="p-2 rounded-3" style="background-color: #fff5f5; border: 1px solid #ffe3e3;">
+                                <a href="archlabs-catalogue.html" class="fw-bold text-danger fs-6 text-decoration-none d-block mb-2">
+                                    ArchLabs Seating Catalogue &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group archlabs-border list-unstyled m-0">
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#mesh-series">&bull; Mesh Series (30 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sub Category B: Office Furniture & Workstations -->
+                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-categories.html#workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
+                                    Office Furniture &amp; Systems &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
+                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Modular Workstations</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Height Adjustable Desks</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cabin &amp; Executive Tables</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Meeting &amp; Conference Tables</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#storage">&bull; Office Storage &amp; Compactors</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sub Category C: Soft Seating & Lounges -->
+                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-sofas.html" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
+                                    Soft Seating &amp; Lounges &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
+                                    <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Executive Sofas &amp; Lounges</a></li>
+                                    <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Collaborative Seating</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#pods">&bull; Acoustic Work Pods</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cafe &amp; Breakout Seating</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sub Category D: Flooring & Accessories -->
+                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-categories.html#carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
+                                    Flooring &amp; Accessories &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
+                                    <li><a class="mobile-sub-link" href="product-categories.html#carpets">&bull; Interface Carpet Tiles</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#outdoor">&bull; Outdoor Workspace Furniture</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#educational">&bull; Educational Solutions</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#accessories">&bull; Workspace Accessories</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 4. Contact Us -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="contact.html">
+                        <span>Contact Us</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Action Buttons -->
+            <div class="d-grid gap-2 pt-3 border-top">
+                <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase shadow-sm" style="background-color: #d32f2f; border: none; border-radius: 6px; font-size: 14px; letter-spacing: 0.5px;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
+                    ENQUIRE NOW
+                </button>
+                <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold py-2 d-flex align-items-center justify-content-center gap-2" style="border-radius: 6px; font-size: 14px;">
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /Mobile Menu Offcanvas -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919849058444?text=Hi%20Vishista%20Office%20Solutions,%20I%20am%20interested%20in%20your%20ArchLabs%20seating%20and%20workspace%20furniture." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" title="Chat on WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382C17.015 14.155 14.764 13.045 14.341 12.891C13.918 12.737 13.612 12.66 13.306 13.118C13 13.576 12.115 14.614 11.848 14.92C11.58 15.226 11.312 15.265 10.855 15.038C10.398 14.811 8.928 14.33 7.18 12.772C5.811 11.554 4.887 10.05 4.619 9.593C4.351 9.135 4.59 8.887 4.819 8.659C5.025 8.454 5.277 8.125 5.506 7.857C5.735 7.589 5.812 7.398 5.965 7.092C6.118 6.786 6.041 6.518 5.926 6.289C5.812 6.06 4.895 3.805 4.512 2.889C4.14 1.998 3.762 2.118 3.486 2.104C3.226 2.091 2.92 2.091 2.614 2.091C2.308 2.091 1.811 2.206 1.391 2.664C0.971 3.122 0 4.032 0 5.867C0 7.702 1.336 9.475 1.527 9.735C1.718 9.995 4.155 13.748 7.876 15.356C8.761 15.738 9.452 15.967 9.993 16.139C10.88 16.421 11.688 16.381 12.33 16.285C13.046 16.178 14.536 15.383 14.842 14.524C15.148 13.665 15.148 12.939 15.056 12.786C14.964 12.633 14.658 12.556 14.201 12.329H17.472Z" fill="white" transform="translate(3, 3)"/>
+        </svg>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Corporate Enquiry Modal -->
+    <div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 12px; overflow: hidden;">
+                <div class="modal-header bg-dark text-white border-0 px-4 py-3" style="background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);">
+                    <div>
+                        <h5 class="modal-title fw-bold text-white mb-0" id="enquireModalLabel">Workspace Solution Enquiry</h5>
+                        <small class="text-white-50">Vishista Office Solutions Pvt Ltd</small>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 bg-white">
+                    <form id="modalEnquiryForm" onsubmit="event.preventDefault(); alert('Thank you for your enquiry! Our workspace team will contact you shortly.'); bootstrap.Modal.getInstance(document.getElementById('enquireModal')).hide();">
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium fs-7 mb-1">Product / Service of Interest</label>
+                            <input type="text" id="modalProductInput" class="form-control" placeholder="ArchLabs Seating, Workstations, Turnkey Interiors, etc." style="border-radius: 6px; padding: 10px 14px;">
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Your Name *</label>
+                                <input type="text" class="form-control" required placeholder="Full Name" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Company Name</label>
+                                <input type="text" class="form-control" placeholder="Organization" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Phone Number *</label>
+                                <input type="tel" class="form-control" required placeholder="Mobile Number" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-dark fw-medium fs-7 mb-1">Email Address *</label>
+                                <input type="email" class="form-control" required placeholder="name@company.com" style="border-radius: 6px; padding: 10px 14px;">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-dark fw-medium fs-7 mb-1">Message / Project Requirements</label>
+                            <textarea class="form-control" rows="3" placeholder="Specify floor size, seating capacity, timeline, or location..." style="border-radius: 6px; padding: 10px 14px;"></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger w-100 justify-content-center text-uppercase fw-bold" style="padding: 12px; border-radius: 6px; background-color: #d32f2f; border: none;">Submit Enquiry</button>
+                            <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold d-flex align-items-center justify-content-center gap-2" style="padding: 10px; border-radius: 6px;">
+                                Chat Directly on WhatsApp (+91 9849058444)
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #25d366;
+            color: #ffffff !important;
+            border-radius: 50px;
+            padding: 10px 18px 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .whatsapp-float-btn:hover {
+            background-color: #128c7e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+        }
+        @media (max-width: 576px) {
+            .whatsapp-float-btn .whatsapp-text {
+                display: none;
+            }
+            .whatsapp-float-btn {
+                padding: 12px;
+                border-radius: 50%;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+
+    <!-- Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function openEnquiryModal(productName) {
+            if (productName) {
+                document.getElementById('modalProductInput').value = productName;
+            }
+            var modal = new bootstrap.Modal(document.getElementById('enquireModal'));
+            modal.show();
+        }
+
+        // Guaranteed Mobile Menu Nav Links & Accordion Handler
+        document.addEventListener('DOMContentLoaded', function () {
+            var mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                // 1. Accordion Toggle for About Us & Products
+                var toggleBtns = mobileMenu.querySelectorAll('.mobile-nav-link');
+                toggleBtns.forEach(function (btn) {
+                    btn.addEventListener('click', function (e) {
+                        var targetSelector = this.getAttribute('href') || this.getAttribute('data-bs-target');
+                        if (targetSelector && targetSelector.startsWith('#mobile')) {
+                            e.preventDefault();
+                            var targetEl = document.querySelector(targetSelector);
+                            if (targetEl) {
+                                if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                                    var bsCollapse = bootstrap.Collapse.getOrCreateInstance(targetEl, { toggle: false });
+                                    if (targetEl.classList.contains('show')) {
+                                        bsCollapse.hide();
+                                        this.setAttribute('aria-expanded', 'false');
+                                    } else {
+                                        bsCollapse.show();
+                                        this.setAttribute('aria-expanded', 'true');
+                                    }
+                                } else {
+                                    var isShown = targetEl.classList.contains('show');
+                                    if (isShown) {
+                                        targetEl.classList.remove('show');
+                                        this.setAttribute('aria-expanded', 'false');
+                                    } else {
+                                        targetEl.classList.add('show');
+                                        this.setAttribute('aria-expanded', 'true');
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+
+                // 2. Subcategory & Menu Page Links Click Navigation
+                var pageLinks = mobileMenu.querySelectorAll('a[href]');
+                pageLinks.forEach(function (link) {
+                    var href = link.getAttribute('href');
+                    if (href && !href.startsWith('#mobile') && href !== '#') {
+                        link.addEventListener('click', function (e) {
+                            if (typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+                                var bsOffcanvas = bootstrap.Offcanvas.getInstance(mobileMenu);
+                                if (bsOffcanvas) {
+                                    bsOffcanvas.hide();
+                                }
+                            }
+                            window.location.href = href;
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
