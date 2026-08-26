@@ -1,6 +1,8 @@
 {
-  "routes": [
-    { "src": "/admin/?$", "dest": "/admin.html" },
-    { "src": "/admin/(.*)", "dest": "/admin.html" }
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/", "destination": "/admin/index.html" },
+    { "source": "/admin/:path*", "destination": "/admin/index.html" }
   ]
 }

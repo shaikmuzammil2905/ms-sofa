@@ -58,7 +58,8 @@ const pages = [
     { src: 'archlabs-catalogue.php', distHtml: 'archlabs-catalogue.html' },
     { src: 'product-categories.php', distHtml: 'product-categories.html' },
     { src: 'product-sofas.php', distHtml: 'product-sofas.html' },
-    { src: 'contact.php', distHtml: 'contact.html' }
+    { src: 'contact.php', distHtml: 'contact.html' },
+    { src: 'admin.php', distHtml: 'admin.html' }
 ];
 
 pages.forEach(page => {
@@ -69,3 +70,20 @@ pages.forEach(page => {
         console.log(`Compiled ${page.src} -> ${page.distHtml} successfully.`);
     }
 });
+
+// Guarantee admin/index.html generation for Vercel static routing
+const adminDir = path.join(ROOT_DIR, 'admin');
+if (!fs.existsSync(adminDir)) {
+    fs.mkdirSync(adminDir, { recursive: true });
+}
+if (fs.existsSync(path.join(ROOT_DIR, 'admin.html'))) {
+    let adminHtml = fs.readFileSync(path.join(ROOT_DIR, 'admin.html'), 'utf8');
+    adminHtml = adminHtml.replace(/href="admin\/css\/admin\.css"/g, 'href="css/admin.css"');
+    adminHtml = adminHtml.replace(/src="admin\/js\/admin-app\.js"/g, 'src="js/admin-app.js"');
+    adminHtml = adminHtml.replace(/src="images\//g, 'src="../images/');
+    adminHtml = adminHtml.replace(/src="js\//g, 'src="../js/');
+    adminHtml = adminHtml.replace(/href="images\//g, 'href="../images/');
+    fs.writeFileSync(path.join(adminDir, 'index.html'), adminHtml, 'utf8');
+    console.log('Compiled admin/index.html successfully.');
+}
+

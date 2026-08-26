@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Vishista Office Solutions CMS</title>
-    <link rel="icon" href="../images/logo/logo-symbol.png" type="image/png">
+    <link rel="icon" href="images/logo/logo-symbol.png" type="image/png">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Custom Admin Styling -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="admin/css/admin.css">
 </head>
 <body class="admin-body">
 
@@ -19,7 +19,7 @@
     <div id="authScreen" class="admin-auth-wrapper">
         <div class="admin-auth-card text-center">
             <div class="site-brand-logo justify-content-center mb-3">
-                <img src="../images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 50px;">
+                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 50px;">
             </div>
             <h4 class="fw-bold text-dark mb-1">Vishista Admin CMS</h4>
             <p class="text-muted fs-7 mb-4">Sign in to manage products, categories &amp; website content.</p>
@@ -51,7 +51,7 @@
         <!-- Sidebar Navigation -->
         <aside class="admin-sidebar">
             <div class="admin-sidebar-brand">
-                <img src="../images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 36px;">
+                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 36px;">
                 <div>
                     <div class="fw-bold text-white fs-6 leading-tight">VISHISTA</div>
                     <div class="text-white-50 fs-8 tracking-wider">ADMIN CMS</div>
@@ -309,8 +309,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <!-- Supabase & Cloudinary Config -->
-    <script src="../js/supabase-config.js"></script>
+    <script src="js/supabase-config.js"></script>
     <!-- Admin App Controller -->
-    <script src="../js/admin-app.js"></script>
+    <script src="admin/js/admin-app.js"></script>
 </body>
 </html>
