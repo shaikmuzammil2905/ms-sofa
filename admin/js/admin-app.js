@@ -121,6 +121,12 @@ function switchTab(tabName) {
     const targetView = document.getElementById(`view-${tabName}`);
     if (targetView) targetView.classList.remove('d-none');
 
+    // Auto-close sidebar drawer on mobile view after selecting any menu option
+    const sidebar = document.querySelector('.admin-sidebar');
+    if (sidebar && sidebar.classList.contains('show')) {
+        sidebar.classList.remove('show');
+    }
+
     // Load data for module
     if (tabName === 'dashboard') loadDashboardData();
     if (tabName === 'products') loadProductsModule();
