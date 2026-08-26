@@ -47,6 +47,7 @@
 
     <!-- 2. ADMIN DASHBOARD LAYOUT -->
     <div id="adminAppLayout" class="admin-layout d-none">
+        <div id="sidebarBackdrop" class="sidebar-backdrop d-none" onclick="toggleMobileSidebar(false)"></div>
         
         <!-- Sidebar Navigation -->
         <aside class="admin-sidebar">

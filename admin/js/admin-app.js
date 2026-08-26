@@ -92,6 +92,21 @@ function bindAuthForm() {
     }
 }
 
+function toggleMobileSidebar(show) {
+    const sidebar = document.querySelector('.admin-sidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    if (!sidebar) return;
+
+    const shouldShow = (typeof show === 'boolean') ? show : !sidebar.classList.contains('show');
+    if (shouldShow) {
+        sidebar.classList.add('show');
+        if (backdrop) backdrop.classList.remove('d-none');
+    } else {
+        sidebar.classList.remove('show');
+        if (backdrop) backdrop.classList.add('d-none');
+    }
+}
+
 // 2. Navigation Tabs
 function bindNavItems() {
     const navItems = document.querySelectorAll('.admin-nav-item[data-tab]');
@@ -106,7 +121,7 @@ function bindNavItems() {
     const sidebarToggle = document.getElementById('sidebarToggleBtn');
     if (sidebarToggle) {
         sidebarToggle.addEventListener('click', function () {
-            document.querySelector('.admin-sidebar').classList.toggle('show');
+            toggleMobileSidebar();
         });
     }
 }
@@ -122,10 +137,7 @@ function switchTab(tabName) {
     if (targetView) targetView.classList.remove('d-none');
 
     // Auto-close sidebar drawer on mobile view after selecting any menu option
-    const sidebar = document.querySelector('.admin-sidebar');
-    if (sidebar && sidebar.classList.contains('show')) {
-        sidebar.classList.remove('show');
-    }
+    toggleMobileSidebar(false);
 
     // Load data for module
     if (tabName === 'dashboard') loadDashboardData();
@@ -181,9 +193,11 @@ async function loadProductsModule() {
             </td>
             <td>${prod.display_order || index + 1}</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary me-1" onclick="editProductModal('${prod.id || index}')">Edit</button>
-                <button class="btn btn-sm btn-outline-warning me-1" onclick="toggleProductVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
-                <button class="btn btn-sm btn-outline-danger" onclick="deleteProduct(${index})">Delete</button>
+                <div class="action-btn-group">
+                    <button class="btn btn-sm btn-primary px-2 py-1" onclick="editProductModal(${index})">Edit</button>
+                    <button class="btn btn-sm btn-outline-warning px-2 py-1" onclick="toggleProductVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
+                    <button class="btn btn-sm btn-outline-danger px-2 py-1" onclick="deleteProduct(${index})">Delete</button>
+                </div>
             </td>
         </tr>`;
     });
@@ -392,3 +406,4 @@ window.deleteProduct = deleteProduct;
 window.saveHeroCMS = saveHeroCMS;
 window.saveAboutCMS = saveAboutCMS;
 window.saveFooterCMS = saveFooterCMS;
+window.toggleMobileSidebar = toggleMobileSidebar;
