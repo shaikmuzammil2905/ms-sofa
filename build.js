@@ -71,18 +71,13 @@ pages.forEach(page => {
     }
 });
 
-// Guarantee admin/index.html generation for Vercel static routing
+// Guarantee admin/index.html generation for Vercel & Localhost static routing
 const adminDir = path.join(ROOT_DIR, 'admin');
 if (!fs.existsSync(adminDir)) {
     fs.mkdirSync(adminDir, { recursive: true });
 }
 if (fs.existsSync(path.join(ROOT_DIR, 'admin.html'))) {
-    let adminHtml = fs.readFileSync(path.join(ROOT_DIR, 'admin.html'), 'utf8');
-    adminHtml = adminHtml.replace(/href="admin\/css\/admin\.css"/g, 'href="css/admin.css"');
-    adminHtml = adminHtml.replace(/src="admin\/js\/admin-app\.js"/g, 'src="js/admin-app.js"');
-    adminHtml = adminHtml.replace(/src="images\//g, 'src="../images/');
-    adminHtml = adminHtml.replace(/src="js\//g, 'src="../js/');
-    adminHtml = adminHtml.replace(/href="images\//g, 'href="../images/');
+    const adminHtml = fs.readFileSync(path.join(ROOT_DIR, 'admin.html'), 'utf8');
     fs.writeFileSync(path.join(adminDir, 'index.html'), adminHtml, 'utf8');
     console.log('Compiled admin/index.html successfully.');
 }

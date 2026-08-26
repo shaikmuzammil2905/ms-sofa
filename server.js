@@ -55,6 +55,20 @@ const server = http.createServer((req, res) => {
     let parsedUrl = url.parse(req.url);
     let pathname = decodeURIComponent(parsedUrl.pathname);
 
+    // Route /admin or /admin/ to Admin Panel SPA (preserving static files like /admin/css/ or /admin/js/)
+    if ((pathname === '/admin' || pathname === '/admin/') && !path.extname(pathname)) {
+        let adminPath = path.join(ROOT_DIR, 'admin', 'index.html');
+        if (!fs.existsSync(adminPath)) {
+            adminPath = path.join(ROOT_DIR, 'admin.html');
+        }
+        if (fs.existsSync(adminPath)) {
+            const htmlOutput = fs.readFileSync(adminPath, 'utf8');
+            res.writeHead(200, { 'Content-Type': MIME_TYPES['.html'] });
+            res.end(htmlOutput);
+            return;
+        }
+    }
+
     if (pathname === '/') {
         pathname = '/index.php';
     }
