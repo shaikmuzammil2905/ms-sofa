@@ -153,21 +153,21 @@
 
                 <!-- 3. Products Accordion Dropdown -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="true" aria-controls="mobileProductsCollapse">
+                    <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="false" aria-controls="mobileProductsCollapse">
                         <span>Products</span>
                         <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                     </a>
                     
-                    <div class="collapse show mt-2" id="mobileProductsCollapse">
+                    <div class="collapse mt-2" id="mobileProductsCollapse">
                         <div class="mobile-accordion-group">
                             
                             <!-- Sub Category A: ArchLabs Seating Catalogue -->
                             <div class="mb-2">
-                                <a class="mobile-sub-accordion-link text-danger" data-bs-toggle="collapse" href="#mbSubArchLabs" role="button" aria-expanded="true">
+                                <a class="mobile-sub-accordion-link text-danger" data-bs-toggle="collapse" href="#mbSubArchLabs" role="button" aria-expanded="false">
                                     <span>ArchLabs Seating Catalogue</span>
                                     <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                 </a>
-                                <div class="collapse show mt-1" id="mbSubArchLabs">
+                                <div class="collapse mt-1" id="mbSubArchLabs">
                                     <ul class="nav flex-column gap-1 mobile-nested-group archlabs-border list-unstyled">
                                         <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#mesh-series" data-bs-dismiss="offcanvas">&bull; Mesh Series (30 Models)</a></li>
                                         <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series" data-bs-dismiss="offcanvas">&bull; Leather Series (5 Models)</a></li>
@@ -180,11 +180,11 @@
 
                             <!-- Sub Category B: Office Furniture & Workstations -->
                             <div class="mb-2">
-                                <a class="mobile-sub-accordion-link" data-bs-toggle="collapse" href="#mbSubOfficeFurniture" role="button" aria-expanded="true">
+                                <a class="mobile-sub-accordion-link" data-bs-toggle="collapse" href="#mbSubOfficeFurniture" role="button" aria-expanded="false">
                                     <span>Office Furniture &amp; Systems</span>
                                     <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                 </a>
-                                <div class="collapse show mt-1" id="mbSubOfficeFurniture">
+                                <div class="collapse mt-1" id="mbSubOfficeFurniture">
                                     <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled">
                                         <li><a class="mobile-sub-link" href="product-categories.html#workstations" data-bs-dismiss="offcanvas">&bull; Modular Workstations</a></li>
                                         <li><a class="mobile-sub-link" href="product-categories.html#workstations" data-bs-dismiss="offcanvas">&bull; Height Adjustable Desks</a></li>
@@ -247,12 +247,6 @@
                 <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold py-2 d-flex align-items-center justify-content-center gap-2" style="border-radius: 6px; font-size: 14px;">
                     Chat on WhatsApp
                 </a>
-            </div>
-
-            <!-- Footer indicator bar (Matching image copy 8 bottom USD / English bar) -->
-            <div class="mt-4 pt-3 border-top text-center text-muted fs-7 d-flex justify-content-between align-items-center px-1">
-                <span class="fw-medium text-dark">&bull; 🇮🇳 India (INR ₹)</span>
-                <span class="fw-medium text-dark">&bull; English</span>
             </div>
         </div>
     </div>
