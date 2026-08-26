@@ -345,27 +345,7 @@
             <span class="icon icon-caret-up"></span>
         </button>
 
-        <!-- preload -->
-        <div class="preload preload-container" id="preload">
-            <div class="preload-logo">
-                <div class="spinner"></div>
-            </div>
-        </div>
-        <script>
-            (function() {
-                function hidePreloader() {
-                    var pl = document.getElementById('preload');
-                    if (pl && pl.style.display !== 'none') {
-                        pl.style.opacity = '0';
-                        pl.style.transition = 'opacity 0.4s ease';
-                        setTimeout(function() { pl.style.display = 'none'; }, 400);
-                    }
-                }
-                window.addEventListener('load', hidePreloader);
-                setTimeout(hidePreloader, 1200);
-            })();
-        </script>
-        <!-- /preload -->
+        <!-- Preloader Disabled for Instant Crisp Page Loading -->
 
         <!-- .header -->
         <header class="header header-sticky py-2">
