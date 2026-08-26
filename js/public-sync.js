@@ -1,101 +1,28 @@
-// Public Website Supabase Synchronization Engine
-document.addEventListener('DOMContentLoaded', function () {
+// Public Website Supabase & CMS Sync Engine
+window.addEventListener('load', function () {
     initPublicSync();
     initEnquiryFormHandler();
 });
 
 async function initPublicSync() {
     try {
-        // Load initial data from seed fallback or Supabase
-        const seedRes = await fetch('data/seed_data.json').catch(() => null);
-        let seedData = null;
-        if (seedRes && seedRes.ok) {
-            seedData = await seedRes.json();
-        }
-
-        // Initialize local caches if empty
-        if (seedData) {
-            if (!localStorage.getItem('vishista_cms_products') && seedData.products) {
-                localStorage.setItem('vishista_cms_products', JSON.stringify(seedData.products));
-            }
-            if (!localStorage.getItem('vishista_cms_categories') && seedData.categories) {
-                localStorage.setItem('vishista_cms_categories', JSON.stringify(seedData.categories));
-            }
-            if (!localStorage.getItem('vishista_cms_hero_sections') && seedData.hero_sections) {
-                localStorage.setItem('vishista_cms_hero_sections', JSON.stringify(seedData.hero_sections));
-            }
-            if (!localStorage.getItem('vishista_cms_about_sections') && seedData.about_sections) {
-                localStorage.setItem('vishista_cms_about_sections', JSON.stringify(seedData.about_sections));
-            }
-            if (!localStorage.getItem('vishista_cms_footer_content') && seedData.footer_content) {
-                localStorage.setItem('vishista_cms_footer_content', JSON.stringify(seedData.footer_content));
-            }
-        }
-
-        // Sync Content
-        syncHeroSection();
-        syncAboutSection();
-        syncFooterContent();
+        // Sync Product Lists on Catalogue Pages
         syncProductPages();
     } catch (e) {
-        console.warn('Public sync error:', e);
+        console.warn('CMS Public Sync notice:', e);
     }
 }
 
-// 1. Sync Hero Section safely
-async function syncHeroSection() {
-    const heroList = await CMSDataStore.get('hero_sections');
-    if (heroList && heroList.length > 0) {
-        const hero = heroList[0];
-        if (hero && hero.is_custom_updated) {
-            const headingEl = document.querySelector('.hero-title');
-            if (headingEl && hero.heading) headingEl.innerHTML = hero.heading;
-
-            const subheadEl = document.querySelector('.hero-subtitle');
-            if (subheadEl && hero.description) subheadEl.innerHTML = hero.description;
-        }
-    }
-}
-
-// 2. Sync About Section safely
-async function syncAboutSection() {
-    const aboutList = await CMSDataStore.get('about_sections');
-    if (aboutList && aboutList.length > 0) {
-        const about = aboutList[0];
-        if (about && about.is_custom_updated) {
-            const storyTitleEl = document.querySelector('.about-story-title');
-            if (storyTitleEl && about.title) storyTitleEl.innerHTML = about.title;
-
-            const storyDescEl = document.querySelector('.about-story-desc');
-            if (storyDescEl && about.main_description) storyDescEl.innerHTML = about.main_description;
-        }
-    }
-}
-
-// 3. Sync Footer Content
-async function syncFooterContent() {
-    const footerList = await CMSDataStore.get('footer_content');
-    if (footerList && footerList.length > 0) {
-        const footer = footerList[0];
-        const descEl = document.querySelector('.footer-about p');
-        if (descEl && footer.company_description) descEl.textContent = footer.company_description;
-
-        const addressEl = document.querySelector('.footer-contact-block span');
-        if (addressEl && footer.address) {
-            addressEl.innerHTML = footer.address.replace(/\n/g, '<br>');
-        }
-    }
-}
-
-// 4. Sync Product Pages
+// Sync Product Pages (ArchLabs Catalogue, Categories, Sofas)
 async function syncProductPages() {
+    if (typeof CMSDataStore === 'undefined') return;
     const products = await CMSDataStore.get('products');
     if (!products || products.length === 0) return;
 
     // Filter published products only
     const visibleProducts = products.filter(p => p.is_visible !== false);
 
-    // If on ArchLabs Catalogue page, sync Mesh Series & Leather Series
+    // ArchLabs Catalogue - Mesh Series
     const meshSection = document.querySelector('#mesh-series .row.g-4');
     if (meshSection) {
         const meshProducts = visibleProducts.filter(p => p.subcategory === 'Mesh Series' || p.category_slug === 'archlabs-seating');
@@ -104,6 +31,7 @@ async function syncProductPages() {
         }
     }
 
+    // ArchLabs Catalogue - Leather Series
     const leatherSection = document.querySelector('#leather-series .row.g-4');
     if (leatherSection) {
         const leatherProducts = visibleProducts.filter(p => p.subcategory === 'Leather Series');
@@ -137,7 +65,7 @@ function renderProductGrid(container, items) {
     container.innerHTML = html;
 }
 
-// 5. Connect Enquiry Forms to Supabase
+// Connect Customer Enquiry Form Submission to Supabase
 function initEnquiryFormHandler() {
     const enquiryModalForm = document.querySelector('#enquireModal form');
     if (enquiryModalForm) {
@@ -165,11 +93,12 @@ function initEnquiryFormHandler() {
                 created_at: new Date().toISOString()
             };
 
-            // Save to Supabase / CMSDataStore
             try {
-                const existingEnquiries = await CMSDataStore.get('enquiries');
-                existingEnquiries.unshift(enquiryPayload);
-                await CMSDataStore.save('enquiries', existingEnquiries);
+                if (typeof CMSDataStore !== 'undefined') {
+                    const existingEnquiries = await CMSDataStore.get('enquiries');
+                    existingEnquiries.unshift(enquiryPayload);
+                    await CMSDataStore.save('enquiries', existingEnquiries);
+                }
 
                 alert('Thank you! Your enquiry has been submitted successfully.');
                 enquiryModalForm.reset();
