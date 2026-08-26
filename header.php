@@ -335,12 +335,26 @@
                     <!-- Navigation Bar -->
                     <nav class="main-menu d-none d-xl-block">
                         <ul class="navigation box-nav-menu d-flex align-items-center gap-4 list-unstyled mb-0">
+                            <!-- 1. Home -->
                             <li class="text-menu menu-item">
                                 <a href="index.html" class="item-link fw-semibold">Home</a>
                             </li>
-                            <li class="text-menu menu-item">
-                                <a href="about.html" class="item-link fw-semibold">About Us</a>
+
+                            <!-- 2. About Us (Dropdown with Chevron Icon) -->
+                            <li class="has-child text-menu menu-item">
+                                <a href="about.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">About Us <i class="icon-caret-down fs-7" style="font-size: 11px;"></i></a>
+                                <div class="submenu sub-menu p-3 rounded-3 shadow-lg" style="min-width: 260px;">
+                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fs-7">
+                                        <li><a href="about.html#company-profile" class="fw-bold text-dark text-decoration-none">&bull; Company Profile</a></li>
+                                        <li><a href="about.html#director-profile" class="fw-bold text-danger text-decoration-none">&bull; Director Journey (K V Ramana Reddy)</a></li>
+                                        <li><a href="about.html#mission-vision" class="fw-semibold text-dark text-decoration-none">&bull; Mission &amp; Vision</a></li>
+                                        <li><a href="about.html#core-values" class="fw-semibold text-dark text-decoration-none">&bull; Core Values</a></li>
+                                        <li><a href="about.html#why-choose-us" class="fw-semibold text-dark text-decoration-none">&bull; Why Choose Us</a></li>
+                                    </ul>
+                                </div>
                             </li>
+
+                            <!-- 3. Products (Mega Menu Dropdown with Chevron Icon) -->
                             <li class="has-child text-menu menu-item">
                                 <a href="product-categories.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">Products <i class="icon-caret-down fs-7" style="font-size: 11px;"></i></a>
                                 <div class="submenu sub-menu mega-menu">
@@ -405,9 +419,8 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="text-menu menu-item">
-                                <a href="archlabs-catalogue.html" class="item-link fw-semibold text-danger">ArchLabs Catalogue</a>
-                            </li>
+
+                            <!-- 4. Contact Us -->
                             <li class="text-menu menu-item">
                                 <a href="contact.html" class="item-link fw-semibold">Contact Us</a>
                             </li>

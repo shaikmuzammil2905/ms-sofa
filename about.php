@@ -12,7 +12,7 @@
 </section>
 
 <!-- Company Overview Section -->
-<section class="py-5 bg-white">
+<section id="company-profile" class="py-5 bg-white">
     <div class="tf-container py-4">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
@@ -44,7 +44,7 @@
 </section>
 
 <!-- Director Section -->
-<section class="py-5 bg-light">
+<section id="director-profile" class="py-5 bg-light">
     <div class="tf-container py-4">
         <div class="bg-white rounded-4 p-4 p-md-5 shadow-sm border">
             <div class="row align-items-center g-4">
@@ -86,7 +86,7 @@
 </section>
 
 <!-- Mission & Vision Section -->
-<section class="py-5 bg-white">
+<section id="mission-vision" class="py-5 bg-white">
     <div class="tf-container py-4">
         <div class="row g-4">
             <!-- Mission -->
@@ -124,7 +124,7 @@
 </section>
 
 <!-- Core Values Section -->
-<section class="py-5 bg-light">
+<section id="core-values" class="py-5 bg-light">
     <div class="tf-container py-4">
         <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
             <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Guiding Principles</span>
@@ -187,7 +187,7 @@
 </section>
 
 <!-- Why Choose Us Section -->
-<section class="py-5 bg-white">
+<section id="why-choose-us" class="py-5 bg-white">
     <div class="tf-container py-4">
         <div class="text-center mb-5" style="max-width: 750px; margin: 0 auto;">
             <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Our Key Differentiators</span>
