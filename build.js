@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT_DIR = __dirname;
+const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 
 function compileFullHtml(pageFileName) {
     const srcPath = path.join(ROOT_DIR, pageFileName);
@@ -14,7 +15,6 @@ function compileFullHtml(pageFileName) {
     const headerPath = path.join(ROOT_DIR, 'header.php');
     if (fs.existsSync(headerPath)) {
         headerContent = fs.readFileSync(headerPath, 'utf8');
-        // Remove php tags from header
         headerContent = headerContent.replace(/<\?php[\s\S]*?\?>/gi, '');
     }
 
@@ -22,7 +22,6 @@ function compileFullHtml(pageFileName) {
     const footerPath = path.join(ROOT_DIR, 'footer.php');
     if (fs.existsSync(footerPath)) {
         footerContent = fs.readFileSync(footerPath, 'utf8');
-        // Remove php tags from footer
         footerContent = footerContent.replace(/<\?php[\s\S]*?\?>/gi, '');
     }
 
@@ -52,6 +51,27 @@ function compileFullHtml(pageFileName) {
     return pageContent;
 }
 
+function copyFolderRecursiveSync(source, target) {
+    if (!fs.existsSync(source)) return;
+    if (!fs.existsSync(target)) {
+        fs.mkdirSync(target, { recursive: true });
+    }
+    const files = fs.readdirSync(source);
+    files.forEach((file) => {
+        const curSource = path.join(source, file);
+        const curTarget = path.join(target, file);
+        if (fs.lstatSync(curSource).isDirectory()) {
+            copyFolderRecursiveSync(curSource, curTarget);
+        } else {
+            fs.copyFileSync(curSource, curTarget);
+        }
+    });
+}
+
+if (!fs.existsSync(PUBLIC_DIR)) {
+    fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+}
+
 const pages = [
     { src: 'index.php', distHtml: 'index.html' },
     { src: 'about.php', distHtml: 'about.html' },
@@ -65,13 +85,13 @@ const pages = [
 pages.forEach(page => {
     const compiledHtml = compileFullHtml(page.src);
     if (compiledHtml) {
-        // Write to distHtml (.html) for static hostings & Vercel
         fs.writeFileSync(path.join(ROOT_DIR, page.distHtml), compiledHtml, 'utf8');
+        fs.writeFileSync(path.join(PUBLIC_DIR, page.distHtml), compiledHtml, 'utf8');
         console.log(`Compiled ${page.src} -> ${page.distHtml} successfully.`);
     }
 });
 
-// Guarantee admin/index.html generation for Vercel & Localhost static routing
+// Guarantee admin/index.html generation for Vercel & Localhost
 const adminDir = path.join(ROOT_DIR, 'admin');
 if (!fs.existsSync(adminDir)) {
     fs.mkdirSync(adminDir, { recursive: true });
@@ -79,6 +99,15 @@ if (!fs.existsSync(adminDir)) {
 if (fs.existsSync(path.join(ROOT_DIR, 'admin.html'))) {
     const adminHtml = fs.readFileSync(path.join(ROOT_DIR, 'admin.html'), 'utf8');
     fs.writeFileSync(path.join(adminDir, 'index.html'), adminHtml, 'utf8');
+    
+    const publicAdminDir = path.join(PUBLIC_DIR, 'admin');
+    if (!fs.existsSync(publicAdminDir)) fs.mkdirSync(publicAdminDir, { recursive: true });
+    fs.writeFileSync(path.join(publicAdminDir, 'index.html'), adminHtml, 'utf8');
     console.log('Compiled admin/index.html successfully.');
 }
 
+// Copy static asset directories to public/
+['css', 'images', 'icons', 'js', 'data', 'admin'].forEach(folder => {
+    copyFolderRecursiveSync(path.join(ROOT_DIR, folder), path.join(PUBLIC_DIR, folder));
+});
+console.log('Copied static asset directories to public/ for Vercel deployment.');
