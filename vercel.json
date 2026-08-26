@@ -1,9 +1,5 @@
 {
-  "buildCommand": "node build.js",
-  "outputDirectory": "public",
   "rewrites": [
-    { "source": "/admin", "destination": "/admin/index.html" },
-    { "source": "/admin/", "destination": "/admin/index.html" },
-    { "source": "/admin/:path*", "destination": "/admin/index.html" }
+    { "source": "/admin", "destination": "/admin/index.html" }
   ]
 }
