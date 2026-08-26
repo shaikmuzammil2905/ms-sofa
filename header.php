@@ -20,14 +20,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css?v=5">
-    <link rel="stylesheet" type="text/css" href="/css/animate.min.css?v=5">
-    <link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css?v=5">
-    <link rel="stylesheet" type="text/css" href="/css/sib-styles.css?v=5">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css?v=5">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css?v=6">
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css?v=6">
+    <link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css?v=6">
+    <link rel="stylesheet" type="text/css" href="/css/sib-styles.css?v=6">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css?v=6">
 
     <!-- Icon -->
-    <link rel="stylesheet" type="text/css" href="/icons/icomoon/style.css?v=5">
+    <link rel="stylesheet" type="text/css" href="/icons/icomoon/style.css?v=6">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/images/logo/logo-mark.png?v=2">
