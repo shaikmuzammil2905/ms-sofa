@@ -260,7 +260,7 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/sections/s-lookbook-1.jpg" alt="Workstations" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK Catalogue</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Modular Workspace</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h4 class="fw-bold text-dark mb-2">Workstations</h4>
@@ -278,7 +278,7 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/header/prd-nav-1.jpg" alt="Tables" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK Catalogue</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Executive Suite</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h4 class="fw-bold text-dark mb-2">Tables</h4>
@@ -296,7 +296,7 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/sections/s-lookbook-2.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/hero-workspace.jpg'">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK Catalogue</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Storage Systems</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h4 class="fw-bold text-dark mb-2">Storage Systems</h4>
@@ -314,7 +314,7 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/header/prd-nav-2.jpg" alt="Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">ESS & VIAK Chair</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Ergonomic Seating</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h4 class="fw-bold text-dark mb-2">Ergonomic Seating</h4>
@@ -332,10 +332,10 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/sections/hero-workspace.jpg" alt="Soft Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">Soft Seating PDF</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Lounge &amp; Sofas</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
-                        <h4 class="fw-bold text-dark mb-2">Soft Seating & Lounge</h4>
+                        <h4 class="fw-bold text-dark mb-2">Soft Seating &amp; Lounge</h4>
                         <p class="text-secondary fs-7 mb-4 flex-grow-1">Lounge Chairs, Executive Sofas, Modular Collaborative Seating, Pouffes, and Occasional Center Tables.</p>
                         <div class="d-flex align-items-center justify-content-between">
                             <a href="product-sofas.html" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3">Explore Category</a>
@@ -350,7 +350,7 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/sections/s-lookbook-1.jpg" alt="Pods" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">DURIAN</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Acoustic Pods</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h4 class="fw-bold text-dark mb-2">Acoustic Work Pods</h4>
@@ -368,7 +368,7 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/sections/lookbook-item-1.jpg" alt="Carpets" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/hero-workspace.jpg'">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">INTERFACE</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Carpet Flooring</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h4 class="fw-bold text-dark mb-2">Interface Carpets</h4>
@@ -386,7 +386,7 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/sections/lookbook-item-2.jpg" alt="Outdoor" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">LOOM CRAFTS</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Terrace &amp; Patio</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h4 class="fw-bold text-dark mb-2">Outdoor Furniture</h4>
@@ -404,7 +404,7 @@
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
                         <img src="images/header/prd-nav-1.jpg" alt="Educational" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-dark text-white fs-7 px-3 py-1 m-3 rounded-pill fw-semibold">VIAK & DURIAN</span>
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Campus Solutions</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h4 class="fw-bold text-dark mb-2">Educational Solutions</h4>

@@ -12,7 +12,7 @@
 </section>
 
 <!-- Category Filter Sticky Anchor Bar -->
-<div class="bg-light border-bottom sticky-top py-3 shadow-sm" style="z-index: 100;">
+<div class="bg-light border-bottom sticky-top filter-anchor-bar py-3 shadow-sm" style="z-index: 100;">
     <div class="tf-container overflow-auto">
         <div class="d-flex flex-nowrap align-items-center gap-2 text-nowrap">
             <span class="fw-bold text-dark me-2 fs-7">Filter Series:</span>
@@ -49,7 +49,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Veloz</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 04</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Synchro-tilt with multi-position lock, 3D armrest with gel PU pad, Aluminium diecast base, Adjustable headrest.</p>
                             <div class="d-grid gap-2">
@@ -66,7 +66,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Feather</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 05</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Seamless reclining mechanism, Adjustable armrests, High-resilience cushioning, Adjustable headrest, Smooth castors.</p>
                             <div class="d-grid gap-2">
@@ -83,7 +83,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Eiffel</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 06</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Contoured backrest, Integrated lumbar support, High-density foam seat, Smooth-reclining mechanism.</p>
                             <div class="d-grid gap-2">
@@ -100,7 +100,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Mustang</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 07</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Generously-padded seat, Adjustable backrest, Smooth recline, Reinforced heavy-duty base.</p>
                             <div class="d-grid gap-2">
@@ -117,7 +117,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Bravo</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 08</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Plush cushioning, Smooth-reclining mechanism, Adjustable armrests, Heavy-duty castors, Robust Frame.</p>
                             <div class="d-grid gap-2">
@@ -134,7 +134,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Polar</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 09</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">High density moulded foam, Reinforced base, Adjustable armrests, Integrated lumbar support.</p>
                             <div class="d-grid gap-2">
@@ -151,7 +151,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Glanza</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 10</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Sturdy Metal base, High density moulded foam, Contoured backrest, Smooth-reclining mechanism.</p>
                             <div class="d-grid gap-2">
@@ -168,7 +168,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Yaris</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 11</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Supportive mesh back, Adjustable armrests, High density foam, Smooth-tilt mechanism.</p>
                             <div class="d-grid gap-2">
@@ -185,7 +185,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Quartz</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 12</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Robust Metal Frame, Multi-Position Locking, Synchronized reclining, Customizable seating position.</p>
                             <div class="d-grid gap-2">
@@ -202,7 +202,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Ditto</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 13</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Gas lift height adjustment, Robust Metal Frame, Premium Cushioning, Ergonomic backrest.</p>
                             <div class="d-grid gap-2">
@@ -219,7 +219,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Velfire</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 14</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">High back &amp; Medium back configurations, Breathable mesh back, Robust Metal Frame.</p>
                             <div class="d-grid gap-2">
@@ -236,7 +236,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Optimus</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 15</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">High back &amp; Medium back configurations, Premium cushioning, Smooth reclining mechanism.</p>
                             <div class="d-grid gap-2">
@@ -253,7 +253,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Zoom</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 16</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">High back &amp; Medium back options, Ergonomic backrest, Premium cushioning, Modern aesthetic.</p>
                             <div class="d-grid gap-2">
@@ -270,7 +270,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Comfy</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 17</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Ergonomic backrest, Reclining mechanism, High &amp; Medium back options, Premium cushioning.</p>
                             <div class="d-grid gap-2">
@@ -287,7 +287,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Rio</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 18</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Adjustable armrests, High &amp; Medium back configurations, Smooth-Reclining Mechanism.</p>
                             <div class="d-grid gap-2">
@@ -304,7 +304,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Hilite</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 19</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Light looks, Adjustable armrests, Smooth-rolling castors, High &amp; Medium back.</p>
                             <div class="d-grid gap-2">
@@ -321,7 +321,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Ecco</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 20</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">5-star caster base, Essential ergonomic support, Breathable mesh back &amp; seat.</p>
                             <div class="d-grid gap-2">
@@ -338,7 +338,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Vento</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 21</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Superior lumbar support, 5-star caster base, Adjustable armrests, Stylish design.</p>
                             <div class="d-grid gap-2">
@@ -355,7 +355,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Aura</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 22</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">All-day comfort, Ergonomic backrest, Effortless functionality in a sleek breathable design.</p>
                             <div class="d-grid gap-2">
@@ -372,7 +372,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Dynamic</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 23</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Smooth-Reclining Mechanism, Ergonomic backrest, Adjustable armrests, Premium Cushioning.</p>
                             <div class="d-grid gap-2">
@@ -389,7 +389,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Butterfly</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 24</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Dynamic flexibility, Ergonomic mesh back, Smooth-Reclining Mechanism.</p>
                             <div class="d-grid gap-2">
@@ -406,7 +406,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Mystic</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 25</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Classic Design, Ergonomic backrest, Smooth-Reclining Mechanism, Adjustable armrests.</p>
                             <div class="d-grid gap-2">
@@ -423,7 +423,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Breeze</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 26</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Light on looks, Sculpted lumbar support, High back configuration, Breathable mesh.</p>
                             <div class="d-grid gap-2">
@@ -440,7 +440,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Matrix 1</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 27</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Advanced ergonomics, Bold design language, Exceptional posture support.</p>
                             <div class="d-grid gap-2">
@@ -457,7 +457,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Marvel 1 &amp; 2</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 28-29</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Central lumbar support, Premium metal detailing, Intelligently engineered to adapt.</p>
                             <div class="d-grid gap-2">
@@ -474,7 +474,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Jazz</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 30</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Central lumbar support, Breathable mesh back, Ergonomic features adapting to you.</p>
                             <div class="d-grid gap-2">
@@ -491,7 +491,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Flash</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 31</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Sleek Design, Breathable mesh back, Ergonomic features keeping you focused.</p>
                             <div class="d-grid gap-2">
@@ -508,7 +508,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Bonai</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 32</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Distinctive back-frame structure, 5-star caster base, Perfect posture support.</p>
                             <div class="d-grid gap-2">
@@ -525,7 +525,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">X Mesh</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 33</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Essential features, Breathable mesh, 5-star caster base, Premium cushioning.</p>
                             <div class="d-grid gap-2">
@@ -542,7 +542,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Spenser</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 34</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Distinctive back frame, Integrated lumbar support, Reliable everyday performance.</p>
                             <div class="d-grid gap-2">
@@ -575,7 +575,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Luxe</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 36</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Luxurious diamond stitch quilted upholstery, 3D adjustable armrests, Class 4 gas lift, Seat slide adjustment.</p>
                             <div class="d-grid gap-2">
@@ -592,7 +592,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Elara</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 37</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Contoured high back, Deep multi-density cushioning, Synchronized tilt with seat slide, 3D armrests.</p>
                             <div class="d-grid gap-2">
@@ -609,7 +609,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Regent</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 38</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Tall commanding high back, Fixed chrome armrests, Strong metal chrome frame, Premium leatherette.</p>
                             <div class="d-grid gap-2">
@@ -626,7 +626,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Forma</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 39</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Signature ribbed horizontal channel cushioning, Floating headrest, Exposed chrome accents.</p>
                             <div class="d-grid gap-2">
@@ -643,7 +643,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Nero</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 40</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Streamlined silhouette, Horizontal channel tufting, Fixed chrome arms, Pneumatic lift height adjustment.</p>
                             <div class="d-grid gap-2">
@@ -676,7 +676,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Arc Standard</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 43</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Ventilated back, Lightweight &amp; durable build, Seat/Back with handle options.</p>
                             <div class="d-grid gap-2">
@@ -693,7 +693,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Cove Cushioned</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 44</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Breathable fabric cushioning, Extra comfort &amp; focus, Low maintenance build.</p>
                             <div class="d-grid gap-2">
@@ -710,7 +710,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Pivot Writing Table</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 45</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Integrated writing tablet, Configured for note-taking, Handle &amp; Cushion variants.</p>
                             <div class="d-grid gap-2">
@@ -727,7 +727,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Pivot Full Writing Table</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 46</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Full writing surface for examination &amp; training, Enhanced comfort, Cushion option.</p>
                             <div class="d-grid gap-2">
@@ -744,7 +744,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Stack Storage Variants</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 47-48</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Under-seat storage wire basket for bags &amp; books, Open back with storage &amp; cushion options.</p>
                             <div class="d-grid gap-2">
@@ -761,7 +761,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">ArchTwin</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 49</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Distinctive twin-back design with built-in handles, available in Sky Blue, Fresh Green, Sage Green.</p>
                             <div class="d-grid gap-2">
@@ -778,7 +778,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">ArchTwin Flip-Up Table</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 50</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Smart training chair with flip-up writing tablet for on-the-go collaborative learning.</p>
                             <div class="d-grid gap-2">
@@ -811,7 +811,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Metro Linea 2 Seater</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 53</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Corrosion-resistant steel public bench, Charcoal Black finish, Low maintenance &amp; durable.</p>
                             <div class="d-grid gap-2">
@@ -828,7 +828,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Metro Linea 3 Seater</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 54</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Red Wine powder-coated finish, Heavy-duty 3-seater public waiting bench.</p>
                             <div class="d-grid gap-2">
@@ -845,7 +845,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">Metro Linea 5 Seater</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 55</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Silver Grey 5-seater high-capacity waiting bench for busy transit hubs &amp; financial institutions.</p>
                             <div class="d-grid gap-2">
@@ -878,7 +878,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC01 Stack Chair</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 57</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Lightweight, durable stackable cafeteria chair designed for everyday high-volume dining.</p>
                             <div class="d-grid gap-2">
@@ -895,7 +895,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC02 Curve Chair</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 58</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Comfortable contoured shell chair for corporate pantries, cafes, and resturants.</p>
                             <div class="d-grid gap-2">
@@ -912,7 +912,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC03 Arc Chair</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 59</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Where Comfort Meets Style. Sleek curved profile available in multiple vibrant color shades.</p>
                             <div class="d-grid gap-2">
@@ -929,7 +929,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC04 Spindle Chair</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 60</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Timeless spindle back design bringing character and color to breakout spaces.</p>
                             <div class="d-grid gap-2">
@@ -946,7 +946,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC06 Timber Chair</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 61</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Simple form, vibrant colors, durable polypropelene &amp; wood finish options.</p>
                             <div class="d-grid gap-2">
@@ -963,7 +963,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC07 Lounge Chair</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 62</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Stylish yet simple form for modern cafeteria lounges and reception corners.</p>
                             <div class="d-grid gap-2">
@@ -980,7 +980,7 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h4 class="fw-bold text-dark mb-0">AC08 Crest Chair</h4>
-                                <span class="badge bg-dark text-white fs-7">Page 63</span>
+                                <span class="badge bg-light text-danger border fs-7">ArchLabs Seating</span>
                             </div>
                             <p class="text-secondary fs-7 mb-3 flex-grow-1">Elevate your space with Modern Elegance. Premium molded cafe armchair.</p>
                             <div class="d-grid gap-2">

@@ -342,7 +342,7 @@
                                 <a href="about.html" class="item-link fw-semibold">About Us</a>
                             </li>
                             <li class="has-child text-menu menu-item">
-                                <a href="product-categories.html" class="item-link fw-semibold">Products &amp; Catalogues</a>
+                                <a href="product-categories.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">Products <i class="icon-caret-down fs-7" style="font-size: 11px;"></i></a>
                                 <div class="submenu sub-menu mega-menu">
                                     <div class="mega-menu-grid">
                                         

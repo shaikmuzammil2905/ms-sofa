@@ -134,10 +134,10 @@
                     </a>
                 </li>
 
-                <!-- 2. Products & Solutions (Main Accordion Dropdown - Matching image copy 8.png) -->
+                <!-- 2. Products Dropdown (Matching exact user requirement & image copy 9.png) -->
                 <li class="nav-item">
                     <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="true" aria-controls="mobileProductsCollapse">
-                        <span>Products &amp; Solutions</span>
+                        <span>Products</span>
                         <span class="chevron-icon"><i class="icon-caret-down"></i></span>
                     </a>
                     
