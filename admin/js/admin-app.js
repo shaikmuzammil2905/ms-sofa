@@ -210,101 +210,120 @@ async function deleteProduct(index) {
     }
 }
 
-// Open Add Product Modal
-function openAddProductModal() {
-    document.getElementById('productModalTitle').textContent = 'Add New Product';
-    document.getElementById('productForm').reset();
-    document.getElementById('productIdInput').value = '';
-    document.getElementById('productImagePreview').src = '';
-    document.getElementById('productImagePreviewContainer').classList.add('d-none');
+// Open Edit Product Modal
+async function editProductModal(index) {
+    const products = await CMSDataStore.get('products');
+    const prod = products[index];
+    if (!prod) return;
+
+    document.getElementById('productModalTitle').textContent = 'Edit Product';
+    document.getElementById('productIdInput').value = index;
+    document.getElementById('productNameInput').value = prod.name || '';
+    document.getElementById('productCategorySelect').value = prod.category_slug || 'archlabs-seating';
+    document.getElementById('productSubcategoryInput').value = prod.subcategory || '';
+    document.getElementById('productPriceInput').value = prod.price || '';
+    document.getElementById('productDescInput').value = prod.description || '';
+    document.getElementById('productMainImageUrl').value = prod.main_image || '';
+
+    if (prod.main_image) {
+        document.getElementById('productImagePreview').src = prod.main_image;
+        document.getElementById('productImagePreviewContainer').classList.remove('d-none');
+    } else {
+        document.getElementById('productImagePreviewContainer').classList.add('d-none');
+    }
 
     const modal = new bootstrap.Modal(document.getElementById('productFormModal'));
     modal.show();
 }
 
-// Cloudinary Direct Upload for Product Form
-async function handleCloudinaryProductUpload(input) {
-    const file = input.files[0];
-    if (!file) return;
+// 5. Module: Categories
+async function loadCategoriesModule() {
+    const categories = await CMSDataStore.get('categories');
+    const tbody = document.getElementById('categoriesTableBody');
+    if (!tbody) return;
 
-    const progressBox = document.getElementById('productUploadProgress');
-    const progressBar = document.getElementById('productProgressBar');
-    progressBox.classList.remove('d-none');
-    progressBar.style.width = '0%';
-    progressBar.textContent = '0%';
-
-    try {
-        const result = await uploadToCloudinary(file, (percent) => {
-            progressBar.style.width = `${percent}%`;
-            progressBar.textContent = `${percent}%`;
-        });
-
-        document.getElementById('productMainImageUrl').value = result.url;
-        document.getElementById('productImagePreview').src = result.url;
-        document.getElementById('productImagePreviewContainer').classList.remove('d-none');
-        alert('Image uploaded to Cloudinary successfully!');
-    } catch (e) {
-        alert('Cloudinary upload failed: ' + e.message);
-    } finally {
-        progressBox.classList.add('d-none');
+    if (!categories || categories.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="text-center py-4 text-muted">No categories configured.</td></tr>`;
+        return;
     }
+
+    let html = '';
+    categories.forEach((cat, index) => {
+        const isVisible = cat.is_visible !== false;
+        html += `
+        <tr>
+            <td class="fw-bold">${cat.name}</td>
+            <td><code>${cat.slug}</code></td>
+            <td class="fs-7 text-muted">${cat.description || '-'}</td>
+            <td>${cat.display_order || index + 1}</td>
+            <td><span class="${isVisible ? 'badge-published' : 'badge-hidden'}">${isVisible ? 'Active' : 'Hidden'}</span></td>
+        </tr>`;
+    });
+    tbody.innerHTML = html;
 }
 
-// Save Product Form
-async function saveProductForm(e) {
+// 6. Module: Projects
+async function loadProjectsModule() {
+    const container = document.getElementById('projectsContentArea');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="p-3 border rounded bg-light">
+            <h6 class="fw-bold mb-2">Active Turnkey Corporate Fitout Showcase</h6>
+            <p class="fs-7 text-muted mb-3">Featured projects automatically load from Supabase and CMS data store into the homepage portfolio slider.</p>
+            <div class="badge bg-success px-3 py-2 fs-7">✅ Corporate Showcase Active</div>
+        </div>
+    `;
+}
+
+// 7. Module: Hero CMS
+async function loadHeroModule() {
+    const heroData = await CMSDataStore.get('hero_sections');
+    const hero = (heroData && heroData[0]) ? heroData[0] : {
+        heading: 'Transforming Workspaces.<br><span class="text-gradient-red">Elevating Possibilities.</span>',
+        description: 'Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses...',
+        background_image: 'images/sections/hero-workspace.jpg'
+    };
+
+    document.getElementById('heroHeadingInput').value = hero.heading || '';
+    document.getElementById('heroDescInput').value = hero.description || '';
+    document.getElementById('heroBgImageInput').value = hero.background_image || '';
+}
+
+async function saveHeroCMS(e) {
     e.preventDefault();
-    const id = document.getElementById('productIdInput').value;
-    const name = document.getElementById('productNameInput').value;
-    const category_slug = document.getElementById('productCategorySelect').value;
-    const subcategory = document.getElementById('productSubcategoryInput').value;
-    const description = document.getElementById('productDescInput').value;
-    const price = document.getElementById('productPriceInput').value;
-    const main_image = document.getElementById('productMainImageUrl').value || 'images/logo/logo-mark.png?v=2';
+    const heading = document.getElementById('heroHeadingInput').value;
+    const description = document.getElementById('heroDescInput').value;
+    const background_image = document.getElementById('heroBgImageInput').value;
 
-    const products = await CMSDataStore.get('products');
-
-    if (id !== '') {
-        // Edit
-        const index = parseInt(id);
-        if (products[index]) {
-            products[index].name = name;
-            products[index].category_slug = category_slug;
-            products[index].subcategory = subcategory;
-            products[index].description = description;
-            products[index].price = price;
-            products[index].main_image = main_image;
-        }
-    } else {
-        // Add New
-        const newProd = {
-            id: 'prod_' + Date.now(),
-            name,
-            slug: name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-            category_slug,
-            subcategory,
-            description,
-            price: price || 'Enquire for Price',
-            main_image,
-            is_visible: true,
-            display_order: products.length + 1,
-            created_at: new Date().toISOString()
-        };
-        products.unshift(newProd);
-    }
-
-    await CMSDataStore.save('products', products);
-
-    const modalEl = document.getElementById('productFormModal');
-    if (modalEl) {
-        const modal = bootstrap.Modal.getInstance(modalEl);
-        if (modal) modal.hide();
-    }
-
-    loadProductsModule();
-    loadDashboardData();
+    const heroRecord = [{ heading, description, background_image, is_custom_updated: true }];
+    await CMSDataStore.save('hero_sections', heroRecord);
+    alert('Hero section content updated successfully!');
 }
 
-// 5. Module: Enquiries
+// 8. Module: About Us CMS
+async function loadAboutModule() {
+    const aboutData = await CMSDataStore.get('about_sections');
+    const about = (aboutData && aboutData[0]) ? aboutData[0] : {
+        title: 'Creating Workspaces That Work for You',
+        main_description: 'At Vishista Office Solutions Pvt Ltd, we specialize in delivering world-class workspace environments.'
+    };
+
+    document.getElementById('aboutTitleInput').value = about.title || '';
+    document.getElementById('aboutDescInput').value = about.main_description || '';
+}
+
+async function saveAboutCMS(e) {
+    e.preventDefault();
+    const title = document.getElementById('aboutTitleInput').value;
+    const main_description = document.getElementById('aboutDescInput').value;
+
+    const aboutRecord = [{ title, main_description, is_custom_updated: true }];
+    await CMSDataStore.save('about_sections', aboutRecord);
+    alert('About Us content updated successfully!');
+}
+
+// 9. Module: Enquiries
 async function loadEnquiriesModule() {
     const enquiries = await CMSDataStore.get('enquiries');
     const tbody = document.getElementById('enquiriesTableBody');
@@ -316,7 +335,7 @@ async function loadEnquiriesModule() {
     }
 
     let html = '';
-    enquiries.forEach((enq, index) => {
+    enquiries.forEach((enq) => {
         html += `
         <tr>
             <td class="fw-bold">${enq.full_name}</td>
@@ -332,12 +351,44 @@ async function loadEnquiriesModule() {
     tbody.innerHTML = html;
 }
 
+// 10. Module: Footer CMS
+async function loadFooterModule() {
+    const footerData = await CMSDataStore.get('footer_content');
+    const footer = (footerData && footerData[0]) ? footerData[0] : {
+        company_description: 'Vishista Office Solutions Pvt Ltd is a premier provider of corporate office furniture...',
+        address: 'Plot No 45, Jubilee Hills, Road No 36, Hyderabad, Telangana 500033',
+        phone: '+91 98490 12345',
+        email: 'info@vishista.com'
+    };
+
+    document.getElementById('footerCompanyDescInput').value = footer.company_description || '';
+    document.getElementById('footerAddressInput').value = footer.address || '';
+    document.getElementById('footerPhoneInput').value = footer.phone || '';
+    document.getElementById('footerEmailInput').value = footer.email || '';
+}
+
+async function saveFooterCMS(e) {
+    e.preventDefault();
+    const company_description = document.getElementById('footerCompanyDescInput').value;
+    const address = document.getElementById('footerAddressInput').value;
+    const phone = document.getElementById('footerPhoneInput').value;
+    const email = document.getElementById('footerEmailInput').value;
+
+    const footerRecord = [{ company_description, address, phone, email, is_custom_updated: true }];
+    await CMSDataStore.save('footer_content', footerRecord);
+    alert('Footer contact details updated successfully!');
+}
+
 // Export functions to global scope
 window.showAdminDashboard = showAdminDashboard;
 window.showAuthScreen = showAuthScreen;
 window.switchTab = switchTab;
 window.openAddProductModal = openAddProductModal;
+window.editProductModal = editProductModal;
 window.handleCloudinaryProductUpload = handleCloudinaryProductUpload;
 window.saveProductForm = saveProductForm;
 window.toggleProductVisibility = toggleProductVisibility;
 window.deleteProduct = deleteProduct;
+window.saveHeroCMS = saveHeroCMS;
+window.saveAboutCMS = saveAboutCMS;
+window.saveFooterCMS = saveFooterCMS;

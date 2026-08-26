@@ -196,15 +196,92 @@
 
                 <!-- 3. CATEGORIES MODULE -->
                 <div id="view-categories" class="tab-view-content d-none">
-                    <h3 class="fw-bold text-dark mb-4">Category Management</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h3 class="fw-bold text-dark mb-1">Category Management</h3>
+                            <p class="text-muted fs-7 mb-0">Categories structure all product listings across ArchLabs Seating and Corporate catalogues.</p>
+                        </div>
+                    </div>
                     <div class="admin-card">
-                        <p class="text-muted fs-7">Categories structure all product listings across the ArchLabs Seating and Corporate Furniture catalogues.</p>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category Name</th>
+                                        <th>Slug</th>
+                                        <th>Description</th>
+                                        <th>Display Order</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="categoriesTableBody">
+                                    <!-- Rendered dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 4. ENQUIRIES MODULE -->
+                <!-- 4. PROJECTS MODULE -->
+                <div id="view-projects" class="tab-view-content d-none">
+                    <h3 class="fw-bold text-dark mb-2">Projects &amp; Case Studies</h3>
+                    <p class="text-muted fs-7 mb-4">Manage featured client installations and corporate fitout projects.</p>
+                    <div class="admin-card">
+                        <div class="alert alert-info border-0 shadow-sm fs-7">
+                            <strong>Turnkey Projects CMS:</strong> Featured projects automatically sync to the homepage portfolio showcase.
+                        </div>
+                        <div id="projectsContentArea">
+                            <p class="text-muted">Loading projects...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. HERO SECTION MODULE -->
+                <div id="view-hero" class="tab-view-content d-none">
+                    <h3 class="fw-bold text-dark mb-2">Hero Section CMS</h3>
+                    <p class="text-muted fs-7 mb-4">Update the homepage main hero banner heading, subtitle, and background image.</p>
+                    <div class="admin-card">
+                        <form id="heroCmsForm" onsubmit="saveHeroCMS(event)">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold fs-7">Hero Heading (HTML Supported)</label>
+                                <input type="text" id="heroHeadingInput" class="form-control" placeholder="Transforming Workspaces.<br><span class=&quot;text-gradient-red&quot;>Elevating Possibilities.</span>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold fs-7">Subheading Description</label>
+                                <textarea id="heroDescInput" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold fs-7">Background Image URL</label>
+                                <input type="text" id="heroBgImageInput" class="form-control" placeholder="images/sections/hero-workspace.jpg">
+                            </div>
+                            <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4 py-2">Save Hero Content &rarr;</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 6. ABOUT US MODULE -->
+                <div id="view-about" class="tab-view-content d-none">
+                    <h3 class="fw-bold text-dark mb-2">About Us Content CMS</h3>
+                    <p class="text-muted fs-7 mb-4">Manage corporate overview, vision, and company highlights.</p>
+                    <div class="admin-card">
+                        <form id="aboutCmsForm" onsubmit="saveAboutCMS(event)">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold fs-7">Section Title</label>
+                                <input type="text" id="aboutTitleInput" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold fs-7">Main Overview Description</label>
+                                <textarea id="aboutDescInput" class="form-control" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4 py-2">Save About Us Content &rarr;</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 7. ENQUIRIES MODULE -->
                 <div id="view-enquiries" class="tab-view-content d-none">
-                    <h3 class="fw-bold text-dark mb-4">Customer Enquiries Inbox</h3>
+                    <h3 class="fw-bold text-dark mb-2">Customer Enquiries Inbox</h3>
+                    <p class="text-muted fs-7 mb-4">View incoming price quotes, catalogue requests, and customer enquiries.</p>
                     <div class="admin-card">
                         <div class="table-responsive">
                             <table class="admin-table">
@@ -223,6 +300,35 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+
+                <!-- 8. FOOTER CMS MODULE -->
+                <div id="view-footer" class="tab-view-content d-none">
+                    <h3 class="fw-bold text-dark mb-2">Footer &amp; Contact Details CMS</h3>
+                    <p class="text-muted fs-7 mb-4">Manage corporate contact info, office address, phone numbers, and footer text.</p>
+                    <div class="admin-card">
+                        <form id="footerCmsForm" onsubmit="saveFooterCMS(event)">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold fs-7">Company Overview Description</label>
+                                <textarea id="footerCompanyDescInput" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold fs-7">Office Address</label>
+                                    <input type="text" id="footerAddressInput" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold fs-7">Phone Number</label>
+                                    <input type="text" id="footerPhoneInput" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold fs-7">Email Address</label>
+                                    <input type="email" id="footerEmailInput" class="form-control">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4 py-2">Save Footer Details &rarr;</button>
+                        </form>
                     </div>
                 </div>
 
