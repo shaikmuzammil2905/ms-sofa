@@ -5,8 +5,5 @@
   "scripts": {
     "build": "node build.js",
     "start": "node server.js"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.112.4"
   }
 }
