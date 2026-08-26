@@ -23,38 +23,38 @@
                             </div>
                         </div>
 
-                        <!-- Quick Links -->
+                         <!-- Quick Links -->
                         <div class="col-lg-2 col-md-6">
                             <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Quick Links</h5>
-                            <ul class="list-unstyled d-flex flex-column gap-2 mb-0 fs-7">
-                                <li><a href="index.html" class="text-white-50 text-decoration-none hover-white">&bull; Home</a></li>
-                                <li><a href="about.html" class="text-white-50 text-decoration-none hover-white">&bull; About Us</a></li>
-                                <li><a href="archlabs-catalogue.html" class="text-danger text-decoration-none fw-bold">&bull; ArchLabs Catalogue</a></li>
-                                <li><a href="product-categories.html" class="text-white-50 text-decoration-none hover-white">&bull; Products Catalogue</a></li>
-                                <li><a href="contact.html" class="text-white-50 text-decoration-none hover-white">&bull; Contact Us</a></li>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0 fs-7">
+                                <li><a href="index.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Home</a></li>
+                                <li><a href="about.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; About Us</a></li>
+                                <li><a href="archlabs-catalogue.html" class="text-danger text-decoration-none fw-bold py-1 d-block">&bull; ArchLabs Catalogue</a></li>
+                                <li><a href="product-categories.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Products Catalogue</a></li>
+                                <li><a href="contact.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Contact Us</a></li>
                             </ul>
                         </div>
 
                         <!-- Workspace Solutions -->
                         <div class="col-lg-3 col-md-6">
                             <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Catalogues &amp; Series</h5>
-                            <div class="row g-2 fs-7">
+                            <div class="row g-3 fs-7">
                                 <div class="col-6">
-                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                        <li><a href="archlabs-catalogue.html#mesh-series" class="text-white-50 text-decoration-none">&bull; Mesh Series</a></li>
-                                        <li><a href="archlabs-catalogue.html#leather-series" class="text-white-50 text-decoration-none">&bull; Leather Series</a></li>
-                                        <li><a href="archlabs-catalogue.html#training-series" class="text-white-50 text-decoration-none">&bull; Training Series</a></li>
-                                        <li><a href="archlabs-catalogue.html#metro-linea" class="text-white-50 text-decoration-none">&bull; Metro Linea</a></li>
-                                        <li><a href="archlabs-catalogue.html#cafeteria-series" class="text-white-50 text-decoration-none">&bull; Cafeteria Series</a></li>
+                                    <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                        <li><a href="archlabs-catalogue.html#mesh-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Mesh Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#leather-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Leather Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#training-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Training Series</a></li>
+                                        <li><a href="archlabs-catalogue.html#metro-linea" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Metro Linea</a></li>
+                                        <li><a href="archlabs-catalogue.html#cafeteria-series" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Cafeteria Series</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-6">
-                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                        <li><a href="product-categories.html#workstations" class="text-white-50 text-decoration-none">&bull; Workstations</a></li>
-                                        <li><a href="product-categories.html#tables" class="text-white-50 text-decoration-none">&bull; Tables</a></li>
-                                        <li><a href="product-categories.html#storage" class="text-white-50 text-decoration-none">&bull; Storage</a></li>
-                                        <li><a href="product-sofas.html" class="text-white-50 text-decoration-none">&bull; Soft Seating</a></li>
-                                        <li><a href="product-categories.html#pods" class="text-white-50 text-decoration-none">&bull; Acoustic Pods</a></li>
+                                    <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                        <li><a href="product-categories.html#workstations" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Workstations</a></li>
+                                        <li><a href="product-categories.html#tables" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Tables</a></li>
+                                        <li><a href="product-categories.html#storage" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Storage</a></li>
+                                        <li><a href="product-sofas.html" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Soft Seating</a></li>
+                                        <li><a href="product-categories.html#pods" class="text-white-50 text-decoration-none hover-white py-1 d-block">&bull; Acoustic Pods</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -63,25 +63,29 @@
                         <!-- Contact Details -->
                         <div class="col-lg-3 col-md-6">
                             <h5 class="text-uppercase fw-bold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 14px; letter-spacing: 0.5px;">Contact Us</h5>
-                            <div class="d-flex flex-column gap-2 fs-7 text-white-50">
-                                <div>
-                                    <strong class="text-white">Head Office:</strong><br>
-                                    Saishruthi Nilyam, Street No. 4,<br>
-                                    Sri Sathya Sai Enclave, Plot No. 109,<br>
-                                    Old Bowenpally, Secunderabad, Telangana 500009
+                            <div class="d-flex flex-column gap-3 fs-7 text-white-50">
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; Head Office:</strong>
+                                    <span style="line-height: 1.7; display: block;">
+                                        Saishruthi Nilyam, Street No. 4,<br>
+                                        Sri Sathya Sai Enclave, Plot No. 109,<br>
+                                        Old Bowenpally, Secunderabad, Telangana 500009
+                                    </span>
                                 </div>
-                                <div class="mt-1">
-                                    <strong class="text-white">Emails:</strong><br>
-                                    <a href="mailto:info@vishistaofficesolutions.com" class="text-white-50 text-decoration-none">info@vishistaofficesolutions.com</a><br>
-                                    <a href="mailto:sales@vishistaofficesolutions.com" class="text-white-50 text-decoration-none">sales@vishistaofficesolutions.com</a><br>
-                                    <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white-50 text-decoration-none">kvramana.reddy@vishistaofficesolutions.com</a>
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; Emails:</strong>
+                                    <div class="d-flex flex-column gap-1">
+                                        <a href="mailto:info@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; info@vishistaofficesolutions.com</a>
+                                        <a href="mailto:sales@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; sales@vishistaofficesolutions.com</a>
+                                        <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white-50 text-decoration-none hover-white">&bull; kvramana.reddy@vishistaofficesolutions.com</a>
+                                    </div>
                                 </div>
-                                <div class="mt-1">
-                                    <strong class="text-white">WhatsApp &amp; Sales:</strong><br>
-                                    <a href="https://wa.me/919849058444" target="_blank" class="text-danger fw-bold text-decoration-none">+91 9849058444</a>
+                                <div class="footer-contact-block">
+                                    <strong class="text-white d-block mb-1 fs-6">&bull; WhatsApp &amp; Sales:</strong>
+                                    <a href="https://wa.me/919849058444" target="_blank" class="text-danger fs-6 fw-bold text-decoration-none d-inline-block">&bull; +91 9849058444</a>
                                 </div>
-                                <div class="mt-2">
-                                    <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-semibold px-3" style="border-radius: 4px; font-size: 11px;">
+                                <div class="pt-1">
+                                    <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-semibold px-3 py-2" style="border-radius: 6px; font-size: 12px; letter-spacing: 0.5px;">
                                         Get Directions &rarr;
                                     </a>
                                 </div>
@@ -93,9 +97,9 @@
             </div>
 
             <!-- Footer Bottom -->
-            <div class="footer-bottom mt-5 pt-3 border-top border-secondary">
+            <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
                 <div class="tf-container">
-                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-2">
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-3 py-2">
                         <p class="mb-0">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
                         <p class="mb-0">Designed for Corporate &amp; Institutional Workspaces.</p>
                     </div>
@@ -107,7 +111,7 @@
     </div>
     <!-- /wrapper -->
 
-    <!-- Mobile Menu Offcanvas Drawer (Matching image copy 8.png) -->
+    <!-- Mobile Menu Offcanvas Drawer -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 380px; max-width: 90vw;">
         <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
             <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 230px;">
@@ -129,7 +133,7 @@
             <ul class="nav flex-column gap-1 mb-4 list-unstyled">
                 <!-- 1. Home -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" href="index.html" data-bs-dismiss="offcanvas">
+                    <a class="mobile-nav-link" href="index.html">
                         <span>Home</span>
                     </a>
                 </li>
@@ -142,11 +146,11 @@
                     </a>
                     <div class="collapse mt-2" id="mobileAboutCollapse">
                         <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled border-start ps-3 ms-2 border-danger">
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#company-profile" data-bs-dismiss="offcanvas">&bull; Company Profile</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-danger" href="about.html#director-profile" data-bs-dismiss="offcanvas">&bull; Director Journey (K V Ramana Reddy)</a></li>
-                            <li><a class="mobile-sub-link" href="about.html#mission-vision" data-bs-dismiss="offcanvas">&bull; Mission &amp; Vision</a></li>
-                            <li><a class="mobile-sub-link" href="about.html#core-values" data-bs-dismiss="offcanvas">&bull; Core Values</a></li>
-                            <li><a class="mobile-sub-link" href="about.html#why-choose-us" data-bs-dismiss="offcanvas">&bull; Why Choose Us</a></li>
+                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#company-profile">&bull; Company Profile</a></li>
+                            <li><a class="mobile-sub-link fw-bold text-danger" href="about.html#director-profile">&bull; Director Journey (K V Ramana Reddy)</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#mission-vision">&bull; Mission &amp; Vision</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#core-values">&bull; Core Values</a></li>
+                            <li><a class="mobile-sub-link" href="about.html#why-choose-us">&bull; Why Choose Us</a></li>
                         </ul>
                     </div>
                 </li>
@@ -163,55 +167,55 @@
                             
                             <!-- Sub Category A: ArchLabs Seating Catalogue -->
                             <div class="p-2 rounded-3" style="background-color: #fff5f5; border: 1px solid #ffe3e3;">
-                                <a href="archlabs-catalogue.html" class="fw-bold text-danger fs-6 text-decoration-none d-block mb-2" data-bs-dismiss="offcanvas">
+                                <a href="archlabs-catalogue.html" class="fw-bold text-danger fs-6 text-decoration-none d-block mb-2">
                                     ArchLabs Seating Catalogue &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group archlabs-border list-unstyled m-0">
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#mesh-series" data-bs-dismiss="offcanvas">&bull; Mesh Series (30 Models)</a></li>
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series" data-bs-dismiss="offcanvas">&bull; Leather Series (5 Models)</a></li>
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#training-series" data-bs-dismiss="offcanvas">&bull; Training Series (7 Models)</a></li>
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#metro-linea" data-bs-dismiss="offcanvas">&bull; Metro Linea Public Seating</a></li>
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#cafeteria-series" data-bs-dismiss="offcanvas">&bull; Cafeteria Series (7 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#mesh-series">&bull; Mesh Series (30 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
+                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
                                 </ul>
                             </div>
 
                             <!-- Sub Category B: Office Furniture & Workstations -->
                             <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" data-bs-dismiss="offcanvas">
+                                <a href="product-categories.html#workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
                                     Office Furniture &amp; Systems &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
-                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations" data-bs-dismiss="offcanvas">&bull; Modular Workstations</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations" data-bs-dismiss="offcanvas">&bull; Height Adjustable Desks</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#tables" data-bs-dismiss="offcanvas">&bull; Cabin &amp; Executive Tables</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#tables" data-bs-dismiss="offcanvas">&bull; Meeting &amp; Conference Tables</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#storage" data-bs-dismiss="offcanvas">&bull; Office Storage &amp; Compactors</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Modular Workstations</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Height Adjustable Desks</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cabin &amp; Executive Tables</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Meeting &amp; Conference Tables</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#storage">&bull; Office Storage &amp; Compactors</a></li>
                                 </ul>
                             </div>
 
                             <!-- Sub Category C: Soft Seating & Lounges -->
                             <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-sofas.html" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" data-bs-dismiss="offcanvas">
+                                <a href="product-sofas.html" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
                                     Soft Seating &amp; Lounges &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
-                                    <li><a class="mobile-sub-link" href="product-sofas.html" data-bs-dismiss="offcanvas">&bull; Executive Sofas &amp; Lounges</a></li>
-                                    <li><a class="mobile-sub-link" href="product-sofas.html" data-bs-dismiss="offcanvas">&bull; Collaborative Seating</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#pods" data-bs-dismiss="offcanvas">&bull; Acoustic Work Pods</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#tables" data-bs-dismiss="offcanvas">&bull; Cafe &amp; Breakout Seating</a></li>
+                                    <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Executive Sofas &amp; Lounges</a></li>
+                                    <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Collaborative Seating</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#pods">&bull; Acoustic Work Pods</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cafe &amp; Breakout Seating</a></li>
                                 </ul>
                             </div>
 
                             <!-- Sub Category D: Flooring & Accessories -->
                             <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" data-bs-dismiss="offcanvas">
+                                <a href="product-categories.html#carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
                                     Flooring &amp; Accessories &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
-                                    <li><a class="mobile-sub-link" href="product-categories.html#carpets" data-bs-dismiss="offcanvas">&bull; Interface Carpet Tiles</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#outdoor" data-bs-dismiss="offcanvas">&bull; Outdoor Workspace Furniture</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#educational" data-bs-dismiss="offcanvas">&bull; Educational Solutions</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#accessories" data-bs-dismiss="offcanvas">&bull; Workspace Accessories</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#carpets">&bull; Interface Carpet Tiles</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#outdoor">&bull; Outdoor Workspace Furniture</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#educational">&bull; Educational Solutions</a></li>
+                                    <li><a class="mobile-sub-link" href="product-categories.html#accessories">&bull; Workspace Accessories</a></li>
                                 </ul>
                             </div>
 
@@ -221,7 +225,7 @@
 
                 <!-- 4. Contact Us -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" href="contact.html" data-bs-dismiss="offcanvas">
+                    <a class="mobile-nav-link" href="contact.html">
                         <span>Contact Us</span>
                     </a>
                 </li>
@@ -357,15 +361,16 @@
             modal.show();
         }
 
-        // Guaranteed Mobile Menu Accordion Toggle Handler
+        // Guaranteed Mobile Menu Nav Links & Accordion Handler
         document.addEventListener('DOMContentLoaded', function () {
             var mobileMenu = document.getElementById('mobileMenu');
             if (mobileMenu) {
+                // 1. Accordion Toggle for About Us & Products
                 var toggleBtns = mobileMenu.querySelectorAll('.mobile-nav-link');
                 toggleBtns.forEach(function (btn) {
                     btn.addEventListener('click', function (e) {
                         var targetSelector = this.getAttribute('href') || this.getAttribute('data-bs-target');
-                        if (targetSelector && targetSelector.startsWith('#')) {
+                        if (targetSelector && targetSelector.startsWith('#mobile')) {
                             e.preventDefault();
                             var targetEl = document.querySelector(targetSelector);
                             if (targetEl) {
@@ -391,6 +396,23 @@
                             }
                         }
                     });
+                });
+
+                // 2. Subcategory & Menu Page Links Click Navigation
+                var pageLinks = mobileMenu.querySelectorAll('a[href]');
+                pageLinks.forEach(function (link) {
+                    var href = link.getAttribute('href');
+                    if (href && !href.startsWith('#mobile') && href !== '#') {
+                        link.addEventListener('click', function (e) {
+                            if (typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+                                var bsOffcanvas = bootstrap.Offcanvas.getInstance(mobileMenu);
+                                if (bsOffcanvas) {
+                                    bsOffcanvas.hide();
+                                }
+                            }
+                            window.location.href = href;
+                        });
+                    }
                 });
             }
         });
