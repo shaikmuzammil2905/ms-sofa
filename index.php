@@ -259,7 +259,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/sections/s-lookbook-1.jpg" alt="Workstations" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/categories/cat_workstations.jpg" alt="Workstations" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Modular Workspace</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -277,7 +277,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/header/prd-nav-1.jpg" alt="Tables" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/categories/cat_tables.jpg" alt="Tables" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Executive Suite</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -295,7 +295,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/sections/s-lookbook-2.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/hero-workspace.jpg'">
+                        <img src="images/categories/cat_storage.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Storage Systems</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -313,7 +313,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/header/prd-nav-2.jpg" alt="Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/categories/cat_seating.jpg" alt="Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Ergonomic Seating</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -331,7 +331,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/sections/hero-workspace.jpg" alt="Soft Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/categories/cat_soft_seating.jpg" alt="Soft Seating" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Lounge &amp; Sofas</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -349,7 +349,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/sections/s-lookbook-1.jpg" alt="Pods" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/categories/cat_pods.jpg" alt="Pods" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Acoustic Pods</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
