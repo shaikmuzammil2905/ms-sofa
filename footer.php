@@ -344,13 +344,13 @@
     </style>
 
     <!-- Javascript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/main.js"></script>
 
     <script>
         function openEnquiryModal(productName) {
