@@ -42,29 +42,33 @@ async function initPublicSync() {
     }
 }
 
-// 1. Sync Hero Section
+// 1. Sync Hero Section safely
 async function syncHeroSection() {
     const heroList = await CMSDataStore.get('hero_sections');
     if (heroList && heroList.length > 0) {
         const hero = heroList[0];
-        const headingEl = document.querySelector('.hero-heading, h1.display-4, h1.display-3');
-        if (headingEl && hero.heading) headingEl.textContent = hero.heading;
+        if (hero && hero.is_custom_updated) {
+            const headingEl = document.querySelector('.hero-title');
+            if (headingEl && hero.heading) headingEl.innerHTML = hero.heading;
 
-        const subheadEl = document.querySelector('.hero-subheading, p.fs-5');
-        if (subheadEl && hero.description) subheadEl.textContent = hero.description;
+            const subheadEl = document.querySelector('.hero-subtitle');
+            if (subheadEl && hero.description) subheadEl.innerHTML = hero.description;
+        }
     }
 }
 
-// 2. Sync About Section
+// 2. Sync About Section safely
 async function syncAboutSection() {
     const aboutList = await CMSDataStore.get('about_sections');
     if (aboutList && aboutList.length > 0) {
         const about = aboutList[0];
-        const storyTitleEl = document.querySelector('.about-story-title');
-        if (storyTitleEl && about.title) storyTitleEl.textContent = about.title;
+        if (about && about.is_custom_updated) {
+            const storyTitleEl = document.querySelector('.about-story-title');
+            if (storyTitleEl && about.title) storyTitleEl.innerHTML = about.title;
 
-        const storyDescEl = document.querySelector('.about-story-desc');
-        if (storyDescEl && about.main_description) storyDescEl.textContent = about.main_description;
+            const storyDescEl = document.querySelector('.about-story-desc');
+            if (storyDescEl && about.main_description) storyDescEl.innerHTML = about.main_description;
+        }
     }
 }
 
