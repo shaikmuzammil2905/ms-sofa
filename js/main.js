@@ -195,6 +195,7 @@
     /* Handle Mobile Menu
     -------------------------------------------------------------------------*/
     var handleMobileMenu = function () {
+        if ($("#wrapper-menu-navigation").length === 0) return;
         const $desktopMenu = $(".box-nav-menu:not(.not-append)").clone();
         $desktopMenu
             .find(".list-ver, .list-hor,.mn-none,.demo-label,.wrap-banner")

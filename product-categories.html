@@ -155,37 +155,105 @@
             transform: translateX(3px);
         }
 
-        /* Mobile Offcanvas Drawer Sizing (Matching image copy 8.png) */
+        /* Mobile Offcanvas Drawer Sizing & Accordion Styling (Matching image copy 8.png) */
         .offcanvas.canvas-mb {
-            width: 360px !important;
-            max-width: 88vw !important;
+            width: 380px !important;
+            max-width: 90vw !important;
+            background-color: #ffffff !important;
         }
         .offcanvas-header {
             padding: 16px 20px !important;
-            border-bottom: 1px solid #eeeeee !important;
+            border-bottom: 1px solid #e9ecef !important;
+            background-color: #ffffff !important;
         }
+        
+        /* Mobile Menu Main Link */
         .mobile-nav-link {
-            font-size: 15px !important;
-            font-weight: 600 !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
             color: #111111 !important;
-            padding: 12px 4px !important;
-            border-bottom: 1px solid #f2f2f2 !important;
+            padding: 14px 8px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
             text-decoration: none !important;
+            transition: all 0.2s ease !important;
         }
+        .mobile-nav-link:hover,
+        .mobile-nav-link[aria-expanded="true"] {
+            color: #d32f2f !important;
+        }
+        .mobile-nav-link .chevron-icon {
+            font-size: 12px !important;
+            transition: transform 0.3s ease !important;
+            color: #555555 !important;
+        }
+        .mobile-nav-link[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Mobile Level 1 Subcategory Link (Accordion Header inside Products) */
+        .mobile-sub-accordion-link {
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            color: #222222 !important;
+            padding: 11px 10px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            text-decoration: none !important;
+            border-radius: 6px !important;
+            transition: all 0.2s ease !important;
+        }
+        .mobile-sub-accordion-link:hover,
+        .mobile-sub-accordion-link[aria-expanded="true"] {
+            color: #d32f2f !important;
+            background-color: rgba(211, 47, 47, 0.05) !important;
+        }
+        .mobile-sub-accordion-link .chevron-icon {
+            font-size: 11px !important;
+            transition: transform 0.3s ease !important;
+            color: #777777 !important;
+        }
+        .mobile-sub-accordion-link[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Mobile Level 2 Item Link */
         .mobile-sub-link {
-            font-size: 13.5px !important;
+            font-size: 14px !important;
             color: #444444 !important;
             padding: 8px 12px !important;
             display: block !important;
             text-decoration: none !important;
-            transition: color 0.2s ease !important;
+            transition: all 0.2s ease !important;
+            border-radius: 4px !important;
         }
         .mobile-sub-link:hover {
             color: #d32f2f !important;
             font-weight: 600 !important;
+            background-color: #f8f9fa !important;
+            padding-left: 16px !important;
+        }
+        
+        /* Indentation Lines matching image 8 */
+        .mobile-accordion-group {
+            padding-left: 8px !important;
+            margin-top: 4px !important;
+            margin-bottom: 6px !important;
+        }
+        .mobile-nested-group {
+            padding-left: 12px !important;
+            border-left: 2px solid #e2e8f0 !important;
+            margin-left: 10px !important;
+            margin-top: 4px !important;
+            margin-bottom: 8px !important;
+        }
+        .mobile-nested-group.archlabs-border {
+            border-left-color: #d32f2f !important;
         }
     </style>
 </head>
@@ -898,76 +966,149 @@
     </div>
     <!-- /wrapper -->
 
-    <!-- Mobile Menu Offcanvas Drawer (Increased Size & Styled matching image copy 8.png) -->
-    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" style="width: 360px; max-width: 88vw;">
+    <!-- Mobile Menu Offcanvas Drawer (Matching image copy 8.png) -->
+    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 380px; max-width: 90vw;">
         <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
-            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 240px;">
-                <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 38px; width: auto; flex-shrink: 0;">
+            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 230px;">
+                <img src="images/logo/logo-mark.png" alt="Vishista Logo" style="height: 40px; width: auto; flex-shrink: 0;">
                 <div style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
-                    <span style="font-size: 16px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
-                    <span style="font-size: 8px; font-weight: 700; color: #555555; letter-spacing: 1.3px; margin-top: 2px;">OFFICE SOLUTIONS</span>
+                    <span style="font-size: 17px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
+                    <span style="font-size: 8.5px; font-weight: 700; color: #555555; letter-spacing: 1.3px; margin-top: 2px;">OFFICE SOLUTIONS</span>
                 </div>
             </a>
-            <button type="button" class="btn-close text-reset ms-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-danger btn-sm fw-bold px-3 py-1 text-uppercase" style="font-size: 12px; border-radius: 4px; background-color: #d32f2f; border: none;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
+                    Enquire
+                </button>
+                <button type="button" class="btn-close text-reset ms-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
         </div>
+
         <div class="offcanvas-body p-3">
-            <ul class="nav flex-column gap-1 mb-4">
+            <ul class="nav flex-column gap-1 mb-4 list-unstyled">
+                <!-- 1. Home -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="mobile-nav-link" href="about.html">About Us</a>
-                </li>
-                
-                <!-- ArchLabs Seating Catalogue Accordion -->
-                <li class="nav-item">
-                    <a class="mobile-nav-link text-danger" data-bs-toggle="collapse" href="#mobileArchLabsCollapse" role="button" aria-expanded="true">
-                        ArchLabs Seating Catalogue <i class="icon-caret-down fs-7"></i>
+                    <a class="mobile-nav-link" href="index.html">
+                        <span>Home</span>
                     </a>
-                    <div class="collapse show mt-2 ps-2" id="mobileArchLabsCollapse">
-                        <ul class="nav flex-column gap-1 border-start border-danger border-2 ps-3">
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#mesh-series">&bull; Mesh Series (30 Models)</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
-                        </ul>
+                </li>
+
+                <!-- 2. Products & Solutions (Main Accordion Dropdown - Matching image copy 8.png) -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="true" aria-controls="mobileProductsCollapse">
+                        <span>Products &amp; Solutions</span>
+                        <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                    </a>
+                    
+                    <div class="collapse show mt-2" id="mobileProductsCollapse">
+                        <div class="mobile-accordion-group">
+                            
+                            <!-- Sub Category A: ArchLabs Seating Catalogue (Expanded by default) -->
+                            <div class="mb-2">
+                                <a class="mobile-sub-accordion-link text-danger" data-bs-toggle="collapse" href="#mbSubArchLabs" role="button" aria-expanded="true">
+                                    <span>ArchLabs Seating Catalogue</span>
+                                    <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                                </a>
+                                <div class="collapse show mt-1" id="mbSubArchLabs">
+                                    <ul class="nav flex-column gap-1 mobile-nested-group archlabs-border list-unstyled">
+                                        <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#mesh-series">&bull; Mesh Series (30 Models)</a></li>
+                                        <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
+                                        <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
+                                        <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
+                                        <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Sub Category B: Office Furniture & Workstations -->
+                            <div class="mb-2">
+                                <a class="mobile-sub-accordion-link" data-bs-toggle="collapse" href="#mbSubOfficeFurniture" role="button" aria-expanded="true">
+                                    <span>Office Furniture &amp; Systems</span>
+                                    <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                                </a>
+                                <div class="collapse show mt-1" id="mbSubOfficeFurniture">
+                                    <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled">
+                                        <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Modular Workstations</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Height Adjustable Desks</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cabin &amp; Executive Tables</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Meeting &amp; Conference Tables</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#storage">&bull; Office Storage &amp; Compactors</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Sub Category C: Soft Seating & Lounges -->
+                            <div class="mb-2">
+                                <a class="mobile-sub-accordion-link" data-bs-toggle="collapse" href="#mbSubSoftSeating" role="button" aria-expanded="false">
+                                    <span>Soft Seating &amp; Lounges</span>
+                                    <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                                </a>
+                                <div class="collapse mt-1" id="mbSubSoftSeating">
+                                    <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled">
+                                        <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Executive Sofas &amp; Lounges</a></li>
+                                        <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Collaborative Seating</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#pods">&bull; Acoustic Work Pods</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cafe &amp; Breakout Seating</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Sub Category D: Flooring & Accessories -->
+                            <div class="mb-2">
+                                <a class="mobile-sub-accordion-link" data-bs-toggle="collapse" href="#mbSubFlooring" role="button" aria-expanded="false">
+                                    <span>Flooring &amp; Accessories</span>
+                                    <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                                </a>
+                                <div class="collapse mt-1" id="mbSubFlooring">
+                                    <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled">
+                                        <li><a class="mobile-sub-link" href="product-categories.html#carpets">&bull; Interface Carpet Tiles</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#outdoor">&bull; Outdoor Workspace Furniture</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#educational">&bull; Educational Solutions</a></li>
+                                        <li><a class="mobile-sub-link" href="product-categories.html#accessories">&bull; Workspace Accessories</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </li>
 
-                <!-- Products & Solutions Accordion (Matching image copy 8.png) -->
+                <!-- 3. ArchLabs Catalogue direct link -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="false">
-                        Products &amp; Solutions <i class="icon-caret-down fs-7"></i>
+                    <a class="mobile-nav-link text-danger" href="archlabs-catalogue.html">
+                        <span>ArchLabs Catalogue</span>
                     </a>
-                    <div class="collapse mt-2 ps-2" id="mobileProductsCollapse">
-                        <ul class="nav flex-column gap-1 border-start ps-3">
-                            <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Workstations</a></li>
-                            <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Tables</a></li>
-                            <li><a class="mobile-sub-link" href="product-categories.html#storage">&bull; Storage Systems</a></li>
-                            <li><a class="mobile-sub-link" href="product-categories.html#seating">&bull; Ergonomic Seating</a></li>
-                            <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Soft Seating &amp; Sofas</a></li>
-                            <li><a class="mobile-sub-link" href="product-categories.html#pods">&bull; Acoustic Pods</a></li>
-                            <li><a class="mobile-sub-link" href="product-categories.html#carpets">&bull; Interface Carpets</a></li>
-                            <li><a class="mobile-sub-link" href="product-categories.html#outdoor">&bull; Outdoor Furniture</a></li>
-                            <li><a class="mobile-sub-link" href="product-categories.html#educational">&bull; Educational Solutions</a></li>
-                            <li><a class="mobile-sub-link" href="product-categories.html#accessories">&bull; Workspace Accessories</a></li>
-                        </ul>
-                    </div>
                 </li>
 
+                <!-- 4. About Us -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" href="contact.html">Contact Us</a>
+                    <a class="mobile-nav-link" href="about.html">
+                        <span>About Us</span>
+                    </a>
+                </li>
+
+                <!-- 5. Contact Us -->
+                <li class="nav-item">
+                    <a class="mobile-nav-link" href="contact.html">
+                        <span>Contact Us</span>
+                    </a>
                 </li>
             </ul>
 
+            <!-- Action Buttons -->
             <div class="d-grid gap-2 pt-3 border-top">
-                <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase" style="background-color: #d32f2f; border: none; border-radius: 6px;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
+                <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase shadow-sm" style="background-color: #d32f2f; border: none; border-radius: 6px; font-size: 14px; letter-spacing: 0.5px;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
                     ENQUIRE NOW
                 </button>
-                <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold py-2 d-flex align-items-center justify-content-center gap-2" style="border-radius: 6px;">
+                <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold py-2 d-flex align-items-center justify-content-center gap-2" style="border-radius: 6px; font-size: 14px;">
                     Chat on WhatsApp
                 </a>
+            </div>
+
+            <!-- Footer indicator bar (Matching image copy 8 bottom USD / English bar) -->
+            <div class="mt-4 pt-3 border-top text-center text-muted fs-7 d-flex justify-content-between align-items-center px-1">
+                <span class="fw-medium text-dark">&bull; 🇮🇳 India (INR ₹)</span>
+                <span class="fw-medium text-dark">&bull; English</span>
             </div>
         </div>
     </div>

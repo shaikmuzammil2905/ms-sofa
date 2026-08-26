@@ -157,37 +157,105 @@
             transform: translateX(3px);
         }
 
-        /* Mobile Offcanvas Drawer Sizing (Matching image copy 8.png) */
+        /* Mobile Offcanvas Drawer Sizing & Accordion Styling (Matching image copy 8.png) */
         .offcanvas.canvas-mb {
-            width: 360px !important;
-            max-width: 88vw !important;
+            width: 380px !important;
+            max-width: 90vw !important;
+            background-color: #ffffff !important;
         }
         .offcanvas-header {
             padding: 16px 20px !important;
-            border-bottom: 1px solid #eeeeee !important;
+            border-bottom: 1px solid #e9ecef !important;
+            background-color: #ffffff !important;
         }
+        
+        /* Mobile Menu Main Link */
         .mobile-nav-link {
-            font-size: 15px !important;
-            font-weight: 600 !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
             color: #111111 !important;
-            padding: 12px 4px !important;
-            border-bottom: 1px solid #f2f2f2 !important;
+            padding: 14px 8px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
             text-decoration: none !important;
+            transition: all 0.2s ease !important;
         }
+        .mobile-nav-link:hover,
+        .mobile-nav-link[aria-expanded="true"] {
+            color: #d32f2f !important;
+        }
+        .mobile-nav-link .chevron-icon {
+            font-size: 12px !important;
+            transition: transform 0.3s ease !important;
+            color: #555555 !important;
+        }
+        .mobile-nav-link[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Mobile Level 1 Subcategory Link (Accordion Header inside Products) */
+        .mobile-sub-accordion-link {
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            color: #222222 !important;
+            padding: 11px 10px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            text-decoration: none !important;
+            border-radius: 6px !important;
+            transition: all 0.2s ease !important;
+        }
+        .mobile-sub-accordion-link:hover,
+        .mobile-sub-accordion-link[aria-expanded="true"] {
+            color: #d32f2f !important;
+            background-color: rgba(211, 47, 47, 0.05) !important;
+        }
+        .mobile-sub-accordion-link .chevron-icon {
+            font-size: 11px !important;
+            transition: transform 0.3s ease !important;
+            color: #777777 !important;
+        }
+        .mobile-sub-accordion-link[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Mobile Level 2 Item Link */
         .mobile-sub-link {
-            font-size: 13.5px !important;
+            font-size: 14px !important;
             color: #444444 !important;
             padding: 8px 12px !important;
             display: block !important;
             text-decoration: none !important;
-            transition: color 0.2s ease !important;
+            transition: all 0.2s ease !important;
+            border-radius: 4px !important;
         }
         .mobile-sub-link:hover {
             color: #d32f2f !important;
             font-weight: 600 !important;
+            background-color: #f8f9fa !important;
+            padding-left: 16px !important;
+        }
+        
+        /* Indentation Lines matching image 8 */
+        .mobile-accordion-group {
+            padding-left: 8px !important;
+            margin-top: 4px !important;
+            margin-bottom: 6px !important;
+        }
+        .mobile-nested-group {
+            padding-left: 12px !important;
+            border-left: 2px solid #e2e8f0 !important;
+            margin-left: 10px !important;
+            margin-top: 4px !important;
+            margin-bottom: 8px !important;
+        }
+        .mobile-nested-group.archlabs-border {
+            border-left-color: #d32f2f !important;
         }
     </style>
 </head>
