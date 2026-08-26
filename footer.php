@@ -138,7 +138,7 @@
                 <li class="nav-item">
                     <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileAboutCollapse" role="button" aria-expanded="false" aria-controls="mobileAboutCollapse">
                         <span>About Us</span>
-                        <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                     </a>
                     <div class="collapse mt-2" id="mobileAboutCollapse">
                         <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled border-start ps-3 ms-2 border-danger">
@@ -155,7 +155,7 @@
                 <li class="nav-item">
                     <a class="mobile-nav-link" data-bs-toggle="collapse" href="#mobileProductsCollapse" role="button" aria-expanded="true" aria-controls="mobileProductsCollapse">
                         <span>Products</span>
-                        <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                     </a>
                     
                     <div class="collapse show mt-2" id="mobileProductsCollapse">
@@ -165,7 +165,7 @@
                             <div class="mb-2">
                                 <a class="mobile-sub-accordion-link text-danger" data-bs-toggle="collapse" href="#mbSubArchLabs" role="button" aria-expanded="true">
                                     <span>ArchLabs Seating Catalogue</span>
-                                    <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                                    <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                 </a>
                                 <div class="collapse show mt-1" id="mbSubArchLabs">
                                     <ul class="nav flex-column gap-1 mobile-nested-group archlabs-border list-unstyled">
@@ -182,7 +182,7 @@
                             <div class="mb-2">
                                 <a class="mobile-sub-accordion-link" data-bs-toggle="collapse" href="#mbSubOfficeFurniture" role="button" aria-expanded="true">
                                     <span>Office Furniture &amp; Systems</span>
-                                    <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                                    <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                 </a>
                                 <div class="collapse show mt-1" id="mbSubOfficeFurniture">
                                     <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled">
@@ -199,7 +199,7 @@
                             <div class="mb-2">
                                 <a class="mobile-sub-accordion-link" data-bs-toggle="collapse" href="#mbSubSoftSeating" role="button" aria-expanded="false">
                                     <span>Soft Seating &amp; Lounges</span>
-                                    <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                                    <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                 </a>
                                 <div class="collapse mt-1" id="mbSubSoftSeating">
                                     <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled">
@@ -215,7 +215,7 @@
                             <div class="mb-2">
                                 <a class="mobile-sub-accordion-link" data-bs-toggle="collapse" href="#mbSubFlooring" role="button" aria-expanded="false">
                                     <span>Flooring &amp; Accessories</span>
-                                    <span class="chevron-icon"><i class="icon-caret-down"></i></span>
+                                    <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                 </a>
                                 <div class="collapse mt-1" id="mbSubFlooring">
                                     <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled">

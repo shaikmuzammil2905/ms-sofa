@@ -196,6 +196,36 @@
             color: #d32f2f !important;
         }
 
+        /* Prominent Dropdown Chevron Button Styling */
+        .chevron-box {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 28px !important;
+            height: 28px !important;
+            min-width: 28px !important;
+            border-radius: 50% !important;
+            background-color: #f0f0f0 !important;
+            color: #333333 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+        }
+        [aria-expanded="true"] .chevron-box {
+            transform: rotate(180deg) !important;
+            background-color: #d32f2f !important;
+            color: #ffffff !important;
+        }
+        .desktop-arrow {
+            font-size: 10px !important;
+            margin-left: 3px !important;
+            transition: transform 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .menu-item:hover .desktop-arrow {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
         /* Mobile Level 1 Subcategory Link (Accordion Header inside Products) */
         .mobile-sub-accordion-link {
             font-size: 15px !important;
@@ -342,7 +372,7 @@
 
                             <!-- 2. About Us (Dropdown with Chevron Icon) -->
                             <li class="has-child text-menu menu-item">
-                                <a href="about.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">About Us <i class="icon-caret-down fs-7" style="font-size: 11px;"></i></a>
+                                <a href="about.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">About Us <span class="desktop-arrow">▼</span></a>
                                 <div class="submenu sub-menu p-3 rounded-3 shadow-lg" style="min-width: 260px;">
                                     <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fs-7">
                                         <li><a href="about.html#company-profile" class="fw-bold text-dark text-decoration-none">&bull; Company Profile</a></li>
@@ -356,7 +386,7 @@
 
                             <!-- 3. Products (Mega Menu Dropdown with Chevron Icon) -->
                             <li class="has-child text-menu menu-item">
-                                <a href="product-categories.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">Products <i class="icon-caret-down fs-7" style="font-size: 11px;"></i></a>
+                                <a href="product-categories.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">Products <span class="desktop-arrow">▼</span></a>
                                 <div class="submenu sub-menu mega-menu">
                                     <div class="mega-menu-grid">
                                         
