@@ -42,15 +42,19 @@
         .site-brand-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none !important;
             max-width: 100%;
         }
         .site-brand-logo img {
-            height: 42px;
+            height: 52px;
             width: auto;
             object-fit: contain;
             flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+        .site-brand-logo:hover img {
+            transform: scale(1.04);
         }
         .brand-text-wrapper {
             display: flex;
@@ -59,19 +63,19 @@
         }
         .brand-main-title {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: 18px;
-            font-weight: 800;
+            font-size: 23px;
+            font-weight: 900;
             color: #d32f2f;
             line-height: 1;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
         .brand-sub-title {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: 8.5px;
-            font-weight: 700;
-            color: #555555;
-            letter-spacing: 1.4px;
-            margin-top: 2px;
+            font-size: 10.5px;
+            font-weight: 800;
+            color: #333333;
+            letter-spacing: 2.2px;
+            margin-top: 3px;
         }
         .nav-enquire-btn {
             background-color: #d32f2f;
@@ -134,11 +138,12 @@
         }
         .mega-menu-grid {
             display: grid !important;
-            grid-template-columns: 1.3fr 1fr 1fr 1fr 1.1fr !important;
+            grid-template-columns: repeat(5, 1fr) !important;
             gap: 24px !important;
-            padding: 30px 32px !important;
+            padding: 26px 30px !important;
             background: #ffffff !important;
             border-radius: 12px !important;
+            align-items: start !important;
         }
         @media (max-width: 1200px) {
             .mega-menu-grid {
@@ -427,17 +432,25 @@
                                 <div class="submenu sub-menu mega-menu">
                                     <div class="mega-menu-grid">
                                         
-                                        <!-- Workstations -->
+                                        <!-- Column 1: Workstations & Pods -->
                                         <div>
                                             <a href="product-categories.html#workstations" class="mega-category-title d-block">Workstations</a>
-                                            <ul class="mega-subcategory-list">
+                                            <ul class="mega-subcategory-list mb-3">
                                                 <li><a href="product-categories.html#workstations">&bull; Height Adjustable Series</a></li>
                                                 <li><a href="product-categories.html#workstations">&bull; Desking Series</a></li>
                                                 <li><a href="product-categories.html#workstations">&bull; Panel Series</a></li>
                                             </ul>
+                                            <div class="pt-2 border-top">
+                                                <a href="product-categories.html#pods" class="mega-category-title d-block mb-1">Pods &amp; Environment</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#pods">&bull; Pods</a></li>
+                                                    <li><a href="product-categories.html#carpets">&bull; Carpets</a></li>
+                                                    <li><a href="product-categories.html#outdoor">&bull; Outdoor</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
 
-                                        <!-- Tables -->
+                                        <!-- Column 2: Tables -->
                                         <div>
                                             <a href="product-categories.html#tables" class="mega-category-title d-block">Tables</a>
                                             <ul class="mega-subcategory-list">
@@ -448,18 +461,24 @@
                                             </ul>
                                         </div>
 
-                                        <!-- Storage -->
+                                        <!-- Column 3: Storage & Accessories -->
                                         <div>
                                             <a href="product-categories.html#storage" class="mega-category-title d-block">Storage</a>
-                                            <ul class="mega-subcategory-list">
+                                            <ul class="mega-subcategory-list mb-3">
                                                 <li><a href="product-categories.html#storage">&bull; Prelam Storage</a></li>
                                                 <li><a href="product-categories.html#storage">&bull; Metal Storage</a></li>
                                                 <li><a href="product-categories.html#storage">&bull; Compactor Storage</a></li>
                                                 <li><a href="product-categories.html#storage">&bull; Locker</a></li>
                                             </ul>
+                                            <div class="pt-2 border-top">
+                                                <a href="product-categories.html#accessories" class="mega-category-title d-block mb-1">Accessories</a>
+                                                <ul class="mega-subcategory-list">
+                                                    <li><a href="product-categories.html#accessories">&bull; Accessories</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
 
-                                        <!-- Seating (ArchLabs) -->
+                                        <!-- Column 4: Seating (ArchLabs) -->
                                         <div class="bg-light p-3 rounded-3 border">
                                             <a href="archlabs-catalogue.html" class="mega-category-title d-block text-danger">Seating</a>
                                             <ul class="mega-subcategory-list">
@@ -470,7 +489,7 @@
                                             </ul>
                                         </div>
 
-                                        <!-- Soft Seating & Other Categories -->
+                                        <!-- Column 5: Soft Seating & Educational -->
                                         <div>
                                             <a href="product-sofas.html" class="mega-category-title d-block">Soft Seating</a>
                                             <ul class="mega-subcategory-list mb-3">
@@ -487,12 +506,6 @@
                                                     <li><a href="product-categories.html#educational">&bull; Library</a></li>
                                                     <li><a href="product-categories.html#educational">&bull; Hostel</a></li>
                                                     <li><a href="product-categories.html#educational">&bull; Auditorium</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="pt-2 border-top mt-2">
-                                                <a href="product-categories.html#accessories" class="mega-category-title d-block mb-1">Accessories</a>
-                                                <ul class="mega-subcategory-list">
-                                                    <li><a href="product-categories.html#accessories">&bull; Accessories</a></li>
                                                 </ul>
                                             </div>
                                         </div>
