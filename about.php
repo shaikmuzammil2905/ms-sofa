@@ -46,38 +46,42 @@
 <!-- Director Section -->
 <section id="director-profile" class="py-5 bg-light">
     <div class="tf-container py-4">
-        <div class="bg-white rounded-4 p-4 p-md-5 shadow-sm border">
+        <div class="bg-white rounded-4 p-4 p-md-5 shadow border overflow-hidden position-relative">
             <div class="row align-items-center g-4">
-                <div class="col-lg-4 text-center text-lg-start">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-dark text-danger rounded-circle mb-3 shadow" style="width: 110px; height: 110px;">
-                        <i class="icon icon-user fs-1"></i>
-                    </div>
-                    <h3 class="fw-bold text-dark mb-1">K V Ramana Reddy</h3>
-                    <span class="badge bg-danger text-uppercase px-3 py-2 fw-semibold fs-7 mb-2">Sales Director</span>
-                    <p class="text-muted fs-7 mb-0 fw-semibold">Vishista Office Solutions Pvt Ltd</p>
-                    <div class="mt-3">
-                        <span class="badge bg-dark text-white px-3 py-2 fs-7 fw-bold">25+ Years of Industry Experience</span>
+                <div class="col-lg-4 text-center">
+                    <div class="p-4 rounded-4 bg-dark text-white shadow-sm position-relative overflow-hidden">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-danger text-white rounded-circle mb-3 shadow" style="width: 90px; height: 90px;">
+                            <i class="icon icon-user fs-1"></i>
+                        </div>
+                        <h3 class="fw-bold text-white mb-2 fs-4">Director Journey</h3>
+                        <div class="mb-3">
+                            <span class="badge bg-danger text-uppercase px-3 py-2 fw-bold fs-7">Sales Leadership</span>
+                        </div>
+                        <p class="text-white-50 fs-7 mb-3 fw-semibold">Vishista Office Solutions Pvt Ltd</p>
+                        <div class="pt-2 border-top border-secondary">
+                            <span class="badge bg-light text-dark px-3 py-2 fs-7 fw-bold shadow-sm">25+ Years of Industry Experience</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-8 border-start-lg ps-lg-5">
-                    <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Leadership Profile</span>
-                    <h3 class="fw-bold text-dark mb-3">Industry Leadership & Strategic Vision</h3>
+                    <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Executive Leadership</span>
+                    <h3 class="fw-bold text-dark mb-3">Industry Leadership &amp; Strategic Vision</h3>
                     <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
-                        Leading the company's sales strategy and market expansion is <strong>K V Ramana Reddy</strong>, a seasoned industry professional with over 25 years of experience in office furniture, interior systems, and enterprise workspace solutions.
+                        Leading the company's sales strategy and market expansion is our <strong>Executive Sales Leadership</strong>, bringing over 25 years of seasoned expertise in office furniture, interior systems, and enterprise workspace solutions.
                     </p>
                     <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
-                        His career includes key roles and successful assignments with leading industry brands:
+                        Our leadership background encompasses successful assignments and key strategic roles with top-tier industry brands:
                     </p>
                     <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7">Godrej Interio</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7">IDL Industries</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7">Saint-Gobain Gyproc</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7">BP Ergo Ltd</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7">HNI India</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7">AFC Furniture</span>
+                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">Godrej Interio</span>
+                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">IDL Industries</span>
+                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">Saint-Gobain Gyproc</span>
+                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">BP Ergo Ltd</span>
+                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">HNI India</span>
+                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">AFC Furniture</span>
                     </div>
                     <p class="text-secondary fs-6 mb-0" style="line-height: 1.7;">
-                        He has managed and delivered large-scale MNC projects, multi-vendor installations, and complex workspace transformations across major corporate hubs. At Vishista Office Solutions, he drives strategic sales planning, enterprise client acquisition, OEM partnerships, and regional market penetration.
+                        Our team has managed and delivered large-scale MNC projects, multi-vendor installations, and complex workspace transformations across major corporate hubs. At Vishista Office Solutions, we drive strategic sales planning, enterprise client acquisition, OEM partnerships, and regional market penetration.
                     </p>
                 </div>
             </div>
