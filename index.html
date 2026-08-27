@@ -1395,12 +1395,19 @@
             </div>
         </div>
     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <style>
+        /* Force All Modals (excellenceModal, enquireModal) to be Centered Horizontally and Vertically */
+        .modal-dialog {
+            margin: 1.75rem auto !important;
+        }
+        .modal-dialog-centered {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: calc(100% - 3.5rem) !important;
+        }
+
         .whatsapp-float-btn {
             position: fixed;
             bottom: 24px;
