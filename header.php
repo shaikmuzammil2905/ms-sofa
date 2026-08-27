@@ -416,13 +416,13 @@
                             <!-- 2. About Us (Dropdown with Chevron Icon) -->
                             <li class="has-child text-menu menu-item">
                                 <a href="about.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">About Us <span class="desktop-arrow">▼</span></a>
-                                <div class="submenu sub-menu p-3 rounded-3 shadow-lg" style="min-width: 240px;">
-                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fs-7">
-                                        <li><a href="about.html#company-profile" class="fw-bold text-dark text-decoration-none">&bull; Company Profile</a></li>
-                                        <li><a href="about.html#director-profile" class="fw-bold text-dark text-decoration-none">&bull; Director Journey</a></li>
-                                        <li><a href="about.html#mission-vision" class="fw-bold text-dark text-decoration-none">&bull; Mission &amp; Vision</a></li>
-                                        <li><a href="about.html#core-values" class="fw-bold text-dark text-decoration-none">&bull; Core Values</a></li>
-                                        <li><a href="about.html#why-choose-us" class="fw-bold text-dark text-decoration-none">&bull; Why Choose Us</a></li>
+                                <div class="submenu sub-menu p-3 rounded-3 shadow-lg" style="min-width: 250px;">
+                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                        <li><a href="about.html#company-profile" class="fw-bold text-dark text-decoration-none d-block py-1 fs-6" style="font-family: 'Inter', sans-serif;">&bull; Company Profile</a></li>
+                                        <li><a href="about.html#director-profile" class="fw-bold text-dark text-decoration-none d-block py-1 fs-6" style="font-family: 'Inter', sans-serif;">&bull; Director Journey</a></li>
+                                        <li><a href="about.html#mission-vision" class="fw-bold text-dark text-decoration-none d-block py-1 fs-6" style="font-family: 'Inter', sans-serif;">&bull; Mission &amp; Vision</a></li>
+                                        <li><a href="about.html#core-values" class="fw-bold text-dark text-decoration-none d-block py-1 fs-6" style="font-family: 'Inter', sans-serif;">&bull; Core Values</a></li>
+                                        <li><a href="about.html#why-choose-us" class="fw-bold text-dark text-decoration-none d-block py-1 fs-6" style="font-family: 'Inter', sans-serif;">&bull; Why Choose Us</a></li>
                                     </ul>
                                 </div>
                             </li>
