@@ -385,7 +385,6 @@
                                 <div class="upload-dropzone" onclick="document.getElementById('cloudinaryFileInput').click()">
                                     <div class="text-danger fs-3 mb-1">☁️</div>
                                     <div class="fw-bold text-dark fs-7">Click to select &amp; upload image to Cloudinary</div>
-                                    <div class="text-muted fs-8">Preset: ml_default | Cloud: iw4ntmv5</div>
                                 </div>
                                 <input type="file" id="cloudinaryFileInput" class="d-none" accept="image/*" onchange="handleCloudinaryProductUpload(this)">
 
