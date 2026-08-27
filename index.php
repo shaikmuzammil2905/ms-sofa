@@ -385,7 +385,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/sections/lookbook-item-2.jpg" alt="Outdoor" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
+                        <img src="images/categories/cat_tables.jpg" alt="Outdoor" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Terrace &amp; Patio</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">

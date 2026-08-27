@@ -3,7 +3,7 @@
 
 
 <!-- Page Header Banner -->
-<section class="py-5 bg-dark text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/sections/s-lookbook-1.jpg') center/cover no-repeat;">
+<section class="py-5 bg-dark text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/sections/hero-workspace.jpg') center/cover no-repeat;">
     <div class="tf-container py-4">
         <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Get in Touch</span>
         <h1 class="display-4 fw-bold text-white mt-2 mb-3">Let's Build Better Workspaces Together</h1>

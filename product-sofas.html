@@ -95,12 +95,27 @@
             box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
         }
 
-        /* Desktop Mega Menu Positioning & Full Width Layout Fix */
+        /* Desktop Mega Menu & Standard Dropdown Positioning Fix */
         .header-inner {
             position: relative !important;
         }
         .main-menu .navigation > li.has-child {
+            position: relative !important;
+        }
+        .main-menu .navigation > li.has-child.has-mega-menu {
             position: static !important;
+        }
+        .main-menu .navigation > li:not(.has-mega-menu) > .submenu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            min-width: 260px !important;
+            background: #ffffff !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+            border-radius: 8px !important;
+            padding: 16px !important;
+            z-index: 99999 !important;
+            border: 1px solid rgba(0,0,0,0.08) !important;
         }
         .mega-menu {
             position: absolute !important;
@@ -219,6 +234,9 @@
             background-color: #d32f2f !important;
             color: #ffffff !important;
         }
+        .navigation li.has-child::after {
+            display: none !important;
+        }
         .desktop-arrow {
             font-size: 10px !important;
             margin-left: 3px !important;
@@ -228,6 +246,27 @@
         .menu-item:hover .desktop-arrow {
             transform: rotate(180deg) !important;
             color: #d32f2f !important;
+        }
+
+        /* Sticky Filter Anchor Bar Offset Fix for Desktop & Mobile */
+        .filter-anchor-bar {
+            top: 70px !important;
+            background-color: #ffffff !important;
+            z-index: 990 !important;
+            border-bottom: 1px solid #e2e8f0 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+        }
+        @media (max-width: 1199px) {
+            .filter-anchor-bar {
+                top: 0 !important;
+            }
+        }
+        .filter-anchor-bar .tf-container {
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .filter-anchor-bar .tf-container::-webkit-scrollbar {
+            display: none;
         }
 
         /* Mobile Level 1 Subcategory Link (Accordion Header inside Products) */
@@ -383,7 +422,7 @@
                             </li>
 
                             <!-- 3. Products (Mega Menu Dropdown with Chevron Icon) -->
-                            <li class="has-child text-menu menu-item">
+                            <li class="has-child has-mega-menu text-menu menu-item">
                                 <a href="product-categories.html" class="item-link fw-semibold d-inline-flex align-items-center gap-1">Products <span class="desktop-arrow">▼</span></a>
                                 <div class="submenu sub-menu mega-menu">
                                     <div class="mega-menu-grid">
@@ -495,7 +534,7 @@
             <!-- Lounge Chair -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/sections/s-lookbook-1.jpg" alt="Executive Lounge Chair" class="card-img-top" style="background: #ffffff;">
+                    <img src="images/products/sofas/product-1.jpg" alt="Executive Lounge Chair" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/categories/cat_soft_seating.jpg'">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
                         <h4 class="fw-bold text-dark mb-2">Executive Lounge Armchairs</h4>
@@ -508,10 +547,10 @@
             <!-- Executive Sofas -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/collection/collection-1.jpg" alt="Executive Sofas" class="card-img-top" style="background: #ffffff;">
+                    <img src="images/products/sofas/product-2.jpg" alt="Executive Sofas" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/categories/cat_soft_seating.jpg'">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
-                        <h4 class="fw-bold text-dark mb-2">2 & 3-Seater Executive Sofas</h4>
+                        <h4 class="fw-bold text-dark mb-2">2 &amp; 3-Seater Executive Sofas</h4>
                         <p class="text-secondary fs-7 flex-grow-1">Sleek multi-seater reception couches featuring high-resilience foam cushioning and stain-resistant fabric finishes.</p>
                         <button type="button" class="btn btn-danger text-uppercase fw-bold py-2 mt-3" onclick="openEnquiryModal('2 & 3-Seater Executive Sofas')">Enquire Now</button>
                     </div>
@@ -521,7 +560,7 @@
             <!-- Collaborative Booths -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/header/prd-nav-1.jpg" alt="Collaborative Seating" class="card-img-top" style="background: #ffffff;">
+                    <img src="images/products/sofas/product-3.jpg" alt="Collaborative Seating" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/categories/cat_soft_seating.jpg'">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
                         <h4 class="fw-bold text-dark mb-2">Collaborative Booth Seating</h4>
@@ -534,10 +573,10 @@
             <!-- Pouffes -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/header/prd-nav-2.jpg" alt="Modular Pouffes" class="card-img-top" style="background: #ffffff;">
+                    <img src="images/products/sofas/product-4.jpg" alt="Modular Pouffes" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/categories/cat_soft_seating.jpg'">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
-                        <h4 class="fw-bold text-dark mb-2">Geometrical Pouffes & Ottomans</h4>
+                        <h4 class="fw-bold text-dark mb-2">Geometrical Pouffes &amp; Ottomans</h4>
                         <p class="text-secondary fs-7 flex-grow-1">Flexible circular, hexagonal, and square soft pouffes designed for informal breakout areas and waiting zones.</p>
                         <button type="button" class="btn btn-danger text-uppercase fw-bold py-2 mt-3" onclick="openEnquiryModal('Geometrical Pouffes and Ottomans')">Enquire Now</button>
                     </div>
@@ -547,7 +586,7 @@
             <!-- Occasional Tables -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border h-100 shadow-sm rounded-3 overflow-hidden">
-                    <img src="images/sections/lookbook-item-1.jpg" alt="Occasional Tables" class="card-img-top" style="background: #ffffff;" onerror="this.src='images/sections/s-lookbook-1.jpg'">
+                    <img src="images/categories/cat_tables.jpg" alt="Occasional Tables" class="card-img-top" style="background: #ffffff;">
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-dark border align-self-start mb-2 fs-7">2021 Viak Soft Seating</span>
                         <h4 class="fw-bold text-dark mb-2">Occasional Center Tables</h4>
