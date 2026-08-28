@@ -77,30 +77,30 @@
         <div class="row g-4">
             <!-- Mission -->
             <div class="col-md-6">
-                <div class="card border-0 shadow-sm p-4 p-md-5 h-100 rounded-4 text-white" style="background: linear-gradient(135deg, #1e1e1e 0%, #333333 100%);">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-danger text-white rounded-3 mb-4" style="width: 54px; height: 54px;">
-                        <i class="icon icon-storefront fs-4"></i>
+                <div class="card border-0 shadow-lg p-4 p-md-5 h-100 rounded-4 text-white" style="background: linear-gradient(135deg, #1e1e1e 0%, #333333 100%);">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-danger text-white rounded-3 mb-4 shadow" style="width: 58px; height: 58px;">
+                        <i class="icon icon-storefront fs-3"></i>
                     </div>
-                    <h3 class="fw-bold text-white mb-3">Our Mission</h3>
-                    <p class="text-white-50 fs-6 mb-3" style="line-height: 1.8;">
+                    <h3 class="fw-extrabold text-white mb-3" style="font-size: 2.2rem !important; font-weight: 800 !important;">Our Mission</h3>
+                    <p class="text-white fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #ffffff !important;">
                         To deliver modern, efficient, and future-ready workspace solutions that enhance productivity, comfort, and organizational performance.
                     </p>
-                    <p class="text-white-50 fs-6 mb-0" style="line-height: 1.8;">
+                    <p class="text-white fw-bold mb-0" style="font-size: 1.35rem !important; line-height: 1.7; color: #ffffff !important;">
                         We aim to provide premium office furniture, interior systems, and turnkey project execution with uncompromising quality, timely delivery, and customer-centric service.
                     </p>
                 </div>
             </div>
             <!-- Vision -->
             <div class="col-md-6">
-                <div class="card border-0 shadow-sm p-4 p-md-5 h-100 rounded-4 bg-light border">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-dark text-white rounded-3 mb-4" style="width: 54px; height: 54px;">
-                        <i class="icon icon-caret-up fs-4"></i>
+                <div class="card border-0 shadow-lg p-4 p-md-5 h-100 rounded-4 bg-light border border-secondary-subtle">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-dark text-white rounded-3 mb-4 shadow" style="width: 58px; height: 58px;">
+                        <i class="icon icon-caret-up fs-3"></i>
                     </div>
-                    <h3 class="fw-bold text-dark mb-3">Our Vision</h3>
-                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.8;">
+                    <h3 class="fw-extrabold text-dark mb-3" style="font-size: 2.2rem !important; font-weight: 800 !important; color: #111111 !important;">Our Vision</h3>
+                    <p class="text-dark fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
                         To become a leading integrated workspace solutions provider in India — recognized for innovation, reliability, and excellence.
                     </p>
-                    <p class="text-secondary fs-6 mb-0" style="line-height: 1.8;">
+                    <p class="text-dark fw-bold mb-0" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
                         We strive to build long-term partnerships with corporate, commercial, and institutional clients by consistently delivering world-class products, seamless installations, and superior customer value.
                     </p>
                 </div>
