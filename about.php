@@ -7,7 +7,7 @@
     <div class="tf-container py-4">
         <span class="text-danger fw-bold text-uppercase tracking-wider fs-7">Who We Are</span>
         <h1 class="display-4 fw-bold text-white mt-2 mb-3">About Vishista Office Solutions</h1>
-        <p class="fs-5 text-white-50 max-w-700 mx-auto" style="max-width: 700px;">Delivering high-performance, future-ready workspace environments across Telangana and Andhra Pradesh.</p>
+        <p class="fs-5 text-white-50 max-w-700 mx-auto" style="max-width: 700px;">Delivering high-performance, future-ready workspace environments.</p>
     </div>
 </section>
 
@@ -49,37 +49,19 @@
         <div class="bg-white rounded-4 p-4 p-md-5 shadow border overflow-hidden position-relative">
             <div class="row align-items-center g-4">
                 <div class="col-lg-4 text-center">
-                    <div class="p-4 rounded-4 bg-dark text-white shadow-sm position-relative overflow-hidden">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-danger text-white rounded-circle mb-3 shadow" style="width: 90px; height: 90px;">
-                            <i class="icon icon-user fs-1"></i>
+                    <div class="p-3 p-md-4 rounded-4 bg-dark text-white shadow position-relative overflow-hidden h-100 d-flex flex-column align-items-center justify-content-center border border-secondary">
+                        <div class="rounded-4 overflow-hidden shadow-lg mb-3 w-100" style="max-width: 280px; aspect-ratio: 1/1.1;">
+                            <img src="images/kv-ramanaa-reddy.png" alt="KV Ramanaa Reddy" class="img-fluid w-100 h-100" style="object-fit: cover; object-position: top center;">
                         </div>
-                        <h3 class="fw-bold text-white mb-2 fs-4">Director Journey</h3>
-                        <div class="mb-3">
-                            <span class="badge bg-danger text-uppercase px-3 py-2 fw-bold fs-7">Sales Leadership</span>
-                        </div>
-                        <p class="text-white-50 fs-7 mb-3 fw-semibold">Vishista Office Solutions Pvt Ltd</p>
-                        <div class="pt-2 border-top border-secondary">
-                            <span class="badge bg-light text-dark px-3 py-2 fs-7 fw-bold shadow-sm">25+ Years of Industry Experience</span>
-                        </div>
+                        <h3 class="fw-extrabold text-white mb-0 fs-4" style="letter-spacing: 0.5px;">KV Ramanaa Reddy</h3>
                     </div>
                 </div>
                 <div class="col-lg-8 border-start-lg ps-lg-5">
-                    <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Executive Leadership</span>
-                    <h3 class="fw-bold text-dark mb-3">Industry Leadership &amp; Strategic Vision</h3>
-                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
-                        Leading the company's sales strategy and market expansion is our <strong>Executive Sales Leadership</strong>, bringing over 25 years of seasoned expertise in office furniture, interior systems, and enterprise workspace solutions.
+                    <h2 class="fw-extrabold text-uppercase tracking-wider mb-2" style="font-size: 2.25rem !important; color: #d32f2f !important; font-weight: 800 !important; line-height: 1.2;">EXECUTIVE LEADERSHIP</h2>
+                    <h3 class="fw-bold text-danger mb-3 fs-4" style="color: #d32f2f !important; font-weight: 700 !important;">Industry Leadership &amp; Strategic Vision</h3>
+                    <p class="text-danger fw-bold fs-6 mb-3" style="line-height: 1.7; color: #d32f2f !important; font-weight: 700 !important;">
+                        Leading the company's sales strategy and market expansion is our <strong style="color: #d32f2f !important;">Executive Sales Leadership</strong>, bringing over 2 decades of seasoned expertise in office furniture, interior systems, and enterprise workspace solutions.
                     </p>
-                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
-                        Our leadership background encompasses successful assignments and key strategic roles with top-tier industry brands:
-                    </p>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">Godrej Interio</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">IDL Industries</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">Saint-Gobain Gyproc</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">BP Ergo Ltd</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">HNI India</span>
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-semibold">AFC Furniture</span>
-                    </div>
                     <p class="text-secondary fs-6 mb-0" style="line-height: 1.7;">
                         Our team has managed and delivered large-scale MNC projects, multi-vendor installations, and complex workspace transformations across major corporate hubs. At Vishista Office Solutions, we drive strategic sales planning, enterprise client acquisition, OEM partnerships, and regional market penetration.
                     </p>

@@ -29,7 +29,7 @@
 
                 <!-- Animated Subheading -->
                 <p class="fs-5 text-white-50 mb-5 hero-subtitle" style="max-width: 680px; line-height: 1.6;">
-                    Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments across Telangana and Andhra Pradesh.
+                    Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments.
                 </p>
 
                 <!-- Animated Buttons -->
