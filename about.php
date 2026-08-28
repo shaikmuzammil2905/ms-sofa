@@ -78,14 +78,14 @@
             <!-- Mission -->
             <div class="col-md-6">
                 <div class="card border-0 shadow-lg p-4 p-md-5 h-100 rounded-4 text-white" style="background: linear-gradient(135deg, #1e1e1e 0%, #333333 100%);">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-danger text-white rounded-3 mb-4 shadow" style="width: 58px; height: 58px;">
-                        <i class="icon icon-storefront fs-3"></i>
+                    <div class="d-inline-flex align-items-center justify-content-center bg-danger text-white rounded-3 mb-4 shadow" style="width: 64px; height: 64px;">
+                        <i class="icon icon-storefront fs-2"></i>
                     </div>
-                    <h3 class="fw-extrabold text-white mb-3" style="font-size: 2.2rem !important; font-weight: 800 !important;">Our Mission</h3>
-                    <p class="text-white fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #ffffff !important;">
+                    <h3 class="fw-extrabold text-white mb-4" style="font-size: 2.6rem !important; font-weight: 800 !important; letter-spacing: -0.5px;">Our Mission</h3>
+                    <p class="text-white fw-bold mb-4" style="font-size: 1.5rem !important; line-height: 1.65 !important; color: #ffffff !important; font-weight: 700 !important;">
                         To deliver modern, efficient, and future-ready workspace solutions that enhance productivity, comfort, and organizational performance.
                     </p>
-                    <p class="text-white fw-bold mb-0" style="font-size: 1.35rem !important; line-height: 1.7; color: #ffffff !important;">
+                    <p class="text-white fw-bold mb-0" style="font-size: 1.5rem !important; line-height: 1.65 !important; color: #ffffff !important; font-weight: 700 !important;">
                         We aim to provide premium office furniture, interior systems, and turnkey project execution with uncompromising quality, timely delivery, and customer-centric service.
                     </p>
                 </div>
@@ -93,14 +93,14 @@
             <!-- Vision -->
             <div class="col-md-6">
                 <div class="card border-0 shadow-lg p-4 p-md-5 h-100 rounded-4 bg-light border border-secondary-subtle">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-dark text-white rounded-3 mb-4 shadow" style="width: 58px; height: 58px;">
-                        <i class="icon icon-caret-up fs-3"></i>
+                    <div class="d-inline-flex align-items-center justify-content-center bg-dark text-white rounded-3 mb-4 shadow" style="width: 64px; height: 64px;">
+                        <i class="icon icon-caret-up fs-2"></i>
                     </div>
-                    <h3 class="fw-extrabold text-dark mb-3" style="font-size: 2.2rem !important; font-weight: 800 !important; color: #111111 !important;">Our Vision</h3>
-                    <p class="text-dark fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
+                    <h3 class="fw-extrabold text-dark mb-4" style="font-size: 2.6rem !important; font-weight: 800 !important; color: #111111 !important; letter-spacing: -0.5px;">Our Vision</h3>
+                    <p class="text-dark fw-bold mb-4" style="font-size: 1.5rem !important; line-height: 1.65 !important; color: #111111 !important; font-weight: 700 !important;">
                         To become a leading integrated workspace solutions provider in India — recognized for innovation, reliability, and excellence.
                     </p>
-                    <p class="text-dark fw-bold mb-0" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
+                    <p class="text-dark fw-bold mb-0" style="font-size: 1.5rem !important; line-height: 1.65 !important; color: #111111 !important; font-weight: 700 !important;">
                         We strive to build long-term partnerships with corporate, commercial, and institutional clients by consistently delivering world-class products, seamless installations, and superior customer value.
                     </p>
                 </div>
