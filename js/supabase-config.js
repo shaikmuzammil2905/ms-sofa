@@ -215,7 +215,7 @@ const VISHISTA_SEED_DATA = {
   "hero_sections": [
     {
       "heading": "Transforming Workspaces.<br><span class=\"text-gradient-red\">Elevating Possibilities.</span>",
-      "description": "Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments across Telangana and Andhra Pradesh.",
+      "description": "Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments.",
       "background_image": "images/sections/hero-workspace.jpg",
       "is_custom_updated": false
     }
@@ -229,7 +229,7 @@ const VISHISTA_SEED_DATA = {
   ],
   "footer_content": [
     {
-      "company_description": "Vishista Office Solutions Pvt Ltd is a premier provider of corporate office furniture and turnkey workspace interior solutions across Telangana and Andhra Pradesh.",
+      "company_description": "Vishista Office Solutions Pvt Ltd is a premier provider of corporate office furniture and turnkey workspace interior solutions.",
       "address": "Plot No 45, Jubilee Hills, Road No 36, Hyderabad, Telangana 500033",
       "phone": "+91 98490 12345",
       "email": "info@vishista.com"

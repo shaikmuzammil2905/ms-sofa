@@ -115,6 +115,54 @@
                 font-size: 10px !important;
             }
         }
+
+        /* Continuous Scrolling Marquee Animation for Section Cards */
+        .scrolling-marquee-container {
+            overflow: hidden !important;
+            width: 100% !important;
+            position: relative !important;
+            padding: 10px 0 !important;
+        }
+        .scrolling-marquee-track {
+            display: flex !important;
+            gap: 24px !important;
+            width: max-content !important;
+            animation: marqueeContinuous 30s linear infinite !important;
+        }
+        .scrolling-marquee-track:hover {
+            animation-play-state: paused !important;
+        }
+        @keyframes marqueeContinuous {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* High-Visibility Product Card & Subcategory Text Styling (Matching image copy 70.png) */
+        .card-body h4, .card-body h5 {
+            font-size: 1.3rem !important;
+            font-weight: 800 !important;
+            color: #111111 !important;
+        }
+        .card-body p, .card-body p.text-secondary {
+            font-size: 1.05rem !important;
+            font-weight: 600 !important;
+            color: #333333 !important;
+            line-height: 1.6 !important;
+        }
+        .product-cat-card h4 {
+            font-size: 1.4rem !important;
+            font-weight: 800 !important;
+            color: #111111 !important;
+        }
+        .product-cat-card p {
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            color: #333333 !important;
+        }
+        .badge {
+            font-size: 0.85rem !important;
+            font-weight: 700 !important;
+        }
+
         .nav-enquire-btn {
             background-color: #d32f2f;
             color: #ffffff !important;
@@ -612,41 +660,11 @@
                 </h1>
 
                 <!-- Animated Subheading -->
-                <p class="fs-5 text-white-50 mb-5 hero-subtitle" style="max-width: 680px; line-height: 1.6;">
-                    Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments.
+                <p class="fs-5 text-white mb-5 hero-subtitle fw-semibold" style="max-width: 720px; line-height: 1.7; font-size: 1.25rem !important;">
+                    <span class="px-3 py-2 rounded text-white d-inline-block shadow-sm" style="background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.25);">
+                        Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments.
+                    </span>
                 </p>
-
-                <!-- Animated Buttons -->
-                <div class="d-flex flex-wrap gap-3 mb-5 hero-actions">
-                    <a href="product-categories.html" class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase hero-btn-primary">
-                        Explore Products &rarr;
-                    </a>
-                    <button type="button" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase hero-btn-secondary" data-bs-toggle="modal" data-bs-target="#enquireModal">
-                        Contact Us / Enquire
-                    </button>
-                </div>
-
-                <!-- Floating Stats Badges -->
-                <div class="row g-3 pt-3 border-top border-secondary-subtle hero-stats">
-                    <div class="col-auto">
-                        <div class="glass-stat-chip">
-                            <span class="fw-bold text-white fs-5">25+ Years</span>
-                            <span class="text-white-50 fs-7 ms-1">Industry Expertise</span>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="glass-stat-chip">
-                            <span class="fw-bold text-white fs-5">Turnkey</span>
-                            <span class="text-white-50 fs-7 ms-1">End-to-End Solutions</span>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="glass-stat-chip">
-                            <span class="fw-bold text-white fs-5">OEM Partners</span>
-                            <span class="text-white-50 fs-7 ms-1">VIAK, ESS, Durian</span>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -797,27 +815,27 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
                 <div class="pe-lg-4">
-                    <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Corporate Overview</span>
-                    <h2 class="display-6 fw-bold text-dark mb-4" style="line-height: 1.2;">
+                    <span class="text-danger fw-extrabold text-uppercase tracking-wider fs-6 d-block mb-2" style="letter-spacing: 1.5px;">Corporate Overview</span>
+                    <h2 class="fw-extrabold text-dark mb-4" style="font-size: 3.2rem !important; line-height: 1.15; font-weight: 800 !important; color: #111111 !important;">
                         Creating Workspaces That Work for You
                     </h2>
-                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
+                    <p class="text-dark fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
                         <strong>Vishista Office Solutions Pvt Ltd</strong> is a leading provider of premium office furniture, interior systems, and turnkey workspace solutions, serving corporate, commercial, and institutional clients across Telangana and Andhra Pradesh.
                     </p>
-                    <p class="text-secondary fs-6 mb-3" style="line-height: 1.7;">
+                    <p class="text-dark fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
                         With a strong focus on quality, innovation, and customer satisfaction, the company delivers modern, efficient, and future-ready work environments tailored to the evolving needs of today's businesses.
                     </p>
-                    <p class="text-secondary fs-6 mb-4" style="line-height: 1.7;">
+                    <p class="text-dark fw-bold mb-4" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
                         Our expertise spans design consultation, product selection, multi-vendor coordination, installation, and dedicated after-sales support — making us a trusted partner for organizations seeking reliable and professional workspace transformation.
                     </p>
-                    <a href="about.html" class="btn btn-dark btn-lg px-4 py-2 fw-semibold text-uppercase" style="border-radius: 4px; font-size: 14px;">
+                    <a href="about.html" class="btn btn-dark btn-lg px-4 py-3 fw-bold text-uppercase shadow-sm" style="border-radius: 4px; font-size: 14px;">
                         Discover Our Story &rarr;
                     </a>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="position-relative rounded-4 overflow-hidden shadow-lg">
-                    <img src="images/sections/hero-workspace.jpg" alt="Modern Corporate Office Furniture" class="img-fluid w-100" style="object-fit: cover; min-height: 380px;">
+                <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary-subtle">
+                    <img src="images/sections/corporate-chair.jpg" alt="Corporate Executive Workspace" class="img-fluid w-100" style="object-fit: cover; min-height: 440px;">
                     <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.85));">
                         <span class="text-white-50 text-uppercase fs-7 fw-semibold">Turnkey Execution</span>
                         <h4 class="text-white fw-bold mb-0">End-to-End Office Interior Systems</h4>
@@ -843,7 +861,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/categories/cat_workstations.jpg" alt="Workstations" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/sections/cat-1.jpg" alt="Workstations" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Modular Workspace</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -861,7 +879,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/categories/cat_tables.jpg" alt="Tables" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/sections/cat-2.jpg" alt="Tables" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Executive Suite</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -879,7 +897,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <div class="position-relative overflow-hidden" style="height: 240px;">
-                        <img src="images/categories/cat_storage.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
+                        <img src="images/sections/cat-3.jpg" alt="Storage" class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold">Storage Systems</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
@@ -1014,68 +1032,47 @@
             <p class="text-secondary">We combine deep domain experience with premium product lines to deliver world-class turnkey workspace environments.</p>
         </div>
 
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+        <div class="scrolling-marquee-container">
+            <div class="scrolling-marquee-track">
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white" style="width: 320px; flex-shrink: 0;">
                     <span class="fs-1 fw-extrabold text-danger mb-3 d-block">01</span>
                     <h5 class="fw-bold text-dark mb-2">20+ Years of Industry Expertise</h5>
                     <p class="text-secondary fs-7 mb-0">Decades of leadership delivering complex, large-scale MNC and enterprise workspace projects across South India.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white" style="width: 320px; flex-shrink: 0;">
                     <span class="fs-1 fw-extrabold text-danger mb-3 d-block">02</span>
                     <h5 class="fw-bold text-dark mb-2">End-to-End Workspace Solutions</h5>
                     <p class="text-secondary fs-7 mb-0">Complete single-window support from initial space planning and product selection to installation and after-sales care.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white" style="width: 320px; flex-shrink: 0;">
                     <span class="fs-1 fw-extrabold text-danger mb-3 d-block">03</span>
                     <h5 class="fw-bold text-dark mb-2">Trusted by Large MNCs</h5>
                     <p class="text-secondary fs-7 mb-0">Proven track record of fulfilling strict architectural standards and multi-vendor requirements for global corporations.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white" style="width: 320px; flex-shrink: 0;">
                     <span class="fs-1 fw-extrabold text-danger mb-3 d-block">04</span>
                     <h5 class="fw-bold text-dark mb-2">Premium OEM Partnerships</h5>
                     <p class="text-secondary fs-7 mb-0">Direct access to industry-leading manufacturers including VIAK, ESS, DURIAN, Interface, and Loom Crafts.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white" style="width: 320px; flex-shrink: 0;">
                     <span class="fs-1 fw-extrabold text-danger mb-3 d-block">05</span>
                     <h5 class="fw-bold text-dark mb-2">Customer-Centric Approach</h5>
                     <p class="text-secondary fs-7 mb-0">Customized layout proposals tailored specifically to your floor plan, corporate identity, and budget targets.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white" style="width: 320px; flex-shrink: 0;">
                     <span class="fs-1 fw-extrabold text-danger mb-3 d-block">06</span>
                     <h5 class="fw-bold text-dark mb-2">Strong Leadership Execution</h5>
-                    <p class="text-secondary fs-7 mb-0">Guided by seasoned executives with extensive background in Godrej Interio, HNI India, BP Ergo, and Gyproc.</p>
+                    <p class="text-secondary fs-7 mb-0">Guided by seasoned executives with extensive background in executive workspace systems.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white" style="width: 320px; flex-shrink: 0;">
                     <span class="fs-1 fw-extrabold text-danger mb-3 d-block">07</span>
                     <h5 class="fw-bold text-dark mb-2">Timely Delivery, Every Time</h5>
-                    <p class="text-secondary fs-7 mb-0">Rigorous project tracking ensures your workspace is fully operational on time without project delays.</p>
+                    <p class="text-secondary fs-7 mb-0">Streamlined supply chain logistics and dedicated site supervision ensuring prompt project handovers.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm p-4 h-100 rounded-3 bg-white">
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white" style="width: 320px; flex-shrink: 0;">
                     <span class="fs-1 fw-extrabold text-danger mb-3 d-block">08</span>
-                    <h5 class="fw-bold text-dark mb-2">Commitment to Quality</h5>
-                    <p class="text-secondary fs-7 mb-0">Uncompromising material standards, ergonomic certifications, and dedicated ongoing maintenance support.</p>
+                    <h5 class="fw-bold text-dark mb-2">Commitment to Excellence</h5>
+                    <p class="text-secondary fs-7 mb-0">Uncompromising quality assurance across materials, structural integrity, and ergonomic performance.</p>
                 </div>
             </div>
         </div>

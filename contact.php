@@ -136,9 +136,18 @@
                     </div>
 
                     <!-- Regional Coverage -->
-                    <div class="card border-0 shadow-sm p-4 rounded-4 bg-white border">
+                    <div class="card border-0 shadow-sm p-4 rounded-4 bg-white border mb-4">
                         <h6 class="fw-bold text-dark mb-2">Regional Service Coverage</h6>
                         <p class="text-secondary fs-7 mb-0">Serving corporate hubs across Telangana (Hyderabad, Secunderabad, Gachibowli, HITEC City) and Andhra Pradesh (Vijayawada, Visakhapatnam, Tirupati).</p>
+                    </div>
+
+                    <!-- Interactive Google Maps Location (Matching image copy 71.png) -->
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="bg-dark text-white p-3 d-flex justify-content-between align-items-center">
+                            <span class="fw-bold fs-7 text-uppercase"><i class="icon icon-storefront me-2 text-danger"></i>Head Office Map Location</span>
+                            <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-bold fs-8 py-1">Open Maps &rarr;</a>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.5186256247926!2d78.4756593!3d17.4827598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a918a38ef2f%3A0x4a9b2b52fa102434!2sSaishruthi%20Nilyam%2C%20Street%20No.%204%2C%20Sri%20Sathya%20Sai%20Enclave%2C%20Old%20Bowenpally%2C%20Secunderabad%2C%20Telangana%20500009!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                 </div>
