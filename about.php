@@ -16,23 +16,23 @@
     <div class="tf-container py-4">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <span class="text-danger fw-bold text-uppercase tracking-wider fs-7 d-block mb-2">Company Profile</span>
-                <h2 class="display-6 fw-bold text-dark mb-4" style="line-height: 1.25;">
+                <span class="text-danger fw-extrabold text-uppercase tracking-wider fs-6 d-block mb-2" style="letter-spacing: 1.5px;">Corporate Overview</span>
+                <h2 class="fw-extrabold text-dark mb-4" style="font-size: 3.2rem !important; line-height: 1.15; font-weight: 800 !important; color: #111111 !important;">
                     Creating Workspaces That Work for You
                 </h2>
-                <p class="text-secondary fs-6 mb-3" style="line-height: 1.8;">
+                <p class="text-dark fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
                     <strong>Vishista Office Solutions Pvt Ltd</strong> is a leading provider of premium office furniture, interior systems, and turnkey workspace solutions, serving corporate, commercial, and institutional clients across Telangana and Andhra Pradesh.
                 </p>
-                <p class="text-secondary fs-6 mb-3" style="line-height: 1.8;">
+                <p class="text-dark fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
                     With a strong focus on quality, innovation, and customer satisfaction, the company delivers modern, efficient, and future-ready work environments tailored to the evolving needs of today's businesses.
                 </p>
-                <p class="text-secondary fs-6 mb-0" style="line-height: 1.8;">
+                <p class="text-dark fw-bold mb-0" style="font-size: 1.35rem !important; line-height: 1.7; color: #111111 !important;">
                     Our expertise spans design consultation, product selection, multi-vendor coordination, installation, and dedicated after-sales support — making us a trusted partner for organizations seeking reliable and professional workspace transformation.
                 </p>
             </div>
             <div class="col-lg-6">
-                <div class="rounded-4 overflow-hidden shadow-lg position-relative">
-                    <img src="images/collection/collection-1.jpg" alt="Vishista Corporate Workspace" class="img-fluid w-100" style="object-fit: cover; min-height: 380px;">
+                <div class="rounded-4 overflow-hidden shadow-lg position-relative border border-secondary-subtle">
+                    <img src="images/sections/corporate-chair.jpg" alt="Vishista Corporate Workspace" class="img-fluid w-100" style="object-fit: cover; min-height: 420px;">
                     <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.85));">
                         <span class="text-white-50 text-uppercase fs-7 fw-semibold">Turnkey Office Interiors</span>
                         <h4 class="text-white fw-bold mb-0">Engineered for Ergonomics & Productivity</h4>
@@ -59,10 +59,10 @@
                 <div class="col-lg-8 border-start-lg ps-lg-5">
                     <h2 class="fw-extrabold text-uppercase tracking-wider mb-2" style="font-size: 2.25rem !important; color: #d32f2f !important; font-weight: 800 !important; line-height: 1.2;">EXECUTIVE LEADERSHIP</h2>
                     <h3 class="fw-bold text-danger mb-3 fs-4" style="color: #d32f2f !important; font-weight: 700 !important;">Industry Leadership &amp; Strategic Vision</h3>
-                    <p class="text-danger fw-bold fs-6 mb-3" style="line-height: 1.7; color: #d32f2f !important; font-weight: 700 !important;">
+                    <p class="text-danger fw-bold mb-3" style="font-size: 1.35rem !important; line-height: 1.7; color: #d32f2f !important; font-weight: 700 !important;">
                         Leading the company's sales strategy and market expansion is our <strong style="color: #d32f2f !important;">Executive Sales Leadership</strong>, bringing over 2 decades of seasoned expertise in office furniture, interior systems, and enterprise workspace solutions.
                     </p>
-                    <p class="text-secondary fs-6 mb-0" style="line-height: 1.7;">
+                    <p class="text-dark fw-bold mb-0" style="font-size: 1.35rem !important; line-height: 1.7; color: #222222 !important;">
                         Our team has managed and delivered large-scale MNC projects, multi-vendor installations, and complex workspace transformations across major corporate hubs. At Vishista Office Solutions, we drive strategic sales planning, enterprise client acquisition, OEM partnerships, and regional market penetration.
                     </p>
                 </div>
