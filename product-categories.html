@@ -648,16 +648,16 @@
     <div class="tf-container overflow-auto">
         <div class="d-flex align-items-center gap-3 text-nowrap py-1">
             <span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>
-            <a href="#workstations" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Workstations</a>
-            <a href="#tables" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Tables</a>
-            <a href="#storage" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Storage</a>
-            <a href="#seating" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Seating</a>
-            <a href="#soft-seating" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Soft Seating</a>
-            <a href="#pods" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Pods</a>
-            <a href="#carpets" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Carpets</a>
-            <a href="#outdoor" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Outdoor</a>
-            <a href="#educational" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Educational</a>
-            <a href="#accessories" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Accessories</a>
+            <a href="#workstations" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Workstations</a>
+            <a href="#tables" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Tables</a>
+            <a href="#storage" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Storage</a>
+            <a href="#seating" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Seating</a>
+            <a href="#soft-seating" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Soft Seating</a>
+            <a href="#pods" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Pods</a>
+            <a href="#carpets" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Carpets</a>
+            <a href="#outdoor" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Outdoor</a>
+            <a href="#educational" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Educational</a>
+            <a href="#accessories" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Accessories</a>
         </div>
     </div>
 </div>
@@ -665,6 +665,24 @@
 <style>
     section[id] {
         scroll-margin-top: 170px !important;
+    }
+    .category-jump-btn {
+        font-size: 1.15rem !important;
+        font-weight: 900 !important;
+        border: 2.5px solid #000000 !important;
+        color: #000000 !important;
+        background-color: #ffffff !important;
+        transition: all 0.2s ease-in-out !important;
+    }
+    .category-jump-btn:hover,
+    .category-jump-btn:focus,
+    .category-jump-btn:active,
+    .category-jump-btn.active {
+        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
+        color: #ffffff !important;
+        border-color: #b71c1c !important;
+        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4) !important;
+        transform: translateY(-2px) !important;
     }
 </style>
 
