@@ -445,7 +445,42 @@
                 });
             }
         });
+        // IntersectionObserver for Smooth Scroll Reveal Animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-animated-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const animatableElements = document.querySelectorAll('.card, .product-cat-card, .scrolling-marquee-container');
+            animatableElements.forEach((el, index) => {
+                el.classList.add('scroll-animatable');
+                el.style.transitionDelay = ((index % 3) * 0.12) + 's';
+                scrollObserver.observe(el);
+            });
+        });
     </script>
+
+    <style>
+        .scroll-animatable {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-animated-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 
 </body>
 
