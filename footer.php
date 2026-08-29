@@ -468,6 +468,42 @@
                 scrollObserver.observe(el);
             });
         });
+
+        // Interactive Cursor Hover Popups & Click Handlers for Feature & Category Cards
+        document.addEventListener('DOMContentLoaded', function () {
+            const hoverCards = document.querySelectorAll('.card, .product-cat-card');
+            hoverCards.forEach(card => {
+                card.classList.add('cursor-popup-trigger');
+                
+                // Create interactive popup tooltip element inside each card
+                if (!card.querySelector('.card-hover-popup-badge')) {
+                    const popupBadge = document.createElement('div');
+                    popupBadge.className = 'card-hover-popup-badge';
+                    const titleText = card.querySelector('h3, h4, h5, h6')?.innerText || 'Workspace Solution';
+                    popupBadge.innerHTML = `<span class="badge text-white fw-bold shadow-lg px-3 py-2" style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border-radius: 50px; font-size: 11px; letter-spacing: 0.5px;"><i class="icon icon-storefront me-1"></i> ${titleText} - Enquire &rarr;</span>`;
+                    card.style.position = 'relative';
+                    card.appendChild(popupBadge);
+                }
+
+                // Add cursor hover popup events
+                card.addEventListener('mouseenter', function() {
+                    const badge = this.querySelector('.card-hover-popup-badge');
+                    if (badge) badge.classList.add('active');
+                });
+                card.addEventListener('mouseleave', function() {
+                    const badge = this.querySelector('.card-hover-popup-badge');
+                    if (badge) badge.classList.remove('active');
+                });
+
+                // Clicking card opens Enquiry Modal
+                card.addEventListener('click', function(e) {
+                    if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+                        const cardTitle = this.querySelector('h3, h4, h5, h6')?.innerText || 'Workspace Requirement';
+                        openEnquiryModal(cardTitle);
+                    }
+                });
+            });
+        });
     </script>
 
     <style>
@@ -479,6 +515,31 @@
         .scroll-animated-in {
             opacity: 1 !important;
             transform: translateY(0) !important;
+        }
+
+        /* Cursor Hover Popup Badge Styles */
+        .cursor-popup-trigger {
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .cursor-popup-trigger:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0 18px 40px rgba(211, 47, 47, 0.2) !important;
+            border-color: rgba(211, 47, 47, 0.4) !important;
+        }
+        .card-hover-popup-badge {
+            position: absolute;
+            top: -14px;
+            right: 18px;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(10px) scale(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+        .card-hover-popup-badge.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
     </style>
 
