@@ -700,7 +700,7 @@
             badge: "3 Open-Plan Desking Systems",
             items: [
                 { name: "Model DS-Linear 4-Person Workstation Cluster", img: "images/categories/cat_workstations.jpg", specs: "Powder Coated Metal Legs / Fabric Privacy Screen / Base Raceway Wiring / Under-desk Cable Basket" },
-                { name: "Model DS-Loop Leg 2-Person Bench", img: "images/sections/vishista_exclusive.jpg", specs: "Loop Frame Steel Legs / Prelam Wood Top / Center Screen Bracket / Wire Pass Grommets" },
+                { name: "Model DS-Loop Leg 2-Person Bench", img: "images/sections/s-lookbook-2.jpg", specs: "Loop Frame Steel Legs / Prelam Wood Top / Center Screen Bracket / Wire Pass Grommets" },
                 { name: "Model DS-Managerial L-Shape Workstation", img: "images/header/prd-nav-1.jpg", specs: "Attached Pedestal / Wire Pass Grommets / Acoustic Fabric Screen / Modesty Panel" }
             ]
         },
@@ -710,7 +710,7 @@
             badge: "2 Partition Panel Systems",
             items: [
                 { name: "Model PS-60mm Tile Partition System", img: "images/categories/cat_workstations.jpg", specs: "60mm Panel Thickness / Fabric & Glass Tiles / Base Raceway Wiring Conduits / Whiteboard Tiles" },
-                { name: "Model PS-45mm Slim Panel Workstation", img: "images/sections/s-lookbook-2.jpg", specs: "45mm Panel Thickness / Magnetic Marker Board / Overhead Storage Unit / Acoustic Felt Panels" }
+                { name: "Model PS-45mm Slim Panel Workstation", img: "images/header/prd-nav-2.jpg", specs: "45mm Panel Thickness / Magnetic Marker Board / Overhead Storage Unit / Acoustic Felt Panels" }
             ]
         },
         "Cabin Tables": {
@@ -758,7 +758,7 @@
             items: [
                 { name: "Model ST-Mobile Pedestal (3 Drawer)", img: "images/categories/cat_storage.png", specs: "Central Keyed Locking / Castor Wheels / Stationary Tray Included / Anti-tilt Mechanism" },
                 { name: "Model ST-Low Credenza Cabinet", img: "images/categories/cat_storage.jpg", specs: "Sliding Wooden Doors / Adjustable Internal Shelves / Cylinder Lock / Metal Handles" },
-                { name: "Model ST-Full Height Storage Cupboard", img: "images/categories/cat_storage.png", specs: "Hinged Wooden Doors / 4 Internal Shelves / Prelam Board Construction" }
+                { name: "Model ST-Full Height Storage Cupboard", img: "images/sections/s-lookbook-1.jpg", specs: "Hinged Wooden Doors / 4 Internal Shelves / Prelam Board Construction" }
             ]
         },
         "Metal Storage": {
@@ -784,7 +784,7 @@
             badge: "2 Staff Locker Models",
             items: [
                 { name: "Model LK-6 Door Staff Locker", img: "images/categories/cat_storage.png", specs: "Digital Keypad Lock / Name Tag Holder / Internal Coat Hook / Louvered Air Slots" },
-                { name: "Model LK-9 Door Modular Locker", img: "images/categories/cat_storage.png", specs: "RFID Card Access / Air Ventilation Slits / Heavy Gauge Steel Construction" }
+                { name: "Model LK-9 Door Modular Locker", img: "images/header/prd-nav-2.jpg", specs: "RFID Card Access / Air Ventilation Slits / Heavy Gauge Steel Construction" }
             ]
         },
         "Mesh Chairs (30 Models)": {
@@ -935,12 +935,28 @@
         }
     };
 
+    function resolveCatalogueData(rawKey) {
+        if (!rawKey) return pageCatalogueDatabase["Height Adjustable Series"];
+        var decoded = decodeURIComponent(rawKey).trim();
+        if (pageCatalogueDatabase[decoded]) return { matchedKey: decoded, data: pageCatalogueDatabase[decoded] };
+        
+        var normalizedQuery = decoded.toLowerCase().replace(/[^a-z0-9]/g, '');
+        for (var k in pageCatalogueDatabase) {
+            var normalizedK = k.toLowerCase().replace(/[^a-z0-9]/g, '');
+            if (normalizedK === normalizedQuery || normalizedK.includes(normalizedQuery) || normalizedQuery.includes(normalizedK)) {
+                return { matchedKey: k, data: pageCatalogueDatabase[k] };
+            }
+        }
+        return { matchedKey: "Height Adjustable Series", data: pageCatalogueDatabase["Height Adjustable Series"] };
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         var urlParams = new URLSearchParams(window.location.search);
-        var catName = urlParams.get('cat') || window.location.hash.replace('#', '') || "Height Adjustable Series";
+        var rawCat = urlParams.get('cat') || window.location.hash.replace('#', '');
         
-        // Match category data
-        var data = pageCatalogueDatabase[catName] || pageCatalogueDatabase["Height Adjustable Series"];
+        var resolved = resolveCatalogueData(rawCat);
+        var catName = resolved.matchedKey;
+        var data = resolved.data;
 
         document.getElementById('cataloguePageTitle').innerText = data.title;
         document.getElementById('cataloguePageDescription').innerText = data.desc;
