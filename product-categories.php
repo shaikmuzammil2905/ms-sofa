@@ -15,17 +15,17 @@
 <div class="bg-white border-bottom py-4 shadow-md sticky-jump-bar" style="position: sticky; top: 70px; z-index: 95; background-color: #ffffff !important; opacity: 1 !important; border-bottom: 3px solid #d32f2f;">
     <div class="tf-container overflow-auto">
         <div class="d-flex align-items-center gap-3 text-nowrap py-1">
-            <span class="fw-black text-dark me-2" style="font-size: 1.3rem !important; letter-spacing: 0.5px; color: #111111 !important;">Jump to Category:</span>
-            <a href="#workstations" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Workstations</a>
-            <a href="#tables" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Tables</a>
-            <a href="#storage" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Storage</a>
-            <a href="#seating" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Seating</a>
-            <a href="#soft-seating" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Soft Seating</a>
-            <a href="#pods" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Pods</a>
-            <a href="#carpets" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Carpets</a>
-            <a href="#outdoor" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Outdoor</a>
-            <a href="#educational" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Educational</a>
-            <a href="#accessories" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Accessories</a>
+            <span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>
+            <a href="#workstations" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Workstations</a>
+            <a href="#tables" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Tables</a>
+            <a href="#storage" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Storage</a>
+            <a href="#seating" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Seating</a>
+            <a href="#soft-seating" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Soft Seating</a>
+            <a href="#pods" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Pods</a>
+            <a href="#carpets" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Carpets</a>
+            <a href="#outdoor" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Outdoor</a>
+            <a href="#educational" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Educational</a>
+            <a href="#accessories" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 text-uppercase" style="font-size: 1.15rem !important; font-weight: 900 !important; border: 2.5px solid #000000 !important; color: #000000 !important;">Accessories</a>
         </div>
     </div>
 </div>
