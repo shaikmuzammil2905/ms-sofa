@@ -16,7 +16,6 @@
     <div class="tf-container overflow-auto">
         <div class="d-flex align-items-center gap-3 text-nowrap py-1">
             <span class="fw-black text-dark me-2" style="font-size: 1.3rem !important; letter-spacing: 0.5px; color: #111111 !important;">Jump to Category:</span>
-            <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg rounded-pill px-4 py-2 fw-black text-uppercase shadow" style="font-size: 1.1rem !important; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">&bull; ArchLabs Seating Catalogue</a>
             <a href="#workstations" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Workstations</a>
             <a href="#tables" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Tables</a>
             <a href="#storage" class="btn btn-outline-dark btn-lg rounded-pill px-4 py-2 fw-extrabold" style="font-size: 1.1rem !important; border-width: 2px;">Storage</a>
@@ -41,20 +40,19 @@
 <div class="py-5 bg-white">
     <div class="tf-container">
 
-        <!-- FEATURED ARCHLABS SEATING BANNER -->
-        <div class="bg-dark text-white rounded-4 p-4 p-md-5 mb-5 shadow-lg position-relative overflow-hidden" style="background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);">
+        <!-- VISHISTA EXCLUSIVE COLLECTION BANNER -->
+        <div class="bg-dark text-white rounded-4 p-4 p-md-5 mb-5 shadow-lg position-relative overflow-hidden" style="background: linear-gradient(135deg, #111111 0%, #262626 100%); border: 1px solid rgba(255,255,255,0.1);">
             <div class="row align-items-center g-4">
-                <div class="col-lg-8">
-                    <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-bold" style="font-size: 0.95rem !important;">Featured Catalogue 2026</span>
-                    <h2 class="display-5 fw-black text-white mb-3" style="font-weight: 900 !important;">ArchLabs Seating Collection</h2>
-                    <p class="text-white mb-4 fw-medium" style="font-size: 1.3rem !important; line-height: 1.6; color: #e0e0e0 !important;">Complete 64-page seating collection featuring 30 Mesh Series models, 5 Leather Series models, 7 Training Series models, Metro Linea Public Seating, and Cafeteria Chairs.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg px-4 py-3 text-uppercase fw-black shadow-lg" style="border-radius: 6px; font-size: 1.15rem !important;">Explore ArchLabs Catalogue &rarr;</a>
-                        <button type="button" class="btn btn-outline-light btn-lg px-4 py-3 text-uppercase fw-bold shadow-sm" style="border-radius: 6px; font-size: 1.15rem !important;" onclick="openEnquiryModal('ArchLabs Full Seating Catalogue')">Enquire for ArchLabs Seating</button>
+                <div class="col-lg-6">
+                    <h2 class="display-3 fw-black text-white mb-4" style="font-weight: 900 !important; font-size: 3rem !important; letter-spacing: -0.5px; text-shadow: 0 4px 15px rgba(0,0,0,0.5);">Vishista Exclusive Collection</h2>
+                    <div class="pt-2">
+                        <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg px-5 py-3 text-uppercase fw-black shadow-lg" style="border-radius: 8px; font-size: 1.2rem !important; letter-spacing: 1px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">EXPLORE MORE &rarr;</a>
                     </div>
                 </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/archlabs/pages/page_4.png" alt="ArchLabs Seating" class="img-fluid rounded-3 shadow" style="max-height: 260px; object-fit: contain;">
+                <div class="col-lg-6">
+                    <div class="rounded-4 overflow-hidden shadow-lg border border-secondary border-opacity-25">
+                        <img src="images/sections/vishista_exclusive.jpg" alt="Vishista Exclusive Collection" class="img-fluid w-100" style="height: 320px; object-fit: cover; display: block;">
+                    </div>
                 </div>
             </div>
         </div>
