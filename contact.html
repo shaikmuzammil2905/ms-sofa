@@ -720,8 +720,15 @@
                             Saishruthi Nilyam, Street No. 4, Sri Sathya Sai Enclave, Plot No. 109, Satya Sai Enclave Main Rd, Old Bowenpally, Secunderabad, Telangana 500009
                         </p>
                     </div>
-                    <div class="w-100" style="height: 380px;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.5186256247926!2d78.4756593!3d17.4827598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a918a38ef2f%3A0x4a9b2b52fa102434!2sSaishruthi%20Nilyam%2C%20Street%20No.%204%2C%20Sri%20Sathya%20Sai%20Enclave%2C%20Old%20Bowenpally%2C%20Secunderabad%2C%20Telangana%20500009!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="w-100 position-relative overflow-hidden" style="height: 380px;">
+                        <iframe src="https://maps.google.com/maps?q=17.4827598,78.4756593&hl=en&z=16&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- Pulsing Red Pin Location Marker -->
+                        <div class="position-absolute top-50 start-50 translate-middle pointer-events-none d-flex flex-column align-items-center" style="z-index: 5; margin-top: -24px;">
+                            <div class="bg-danger text-white rounded-pill px-3 py-1 fw-black shadow-lg mb-1" style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); font-size: 12px; letter-spacing: 0.5px; border: 2px solid #ffffff;">
+                                📍 Vishista Office Solutions
+                            </div>
+                            <div class="red-pin-pulse"></div>
+                        </div>
                     </div>
                     <div class="p-3 bg-dark border-top border-secondary">
                         <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-lg w-100 text-uppercase fw-extrabold shadow-sm py-3" style="border-radius: 6px; font-size: 14px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">
@@ -730,6 +737,23 @@
                     </div>
                 </div>
             </div>
+
+            <style>
+                .red-pin-pulse {
+                    width: 20px;
+                    height: 20px;
+                    background-color: #d32f2f;
+                    border-radius: 50%;
+                    box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.8);
+                    animation: pulse-red-ring 1.8s infinite;
+                    border: 3px solid #ffffff;
+                }
+                @keyframes pulse-red-ring {
+                    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.9); }
+                    70% { transform: scale(1.2); box-shadow: 0 0 0 18px rgba(211, 47, 47, 0); }
+                    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+                }
+            </style>
 
         </div>
     </div>
