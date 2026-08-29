@@ -1351,6 +1351,18 @@
         transform: translateY(-6px);
         box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
     }
-</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.location.hash) {
+            var targetId = window.location.hash.substring(1);
+            var targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                setTimeout(function() {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 250);
+            }
+        }
+    });
+</script>
 
 <?php include('footer.php'); ?>
