@@ -4,9 +4,11 @@
 
 <!-- Animated Hero Section -->
 <section class="hero-animated-section position-relative text-white overflow-hidden py-5 d-flex align-items-center" style="min-height: 88vh;">
-    <!-- Animated Background Image Container -->
+    <!-- Animated Background Image Container with Auto Slider -->
     <div class="hero-bg-animated-wrapper">
-        <img src="images/sections/hero-workspace.jpg" alt="Vishista Modern Office Solutions" class="hero-bg-img">
+        <div class="hero-slide active" style="background-image: url('images/sections/hero-slide-1.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/sections/hero-slide-2.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/sections/hero-slide-3.png');"></div>
         <div class="hero-bg-overlay"></div>
     </div>
 
@@ -16,22 +18,20 @@
                 
                 <!-- Animated Badge -->
                 <div class="hero-badge-wrap mb-4">
-                    <span class="badge hero-badge text-uppercase px-3 py-2 fw-bold tracking-widest fs-7">
-                        <i class="icon icon-storefront me-2"></i> Vishista Office Solutions Pvt Ltd
+                    <span class="badge hero-badge text-uppercase px-4 py-3 fw-black tracking-wider shadow-lg">
+                        <i class="icon icon-storefront me-2 text-warning"></i> Vishista Office Solutions Pvt Ltd
                     </span>
                 </div>
 
                 <!-- Animated Main Heading -->
-                <h1 class="display-3 fw-extrabold text-white mb-4 hero-title" style="line-height: 1.12; font-family: 'Inter', sans-serif;">
+                <h1 class="display-3 fw-extrabold text-white mb-4 hero-title" style="line-height: 1.12; font-family: 'Inter', sans-serif; text-shadow: 0 4px 15px rgba(0,0,0,0.5);">
                     Transforming Workspaces.<br>
                     <span class="text-gradient-red">Elevating Possibilities.</span>
                 </h1>
 
                 <!-- Animated Subheading -->
-                <p class="fs-5 text-white mb-5 hero-subtitle fw-semibold" style="max-width: 720px; line-height: 1.7; font-size: 1.25rem !important;">
-                    <span class="px-3 py-2 rounded text-white d-inline-block shadow-sm" style="background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.25);">
-                        Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments.
-                    </span>
+                <p class="fs-5 text-white mb-5 hero-subtitle fw-semibold" style="max-width: 720px; line-height: 1.7; font-size: 1.25rem !important; text-shadow: 0 2px 10px rgba(0,0,0,0.7);">
+                    Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments.
                 </p>
 
             </div>
@@ -52,11 +52,21 @@
         overflow: hidden;
         z-index: 1;
     }
-    .hero-bg-img {
+    .hero-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        animation: heroKenBurns 22s infinite alternate ease-in-out;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        transform: scale(1.05);
+        transition: opacity 1.5s ease-in-out, transform 7s ease-out;
+    }
+    .hero-slide.active {
+        opacity: 1;
+        transform: scale(1);
     }
     .hero-bg-overlay {
         position: absolute;
@@ -64,28 +74,23 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, rgba(15,15,15,0.55) 0%, rgba(15,15,15,0.35) 55%, rgba(0,0,0,0.2) 100%);
-    }
-
-    @keyframes heroKenBurns {
-        0% {
-            transform: scale(1) translate(0, 0);
-        }
-        100% {
-            transform: scale(1.08) translate(-15px, -10px);
-        }
+        background: linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%);
     }
 
     .hero-badge-wrap {
         animation: fadeInDown 0.8s ease-out forwards;
     }
     .hero-badge {
-        background: rgba(211, 47, 47, 0.25);
-        border: 1px solid rgba(211, 47, 47, 0.6);
-        color: #ff5252;
+        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        color: #ffffff !important;
         border-radius: 50px;
-        backdrop-filter: blur(8px);
-        letter-spacing: 1px;
+        letter-spacing: 1.5px;
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+        display: inline-flex;
+        align-items: center;
     }
 
     .hero-title {
@@ -175,7 +180,37 @@
             transform: translateY(0);
         }
     }
+
+    @media (max-width: 768px) {
+        .hero-badge {
+            font-size: 0.95rem !important;
+            padding: 8px 16px !important;
+            letter-spacing: 1px !important;
+            white-space: normal;
+            text-align: center;
+        }
+        .hero-title {
+            font-size: 2.2rem !important;
+        }
+        .hero-subtitle {
+            font-size: 1.05rem !important;
+        }
+    }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4500);
+    }
+});
+</script>
 
 <!-- Company Introduction Section -->
 <section class="py-5 bg-light">
@@ -183,7 +218,7 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
                 <div class="pe-lg-4">
-                    <span class="text-danger fw-extrabold text-uppercase tracking-wider fs-6 d-block mb-2" style="letter-spacing: 1.5px;">Corporate Overview</span>
+                    <span class="text-danger fw-black text-uppercase tracking-wider d-block mb-3" style="font-size: 1.6rem !important; letter-spacing: 2px; font-weight: 900 !important; color: #d32f2f !important;">Corporate Overview</span>
                     <h2 class="fw-extrabold text-dark mb-4" style="font-size: 3.2rem !important; line-height: 1.15; font-weight: 800 !important; color: #111111 !important;">
                         Creating Workspaces That Work for You
                     </h2>
@@ -202,12 +237,8 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary-subtle">
-                    <img src="images/sections/corporate-chair.jpg" alt="Corporate Executive Workspace" class="img-fluid w-100" style="object-fit: cover; min-height: 440px;">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.85));">
-                        <span class="text-white-50 text-uppercase fs-7 fw-semibold">Turnkey Execution</span>
-                        <h4 class="text-white fw-bold mb-0">End-to-End Office Interior Systems</h4>
-                    </div>
+                <div class="position-relative rounded-4 overflow-hidden shadow-sm bg-white p-3 border border-1 border-light-subtle d-flex align-items-center justify-content-center">
+                    <img src="images/sections/corporate-chair.jpg" alt="Corporate Executive Workspace" class="img-fluid w-100 rounded-3" style="object-fit: contain; max-height: 500px;">
                 </div>
             </div>
         </div>

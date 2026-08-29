@@ -16,7 +16,7 @@
     <div class="tf-container py-4">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <span class="text-danger fw-extrabold text-uppercase tracking-wider fs-6 d-block mb-2" style="letter-spacing: 1.5px;">Corporate Overview</span>
+                <span class="text-danger fw-black text-uppercase tracking-wider d-block mb-3" style="font-size: 1.6rem !important; letter-spacing: 2px; font-weight: 900 !important; color: #d32f2f !important;">Corporate Overview</span>
                 <h2 class="fw-extrabold text-dark mb-4" style="font-size: 3.2rem !important; line-height: 1.15; font-weight: 800 !important; color: #111111 !important;">
                     Creating Workspaces That Work for You
                 </h2>
