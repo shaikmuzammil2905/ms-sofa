@@ -1360,7 +1360,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4 bg-white">
-                    <form id="modalEnquiryForm" onsubmit="event.preventDefault(); alert('Thank you for your enquiry! Our workspace team will contact you shortly.'); bootstrap.Modal.getInstance(document.getElementById('enquireModal')).hide();">
+                    <form id="modalEnquiryForm" onsubmit="handleEnquirySubmit(event)">
                         <div class="mb-3">
                             <label class="form-label text-dark fw-medium fs-7 mb-1">Product / Service of Interest</label>
                             <input type="text" id="modalProductInput" class="form-control" placeholder="ArchLabs Seating, Workstations, Turnkey Interiors, etc." style="border-radius: 6px; padding: 10px 14px;">
@@ -1389,17 +1389,49 @@
                             <label class="form-label text-dark fw-medium fs-7 mb-1">Message / Project Requirements</label>
                             <textarea class="form-control" rows="3" placeholder="Specify floor size, seating capacity, timeline, or location..." style="border-radius: 6px; padding: 10px 14px;"></textarea>
                         </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-danger w-100 justify-content-center text-uppercase fw-bold" style="padding: 12px; border-radius: 6px; background-color: #d32f2f; border: none;">Submit Enquiry</button>
-                            <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold d-flex align-items-center justify-content-center gap-2" style="padding: 10px; border-radius: 6px;">
-                                Chat Directly on WhatsApp (+91 9849058444)
-                            </a>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger w-100 justify-content-center text-uppercase fw-extrabold shadow-sm py-3" style="border-radius: 6px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none; font-size: 15px; letter-spacing: 0.5px;">Submit Enquiry</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Animated Toast Notification Popup Container -->
+    <div id="enquiryToastPopup" class="position-fixed top-0 end-0 p-4" style="z-index: 10555; display: none;">
+        <div class="toast show align-items-center text-white bg-dark border-0 shadow-lg p-3" style="border-radius: 12px; background: linear-gradient(135deg, #111 0%, #222 100%) !important; min-width: 320px; animation: popupBounce 0.5s ease-out;">
+            <div class="d-flex align-items-center">
+                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center me-3" style="width: 42px; height: 42px; font-size: 20px; flex-shrink: 0;">✓</div>
+                <div class="flex-grow-1">
+                    <h6 class="fw-bold mb-1 text-white">Enquiry Received!</h6>
+                    <p class="mb-0 fs-7 text-white-50">Thank you! Our workspace team will contact you shortly.</p>
+                </div>
+                <button type="button" class="btn-close btn-close-white ms-2" onclick="document.getElementById('enquiryToastPopup').style.display='none'"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function handleEnquirySubmit(e) {
+        e.preventDefault();
+        const modalEl = document.getElementById('enquireModal');
+        if (modalEl) {
+            const modalInstance = bootstrap.Modal.getInstance(modalEl);
+            if (modalInstance) modalInstance.hide();
+        }
+        const toast = document.getElementById('enquiryToastPopup');
+        if (toast) {
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 5000);
+        } else {
+            alert('Thank you for your enquiry! Our workspace team will contact you shortly.');
+        }
+        e.target.reset();
+    }
+    </script>
 
     <style>
         .whatsapp-float-btn {

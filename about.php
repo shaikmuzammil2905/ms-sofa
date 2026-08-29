@@ -31,12 +31,8 @@
                 </p>
             </div>
             <div class="col-lg-6">
-                <div class="rounded-4 overflow-hidden shadow-lg position-relative border border-secondary-subtle">
-                    <img src="images/sections/corporate-chair.jpg" alt="Vishista Corporate Workspace" class="img-fluid w-100" style="object-fit: cover; min-height: 420px;">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.85));">
-                        <span class="text-white-50 text-uppercase fs-7 fw-semibold">Turnkey Office Interiors</span>
-                        <h4 class="text-white fw-bold mb-0">Engineered for Ergonomics & Productivity</h4>
-                    </div>
+                <div class="position-relative rounded-4 overflow-hidden shadow-sm bg-white p-3 border border-1 border-light-subtle d-flex align-items-center justify-content-center">
+                    <img src="images/sections/corporate-chair.jpg" alt="Corporate Executive Workspace" class="img-fluid w-100 rounded-3" style="object-fit: contain; max-height: 500px;">
                 </div>
             </div>
         </div>
