@@ -78,6 +78,7 @@ const pages = [
     { src: 'archlabs-catalogue.php', distHtml: 'archlabs-catalogue.html' },
     { src: 'product-categories.php', distHtml: 'product-categories.html' },
     { src: 'product-sofas.php', distHtml: 'product-sofas.html' },
+    { src: 'product-catalogue-view.php', distHtml: 'product-catalogue-view.html' },
     { src: 'contact.php', distHtml: 'contact.html' },
     { src: 'admin.php', distHtml: 'admin.html' }
 ];
