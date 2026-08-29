@@ -12,25 +12,64 @@
 </section>
 
 <!-- Category Filter Sticky Anchor Bar -->
-<div class="bg-light border-bottom sticky-top filter-anchor-bar py-3 shadow-sm" style="z-index: 100;">
+<div class="bg-white border-bottom py-3 shadow-md filter-anchor-bar" style="position: sticky; top: 92px; z-index: 95; background-color: #ffffff !important; opacity: 1 !important; border-bottom: 3px solid #d32f2f;">
     <div class="tf-container overflow-auto">
-        <div class="d-flex flex-nowrap align-items-center gap-2 text-nowrap">
-            <span class="fw-bold text-dark me-2 fs-7">Filter Series:</span>
-            <a href="#workstations-ha" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Workstations</a>
-            <a href="#tables-cabin" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Tables</a>
-            <a href="#storage-prelam" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Storage</a>
-            <a href="#mesh-series" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Mesh Series (30 Models)</a>
-            <a href="#leather-series" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Leather Series (5 Models)</a>
-            <a href="#training-series" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Training Series (7 Models)</a>
-            <a href="#cafeteria-series" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Cafeteria Series (7 Models)</a>
-            <a href="#pods" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Acoustic Pods</a>
-            <a href="#carpets" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Interface Carpets</a>
-            <a href="#outdoor" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Outdoor Furniture</a>
-            <a href="#educational" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Educational</a>
-            <a href="#accessories" class="btn btn-outline-danger btn-sm rounded-pill fs-7 px-3 fw-semibold">Accessories</a>
+        <div class="d-flex align-items-center gap-3 text-nowrap py-1">
+            <span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Filter Series:</span>
+            <a href="#workstations-ha" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Workstations</a>
+            <a href="#tables-cabin" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Tables</a>
+            <a href="#storage-prelam" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Storage</a>
+            <a href="#mesh-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Mesh Series (30 Models)</a>
+            <a href="#leather-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Leather Series (5 Models)</a>
+            <a href="#training-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Training Series (7 Models)</a>
+            <a href="#cafeteria-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Cafeteria Series (7 Models)</a>
+            <a href="#pods" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Acoustic Pods</a>
+            <a href="#carpets" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Interface Carpets</a>
+            <a href="#outdoor" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Outdoor Furniture</a>
+            <a href="#educational" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Educational</a>
+            <a href="#accessories" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Accessories</a>
         </div>
     </div>
 </div>
+
+<style>
+    section[id] {
+        scroll-margin-top: 180px !important;
+    }
+    .catalogue-filter-btn {
+        font-size: 1.15rem !important;
+        font-weight: 900 !important;
+        border: 2.5px solid #000000 !important;
+        color: #000000 !important;
+        background-color: #ffffff !important;
+        transition: all 0.2s ease-in-out !important;
+    }
+    .catalogue-filter-btn:hover,
+    .catalogue-filter-btn:focus,
+    .catalogue-filter-btn:active,
+    .catalogue-filter-btn.active {
+        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
+        color: #ffffff !important;
+        border-color: #b71c1c !important;
+        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4) !important;
+        transform: translateY(-2px) !important;
+    }
+</style>
+
+<script>
+    function updateCatalogueBarOffset() {
+        var header = document.querySelector('header.tf-header') || document.querySelector('header');
+        var filterBar = document.querySelector('.filter-anchor-bar');
+        if (header && filterBar) {
+            var headerHeight = header.offsetHeight || 92;
+            filterBar.style.top = headerHeight + 'px';
+        }
+    }
+    window.addEventListener('scroll', updateCatalogueBarOffset);
+    window.addEventListener('resize', updateCatalogueBarOffset);
+    document.addEventListener('DOMContentLoaded', updateCatalogueBarOffset);
+    setTimeout(updateCatalogueBarOffset, 300);
+</script>
 
 <!-- Main Catalogue Container -->
 <div class="py-5 bg-white">
