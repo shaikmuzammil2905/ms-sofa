@@ -86,36 +86,36 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_workstations.jpg" alt="Height Adjustable Series" class="card-img-top cursor-pointer" style="background: #ffffff; height: 240px; object-fit: cover;" onclick="showProductCatalogue('Height Adjustable Series')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_workstations.jpg" alt="Height Adjustable Series" class="card-img-top" style="background: #ffffff; height: 240px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">1. Height Adjustable Series</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Motorized sit-to-stand desks engineered for active workplace wellness, smooth height transitions, and integrated wire management.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Height Adjustable Series')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_workstations.jpg" alt="Desking Series" class="card-img-top cursor-pointer" style="background: #ffffff; height: 240px; object-fit: cover;" onclick="showProductCatalogue('Desking Series')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_workstations.jpg" alt="Desking Series" class="card-img-top" style="background: #ffffff; height: 240px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">2. Desking Series</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Modular open-plan linear and back-to-back desking systems with minimalist leg profiles and customizable privacy screens.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Desking Series')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_workstations.jpg" alt="Panel Series" class="card-img-top cursor-pointer" style="background: #ffffff; height: 240px; object-fit: cover;" onclick="showProductCatalogue('Panel Series')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_workstations.jpg" alt="Panel Series" class="card-img-top" style="background: #ffffff; height: 240px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">3. Panel Series</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Acoustic panel-based workstation partitions providing high acoustic privacy, raceway power conduits, and modular storage integration.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Panel Series')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -134,48 +134,48 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_tables.png" alt="Cabin Tables" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Cabin Tables')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_tables.png" alt="Cabin Tables" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Cabin Tables</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Executive director and managerial desk setups with attached side return credenzas.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Cabin Tables')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_tables.png" alt="Meeting Tables" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Meeting Tables')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_tables.png" alt="Meeting Tables" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Meeting Tables</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Large boardroom conference tables equipped with pop-up connectivity boxes and cable trays.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Meeting Tables')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_tables.png" alt="Cafe Tables" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Cafe Tables')">
+                        <a href="archlabs-catalogue.html#cafeteria-series"><img src="images/categories/cat_tables.png" alt="Cafe Tables" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Cafe Tables</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Stylish cafeteria and pantry dining tables available in round, square, and high-counter designs.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Cafe Tables')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html#cafeteria-series" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_tables.png" alt="Training Tables" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Training Tables')">
+                        <a href="archlabs-catalogue.html#training-series"><img src="images/categories/cat_tables.png" alt="Training Tables" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Training Tables</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Foldable tilt-top training desks on lockable castors for reconfigurable seminar halls.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Training Tables')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html#training-series" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -194,48 +194,48 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_storage.png" alt="Prelam Storage" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Prelam Storage')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_storage.png" alt="Prelam Storage" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Prelam Storage</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Laminate wood credenzas, pedestals, and tall storage units matching workstation finishes.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Prelam Storage')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_storage.png" alt="Metal Storage" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Metal Storage')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_storage.png" alt="Metal Storage" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Metal Storage</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Powder-coated steel filing cabinets, lateral drawers, and central archive units.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Metal Storage')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_storage.png" alt="Compactor Storage" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Compactor Storage')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_storage.png" alt="Compactor Storage" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Compactor Storage</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">High-density mobile rail compactor storage systems maximizing floor space utilization.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Compactor Storage')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_storage.png" alt="Lockers" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Locker Systems')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_storage.png" alt="Lockers" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Locker Systems</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Personal employee lockers with mechanical keypads, RFID locks, and ventilation slots.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Locker Systems')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -254,48 +254,48 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/archlabs/pages/page_4.png" alt="Mesh Chair" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: contain;" onclick="showProductCatalogue('Mesh Chairs (30 Models)')">
+                        <a href="archlabs-catalogue.html#mesh-series"><img src="images/archlabs/pages/page_4.png" alt="Mesh Chair" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: contain;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Mesh Chairs (30 Models)</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Breathable lumbar-support task chairs with synchro-tilt mechanism and adjustable 3D armrests.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Mesh Chairs (30 Models)')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html#mesh-series" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/archlabs/pages/page_36.png" alt="Leather Chair" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: contain;" onclick="showProductCatalogue('Leather Chairs (5 Models)')">
+                        <a href="archlabs-catalogue.html#leather-series"><img src="images/archlabs/pages/page_36.png" alt="Leather Chair" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: contain;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Leather Chairs (5 Models)</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">High-back executive leather armchairs with diamond stitch quilting and chrome base control.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Leather Chairs (5 Models)')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html#leather-series" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/archlabs/pages/page_43.png" alt="Training Chair" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: contain;" onclick="showProductCatalogue('Training Chairs (7 Models)')">
+                        <a href="archlabs-catalogue.html#training-series"><img src="images/archlabs/pages/page_43.png" alt="Training Chair" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: contain;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Training Chairs (7 Models)</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Nesting training chairs equipped with writing tablets, wire baskets, and castor wheels.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Training Chairs (7 Models)')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html#training-series" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/archlabs/pages/page_57.png" alt="Cafe Chair" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: contain;" onclick="showProductCatalogue('Cafe Chairs (7 Models)')">
+                        <a href="archlabs-catalogue.html#cafeteria-series"><img src="images/archlabs/pages/page_57.png" alt="Cafe Chair" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: contain;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Cafe Chairs (7 Models)</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Vibrant polypropelene and metal frame dining chairs for pantry breakouts.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Cafe Chairs (7 Models)')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html#cafeteria-series" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -314,36 +314,36 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_soft_seating.jpg" alt="Lounge & Sofas" class="card-img-top cursor-pointer" style="background: #ffffff; height: 240px; object-fit: cover;" onclick="showProductCatalogue('Lounge & Executive Sofas')">
+                        <a href="product-sofas.html"><img src="images/categories/cat_soft_seating.jpg" alt="Lounge & Sofas" class="card-img-top" style="background: #ffffff; height: 240px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">Lounge &amp; Executive Sofas</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Single, two, and three-seater plush upholstered couches for reception areas and executive suites.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Lounge & Executive Sofas')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="product-sofas.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_soft_seating.jpg" alt="Collaborative Seating" class="card-img-top cursor-pointer" style="background: #ffffff; height: 240px; object-fit: cover;" onclick="showProductCatalogue('Collaborative Seating')">
+                        <a href="product-sofas.html"><img src="images/categories/cat_soft_seating.jpg" alt="Collaborative Seating" class="card-img-top" style="background: #ffffff; height: 240px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">Collaborative Seating</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Modular curved sofas and high-back acoustic booth seating for agile team huddles.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Collaborative Seating')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="product-sofas.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_soft_seating.jpg" alt="Pouffes & Tables" class="card-img-top cursor-pointer" style="background: #ffffff; height: 240px; object-fit: cover;" onclick="showProductCatalogue('Pouffes & Occasional Tables')">
+                        <a href="product-sofas.html"><img src="images/categories/cat_soft_seating.jpg" alt="Pouffes & Tables" class="card-img-top" style="background: #ffffff; height: 240px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">Pouffes &amp; Occasional Tables</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Geometrical soft pouffes, ottomans, and companion coffee center tables.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Pouffes & Occasional Tables')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="product-sofas.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -362,24 +362,24 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_pods.jpg" alt="Single Phone Pod" class="card-img-top cursor-pointer" style="background: #ffffff; height: 260px; object-fit: cover;" onclick="showProductCatalogue('Single Acoustic Phone Pod')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_pods.jpg" alt="Single Phone Pod" class="card-img-top" style="background: #ffffff; height: 260px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">Single Acoustic Phone Pod</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Sound-insulated solo booth equipped with air ventilation, LED lighting, power outlets, and laptop shelf for private calls.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Single Acoustic Phone Pod')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_pods.jpg" alt="Meeting Pod" class="card-img-top cursor-pointer" style="background: #ffffff; height: 260px; object-fit: cover;" onclick="showProductCatalogue('4-6 Person Meeting Pod')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_pods.jpg" alt="Meeting Pod" class="card-img-top" style="background: #ffffff; height: 260px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">4-6 Person Meeting Pod</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Fully enclosed acoustic meeting booth complete with integrated sofa seating, TV monitor mounting bracket, and power hubs.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('4-6 Person Meeting Pod')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -398,12 +398,12 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_workstations.jpg" alt="Interface Carpet Tiles" class="card-img-top cursor-pointer" style="background: #ffffff; height: 260px; object-fit: cover;" onclick="showProductCatalogue('Interface Carpet Tiles')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_workstations.jpg" alt="Interface Carpet Tiles" class="card-img-top" style="background: #ffffff; height: 260px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">Interface Carpet Tiles</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Modular acoustic carpet tiles available in contemporary geometric patterns, stain-resistant fibers, and sound dampening backing.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Interface Carpet Tiles')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -422,12 +422,12 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_tables.png" alt="Loom Crafts Outdoor" class="card-img-top cursor-pointer" style="background: #ffffff; height: 260px; object-fit: cover;" onclick="showProductCatalogue('Loom Crafts Terrace & Cafe Seating')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_tables.png" alt="Loom Crafts Outdoor" class="card-img-top" style="background: #ffffff; height: 260px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">Loom Crafts Terrace &amp; Cafe Seating</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Weather-resistant synthetic wicker and aluminum outdoor lounge sets, patio umbrellas, and dining tables.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Loom Crafts Terrace & Cafe Seating')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -446,48 +446,48 @@
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_education.png" alt="Classroom Desks" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Classroom Desks')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_education.png" alt="Classroom Desks" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Classroom Desks</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Single and dual-bench student desks with bag hooks and book shelves.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Classroom Desks')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_education.png" alt="Library Units" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Library Furniture')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_education.png" alt="Library Units" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Library Furniture</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Study carrels, reading tables, and heavy-duty double-sided book racks.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Library Furniture')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_education.png" alt="Hostel Furniture" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Hostel Furniture')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_education.png" alt="Hostel Furniture" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Hostel Furniture</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Metal bunk beds, study tables, and wardrobe locker units.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Hostel Furniture')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_education.png" alt="Auditorium Seating" class="card-img-top cursor-pointer" style="background: #ffffff; height: 220px; object-fit: cover;" onclick="showProductCatalogue('Auditorium Seating')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_education.png" alt="Auditorium Seating" class="card-img-top" style="background: #ffffff; height: 220px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.45rem !important; font-weight: 900 !important; color: #111111 !important;">Auditorium Seating</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Cushioned tip-up auditorium chairs with writing tablets and row numbering.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Auditorium Seating')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -506,12 +506,12 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <img src="images/categories/cat_workstations.jpg" alt="Workspace Accessories" class="card-img-top cursor-pointer" style="background: #ffffff; height: 260px; object-fit: cover;" onclick="showProductCatalogue('Ergonomic Arms & Power Management')">
+                        <a href="archlabs-catalogue.html"><img src="images/categories/cat_workstations.jpg" alt="Workspace Accessories" class="card-img-top" style="background: #ffffff; height: 260px; object-fit: cover;"></a>
                         <div class="card-body p-4 d-flex flex-column">
                             <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">Ergonomic Arms &amp; Power Management</h3>
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Gas-spring dual monitor arms, under-desk cable trays, vertical wire serpents, and pop-up power modules.</p>
                             <div class="d-grid mt-auto">
-                                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;" onclick="showProductCatalogue('Ergonomic Arms & Power Management')">VIEW PRODUCT CATALOGUE &rarr;</button>
+                                <a href="archlabs-catalogue.html" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -521,280 +521,5 @@
 
     </div>
 </div>
-
-<!-- Product Catalogue Gallery Modal -->
-<div class="modal fade" id="productCatalogueModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
-            <div class="bg-dark text-white p-4 d-flex justify-content-between align-items-center" style="background: linear-gradient(135deg, #111111 0%, #2b2b2b 100%) !important;">
-                <div>
-                    <span class="badge bg-danger text-uppercase px-3 py-1 mb-1 fw-bold" style="font-size: 0.85rem !important;">Vishista Official Product Catalogue</span>
-                    <h3 class="fw-black text-white mb-0" id="catalogueModalTitle" style="font-size: 1.8rem !important; font-weight: 900 !important;">Product Catalogue</h3>
-                </div>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-4 bg-light">
-                <p class="text-dark fw-semibold fs-6 mb-4" id="catalogueModalSubtitle" style="color: #333333 !important;"></p>
-                
-                <!-- Catalogue Models Grid -->
-                <div class="row g-4" id="catalogueGridContainer">
-                    <!-- Dynamic catalogue items injected via JS -->
-                </div>
-            </div>
-            <div class="modal-footer bg-white p-3 d-flex justify-content-between align-items-center">
-                <span class="text-dark fw-bold fs-7">Need custom dimensions or corporate bulk pricing?</span>
-                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black px-4 py-2" id="catalogueEnquireBtn" style="border-radius: 6px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none; font-size: 1rem !important;">Enquire For This Catalogue &rarr;</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    var catalogueData = {
-        "Height Adjustable Series": {
-            subtitle: "Motorized dual-motor sit-to-stand desks engineered for active workplace ergonomics with digital memory presets.",
-            items: [
-                { name: "Model HA-01 Sit-Stand Executive Desk", img: "images/categories/cat_workstations.jpg", specs: "Dual Motor / 120kg Capacity / Memory Controller (650-1300mm)" },
-                { name: "Model HA-02 Back-to-Back Bench System", img: "images/sections/hero-workspace.jpg", specs: "Central Cable Spine / Integrated Divider Screen / Cable Snake" },
-                { name: "Model HA-03 Corner L-Desk Managerial", img: "images/sections/vishista_exclusive.jpg", specs: "3-Leg Motorized System / Side Credenza / Wireless Charging Hub" }
-            ]
-        },
-        "Desking Series": {
-            subtitle: "Modular open-plan linear and back-to-back desking systems with minimalist leg profiles and wire raceways.",
-            items: [
-                { name: "Model DS-Linear 4-Person Cluster", img: "images/categories/cat_workstations.jpg", specs: "Powder Coated Metal Leg / Fabric Privacy Screen / Raceway" },
-                { name: "Model DS-Loop Leg 2-Person Bench", img: "images/sections/vishista_exclusive.jpg", specs: "Loop Frame Legs / Prelam Top / Under-desk Cable Tray" },
-                { name: "Model DS-Managerial L-Shape Workstation", img: "images/header/prd-nav-1.jpg", specs: "Attached Pedestal / Wire Pass Grommet / Acoustic Screen" }
-            ]
-        },
-        "Panel Series": {
-            subtitle: "Acoustic panel-based partition workstations providing privacy, sound absorption, and integrated power wiring.",
-            items: [
-                { name: "Model PS-60mm Tile Partition System", img: "images/categories/cat_workstations.jpg", specs: "60mm Thickness / Fabric & Glass Tiles / Base Raceway Wiring" },
-                { name: "Model PS-45mm Slim Panel Workstation", img: "images/sections/s-lookbook-2.jpg", specs: "45mm Thickness / Magnetic Marker Board / Overhead Storage" }
-            ]
-        },
-        "Cabin Tables": {
-            subtitle: "Executive director and managerial desk suites with attached side credenzas and cable conduits.",
-            items: [
-                { name: "Model CB-Executive Director Desk", img: "images/categories/cat_tables.png", specs: "Veneer Finish / Leatherette Writing Pad / Side Credenza Unit" },
-                { name: "Model CB-Managerial L-Desk", img: "images/categories/cat_tables.jpg", specs: "Prelam Wood Finish / Lockable Drawers / Wire Grommets" },
-                { name: "Model CB-Modern CEO Desk Suite", img: "images/sections/vishista_exclusive.jpg", specs: "Beveled Edge Top / Built-in Power Module / Modesty Panel" }
-            ]
-        },
-        "Meeting Tables": {
-            subtitle: "Large boardroom conference tables equipped with pop-up connectivity boxes and heavy-duty bases.",
-            items: [
-                { name: "Model MT-12 Seater Boardroom Table", img: "images/categories/cat_tables.png", specs: "Dual Pop-up Power Box / Boat Shape Top / Heavy Duty Base" },
-                { name: "Model MT-8 Seater Conference Table", img: "images/categories/cat_tables.jpg", specs: "Modular Sectional Top / Cable Trough / Metal Base Frame" },
-                { name: "Model MT-Round Discussion Table", img: "images/header/prd-nav-2.jpg", specs: "1200mm Diameter / Pedestal Base / Prelam Wood Top" }
-            ]
-        },
-        "Cafe Tables": {
-            subtitle: "Cafeteria and pantry dining tables available in round, square, and high-counter designs.",
-            items: [
-                { name: "Model CF-Round Breakout Dining Table", img: "images/categories/cat_tables.png", specs: "Stainless Steel Disc Base / Compact Laminate Top / Easy Clean" },
-                { name: "Model CF-High Counter Bar Table", img: "images/archlabs/pages/page_57.png", specs: "1050mm Height / Footrest Bar / Heavy Steel Legs" }
-            ]
-        },
-        "Training Tables": {
-            subtitle: "Foldable tilt-top training desks on lockable castors for reconfigurable seminar halls.",
-            items: [
-                { name: "Model TR-Tilt Top Flip Desk", img: "images/categories/cat_tables.png", specs: "Flip Mechanism / Lockable Castors / Nesting Storage" },
-                { name: "Model TR-Fixed Seminar Table", img: "images/archlabs/pages/page_43.png", specs: "Modesty Panel / Front Book Rack / Cable Hole" }
-            ]
-        },
-        "Prelam Storage": {
-            subtitle: "Laminate wood credenzas, pedestals, and tall storage units matching workstation finishes.",
-            items: [
-                { name: "Model ST-Mobile Pedestal (3 Drawer)", img: "images/categories/cat_storage.png", specs: "Central Locking / Castors / Stationary Tray" },
-                { name: "Model ST-Low Credenza Cabinet", img: "images/categories/cat_storage.jpg", specs: "Sliding Wooden Doors / Adjustable Shelf / Lock Unit" },
-                { name: "Model ST-Full Height Storage Cupboard", img: "images/categories/cat_storage.png", specs: "Hinged Doors / 4 Internal Shelves / Prelam Board" }
-            ]
-        },
-        "Metal Storage": {
-            subtitle: "Powder-coated steel filing cabinets, lateral drawers, and archive storage units.",
-            items: [
-                { name: "Model MS-4 Drawer Filing Cabinet", img: "images/categories/cat_storage.jpg", specs: "Ball Bearing Slides / Anti-Tilt Lock / Steel Sheet" },
-                { name: "Model MS-2 Door Steel Almirah", img: "images/categories/cat_storage.png", specs: "3-Way Locking Handle / 4 Adjustable Shelves / Powder Coated" }
-            ]
-        },
-        "Compactor Storage": {
-            subtitle: "High-density mobile rail compactor storage systems maximizing floor space utilization.",
-            items: [
-                { name: "Model CP-Mechanical Mobile Compactor", img: "images/categories/cat_storage.jpg", specs: "Drive Wheel Mechanism / Safety Floor Lock / Heavy Load Rails" }
-            ]
-        },
-        "Locker Systems": {
-            subtitle: "Personal employee lockers with mechanical keypads, RFID smart locks, and ventilation slots.",
-            items: [
-                { name: "Model LK-6 Door Staff Locker", img: "images/categories/cat_storage.png", specs: "Digital Keypad Lock / Name Tag Holder / Coat Hook" },
-                { name: "Model LK-9 Door Modular Locker", img: "images/categories/cat_storage.png", specs: "RFID Card Access / Ventilation Slits / Steel Body" }
-            ]
-        },
-        "Mesh Chairs (30 Models)": {
-            subtitle: "Complete 30-model ergonomic mesh seating series from ArchLabs Catalogue.",
-            items: [
-                { name: "Model Veloz Mesh Task Chair (P.04)", img: "images/archlabs/pages/page_4.png", specs: "Breathable Mesh / 3D Gel Armrest / Synchro-Tilt / Class 4 Gas Lift" },
-                { name: "Model V-Ergo High Back Mesh (P.05)", img: "images/archlabs/pages/page_5.png", specs: "Adjustable Lumbar Support / Aluminium Diecast Base / Headrest" },
-                { name: "Model V-Lumbar Mid Back Task (P.06)", img: "images/archlabs/pages/page_6.png", specs: "Nylon Frame / Multi-position Lock / PU Arm Pads" },
-                { name: "Model V-Executive Mesh Suite (P.07)", img: "images/archlabs/pages/page_7.png", specs: "Full Mesh Seat & Back / Polished Chrome Base / 3D Headrest" }
-            ]
-        },
-        "Leather Chairs (5 Models)": {
-            subtitle: "High-back executive leather armchairs with diamond stitch quilting and chrome controls.",
-            items: [
-                { name: "Model Exec Leather Director Chair (P.36)", img: "images/archlabs/pages/page_36.png", specs: "Genuine Upholstered Leather / Knee-Tilt Mechanism / Chrome Base" },
-                { name: "Model Diamond Stitch Executive (P.37)", img: "images/archlabs/pages/page_37.png", specs: "Quilted Backrest / Fixed Cushioned Arms / Heavy Duty Gas Lift" },
-                { name: "Model Managerial Leatherette Swivel (P.38)", img: "images/archlabs/pages/page_38.png", specs: "High Density Foam / T-Bar Chrome Armrest / Smooth Castors" }
-            ]
-        },
-        "Training Chairs (7 Models)": {
-            subtitle: "Nesting training chairs equipped with writing tablets, wire baskets, and castor wheels.",
-            items: [
-                { name: "Model Nesting Tablet Chair (P.43)", img: "images/archlabs/pages/page_43.png", specs: "Foldable Writing Pad / Under-seat Wire Basket / Castor Wheels" },
-                { name: "Model Mobile Seminar Mesh Chair (P.44)", img: "images/archlabs/pages/page_44.png", specs: "Flip Seat Mechanism / Nesting Storage / Breathable Mesh Back" },
-                { name: "Model Poly Shell Training Chair (P.45)", img: "images/archlabs/pages/page_45.png", specs: "Heavy Duty Frame / Cup Holder Tablet / Stackable Base" }
-            ]
-        },
-        "Cafe Chairs (7 Models)": {
-            subtitle: "Vibrant polypropylene and metal frame dining chairs for pantry breakouts.",
-            items: [
-                { name: "Model Polypropelene Shell Chair (P.57)", img: "images/archlabs/pages/page_57.png", specs: "Molded PP Shell / Wooden Legs / Solid Weight Capacity" },
-                { name: "Model Chrome Leg Breakout Chair (P.58)", img: "images/archlabs/pages/page_58.png", specs: "Stackable Chrome Legs / Ergonomic Contour / Stain Resistant" },
-                { name: "Model High Counter Bar Stool (P.59)", img: "images/archlabs/pages/page_59.png", specs: "Swivel Seat / Chrome Footrest Ring / Gas Lift Height Adjustment" }
-            ]
-        },
-        "Lounge & Executive Sofas": {
-            subtitle: "Single, two, and three-seater plush upholstered couches for reception areas and executive suites.",
-            items: [
-                { name: "Model SV-Executive 3-Seater Leather Couch", img: "images/categories/cat_soft_seating.jpg", specs: "Genuine Leatherette / Stainless Steel Legs / High Resilience Foam" },
-                { name: "Model SV-Single Club Reception Armchair", img: "images/collection/collection-1.jpg", specs: "Plush Fabric Upholstery / Solid Wood Internal Frame / Ergonomic Back" }
-            ]
-        },
-        "Collaborative Seating": {
-            subtitle: "Modular curved sofas and high-back acoustic booth seating for agile team huddles.",
-            items: [
-                { name: "Model CS-Curved Modular Sofa Cluster", img: "images/categories/cat_soft_seating.jpg", specs: "Interlocking Modules / Integrated Power Outlet / High Density Foam" },
-                { name: "Model CS-High Back Acoustic Booth", img: "images/categories/cat_soft_seating.jpg", specs: "Sound Dampening Panels / Center Table / 4-Person Capacity" }
-            ]
-        },
-        "Pouffes & Occasional Tables": {
-            subtitle: "Geometrical soft pouffes, ottomans, and companion coffee center tables.",
-            items: [
-                { name: "Model PF-Geometric Hexagon Ottoman", img: "images/categories/cat_soft_seating.jpg", specs: "Modular Hexagon Shape / Fabric Finish / Nylon Glide Feet" },
-                { name: "Model PF-Round Center Coffee Table", img: "images/categories/cat_soft_seating.jpg", specs: "Marble / Wood Top Options / Metal Base / Modern Aesthetic" }
-            ]
-        },
-        "Single Acoustic Phone Pod": {
-            subtitle: "Sound-insulated solo booth equipped with air ventilation, LED lighting, power outlets, and laptop shelf.",
-            items: [
-                { name: "Model PD-Solo Acoustic Telephone Booth", img: "images/categories/cat_pods.jpg", specs: "Sound Reduction 32dB / Silent Ventilation Fan / Motion Sensor LED / Power Hub" }
-            ]
-        },
-        "4-6 Person Meeting Pod": {
-            subtitle: "Fully enclosed acoustic meeting booth complete with integrated sofa seating, TV mounting bracket, and power hubs.",
-            items: [
-                { name: "Model PD-4-6 Person Conference Pod", img: "images/categories/cat_pods.jpg", specs: "Double Glazed Acoustic Glass / Integrated Sofas / TV Wall Bracket / Power Hub" }
-            ]
-        },
-        "Interface Carpet Tiles": {
-            subtitle: "Modular acoustic carpet tiles available in contemporary geometric patterns and stain-resistant fibers.",
-            items: [
-                { name: "Model CP-Acoustic Nylon Modular Tile", img: "images/categories/cat_carpets.jpg", specs: "50x50cm Tiles / Sound Dampening Backing / Stain Shield Treatment" },
-                { name: "Model CP-Geometric Plank Carpet Tile", img: "images/categories/cat_workstations.jpg", specs: "25x100cm Planks / Heavy Commercial Wear / High Friction Rating" }
-            ]
-        },
-        "Loom Crafts Terrace & Cafe Seating": {
-            subtitle: "Weather-resistant synthetic wicker and aluminum outdoor lounge sets, patio umbrellas, and dining tables.",
-            items: [
-                { name: "Model OD-Synthetic Wicker Terrace Lounge", img: "images/categories/cat_outdoor.jpg", specs: "UV-Resistant All-Weather Wicker / Water Repellent Cushions / Aluminium Frame" },
-                { name: "Model OD-Patio Dining Set & Umbrella", img: "images/categories/cat_tables.png", specs: "4-Seater Outdoor Table / Heavy Duty Patio Umbrella / Stainless Hardware" }
-            ]
-        },
-        "Classroom Desks": {
-            subtitle: "Single and dual-bench student desks with bag hooks and book shelves for schools and colleges.",
-            items: [
-                { name: "Model ED-Single Student Ergonomic Desk", img: "images/categories/cat_education.png", specs: "Rounded Wood Edges / Metal Frame / Bag Hook / Book Shelf" },
-                { name: "Model ED-Dual Student Bench Unit", img: "images/categories/cat_educational.jpg", specs: "2-Person Integrated Bench / Heavy Duty Steel Tube / Pencil Groove" }
-            ]
-        },
-        "Library Furniture": {
-            subtitle: "Study carrels, reading tables, and heavy-duty double-sided book racks.",
-            items: [
-                { name: "Model ED-Individual Study Carrel Desk", img: "images/categories/cat_education.png", specs: "Side Acoustic Divider / LED Reading Light / Power Socket" },
-                { name: "Model ED-Double-Sided Steel Book Shelf", img: "images/categories/cat_education.png", specs: "6-Tier Storage / Adjustable Shelves / Label Holder" }
-            ]
-        },
-        "Hostel Furniture": {
-            subtitle: "Metal bunk beds, study tables, and wardrobe locker units for institutional housing.",
-            items: [
-                { name: "Model ED-Metal Heavy Duty Bunk Bed", img: "images/categories/cat_education.png", specs: "Safety Guard Rail / Side Ladder / Powder Coated Steel Frame" },
-                { name: "Model ED-Hostel Study Desk & Locker", img: "images/categories/cat_education.png", specs: "Attached Wardrobe / Study Desk / Combination Lock" }
-            ]
-        },
-        "Auditorium Seating": {
-            subtitle: "Cushioned tip-up auditorium chairs with writing tablets and row numbering.",
-            items: [
-                { name: "Model ED-Tip-Up Cushion Auditorium Chair", img: "images/categories/cat_educational.jpg", specs: "Gravity Auto-Return Seat / Retractable Writing Tablet / Molded Foam" }
-            ]
-        },
-        "Ergonomic Arms & Power Management": {
-            subtitle: "Gas-spring dual monitor arms, under-desk cable trays, vertical wire serpents, and pop-up power modules.",
-            items: [
-                { name: "Model AC-Gas Spring Dual Monitor Arm", img: "images/categories/cat_workstations.jpg", specs: "VESA Mount / Quick Release Clamp / Integrated Cable Passage" },
-                { name: "Model AC-Pop-Up Power & Data Module", img: "images/categories/cat_workstations.jpg", specs: "2 Power Sockets / USB-C Fast Charger / HDMI Pass Through" }
-            ]
-        }
-    };
-
-    function showProductCatalogue(productName) {
-        var data = catalogueData[productName] || {
-            subtitle: "Official corporate solutions catalogue with custom specifications.",
-            items: [
-                { name: productName + " Standard Model", img: "images/categories/cat_workstations.jpg", specs: "High Quality Corporate Finish / Modular Size Options" }
-            ]
-        };
-
-        document.getElementById('catalogueModalTitle').innerText = productName + " Catalogue";
-        document.getElementById('catalogueModalSubtitle').innerText = data.subtitle;
-        
-        var grid = document.getElementById('catalogueGridContainer');
-        grid.innerHTML = '';
-
-        data.items.forEach(function(item) {
-            var col = document.createElement('div');
-            col.className = 'col-md-4';
-            col.innerHTML = `
-                <div class="card border h-100 shadow-sm rounded-4 overflow-hidden bg-white">
-                    <div class="position-relative overflow-hidden p-3 bg-light text-center">
-                        <img src="${item.img}" alt="${item.name}" class="img-fluid rounded-3" style="height: 220px; object-fit: contain; width: 100%;">
-                    </div>
-                    <div class="card-body p-4 d-flex flex-column">
-                        <h4 class="fw-black text-dark mb-2" style="font-size: 1.25rem !important; font-weight: 900 !important;">${item.name}</h4>
-                        <p class="text-secondary fw-semibold fs-7 mb-3 flex-grow-1">${item.specs}</p>
-                        <button type="button" class="btn btn-outline-danger btn-sm text-uppercase fw-black py-2 mt-auto" style="border-radius: 6px; font-size: 0.9rem !important;" onclick="closeCatalogueAndEnquire('${item.name}')">Enquire For This Model &rarr;</button>
-                    </div>
-                </div>
-            `;
-            grid.appendChild(col);
-        });
-
-        document.getElementById('catalogueEnquireBtn').onclick = function() {
-            var catModal = bootstrap.Modal.getInstance(document.getElementById('productCatalogueModal'));
-            if (catModal) catModal.hide();
-            openEnquiryModal(productName + ' Catalogue');
-        };
-
-        var modal = new bootstrap.Modal(document.getElementById('productCatalogueModal'));
-        modal.show();
-    }
-
-    function closeCatalogueAndEnquire(itemName) {
-        var catModal = bootstrap.Modal.getInstance(document.getElementById('productCatalogueModal'));
-        if (catModal) catModal.hide();
-        openEnquiryModal(itemName);
-    }
-</script>
 
 <?php include('footer.php'); ?>
