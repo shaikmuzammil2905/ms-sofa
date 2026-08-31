@@ -128,9 +128,6 @@ async function syncCategoriesSection() {
                 const catDiv = document.createElement('div');
                 catDiv.innerHTML = `
                     <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="mega-category-title d-block text-danger" style="font-size: 15px !important; font-weight: 700 !important;">${cat.name}</a>
-                    <ul class="mega-subcategory-list">
-                        <li><a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; View ${cat.name} Catalogue</a></li>
-                    </ul>
                 `;
                 megaGrid.appendChild(catDiv);
                 existingTitles.push(catNameLower);
@@ -150,12 +147,9 @@ async function syncCategoriesSection() {
                 mobDiv.className = 'p-3 rounded-3';
                 mobDiv.style.cssText = 'background-color: #f8f9fa; border: 1px solid #e9ecef;';
                 mobDiv.innerHTML = `
-                    <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                    <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="fw-bold text-dark fs-6 text-decoration-none d-block" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                         ${cat.name} &rarr;
                     </a>
-                    <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                        <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}">&bull; Explore ${cat.name}</a></li>
-                    </ul>
                 `;
                 mobileGroup.appendChild(mobDiv);
                 existingMobileTitles.push(catNameLower);
