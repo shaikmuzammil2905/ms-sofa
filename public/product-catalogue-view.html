@@ -956,40 +956,112 @@
         return { matchedKey: "Height Adjustable Series", data: pageCatalogueDatabase["Height Adjustable Series"] };
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    async function loadDynamicCatalogueView() {
         var urlParams = new URLSearchParams(window.location.search);
-        var rawCat = urlParams.get('cat') || window.location.hash.replace('#', '');
-        
-        var resolved = resolveCatalogueData(rawCat);
-        var catName = resolved.matchedKey;
-        var data = resolved.data;
+        var rawCat = urlParams.get('cat') || window.location.hash.replace('#', '') || 'Height Adjustable Series';
+        var queryCat = decodeURIComponent(rawCat).trim();
 
-        document.getElementById('cataloguePageTitle').innerText = data.title;
-        document.getElementById('cataloguePageDescription').innerText = data.desc;
-        document.getElementById('sectionHeading').innerText = catName + " Models";
-        document.getElementById('modelCountBadge').innerText = data.badge;
+        // 1. Fetch categories and products from live Supabase DB store
+        var allCategories = (typeof CMSDataStore !== 'undefined') ? await CMSDataStore.get('categories') : [];
+        var allProducts = (typeof CMSDataStore !== 'undefined') ? await CMSDataStore.get('products') : [];
+
+        // Match category details if available
+        var matchedCatObj = allCategories.find(function(c) {
+            return (c.name && c.name.toLowerCase().trim() === queryCat.toLowerCase()) ||
+                   (c.slug && c.slug.toLowerCase().trim() === queryCat.toLowerCase());
+        });
+
+        var catNameDisplay = matchedCatObj ? matchedCatObj.name : queryCat;
+        var displayTitle = catNameDisplay + " Catalogue";
+        var displayDesc = matchedCatObj ? (matchedCatObj.description || "Explore line-wise models, custom configurations, and ergonomic workspace features.") : ("Official Vishista product catalogue for " + catNameDisplay + ".");
+
+        document.getElementById('cataloguePageTitle').innerText = displayTitle;
+        document.getElementById('cataloguePageDescription').innerText = displayDesc;
+        document.getElementById('sectionHeading').innerText = catNameDisplay + " Models";
+
+        // 2. Filter products matching this category or subcategory
+        var normQuery = queryCat.toLowerCase().replace(/[^a-z0-9]/g, '');
+        var matchedProducts = allProducts.filter(function(p) {
+            if (p.is_visible === false) return false;
+
+            var pSubcat = (p.subcategory || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            var pCatSlug = (p.category_slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            var pName = (p.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+            if (pSubcat === normQuery || pCatSlug === normQuery) return true;
+            if (pSubcat.includes(normQuery) || normQuery.includes(pSubcat)) return true;
+            if (pCatSlug.includes(normQuery) || normQuery.includes(pCatSlug)) return true;
+            if (pName.includes(normQuery) || normQuery.includes(pName)) return true;
+
+            if (matchedCatObj && matchedCatObj.slug) {
+                var cSlugNorm = matchedCatObj.slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+                if (pCatSlug === cSlugNorm || pCatSlug.includes(cSlugNorm)) return true;
+            }
+            return false;
+        });
+
+        // 3. Fallback to hardcoded seed dataset if query matches pre-seeded categories and no custom DB records found
+        if (matchedProducts.length === 0 && typeof pageCatalogueDatabase !== 'undefined') {
+            var resolvedSeed = resolveCatalogueData(queryCat);
+            if (resolvedSeed && resolvedSeed.data) {
+                catNameDisplay = resolvedSeed.matchedKey;
+                displayTitle = resolvedSeed.data.title;
+                displayDesc = resolvedSeed.data.desc;
+                document.getElementById('cataloguePageTitle').innerText = displayTitle;
+                document.getElementById('cataloguePageDescription').innerText = displayDesc;
+                document.getElementById('sectionHeading').innerText = catNameDisplay + " Models";
+
+                matchedProducts = resolvedSeed.data.items.map(function(item) {
+                    return {
+                        name: item.name,
+                        main_image: item.img,
+                        description: item.specs,
+                        subcategory: catNameDisplay,
+                        price: "Enquire for Price"
+                    };
+                });
+            }
+        }
+
+        document.getElementById('modelCountBadge').innerText = matchedProducts.length + " Models Available";
 
         var grid = document.getElementById('modelsGridContainer');
         grid.innerHTML = '';
 
-        data.items.forEach(function(item) {
+        if (matchedProducts.length === 0) {
+            grid.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <div class="card border-0 shadow-sm p-5 rounded-4 bg-white">
+                        <div class="fs-1 text-danger mb-3">🪑</div>
+                        <h3 class="fw-black text-dark mb-2">${catNameDisplay}</h3>
+                        <p class="text-muted fs-6 mb-4">No products listed under this category yet. Click below to request a custom catalogue or instant quote.</p>
+                        <div>
+                            <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black px-4 py-3" onclick="openEnquiryModal('${catNameDisplay.replace(/'/g, "\\'")}')">Enquire For ${catNameDisplay} &rarr;</button>
+                        </div>
+                    </div>
+                </div>`;
+            return;
+        }
+
+        matchedProducts.forEach(function(prod) {
             var col = document.createElement('div');
             col.className = 'col-lg-4 col-md-6';
-            var safeName = (item.name || '').replace(/'/g, "\\'");
-            var safeImg = (item.img || '').replace(/'/g, "\\'");
-            var safeSpecs = (item.specs || '').replace(/'/g, "\\'").replace(/\n/g, ' ');
-            var safeCat = (catName || 'Product').replace(/'/g, "\\'");
+            var safeName = (prod.name || '').replace(/'/g, "\\'");
+            var safeImg = (prod.main_image || prod.img || 'images/logo/logo-symbol.png').replace(/'/g, "\\'");
+            var safeSpecs = (prod.description || prod.specs || '').replace(/'/g, "\\'").replace(/\n/g, ' ');
+            var safePrice = (prod.price || 'Enquire for Price').replace(/'/g, "\\'");
+            var safeCat = (prod.subcategory || catNameDisplay || 'Product').replace(/'/g, "\\'");
 
             col.innerHTML = `
                 <div class="card border h-100 shadow-sm rounded-4 overflow-hidden bg-white product-card-hover">
-                    <div class="position-relative overflow-hidden p-3 bg-light text-center border-bottom cursor-pointer" onclick="openProductDetailModal('${safeName}', '${safeImg}', '${safeSpecs}', 'Enquire for Price', '${safeCat}')">
-                        <img src="${item.img}" alt="${item.name}" class="img-fluid rounded-3" style="height: 250px; object-fit: contain; width: 100%;">
+                    <div class="position-relative overflow-hidden p-3 bg-light text-center border-bottom cursor-pointer" onclick="openProductDetailModal('${safeName}', '${safeImg}', '${safeSpecs}', '${safePrice}', '${safeCat}')">
+                        <img src="${safeImg}" alt="${safeName}" class="img-fluid rounded-3" style="height: 250px; object-fit: contain; width: 100%;">
                         <span class="position-absolute top-0 end-0 m-3 badge bg-dark text-white opacity-75 fs-7">🔍 Quick View</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
-                        <span class="badge bg-light text-danger border align-self-start mb-2 fs-7">${catName}</span>
-                        <h3 class="fw-black text-dark mb-2 cursor-pointer" style="font-size: 1.4rem !important; font-weight: 900 !important;" onclick="openProductDetailModal('${safeName}', '${safeImg}', '${safeSpecs}', 'Enquire for Price', '${safeCat}')">${item.name}</h3>
-                        <p class="text-secondary fw-semibold fs-6 mb-4 flex-grow-1" style="line-height: 1.6; color: #444444 !important;">${item.specs}</p>
+                        <span class="badge bg-light text-danger border align-self-start mb-2 fs-7">${prod.subcategory || catNameDisplay}</span>
+                        <h3 class="fw-black text-dark mb-2 cursor-pointer" style="font-size: 1.4rem !important; font-weight: 900 !important;" onclick="openProductDetailModal('${safeName}', '${safeImg}', '${safeSpecs}', '${safePrice}', '${safeCat}')">${prod.name}</h3>
+                        <p class="text-secondary fw-semibold fs-6 mb-4 flex-grow-1" style="line-height: 1.6; color: #444444 !important;">${prod.description || prod.specs || ''}</p>
                         <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 mt-auto shadow-sm" style="border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none; font-size: 1.05rem !important;" onclick="openEnquiryModal('${safeName}')">Enquire For This Model &rarr;</button>
                     </div>
                 </div>
@@ -998,11 +1070,15 @@
         });
 
         document.getElementById('enquireSeriesHeaderBtn').onclick = function() {
-            openEnquiryModal(catName + ' Series Catalogue');
+            openEnquiryModal(catNameDisplay + ' Series Catalogue');
         };
         document.getElementById('enquireBottomBannerBtn').onclick = function() {
-            openEnquiryModal(catName + ' Corporate Bulk Quote');
+            openEnquiryModal(catNameDisplay + ' Corporate Bulk Quote');
         };
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        loadDynamicCatalogueView();
     });
 </script>
 
