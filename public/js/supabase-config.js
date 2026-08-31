@@ -441,6 +441,44 @@ const VISHISTA_SEED_DATA = {
       "phone": "+91 98490 12345",
       "email": "info@vishista.com"
     }
+  ],
+  "projects": [
+    {
+      "name": "Corporate Tech Hub",
+      "slug": "corporate-tech-hub",
+      "client": "MNC Tech Firm, Hitec City",
+      "category": "Turnkey Workspace",
+      "location": "Hyderabad, Telangana",
+      "description": "500-seater modular workstation installation with acoustic panel partitions and executive director cabins.",
+      "image_url": "images/sections/hero-slide-1.png",
+      "completion_year": "2025",
+      "is_visible": true,
+      "display_order": 1
+    },
+    {
+      "name": "Financial Services Regional HQ",
+      "slug": "financial-services-hq",
+      "client": "Leading Financial Institution",
+      "category": "Executive Seating & Desks",
+      "location": "Gachibowli, Hyderabad",
+      "description": "Executive ArchLabs leather seating, high-density compactor storage, and 20-seater boardroom meeting tables.",
+      "image_url": "images/sections/hero-slide-2.png",
+      "completion_year": "2025",
+      "is_visible": true,
+      "display_order": 2
+    },
+    {
+      "name": "Global R&D Center",
+      "slug": "global-rd-center",
+      "client": "Pharma & Biotech Enterprise",
+      "category": "Acoustic Pods & Soft Seating",
+      "location": "Genome Valley, Hyderabad",
+      "description": "Soundproof acoustic meeting pods, collaborative lounge sofa booths, and interface carpet tile flooring.",
+      "image_url": "images/sections/hero-slide-3.png",
+      "completion_year": "2024",
+      "is_visible": true,
+      "display_order": 3
+    }
   ]
 };
 
@@ -518,82 +556,54 @@ const CMSDataStore = {
     getKey: (table) => `vishista_cms_${table}`,
 
     get: async function(table) {
-        let fetchedData = null;
+        const seedItems = (typeof VISHISTA_SEED_DATA !== 'undefined' && VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) ? VISHISTA_SEED_DATA[table] : [];
+        let items = [];
 
+        // 1. Try LocalStorage Cache first
+        const cached = localStorage.getItem(this.getKey(table));
+        if (cached) {
+            try {
+                const parsed = JSON.parse(cached);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    items = parsed;
+                }
+            } catch (e) {}
+        }
+
+        // 2. Fetch directly from Supabase DB if available
         if (supabaseClient) {
             try {
-                // Fetch directly from Supabase DB
                 const { data, error } = await supabaseClient.from(table).select('*');
-                if (!error && data && data.length > 0) {
-                    fetchedData = data;
+                if (!error && Array.isArray(data) && data.length > 0) {
+                    items = data;
                 }
             } catch (e) {
                 console.warn(`[CMSDataStore] Supabase fetch exception for '${table}':`, e.message);
             }
         }
 
-        const seedItems = (VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) ? VISHISTA_SEED_DATA[table] : [];
-
-        if (fetchedData && fetchedData.length > 0) {
-            // Ensure all website products and categories exist in fetchedData
-            if (seedItems.length > 0 && (table === 'products' || table === 'categories')) {
-                const existingSlugs = new Set(fetchedData.map(item => item.slug || (item.name ? item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '')));
-                const missingSeeds = seedItems.filter(s => {
-                    const slug = s.slug || s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-                    return !existingSlugs.has(slug);
-                }).map(s => ({ ...s, id: s.id || generateUUID() }));
-
-                if (missingSeeds.length > 0) {
-                    fetchedData = [...fetchedData, ...missingSeeds];
-                    localStorage.setItem(this.getKey(table), JSON.stringify(fetchedData));
-
-                    if (supabaseClient) {
-                        supabaseClient.from(table).upsert(missingSeeds, { onConflict: 'slug' }).catch(() => {});
-                    }
-                }
-            }
-
-            localStorage.setItem(this.getKey(table), JSON.stringify(fetchedData));
-            return fetchedData;
-        }
-
-        // Fallback 1: LocalStorage Cache
-        const cached = localStorage.getItem(this.getKey(table));
-        if (cached) {
-            try {
-                const parsed = JSON.parse(cached);
-                if (parsed && parsed.length > 0) {
-                    if (seedItems.length > 0 && (table === 'products' || table === 'categories')) {
-                        const existingSlugs = new Set(parsed.map(item => item.slug || (item.name ? item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '')));
-                        const missingSeeds = seedItems.filter(s => {
-                            const slug = s.slug || s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-                            return !existingSlugs.has(slug);
-                        }).map(s => ({ ...s, id: s.id || generateUUID() }));
-
-                        if (missingSeeds.length > 0) {
-                            const merged = [...parsed, ...missingSeeds];
-                            localStorage.setItem(this.getKey(table), JSON.stringify(merged));
-                            return merged;
-                        }
-                    }
-                    return parsed;
-                }
-            } catch (e) {}
-        }
-
-        // Fallback 2: Pre-seeded dataset
+        // 3. Always merge/populate missing seed items into items
         if (seedItems.length > 0) {
-            const seedRecords = seedItems.map(r => ({ ...r, id: r.id || generateUUID() }));
-            localStorage.setItem(this.getKey(table), JSON.stringify(seedRecords));
+            const existingSlugs = new Set(items.map(i => i.slug || (i.name ? i.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '') || i.id));
+            const missingSeeds = seedItems.filter(s => {
+                const slug = s.slug || (s.name ? s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '') || s.id;
+                return !existingSlugs.has(slug);
+            }).map(s => ({ ...s, id: s.id || generateUUID() }));
 
-            if (supabaseClient) {
-                supabaseClient.from(table).upsert(seedRecords, { onConflict: 'slug' }).catch(() => {});
+            if (missingSeeds.length > 0) {
+                items = [...items, ...missingSeeds];
+                if (supabaseClient) {
+                    supabaseClient.from(table).upsert(missingSeeds).catch(() => {});
+                }
             }
-
-            return seedRecords;
         }
 
-        return [];
+        // 4. Save resolved list to LocalStorage for instant subsequent loads
+        if (items.length > 0) {
+            localStorage.setItem(this.getKey(table), JSON.stringify(items));
+        }
+
+        return items;
     },
 
     save: async function(table, records) {
