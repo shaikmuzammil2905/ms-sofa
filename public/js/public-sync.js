@@ -30,7 +30,7 @@ async function initPublicSync() {
     }
 }
 
-// 1. Sync Hero Section (Heading, Subtitle, Background Image)
+// 1. Sync Hero Section (Heading, Subtitle, Background Images for 3 Slides)
 async function syncHeroSection() {
     const heroData = await CMSDataStore.get('hero_sections');
     if (!heroData || heroData.length === 0) return;
@@ -49,11 +49,43 @@ async function syncHeroSection() {
         subtitleEl.textContent = hero.description;
     }
 
-    // Update Hero Background Image
-    if (hero.background_image) {
-        const slides = document.querySelectorAll('.hero-slide');
-        slides.forEach(slide => {
-            slide.style.backgroundImage = `url('${hero.background_image}')`;
+    // Update Hero Background Images (Supports 3 Slides automatically)
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides && slides.length > 0) {
+        let slideImages = [];
+        if (hero.slide_1 || hero.slide_2 || hero.slide_3) {
+            slideImages = [
+                hero.slide_1 || 'images/sections/hero-slide-1.png',
+                hero.slide_2 || 'images/sections/hero-slide-2.png',
+                hero.slide_3 || 'images/sections/hero-slide-3.png'
+            ];
+        } else if (hero.background_image) {
+            const splitImgs = hero.background_image.split(',').map(s => s.trim()).filter(Boolean);
+            if (splitImgs.length > 1) {
+                slideImages = splitImgs;
+            } else if (splitImgs.length === 1) {
+                slideImages = [
+                    splitImgs[0],
+                    'images/sections/hero-slide-2.png',
+                    'images/sections/hero-slide-3.png'
+                ];
+            }
+        } else {
+            slideImages = [
+                'images/sections/hero-slide-1.png',
+                'images/sections/hero-slide-2.png',
+                'images/sections/hero-slide-3.png'
+            ];
+        }
+
+        slides.forEach((slide, index) => {
+            const imgUrl = slideImages[index % slideImages.length];
+            if (imgUrl) {
+                slide.style.backgroundImage = `url('${imgUrl}')`;
+                slide.style.backgroundSize = 'cover';
+                slide.style.backgroundPosition = 'center center';
+                slide.style.backgroundRepeat = 'no-repeat';
+            }
         });
     }
 }
@@ -209,14 +241,41 @@ async function syncCategoriesSection() {
     if (grid && visibleCategories.length > 0) {
         let html = '';
         visibleCategories.forEach(cat => {
+            const catSlug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const catTargetUrl = cat.slug === 'soft-seating' ? 'product-sofas.html' : 
+                               (cat.slug === 'archlabs-seating' ? 'archlabs-catalogue.html' : 
+                               `product-categories.html#${catSlug}`);
+
+            // Find products belonging to this category
+            const catProducts = products.filter(p => p.is_visible !== false && (
+                (p.category_slug && p.category_slug.toLowerCase() === catSlug) ||
+                (p.category && p.category.toLowerCase() === cat.name.toLowerCase())
+            ));
+
+            let descText = cat.description;
+            if (!descText && catProducts.length > 0) {
+                const sampleProds = catProducts.slice(0, 4).map(p => p.name).join(', ');
+                descText = `Explore our ${cat.name} collection featuring ${sampleProds}.`;
+            } else if (!descText) {
+                descText = `Discover our range of ${cat.name} engineered for modern corporate workspaces.`;
+            }
+
+            const badgeText = cat.badge || (catProducts.length > 0 ? `${catProducts.length} Products` : 'Workspace Solution');
+
             html += `
-            <div class="col-lg-3 col-md-6">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white product-card-hover">
-                    <img src="${cat.image_url || 'images/logo/logo-symbol.png'}" alt="${cat.name}" class="card-img-top" style="height: 220px; object-fit: cover;">
-                    <div class="card-body p-4 d-flex flex-column text-center">
-                        <h4 class="fw-bold text-dark mb-2">${cat.name}</h4>
-                        <p class="text-muted fs-7 mb-3 flex-grow-1">${cat.description || ''}</p>
-                        <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="btn btn-danger fw-bold text-uppercase fs-7 mt-auto shadow-sm" style="border-radius: 6px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">Explore ${cat.name} &rarr;</a>
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 250px; width: 100%; background: #f8f9fa;">
+                        <img src="${cat.image_url || 'images/logo/logo-symbol.png'}" alt="${cat.name}" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;" onerror="this.src='images/logo/logo-symbol.png'">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">${badgeText}</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">${cat.name}</h3>
+                        <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">${descText}</p>
+                        <div class="d-flex align-items-center justify-content-between pt-2 border-top">
+                            <a href="${catTargetUrl}" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('${(cat.name || '').replace(/'/g, "\\'")}')">Enquire &rarr;</button>
+                        </div>
                     </div>
                 </div>
             </div>`;

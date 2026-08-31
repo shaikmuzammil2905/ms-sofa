@@ -753,22 +753,42 @@ async function loadHeroModule() {
     const hero = (heroData && heroData[0]) ? heroData[0] : {
         heading: 'Transforming Workspaces.<br><span class="text-gradient-red">Elevating Possibilities.</span>',
         description: 'Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses...',
-        background_image: 'images/sections/hero-workspace.jpg'
+        slide_1: 'images/sections/hero-slide-1.png',
+        slide_2: 'images/sections/hero-slide-2.png',
+        slide_3: 'images/sections/hero-slide-3.png',
+        background_image: 'images/sections/hero-slide-1.png'
     };
 
-    document.getElementById('heroHeadingInput').value = hero.heading || '';
-    document.getElementById('heroDescInput').value = hero.description || '';
-    document.getElementById('heroBgImageInput').value = hero.background_image || '';
+    if (document.getElementById('heroHeadingInput')) document.getElementById('heroHeadingInput').value = hero.heading || '';
+    if (document.getElementById('heroDescInput')) document.getElementById('heroDescInput').value = hero.description || '';
+    
+    let slide1 = hero.slide_1 || '';
+    let slide2 = hero.slide_2 || '';
+    let slide3 = hero.slide_3 || '';
+
+    if (!slide1 && hero.background_image) {
+        const parts = hero.background_image.split(',').map(s => s.trim());
+        slide1 = parts[0] || 'images/sections/hero-slide-1.png';
+        slide2 = parts[1] || 'images/sections/hero-slide-2.png';
+        slide3 = parts[2] || 'images/sections/hero-slide-3.png';
+    }
+
+    if (document.getElementById('heroBgImageInput')) document.getElementById('heroBgImageInput').value = slide1 || 'images/sections/hero-slide-1.png';
+    if (document.getElementById('heroBgImageInput2')) document.getElementById('heroBgImageInput2').value = slide2 || 'images/sections/hero-slide-2.png';
+    if (document.getElementById('heroBgImageInput3')) document.getElementById('heroBgImageInput3').value = slide3 || 'images/sections/hero-slide-3.png';
 }
 
 async function saveHeroCMS(e) {
     e.preventDefault();
     const heading = document.getElementById('heroHeadingInput').value;
     const description = document.getElementById('heroDescInput').value;
-    const background_image = document.getElementById('heroBgImageInput').value;
+    const slide_1 = document.getElementById('heroBgImageInput') ? document.getElementById('heroBgImageInput').value : 'images/sections/hero-slide-1.png';
+    const slide_2 = document.getElementById('heroBgImageInput2') ? document.getElementById('heroBgImageInput2').value : 'images/sections/hero-slide-2.png';
+    const slide_3 = document.getElementById('heroBgImageInput3') ? document.getElementById('heroBgImageInput3').value : 'images/sections/hero-slide-3.png';
+    const background_image = `${slide_1},${slide_2},${slide_3}`;
 
     try {
-        const heroRecord = [{ heading, description, background_image, is_custom_updated: true }];
+        const heroRecord = [{ heading, description, slide_1, slide_2, slide_3, background_image, is_custom_updated: true }];
         await CMSDataStore.save('hero_sections', heroRecord);
         alert('✓ Hero section updated successfully in database!');
     } catch (err) {

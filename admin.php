@@ -268,9 +268,19 @@
                                 <label class="form-label fw-semibold fs-7">Subheading Description</label>
                                 <textarea id="heroDescInput" class="form-control" rows="3"></textarea>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold fs-7">Background Image URL</label>
-                                <input type="text" id="heroBgImageInput" class="form-control" placeholder="images/sections/hero-workspace.jpg">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold fs-7">Hero Slide 1 Image URL</label>
+                                    <input type="text" id="heroBgImageInput" class="form-control" placeholder="images/sections/hero-slide-1.png">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold fs-7">Hero Slide 2 Image URL</label>
+                                    <input type="text" id="heroBgImageInput2" class="form-control" placeholder="images/sections/hero-slide-2.png">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold fs-7">Hero Slide 3 Image URL</label>
+                                    <input type="text" id="heroBgImageInput3" class="form-control" placeholder="images/sections/hero-slide-3.png">
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4 py-2">Save Hero Content &rarr;</button>
                         </form>

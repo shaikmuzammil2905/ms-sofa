@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <p class="text-secondary fw-semibold" style="font-size: 1.15rem !important;">Discover our comprehensive collection of modular office furniture, ergonomic seating, acoustic pods, and turnkey architectural products.</p>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4" id="categoriesGridContainer">
             
             <!-- Workstations -->
             <div class="col-lg-4 col-md-6">
