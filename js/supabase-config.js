@@ -284,14 +284,15 @@ async function uploadToCloudinary(file, onProgress) {
     });
 }
 
-// Global Store State Manager (Hybrid Supabase + Live Cache + Fail-Safe Seed)
+// Global Store State Manager (Supabase Database Priority + Fail-Safe Cache)
 const CMSDataStore = {
     getKey: (table) => `vishista_cms_${table}`,
-    
+
     get: async function(table) {
         if (supabaseClient) {
             try {
-                const { data, error } = await supabaseClient.from(table).select('*');
+                // Fetch directly from Supabase DB
+                const { data, error } = await supabaseClient.from(table).select('*').order('created_at', { ascending: true });
                 if (error) {
                     console.error(`[CMSDataStore] Supabase SELECT error for '${table}':`, error);
                 } else if (data && data.length > 0) {
@@ -317,9 +318,9 @@ const CMSDataStore = {
             const seedRecords = VISHISTA_SEED_DATA[table];
             localStorage.setItem(this.getKey(table), JSON.stringify(seedRecords));
 
-            // Auto-seed Supabase in background if Supabase is connected and empty
+            // Auto-seed Supabase in background if Supabase table exists and is empty
             if (supabaseClient && seedRecords.length > 0) {
-                supabaseClient.from(table).upsert(seedRecords).then(({ error }) => {
+                supabaseClient.from(table).upsert(seedRecords, { onConflict: 'slug' }).then(({ error }) => {
                     if (error) {
                         console.warn(`[CMSDataStore] Auto-seed Supabase notice for '${table}':`, error.message);
                     } else {
@@ -335,15 +336,76 @@ const CMSDataStore = {
     },
 
     save: async function(table, records) {
-        localStorage.setItem(this.getKey(table), JSON.stringify(records));
-        if (supabaseClient) {
-            try {
-                const { error } = await supabaseClient.from(table).upsert(records);
-                if (error) console.error(`[CMSDataStore] Supabase SAVE error for '${table}':`, error);
-            } catch (e) {
-                console.warn(`[CMSDataStore] Supabase upsert exception for '${table}':`, e.message);
-            }
+        if (!supabaseClient) {
+            localStorage.setItem(this.getKey(table), JSON.stringify(records));
+            return records;
         }
+
+        try {
+            const { data, error } = await supabaseClient.from(table).upsert(records).select();
+            if (error) {
+                console.error(`[CMSDataStore] Supabase SAVE error for '${table}':`, error);
+                throw new Error(`Database Error (${table}): ${error.message}`);
+            }
+            
+            // Re-fetch fresh dataset from Supabase
+            const { data: freshData } = await supabaseClient.from(table).select('*');
+            const resultData = (freshData && freshData.length > 0) ? freshData : (data || records);
+            localStorage.setItem(this.getKey(table), JSON.stringify(resultData));
+            return resultData;
+        } catch (e) {
+            console.error(`[CMSDataStore] Save failed for table '${table}':`, e.message);
+            throw e;
+        }
+    },
+
+    insertRecord: async function(table, record) {
+        if (!supabaseClient) {
+            const current = await this.get(table);
+            current.push(record);
+            return this.save(table, current);
+        }
+
+        const { data, error } = await supabaseClient.from(table).insert([record]).select();
+        if (error) {
+            console.error(`[CMSDataStore] Supabase INSERT error for '${table}':`, error);
+            throw new Error(`Insert failed: ${error.message}`);
+        }
+
+        return this.get(table);
+    },
+
+    updateRecord: async function(table, id, record) {
+        if (!supabaseClient) {
+            const current = await this.get(table);
+            const idx = current.findIndex(r => r.id === id);
+            if (idx !== -1) current[idx] = { ...current[idx], ...record };
+            return this.save(table, current);
+        }
+
+        const { data, error } = await supabaseClient.from(table).update(record).eq('id', id).select();
+        if (error) {
+            console.error(`[CMSDataStore] Supabase UPDATE error for '${table}':`, error);
+            throw new Error(`Update failed: ${error.message}`);
+        }
+
+        return this.get(table);
+    },
+
+    deleteRecord: async function(table, id) {
+        if (!supabaseClient) {
+            const current = await this.get(table);
+            const updated = current.filter(r => r.id !== id);
+            return this.save(table, updated);
+        }
+
+        const { error } = await supabaseClient.from(table).delete().eq('id', id);
+        if (error) {
+            console.error(`[CMSDataStore] Supabase DELETE error for '${table}':`, error);
+            throw new Error(`Delete failed: ${error.message}`);
+        }
+
+        return this.get(table);
     }
 };
 
@@ -357,3 +419,4 @@ if (typeof window !== 'undefined') {
     window.uploadToCloudinary = uploadToCloudinary;
     window.CMSDataStore = CMSDataStore;
 }
+

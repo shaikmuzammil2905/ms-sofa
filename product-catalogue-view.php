@@ -337,16 +337,22 @@
         data.items.forEach(function(item) {
             var col = document.createElement('div');
             col.className = 'col-lg-4 col-md-6';
+            var safeName = (item.name || '').replace(/'/g, "\\'");
+            var safeImg = (item.img || '').replace(/'/g, "\\'");
+            var safeSpecs = (item.specs || '').replace(/'/g, "\\'").replace(/\n/g, ' ');
+            var safeCat = (catName || 'Product').replace(/'/g, "\\'");
+
             col.innerHTML = `
-                <div class="card border h-100 shadow-sm rounded-4 overflow-hidden bg-white">
-                    <div class="position-relative overflow-hidden p-3 bg-light text-center border-bottom">
-                        <img src="${item.img}" alt="${item.name}" class="img-fluid rounded-3" style="height: 250px; object-fit: cover; width: 100%;">
+                <div class="card border h-100 shadow-sm rounded-4 overflow-hidden bg-white product-card-hover">
+                    <div class="position-relative overflow-hidden p-3 bg-light text-center border-bottom cursor-pointer" onclick="openProductDetailModal('${safeName}', '${safeImg}', '${safeSpecs}', 'Enquire for Price', '${safeCat}')">
+                        <img src="${item.img}" alt="${item.name}" class="img-fluid rounded-3" style="height: 250px; object-fit: contain; width: 100%;">
+                        <span class="position-absolute top-0 end-0 m-3 badge bg-dark text-white opacity-75 fs-7">🔍 Quick View</span>
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <span class="badge bg-light text-danger border align-self-start mb-2 fs-7">${catName}</span>
-                        <h3 class="fw-black text-dark mb-2" style="font-size: 1.4rem !important; font-weight: 900 !important;">${item.name}</h3>
-                        <p class="text-secondary fw-semibold fs-6 mb-4 flex-grow-1" style="line-height: 1.6;">${item.specs}</p>
-                        <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 mt-auto shadow-sm" style="border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none; font-size: 1.05rem !important;" onclick="openEnquiryModal('${item.name}')">Enquire For This Model &rarr;</button>
+                        <h3 class="fw-black text-dark mb-2 cursor-pointer" style="font-size: 1.4rem !important; font-weight: 900 !important;" onclick="openProductDetailModal('${safeName}', '${safeImg}', '${safeSpecs}', 'Enquire for Price', '${safeCat}')">${item.name}</h3>
+                        <p class="text-secondary fw-semibold fs-6 mb-4 flex-grow-1" style="line-height: 1.6; color: #444444 !important;">${item.specs}</p>
+                        <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black py-3 mt-auto shadow-sm" style="border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none; font-size: 1.05rem !important;" onclick="openEnquiryModal('${safeName}')">Enquire For This Model &rarr;</button>
                     </div>
                 </div>
             `;

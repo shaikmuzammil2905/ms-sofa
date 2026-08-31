@@ -184,7 +184,7 @@ async function loadProductsModule() {
                 <img src="${prod.main_image}" alt="${prod.name}" style="width: 48px; height: 48px; object-fit: contain; border-radius: 6px; background: #fff;" onerror="this.src='images/logo/logo-symbol.png'">
             </td>
             <td class="fw-bold">${prod.name}</td>
-            <td><span class="badge bg-light text-dark border">${prod.subcategory || 'General'}</span></td>
+            <td><span class="badge bg-light text-dark border">${prod.subcategory || prod.category_slug || 'General'}</span></td>
             <td>${prod.price || 'Enquire'}</td>
             <td>
                 <span class="${isVisible ? 'badge-published' : 'badge-hidden'}">
@@ -193,7 +193,7 @@ async function loadProductsModule() {
             </td>
             <td>${prod.display_order || index + 1}</td>
             <td>
-                <div class="action-btn-group">
+                <div class="action-btn-group d-flex gap-1">
                     <button class="btn btn-sm btn-primary px-2 py-1" onclick="editProductModal(${index})">Edit</button>
                     <button class="btn btn-sm btn-outline-warning px-2 py-1" onclick="toggleProductVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
                     <button class="btn btn-sm btn-outline-danger px-2 py-1" onclick="deleteProduct(${index})">Delete</button>
@@ -204,27 +204,22 @@ async function loadProductsModule() {
     tbody.innerHTML = html;
 }
 
-async function toggleProductVisibility(index) {
-    const products = await CMSDataStore.get('products');
-    if (products[index]) {
-        products[index].is_visible = !products[index].is_visible;
-        await CMSDataStore.save('products', products);
-        loadProductsModule();
-        loadDashboardData();
-    }
+function openAddProductModal() {
+    document.getElementById('productModalTitle').textContent = 'Add New Product';
+    document.getElementById('productIdInput').value = '';
+    document.getElementById('productNameInput').value = '';
+    document.getElementById('productCategorySelect').value = 'archlabs-seating';
+    document.getElementById('productSubcategoryInput').value = '';
+    document.getElementById('productPriceInput').value = '';
+    document.getElementById('productDescInput').value = '';
+    document.getElementById('productMainImageUrl').value = '';
+    document.getElementById('productImagePreviewContainer').classList.add('d-none');
+    document.getElementById('productImagePreview').src = '';
+
+    const modal = new bootstrap.Modal(document.getElementById('productFormModal'));
+    modal.show();
 }
 
-async function deleteProduct(index) {
-    if (confirm('Are you sure you want to delete this product?')) {
-        const products = await CMSDataStore.get('products');
-        products.splice(index, 1);
-        await CMSDataStore.save('products', products);
-        loadProductsModule();
-        loadDashboardData();
-    }
-}
-
-// Open Edit Product Modal
 async function editProductModal(index) {
     const products = await CMSDataStore.get('products');
     const prod = products[index];
@@ -248,6 +243,130 @@ async function editProductModal(index) {
 
     const modal = new bootstrap.Modal(document.getElementById('productFormModal'));
     modal.show();
+}
+
+async function handleCloudinaryProductUpload(input) {
+    const file = input.files[0];
+    if (!file) return;
+
+    const progressDiv = document.getElementById('productUploadProgress');
+    const progressBar = document.getElementById('productProgressBar');
+    progressDiv.classList.remove('d-none');
+    progressBar.style.width = '0%';
+
+    try {
+        const uploadResult = await uploadToCloudinary(file, (percent) => {
+            progressBar.style.width = `${percent}%`;
+        });
+
+        document.getElementById('productMainImageUrl').value = uploadResult.url;
+        document.getElementById('productImagePreview').src = uploadResult.url;
+        document.getElementById('productImagePreviewContainer').classList.remove('d-none');
+        alert('Image uploaded successfully to Cloudinary!');
+    } catch (err) {
+        alert(`Image upload failed: ${err.message}`);
+    } finally {
+        progressDiv.classList.add('d-none');
+    }
+}
+
+async function saveProductForm(e) {
+    e.preventDefault();
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Saving to Database...';
+    }
+
+    const indexVal = document.getElementById('productIdInput').value;
+    const name = document.getElementById('productNameInput').value.trim();
+    const category_slug = document.getElementById('productCategorySelect').value;
+    const subcategory = document.getElementById('productSubcategoryInput').value.trim();
+    const price = document.getElementById('productPriceInput').value.trim() || 'Enquire for Price';
+    const description = document.getElementById('productDescInput').value.trim();
+    const main_image = document.getElementById('productMainImageUrl').value.trim() || 'images/logo/logo-symbol.png';
+
+    if (!name) {
+        alert('Please enter a product name.');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Save Product &rarr;'; }
+        return;
+    }
+
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+    try {
+        const products = await CMSDataStore.get('products');
+        
+        let newRecord = {
+            name,
+            slug,
+            category_slug,
+            subcategory,
+            price,
+            description,
+            main_image,
+            is_visible: true,
+            display_order: products.length + 1,
+            created_at: new Date().toISOString()
+        };
+
+        if (indexVal !== '' && !isNaN(indexVal) && products[indexVal]) {
+            // Updating existing record
+            newRecord = { ...products[indexVal], ...newRecord, updated_at: new Date().toISOString() };
+            products[indexVal] = newRecord;
+        } else {
+            products.push(newRecord);
+        }
+
+        // Save directly to Supabase with response verification
+        await CMSDataStore.save('products', products);
+
+        alert('✓ Product updated and saved successfully in database!');
+
+        // Hide modal
+        const modalEl = document.getElementById('productFormModal');
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+
+        // Refresh UI with latest DB values
+        await loadProductsModule();
+        await loadDashboardData();
+    } catch (err) {
+        alert(`❌ Database Update Failed: ${err.message}\nPlease check your network or database connection.`);
+    } finally {
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Save Product &rarr;';
+        }
+    }
+}
+
+async function toggleProductVisibility(index) {
+    try {
+        const products = await CMSDataStore.get('products');
+        if (products[index]) {
+            products[index].is_visible = !products[index].is_visible;
+            await CMSDataStore.save('products', products);
+            await loadProductsModule();
+            await loadDashboardData();
+        }
+    } catch (err) {
+        alert(`Visibility update failed: ${err.message}`);
+    }
+}
+
+async function deleteProduct(index) {
+    if (confirm('Are you sure you want to delete this product?')) {
+        try {
+            const products = await CMSDataStore.get('products');
+            products.splice(index, 1);
+            await CMSDataStore.save('products', products);
+            await loadProductsModule();
+            await loadDashboardData();
+        } catch (err) {
+            alert(`Product deletion failed: ${err.message}`);
+        }
+    }
 }
 
 // 5. Module: Categories
@@ -310,9 +429,13 @@ async function saveHeroCMS(e) {
     const description = document.getElementById('heroDescInput').value;
     const background_image = document.getElementById('heroBgImageInput').value;
 
-    const heroRecord = [{ heading, description, background_image, is_custom_updated: true }];
-    await CMSDataStore.save('hero_sections', heroRecord);
-    alert('Hero section content updated successfully!');
+    try {
+        const heroRecord = [{ heading, description, background_image, is_custom_updated: true }];
+        await CMSDataStore.save('hero_sections', heroRecord);
+        alert('✓ Hero section updated successfully in database!');
+    } catch (err) {
+        alert(`Failed to update Hero section: ${err.message}`);
+    }
 }
 
 // 8. Module: About Us CMS
@@ -332,9 +455,13 @@ async function saveAboutCMS(e) {
     const title = document.getElementById('aboutTitleInput').value;
     const main_description = document.getElementById('aboutDescInput').value;
 
-    const aboutRecord = [{ title, main_description, is_custom_updated: true }];
-    await CMSDataStore.save('about_sections', aboutRecord);
-    alert('About Us content updated successfully!');
+    try {
+        const aboutRecord = [{ title, main_description, is_custom_updated: true }];
+        await CMSDataStore.save('about_sections', aboutRecord);
+        alert('✓ About Us content updated successfully in database!');
+    } catch (err) {
+        alert(`Failed to update About Us section: ${err.message}`);
+    }
 }
 
 // 9. Module: Enquiries
@@ -388,9 +515,13 @@ async function saveFooterCMS(e) {
     const phone = document.getElementById('footerPhoneInput').value;
     const email = document.getElementById('footerEmailInput').value;
 
-    const footerRecord = [{ company_description, address, phone, email, is_custom_updated: true }];
-    await CMSDataStore.save('footer_content', footerRecord);
-    alert('Footer contact details updated successfully!');
+    try {
+        const footerRecord = [{ company_description, address, phone, email, is_custom_updated: true }];
+        await CMSDataStore.save('footer_content', footerRecord);
+        alert('✓ Footer contact details updated successfully in database!');
+    } catch (err) {
+        alert(`Failed to update Footer content: ${err.message}`);
+    }
 }
 
 // Export functions to global scope

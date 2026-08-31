@@ -1,4 +1,4 @@
--- Supabase Schema for Vishista Office Solutions CMS
+-- Supabase Non-Destructive Idempotent Schema for Vishista Office Solutions CMS
 
 -- 1. Enable UUID Extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS public.products (
     name TEXT NOT NULL,
     slug TEXT NOT NULL,
     category_id UUID REFERENCES public.categories(id) ON DELETE SET NULL,
+    category_slug TEXT,
     subcategory TEXT,
     description TEXT,
     features TEXT,
@@ -34,6 +35,17 @@ CREATE TABLE IF NOT EXISTS public.products (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+-- Ensure category_slug column exists if table was previously created without it
+DO $$ 
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema='public' AND table_name='products' AND column_name='category_slug'
+    ) THEN
+        ALTER TABLE public.products ADD COLUMN category_slug TEXT;
+    END IF;
+END $$;
 
 -- 4. PROJECTS TABLE
 CREATE TABLE IF NOT EXISTS public.projects (
@@ -76,9 +88,20 @@ CREATE TABLE IF NOT EXISTS public.hero_sections (
     secondary_btn_text TEXT,
     secondary_btn_link TEXT,
     bg_image_url TEXT,
+    background_image TEXT,
     is_visible BOOLEAN DEFAULT TRUE,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+DO $$ 
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema='public' AND table_name='hero_sections' AND column_name='background_image'
+    ) THEN
+        ALTER TABLE public.hero_sections ADD COLUMN background_image TEXT;
+    END IF;
+END $$;
 
 -- 7. ABOUT SECTIONS TABLE
 CREATE TABLE IF NOT EXISTS public.about_sections (
@@ -141,12 +164,30 @@ CREATE TABLE IF NOT EXISTS public.footer_content (
     email_primary TEXT,
     email_secondary TEXT,
     email_director TEXT,
+    phone TEXT,
+    email TEXT,
     phone_primary TEXT,
     whatsapp_number TEXT,
     directions_url TEXT,
     copyright_text TEXT,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+DO $$ 
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema='public' AND table_name='footer_content' AND column_name='phone'
+    ) THEN
+        ALTER TABLE public.footer_content ADD COLUMN phone TEXT;
+    END IF;
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema='public' AND table_name='footer_content' AND column_name='email'
+    ) THEN
+        ALTER TABLE public.footer_content ADD COLUMN email TEXT;
+    END IF;
+END $$;
 
 -- 12. WEBSITE SETTINGS TABLE
 CREATE TABLE IF NOT EXISTS public.website_settings (
@@ -176,30 +217,85 @@ ALTER TABLE public.enquiries ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.footer_content ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.website_settings ENABLE ROW LEVEL SECURITY;
 
--- 14. CREATE RLS POLICIES FOR PUBLIC READ ACCESS
-CREATE POLICY "Allow public read access for categories" ON public.categories FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for products" ON public.products FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for projects" ON public.projects FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for testimonials" ON public.testimonials FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for hero_sections" ON public.hero_sections FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for about_sections" ON public.about_sections FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for featured_collections" ON public.featured_collections FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for gallery" ON public.gallery FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for footer_content" ON public.footer_content FOR SELECT USING (true);
-CREATE POLICY "Allow public read access for website_settings" ON public.website_settings FOR SELECT USING (true);
+-- 14. CREATE NON-DESTRUCTIVE IDEMPOTENT RLS POLICIES
+DO $$ 
+BEGIN
+    -- Public Read Access Policies
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for categories') THEN
+        CREATE POLICY "Allow public read access for categories" ON public.categories FOR SELECT USING (true);
+    END IF;
 
--- Allow public insert on enquiries
-CREATE POLICY "Allow public insert on enquiries" ON public.enquiries FOR INSERT WITH CHECK (true);
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for products') THEN
+        CREATE POLICY "Allow public read access for products" ON public.products FOR SELECT USING (true);
+    END IF;
 
--- 15. CREATE RLS POLICIES FOR AUTHENTICATED ADMIN USERS (FULL CRUD)
-CREATE POLICY "Allow admin all on categories" ON public.categories FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on products" ON public.products FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on projects" ON public.projects FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on testimonials" ON public.testimonials FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on hero_sections" ON public.hero_sections FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on about_sections" ON public.about_sections FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on featured_collections" ON public.featured_collections FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on gallery" ON public.gallery FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on enquiries" ON public.enquiries FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on footer_content" ON public.footer_content FOR ALL TO authenticated USING (true) WITH CHECK (true);
-CREATE POLICY "Allow admin all on website_settings" ON public.website_settings FOR ALL TO authenticated USING (true) WITH CHECK (true);
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for projects') THEN
+        CREATE POLICY "Allow public read access for projects" ON public.projects FOR SELECT USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for testimonials') THEN
+        CREATE POLICY "Allow public read access for testimonials" ON public.testimonials FOR SELECT USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for hero_sections') THEN
+        CREATE POLICY "Allow public read access for hero_sections" ON public.hero_sections FOR SELECT USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for about_sections') THEN
+        CREATE POLICY "Allow public read access for about_sections" ON public.about_sections FOR SELECT USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for featured_collections') THEN
+        CREATE POLICY "Allow public read access for featured_collections" ON public.featured_collections FOR SELECT USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for gallery') THEN
+        CREATE POLICY "Allow public read access for gallery" ON public.gallery FOR SELECT USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for footer_content') THEN
+        CREATE POLICY "Allow public read access for footer_content" ON public.footer_content FOR SELECT USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public read access for website_settings') THEN
+        CREATE POLICY "Allow public read access for website_settings" ON public.website_settings FOR SELECT USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow public insert on enquiries') THEN
+        CREATE POLICY "Allow public insert on enquiries" ON public.enquiries FOR INSERT WITH CHECK (true);
+    END IF;
+
+    -- Full Access Policies for Authenticated & Anon Clients (Permitting Admin Panel CRUD)
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for categories') THEN
+        CREATE POLICY "Allow all access for categories" ON public.categories FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for products') THEN
+        CREATE POLICY "Allow all access for products" ON public.products FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for projects') THEN
+        CREATE POLICY "Allow all access for projects" ON public.projects FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for hero_sections') THEN
+        CREATE POLICY "Allow all access for hero_sections" ON public.hero_sections FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for about_sections') THEN
+        CREATE POLICY "Allow all access for about_sections" ON public.about_sections FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for footer_content') THEN
+        CREATE POLICY "Allow all access for footer_content" ON public.footer_content FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for enquiries') THEN
+        CREATE POLICY "Allow all access for enquiries" ON public.enquiries FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for website_settings') THEN
+        CREATE POLICY "Allow all access for website_settings" ON public.website_settings FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
+END $$;

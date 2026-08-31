@@ -56,17 +56,18 @@
 
 <script>
     function updateJumpBarOffset() {
-        var header = document.querySelector('header.tf-header') || document.querySelector('header');
+        var header = document.querySelector('header.header-sticky') || document.querySelector('header');
         var jumpBar = document.querySelector('.sticky-jump-bar');
         if (header && jumpBar) {
-            var headerHeight = header.offsetHeight || 92;
+            var headerHeight = header.getBoundingClientRect().height || 70;
             jumpBar.style.top = headerHeight + 'px';
         }
     }
-    window.addEventListener('scroll', updateJumpBarOffset);
+    window.addEventListener('scroll', updateJumpBarOffset, { passive: true });
     window.addEventListener('resize', updateJumpBarOffset);
     document.addEventListener('DOMContentLoaded', updateJumpBarOffset);
-    setTimeout(updateJumpBarOffset, 300);
+    window.addEventListener('load', updateJumpBarOffset);
+    setTimeout(updateJumpBarOffset, 200);
 </script>
 
 <!-- Main Catalogue Container -->
