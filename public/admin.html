@@ -116,7 +116,7 @@
                             <div class="stat-card">
                                 <div class="stat-icon bg-danger-subtle text-danger">🪑</div>
                                 <div>
-                                    <div id="statTotalProducts" class="stat-val">0</div>
+                                    <div id="statTotalProducts" class="stat-val">27</div>
                                     <div class="stat-lbl">Total Products</div>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                             <div class="stat-card">
                                 <div class="stat-icon bg-primary-subtle text-primary">🏷️</div>
                                 <div>
-                                    <div id="statTotalCategories" class="stat-val">0</div>
+                                    <div id="statTotalCategories" class="stat-val">10</div>
                                     <div class="stat-lbl">Categories</div>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                             <div class="stat-card">
                                 <div class="stat-icon bg-success-subtle text-success">🏢</div>
                                 <div>
-                                    <div id="statTotalProjects" class="stat-val">0</div>
+                                    <div id="statTotalProjects" class="stat-val">3</div>
                                     <div class="stat-lbl">Projects</div>
                                 </div>
                             </div>
@@ -143,7 +143,7 @@
                             <div class="stat-card">
                                 <div class="stat-icon bg-warning-subtle text-warning">✅</div>
                                 <div>
-                                    <div id="statPublishedItems" class="stat-val">0</div>
+                                    <div id="statPublishedItems" class="stat-val">27</div>
                                     <div class="stat-lbl">Published Items</div>
                                 </div>
                             </div>

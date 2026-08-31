@@ -570,37 +570,47 @@ const CMSDataStore = {
             } catch (e) {}
         }
 
-        // 2. Fetch directly from Supabase DB if available
+        // 2. Immediate Seed Fallback if items is currently empty
+        if (items.length === 0 && seedItems.length > 0) {
+            items = seedItems.map(r => ({ ...r, id: r.id || generateUUID() }));
+            try { localStorage.setItem(this.getKey(table), JSON.stringify(items)); } catch(e){}
+        }
+
+        // 3. Fetch directly from Supabase DB in background/async and merge missing seeds
         if (supabaseClient) {
             try {
                 const { data, error } = await supabaseClient.from(table).select('*');
                 if (!error && Array.isArray(data) && data.length > 0) {
-                    items = data;
+                    if (seedItems.length > 0) {
+                        const existingSlugs = new Set(data.map(i => i.slug || (i.name ? i.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '') || i.id));
+                        const missingSeeds = seedItems.filter(s => {
+                            const slug = s.slug || (s.name ? s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '') || s.id;
+                            return !existingSlugs.has(slug);
+                        }).map(s => ({ ...s, id: s.id || generateUUID() }));
+
+                        if (missingSeeds.length > 0) {
+                            items = [...data, ...missingSeeds];
+                            supabaseClient.from(table).upsert(missingSeeds).catch(() => {});
+                        } else {
+                            items = data;
+                        }
+                    } else {
+                        items = data;
+                    }
+                    localStorage.setItem(this.getKey(table), JSON.stringify(items));
+                } else if (seedItems.length > 0 && (!data || data.length === 0)) {
+                    const seedRecords = seedItems.map(r => ({ ...r, id: r.id || generateUUID() }));
+                    supabaseClient.from(table).upsert(seedRecords).catch(() => {});
                 }
             } catch (e) {
                 console.warn(`[CMSDataStore] Supabase fetch exception for '${table}':`, e.message);
             }
         }
 
-        // 3. Always merge/populate missing seed items into items
-        if (seedItems.length > 0) {
-            const existingSlugs = new Set(items.map(i => i.slug || (i.name ? i.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '') || i.id));
-            const missingSeeds = seedItems.filter(s => {
-                const slug = s.slug || (s.name ? s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '') || s.id;
-                return !existingSlugs.has(slug);
-            }).map(s => ({ ...s, id: s.id || generateUUID() }));
-
-            if (missingSeeds.length > 0) {
-                items = [...items, ...missingSeeds];
-                if (supabaseClient) {
-                    supabaseClient.from(table).upsert(missingSeeds).catch(() => {});
-                }
-            }
-        }
-
-        // 4. Save resolved list to LocalStorage for instant subsequent loads
-        if (items.length > 0) {
-            localStorage.setItem(this.getKey(table), JSON.stringify(items));
+        // 4. Final safety check: return items or seedItems
+        if (items.length === 0 && seedItems.length > 0) {
+            items = seedItems.map(r => ({ ...r, id: r.id || generateUUID() }));
+            try { localStorage.setItem(this.getKey(table), JSON.stringify(items)); } catch(e){}
         }
 
         return items;
