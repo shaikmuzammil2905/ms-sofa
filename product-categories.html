@@ -719,64 +719,11 @@
             bar.style.top = headerHeight + 'px';
         });
     }
-
-    function scrollToCategorySection(targetId) {
-        var targetEl = document.getElementById(targetId);
-        if (!targetEl) return false;
-        
-        var header = document.querySelector('header.header-sticky') || document.querySelector('header');
-        var jumpBar = document.querySelector('.sticky-jump-bar') || document.querySelector('.filter-anchor-bar');
-        var headerHeight = header ? header.offsetHeight : 70;
-        var jumpBarHeight = jumpBar ? jumpBar.offsetHeight : 60;
-        var totalOffset = headerHeight + jumpBarHeight + 20;
-
-        var elemTop = targetEl.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-            top: elemTop - totalOffset,
-            behavior: 'smooth'
-        });
-
-        document.querySelectorAll('.category-jump-btn').forEach(function(b) {
-            var href = b.getAttribute('href') || '';
-            if (href.endsWith('#' + targetId) || href === '#' + targetId) {
-                b.classList.add('active');
-            } else {
-                b.classList.remove('active');
-            }
-        });
-        return true;
-    }
-
-    document.addEventListener('click', function(e) {
-        var btn = e.target.closest('.category-jump-btn');
-        if (!btn) return;
-        var href = btn.getAttribute('href') || '';
-        if (href.includes('#')) {
-            var targetId = href.split('#')[1];
-            if (targetId && document.getElementById(targetId)) {
-                e.preventDefault();
-                history.pushState(null, null, '#' + targetId);
-                scrollToCategorySection(targetId);
-            }
-        }
-    });
-
     window.addEventListener('scroll', updateJumpBarOffset, { passive: true });
     window.addEventListener('resize', updateJumpBarOffset);
-    document.addEventListener('DOMContentLoaded', function() {
-        updateJumpBarOffset();
-        if (window.location.hash) {
-            var hashTarget = window.location.hash.replace('#', '');
-            setTimeout(function() { scrollToCategorySection(hashTarget); }, 300);
-        }
-    });
-    window.addEventListener('load', function() {
-        updateJumpBarOffset();
-        if (window.location.hash) {
-            var hashTarget = window.location.hash.replace('#', '');
-            setTimeout(function() { scrollToCategorySection(hashTarget); }, 150);
-        }
-    });
+    document.addEventListener('DOMContentLoaded', updateJumpBarOffset);
+    window.addEventListener('load', updateJumpBarOffset);
+    setTimeout(updateJumpBarOffset, 200);
 </script>
 
 <!-- Main Catalogue Container -->

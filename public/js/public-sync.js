@@ -274,7 +274,10 @@ async function syncCategoriesSection() {
 
         visibleCategories.forEach(cat => {
             const catSlug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const catTargetUrl = `product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}`;
+            let catTargetUrl = `product-categories.html#${catSlug}`;
+            if (catSlug === 'soft-seating') {
+                catTargetUrl = 'product-sofas.html';
+            }
 
             let catImg = cat.image_url;
             if (!catImg || catImg.includes('map') || catImg.includes('logo-symbol') || catImg.includes('collection-1') || defaultCategoryImages[catSlug]) {
@@ -333,11 +336,10 @@ async function syncCategoriesSection() {
     const jumpContainer = document.querySelector('.sticky-jump-bar .d-flex, .filter-anchor-bar .d-flex');
     if (jumpContainer) {
         let jumpHtml = `<span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>`;
-        const onCatPage = window.location.pathname.includes('product-categories') || document.getElementById('workstations');
         visibleCategories.forEach(cat => {
             const catName = cat.name.trim();
             const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const targetHref = onCatPage ? `#${catSlug}` : `product-categories.html#${catSlug}`;
+            const targetHref = window.location.pathname.includes('product-categories') ? `#${catSlug}` : `product-categories.html#${catSlug}`;
             jumpHtml += `<a href="${targetHref}" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">${catName}</a>`;
         });
         jumpContainer.innerHTML = jumpHtml;
