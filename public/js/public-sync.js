@@ -75,7 +75,7 @@ function renderProductGrid(container, items) {
     container.innerHTML = html;
 }
 
-// Global Product Detail Modal Opener (Video 3 Requirement)
+// Global Product Detail Modal Opener
 function openProductDetailModal(name, image, desc, price, subcategory) {
     const modalEl = document.getElementById('productDetailModal');
     if (!modalEl) {
@@ -120,7 +120,7 @@ function openEnquiryModal(productName) {
     }
 }
 
-// Connect Customer Enquiry Form Submission to Supabase
+// Connect Customer Enquiry Form Submission directly to WhatsApp (+91 98490 58444) and Supabase
 function initEnquiryFormHandler() {
     const enquiryModalForm = document.querySelector('#enquireModal form');
     if (enquiryModalForm) {
@@ -129,24 +129,34 @@ function initEnquiryFormHandler() {
             const submitBtn = enquiryModalForm.querySelector('button[type="submit"]');
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = 'Sending...';
+                submitBtn.innerHTML = 'Connecting to WhatsApp...';
             }
 
             const productName = document.getElementById('modalProductInput') ? document.getElementById('modalProductInput').value : 'General Enquiry';
             const inputs = enquiryModalForm.querySelectorAll('input[type="text"]');
-            const nameInput = inputs[0] || null;
-            const companyInput = inputs[1] || null;
-            const phoneInput = enquiryModalForm.querySelector('input[type="tel"]');
-            const emailInput = enquiryModalForm.querySelector('input[type="email"]');
-            const messageInput = enquiryModalForm.querySelector('textarea');
+            const nameInput = inputs[0] ? inputs[0].value.trim() : 'Customer';
+            const companyInput = inputs[1] ? inputs[1].value.trim() : '';
+            const phoneInput = enquiryModalForm.querySelector('input[type="tel"]') ? enquiryModalForm.querySelector('input[type="tel"]').value.trim() : '';
+            const emailInput = enquiryModalForm.querySelector('input[type="email"]') ? enquiryModalForm.querySelector('input[type="email"]').value.trim() : '';
+            const messageInput = enquiryModalForm.querySelector('textarea') ? enquiryModalForm.querySelector('textarea').value.trim() : '';
+
+            // Construct Pre-filled WhatsApp Message
+            let waMessage = `Hi Vishista Office Solutions,\n\nI am interested in your workspace products.\n\n📌 *Product/Service:* ${productName}\n👤 *Name:* ${nameInput}`;
+            if (companyInput) waMessage += `\n🏢 *Company:* ${companyInput}`;
+            if (phoneInput) waMessage += `\n📞 *Phone:* ${phoneInput}`;
+            if (emailInput) waMessage += `\n✉️ *Email:* ${emailInput}`;
+            if (messageInput) waMessage += `\n📝 *Notes:* ${messageInput}`;
+
+            const targetPhone = '919849058444';
+            const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(waMessage)}`;
 
             const enquiryPayload = {
                 product_name: productName,
-                full_name: nameInput ? nameInput.value : 'Customer',
-                company_name: companyInput ? companyInput.value : '',
-                phone_number: phoneInput ? phoneInput.value : '',
-                email: emailInput ? emailInput.value : '',
-                message: messageInput ? messageInput.value : '',
+                full_name: nameInput,
+                company_name: companyInput,
+                phone_number: phoneInput,
+                email: emailInput,
+                message: messageInput,
                 status: 'new',
                 created_at: new Date().toISOString()
             };
@@ -155,17 +165,19 @@ function initEnquiryFormHandler() {
                 if (typeof CMSDataStore !== 'undefined') {
                     await CMSDataStore.insertRecord('enquiries', enquiryPayload);
                 }
+            } catch (err) {
+                console.warn('Enquiry background save notice:', err);
+            } finally {
+                // Open WhatsApp directly for instantaneous customer response
+                window.open(whatsappUrl, '_blank');
 
-                alert('Thank you! Your enquiry has been submitted successfully.');
                 enquiryModalForm.reset();
                 const modalEl = document.getElementById('enquireModal');
                 if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
                     const modal = bootstrap.Modal.getInstance(modalEl);
                     if (modal) modal.hide();
                 }
-            } catch (err) {
-                alert(`Submission notice: ${err.message || 'Enquiry recorded locally.'}`);
-            } finally {
+
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = 'SUBMIT ENQUIRY';

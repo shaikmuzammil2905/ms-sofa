@@ -69,7 +69,7 @@ function bindAuthForm() {
                 } catch (e) {}
             }
 
-            // Default Admin Credentials fallback for initial setup
+            // Default Admin Credentials fallback
             if (email === 'admin@vishista.com' || email === 'kvramana.reddy@vishistaofficesolutions.com') {
                 localStorage.setItem('vishista_admin_logged_in', 'true');
                 showAdminDashboard();
@@ -136,7 +136,6 @@ function switchTab(tabName) {
     const targetView = document.getElementById(`view-${tabName}`);
     if (targetView) targetView.classList.remove('d-none');
 
-    // Auto-close sidebar drawer on mobile view after selecting any menu option
     toggleMobileSidebar(false);
 
     // Load data for module
@@ -146,21 +145,36 @@ function switchTab(tabName) {
     if (tabName === 'projects') loadProjectsModule();
     if (tabName === 'hero') loadHeroModule();
     if (tabName === 'about') loadAboutModule();
-    if (tabName === 'enquiries') loadEnquiriesModule();
     if (tabName === 'footer') loadFooterModule();
+}
+
+// Generic Image Upload Helper
+async function handleImageUploadGeneric(input, hiddenInputId, previewImgId, previewContainerId) {
+    const file = input.files[0];
+    if (!file) return;
+
+    try {
+        const uploadResult = await uploadToCloudinary(file);
+        document.getElementById(hiddenInputId).value = uploadResult.url;
+        document.getElementById(previewImgId).src = uploadResult.url;
+        document.getElementById(previewContainerId).classList.remove('d-none');
+        alert('Image uploaded successfully!');
+    } catch (err) {
+        alert(`Image upload failed: ${err.message}`);
+    }
 }
 
 // 3. Module: Dashboard
 async function loadDashboardData() {
     const products = await CMSDataStore.get('products');
     const categories = await CMSDataStore.get('categories');
-    const enquiries = await CMSDataStore.get('enquiries');
+    const projects = await CMSDataStore.get('projects');
 
-    document.getElementById('statTotalProducts').textContent = products.length || 0;
-    document.getElementById('statTotalCategories').textContent = categories.length || 0;
-    document.getElementById('statTotalEnquiries').textContent = enquiries.length || 0;
+    document.getElementById('statTotalProducts').textContent = products ? products.length : 0;
+    document.getElementById('statTotalCategories').textContent = categories ? categories.length : 0;
+    document.getElementById('statTotalProjects').textContent = projects ? projects.length : 0;
 
-    const publishedCount = products.filter(p => p.is_visible !== false).length;
+    const publishedCount = (products || []).filter(p => p.is_visible !== false).length;
     document.getElementById('statPublishedItems').textContent = publishedCount;
 }
 
@@ -251,22 +265,22 @@ async function handleCloudinaryProductUpload(input) {
 
     const progressDiv = document.getElementById('productUploadProgress');
     const progressBar = document.getElementById('productProgressBar');
-    progressDiv.classList.remove('d-none');
-    progressBar.style.width = '0%';
+    if (progressDiv) progressDiv.classList.remove('d-none');
+    if (progressBar) progressBar.style.width = '0%';
 
     try {
         const uploadResult = await uploadToCloudinary(file, (percent) => {
-            progressBar.style.width = `${percent}%`;
+            if (progressBar) progressBar.style.width = `${percent}%`;
         });
 
         document.getElementById('productMainImageUrl').value = uploadResult.url;
         document.getElementById('productImagePreview').src = uploadResult.url;
         document.getElementById('productImagePreviewContainer').classList.remove('d-none');
-        alert('Image uploaded successfully to Cloudinary!');
+        alert('Image uploaded successfully!');
     } catch (err) {
         alert(`Image upload failed: ${err.message}`);
     } finally {
-        progressDiv.classList.add('d-none');
+        if (progressDiv) progressDiv.classList.add('d-none');
     }
 }
 
@@ -275,7 +289,7 @@ async function saveProductForm(e) {
     const submitBtn = e.target.querySelector('button[type="submit"]');
     if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Saving to Database...';
+        submitBtn.innerHTML = 'Saving...';
     }
 
     const indexVal = document.getElementById('productIdInput').value;
@@ -311,28 +325,23 @@ async function saveProductForm(e) {
         };
 
         if (indexVal !== '' && !isNaN(indexVal) && products[indexVal]) {
-            // Updating existing record
             newRecord = { ...products[indexVal], ...newRecord, updated_at: new Date().toISOString() };
             products[indexVal] = newRecord;
         } else {
             products.push(newRecord);
         }
 
-        // Save directly to Supabase with response verification
         await CMSDataStore.save('products', products);
+        alert('✓ Product updated and saved successfully!');
 
-        alert('✓ Product updated and saved successfully in database!');
-
-        // Hide modal
         const modalEl = document.getElementById('productFormModal');
         const modal = bootstrap.Modal.getInstance(modalEl);
         if (modal) modal.hide();
 
-        // Refresh UI with latest DB values
         await loadProductsModule();
         await loadDashboardData();
     } catch (err) {
-        alert(`❌ Database Update Failed: ${err.message}\nPlease check your network or database connection.`);
+        alert(`❌ Update Failed: ${err.message}`);
     } finally {
         if (submitBtn) {
             submitBtn.disabled = false;
@@ -369,14 +378,14 @@ async function deleteProduct(index) {
     }
 }
 
-// 5. Module: Categories
+// 5. Module: Categories CMS
 async function loadCategoriesModule() {
     const categories = await CMSDataStore.get('categories');
     const tbody = document.getElementById('categoriesTableBody');
     if (!tbody) return;
 
     if (!categories || categories.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="5" class="text-center py-4 text-muted">No categories configured.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted">No categories configured. Click "+ Add Category" to create one.</td></tr>`;
         return;
     }
 
@@ -385,28 +394,288 @@ async function loadCategoriesModule() {
         const isVisible = cat.is_visible !== false;
         html += `
         <tr>
+            <td>
+                <img src="${cat.image_url || 'images/logo/logo-symbol.png'}" alt="${cat.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 6px; background: #fff;" onerror="this.src='images/logo/logo-symbol.png'">
+            </td>
             <td class="fw-bold">${cat.name}</td>
             <td><code>${cat.slug}</code></td>
             <td class="fs-7 text-muted">${cat.description || '-'}</td>
             <td>${cat.display_order || index + 1}</td>
             <td><span class="${isVisible ? 'badge-published' : 'badge-hidden'}">${isVisible ? 'Active' : 'Hidden'}</span></td>
+            <td>
+                <div class="action-btn-group d-flex gap-1">
+                    <button class="btn btn-sm btn-primary px-2 py-1" onclick="editCategoryModal(${index})">Edit</button>
+                    <button class="btn btn-sm btn-outline-warning px-2 py-1" onclick="toggleCategoryVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
+                    <button class="btn btn-sm btn-outline-danger px-2 py-1" onclick="deleteCategory(${index})">Delete</button>
+                </div>
+            </td>
         </tr>`;
     });
     tbody.innerHTML = html;
 }
 
-// 6. Module: Projects
-async function loadProjectsModule() {
-    const container = document.getElementById('projectsContentArea');
-    if (!container) return;
+function openAddCategoryModal() {
+    document.getElementById('categoryModalTitle').textContent = 'Add New Category';
+    document.getElementById('categoryIdInput').value = '';
+    document.getElementById('categoryNameInput').value = '';
+    document.getElementById('categoryDescInput').value = '';
+    document.getElementById('categoryOrderInput').value = '0';
+    document.getElementById('categoryImageUrl').value = '';
+    document.getElementById('categoryImagePreviewContainer').classList.add('d-none');
+    document.getElementById('categoryImagePreview').src = '';
 
-    container.innerHTML = `
-        <div class="p-3 border rounded bg-light">
-            <h6 class="fw-bold mb-2">Active Turnkey Corporate Fitout Showcase</h6>
-            <p class="fs-7 text-muted mb-3">Featured projects automatically load from Supabase and CMS data store into the homepage portfolio slider.</p>
-            <div class="badge bg-success px-3 py-2 fs-7">✅ Corporate Showcase Active</div>
-        </div>
-    `;
+    const modal = new bootstrap.Modal(document.getElementById('categoryFormModal'));
+    modal.show();
+}
+
+async function editCategoryModal(index) {
+    const categories = await CMSDataStore.get('categories');
+    const cat = categories[index];
+    if (!cat) return;
+
+    document.getElementById('categoryModalTitle').textContent = 'Edit Category';
+    document.getElementById('categoryIdInput').value = index;
+    document.getElementById('categoryNameInput').value = cat.name || '';
+    document.getElementById('categoryDescInput').value = cat.description || '';
+    document.getElementById('categoryOrderInput').value = cat.display_order || 0;
+    document.getElementById('categoryImageUrl').value = cat.image_url || '';
+
+    if (cat.image_url) {
+        document.getElementById('categoryImagePreview').src = cat.image_url;
+        document.getElementById('categoryImagePreviewContainer').classList.remove('d-none');
+    } else {
+        document.getElementById('categoryImagePreviewContainer').classList.add('d-none');
+    }
+
+    const modal = new bootstrap.Modal(document.getElementById('categoryFormModal'));
+    modal.show();
+}
+
+async function saveCategoryForm(e) {
+    e.preventDefault();
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Saving...'; }
+
+    const indexVal = document.getElementById('categoryIdInput').value;
+    const name = document.getElementById('categoryNameInput').value.trim();
+    const description = document.getElementById('categoryDescInput').value.trim();
+    const display_order = parseInt(document.getElementById('categoryOrderInput').value || '0', 10);
+    const image_url = document.getElementById('categoryImageUrl').value.trim() || 'images/logo/logo-symbol.png';
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+    try {
+        const categories = await CMSDataStore.get('categories');
+        let newRecord = {
+            name,
+            slug,
+            description,
+            image_url,
+            display_order,
+            is_visible: true,
+            created_at: new Date().toISOString()
+        };
+
+        if (indexVal !== '' && !isNaN(indexVal) && categories[indexVal]) {
+            newRecord = { ...categories[indexVal], ...newRecord, updated_at: new Date().toISOString() };
+            categories[indexVal] = newRecord;
+        } else {
+            categories.push(newRecord);
+        }
+
+        await CMSDataStore.save('categories', categories);
+        alert('✓ Category saved successfully!');
+
+        const modalEl = document.getElementById('categoryFormModal');
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+
+        await loadCategoriesModule();
+        await loadDashboardData();
+    } catch (err) {
+        alert(`❌ Category Save Failed: ${err.message}`);
+    } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Save Category &rarr;'; }
+    }
+}
+
+async function toggleCategoryVisibility(index) {
+    try {
+        const categories = await CMSDataStore.get('categories');
+        if (categories[index]) {
+            categories[index].is_visible = !categories[index].is_visible;
+            await CMSDataStore.save('categories', categories);
+            await loadCategoriesModule();
+            await loadDashboardData();
+        }
+    } catch (err) {
+        alert(`Visibility update failed: ${err.message}`);
+    }
+}
+
+async function deleteCategory(index) {
+    if (confirm('Are you sure you want to delete this category?')) {
+        try {
+            const categories = await CMSDataStore.get('categories');
+            categories.splice(index, 1);
+            await CMSDataStore.save('categories', categories);
+            await loadCategoriesModule();
+            await loadDashboardData();
+        } catch (err) {
+            alert(`Category deletion failed: ${err.message}`);
+        }
+    }
+}
+
+// 6. Module: Projects CMS
+async function loadProjectsModule() {
+    const projects = await CMSDataStore.get('projects');
+    const tbody = document.getElementById('projectsTableBody');
+    if (!tbody) return;
+
+    if (!projects || projects.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted">No projects found. Click "+ Add Project" to showcase a new installation.</td></tr>`;
+        return;
+    }
+
+    let html = '';
+    projects.forEach((proj, index) => {
+        const isVisible = proj.is_visible !== false;
+        html += `
+        <tr>
+            <td>
+                <img src="${proj.main_image || 'images/sections/hero-workspace.jpg'}" alt="${proj.title}" style="width: 48px; height: 36px; object-fit: cover; border-radius: 6px; background: #fff;" onerror="this.src='images/sections/hero-workspace.jpg'">
+            </td>
+            <td class="fw-bold">${proj.title}</td>
+            <td><span class="badge bg-light text-dark border">${proj.location || 'Hyderabad'}</span></td>
+            <td class="fs-7 text-muted">${proj.description || '-'}</td>
+            <td>${proj.display_order || index + 1}</td>
+            <td><span class="${isVisible ? 'badge-published' : 'badge-hidden'}">${isVisible ? 'Published' : 'Hidden'}</span></td>
+            <td>
+                <div class="action-btn-group d-flex gap-1">
+                    <button class="btn btn-sm btn-primary px-2 py-1" onclick="editProjectModal(${index})">Edit</button>
+                    <button class="btn btn-sm btn-outline-warning px-2 py-1" onclick="toggleProjectVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
+                    <button class="btn btn-sm btn-outline-danger px-2 py-1" onclick="deleteProject(${index})">Delete</button>
+                </div>
+            </td>
+        </tr>`;
+    });
+    tbody.innerHTML = html;
+}
+
+function openAddProjectModal() {
+    document.getElementById('projectModalTitle').textContent = 'Add New Project';
+    document.getElementById('projectIdInput').value = '';
+    document.getElementById('projectTitleInput').value = '';
+    document.getElementById('projectLocationInput').value = '';
+    document.getElementById('projectDescInput').value = '';
+    document.getElementById('projectOrderInput').value = '0';
+    document.getElementById('projectMainImageUrl').value = '';
+    document.getElementById('projectImagePreviewContainer').classList.add('d-none');
+    document.getElementById('projectImagePreview').src = '';
+
+    const modal = new bootstrap.Modal(document.getElementById('projectFormModal'));
+    modal.show();
+}
+
+async function editProjectModal(index) {
+    const projects = await CMSDataStore.get('projects');
+    const proj = projects[index];
+    if (!proj) return;
+
+    document.getElementById('projectModalTitle').textContent = 'Edit Project';
+    document.getElementById('projectIdInput').value = index;
+    document.getElementById('projectTitleInput').value = proj.title || '';
+    document.getElementById('projectLocationInput').value = proj.location || '';
+    document.getElementById('projectDescInput').value = proj.description || '';
+    document.getElementById('projectOrderInput').value = proj.display_order || 0;
+    document.getElementById('projectMainImageUrl').value = proj.main_image || '';
+
+    if (proj.main_image) {
+        document.getElementById('projectImagePreview').src = proj.main_image;
+        document.getElementById('projectImagePreviewContainer').classList.remove('d-none');
+    } else {
+        document.getElementById('projectImagePreviewContainer').classList.add('d-none');
+    }
+
+    const modal = new bootstrap.Modal(document.getElementById('projectFormModal'));
+    modal.show();
+}
+
+async function saveProjectForm(e) {
+    e.preventDefault();
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Saving...'; }
+
+    const indexVal = document.getElementById('projectIdInput').value;
+    const title = document.getElementById('projectTitleInput').value.trim();
+    const location = document.getElementById('projectLocationInput').value.trim();
+    const description = document.getElementById('projectDescInput').value.trim();
+    const display_order = parseInt(document.getElementById('projectOrderInput').value || '0', 10);
+    const main_image = document.getElementById('projectMainImageUrl').value.trim() || 'images/sections/hero-workspace.jpg';
+    const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+    try {
+        const projects = await CMSDataStore.get('projects');
+        let newRecord = {
+            title,
+            slug,
+            location,
+            description,
+            main_image,
+            display_order,
+            is_visible: true,
+            created_at: new Date().toISOString()
+        };
+
+        if (indexVal !== '' && !isNaN(indexVal) && projects[indexVal]) {
+            newRecord = { ...projects[indexVal], ...newRecord, updated_at: new Date().toISOString() };
+            projects[indexVal] = newRecord;
+        } else {
+            projects.push(newRecord);
+        }
+
+        await CMSDataStore.save('projects', projects);
+        alert('✓ Project saved successfully!');
+
+        const modalEl = document.getElementById('projectFormModal');
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+
+        await loadProjectsModule();
+        await loadDashboardData();
+    } catch (err) {
+        alert(`❌ Project Save Failed: ${err.message}`);
+    } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Save Project &rarr;'; }
+    }
+}
+
+async function toggleProjectVisibility(index) {
+    try {
+        const projects = await CMSDataStore.get('projects');
+        if (projects[index]) {
+            projects[index].is_visible = !projects[index].is_visible;
+            await CMSDataStore.save('projects', projects);
+            await loadProjectsModule();
+            await loadDashboardData();
+        }
+    } catch (err) {
+        alert(`Visibility update failed: ${err.message}`);
+    }
+}
+
+async function deleteProject(index) {
+    if (confirm('Are you sure you want to delete this project?')) {
+        try {
+            const projects = await CMSDataStore.get('projects');
+            projects.splice(index, 1);
+            await CMSDataStore.save('projects', projects);
+            await loadProjectsModule();
+            await loadDashboardData();
+        } catch (err) {
+            alert(`Project deletion failed: ${err.message}`);
+        }
+    }
 }
 
 // 7. Module: Hero CMS
@@ -464,41 +733,13 @@ async function saveAboutCMS(e) {
     }
 }
 
-// 9. Module: Enquiries
-async function loadEnquiriesModule() {
-    const enquiries = await CMSDataStore.get('enquiries');
-    const tbody = document.getElementById('enquiriesTableBody');
-    if (!tbody) return;
-
-    if (!enquiries || enquiries.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" class="text-center py-4 text-muted">No customer enquiries received yet.</td></tr>`;
-        return;
-    }
-
-    let html = '';
-    enquiries.forEach((enq) => {
-        html += `
-        <tr>
-            <td class="fw-bold">${enq.full_name}</td>
-            <td>${enq.product_name || 'General'}</td>
-            <td><a href="tel:${enq.phone_number}">${enq.phone_number}</a></td>
-            <td>${enq.email || '-'}</td>
-            <td>${new Date(enq.created_at || Date.now()).toLocaleDateString()}</td>
-            <td>
-                <span class="badge bg-danger text-white">${enq.status || 'New'}</span>
-            </td>
-        </tr>`;
-    });
-    tbody.innerHTML = html;
-}
-
-// 10. Module: Footer CMS
+// 9. Module: Footer CMS
 async function loadFooterModule() {
     const footerData = await CMSDataStore.get('footer_content');
     const footer = (footerData && footerData[0]) ? footerData[0] : {
         company_description: 'Vishista Office Solutions Pvt Ltd is a premier provider of corporate office furniture...',
         address: 'Plot No 45, Jubilee Hills, Road No 36, Hyderabad, Telangana 500033',
-        phone: '+91 98490 12345',
+        phone: '+91 98490 58444',
         email: 'info@vishista.com'
     };
 
@@ -528,12 +769,23 @@ async function saveFooterCMS(e) {
 window.showAdminDashboard = showAdminDashboard;
 window.showAuthScreen = showAuthScreen;
 window.switchTab = switchTab;
+window.handleImageUploadGeneric = handleImageUploadGeneric;
 window.openAddProductModal = openAddProductModal;
 window.editProductModal = editProductModal;
 window.handleCloudinaryProductUpload = handleCloudinaryProductUpload;
 window.saveProductForm = saveProductForm;
 window.toggleProductVisibility = toggleProductVisibility;
 window.deleteProduct = deleteProduct;
+window.openAddCategoryModal = openAddCategoryModal;
+window.editCategoryModal = editCategoryModal;
+window.saveCategoryForm = saveCategoryForm;
+window.toggleCategoryVisibility = toggleCategoryVisibility;
+window.deleteCategory = deleteCategory;
+window.openAddProjectModal = openAddProjectModal;
+window.editProjectModal = editProjectModal;
+window.saveProjectForm = saveProjectForm;
+window.toggleProjectVisibility = toggleProjectVisibility;
+window.deleteProject = deleteProject;
 window.saveHeroCMS = saveHeroCMS;
 window.saveAboutCMS = saveAboutCMS;
 window.saveFooterCMS = saveFooterCMS;
