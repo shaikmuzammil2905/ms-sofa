@@ -276,6 +276,8 @@ function filterProductsTable() {
     tbody.innerHTML = html;
 }
 
+let currentProductAdditionalImages = [];
+
 async function populateCategoryDropdown(selectEl, selectedSlug) {
     if (!selectEl) return;
     const categories = await CMSDataStore.get('categories');
@@ -290,14 +292,69 @@ async function populateCategoryDropdown(selectEl, selectedSlug) {
     selectEl.innerHTML = html;
 }
 
+async function onProductCategoryChange(selectedSubcategory) {
+    const catSelect = document.getElementById('productCategorySelect');
+    const subSelect = document.getElementById('productSubcategorySelect');
+    if (!catSelect || !subSelect) return;
+
+    const catSlug = catSelect.value;
+    const subcategories = await CMSDataStore.get('subcategories');
+    const filteredSubs = (subcategories || []).filter(s => s.category_slug === catSlug);
+
+    let html = '<option value="">General / None</option>';
+    filteredSubs.forEach(sub => {
+        const isSel = (selectedSubcategory === sub.name || selectedSubcategory === sub.slug) ? 'selected' : '';
+        html += `<option value="${sub.name}" ${isSel}>${sub.name}</option>`;
+    });
+
+    subSelect.innerHTML = html;
+}
+
+function renderAdditionalImagesPreview() {
+    const container = document.getElementById('additionalImagesPreviewList');
+    if (!container) return;
+
+    let html = '';
+    currentProductAdditionalImages.forEach((imgUrl, idx) => {
+        html += `
+        <div class="position-relative d-inline-block m-1" style="width: 65px; height: 65px;">
+            <img src="${imgUrl}" style="width: 65px; height: 65px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1;">
+            <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 p-0 rounded-circle text-center" style="width: 20px; height: 20px; line-height: 18px; font-size: 11px; transform: translate(30%, -30%);" onclick="removeAdditionalProductImage(${idx})">&times;</button>
+        </div>`;
+    });
+    container.innerHTML = html;
+}
+
+function removeAdditionalProductImage(index) {
+    currentProductAdditionalImages.splice(index, 1);
+    renderAdditionalImagesPreview();
+}
+
+async function handleAdditionalProductImageUpload(input) {
+    const file = input.files[0];
+    if (!file) return;
+
+    try {
+        const uploadResult = await uploadToCloudinary(file);
+        currentProductAdditionalImages.push(uploadResult.url);
+        renderAdditionalImagesPreview();
+        alert('✓ Additional image added to gallery!');
+    } catch (err) {
+        alert(`Image upload failed: ${err.message}`);
+    }
+}
+
 async function openAddProductModal() {
+    currentProductAdditionalImages = [];
+    renderAdditionalImagesPreview();
+
     const selectEl = document.getElementById('productCategorySelect');
     await populateCategoryDropdown(selectEl, 'archlabs-seating');
+    await onProductCategoryChange();
 
     document.getElementById('productModalTitle').textContent = 'Add New Product';
     document.getElementById('productIdInput').value = '';
     document.getElementById('productNameInput').value = '';
-    document.getElementById('productSubcategoryInput').value = '';
     document.getElementById('productPriceInput').value = '';
     document.getElementById('productDescInput').value = '';
     if (document.getElementById('productVisibleCheck')) document.getElementById('productVisibleCheck').checked = true;
@@ -315,13 +372,16 @@ async function editProductModal(index) {
     const prod = products[index];
     if (!prod) return;
 
+    currentProductAdditionalImages = Array.isArray(prod.additional_images) ? [...prod.additional_images] : (prod.additional_images ? [prod.additional_images] : []);
+    renderAdditionalImagesPreview();
+
     const selectEl = document.getElementById('productCategorySelect');
     await populateCategoryDropdown(selectEl, prod.category_slug);
+    await onProductCategoryChange(prod.subcategory);
 
     document.getElementById('productModalTitle').textContent = 'Edit Product';
     document.getElementById('productIdInput').value = index;
     document.getElementById('productNameInput').value = prod.name || '';
-    document.getElementById('productSubcategoryInput').value = prod.subcategory || '';
     document.getElementById('productPriceInput').value = prod.price || '';
     document.getElementById('productDescInput').value = prod.description || '';
     if (document.getElementById('productVisibleCheck')) document.getElementById('productVisibleCheck').checked = prod.is_visible !== false;
@@ -376,7 +436,8 @@ async function saveProductForm(e) {
     const indexVal = document.getElementById('productIdInput').value;
     const name = document.getElementById('productNameInput').value.trim();
     const category_slug = document.getElementById('productCategorySelect').value;
-    const subcategory = document.getElementById('productSubcategoryInput').value.trim();
+    const subcategorySelect = document.getElementById('productSubcategorySelect');
+    const subcategory = subcategorySelect ? subcategorySelect.value : '';
     const price = document.getElementById('productPriceInput').value.trim() || null;
     const description = document.getElementById('productDescInput').value.trim();
     const is_visible = document.getElementById('productVisibleCheck') ? document.getElementById('productVisibleCheck').checked : true;
@@ -405,6 +466,7 @@ async function saveProductForm(e) {
             description,
             main_image,
             image: main_image,
+            additional_images: [...currentProductAdditionalImages],
             is_visible,
             is_published,
             display_order: products.length + 1,
@@ -492,54 +554,196 @@ async function deleteProduct(index) {
 }
 
 
-// 5. Module: Categories CMS
+// 5. Module: Categories & Subcategories CMS
 async function loadCategoriesModule() {
     const categories = await CMSDataStore.get('categories');
     const products = await CMSDataStore.get('products');
     const tbody = document.getElementById('categoriesTableBody');
+    if (tbody) {
+        if (!categories || categories.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="8" class="text-center py-4 text-muted">No categories configured. Click "+ Add Category" to create one.</td></tr>`;
+        } else {
+            let html = '';
+            categories.forEach((cat, index) => {
+                const isVisible = cat.is_visible !== false;
+                const isPublished = cat.is_published !== false;
+                const prodCount = (products || []).filter(p => p.category_slug === cat.slug).length;
+
+                html += `
+                <tr>
+                    <td>
+                        <img src="${cat.image_url || 'images/logo/logo-symbol.png'}" alt="${cat.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 6px; background: #fff;" onerror="this.src='images/logo/logo-symbol.png'">
+                    </td>
+                    <td class="fw-bold text-dark">${cat.name}</td>
+                    <td><code>${cat.slug}</code></td>
+                    <td><span class="badge bg-danger-subtle text-danger border border-danger font-monospace px-2 py-1">${prodCount} Products</span></td>
+                    <td>
+                        <span class="${isVisible ? 'badge bg-success-subtle text-success border border-success' : 'badge bg-danger-subtle text-danger border border-danger'}">
+                            ${isVisible ? 'VISIBLE' : 'HIDDEN'}
+                        </span>
+                    </td>
+                    <td>
+                        <span class="${isPublished ? 'badge bg-primary-subtle text-primary border border-primary' : 'badge bg-secondary-subtle text-secondary border'}">
+                            ${isPublished ? 'PUBLISHED' : 'UNPUBLISHED'}
+                        </span>
+                    </td>
+                    <td>${cat.display_order || index + 1}</td>
+                    <td>
+                        <div class="action-btn-group d-flex flex-wrap gap-1">
+                            <button class="btn btn-sm btn-primary px-2 py-1 fs-7" onclick="editCategoryModal(${index})">Edit</button>
+                            <button class="btn btn-sm ${isVisible ? 'btn-outline-secondary' : 'btn-outline-success'} px-2 py-1 fs-7" onclick="toggleCategoryVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
+                            <button class="btn btn-sm ${isPublished ? 'btn-outline-warning' : 'btn-outline-info'} px-2 py-1 fs-7" onclick="toggleCategoryPublished(${index})">${isPublished ? 'Unpublish' : 'Publish'}</button>
+                            <button class="btn btn-sm btn-outline-danger px-2 py-1 fs-7" onclick="deleteCategory(${index})">Delete</button>
+                        </div>
+                    </td>
+                </tr>`;
+            });
+            tbody.innerHTML = html;
+        }
+    }
+
+    await loadSubcategoriesTable();
+}
+
+async function loadSubcategoriesTable() {
+    const subcategories = await CMSDataStore.get('subcategories');
+    const categories = await CMSDataStore.get('categories');
+    const products = await CMSDataStore.get('products');
+    const tbody = document.getElementById('subcategoriesTableBody');
     if (!tbody) return;
 
-    if (!categories || categories.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" class="text-center py-4 text-muted">No categories configured. Click "+ Add Category" to create one.</td></tr>`;
+    if (!subcategories || subcategories.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="text-center py-4 text-muted">No subcategories configured. Click "+ Add Subcategory" to create one.</td></tr>`;
         return;
     }
 
     let html = '';
-    categories.forEach((cat, index) => {
-        const isVisible = cat.is_visible !== false;
-        const isPublished = cat.is_published !== false;
-        const prodCount = (products || []).filter(p => p.category_slug === cat.slug).length;
+    subcategories.forEach((sub, index) => {
+        const parentCat = (categories || []).find(c => c.slug === sub.category_slug || c.name === sub.category_slug);
+        const parentName = parentCat ? parentCat.name : (sub.category_slug || 'General');
+        const prodCount = (products || []).filter(p => p.subcategory === sub.name || p.subcategory === sub.slug).length;
 
         html += `
         <tr>
+            <td class="fw-bold text-dark">${sub.name}</td>
+            <td><span class="badge bg-light text-dark border">${parentName}</span></td>
+            <td><code>${sub.slug || '-'}</code></td>
+            <td><span class="badge bg-primary-subtle text-primary border font-monospace px-2 py-1">${prodCount} Products</span></td>
+            <td>${sub.display_order || index + 1}</td>
             <td>
-                <img src="${cat.image_url || 'images/logo/logo-symbol.png'}" alt="${cat.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 6px; background: #fff;" onerror="this.src='images/logo/logo-symbol.png'">
-            </td>
-            <td class="fw-bold text-dark">${cat.name}</td>
-            <td><code>${cat.slug}</code></td>
-            <td><span class="badge bg-danger-subtle text-danger border border-danger font-monospace px-2 py-1">${prodCount} Products</span></td>
-            <td>
-                <span class="${isVisible ? 'badge bg-success-subtle text-success border border-success' : 'badge bg-danger-subtle text-danger border border-danger'}">
-                    ${isVisible ? 'VISIBLE' : 'HIDDEN'}
-                </span>
-            </td>
-            <td>
-                <span class="${isPublished ? 'badge bg-primary-subtle text-primary border border-primary' : 'badge bg-secondary-subtle text-secondary border'}">
-                    ${isPublished ? 'PUBLISHED' : 'UNPUBLISHED'}
-                </span>
-            </td>
-            <td>${cat.display_order || index + 1}</td>
-            <td>
-                <div class="action-btn-group d-flex flex-wrap gap-1">
-                    <button class="btn btn-sm btn-primary px-2 py-1 fs-7" onclick="editCategoryModal(${index})">Edit</button>
-                    <button class="btn btn-sm ${isVisible ? 'btn-outline-secondary' : 'btn-outline-success'} px-2 py-1 fs-7" onclick="toggleCategoryVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
-                    <button class="btn btn-sm ${isPublished ? 'btn-outline-warning' : 'btn-outline-info'} px-2 py-1 fs-7" onclick="toggleCategoryPublished(${index})">${isPublished ? 'Unpublish' : 'Publish'}</button>
-                    <button class="btn btn-sm btn-outline-danger px-2 py-1 fs-7" onclick="deleteCategory(${index})">Delete</button>
+                <div class="action-btn-group d-flex gap-1">
+                    <button class="btn btn-sm btn-primary px-2 py-1 fs-7" onclick="editSubcategoryModal(${index})">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger px-2 py-1 fs-7" onclick="deleteSubcategory(${index})">Delete</button>
                 </div>
             </td>
         </tr>`;
     });
     tbody.innerHTML = html;
+}
+
+async function openAddSubcategoryModal() {
+    const selectEl = document.getElementById('subcategoryCategorySelect');
+    await populateCategoryDropdown(selectEl);
+
+    document.getElementById('subcategoryModalTitle').textContent = 'Add New Subcategory';
+    document.getElementById('subcategoryIdInput').value = '';
+    document.getElementById('subcategoryNameInput').value = '';
+    document.getElementById('subcategoryOrderInput').value = '0';
+
+    const modal = new bootstrap.Modal(document.getElementById('subcategoryFormModal'));
+    modal.show();
+}
+
+async function editSubcategoryModal(index) {
+    const subcategories = await CMSDataStore.get('subcategories');
+    const sub = subcategories[index];
+    if (!sub) return;
+
+    const selectEl = document.getElementById('subcategoryCategorySelect');
+    await populateCategoryDropdown(selectEl, sub.category_slug);
+
+    document.getElementById('subcategoryModalTitle').textContent = 'Edit Subcategory';
+    document.getElementById('subcategoryIdInput').value = index;
+    document.getElementById('subcategoryNameInput').value = sub.name || '';
+    document.getElementById('subcategoryOrderInput').value = sub.display_order || 0;
+
+    const modal = new bootstrap.Modal(document.getElementById('subcategoryFormModal'));
+    modal.show();
+}
+
+async function saveSubcategoryForm(e) {
+    e.preventDefault();
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Saving...'; }
+
+    const indexVal = document.getElementById('subcategoryIdInput').value;
+    const category_slug = document.getElementById('subcategoryCategorySelect').value;
+    const name = document.getElementById('subcategoryNameInput').value.trim();
+    const display_order = parseInt(document.getElementById('subcategoryOrderInput').value || '0', 10);
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+    if (!name || !category_slug) {
+        alert('Please enter subcategory name and select a parent category.');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Save Subcategory &rarr;'; }
+        return;
+    }
+
+    try {
+        const subcategories = await CMSDataStore.get('subcategories');
+        let newRecord = {
+            name,
+            slug,
+            category_slug,
+            display_order,
+            created_at: new Date().toISOString()
+        };
+
+        if (indexVal !== '' && !isNaN(indexVal) && subcategories[indexVal]) {
+            newRecord = { ...subcategories[indexVal], ...newRecord, updated_at: new Date().toISOString() };
+            subcategories[indexVal] = newRecord;
+        } else {
+            subcategories.push(newRecord);
+        }
+
+        await CMSDataStore.save('subcategories', subcategories);
+        alert('✓ Subcategory saved successfully!');
+
+        const modalEl = document.getElementById('subcategoryFormModal');
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+
+        await loadCategoriesModule();
+    } catch (err) {
+        alert(`❌ Subcategory Save Failed: ${err.message}`);
+    } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Save Subcategory &rarr;'; }
+    }
+}
+
+async function deleteSubcategory(index) {
+    try {
+        const subcategories = await CMSDataStore.get('subcategories');
+        const products = await CMSDataStore.get('products');
+        const targetSub = subcategories[index];
+
+        if (!targetSub) return;
+
+        const attachedProducts = (products || []).filter(p => p.subcategory === targetSub.name || p.subcategory === targetSub.slug);
+        if (attachedProducts.length > 0) {
+            if (!confirm(`⚠️ Warning: ${attachedProducts.length} product(s) belong to subcategory "${targetSub.name}". Deleting this subcategory will reset their subcategory tag. Continue?`)) {
+                return;
+            }
+        } else {
+            if (!confirm(`Are you sure you want to delete subcategory "${targetSub.name}"?`)) return;
+        }
+
+        if (targetSub.id) await CMSDataStore.deleteRecord('subcategories', targetSub.id);
+        if (targetSub.slug) await CMSDataStore.deleteRecord('subcategories', targetSub.slug);
+
+        await loadCategoriesModule();
+    } catch (err) {
+        alert(`Subcategory deletion failed: ${err.message}`);
+    }
 }
 
 function openAddCategoryModal() {
@@ -673,15 +877,18 @@ async function toggleCategoryPublished(index) {
 async function deleteCategory(index) {
     try {
         const categories = await CMSDataStore.get('categories');
+        const subcategories = await CMSDataStore.get('subcategories');
         const products = await CMSDataStore.get('products');
         const targetCat = categories[index];
 
         if (!targetCat) return;
 
-        // Safety Check: Check if products belong to category
-        const attachedProducts = (products || []).filter(p => p.category_slug === targetCat.slug);
-        if (attachedProducts.length > 0) {
-            alert(`⚠️ Cannot delete category "${targetCat.name}" because ${attachedProducts.length} product(s) belong to it. Please reassign or delete those products first.`);
+        // Safety Check: Check if subcategories or products belong to category
+        const attachedSubs = (subcategories || []).filter(s => s.category_slug === targetCat.slug);
+        const attachedProds = (products || []).filter(p => p.category_slug === targetCat.slug);
+
+        if (attachedSubs.length > 0 || attachedProds.length > 0) {
+            alert(`⚠️ Cannot delete category "${targetCat.name}" because ${attachedSubs.length} subcategory(ies) and ${attachedProds.length} product(s) belong to it. Please reassign or delete dependent subcategories/products first.`);
             return;
         }
 
@@ -696,6 +903,7 @@ async function deleteCategory(index) {
         alert(`Category deletion failed: ${err.message}`);
     }
 }
+
 
 
 // 6. Module: Projects CMS
@@ -984,9 +1192,12 @@ window.deleteCategory = deleteCategory;
 window.openAddProjectModal = openAddProjectModal;
 window.editProjectModal = editProjectModal;
 window.saveProjectForm = saveProjectForm;
-window.toggleProjectVisibility = toggleProjectVisibility;
-window.deleteProject = deleteProject;
-window.saveHeroCMS = saveHeroCMS;
-window.saveAboutCMS = saveAboutCMS;
-window.saveFooterCMS = saveFooterCMS;
+window.openAddSubcategoryModal = openAddSubcategoryModal;
+window.editSubcategoryModal = editSubcategoryModal;
+window.saveSubcategoryForm = saveSubcategoryForm;
+window.deleteSubcategory = deleteSubcategory;
+window.onProductCategoryChange = onProductCategoryChange;
+window.handleAdditionalProductImageUpload = handleAdditionalProductImageUpload;
+window.removeAdditionalProductImage = removeAdditionalProductImage;
 window.toggleMobileSidebar = toggleMobileSidebar;
+

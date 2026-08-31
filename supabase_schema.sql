@@ -57,8 +57,16 @@ BEGIN
     ) THEN
         ALTER TABLE public.products ADD COLUMN is_published BOOLEAN DEFAULT TRUE;
     END IF;
-END $$;
-
+-- 3B. SUBCATEGORIES TABLE
+CREATE TABLE IF NOT EXISTS public.subcategories (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    category_id UUID REFERENCES public.categories(id) ON DELETE CASCADE,
+    category_slug TEXT NOT NULL,
+    name TEXT NOT NULL,
+    slug TEXT NOT NULL,
+    display_order INT DEFAULT 0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
 
 -- 4. PROJECTS TABLE
 CREATE TABLE IF NOT EXISTS public.projects (
@@ -310,5 +318,10 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for website_settings') THEN
         CREATE POLICY "Allow all access for website_settings" ON public.website_settings FOR ALL USING (true) WITH CHECK (true);
     END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Allow all access for subcategories') THEN
+        CREATE POLICY "Allow all access for subcategories" ON public.subcategories FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+
 
 END $$;

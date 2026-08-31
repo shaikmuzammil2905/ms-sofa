@@ -146,6 +146,7 @@ async function syncFooterSection() {
 // 4. Dynamic Categories Sync (Megamenu, Mobile Drawer, Grids, and Jump Bar)
 async function syncCategoriesSection() {
     const rawCategories = (await CMSDataStore.get('categories')) || [];
+    const rawSubcategories = (await CMSDataStore.get('subcategories')) || [];
     const rawProducts = (await CMSDataStore.get('products')) || [];
     
     const categories = rawCategories.filter(c => c.is_visible !== false && c.is_published !== false);
@@ -161,13 +162,15 @@ async function syncCategoriesSection() {
             const catNameLower = cat.name.trim().toLowerCase();
             const catSlug = cat.slug || catNameLower.replace(/[^a-z0-9]+/g, '-');
             if (!existingTitles.includes(catNameLower)) {
-                // Collect subcategories or products for this category
+                let subItems = rawSubcategories
+                    .filter(s => s.category_slug === catSlug || s.category_slug === cat.name)
+                    .map(s => s.name);
+
                 const catProducts = products.filter(p => p.is_visible !== false && (
                     (p.category_slug && p.category_slug.toLowerCase() === catSlug) ||
                     (p.category && p.category.toLowerCase() === catNameLower)
                 ));
 
-                let subItems = [];
                 catProducts.forEach(p => {
                     if (p.subcategory && !subItems.includes(p.subcategory)) {
                         subItems.push(p.subcategory);
@@ -179,7 +182,7 @@ async function syncCategoriesSection() {
                 }
 
                 const subListHtml = subItems.map(subName => 
-                    `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
+                    `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
                 ).join('');
 
                 const catDiv = document.createElement('div');
@@ -204,12 +207,15 @@ async function syncCategoriesSection() {
             const catNameLower = cat.name.trim().toLowerCase();
             const catSlug = cat.slug || catNameLower.replace(/[^a-z0-9]+/g, '-');
             if (!existingMobileTitles.includes(catNameLower)) {
+                let subItems = rawSubcategories
+                    .filter(s => s.category_slug === catSlug || s.category_slug === cat.name)
+                    .map(s => s.name);
+
                 const catProducts = products.filter(p => p.is_visible !== false && (
                     (p.category_slug && p.category_slug.toLowerCase() === catSlug) ||
                     (p.category && p.category.toLowerCase() === catNameLower)
                 ));
 
-                let subItems = [];
                 catProducts.forEach(p => {
                     if (p.subcategory && !subItems.includes(p.subcategory)) {
                         subItems.push(p.subcategory);
@@ -218,8 +224,9 @@ async function syncCategoriesSection() {
                 if (subItems.length === 0) subItems.push(cat.name);
 
                 const subListHtml = subItems.map(subName =>
-                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}">&bull; ${subName}</a></li>`
+                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
                 ).join('');
+
 
                 const mobDiv = document.createElement('div');
                 mobDiv.className = 'p-3 rounded-3';
@@ -424,19 +431,62 @@ function renderProductGrid(container, items) {
     container.innerHTML = html;
 }
 
-function openProductDetailModal(name, image, desc, price, subcategory) {
+async function openProductDetailModal(name, image, desc, price, subcategory, additionalImages) {
     const modalEl = document.getElementById('productDetailModal');
     if (!modalEl) {
         openEnquiryModal(name);
         return;
     }
 
-    document.getElementById('productModalName').textContent = name || 'Product';
-    document.getElementById('productModalTitle').textContent = name || 'Product Preview';
-    document.getElementById('productModalImg').src = image || 'images/logo/logo-symbol.png';
-    document.getElementById('productModalDesc').textContent = desc || 'Full ergonomic workspace furniture product specifications available upon request.';
-    document.getElementById('productModalPrice').textContent = price || 'Enquire for Price';
-    document.getElementById('productModalBadge').textContent = subcategory || 'Vishista Solution';
+    let extraImgs = Array.isArray(additionalImages) ? additionalImages : [];
+    if (extraImgs.length === 0 && typeof CMSDataStore !== 'undefined') {
+        try {
+            const allProducts = await CMSDataStore.get('products');
+            const found = (allProducts || []).find(p => p.name === name || p.slug === name);
+            if (found && Array.isArray(found.additional_images)) {
+                extraImgs = found.additional_images;
+            }
+        } catch(e) {}
+    }
+
+    const nameEl = document.getElementById('productModalName');
+    if (nameEl) nameEl.textContent = name || 'Product';
+    const titleEl = document.getElementById('productModalTitle');
+    if (titleEl) titleEl.textContent = name || 'Product Preview';
+    const mainImgEl = document.getElementById('productModalImg');
+    if (mainImgEl) mainImgEl.src = image || 'images/logo/logo-symbol.png';
+    const descEl = document.getElementById('productModalDesc');
+    if (descEl) descEl.textContent = desc || 'Full ergonomic workspace furniture product specifications available upon request.';
+    const priceEl = document.getElementById('productModalPrice');
+    if (priceEl) priceEl.textContent = price || 'Enquire for Price';
+    const badgeEl = document.getElementById('productModalBadge');
+    if (badgeEl) badgeEl.textContent = subcategory || 'Vishista Solution';
+
+    // Render interactive Thumbnail Gallery
+    let galleryContainer = document.getElementById('productModalGalleryContainer');
+    if (!galleryContainer && mainImgEl && mainImgEl.parentNode) {
+        galleryContainer = document.createElement('div');
+        galleryContainer.id = 'productModalGalleryContainer';
+        galleryContainer.className = 'd-flex flex-wrap gap-2 justify-content-center mt-3';
+        mainImgEl.parentNode.appendChild(galleryContainer);
+    }
+
+    if (galleryContainer) {
+        const allImagesList = Array.from(new Set([image, ...extraImgs])).filter(Boolean);
+        if (allImagesList.length > 1) {
+            galleryContainer.innerHTML = allImagesList.map((imgUrl, i) => `
+                <img src="${imgUrl}" 
+                     class="img-thumbnail ${i === 0 ? 'border-danger border-2' : ''}" 
+                     style="width: 60px; height: 60px; object-fit: cover; cursor: pointer; transition: all 0.2s ease;" 
+                     onclick="document.getElementById('productModalImg').src='${imgUrl.replace(/'/g, "\\'")}'; document.querySelectorAll('#productModalGalleryContainer img').forEach(el => el.classList.remove('border-danger', 'border-2')); this.classList.add('border-danger', 'border-2');" 
+                     alt="Thumbnail ${i + 1}">
+            `).join('');
+            galleryContainer.classList.remove('d-none');
+        } else {
+            galleryContainer.innerHTML = '';
+            galleryContainer.classList.add('d-none');
+        }
+    }
 
     const enquireBtn = document.getElementById('productModalEnquireBtn');
     if (enquireBtn) {
@@ -454,6 +504,7 @@ function openProductDetailModal(name, image, desc, price, subcategory) {
         modal.show();
     }
 }
+
 
 function openEnquiryModal(productName) {
     const input = document.getElementById('modalProductInput');

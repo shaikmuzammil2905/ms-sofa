@@ -235,6 +235,28 @@ const VISHISTA_SEED_DATA = {
       "is_published": true
     }
   ],
+  "subcategories": [
+    { "name": "Height Adjustable Series", "slug": "height-adjustable-series", "category_slug": "workstations", "display_order": 1 },
+    { "name": "Open Plan Desking Series", "slug": "desking-series", "category_slug": "workstations", "display_order": 2 },
+    { "name": "Panel Partition Series", "slug": "panel-series", "category_slug": "workstations", "display_order": 3 },
+    { "name": "Executive Cabin Tables", "slug": "cabin-tables", "category_slug": "tables", "display_order": 1 },
+    { "name": "Boardroom Meeting Tables", "slug": "meeting-tables", "category_slug": "tables", "display_order": 2 },
+    { "name": "Cafe & Breakout Tables", "slug": "cafe-tables", "category_slug": "tables", "display_order": 3 },
+    { "name": "Training Tables", "slug": "training-tables", "category_slug": "tables", "display_order": 4 },
+    { "name": "Prelam Storage", "slug": "prelam-storage", "category_slug": "storage", "display_order": 1 },
+    { "name": "Steel & Metal Storage", "slug": "metal-storage", "category_slug": "storage", "display_order": 2 },
+    { "name": "Compactor Storage", "slug": "compactor-storage", "category_slug": "storage", "display_order": 3 },
+    { "name": "Employee Locker Systems", "slug": "locker-systems", "category_slug": "storage", "display_order": 4 },
+    { "name": "Mesh Series", "slug": "mesh-series", "category_slug": "archlabs-seating", "display_order": 1 },
+    { "name": "Leather Series", "slug": "leather-series", "category_slug": "archlabs-seating", "display_order": 2 },
+    { "name": "Training Series", "slug": "training-series", "category_slug": "archlabs-seating", "display_order": 3 },
+    { "name": "Metro Linea Series", "slug": "metro-linea-series", "category_slug": "archlabs-seating", "display_order": 4 },
+    { "name": "Executive Couches", "slug": "executive-couches", "category_slug": "soft-seating", "display_order": 1 },
+    { "name": "Modular Lounges", "slug": "modular-lounges", "category_slug": "soft-seating", "display_order": 2 },
+    { "name": "Collaborative Booths", "slug": "collaborative-booths", "category_slug": "soft-seating", "display_order": 3 },
+    { "name": "Phone Booths", "slug": "phone-booths", "category_slug": "acoustic-pods", "display_order": 1 },
+    { "name": "Meeting Pods", "slug": "meeting-pods", "category_slug": "acoustic-pods", "display_order": 2 }
+  ],
   "products": [
     {
       "name": "Veloz Mesh Chair",
