@@ -145,11 +145,12 @@ async function syncFooterSection() {
 
 // 4. Dynamic Categories Sync (Megamenu, Mobile Drawer, Grids, and Jump Bar)
 async function syncCategoriesSection() {
-    const categories = await CMSDataStore.get('categories');
-    if (!categories || categories.length === 0) return;
-
-    const products = (await CMSDataStore.get('products')) || [];
-    const visibleCategories = categories.filter(c => c.is_visible !== false);
+    const rawCategories = (await CMSDataStore.get('categories')) || [];
+    const rawProducts = (await CMSDataStore.get('products')) || [];
+    
+    const categories = rawCategories.filter(c => c.is_visible !== false && c.is_published !== false);
+    const products = rawProducts.filter(p => p.is_visible !== false && p.is_published !== false);
+    const visibleCategories = categories;
 
     // A. Sync Desktop Megamenu Grid
     const megaGrid = document.getElementById('megaMenuCategoryGrid') || document.querySelector('.mega-menu-grid');
@@ -369,7 +370,7 @@ async function syncProductPages() {
     const products = await CMSDataStore.get('products');
     if (!products || products.length === 0) return;
 
-    const visibleProducts = products.filter(p => p.is_visible !== false);
+    const visibleProducts = products.filter(p => p.is_visible !== false && p.is_published !== false);
 
     // Mesh Series
     const meshSection = document.querySelector('#mesh-series .row.g-4');

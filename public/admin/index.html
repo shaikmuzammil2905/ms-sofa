@@ -162,23 +162,52 @@
 
                 <!-- 2. PRODUCTS MODULE -->
                 <div id="view-products" class="tab-view-content d-none">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
                         <div>
                             <h3 class="fw-bold text-dark mb-1">Products CMS</h3>
-                            <p class="text-muted fs-7 mb-0">Manage all existing products, prices, images, and visibility.</p>
+                            <p class="text-muted fs-7 mb-0">Manage all existing products, prices, images, visibility, and published status.</p>
                         </div>
                         <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddProductModal()">+ Add Product</button>
                     </div>
 
+                    <!-- Products Search & Multi-Filter Bar -->
+                    <div class="admin-card mb-4 p-3 bg-light border rounded-3">
+                        <div class="row g-2">
+                            <div class="col-md-4">
+                                <input type="text" id="productSearchInput" class="form-control form-control-sm" placeholder="🔍 Search product name or description..." oninput="filterProductsTable()">
+                            </div>
+                            <div class="col-md-3">
+                                <select id="productCategoryFilter" class="form-select form-select-sm" onchange="filterProductsTable()">
+                                    <option value="">All Categories</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select id="productVisibilityFilter" class="form-select form-select-sm" onchange="filterProductsTable()">
+                                    <option value="">All Visibility</option>
+                                    <option value="visible">Visible Only</option>
+                                    <option value="hidden">Hidden Only</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select id="productPublishedFilter" class="form-select form-select-sm" onchange="filterProductsTable()">
+                                    <option value="">All Status</option>
+                                    <option value="published">Published Only</option>
+                                    <option value="unpublished">Unpublished Only</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="admin-card">
                         <div class="table-responsive">
-                            <table class="admin-table">
+                            <table class="admin-table align-middle">
                                 <thead>
                                     <tr>
                                         <th>Image</th>
                                         <th>Product Name</th>
-                                        <th>Subcategory</th>
+                                        <th>Category / Subcategory</th>
                                         <th>Price</th>
+                                        <th>Visibility</th>
                                         <th>Status</th>
                                         <th>Order</th>
                                         <th>Actions</th>
@@ -194,24 +223,25 @@
 
                 <!-- 3. CATEGORIES MODULE -->
                 <div id="view-categories" class="tab-view-content d-none">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
                         <div>
                             <h3 class="fw-bold text-dark mb-1">Category Management</h3>
-                            <p class="text-muted fs-7 mb-0">Categories structure all product listings across ArchLabs Seating and Corporate catalogues.</p>
+                            <p class="text-muted fs-7 mb-0">Manage all 25 categories & menu items across ArchLabs Seating and Corporate catalogues.</p>
                         </div>
                         <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddCategoryModal()">+ Add Category</button>
                     </div>
                     <div class="admin-card">
                         <div class="table-responsive">
-                            <table class="admin-table">
+                            <table class="admin-table align-middle">
                                 <thead>
                                     <tr>
                                         <th>Image</th>
                                         <th>Category Name</th>
                                         <th>Slug</th>
-                                        <th>Description</th>
-                                        <th>Display Order</th>
+                                        <th>Products</th>
+                                        <th>Visibility</th>
                                         <th>Status</th>
+                                        <th>Order</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -380,6 +410,18 @@
                                 <label class="form-label fw-semibold fs-7">Description</label>
                                 <textarea id="productDescInput" class="form-control" rows="3" placeholder="Product features, mechanism, PU armrest, aluminium base specifications..."></textarea>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-check form-switch mt-2">
+                                    <input class="form-check-input" type="checkbox" id="productVisibleCheck" checked>
+                                    <label class="form-check-label fw-semibold fs-7" for="productVisibleCheck">Visibility (Show on Website)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check form-switch mt-2">
+                                    <input class="form-check-input" type="checkbox" id="productPublishedCheck" checked>
+                                    <label class="form-check-label fw-semibold fs-7" for="productPublishedCheck">Status (Published)</label>
+                                </div>
+                            </div>
 
                             <!-- Image Upload Dropzone -->
                             <div class="col-12">
@@ -433,6 +475,20 @@
                         <div class="mb-3">
                             <label class="form-label fw-semibold fs-7">Display Order</label>
                             <input type="number" id="categoryOrderInput" class="form-control" value="0">
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="categoryVisibleCheck" checked>
+                                    <label class="form-check-label fw-semibold fs-7" for="categoryVisibleCheck">Visibility (Visible)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="categoryPublishedCheck" checked>
+                                    <label class="form-check-label fw-semibold fs-7" for="categoryPublishedCheck">Status (Published)</label>
+                                </div>
+                            </div>
                         </div>
                         <!-- Category Image Upload -->
                         <div class="mb-3">

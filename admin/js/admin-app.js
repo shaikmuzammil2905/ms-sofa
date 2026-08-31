@@ -173,47 +173,102 @@ async function loadDashboardData() {
     const categories = await CMSDataStore.get('categories');
     const projects = await CMSDataStore.get('projects');
 
-    document.getElementById('statTotalProducts').textContent = products ? products.length : 0;
-    document.getElementById('statTotalCategories').textContent = categories ? categories.length : 0;
-    document.getElementById('statTotalProjects').textContent = projects ? projects.length : 0;
+    if (document.getElementById('statTotalProducts')) document.getElementById('statTotalProducts').textContent = products ? products.length : 0;
+    if (document.getElementById('statTotalCategories')) document.getElementById('statTotalCategories').textContent = categories ? categories.length : 0;
+    if (document.getElementById('statTotalProjects')) document.getElementById('statTotalProjects').textContent = projects ? projects.length : 0;
 
-    const publishedCount = (products || []).filter(p => p.is_visible !== false).length;
-    document.getElementById('statPublishedItems').textContent = publishedCount;
+    const publishedCount = (products || []).filter(p => p.is_visible !== false && p.is_published !== false).length;
+    if (document.getElementById('statPublishedItems')) document.getElementById('statPublishedItems').textContent = publishedCount;
 }
 
-// 4. Module: Products CMS
+// 4. Module: Products CMS & Search/Filters
+let cachedProductsList = [];
+
 async function loadProductsModule() {
-    const products = await CMSDataStore.get('products');
+    cachedProductsList = await CMSDataStore.get('products');
+    const categories = await CMSDataStore.get('categories');
+    
+    // Populate Category filter dropdown
+    const catFilter = document.getElementById('productCategoryFilter');
+    if (catFilter && categories) {
+        let catOptions = '<option value="">All Categories</option>';
+        categories.forEach(c => {
+            catOptions += `<option value="${c.slug}">${c.name}</option>`;
+        });
+        catFilter.innerHTML = catOptions;
+    }
+
+    filterProductsTable();
+}
+
+function filterProductsTable() {
     const tbody = document.getElementById('productsTableBody');
     if (!tbody) return;
 
-    if (!products || products.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted">No products found. Click "Add Product" to create your first product.</td></tr>`;
+    const search = (document.getElementById('productSearchInput')?.value || '').toLowerCase().trim();
+    const catFilter = document.getElementById('productCategoryFilter')?.value || '';
+    const visFilter = document.getElementById('productVisibilityFilter')?.value || '';
+    const pubFilter = document.getElementById('productPublishedFilter')?.value || '';
+
+    if (!cachedProductsList || cachedProductsList.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="text-center py-4 text-muted">No products found. Click "+ Add Product" to create one.</td></tr>`;
+        return;
+    }
+
+    const filtered = cachedProductsList.filter((prod) => {
+        const nameStr = (prod.name || '').toLowerCase();
+        const descStr = (prod.description || '').toLowerCase();
+        const matchesSearch = !search || nameStr.includes(search) || descStr.includes(search);
+
+        const matchesCategory = !catFilter || prod.category_slug === catFilter;
+
+        const isVis = prod.is_visible !== false;
+        const matchesVisibility = !visFilter || (visFilter === 'visible' && isVis) || (visFilter === 'hidden' && !isVis);
+
+        const isPub = prod.is_published !== false;
+        const matchesPublished = !pubFilter || (pubFilter === 'published' && isPub) || (pubFilter === 'unpublished' && !isPub);
+
+        return matchesSearch && matchesCategory && matchesVisibility && matchesPublished;
+    });
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="text-center py-4 text-muted">No matching products found for the selected filters.</td></tr>`;
         return;
     }
 
     let html = '';
-    products.forEach((prod, index) => {
+    filtered.forEach((prod) => {
+        const realIndex = cachedProductsList.indexOf(prod);
         const isVisible = prod.is_visible !== false;
+        const isPublished = prod.is_published !== false;
+
         html += `
         <tr>
             <td>
-                <img src="${prod.main_image}" alt="${prod.name}" style="width: 48px; height: 48px; object-fit: contain; border-radius: 6px; background: #fff;" onerror="this.src='images/logo/logo-symbol.png'">
+                <img src="${prod.main_image || prod.image || 'images/logo/logo-symbol.png'}" alt="${prod.name}" style="width: 48px; height: 48px; object-fit: contain; border-radius: 6px; background: #fff;" onerror="this.src='images/logo/logo-symbol.png'">
             </td>
-            <td class="fw-bold">${prod.name}</td>
-            <td><span class="badge bg-light text-dark border">${prod.subcategory || prod.category_slug || 'General'}</span></td>
-            <td>${prod.price || 'Enquire'}</td>
+            <td class="fw-bold text-dark">${prod.name}</td>
             <td>
-                <span class="${isVisible ? 'badge-published' : 'badge-hidden'}">
-                    ${isVisible ? 'Published' : 'Hidden'}
+                <span class="badge bg-light text-dark border">${prod.subcategory || prod.category_slug || 'General'}</span>
+            </td>
+            <td class="fs-7 text-secondary">${prod.price || 'Enquire'}</td>
+            <td>
+                <span class="${isVisible ? 'badge bg-success-subtle text-success border border-success' : 'badge bg-danger-subtle text-danger border border-danger'}">
+                    ${isVisible ? 'VISIBLE' : 'HIDDEN'}
                 </span>
             </td>
-            <td>${prod.display_order || index + 1}</td>
             <td>
-                <div class="action-btn-group d-flex gap-1">
-                    <button class="btn btn-sm btn-primary px-2 py-1" onclick="editProductModal(${index})">Edit</button>
-                    <button class="btn btn-sm btn-outline-warning px-2 py-1" onclick="toggleProductVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
-                    <button class="btn btn-sm btn-outline-danger px-2 py-1" onclick="deleteProduct(${index})">Delete</button>
+                <span class="${isPublished ? 'badge bg-primary-subtle text-primary border border-primary' : 'badge bg-secondary-subtle text-secondary border'}">
+                    ${isPublished ? 'PUBLISHED' : 'UNPUBLISHED'}
+                </span>
+            </td>
+            <td>${prod.display_order || realIndex + 1}</td>
+            <td>
+                <div class="action-btn-group d-flex flex-wrap gap-1">
+                    <button class="btn btn-sm btn-primary px-2 py-1 fs-7" onclick="editProductModal(${realIndex})">Edit</button>
+                    <button class="btn btn-sm ${isVisible ? 'btn-outline-secondary' : 'btn-outline-success'} px-2 py-1 fs-7" onclick="toggleProductVisibility(${realIndex})">${isVisible ? 'Hide' : 'Show'}</button>
+                    <button class="btn btn-sm ${isPublished ? 'btn-outline-warning' : 'btn-outline-info'} px-2 py-1 fs-7" onclick="toggleProductPublished(${realIndex})">${isPublished ? 'Unpublish' : 'Publish'}</button>
+                    <button class="btn btn-sm btn-outline-danger px-2 py-1 fs-7" onclick="deleteProduct(${realIndex})">Delete</button>
                 </div>
             </td>
         </tr>`;
@@ -245,6 +300,8 @@ async function openAddProductModal() {
     document.getElementById('productSubcategoryInput').value = '';
     document.getElementById('productPriceInput').value = '';
     document.getElementById('productDescInput').value = '';
+    if (document.getElementById('productVisibleCheck')) document.getElementById('productVisibleCheck').checked = true;
+    if (document.getElementById('productPublishedCheck')) document.getElementById('productPublishedCheck').checked = true;
     document.getElementById('productMainImageUrl').value = '';
     document.getElementById('productImagePreviewContainer').classList.add('d-none');
     document.getElementById('productImagePreview').src = '';
@@ -267,10 +324,13 @@ async function editProductModal(index) {
     document.getElementById('productSubcategoryInput').value = prod.subcategory || '';
     document.getElementById('productPriceInput').value = prod.price || '';
     document.getElementById('productDescInput').value = prod.description || '';
-    document.getElementById('productMainImageUrl').value = prod.main_image || '';
+    if (document.getElementById('productVisibleCheck')) document.getElementById('productVisibleCheck').checked = prod.is_visible !== false;
+    if (document.getElementById('productPublishedCheck')) document.getElementById('productPublishedCheck').checked = prod.is_published !== false;
+    document.getElementById('productMainImageUrl').value = prod.main_image || prod.image || '';
 
-    if (prod.main_image) {
-        document.getElementById('productImagePreview').src = prod.main_image;
+    const imgPath = prod.main_image || prod.image;
+    if (imgPath) {
+        document.getElementById('productImagePreview').src = imgPath;
         document.getElementById('productImagePreviewContainer').classList.remove('d-none');
     } else {
         document.getElementById('productImagePreviewContainer').classList.add('d-none');
@@ -317,8 +377,10 @@ async function saveProductForm(e) {
     const name = document.getElementById('productNameInput').value.trim();
     const category_slug = document.getElementById('productCategorySelect').value;
     const subcategory = document.getElementById('productSubcategoryInput').value.trim();
-    const price = document.getElementById('productPriceInput').value.trim() || 'Enquire for Price';
+    const price = document.getElementById('productPriceInput').value.trim() || null;
     const description = document.getElementById('productDescInput').value.trim();
+    const is_visible = document.getElementById('productVisibleCheck') ? document.getElementById('productVisibleCheck').checked : true;
+    const is_published = document.getElementById('productPublishedCheck') ? document.getElementById('productPublishedCheck').checked : true;
     const main_image = document.getElementById('productMainImageUrl').value.trim() || 'images/logo/logo-symbol.png';
 
     if (!name) {
@@ -338,9 +400,13 @@ async function saveProductForm(e) {
             category_slug,
             subcategory,
             price,
+            display_price: false,
+            enquiry_only: true,
             description,
             main_image,
-            is_visible: true,
+            image: main_image,
+            is_visible,
+            is_published,
             display_order: products.length + 1,
             created_at: new Date().toISOString()
         };
@@ -393,6 +459,28 @@ async function toggleProductVisibility(index) {
     }
 }
 
+async function toggleProductPublished(index) {
+    try {
+        const products = await CMSDataStore.get('products');
+        if (products[index]) {
+            const targetProd = products[index];
+            targetProd.is_published = (targetProd.is_published === false) ? true : false;
+
+            if (targetProd.id) {
+                await CMSDataStore.updateRecord('products', targetProd.id, { is_published: targetProd.is_published });
+            } else if (targetProd.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                await supabaseClient.from('products').update({ is_published: targetProd.is_published }).eq('slug', targetProd.slug);
+            }
+
+            localStorage.setItem(CMSDataStore.getKey('products'), JSON.stringify(products));
+            await loadProductsModule();
+            await loadDashboardData();
+        }
+    } catch (err) {
+        alert(`Published status update failed: ${err.message}`);
+    }
+}
+
 async function deleteProduct(index) {
     if (confirm('Are you sure you want to delete this product?')) {
         try {
@@ -419,32 +507,46 @@ async function deleteProduct(index) {
 // 5. Module: Categories CMS
 async function loadCategoriesModule() {
     const categories = await CMSDataStore.get('categories');
+    const products = await CMSDataStore.get('products');
     const tbody = document.getElementById('categoriesTableBody');
     if (!tbody) return;
 
     if (!categories || categories.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted">No categories configured. Click "+ Add Category" to create one.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="8" class="text-center py-4 text-muted">No categories configured. Click "+ Add Category" to create one.</td></tr>`;
         return;
     }
 
     let html = '';
     categories.forEach((cat, index) => {
         const isVisible = cat.is_visible !== false;
+        const isPublished = cat.is_published !== false;
+        const prodCount = (products || []).filter(p => p.category_slug === cat.slug).length;
+
         html += `
         <tr>
             <td>
                 <img src="${cat.image_url || 'images/logo/logo-symbol.png'}" alt="${cat.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 6px; background: #fff;" onerror="this.src='images/logo/logo-symbol.png'">
             </td>
-            <td class="fw-bold">${cat.name}</td>
+            <td class="fw-bold text-dark">${cat.name}</td>
             <td><code>${cat.slug}</code></td>
-            <td class="fs-7 text-muted">${cat.description || '-'}</td>
-            <td>${cat.display_order || index + 1}</td>
-            <td><span class="${isVisible ? 'badge-published' : 'badge-hidden'}">${isVisible ? 'Active' : 'Hidden'}</span></td>
+            <td><span class="badge bg-danger-subtle text-danger border border-danger font-monospace px-2 py-1">${prodCount} Products</span></td>
             <td>
-                <div class="action-btn-group d-flex gap-1">
-                    <button class="btn btn-sm btn-primary px-2 py-1" onclick="editCategoryModal(${index})">Edit</button>
-                    <button class="btn btn-sm btn-outline-warning px-2 py-1" onclick="toggleCategoryVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
-                    <button class="btn btn-sm btn-outline-danger px-2 py-1" onclick="deleteCategory(${index})">Delete</button>
+                <span class="${isVisible ? 'badge bg-success-subtle text-success border border-success' : 'badge bg-danger-subtle text-danger border border-danger'}">
+                    ${isVisible ? 'VISIBLE' : 'HIDDEN'}
+                </span>
+            </td>
+            <td>
+                <span class="${isPublished ? 'badge bg-primary-subtle text-primary border border-primary' : 'badge bg-secondary-subtle text-secondary border'}">
+                    ${isPublished ? 'PUBLISHED' : 'UNPUBLISHED'}
+                </span>
+            </td>
+            <td>${cat.display_order || index + 1}</td>
+            <td>
+                <div class="action-btn-group d-flex flex-wrap gap-1">
+                    <button class="btn btn-sm btn-primary px-2 py-1 fs-7" onclick="editCategoryModal(${index})">Edit</button>
+                    <button class="btn btn-sm ${isVisible ? 'btn-outline-secondary' : 'btn-outline-success'} px-2 py-1 fs-7" onclick="toggleCategoryVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
+                    <button class="btn btn-sm ${isPublished ? 'btn-outline-warning' : 'btn-outline-info'} px-2 py-1 fs-7" onclick="toggleCategoryPublished(${index})">${isPublished ? 'Unpublish' : 'Publish'}</button>
+                    <button class="btn btn-sm btn-outline-danger px-2 py-1 fs-7" onclick="deleteCategory(${index})">Delete</button>
                 </div>
             </td>
         </tr>`;
@@ -458,6 +560,8 @@ function openAddCategoryModal() {
     document.getElementById('categoryNameInput').value = '';
     document.getElementById('categoryDescInput').value = '';
     document.getElementById('categoryOrderInput').value = '0';
+    if (document.getElementById('categoryVisibleCheck')) document.getElementById('categoryVisibleCheck').checked = true;
+    if (document.getElementById('categoryPublishedCheck')) document.getElementById('categoryPublishedCheck').checked = true;
     document.getElementById('categoryImageUrl').value = '';
     document.getElementById('categoryImagePreviewContainer').classList.add('d-none');
     document.getElementById('categoryImagePreview').src = '';
@@ -476,6 +580,8 @@ async function editCategoryModal(index) {
     document.getElementById('categoryNameInput').value = cat.name || '';
     document.getElementById('categoryDescInput').value = cat.description || '';
     document.getElementById('categoryOrderInput').value = cat.display_order || 0;
+    if (document.getElementById('categoryVisibleCheck')) document.getElementById('categoryVisibleCheck').checked = cat.is_visible !== false;
+    if (document.getElementById('categoryPublishedCheck')) document.getElementById('categoryPublishedCheck').checked = cat.is_published !== false;
     document.getElementById('categoryImageUrl').value = cat.image_url || '';
 
     if (cat.image_url) {
@@ -498,6 +604,8 @@ async function saveCategoryForm(e) {
     const name = document.getElementById('categoryNameInput').value.trim();
     const description = document.getElementById('categoryDescInput').value.trim();
     const display_order = parseInt(document.getElementById('categoryOrderInput').value || '0', 10);
+    const is_visible = document.getElementById('categoryVisibleCheck') ? document.getElementById('categoryVisibleCheck').checked : true;
+    const is_published = document.getElementById('categoryPublishedCheck') ? document.getElementById('categoryPublishedCheck').checked : true;
     const image_url = document.getElementById('categoryImageUrl').value.trim() || 'images/logo/logo-symbol.png';
     const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
@@ -509,7 +617,8 @@ async function saveCategoryForm(e) {
             description,
             image_url,
             display_order,
-            is_visible: true,
+            is_visible,
+            is_published,
             created_at: new Date().toISOString()
         };
 
@@ -558,26 +667,58 @@ async function toggleCategoryVisibility(index) {
     }
 }
 
-async function deleteCategory(index) {
-    if (confirm('Are you sure you want to delete this category?')) {
-        try {
-            const categories = await CMSDataStore.get('categories');
+async function toggleCategoryPublished(index) {
+    try {
+        const categories = await CMSDataStore.get('categories');
+        if (categories[index]) {
             const targetCat = categories[index];
-            if (targetCat) {
-                if (targetCat.id && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                    await supabaseClient.from('categories').delete().eq('id', targetCat.id);
-                } else if (targetCat.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                    await supabaseClient.from('categories').delete().eq('slug', targetCat.slug);
-                }
+            targetCat.is_published = (targetCat.is_published === false) ? true : false;
 
-                categories.splice(index, 1);
-                localStorage.setItem(CMSDataStore.getKey('categories'), JSON.stringify(categories));
+            if (targetCat.id) {
+                await CMSDataStore.updateRecord('categories', targetCat.id, { is_published: targetCat.is_published });
+            } else if (targetCat.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                await supabaseClient.from('categories').update({ is_published: targetCat.is_published }).eq('slug', targetCat.slug);
             }
+
+            localStorage.setItem(CMSDataStore.getKey('categories'), JSON.stringify(categories));
             await loadCategoriesModule();
             await loadDashboardData();
-        } catch (err) {
-            alert(`Category deletion failed: ${err.message}`);
         }
+    } catch (err) {
+        alert(`Published status update failed: ${err.message}`);
+    }
+}
+
+async function deleteCategory(index) {
+    try {
+        const categories = await CMSDataStore.get('categories');
+        const products = await CMSDataStore.get('products');
+        const targetCat = categories[index];
+
+        if (!targetCat) return;
+
+        // Safety Check: Check if products belong to category
+        const attachedProducts = (products || []).filter(p => p.category_slug === targetCat.slug);
+        if (attachedProducts.length > 0) {
+            alert(`⚠️ Cannot delete category "${targetCat.name}" because ${attachedProducts.length} product(s) belong to it. Please reassign or delete those products first.`);
+            return;
+        }
+
+        if (confirm(`Are you sure you want to delete category "${targetCat.name}"?`)) {
+            if (targetCat.id && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                await supabaseClient.from('categories').delete().eq('id', targetCat.id);
+            } else if (targetCat.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                await supabaseClient.from('categories').delete().eq('slug', targetCat.slug);
+            }
+
+            categories.splice(index, 1);
+            localStorage.setItem(CMSDataStore.getKey('categories'), JSON.stringify(categories));
+
+            await loadCategoriesModule();
+            await loadDashboardData();
+        }
+    } catch (err) {
+        alert(`Category deletion failed: ${err.message}`);
     }
 }
 
