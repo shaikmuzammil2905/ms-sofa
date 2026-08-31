@@ -13,7 +13,7 @@ const VISHISTA_SEED_DATA = {
       "name": "ArchLabs Seating Catalogue",
       "slug": "archlabs-seating",
       "description": "Line-wise Mesh, Executive Leather, Training, Metro Linea, and Cafeteria Collections",
-      "image_url": "images/archlabs/pages/page_4.png",
+      "image_url": "images/categories/cat_seating.jpg",
       "display_order": 1,
       "is_visible": true
     },
@@ -29,7 +29,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Tables & Desks",
       "slug": "tables",
       "description": "Executive director desks, boardroom meeting tables, cafe counters, and training desks",
-      "image_url": "images/categories/cat_tables.jpg",
+      "image_url": "images/categories/cat_tables.png",
       "display_order": 3,
       "is_visible": true
     },
@@ -37,7 +37,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Storage Systems",
       "slug": "storage",
       "description": "Prelam credenzas, steel filing cabinets, high-density mobile compactors, and employee lockers",
-      "image_url": "images/categories/cat_storage.jpg",
+      "image_url": "images/categories/cat_storage.png",
       "display_order": 4,
       "is_visible": true
     },
@@ -61,8 +61,32 @@ const VISHISTA_SEED_DATA = {
       "name": "Interface Carpets",
       "slug": "carpets",
       "description": "Acoustic modular carpet tiles in contemporary geometric patterns",
-      "image_url": "images/sections/lookbook-item-1.jpg",
+      "image_url": "images/categories/cat_carpets.jpg",
       "display_order": 7,
+      "is_visible": true
+    },
+    {
+      "name": "Outdoor Furniture",
+      "slug": "outdoor",
+      "description": "Synthetic wicker terrace seating, patio umbrellas, and garden breakout sets",
+      "image_url": "images/categories/cat_outdoor.jpg",
+      "display_order": 8,
+      "is_visible": true
+    },
+    {
+      "name": "Educational Solutions",
+      "slug": "educational",
+      "description": "Student classroom desks, library reading carrels, hostel bunk beds, and auditorium chairs",
+      "image_url": "images/categories/cat_education.png",
+      "display_order": 9,
+      "is_visible": true
+    },
+    {
+      "name": "Workspace Accessories",
+      "slug": "accessories",
+      "description": "Dual monitor gas arms, under-desk cable management, and pop-up power modules",
+      "image_url": "images/categories/cat_tables.png",
+      "display_order": 10,
       "is_visible": true
     }
   ],
@@ -140,83 +164,266 @@ const VISHISTA_SEED_DATA = {
       "display_order": 6
     },
     {
-      "name": "Zeus Leather Chair",
-      "slug": "zeus-leather-chair",
+      "name": "Glanza Mesh Chair",
+      "slug": "glanza-mesh-chair",
       "category_slug": "archlabs-seating",
-      "subcategory": "Leather Series",
-      "description": "Top-grain genuine leather upholstery, Synchronized knee-tilt mechanism with 4-position lock, Polished aluminium base.",
-      "main_image": "images/archlabs/pages/page_12.png",
+      "subcategory": "Mesh Series",
+      "description": "Sturdy Metal base, High density moulded foam, Contoured backrest, Smooth-reclining mechanism.",
+      "main_image": "images/archlabs/pages/page_10.png",
       "price": "Enquire for Price",
-      "is_featured": true,
+      "is_featured": false,
       "is_visible": true,
       "display_order": 7
     },
     {
-      "name": "Klass Leather Chair",
-      "slug": "klass-leather-chair",
+      "name": "Yaris Mesh Chair",
+      "slug": "yaris-mesh-chair",
       "category_slug": "archlabs-seating",
-      "subcategory": "Leather Series",
-      "description": "Executive high-back profile, Premium leatherette upholstery, Fixed aluminium armrests with leather pads.",
-      "main_image": "images/archlabs/pages/page_13.png",
+      "subcategory": "Mesh Series",
+      "description": "Supportive mesh back, Adjustable armrests, High density foam, Smooth-tilt mechanism.",
+      "main_image": "images/archlabs/pages/page_11.png",
       "price": "Enquire for Price",
       "is_featured": false,
       "is_visible": true,
       "display_order": 8
     },
     {
-      "name": "Signet Leather Chair",
-      "slug": "signet-leather-chair",
+      "name": "Quartz Mesh Chair",
+      "slug": "quartz-mesh-chair",
       "category_slug": "archlabs-seating",
-      "subcategory": "Leather Series",
-      "description": "Minimalist slimline aesthetic, Heavy-duty chrome gas lift, PU leather finish, Torsion bar tilt mechanism.",
-      "main_image": "images/archlabs/pages/page_14.png",
+      "subcategory": "Mesh Series",
+      "description": "Robust Metal Frame, Multi-Position Locking, Synchronized reclining, Customizable seating position.",
+      "main_image": "images/archlabs/pages/page_12.png",
       "price": "Enquire for Price",
       "is_featured": false,
       "is_visible": true,
       "display_order": 9
     },
     {
-      "name": "Vektor Modular Workstation",
-      "slug": "vektor-modular-workstation",
-      "category_slug": "workstations",
-      "subcategory": "Workstations",
-      "description": "4-seater back-to-back linear desk system with fabric acoustic privacy screen dividers, integrated raceway wire management.",
-      "main_image": "images/categories/cat_workstations.jpg",
-      "price": "Enquire for Custom Layout",
-      "is_featured": true,
+      "name": "Ditto Mesh Chair",
+      "slug": "ditto-mesh-chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
+      "description": "Gas lift height adjustment, Robust Metal Frame, Premium Cushioning, Ergonomic backrest.",
+      "main_image": "images/archlabs/pages/page_13.png",
+      "price": "Enquire for Price",
+      "is_featured": false,
       "is_visible": true,
       "display_order": 10
     },
     {
-      "name": "Apex Executive Desk",
-      "slug": "apex-executive-desk",
-      "category_slug": "tables",
-      "subcategory": "Executive Desks",
-      "description": "L-shaped director desk in teak prelam finish with return side runner cabinet and leather writing pad insert.",
-      "main_image": "images/categories/cat_tables.jpg",
-      "price": "Enquire for Custom Dimensions",
-      "is_featured": true,
+      "name": "Velfire Mesh Chair",
+      "slug": "velfire-mesh-chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
+      "description": "High back & Medium back configurations, Breathable mesh back, Robust Metal Frame.",
+      "main_image": "images/archlabs/pages/page_14.png",
+      "price": "Enquire for Price",
+      "is_featured": false,
       "is_visible": true,
       "display_order": 11
     },
     {
-      "name": "Acoustic Silence Pod",
-      "slug": "acoustic-silence-pod",
-      "category_slug": "acoustic-pods",
-      "subcategory": "Pods",
-      "description": "Single person phone booth with sound-dampening interior felt, LED lighting, ventilation fan, and power outlet.",
-      "main_image": "images/categories/cat_pods.jpg",
-      "price": "Enquire for Quote",
-      "is_featured": true,
+      "name": "Optimus Mesh Chair",
+      "slug": "optimus-mesh-chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
+      "description": "High back & Medium back configurations, Premium cushioning, Smooth reclining mechanism.",
+      "main_image": "images/archlabs/pages/page_15.png",
+      "price": "Enquire for Price",
+      "is_featured": false,
       "is_visible": true,
       "display_order": 12
+    },
+    {
+      "name": "Luxe Leather Chair",
+      "slug": "luxe-leather-chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Leather Series",
+      "description": "Luxurious diamond stitch quilted upholstery, 3D adjustable armrests, Class 4 gas lift, Seat slide adjustment.",
+      "main_image": "images/archlabs/pages/page_36.png",
+      "price": "Enquire for Price",
+      "is_featured": true,
+      "is_visible": true,
+      "display_order": 13
+    },
+    {
+      "name": "Elara Leather Chair",
+      "slug": "elara-leather-chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Leather Series",
+      "description": "Contoured high back, Deep multi-density cushioning, Synchronized tilt with seat slide, 3D armrests.",
+      "main_image": "images/archlabs/pages/page_37.png",
+      "price": "Enquire for Price",
+      "is_featured": false,
+      "is_visible": true,
+      "display_order": 14
+    },
+    {
+      "name": "Regent Leather Chair",
+      "slug": "regent-leather-chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Leather Series",
+      "description": "Tall commanding high back, Fixed chrome armrests, Strong metal chrome frame, Premium leatherette.",
+      "main_image": "images/archlabs/pages/page_38.png",
+      "price": "Enquire for Price",
+      "is_featured": false,
+      "is_visible": true,
+      "display_order": 15
+    },
+    {
+      "name": "Height Adjustable Sit-Stand Desk",
+      "slug": "height-adjustable-desk",
+      "category_slug": "workstations",
+      "subcategory": "Modular Workstations",
+      "description": "Motorized sit-to-stand desks engineered for active workplace wellness, smooth height transitions, and integrated wire management.",
+      "main_image": "images/categories/cat_workstations.jpg",
+      "price": "Enquire for Price",
+      "is_featured": true,
+      "is_visible": true,
+      "display_order": 16
+    },
+    {
+      "name": "Desking Series Open Plan",
+      "slug": "desking-series-open-plan",
+      "category_slug": "workstations",
+      "subcategory": "Modular Workstations",
+      "description": "Modular open-plan linear and back-to-back desking systems with minimalist leg profiles and customizable privacy screens.",
+      "main_image": "images/categories/cat_workstations.jpg",
+      "price": "Enquire for Price",
+      "is_featured": false,
+      "is_visible": true,
+      "display_order": 17
+    },
+    {
+      "name": "Panel Series Workstations",
+      "slug": "panel-series-workstations",
+      "category_slug": "workstations",
+      "subcategory": "Modular Workstations",
+      "description": "Acoustic panel-based workstation partitions providing high acoustic privacy, raceway power conduits, and modular storage integration.",
+      "main_image": "images/categories/cat_workstations.jpg",
+      "price": "Enquire for Price",
+      "is_featured": false,
+      "is_visible": true,
+      "display_order": 18
+    },
+    {
+      "name": "Cabin & Executive Tables",
+      "slug": "cabin-executive-tables",
+      "category_slug": "tables",
+      "subcategory": "Cabin Tables",
+      "description": "Executive director and managerial desk setups with attached side return credenzas.",
+      "main_image": "images/categories/cat_tables.png",
+      "price": "Enquire for Price",
+      "is_featured": true,
+      "is_visible": true,
+      "display_order": 19
+    },
+    {
+      "name": "Boardroom Meeting Tables",
+      "slug": "boardroom-meeting-tables",
+      "category_slug": "tables",
+      "subcategory": "Meeting Tables",
+      "description": "Large boardroom conference tables equipped with pop-up connectivity boxes and cable trays.",
+      "main_image": "images/categories/cat_tables.png",
+      "price": "Enquire for Price",
+      "is_featured": false,
+      "is_visible": true,
+      "display_order": 20
+    },
+    {
+      "name": "High-Density Mobile Compactor Storage",
+      "slug": "mobile-compactor-storage",
+      "category_slug": "storage",
+      "subcategory": "Compactor Storage",
+      "description": "High-density mobile rail compactor storage systems maximizing floor space utilization.",
+      "main_image": "images/categories/cat_storage.png",
+      "price": "Enquire for Price",
+      "is_featured": true,
+      "is_visible": true,
+      "display_order": 21
+    },
+    {
+      "name": "Metal Filing Cabinets",
+      "slug": "metal-filing-cabinets",
+      "category_slug": "storage",
+      "subcategory": "Metal Storage",
+      "description": "Powder-coated steel filing cabinets, lateral drawers, and central archive units.",
+      "main_image": "images/categories/cat_storage.png",
+      "price": "Enquire for Price",
+      "is_featured": false,
+      "is_visible": true,
+      "display_order": 22
+    },
+    {
+      "name": "Executive Lounge Sofas",
+      "slug": "executive-lounge-sofas",
+      "category_slug": "soft-seating",
+      "subcategory": "Lounges & Sofas",
+      "description": "Single, two, and three-seater plush upholstered couches for reception areas and executive suites.",
+      "main_image": "images/categories/cat_soft_seating.jpg",
+      "price": "Enquire for Price",
+      "is_featured": true,
+      "is_visible": true,
+      "display_order": 23
+    },
+    {
+      "name": "Collaborative Booth Seating",
+      "slug": "collaborative-booth-seating",
+      "category_slug": "soft-seating",
+      "subcategory": "Collaborative Seating",
+      "description": "Modular curved sofas and high-back acoustic booth seating for agile team huddles.",
+      "main_image": "images/categories/cat_soft_seating.jpg",
+      "price": "Enquire for Price",
+      "is_featured": false,
+      "is_visible": true,
+      "display_order": 24
+    },
+    {
+      "name": "Single Acoustic Phone Pod",
+      "slug": "single-acoustic-phone-pod",
+      "category_slug": "acoustic-pods",
+      "subcategory": "Phone Pods",
+      "description": "Sound-insulated solo booth equipped with air ventilation, LED lighting, power outlets, and laptop shelf for private calls.",
+      "main_image": "images/categories/cat_pods.jpg",
+      "price": "Enquire for Price",
+      "is_featured": true,
+      "is_visible": true,
+      "display_order": 25
+    },
+    {
+      "name": "4-6 Person Acoustic Meeting Pod",
+      "slug": "4-6-person-meeting-pod",
+      "category_slug": "acoustic-pods",
+      "subcategory": "Meeting Pods",
+      "description": "Fully enclosed acoustic meeting booth complete with integrated sofa seating, TV monitor mounting bracket, and power hubs.",
+      "main_image": "images/categories/cat_pods.jpg",
+      "price": "Enquire for Price",
+      "is_featured": true,
+      "is_visible": true,
+      "display_order": 26
+    },
+    {
+      "name": "Interface Modular Carpet Tiles",
+      "slug": "interface-carpet-tiles",
+      "category_slug": "carpets",
+      "subcategory": "Carpet Tiles",
+      "description": "Modular acoustic carpet tiles available in contemporary geometric patterns, stain-resistant fibers, and sound dampening backing.",
+      "main_image": "images/categories/cat_carpets.jpg",
+      "price": "Enquire for Price",
+      "is_featured": true,
+      "is_visible": true,
+      "display_order": 27
     }
   ],
   "hero_sections": [
     {
       "heading": "Transforming Workspaces.<br><span class=\"text-gradient-red\">Elevating Possibilities.</span>",
       "description": "Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments.",
-      "background_image": "images/sections/hero-workspace.jpg",
+      "slide_1": "images/sections/hero-slide-1.png",
+      "slide_2": "images/sections/hero-slide-2.png",
+      "slide_3": "images/sections/hero-slide-3.png",
+      "background_image": "images/sections/hero-slide-1.png",
       "is_custom_updated": false
     }
   ],
@@ -306,24 +513,48 @@ function generateUUID() {
     });
 }
 
-// Global Store State Manager (Supabase Database Priority + Fail-Safe Cache)
+// Global Store State Manager (Supabase Database Priority + Fail-Safe Cache + Full Seed Merging)
 const CMSDataStore = {
     getKey: (table) => `vishista_cms_${table}`,
 
     get: async function(table) {
+        let fetchedData = null;
+
         if (supabaseClient) {
             try {
                 // Fetch directly from Supabase DB
                 const { data, error } = await supabaseClient.from(table).select('*').order('created_at', { ascending: true });
-                if (error) {
-                    console.error(`[CMSDataStore] Supabase SELECT error for '${table}':`, error);
-                } else if (data && data.length > 0) {
-                    localStorage.setItem(this.getKey(table), JSON.stringify(data));
-                    return data;
+                if (!error && data) {
+                    fetchedData = data;
                 }
             } catch (e) {
                 console.warn(`[CMSDataStore] Supabase fetch exception for '${table}':`, e.message);
             }
+        }
+
+        const seedItems = (VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) ? VISHISTA_SEED_DATA[table] : [];
+
+        if (fetchedData && fetchedData.length > 0) {
+            // Ensure all website products and categories exist in fetchedData
+            if (seedItems.length > 0 && (table === 'products' || table === 'categories')) {
+                const existingSlugs = new Set(fetchedData.map(item => item.slug || (item.name ? item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '')));
+                const missingSeeds = seedItems.filter(s => {
+                    const slug = s.slug || s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                    return !existingSlugs.has(slug);
+                }).map(s => ({ ...s, id: s.id || generateUUID() }));
+
+                if (missingSeeds.length > 0) {
+                    fetchedData = [...fetchedData, ...missingSeeds];
+                    localStorage.setItem(this.getKey(table), JSON.stringify(fetchedData));
+
+                    if (supabaseClient) {
+                        supabaseClient.from(table).upsert(missingSeeds, { onConflict: 'slug' }).catch(() => {});
+                    }
+                }
+            }
+
+            localStorage.setItem(this.getKey(table), JSON.stringify(fetchedData));
+            return fetchedData;
         }
 
         // Fallback 1: LocalStorage Cache
@@ -331,24 +562,32 @@ const CMSDataStore = {
         if (cached) {
             try {
                 const parsed = JSON.parse(cached);
-                if (parsed && parsed.length > 0) return parsed;
+                if (parsed && parsed.length > 0) {
+                    if (seedItems.length > 0 && (table === 'products' || table === 'categories')) {
+                        const existingSlugs = new Set(parsed.map(item => item.slug || (item.name ? item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '')));
+                        const missingSeeds = seedItems.filter(s => {
+                            const slug = s.slug || s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                            return !existingSlugs.has(slug);
+                        }).map(s => ({ ...s, id: s.id || generateUUID() }));
+
+                        if (missingSeeds.length > 0) {
+                            const merged = [...parsed, ...missingSeeds];
+                            localStorage.setItem(this.getKey(table), JSON.stringify(merged));
+                            return merged;
+                        }
+                    }
+                    return parsed;
+                }
             } catch (e) {}
         }
 
-        // Fallback 2: Pre-seeded data dataset
-        if (VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) {
-            const seedRecords = VISHISTA_SEED_DATA[table].map(r => ({ ...r, id: r.id || generateUUID() }));
+        // Fallback 2: Pre-seeded dataset
+        if (seedItems.length > 0) {
+            const seedRecords = seedItems.map(r => ({ ...r, id: r.id || generateUUID() }));
             localStorage.setItem(this.getKey(table), JSON.stringify(seedRecords));
 
-            // Auto-seed Supabase in background if Supabase table exists and is empty
-            if (supabaseClient && seedRecords.length > 0) {
-                supabaseClient.from(table).upsert(seedRecords, { onConflict: 'slug' }).then(({ error }) => {
-                    if (error) {
-                        console.warn(`[CMSDataStore] Auto-seed Supabase notice for '${table}':`, error.message);
-                    } else {
-                        console.log(`[CMSDataStore] Successfully auto-seeded Supabase table '${table}'.`);
-                    }
-                }).catch(() => {});
+            if (supabaseClient) {
+                supabaseClient.from(table).upsert(seedRecords, { onConflict: 'slug' }).catch(() => {});
             }
 
             return seedRecords;
