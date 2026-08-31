@@ -69,12 +69,7 @@
         transform: scale(1);
     }
     .hero-bg-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.10) 60%, transparent 100%);
+        display: none !important;
     }
 
     .hero-badge-wrap {
@@ -82,30 +77,41 @@
     }
     .hero-badge {
         background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
-        border: 2px solid rgba(255, 255, 255, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.6);
         color: #ffffff !important;
         border-radius: 50px;
         letter-spacing: 1.5px;
         font-size: 1.15rem !important;
         font-weight: 800 !important;
-        box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+        box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
         display: inline-flex;
         align-items: center;
     }
 
     .hero-title {
         animation: fadeInUp 0.9s ease-out 0.2s both;
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7) !important;
+        color: #ffffff !important;
+        font-weight: 900 !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.9) !important;
     }
     .text-gradient-red {
-        background: linear-gradient(135deg, #ff5252 0%, #ff1744 50%, #ff8a80 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #ff3333 !important;
+        background: none !important;
+        -webkit-text-fill-color: #ff3333 !important;
+        font-weight: 900 !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 51, 51, 0.5) !important;
     }
 
     .hero-subtitle {
         animation: fadeInUp 0.9s ease-out 0.4s both;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        padding: 0 !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.9) !important;
     }
 
     .hero-actions {
