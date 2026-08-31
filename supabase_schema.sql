@@ -36,16 +36,29 @@ CREATE TABLE IF NOT EXISTS public.products (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Ensure category_slug column exists if table was previously created without it
+-- Ensure is_published and category_slug columns exist if tables were previously created without them
 DO $$ 
 BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema='public' AND table_name='categories' AND column_name='is_published'
+    ) THEN
+        ALTER TABLE public.categories ADD COLUMN is_published BOOLEAN DEFAULT TRUE;
+    END IF;
     IF NOT EXISTS (
         SELECT 1 FROM information_schema.columns 
         WHERE table_schema='public' AND table_name='products' AND column_name='category_slug'
     ) THEN
         ALTER TABLE public.products ADD COLUMN category_slug TEXT;
     END IF;
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema='public' AND table_name='products' AND column_name='is_published'
+    ) THEN
+        ALTER TABLE public.products ADD COLUMN is_published BOOLEAN DEFAULT TRUE;
+    END IF;
 END $$;
+
 
 -- 4. PROJECTS TABLE
 CREATE TABLE IF NOT EXISTS public.projects (

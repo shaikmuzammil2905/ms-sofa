@@ -440,17 +440,13 @@ async function saveProductForm(e) {
 async function toggleProductVisibility(index) {
     try {
         const products = await CMSDataStore.get('products');
-        if (products[index]) {
+        if (products && products[index]) {
             const targetProd = products[index];
             targetProd.is_visible = (targetProd.is_visible === false) ? true : false;
             
-            if (targetProd.id) {
-                await CMSDataStore.updateRecord('products', targetProd.id, { is_visible: targetProd.is_visible });
-            } else if (targetProd.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                await supabaseClient.from('products').update({ is_visible: targetProd.is_visible }).eq('slug', targetProd.slug);
-            }
+            const identifier = targetProd.id || targetProd.slug;
+            await CMSDataStore.updateRecord('products', identifier, { is_visible: targetProd.is_visible });
             
-            localStorage.setItem(CMSDataStore.getKey('products'), JSON.stringify(products));
             await loadProductsModule();
             await loadDashboardData();
         }
@@ -462,17 +458,14 @@ async function toggleProductVisibility(index) {
 async function toggleProductPublished(index) {
     try {
         const products = await CMSDataStore.get('products');
-        if (products[index]) {
+        if (products && products[index]) {
             const targetProd = products[index];
             targetProd.is_published = (targetProd.is_published === false) ? true : false;
+            targetProd.is_visible = targetProd.is_published;
 
-            if (targetProd.id) {
-                await CMSDataStore.updateRecord('products', targetProd.id, { is_published: targetProd.is_published });
-            } else if (targetProd.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                await supabaseClient.from('products').update({ is_published: targetProd.is_published }).eq('slug', targetProd.slug);
-            }
+            const identifier = targetProd.id || targetProd.slug;
+            await CMSDataStore.updateRecord('products', identifier, { is_published: targetProd.is_published, is_visible: targetProd.is_visible });
 
-            localStorage.setItem(CMSDataStore.getKey('products'), JSON.stringify(products));
             await loadProductsModule();
             await loadDashboardData();
         }
@@ -487,14 +480,8 @@ async function deleteProduct(index) {
             const products = await CMSDataStore.get('products');
             const targetProd = products[index];
             if (targetProd) {
-                if (targetProd.id && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                    await supabaseClient.from('products').delete().eq('id', targetProd.id);
-                } else if (targetProd.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                    await supabaseClient.from('products').delete().eq('slug', targetProd.slug);
-                }
-                
-                products.splice(index, 1);
-                localStorage.setItem(CMSDataStore.getKey('products'), JSON.stringify(products));
+                if (targetProd.id) await CMSDataStore.deleteRecord('products', targetProd.id);
+                if (targetProd.slug) await CMSDataStore.deleteRecord('products', targetProd.slug);
             }
             await loadProductsModule();
             await loadDashboardData();
@@ -503,6 +490,7 @@ async function deleteProduct(index) {
         }
     }
 }
+
 
 // 5. Module: Categories CMS
 async function loadCategoriesModule() {
@@ -648,17 +636,13 @@ async function saveCategoryForm(e) {
 async function toggleCategoryVisibility(index) {
     try {
         const categories = await CMSDataStore.get('categories');
-        if (categories[index]) {
+        if (categories && categories[index]) {
             const targetCat = categories[index];
             targetCat.is_visible = (targetCat.is_visible === false) ? true : false;
 
-            if (targetCat.id) {
-                await CMSDataStore.updateRecord('categories', targetCat.id, { is_visible: targetCat.is_visible });
-            } else if (targetCat.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                await supabaseClient.from('categories').update({ is_visible: targetCat.is_visible }).eq('slug', targetCat.slug);
-            }
+            const identifier = targetCat.id || targetCat.slug;
+            await CMSDataStore.updateRecord('categories', identifier, { is_visible: targetCat.is_visible });
 
-            localStorage.setItem(CMSDataStore.getKey('categories'), JSON.stringify(categories));
             await loadCategoriesModule();
             await loadDashboardData();
         }
@@ -670,17 +654,14 @@ async function toggleCategoryVisibility(index) {
 async function toggleCategoryPublished(index) {
     try {
         const categories = await CMSDataStore.get('categories');
-        if (categories[index]) {
+        if (categories && categories[index]) {
             const targetCat = categories[index];
             targetCat.is_published = (targetCat.is_published === false) ? true : false;
+            targetCat.is_visible = targetCat.is_published;
 
-            if (targetCat.id) {
-                await CMSDataStore.updateRecord('categories', targetCat.id, { is_published: targetCat.is_published });
-            } else if (targetCat.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                await supabaseClient.from('categories').update({ is_published: targetCat.is_published }).eq('slug', targetCat.slug);
-            }
+            const identifier = targetCat.id || targetCat.slug;
+            await CMSDataStore.updateRecord('categories', identifier, { is_published: targetCat.is_published, is_visible: targetCat.is_visible });
 
-            localStorage.setItem(CMSDataStore.getKey('categories'), JSON.stringify(categories));
             await loadCategoriesModule();
             await loadDashboardData();
         }
@@ -705,14 +686,8 @@ async function deleteCategory(index) {
         }
 
         if (confirm(`Are you sure you want to delete category "${targetCat.name}"?`)) {
-            if (targetCat.id && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                await supabaseClient.from('categories').delete().eq('id', targetCat.id);
-            } else if (targetCat.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                await supabaseClient.from('categories').delete().eq('slug', targetCat.slug);
-            }
-
-            categories.splice(index, 1);
-            localStorage.setItem(CMSDataStore.getKey('categories'), JSON.stringify(categories));
+            if (targetCat.id) await CMSDataStore.deleteRecord('categories', targetCat.id);
+            if (targetCat.slug) await CMSDataStore.deleteRecord('categories', targetCat.slug);
 
             await loadCategoriesModule();
             await loadDashboardData();
@@ -721,6 +696,7 @@ async function deleteCategory(index) {
         alert(`Category deletion failed: ${err.message}`);
     }
 }
+
 
 // 6. Module: Projects CMS
 async function loadProjectsModule() {
@@ -849,17 +825,13 @@ async function saveProjectForm(e) {
 async function toggleProjectVisibility(index) {
     try {
         const projects = await CMSDataStore.get('projects');
-        if (projects[index]) {
+        if (projects && projects[index]) {
             const targetProj = projects[index];
             targetProj.is_visible = (targetProj.is_visible === false) ? true : false;
 
-            if (targetProj.id) {
-                await CMSDataStore.updateRecord('projects', targetProj.id, { is_visible: targetProj.is_visible });
-            } else if (targetProj.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                await supabaseClient.from('projects').update({ is_visible: targetProj.is_visible }).eq('slug', targetProj.slug);
-            }
+            const identifier = targetProj.id || targetProj.slug;
+            await CMSDataStore.updateRecord('projects', identifier, { is_visible: targetProj.is_visible });
 
-            localStorage.setItem(CMSDataStore.getKey('projects'), JSON.stringify(projects));
             await loadProjectsModule();
             await loadDashboardData();
         }
@@ -874,14 +846,8 @@ async function deleteProject(index) {
             const projects = await CMSDataStore.get('projects');
             const targetProj = projects[index];
             if (targetProj) {
-                if (targetProj.id && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                    await supabaseClient.from('projects').delete().eq('id', targetProj.id);
-                } else if (targetProj.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
-                    await supabaseClient.from('projects').delete().eq('slug', targetProj.slug);
-                }
-
-                projects.splice(index, 1);
-                localStorage.setItem(CMSDataStore.getKey('projects'), JSON.stringify(projects));
+                if (targetProj.id) await CMSDataStore.deleteRecord('projects', targetProj.id);
+                if (targetProj.slug) await CMSDataStore.deleteRecord('projects', targetProj.slug);
             }
             await loadProjectsModule();
             await loadDashboardData();
@@ -890,6 +856,7 @@ async function deleteProject(index) {
         }
     }
 }
+
 
 // 7. Module: Hero CMS
 async function loadHeroModule() {
