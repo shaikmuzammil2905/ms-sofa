@@ -308,12 +308,14 @@ async function syncCategoriesSection() {
             html += `
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
-                    <div class="position-relative overflow-hidden" style="height: 250px; width: 100%; background: #f8f9fa;">
+                    <a href="${catTargetUrl}" class="position-relative overflow-hidden d-block" style="height: 250px; width: 100%; background: #f8f9fa;">
                         <img src="${catImg}" alt="${cat.name}" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;" onerror="this.src='images/categories/cat_workstations.jpg'">
                         <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">${badgeText}</span>
-                    </div>
+                    </a>
                     <div class="card-body p-4 d-flex flex-column">
-                        <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">${cat.name}</h3>
+                        <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">
+                            <a href="${catTargetUrl}" class="text-decoration-none text-dark">${cat.name}</a>
+                        </h3>
                         <p class="text-secondary mb-3 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">${descText}</p>
                         ${subTagsHtml}
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top mt-auto">
@@ -331,10 +333,11 @@ async function syncCategoriesSection() {
     const jumpContainer = document.querySelector('.sticky-jump-bar .d-flex, .filter-anchor-bar .d-flex');
     if (jumpContainer) {
         let jumpHtml = `<span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>`;
+        const onCatPage = window.location.pathname.includes('product-categories') || document.getElementById('workstations');
         visibleCategories.forEach(cat => {
             const catName = cat.name.trim();
             const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const targetHref = window.location.pathname.includes('product-categories') ? `#${catSlug}` : `product-catalogue-view.html?cat=${encodeURIComponent(catName)}`;
+            const targetHref = onCatPage ? `#${catSlug}` : `product-categories.html#${catSlug}`;
             jumpHtml += `<a href="${targetHref}" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">${catName}</a>`;
         });
         jumpContainer.innerHTML = jumpHtml;
