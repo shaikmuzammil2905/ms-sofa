@@ -74,7 +74,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%);
+        background: linear-gradient(90deg, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.60) 65%, rgba(0,0,0,0.40) 100%),
+                    linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%);
     }
 
     .hero-badge-wrap {
@@ -95,15 +96,24 @@
 
     .hero-title {
         animation: fadeInUp 0.9s ease-out 0.2s both;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.9) !important;
     }
     .text-gradient-red {
         background: linear-gradient(135deg, #ff5252 0%, #ff1744 50%, #ff8a80 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9));
     }
 
     .hero-subtitle {
         animation: fadeInUp 0.9s ease-out 0.4s both;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+        background: rgba(0, 0, 0, 0.35);
+        padding: 14px 22px;
+        border-radius: 8px;
+        backdrop-filter: blur(5px);
+        display: inline-block;
+        border-left: 4px solid #d32f2f;
     }
 
     .hero-actions {
