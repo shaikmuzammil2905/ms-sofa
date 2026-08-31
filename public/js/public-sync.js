@@ -1,22 +1,173 @@
 // Public Website Supabase & CMS Sync Engine
 
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', function () {
     initPublicSync();
     initEnquiryFormHandler();
+
+    // Listen for storage changes across tabs (Instant sync when Admin Panel updates)
+    window.addEventListener('storage', function () {
+        initPublicSync();
+    });
+
+    // Auto-refresh public view periodically to fetch fresh database updates
+    setInterval(initPublicSync, 5000);
 });
 
 async function initPublicSync() {
+    if (typeof CMSDataStore === 'undefined') return;
+
     try {
-        // Sync Product Lists on Catalogue Pages
-        syncProductPages();
+        await Promise.all([
+            syncHeroSection(),
+            syncAboutSection(),
+            syncFooterSection(),
+            syncCategoriesSection(),
+            syncProjectsSection(),
+            syncProductPages()
+        ]);
     } catch (e) {
         console.warn('CMS Public Sync notice:', e);
     }
 }
 
-// Sync Product Pages (ArchLabs Catalogue, Categories, Sofas)
+// 1. Sync Hero Section (Heading, Subtitle, Background Image)
+async function syncHeroSection() {
+    const heroData = await CMSDataStore.get('hero_sections');
+    if (!heroData || heroData.length === 0) return;
+    const hero = heroData[0];
+    if (!hero) return;
+
+    // Update Hero Title
+    const titleEl = document.querySelector('.hero-title') || document.getElementById('heroTitleDisplay');
+    if (titleEl && hero.heading) {
+        titleEl.innerHTML = hero.heading;
+    }
+
+    // Update Hero Subtitle / Description
+    const subtitleEl = document.querySelector('.hero-subtitle') || document.getElementById('heroDescDisplay');
+    if (subtitleEl && hero.description) {
+        subtitleEl.textContent = hero.description;
+    }
+
+    // Update Hero Background Image
+    if (hero.background_image) {
+        const slides = document.querySelectorAll('.hero-slide');
+        slides.forEach(slide => {
+            slide.style.backgroundImage = `url('${hero.background_image}')`;
+        });
+    }
+}
+
+// 2. Sync About Us Section
+async function syncAboutSection() {
+    const aboutData = await CMSDataStore.get('about_sections');
+    if (!aboutData || aboutData.length === 0) return;
+    const about = aboutData[0];
+    if (!about) return;
+
+    const titleEl = document.querySelector('.about-section-title') || document.getElementById('aboutTitleDisplay');
+    if (titleEl && about.title) {
+        titleEl.textContent = about.title;
+    }
+
+    const descEl = document.querySelector('.about-section-desc') || document.getElementById('aboutDescDisplay');
+    if (descEl && about.main_description) {
+        descEl.textContent = about.main_description;
+    }
+}
+
+// 3. Sync Footer Contact & Address Details
+async function syncFooterSection() {
+    const footerData = await CMSDataStore.get('footer_content');
+    if (!footerData || footerData.length === 0) return;
+    const footer = footerData[0];
+    if (!footer) return;
+
+    // Update Footer Description
+    const descEls = document.querySelectorAll('.footer-company-desc, #footerCompanyDesc');
+    descEls.forEach(el => {
+        if (footer.company_description) el.textContent = footer.company_description;
+    });
+
+    // Update Footer Address
+    const addressEls = document.querySelectorAll('.footer-address-text, #footerAddressText');
+    addressEls.forEach(el => {
+        if (footer.address) el.textContent = footer.address;
+    });
+
+    // Update Footer Phone Numbers
+    const phoneEls = document.querySelectorAll('.footer-phone-link, #footerPhoneLink');
+    phoneEls.forEach(el => {
+        if (footer.phone) {
+            el.textContent = footer.phone;
+            el.href = `tel:${footer.phone.replace(/[^0-9+]/g, '')}`;
+        }
+    });
+
+    // Update Footer Email Addresses
+    const emailEls = document.querySelectorAll('.footer-email-link, #footerEmailLink');
+    emailEls.forEach(el => {
+        if (footer.email) {
+            el.textContent = footer.email;
+            el.href = `mailto:${footer.email}`;
+        }
+    });
+}
+
+// 4. Sync Categories Section
+async function syncCategoriesSection() {
+    const categories = await CMSDataStore.get('categories');
+    if (!categories || categories.length === 0) return;
+
+    const visibleCategories = categories.filter(c => c.is_visible !== false);
+    const grid = document.getElementById('categoriesGridContainer');
+    if (grid && visibleCategories.length > 0) {
+        let html = '';
+        visibleCategories.forEach(cat => {
+            html += `
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white product-card-hover">
+                    <img src="${cat.image_url || 'images/logo/logo-symbol.png'}" alt="${cat.name}" class="card-img-top" style="height: 220px; object-fit: cover;">
+                    <div class="card-body p-4 d-flex flex-column text-center">
+                        <h4 class="fw-bold text-dark mb-2">${cat.name}</h4>
+                        <p class="text-muted fs-7 mb-3 flex-grow-1">${cat.description || ''}</p>
+                        <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="btn btn-outline-danger fw-bold text-uppercase fs-7 mt-auto">Explore ${cat.name} &rarr;</a>
+                    </div>
+                </div>
+            </div>`;
+        });
+        grid.innerHTML = html;
+    }
+}
+
+// 5. Sync Projects Showcase
+async function syncProjectsSection() {
+    const projects = await CMSDataStore.get('projects');
+    if (!projects || projects.length === 0) return;
+
+    const visibleProjects = projects.filter(p => p.is_visible !== false);
+    const container = document.getElementById('projectsGridContainer') || document.querySelector('.projects-portfolio-container');
+    if (container && visibleProjects.length > 0) {
+        let html = '';
+        visibleProjects.forEach(proj => {
+            html += `
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white product-card-hover">
+                    <img src="${proj.main_image || 'images/sections/hero-workspace.jpg'}" alt="${proj.title}" class="card-img-top" style="height: 240px; object-fit: cover;">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <span class="badge bg-danger text-white align-self-start mb-2">${proj.location || 'Corporate Installation'}</span>
+                        <h4 class="fw-bold text-dark mb-2">${proj.title}</h4>
+                        <p class="text-secondary fs-7 mb-0">${proj.description || ''}</p>
+                    </div>
+                </div>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+}
+
+// 6. Sync Product Pages (ArchLabs Catalogue, Categories, Sofas)
 async function syncProductPages() {
-    if (typeof CMSDataStore === 'undefined') return;
     const products = await CMSDataStore.get('products');
     if (!products || products.length === 0) return;
 
@@ -168,7 +319,6 @@ function initEnquiryFormHandler() {
             } catch (err) {
                 console.warn('Enquiry background save notice:', err);
             } finally {
-                // Open WhatsApp directly for instantaneous customer response
                 window.open(whatsappUrl, '_blank');
 
                 enquiryModalForm.reset();
@@ -189,3 +339,4 @@ function initEnquiryFormHandler() {
 
 window.openProductDetailModal = openProductDetailModal;
 window.openEnquiryModal = openEnquiryModal;
+window.initPublicSync = initPublicSync;
