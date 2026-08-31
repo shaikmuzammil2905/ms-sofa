@@ -340,24 +340,30 @@
             color: #d32f2f !important;
         }
 
-        /* Sticky Filter Anchor Bar Offset Fix for Desktop & Mobile */
-        .filter-anchor-bar {
-            top: 70px !important;
-            background-color: #ffffff !important;
+        /* Universal Rock-Solid Sticky Filter Anchor Bar & Jump Bar for Desktop & Mobile */
+        .filter-anchor-bar,
+        .sticky-jump-bar {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 72px !important;
             z-index: 990 !important;
-            border-bottom: 1px solid #e2e8f0 !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+            background-color: #ffffff !important;
+            border-bottom: 2px solid #d32f2f !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
         }
         @media (max-width: 1199px) {
-            .filter-anchor-bar {
-                top: 0 !important;
+            .filter-anchor-bar,
+            .sticky-jump-bar {
+                top: 58px !important;
             }
         }
-        .filter-anchor-bar .tf-container {
+        .filter-anchor-bar .tf-container,
+        .sticky-jump-bar .tf-container {
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
-        .filter-anchor-bar .tf-container::-webkit-scrollbar {
+        .filter-anchor-bar .tf-container::-webkit-scrollbar,
+        .sticky-jump-bar .tf-container::-webkit-scrollbar {
             display: none;
         }
 

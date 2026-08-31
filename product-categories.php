@@ -57,11 +57,19 @@
 <script>
     function updateJumpBarOffset() {
         var header = document.querySelector('header.header-sticky') || document.querySelector('header');
-        var jumpBar = document.querySelector('.sticky-jump-bar');
-        if (header && jumpBar) {
-            var headerHeight = header.getBoundingClientRect().height || 70;
-            jumpBar.style.top = headerHeight + 'px';
+        var jumpBars = document.querySelectorAll('.filter-anchor-bar, .sticky-jump-bar');
+        if (!jumpBars || jumpBars.length === 0) return;
+
+        var headerHeight = (window.innerWidth < 1200) ? 58 : 72;
+        if (header) {
+            var rect = header.getBoundingClientRect();
+            if (rect.height > 0) {
+                headerHeight = rect.height;
+            }
         }
+        jumpBars.forEach(function(bar) {
+            bar.style.top = headerHeight + 'px';
+        });
     }
     window.addEventListener('scroll', updateJumpBarOffset, { passive: true });
     window.addEventListener('resize', updateJumpBarOffset);
