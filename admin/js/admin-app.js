@@ -1188,10 +1188,16 @@ window.openAddCategoryModal = openAddCategoryModal;
 window.editCategoryModal = editCategoryModal;
 window.saveCategoryForm = saveCategoryForm;
 window.toggleCategoryVisibility = toggleCategoryVisibility;
+window.toggleCategoryPublished = toggleCategoryPublished;
 window.deleteCategory = deleteCategory;
 window.openAddProjectModal = openAddProjectModal;
 window.editProjectModal = editProjectModal;
 window.saveProjectForm = saveProjectForm;
+window.toggleProjectVisibility = toggleProjectVisibility;
+window.deleteProject = deleteProject;
+window.saveHeroCMS = saveHeroCMS;
+window.saveAboutCMS = saveAboutCMS;
+window.saveFooterCMS = saveFooterCMS;
 window.openAddSubcategoryModal = openAddSubcategoryModal;
 window.editSubcategoryModal = editSubcategoryModal;
 window.saveSubcategoryForm = saveSubcategoryForm;
@@ -1200,4 +1206,5 @@ window.onProductCategoryChange = onProductCategoryChange;
 window.handleAdditionalProductImageUpload = handleAdditionalProductImageUpload;
 window.removeAdditionalProductImage = removeAdditionalProductImage;
 window.toggleMobileSidebar = toggleMobileSidebar;
+
 

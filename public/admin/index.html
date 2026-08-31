@@ -221,16 +221,22 @@
                     </div>
                 </div>
 
-                <!-- 3. CATEGORIES MODULE -->
+                <!-- 3. CATEGORIES & SUBCATEGORIES MODULE -->
                 <div id="view-categories" class="tab-view-content d-none">
                     <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
                         <div>
-                            <h3 class="fw-bold text-dark mb-1">Category Management</h3>
-                            <p class="text-muted fs-7 mb-0">Manage all 25 categories & menu items across ArchLabs Seating and Corporate catalogues.</p>
+                            <h3 class="fw-bold text-dark mb-1">Category &amp; Subcategory Management</h3>
+                            <p class="text-muted fs-7 mb-0">Manage all main categories and linked subcategories dynamically.</p>
                         </div>
-                        <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddCategoryModal()">+ Add Category</button>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-dark fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddSubcategoryModal()">+ Add Subcategory</button>
+                            <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddCategoryModal()">+ Add Category</button>
+                        </div>
                     </div>
-                    <div class="admin-card">
+
+                    <!-- Categories Card -->
+                    <div class="admin-card mb-4">
+                        <h5 class="fw-bold text-dark mb-3">Categories</h5>
                         <div class="table-responsive">
                             <table class="admin-table align-middle">
                                 <thead>
@@ -246,6 +252,31 @@
                                     </tr>
                                 </thead>
                                 <tbody id="categoriesTableBody">
+                                    <!-- Rendered dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Subcategories Card -->
+                    <div class="admin-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="fw-bold text-dark mb-0">Subcategories</h5>
+                            <button class="btn btn-sm btn-outline-danger fw-bold text-uppercase" onclick="openAddSubcategoryModal()">+ Add Subcategory</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="admin-table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Subcategory Name</th>
+                                        <th>Parent Category</th>
+                                        <th>Slug</th>
+                                        <th>Products</th>
+                                        <th>Order</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="subcategoriesTableBody">
                                     <!-- Rendered dynamically -->
                                 </tbody>
                             </table>
@@ -388,19 +419,15 @@
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label fw-semibold fs-7">Category *</label>
-                                <select id="productCategorySelect" class="form-select">
-                                    <option value="archlabs-seating">ArchLabs Seating Catalogue</option>
-                                    <option value="workstations">Modular Workstations</option>
-                                    <option value="tables">Tables &amp; Desks</option>
-                                    <option value="storage">Storage Systems</option>
-                                    <option value="soft-seating">Soft Seating &amp; Lounges</option>
-                                    <option value="acoustic-pods">Acoustic Work Pods</option>
-                                    <option value="carpets">Interface Carpets</option>
+                                <select id="productCategorySelect" class="form-select" onchange="onProductCategoryChange()">
+                                    <!-- Populated dynamically -->
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold fs-7">Subcategory / Series</label>
-                                <input type="text" id="productSubcategoryInput" class="form-control" placeholder="e.g. Mesh Series">
+                                <select id="productSubcategorySelect" class="form-select">
+                                    <option value="">General / None</option>
+                                </select>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold fs-7">Price Tag</label>
@@ -423,12 +450,12 @@
                                 </div>
                             </div>
 
-                            <!-- Image Upload Dropzone -->
-                            <div class="col-12">
-                                <label class="form-label fw-semibold fs-7">Product Image (Upload Image) *</label>
+                            <!-- Main Product Image Upload -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold fs-7">Main Product Image *</label>
                                 <div class="upload-dropzone" onclick="document.getElementById('cloudinaryFileInput').click()">
                                     <div class="text-danger fs-3 mb-1">🖼️</div>
-                                    <div class="fw-bold text-dark fs-7">Click to select &amp; upload image</div>
+                                    <div class="fw-bold text-dark fs-7">Click to select Main Image</div>
                                 </div>
                                 <input type="file" id="cloudinaryFileInput" class="d-none" accept="image/*" onchange="handleCloudinaryProductUpload(this)">
 
@@ -438,8 +465,22 @@
                                 </div>
 
                                 <input type="hidden" id="productMainImageUrl">
-                                <div id="productImagePreviewContainer" class="mt-3 text-center d-none">
-                                    <img id="productImagePreview" src="" alt="Preview" style="max-height: 140px; border-radius: 8px; border: 1px solid #e2e8f0; padding: 6px;">
+                                <div id="productImagePreviewContainer" class="mt-2 text-center d-none">
+                                    <img id="productImagePreview" src="" alt="Main Preview" style="max-height: 110px; border-radius: 8px; border: 1px solid #e2e8f0; padding: 4px;">
+                                </div>
+                            </div>
+
+                            <!-- Additional Images Upload -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold fs-7">Additional Product Gallery Images</label>
+                                <div class="upload-dropzone" onclick="document.getElementById('additionalImagesFileInput').click()">
+                                    <div class="text-danger fs-3 mb-1">📸</div>
+                                    <div class="fw-bold text-dark fs-7">Click to add Gallery Image</div>
+                                </div>
+                                <input type="file" id="additionalImagesFileInput" class="d-none" accept="image/*" onchange="handleAdditionalProductImageUpload(this)">
+
+                                <div id="additionalImagesPreviewList" class="d-flex flex-wrap gap-2 mt-2">
+                                    <!-- Additional thumbnail previews rendered here -->
                                 </div>
                             </div>
                         </div>
@@ -507,6 +548,41 @@
                     <div class="modal-footer border-top">
                         <button type="button" class="btn btn-light fw-semibold" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4">Save Category &rarr;</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4B. ADD / EDIT SUBCATEGORY MODAL -->
+    <div class="modal fade" id="subcategoryFormModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header border-bottom">
+                    <h5 id="subcategoryModalTitle" class="modal-title fw-bold">Add Subcategory</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="subcategoryForm" onsubmit="saveSubcategoryForm(event)">
+                    <div class="modal-body p-4">
+                        <input type="hidden" id="subcategoryIdInput">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Parent Category *</label>
+                            <select id="subcategoryCategorySelect" class="form-select" required>
+                                <!-- Populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Subcategory Name *</label>
+                            <input type="text" id="subcategoryNameInput" class="form-control" required placeholder="e.g. 3 Seater Sofa or Mesh Series">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Display Order</label>
+                            <input type="number" id="subcategoryOrderInput" class="form-control" value="0">
+                        </div>
+                    </div>
+                    <div class="modal-footer border-top">
+                        <button type="button" class="btn btn-light fw-semibold" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4">Save Subcategory &rarr;</button>
                     </div>
                 </form>
             </div>
