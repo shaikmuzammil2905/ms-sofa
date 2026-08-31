@@ -22,7 +22,7 @@
                 <img src="/images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 50px;">
             </div>
             <h4 class="fw-bold text-dark mb-1">Vishista Admin CMS</h4>
-            <p class="text-muted fs-7 mb-4">Sign in to manage products, categories &amp; website content.</p>
+            <p class="text-muted fs-7 mb-4">Sign in to manage products, categories, projects &amp; website content.</p>
 
             <div id="loginErrorAlert" class="alert alert-danger fs-7 d-none mb-3" role="alert"></div>
 
@@ -78,9 +78,6 @@
                 <a class="admin-nav-item" data-tab="about">
                     <span>ℹ️ About Us</span>
                 </a>
-                <a class="admin-nav-item" data-tab="enquiries">
-                    <span>📩 Enquiries Inbox</span>
-                </a>
                 <a class="admin-nav-item" data-tab="footer">
                     <span>🦶 Footer CMS</span>
                 </a>
@@ -135,19 +132,19 @@
                         </div>
                         <div class="col-md-3">
                             <div class="stat-card">
-                                <div class="stat-icon bg-success-subtle text-success">✅</div>
+                                <div class="stat-icon bg-success-subtle text-success">🏢</div>
                                 <div>
-                                    <div id="statPublishedItems" class="stat-val">0</div>
-                                    <div class="stat-lbl">Published Items</div>
+                                    <div id="statTotalProjects" class="stat-val">0</div>
+                                    <div class="stat-lbl">Projects</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="stat-card">
-                                <div class="stat-icon bg-warning-subtle text-warning">📩</div>
+                                <div class="stat-icon bg-warning-subtle text-warning">✅</div>
                                 <div>
-                                    <div id="statTotalEnquiries" class="stat-val">0</div>
-                                    <div class="stat-lbl">Enquiries</div>
+                                    <div id="statPublishedItems" class="stat-val">0</div>
+                                    <div class="stat-lbl">Published Items</div>
                                 </div>
                             </div>
                         </div>
@@ -157,8 +154,8 @@
                         <h5 class="fw-bold text-dark mb-3">Quick Actions</h5>
                         <div class="d-flex flex-wrap gap-2">
                             <button class="btn btn-danger fw-bold text-uppercase fs-7" onclick="openAddProductModal()">+ Add New Product</button>
-                            <button class="btn btn-outline-dark fw-bold text-uppercase fs-7" onclick="switchTab('products')">Manage Products</button>
-                            <button class="btn btn-outline-dark fw-bold text-uppercase fs-7" onclick="switchTab('enquiries')">View Customer Enquiries</button>
+                            <button class="btn btn-outline-dark fw-bold text-uppercase fs-7" onclick="openAddCategoryModal()">+ Add New Category</button>
+                            <button class="btn btn-outline-dark fw-bold text-uppercase fs-7" onclick="openAddProjectModal()">+ Add New Project</button>
                         </div>
                     </div>
                 </div>
@@ -202,17 +199,20 @@
                             <h3 class="fw-bold text-dark mb-1">Category Management</h3>
                             <p class="text-muted fs-7 mb-0">Categories structure all product listings across ArchLabs Seating and Corporate catalogues.</p>
                         </div>
+                        <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddCategoryModal()">+ Add Category</button>
                     </div>
                     <div class="admin-card">
                         <div class="table-responsive">
                             <table class="admin-table">
                                 <thead>
                                     <tr>
+                                        <th>Image</th>
                                         <th>Category Name</th>
                                         <th>Slug</th>
                                         <th>Description</th>
                                         <th>Display Order</th>
                                         <th>Status</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody id="categoriesTableBody">
@@ -225,14 +225,31 @@
 
                 <!-- 4. PROJECTS MODULE -->
                 <div id="view-projects" class="tab-view-content d-none">
-                    <h3 class="fw-bold text-dark mb-2">Projects &amp; Case Studies</h3>
-                    <p class="text-muted fs-7 mb-4">Manage featured client installations and corporate fitout projects.</p>
-                    <div class="admin-card">
-                        <div class="alert alert-info border-0 shadow-sm fs-7">
-                            <strong>Turnkey Projects CMS:</strong> Featured projects automatically sync to the homepage portfolio showcase.
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h3 class="fw-bold text-dark mb-1">Projects &amp; Case Studies</h3>
+                            <p class="text-muted fs-7 mb-0">Manage featured client installations and corporate fitout projects.</p>
                         </div>
-                        <div id="projectsContentArea">
-                            <p class="text-muted">Loading projects...</p>
+                        <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddProjectModal()">+ Add Project</button>
+                    </div>
+                    <div class="admin-card">
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Project Title</th>
+                                        <th>Location</th>
+                                        <th>Description</th>
+                                        <th>Display Order</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="projectsTableBody">
+                                    <!-- Rendered dynamically -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -279,32 +296,7 @@
                     </div>
                 </div>
 
-                <!-- 7. ENQUIRIES MODULE -->
-                <div id="view-enquiries" class="tab-view-content d-none">
-                    <h3 class="fw-bold text-dark mb-2">Customer Enquiries Inbox</h3>
-                    <p class="text-muted fs-7 mb-4">View incoming price quotes, catalogue requests, and customer enquiries.</p>
-                    <div class="admin-card">
-                        <div class="table-responsive">
-                            <table class="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>Customer Name</th>
-                                        <th>Product Requested</th>
-                                        <th>Phone Number</th>
-                                        <th>Email</th>
-                                        <th>Date Submitted</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="enquiriesTableBody">
-                                    <!-- Rendered dynamically -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. FOOTER CMS MODULE -->
+                <!-- 7. FOOTER CMS MODULE -->
                 <div id="view-footer" class="tab-view-content d-none">
                     <h3 class="fw-bold text-dark mb-2">Footer &amp; Contact Details CMS</h3>
                     <p class="text-muted fs-7 mb-4">Manage corporate contact info, office address, phone numbers, and footer text.</p>
@@ -379,12 +371,12 @@
                                 <textarea id="productDescInput" class="form-control" rows="3" placeholder="Product features, mechanism, PU armrest, aluminium base specifications..."></textarea>
                             </div>
 
-                            <!-- Cloudinary Direct Image Upload -->
+                            <!-- Image Upload Dropzone -->
                             <div class="col-12">
-                                <label class="form-label fw-semibold fs-7">Product Image (Cloudinary Direct Upload) *</label>
+                                <label class="form-label fw-semibold fs-7">Product Image (Upload Image) *</label>
                                 <div class="upload-dropzone" onclick="document.getElementById('cloudinaryFileInput').click()">
-                                    <div class="text-danger fs-3 mb-1">☁️</div>
-                                    <div class="fw-bold text-dark fs-7">Click to select &amp; upload image to Cloudinary</div>
+                                    <div class="text-danger fs-3 mb-1">🖼️</div>
+                                    <div class="fw-bold text-dark fs-7">Click to select &amp; upload image</div>
                                 </div>
                                 <input type="file" id="cloudinaryFileInput" class="d-none" accept="image/*" onchange="handleCloudinaryProductUpload(this)">
 
@@ -409,12 +401,108 @@
         </div>
     </div>
 
+    <!-- 4. ADD / EDIT CATEGORY MODAL -->
+    <div class="modal fade" id="categoryFormModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header border-bottom">
+                    <h5 id="categoryModalTitle" class="modal-title fw-bold">Add Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="categoryForm" onsubmit="saveCategoryForm(event)">
+                    <div class="modal-body p-4">
+                        <input type="hidden" id="categoryIdInput">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Category Name *</label>
+                            <input type="text" id="categoryNameInput" class="form-control" required placeholder="e.g. Workstations">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Description</label>
+                            <textarea id="categoryDescInput" class="form-control" rows="2" placeholder="Brief category description..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Display Order</label>
+                            <input type="number" id="categoryOrderInput" class="form-control" value="0">
+                        </div>
+                        <!-- Category Image Upload -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Category Image (Upload Image)</label>
+                            <div class="upload-dropzone" onclick="document.getElementById('categoryFileInput').click()">
+                                <div class="text-danger fs-3 mb-1">🖼️</div>
+                                <div class="fw-bold text-dark fs-7">Click to select &amp; upload image</div>
+                            </div>
+                            <input type="file" id="categoryFileInput" class="d-none" accept="image/*" onchange="handleImageUploadGeneric(this, 'categoryImageUrl', 'categoryImagePreview', 'categoryImagePreviewContainer')">
+                            <input type="hidden" id="categoryImageUrl">
+                            <div id="categoryImagePreviewContainer" class="mt-2 text-center d-none">
+                                <img id="categoryImagePreview" src="" alt="Preview" style="max-height: 120px; border-radius: 8px; border: 1px solid #e2e8f0; padding: 4px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-top">
+                        <button type="button" class="btn btn-light fw-semibold" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4">Save Category &rarr;</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. ADD / EDIT PROJECT MODAL -->
+    <div class="modal fade" id="projectFormModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header border-bottom">
+                    <h5 id="projectModalTitle" class="modal-title fw-bold">Add Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="projectForm" onsubmit="saveProjectForm(event)">
+                    <div class="modal-body p-4">
+                        <input type="hidden" id="projectIdInput">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Project Title *</label>
+                            <input type="text" id="projectTitleInput" class="form-control" required placeholder="e.g. TCS Hitech City Corporate Office">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Location</label>
+                            <input type="text" id="projectLocationInput" class="form-control" placeholder="e.g. Hyderabad, Telangana">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Description</label>
+                            <textarea id="projectDescInput" class="form-control" rows="3" placeholder="Project details, workstations installed, turnkey interiors..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Display Order</label>
+                            <input type="number" id="projectOrderInput" class="form-control" value="0">
+                        </div>
+                        <!-- Project Image Upload -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold fs-7">Project Image (Upload Image) *</label>
+                            <div class="upload-dropzone" onclick="document.getElementById('projectFileInput').click()">
+                                <div class="text-danger fs-3 mb-1">🖼️</div>
+                                <div class="fw-bold text-dark fs-7">Click to select &amp; upload image</div>
+                            </div>
+                            <input type="file" id="projectFileInput" class="d-none" accept="image/*" onchange="handleImageUploadGeneric(this, 'projectMainImageUrl', 'projectImagePreview', 'projectImagePreviewContainer')">
+                            <input type="hidden" id="projectMainImageUrl">
+                            <div id="projectImagePreviewContainer" class="mt-2 text-center d-none">
+                                <img id="projectImagePreview" src="" alt="Preview" style="max-height: 120px; border-radius: 8px; border: 1px solid #e2e8f0; padding: 4px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-top">
+                        <button type="button" class="btn btn-light fw-semibold" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4">Save Project &rarr;</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap 5 Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Supabase JS Client SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- Supabase & Cloudinary Config -->
+    <!-- Supabase & Upload Config -->
     <script src="/js/supabase-config.js"></script>
     <!-- Admin App Controller -->
     <script src="/admin/js/admin-app.js"></script>

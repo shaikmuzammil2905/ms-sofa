@@ -295,6 +295,17 @@ async function uploadToCloudinary(file, onProgress) {
     }
 }
 
+function generateUUID() {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+        return crypto.randomUUID();
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
 // Global Store State Manager (Supabase Database Priority + Fail-Safe Cache)
 const CMSDataStore = {
     getKey: (table) => `vishista_cms_${table}`,
@@ -326,7 +337,7 @@ const CMSDataStore = {
 
         // Fallback 2: Pre-seeded data dataset
         if (VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) {
-            const seedRecords = VISHISTA_SEED_DATA[table];
+            const seedRecords = VISHISTA_SEED_DATA[table].map(r => ({ ...r, id: r.id || generateUUID() }));
             localStorage.setItem(this.getKey(table), JSON.stringify(seedRecords));
 
             // Auto-seed Supabase in background if Supabase table exists and is empty
@@ -347,13 +358,22 @@ const CMSDataStore = {
     },
 
     save: async function(table, records) {
+        // Sanitize every record to ensure it has a valid UUID id
+        const sanitizedRecords = (records || []).map(r => {
+            const item = { ...r };
+            if (!item.id || item.id === '' || item.id === 'null') {
+                item.id = generateUUID();
+            }
+            return item;
+        });
+
         if (!supabaseClient) {
-            localStorage.setItem(this.getKey(table), JSON.stringify(records));
-            return records;
+            localStorage.setItem(this.getKey(table), JSON.stringify(sanitizedRecords));
+            return sanitizedRecords;
         }
 
         try {
-            const { data, error } = await supabaseClient.from(table).upsert(records).select();
+            const { data, error } = await supabaseClient.from(table).upsert(sanitizedRecords).select();
             if (error) {
                 console.error(`[CMSDataStore] Supabase SAVE error for '${table}':`, error);
                 throw new Error(`Database Error (${table}): ${error.message}`);
@@ -361,7 +381,7 @@ const CMSDataStore = {
             
             // Re-fetch fresh dataset from Supabase
             const { data: freshData } = await supabaseClient.from(table).select('*');
-            const resultData = (freshData && freshData.length > 0) ? freshData : (data || records);
+            const resultData = (freshData && freshData.length > 0) ? freshData : (data || sanitizedRecords);
             localStorage.setItem(this.getKey(table), JSON.stringify(resultData));
             return resultData;
         } catch (e) {
