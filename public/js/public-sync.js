@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function () {
     });
 
     // Auto-refresh public view periodically to fetch fresh database updates
-    setInterval(initPublicSync, 5000);
+    setInterval(initPublicSync, 4000);
 });
 
 async function initPublicSync() {
@@ -83,19 +83,16 @@ async function syncFooterSection() {
     const footer = footerData[0];
     if (!footer) return;
 
-    // Update Footer Description
     const descEls = document.querySelectorAll('.footer-company-desc, #footerCompanyDesc');
     descEls.forEach(el => {
         if (footer.company_description) el.textContent = footer.company_description;
     });
 
-    // Update Footer Address
     const addressEls = document.querySelectorAll('.footer-address-text, #footerAddressText');
     addressEls.forEach(el => {
         if (footer.address) el.textContent = footer.address;
     });
 
-    // Update Footer Phone Numbers
     const phoneEls = document.querySelectorAll('.footer-phone-link, #footerPhoneLink');
     phoneEls.forEach(el => {
         if (footer.phone) {
@@ -104,7 +101,6 @@ async function syncFooterSection() {
         }
     });
 
-    // Update Footer Email Addresses
     const emailEls = document.querySelectorAll('.footer-email-link, #footerEmailLink');
     emailEls.forEach(el => {
         if (footer.email) {
@@ -114,12 +110,60 @@ async function syncFooterSection() {
     });
 }
 
-// 4. Sync Categories Section
+// 4. Dynamic Categories Sync (Megamenu, Mobile Drawer, Grids, and Jump Bar)
 async function syncCategoriesSection() {
     const categories = await CMSDataStore.get('categories');
     if (!categories || categories.length === 0) return;
 
     const visibleCategories = categories.filter(c => c.is_visible !== false);
+
+    // A. Sync Desktop Megamenu Grid
+    const megaGrid = document.getElementById('megaMenuCategoryGrid') || document.querySelector('.mega-menu-grid');
+    if (megaGrid && visibleCategories.length > 0) {
+        const existingTitles = Array.from(megaGrid.querySelectorAll('.mega-category-title')).map(el => el.textContent.trim().toLowerCase());
+        
+        visibleCategories.forEach(cat => {
+            const catNameLower = cat.name.trim().toLowerCase();
+            if (!existingTitles.includes(catNameLower)) {
+                const catDiv = document.createElement('div');
+                catDiv.innerHTML = `
+                    <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="mega-category-title d-block text-danger" style="font-size: 15px !important; font-weight: 700 !important;">${cat.name}</a>
+                    <ul class="mega-subcategory-list">
+                        <li><a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; View ${cat.name} Catalogue</a></li>
+                    </ul>
+                `;
+                megaGrid.appendChild(catDiv);
+                existingTitles.push(catNameLower);
+            }
+        });
+    }
+
+    // B. Sync Mobile Drawer Menu
+    const mobileGroup = document.getElementById('mobileMenuCategoryGroup') || document.querySelector('#mobileProductsCollapse .mobile-accordion-group');
+    if (mobileGroup && visibleCategories.length > 0) {
+        const existingMobileTitles = Array.from(mobileGroup.querySelectorAll('a.fw-bold')).map(el => el.textContent.replace('→', '').replace('→', '').trim().toLowerCase());
+
+        visibleCategories.forEach(cat => {
+            const catNameLower = cat.name.trim().toLowerCase();
+            if (!existingMobileTitles.includes(catNameLower)) {
+                const mobDiv = document.createElement('div');
+                mobDiv.className = 'p-3 rounded-3';
+                mobDiv.style.cssText = 'background-color: #f8f9fa; border: 1px solid #e9ecef;';
+                mobDiv.innerHTML = `
+                    <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                        ${cat.name} &rarr;
+                    </a>
+                    <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                        <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}">&bull; Explore ${cat.name}</a></li>
+                    </ul>
+                `;
+                mobileGroup.appendChild(mobDiv);
+                existingMobileTitles.push(catNameLower);
+            }
+        });
+    }
+
+    // C. Sync Category Cards Grid
     const grid = document.getElementById('categoriesGridContainer');
     if (grid && visibleCategories.length > 0) {
         let html = '';
@@ -131,12 +175,29 @@ async function syncCategoriesSection() {
                     <div class="card-body p-4 d-flex flex-column text-center">
                         <h4 class="fw-bold text-dark mb-2">${cat.name}</h4>
                         <p class="text-muted fs-7 mb-3 flex-grow-1">${cat.description || ''}</p>
-                        <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="btn btn-outline-danger fw-bold text-uppercase fs-7 mt-auto">Explore ${cat.name} &rarr;</a>
+                        <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="btn btn-danger fw-bold text-uppercase fs-7 mt-auto shadow-sm" style="border-radius: 6px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">Explore ${cat.name} &rarr;</a>
                     </div>
                 </div>
             </div>`;
         });
         grid.innerHTML = html;
+    }
+
+    // D. Sync Jump to Category Bar
+    const jumpContainer = document.querySelector('.sticky-jump-bar .d-flex, .filter-anchor-bar .d-flex');
+    if (jumpContainer && visibleCategories.length > 0) {
+        const existingJumps = Array.from(jumpContainer.querySelectorAll('a')).map(el => el.textContent.trim().toLowerCase());
+        visibleCategories.forEach(cat => {
+            const catNameLower = cat.name.trim().toLowerCase();
+            if (!existingJumps.includes(catNameLower)) {
+                const a = document.createElement('a');
+                a.href = `product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}`;
+                a.className = 'btn rounded-pill px-4 py-2 text-uppercase category-jump-btn';
+                a.textContent = cat.name;
+                jumpContainer.appendChild(a);
+                existingJumps.push(catNameLower);
+            }
+        });
     }
 }
 
@@ -166,15 +227,14 @@ async function syncProjectsSection() {
     }
 }
 
-// 6. Sync Product Pages (ArchLabs Catalogue, Categories, Sofas)
+// 6. Sync Product Pages
 async function syncProductPages() {
     const products = await CMSDataStore.get('products');
     if (!products || products.length === 0) return;
 
-    // Filter published products only
     const visibleProducts = products.filter(p => p.is_visible !== false);
 
-    // ArchLabs Catalogue - Mesh Series
+    // Mesh Series
     const meshSection = document.querySelector('#mesh-series .row.g-4');
     if (meshSection) {
         const meshProducts = visibleProducts.filter(p => p.subcategory === 'Mesh Series' || p.category_slug === 'archlabs-seating');
@@ -183,7 +243,7 @@ async function syncProductPages() {
         }
     }
 
-    // ArchLabs Catalogue - Leather Series
+    // Leather Series
     const leatherSection = document.querySelector('#leather-series .row.g-4');
     if (leatherSection) {
         const leatherProducts = visibleProducts.filter(p => p.subcategory === 'Leather Series');
@@ -226,7 +286,6 @@ function renderProductGrid(container, items) {
     container.innerHTML = html;
 }
 
-// Global Product Detail Modal Opener
 function openProductDetailModal(name, image, desc, price, subcategory) {
     const modalEl = document.getElementById('productDetailModal');
     if (!modalEl) {
@@ -258,7 +317,6 @@ function openProductDetailModal(name, image, desc, price, subcategory) {
     }
 }
 
-// Global Enquiry Modal Helper
 function openEnquiryModal(productName) {
     const input = document.getElementById('modalProductInput');
     if (input) {
@@ -271,7 +329,6 @@ function openEnquiryModal(productName) {
     }
 }
 
-// Connect Customer Enquiry Form Submission directly to WhatsApp (+91 98490 58444) and Supabase
 function initEnquiryFormHandler() {
     const enquiryModalForm = document.querySelector('#enquireModal form');
     if (enquiryModalForm) {
@@ -291,7 +348,6 @@ function initEnquiryFormHandler() {
             const emailInput = enquiryModalForm.querySelector('input[type="email"]') ? enquiryModalForm.querySelector('input[type="email"]').value.trim() : '';
             const messageInput = enquiryModalForm.querySelector('textarea') ? enquiryModalForm.querySelector('textarea').value.trim() : '';
 
-            // Construct Pre-filled WhatsApp Message
             let waMessage = `Hi Vishista Office Solutions,\n\nI am interested in your workspace products.\n\n📌 *Product/Service:* ${productName}\n👤 *Name:* ${nameInput}`;
             if (companyInput) waMessage += `\n🏢 *Company:* ${companyInput}`;
             if (phoneInput) waMessage += `\n📞 *Phone:* ${phoneInput}`;

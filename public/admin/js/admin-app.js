@@ -218,11 +218,27 @@ async function loadProductsModule() {
     tbody.innerHTML = html;
 }
 
-function openAddProductModal() {
+async function populateCategoryDropdown(selectEl, selectedSlug) {
+    if (!selectEl) return;
+    const categories = await CMSDataStore.get('categories');
+    if (!categories || categories.length === 0) return;
+
+    let html = '';
+    categories.forEach(cat => {
+        const slug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        const isSelected = (selectedSlug === slug || selectedSlug === cat.name) ? 'selected' : '';
+        html += `<option value="${slug}" ${isSelected}>${cat.name}</option>`;
+    });
+    selectEl.innerHTML = html;
+}
+
+async function openAddProductModal() {
+    const selectEl = document.getElementById('productCategorySelect');
+    await populateCategoryDropdown(selectEl, 'archlabs-seating');
+
     document.getElementById('productModalTitle').textContent = 'Add New Product';
     document.getElementById('productIdInput').value = '';
     document.getElementById('productNameInput').value = '';
-    document.getElementById('productCategorySelect').value = 'archlabs-seating';
     document.getElementById('productSubcategoryInput').value = '';
     document.getElementById('productPriceInput').value = '';
     document.getElementById('productDescInput').value = '';
@@ -239,10 +255,12 @@ async function editProductModal(index) {
     const prod = products[index];
     if (!prod) return;
 
+    const selectEl = document.getElementById('productCategorySelect');
+    await populateCategoryDropdown(selectEl, prod.category_slug);
+
     document.getElementById('productModalTitle').textContent = 'Edit Product';
     document.getElementById('productIdInput').value = index;
     document.getElementById('productNameInput').value = prod.name || '';
-    document.getElementById('productCategorySelect').value = prod.category_slug || 'archlabs-seating';
     document.getElementById('productSubcategoryInput').value = prod.subcategory || '';
     document.getElementById('productPriceInput').value = prod.price || '';
     document.getElementById('productDescInput').value = prod.description || '';
