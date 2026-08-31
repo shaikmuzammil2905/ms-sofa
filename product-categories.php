@@ -25,7 +25,6 @@
             <a href="#carpets" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Carpets</a>
             <a href="#outdoor" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Outdoor</a>
             <a href="#educational" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Educational</a>
-            <a href="#accessories" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Accessories</a>
         </div>
     </div>
 </div>
@@ -512,30 +511,6 @@
                             <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.1rem !important; line-height: 1.6; color: #333333 !important;">Cushioned tip-up auditorium chairs with writing tablets and row numbering.</p>
                             <div class="d-grid mt-auto">
                                 <a href="product-catalogue-view.html?cat=Auditorium Seating" target="_blank" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.1rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. ACCESSORIES -->
-        <section id="accessories" class="mb-4 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
-                <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Workspace Accessories</h2>
-                </div>
-                <button type="button" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;" onclick="openEnquiryModal('Workspace Accessories')">Enquire for Accessories</button>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
-                        <a href="product-catalogue-view.html?cat=Ergonomic Arms & Power Management" target="_blank"><img src="images/categories/cat_workstations.jpg" alt="Workspace Accessories" class="card-img-top" style="background: #ffffff; height: 260px; object-fit: cover;"></a>
-                        <div class="card-body p-4 d-flex flex-column">
-                            <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">Ergonomic Arms &amp; Power Management</h3>
-                            <p class="text-dark fw-semibold flex-grow-1 mb-3" style="font-size: 1.15rem !important; line-height: 1.65; color: #333333 !important;">Gas-spring dual monitor arms, under-desk cable trays, vertical wire serpents, and pop-up power modules.</p>
-                            <div class="d-grid mt-auto">
-                                <a href="product-catalogue-view.html?cat=Ergonomic Arms & Power Management" target="_blank" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md text-center" style="font-size: 1.15rem !important; letter-spacing: 0.8px; border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">VIEW PRODUCT CATALOGUE &rarr;</a>
                             </div>
                         </div>
                     </div>

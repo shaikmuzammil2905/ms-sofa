@@ -303,8 +303,223 @@
         }
     };
 
+        "Mesh Chair": {
+            title: "Ergonomic Mesh Seating Catalogue",
+            desc: "High-performance ergonomic mesh chairs with adjustable lumbar support, 3D arms, and synchro-tilt mechanisms.",
+            badge: "Ergonomic Mesh Seating",
+            items: [
+                { name: "Model Veloz Mesh Task Chair (P.04)", img: "images/archlabs/pages/page_4.png", specs: "Breathable Mesh Back / 3D Gel Armrest / Synchro-Tilt Mechanism / Class 4 Gas Lift" },
+                { name: "Model V-Ergo High Back Mesh (P.05)", img: "images/archlabs/pages/page_5.png", specs: "Adjustable Lumbar Support / Aluminium Diecast Base / Adjustable 2D Headrest" },
+                { name: "Model V-Lumbar Mid Back Task (P.06)", img: "images/archlabs/pages/page_6.png", specs: "Nylon Frame / Multi-position Lock / PU Arm Pads / High Density Seat Foam" },
+                { name: "Model V-Executive Mesh Suite (P.07)", img: "images/archlabs/pages/page_7.png", specs: "Full Mesh Seat & Back / Polished Chrome Base / 3D Adjustable Headrest" }
+            ]
+        },
+        "Leather Chair": {
+            title: "Executive Leather Seating Catalogue",
+            desc: "High-back executive leather armchairs with diamond stitch quilting and chrome controls.",
+            badge: "Executive Leather Models",
+            items: [
+                { name: "Model Exec Leather Director Chair (P.36)", img: "images/archlabs/pages/page_36.png", specs: "Genuine Upholstered Leather / Knee-Tilt Locking Mechanism / Polished Chrome Base" },
+                { name: "Model Diamond Stitch Executive (P.37)", img: "images/archlabs/pages/page_37.png", specs: "Quilted Backrest Cushioning / Fixed Cushioned Armrests / Heavy Duty Gas Lift" },
+                { name: "Model Managerial Leatherette Swivel (P.38)", img: "images/archlabs/pages/page_38.png", specs: "High Density Cushioning / T-Bar Chrome Armrest / Smooth Nylon Castors" }
+            ]
+        },
+        "Training Chair": {
+            title: "Training & Seminar Seating Catalogue",
+            desc: "Nesting training chairs equipped with writing tablets, wire baskets, and castor wheels.",
+            badge: "Training Chair Models",
+            items: [
+                { name: "Model Nesting Tablet Chair (P.43)", img: "images/archlabs/pages/page_43.png", specs: "Foldable Writing Tablet / Under-seat Wire Book Basket / Castor Wheel Base" },
+                { name: "Model Mobile Seminar Mesh Chair (P.44)", img: "images/archlabs/pages/page_44.png", specs: "Flip Seat Mechanism / Nesting Compact Storage / Breathable Mesh Backrest" },
+                { name: "Model Poly Shell Training Chair (P.45)", img: "images/archlabs/pages/page_45.png", specs: "Heavy Duty Frame / Cup Holder Writing Tablet / Stackable Base Design" }
+            ]
+        },
+        "Cafe Chair": {
+            title: "Cafeteria & Dining Seating Catalogue",
+            desc: "Vibrant polypropylene and metal frame dining chairs for pantry breakouts.",
+            badge: "Cafe & Dining Models",
+            items: [
+                { name: "Model Polypropelene Shell Chair (P.57)", img: "images/archlabs/pages/page_57.png", specs: "Molded Polypropylene Shell / Solid Wooden Legs / Easy Clean Surface" },
+                { name: "Model Chrome Leg Breakout Chair (P.58)", img: "images/archlabs/pages/page_58.png", specs: "Stackable Chrome Legs / Ergonomic Seat Contour / Stain Resistant Surface" },
+                { name: "Model High Counter Bar Stool (P.59)", img: "images/archlabs/pages/page_59.png", specs: "Swivel Seat / Chrome Footrest Ring / Gas Lift Height Adjustment" }
+            ]
+        },
+        "Lounge": {
+            title: "Executive Lounge Sofas & Couches",
+            desc: "Single, two, and three-seater plush upholstered couches for reception areas and executive suites.",
+            badge: "Plush Executive Lounges",
+            items: [
+                { name: "Model SV-Executive 3-Seater Leather Couch", img: "images/categories/cat_soft_seating.jpg", specs: "Genuine Leatherette / Stainless Steel Legs / High Resilience Cushioning" },
+                { name: "Model SV-Single Club Reception Armchair", img: "images/collection/collection-1.jpg", specs: "Plush Fabric Upholstery / Solid Wood Internal Frame / Ergonomic Back" }
+            ]
+        },
+        "Sofa": {
+            title: "Corporate Soft Seating & Sofas",
+            desc: "Premium executive couches and plush sofas for modern office reception and breakout spaces.",
+            badge: "Executive Sofas",
+            items: [
+                { name: "Model SV-Executive 3-Seater Leather Couch", img: "images/categories/cat_soft_seating.jpg", specs: "Genuine Leatherette / Stainless Steel Legs / High Resilience Cushioning" },
+                { name: "Model SV-Single Club Reception Armchair", img: "images/collection/collection-1.jpg", specs: "Plush Fabric Upholstery / Solid Wood Internal Frame / Ergonomic Back" }
+            ]
+        },
+        "Collaborative": {
+            title: "Collaborative Booth Seating",
+            desc: "Modular curved sofas and high-back acoustic booth seating for agile team huddles.",
+            badge: "Acoustic Booths & Curved Modules",
+            items: [
+                { name: "Model CS-Curved Modular Sofa Cluster", img: "images/collection/collection-1.jpg", specs: "Interlocking Curved Modules / Integrated Power Outlet / High Density Foam" },
+                { name: "Model CS-High Back Acoustic Booth", img: "images/collection/collection-2.jpg", specs: "Sound Dampening Side Panels / Center Coffee Table / 4-Person Capacity" }
+            ]
+        },
+        "Pouffe": {
+            title: "Soft Pouffes & Ottomans",
+            desc: "Geometrical soft pouffes and ottomans for versatile breakout seating.",
+            badge: "Pouffes & Ottomans",
+            items: [
+                { name: "Model PF-Geometric Hexagon Ottoman", img: "images/collection/collection-2.jpg", specs: "Modular Hexagon Shape / Fabric Finish / Nylon Glide Feet" },
+                { name: "Model PF-Cylinder Soft Pouffe", img: "images/collection/collection-1.jpg", specs: "High Density Foam / Premium Fabric / Dual Tone Finish" }
+            ]
+        },
+        "Occasional Tables": {
+            title: "Occasional & Center Tables",
+            desc: "Modern reception center tables and side companion coffee tables.",
+            badge: "Center & Coffee Tables",
+            items: [
+                { name: "Model PF-Round Center Coffee Table", img: "images/categories/cat_tables.png", specs: "Marble & Wood Top Options / Metal Base / Modern Aesthetic" },
+                { name: "Model PF-Square Wooden Side Table", img: "images/categories/cat_tables.jpg", specs: "Solid Wood Finish / Matte Black Metal Legs / Beveled Rim" }
+            ]
+        },
+        "Classroom": {
+            title: "Classroom Student Desks Catalogue",
+            desc: "Single and dual-bench student desks with bag hooks and book shelves for schools and colleges.",
+            badge: "Institutional Desks",
+            items: [
+                { name: "Model ED-Single Student Ergonomic Desk", img: "images/categories/cat_education.png", specs: "Rounded Wood Edges / Metal Frame / Bag Hook / Under-desk Book Shelf" },
+                { name: "Model ED-Dual Student Bench Unit", img: "images/categories/cat_educational.jpg", specs: "2-Person Integrated Bench / Heavy Duty Steel Tube / Pencil Groove" }
+            ]
+        },
+        "Library": {
+            title: "Library Study Furniture Catalogue",
+            desc: "Study carrels, reading tables, and heavy-duty double-sided book racks.",
+            badge: "Library Racks & Carrels",
+            items: [
+                { name: "Model ED-Individual Study Carrel Desk", img: "images/categories/cat_educational.jpg", specs: "Side Acoustic Divider / LED Reading Light / Power Socket" },
+                { name: "Model ED-Double-Sided Steel Book Shelf", img: "images/categories/cat_education.png", specs: "6-Tier Storage / Adjustable Shelves / Label Holder" }
+            ]
+        },
+        "Hostel": {
+            title: "Hostel & Housing Furniture Catalogue",
+            desc: "Metal bunk beds, study tables, and wardrobe locker units for institutional housing.",
+            badge: "Hostel Bunk Beds & Desks",
+            items: [
+                { name: "Model ED-Metal Heavy Duty Bunk Bed", img: "images/sections/s-lookbook-1.jpg", specs: "Safety Guard Rail / Side Ladder / Powder Coated Steel Frame" },
+                { name: "Model ED-Hostel Study Desk & Locker", img: "images/categories/cat_education.png", specs: "Attached Wardrobe / Study Desk / Combination Lock" }
+            ]
+        },
+        "Auditorium": {
+            title: "Auditorium & Lecture Hall Seating Catalogue",
+            desc: "Cushioned tip-up auditorium chairs with writing tablets and row numbering.",
+            badge: "Auditorium Chairs",
+            items: [
+                { name: "Model ED-Tip-Up Cushion Auditorium Chair", img: "images/categories/cat_seating.jpg", specs: "Gravity Auto-Return Seat / Retractable Writing Tablet / Molded Foam" }
+            ]
+        },
+        "Pods": {
+            title: "Acoustic Work Pods Catalogue",
+            desc: "Private Acoustic Phone Booths and Collaborative Meeting Pods engineered for sound isolation and distraction-free calls.",
+            badge: "Acoustic Pods",
+            items: [
+                { name: "Model PD-Solo Acoustic Telephone Booth", img: "images/categories/cat_pods.jpg", specs: "Sound Reduction 32dB / Silent Ventilation Fan / Motion Sensor LED / Power Hub" },
+                { name: "Model PD-4-6 Person Conference Pod", img: "images/sections/hero-workspace.jpg", specs: "Double Glazed Acoustic Glass / Integrated Sofas / TV Wall Bracket / Power Hub" }
+            ]
+        },
+        "Carpets": {
+            title: "Interface Carpet Tiles Catalogue",
+            desc: "High-performance modular Interface Carpet Tiles designed for heavy traffic commercial office floors.",
+            badge: "Acoustic Carpet Tiles",
+            items: [
+                { name: "Model CP-Acoustic Nylon Modular Tile", img: "images/categories/cat_carpets.jpg", specs: "50x50cm Tiles / Sound Dampening Backing / Stain Shield Treatment" },
+                { name: "Model CP-Geometric Plank Carpet Tile", img: "images/categories/cat_workstations.jpg", specs: "25x100cm Planks / Heavy Commercial Wear / High Friction Rating" }
+            ]
+        },
+        "Outdoor": {
+            title: "Outdoor Furniture & Terrace Seating",
+            desc: "Weatherproof Loom Crafts outdoor lounge sets, patio tables, and terrace seating for corporate cafeterias.",
+            badge: "Outdoor Patio Furniture",
+            items: [
+                { name: "Model OD-Synthetic Wicker Terrace Lounge", img: "images/categories/cat_outdoor.jpg", specs: "UV-Resistant All-Weather Wicker / Water Repellent Cushions / Aluminium Frame" },
+                { name: "Model OD-Patio Dining Set & Umbrella", img: "images/categories/cat_tables.png", specs: "4-Seater Outdoor Table / Heavy Duty Patio Umbrella / Stainless Hardware" }
+            ]
+        },
+        "Educational": {
+            title: "Educational Solutions Catalogue",
+            desc: "Ergonomic Classroom Desks, Library Furniture, Hostel Storage Units, and Heavy-Duty Auditorium Seating.",
+            badge: "Educational Solutions",
+            items: [
+                { name: "Model ED-Single Student Ergonomic Desk", img: "images/categories/cat_education.png", specs: "Rounded Wood Edges / Metal Frame / Bag Hook / Under-desk Book Shelf" },
+                { name: "Model ED-Individual Study Carrel Desk", img: "images/categories/cat_educational.jpg", specs: "Side Acoustic Divider / LED Reading Light / Power Socket" },
+                { name: "Model ED-Metal Heavy Duty Bunk Bed", img: "images/sections/s-lookbook-1.jpg", specs: "Safety Guard Rail / Side Ladder / Powder Coated Steel Frame" },
+                { name: "Model ED-Tip-Up Cushion Auditorium Chair", img: "images/categories/cat_seating.jpg", specs: "Gravity Auto-Return Seat / Retractable Writing Tablet / Molded Foam" }
+            ]
+        },
+        "Workstations": {
+            title: "Modular Workstations Catalogue",
+            desc: "Height Adjustable Series, Desking Series, and Panel Series designed for collaborative and ergonomic team layouts.",
+            badge: "Workstations",
+            items: [
+                { name: "Model HA-01 Sit-Stand Executive Desk", img: "images/categories/cat_workstations.jpg", specs: "Dual Motor / 120kg Load Capacity / Digital Memory Presets / Anti-collision Sensor" },
+                { name: "Model DS-Linear 4-Person Workstation Cluster", img: "images/categories/cat_workstations.jpg", specs: "Powder Coated Metal Legs / Fabric Privacy Screen / Base Raceway Wiring" },
+                { name: "Model PS-60mm Tile Partition System", img: "images/categories/cat_workstations.jpg", specs: "60mm Panel Thickness / Fabric & Glass Tiles / Base Raceway Wiring Conduits" }
+            ]
+        },
+        "Tables": {
+            title: "Corporate Tables Catalogue",
+            desc: "Executive Cabin Tables, Conference Meeting Tables, Cafe Tables, and Modular Training Tables.",
+            badge: "Tables & Desks",
+            items: [
+                { name: "Model CB-Executive Director Desk", img: "images/categories/cat_tables.png", specs: "Veneer Finish / Leatherette Writing Pad / Side Credenza Storage Unit" },
+                { name: "Model MT-12 Seater Boardroom Table", img: "images/categories/cat_tables.png", specs: "Dual Pop-up Power Box / Boat Shape Top / Heavy Duty Steel Base Frame" },
+                { name: "Model CF-Round Breakout Dining Table", img: "images/categories/cat_tables.png", specs: "Stainless Steel Disc Base / Compact Laminate Top / Easy Clean Hygienic Surface" },
+                { name: "Model TR-Tilt Top Flip Desk", img: "images/categories/cat_tables.png", specs: "Flip Mechanism / Lockable Castors / Nesting Compact Storage" }
+            ]
+        },
+        "Storage": {
+            title: "Storage Systems Catalogue",
+            desc: "Prelam Storage Credenzas, Heavy-Duty Metal Filing Cabinets, High-Density Compactor Storage, and Personal Lockers.",
+            badge: "Storage Systems",
+            items: [
+                { name: "Model ST-Mobile Pedestal (3 Drawer)", img: "images/categories/cat_storage.png", specs: "Central Keyed Locking / Castor Wheels / Stationary Tray Included" },
+                { name: "Model MS-4 Drawer Filing Cabinet", img: "images/categories/cat_storage.jpg", specs: "Telescopic Ball Bearing Slides / Anti-Tilt Central Lock / Heavy Gauge Steel Sheet" },
+                { name: "Model CP-Mechanical Mobile Compactor System", img: "images/header/prd-nav-1.jpg", specs: "Mechanical Drive Wheel / Safety Floor Lock / Heavy Load Rails" },
+                { name: "Model LK-6 Door Staff Locker", img: "images/categories/cat_storage.png", specs: "Digital Keypad Lock / Name Tag Holder / Louvered Air Slots" }
+            ]
+        },
+        "Seating": {
+            title: "Seating Catalogue",
+            desc: "Ergonomic Task Mesh Chairs, Genuine Leather Executive Armchairs, Training Chairs, and Cafe Dining Chairs.",
+            badge: "Seating Collection",
+            items: [
+                { name: "Model Veloz Mesh Task Chair (P.04)", img: "images/archlabs/pages/page_4.png", specs: "Breathable Mesh Back / 3D Gel Armrest / Synchro-Tilt Mechanism / Class 4 Gas Lift" },
+                { name: "Model Exec Leather Director Chair (P.36)", img: "images/archlabs/pages/page_36.png", specs: "Genuine Upholstered Leather / Knee-Tilt Locking Mechanism / Polished Chrome Base" },
+                { name: "Model Nesting Tablet Chair (P.43)", img: "images/archlabs/pages/page_43.png", specs: "Foldable Writing Tablet / Under-seat Wire Book Basket / Castor Wheel Base" },
+                { name: "Model Polypropelene Shell Chair (P.57)", img: "images/archlabs/pages/page_57.png", specs: "Molded Polypropylene Shell / Solid Wooden Legs / Easy Clean Surface" }
+            ]
+        },
+        "Soft Seating": {
+            title: "Soft Seating & Lounge Catalogue",
+            desc: "Plush Executive Couches, Modular Curved Lounges, Collaborative Meeting Booths, and Geometrical Pouffes.",
+            badge: "Soft Seating Collection",
+            items: [
+                { name: "Model SV-Executive 3-Seater Leather Couch", img: "images/categories/cat_soft_seating.jpg", specs: "Genuine Leatherette / Stainless Steel Legs / High Resilience Cushioning" },
+                { name: "Model CS-Curved Modular Sofa Cluster", img: "images/collection/collection-1.jpg", specs: "Interlocking Curved Modules / Integrated Power Outlet / High Density Foam" },
+                { name: "Model PF-Geometric Hexagon Ottoman", img: "images/collection/collection-2.jpg", specs: "Modular Hexagon Shape / Fabric Finish / Nylon Glide Feet" },
+                { name: "Model PF-Round Center Coffee Table", img: "images/categories/cat_tables.png", specs: "Marble & Wood Top Options / Metal Base / Modern Aesthetic" }
+            ]
+        }
+    };
+
     function resolveCatalogueData(rawKey) {
-        if (!rawKey) return pageCatalogueDatabase["Height Adjustable Series"];
+        if (!rawKey) return pageCatalogueDatabase["Workstations"];
         var decoded = decodeURIComponent(rawKey).trim();
         if (pageCatalogueDatabase[decoded]) return { matchedKey: decoded, data: pageCatalogueDatabase[decoded] };
         
@@ -315,13 +530,17 @@
                 return { matchedKey: k, data: pageCatalogueDatabase[k] };
             }
         }
-        return { matchedKey: "Height Adjustable Series", data: pageCatalogueDatabase["Height Adjustable Series"] };
+        return { matchedKey: decoded, data: pageCatalogueDatabase["Workstations"] };
     }
 
     async function loadDynamicCatalogueView() {
         var urlParams = new URLSearchParams(window.location.search);
-        var rawCat = urlParams.get('cat') || window.location.hash.replace('#', '') || 'Height Adjustable Series';
+        var rawCat = urlParams.get('cat') || window.location.hash.replace('#', '') || 'Workstations';
+        var rawSubcat = urlParams.get('subcat') || '';
+        
         var queryCat = decodeURIComponent(rawCat).trim();
+        var querySubcat = decodeURIComponent(rawSubcat).trim();
+        var activeTarget = querySubcat ? querySubcat : queryCat;
 
         // 1. Fetch categories and products from live Supabase DB store
         var allCategories = (typeof CMSDataStore !== 'undefined') ? await CMSDataStore.get('categories') : [];
@@ -333,8 +552,8 @@
                    (c.slug && c.slug.toLowerCase().trim() === queryCat.toLowerCase());
         });
 
-        var catNameDisplay = matchedCatObj ? matchedCatObj.name : queryCat;
-        var displayTitle = catNameDisplay + " Catalogue";
+        var catNameDisplay = activeTarget;
+        var displayTitle = (querySubcat ? (queryCat + " — " + querySubcat) : (catNameDisplay + " Catalogue"));
         var displayDesc = matchedCatObj ? (matchedCatObj.description || "Explore line-wise models, custom configurations, and ergonomic workspace features.") : ("Official Vishista product catalogue for " + catNameDisplay + ".");
 
         document.getElementById('cataloguePageTitle').innerText = displayTitle;
@@ -342,7 +561,8 @@
         document.getElementById('sectionHeading').innerText = catNameDisplay + " Models";
 
         // 2. Filter products matching this category or subcategory
-        var normQuery = queryCat.toLowerCase().replace(/[^a-z0-9]/g, '');
+        var normQuery = activeTarget.toLowerCase().replace(/[^a-z0-9]/g, '');
+        var normCat = queryCat.toLowerCase().replace(/[^a-z0-9]/g, '');
         var matchedProducts = allProducts.filter(function(p) {
             if (p.is_visible === false) return false;
 
@@ -350,10 +570,16 @@
             var pCatSlug = (p.category_slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
             var pName = (p.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-            if (pSubcat === normQuery || pCatSlug === normQuery) return true;
-            if (pSubcat.includes(normQuery) || normQuery.includes(pSubcat)) return true;
-            if (pCatSlug.includes(normQuery) || normQuery.includes(pCatSlug)) return true;
-            if (pName.includes(normQuery) || normQuery.includes(pName)) return true;
+            if (querySubcat) {
+                if (pSubcat === normQuery || pSubcat.includes(normQuery) || normQuery.includes(pSubcat)) return true;
+                if (pName.includes(normQuery)) return true;
+                return false;
+            }
+
+            if (pSubcat === normCat || pCatSlug === normCat) return true;
+            if (pSubcat.includes(normCat) || normCat.includes(pSubcat)) return true;
+            if (pCatSlug.includes(normCat) || normCat.includes(pCatSlug)) return true;
+            if (pName.includes(normCat) || normCat.includes(pName)) return true;
 
             if (matchedCatObj && matchedCatObj.slug) {
                 var cSlugNorm = matchedCatObj.slug.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -364,7 +590,7 @@
 
         // 3. Fallback to hardcoded seed dataset if query matches pre-seeded categories and no custom DB records found
         if (matchedProducts.length === 0 && typeof pageCatalogueDatabase !== 'undefined') {
-            var resolvedSeed = resolveCatalogueData(queryCat);
+            var resolvedSeed = resolveCatalogueData(activeTarget);
             if (resolvedSeed && resolvedSeed.data) {
                 catNameDisplay = resolvedSeed.matchedKey;
                 displayTitle = resolvedSeed.data.title;
