@@ -523,8 +523,8 @@ const CMSDataStore = {
         if (supabaseClient) {
             try {
                 // Fetch directly from Supabase DB
-                const { data, error } = await supabaseClient.from(table).select('*').order('created_at', { ascending: true });
-                if (!error && data) {
+                const { data, error } = await supabaseClient.from(table).select('*');
+                if (!error && data && data.length > 0) {
                     fetchedData = data;
                 }
             } catch (e) {

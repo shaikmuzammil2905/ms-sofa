@@ -42,6 +42,9 @@ function showAdminDashboard() {
     document.getElementById('authScreen').classList.add('d-none');
     document.getElementById('adminAppLayout').classList.remove('d-none');
     loadDashboardData();
+    loadProductsModule();
+    loadCategoriesModule();
+    loadProjectsModule();
     switchTab('dashboard');
 }
 
