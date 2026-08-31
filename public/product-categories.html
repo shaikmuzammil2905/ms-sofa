@@ -661,34 +661,49 @@
 </section>
 
 <!-- Category Filter Anchor Navigation -->
-<div class="bg-white border-bottom py-3 shadow-md sticky-jump-bar" style="position: sticky; top: 92px; z-index: 900; background-color: #ffffff !important; opacity: 1 !important; border-bottom: 3px solid #d32f2f;">
-    <div class="tf-container overflow-auto">
-        <div class="d-flex align-items-center gap-3 text-nowrap py-1">
-            <span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>
-            <a href="#workstations" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Workstations</a>
-            <a href="#tables" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Tables</a>
-            <a href="#storage" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Storage</a>
-            <a href="#seating" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Seating</a>
-            <a href="#soft-seating" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Soft Seating</a>
-            <a href="#pods" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Pods</a>
-            <a href="#carpets" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Carpets</a>
-            <a href="#outdoor" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Outdoor</a>
-            <a href="#educational" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">Educational</a>
+<div class="bg-white border-bottom py-3 category-jump-bar" style="background-color: #ffffff !important; border-bottom: 3px solid #d32f2f !important; overflow-x: auto;">
+    <div class="tf-container">
+        <div class="d-flex align-items-center gap-2 text-nowrap py-1">
+            <span class="fw-black text-dark me-2 flex-shrink-0" style="font-size: 1.1rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>
+            <a href="#workstations" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Workstations</a>
+            <a href="#tables" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Tables</a>
+            <a href="#storage" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Storage</a>
+            <a href="#seating" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Seating</a>
+            <a href="#soft-seating" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Soft Seating</a>
+            <a href="#pods" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Pods</a>
+            <a href="#carpets" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Carpets</a>
+            <a href="#outdoor" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Outdoor</a>
+            <a href="#educational" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Educational</a>
         </div>
     </div>
 </div>
 
 <style>
+    /* Prevent sticky header from covering sections when using anchor links */
     section[id] {
-        scroll-margin-top: 180px !important;
+        scroll-margin-top: 90px;
+    }
+    @media (max-width: 991px) {
+        section[id] {
+            scroll-margin-top: 70px;
+        }
+    }
+    .category-jump-bar {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+    .category-jump-bar::-webkit-scrollbar {
+        display: none;
     }
     .category-jump-btn {
-        font-size: 1.15rem !important;
-        font-weight: 900 !important;
-        border: 2.5px solid #000000 !important;
+        font-size: 1rem !important;
+        font-weight: 800 !important;
+        border: 2px solid #000000 !important;
         color: #000000 !important;
         background-color: #ffffff !important;
         transition: all 0.2s ease-in-out !important;
+        white-space: nowrap;
     }
     .category-jump-btn:hover,
     .category-jump-btn:focus,
@@ -697,33 +712,35 @@
         background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
         color: #ffffff !important;
         border-color: #b71c1c !important;
-        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4) !important;
-        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3) !important;
+        transform: translateY(-1px) !important;
+    }
+    @media (max-width: 768px) {
+        .category-jump-btn {
+            font-size: 0.85rem !important;
+            padding: 6px 14px !important;
+        }
     }
 </style>
 
 <script>
-    function updateJumpBarOffset() {
-        var header = document.querySelector('header.header-sticky') || document.querySelector('header');
-        var jumpBars = document.querySelectorAll('.filter-anchor-bar, .sticky-jump-bar');
-        if (!jumpBars || jumpBars.length === 0) return;
-
-        var headerHeight = (window.innerWidth < 1200) ? 58 : 72;
-        if (header) {
-            var rect = header.getBoundingClientRect();
-            if (rect.height > 0) {
-                headerHeight = rect.height;
-            }
-        }
-        jumpBars.forEach(function(bar) {
-            bar.style.top = headerHeight + 'px';
+    // Smooth scroll offset for anchor links (account for header height only)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                var header = document.querySelector('header');
+                var headerH = header ? header.offsetHeight : 70;
+                var jumpBar = document.querySelector('.category-jump-bar');
+                var jumpH = jumpBar ? jumpBar.offsetHeight : 0;
+                var offset = headerH + jumpH + 16;
+                var top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            });
         });
-    }
-    window.addEventListener('scroll', updateJumpBarOffset, { passive: true });
-    window.addEventListener('resize', updateJumpBarOffset);
-    document.addEventListener('DOMContentLoaded', updateJumpBarOffset);
-    window.addEventListener('load', updateJumpBarOffset);
-    setTimeout(updateJumpBarOffset, 200);
+    });
 </script>
 
 <!-- Main Catalogue Container -->
