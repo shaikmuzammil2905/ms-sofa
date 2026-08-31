@@ -185,8 +185,13 @@
         }
 
         /* Desktop Mega Menu & Standard Dropdown Positioning Fix */
+        header, .header, .header-sticky {
+            z-index: 100000 !important;
+            position: relative;
+        }
         .header-inner {
             position: relative !important;
+            z-index: 100000 !important;
         }
         .main-menu .navigation > li.has-child {
             position: relative !important;
@@ -203,7 +208,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
             border-radius: 8px !important;
             padding: 16px !important;
-            z-index: 99999 !important;
+            z-index: 100001 !important;
             border: 1px solid rgba(0,0,0,0.08) !important;
         }
         .mega-menu {
@@ -218,7 +223,7 @@
             border-radius: 12px !important;
             overflow: visible !important;
             background: #ffffff !important;
-            z-index: 99999 !important;
+            z-index: 100001 !important;
             border: 1px solid rgba(0,0,0,0.08) !important;
         }
         .mega-menu-grid {
@@ -344,7 +349,7 @@
             position: -webkit-sticky !important;
             position: sticky !important;
             top: 72px !important;
-            z-index: 990 !important;
+            z-index: 900 !important;
             background-color: #ffffff !important;
             border-bottom: 2px solid #d32f2f !important;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;

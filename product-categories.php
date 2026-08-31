@@ -12,7 +12,7 @@
 </section>
 
 <!-- Category Filter Anchor Navigation -->
-<div class="bg-white border-bottom py-3 shadow-md sticky-jump-bar" style="position: sticky; top: 92px; z-index: 95; background-color: #ffffff !important; opacity: 1 !important; border-bottom: 3px solid #d32f2f;">
+<div class="bg-white border-bottom py-3 shadow-md sticky-jump-bar" style="position: sticky; top: 92px; z-index: 900; background-color: #ffffff !important; opacity: 1 !important; border-bottom: 3px solid #d32f2f;">
     <div class="tf-container overflow-auto">
         <div class="d-flex align-items-center gap-3 text-nowrap py-1">
             <span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>

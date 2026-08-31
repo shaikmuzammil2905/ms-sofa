@@ -372,8 +372,16 @@ async function toggleProductVisibility(index) {
     try {
         const products = await CMSDataStore.get('products');
         if (products[index]) {
-            products[index].is_visible = !products[index].is_visible;
-            await CMSDataStore.save('products', products);
+            const targetProd = products[index];
+            targetProd.is_visible = (targetProd.is_visible === false) ? true : false;
+            
+            if (targetProd.id) {
+                await CMSDataStore.updateRecord('products', targetProd.id, { is_visible: targetProd.is_visible });
+            } else if (targetProd.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                await supabaseClient.from('products').update({ is_visible: targetProd.is_visible }).eq('slug', targetProd.slug);
+            }
+            
+            localStorage.setItem(CMSDataStore.getKey('products'), JSON.stringify(products));
             await loadProductsModule();
             await loadDashboardData();
         }
@@ -386,8 +394,17 @@ async function deleteProduct(index) {
     if (confirm('Are you sure you want to delete this product?')) {
         try {
             const products = await CMSDataStore.get('products');
-            products.splice(index, 1);
-            await CMSDataStore.save('products', products);
+            const targetProd = products[index];
+            if (targetProd) {
+                if (targetProd.id && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                    await supabaseClient.from('products').delete().eq('id', targetProd.id);
+                } else if (targetProd.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                    await supabaseClient.from('products').delete().eq('slug', targetProd.slug);
+                }
+                
+                products.splice(index, 1);
+                localStorage.setItem(CMSDataStore.getKey('products'), JSON.stringify(products));
+            }
             await loadProductsModule();
             await loadDashboardData();
         } catch (err) {
@@ -520,8 +537,16 @@ async function toggleCategoryVisibility(index) {
     try {
         const categories = await CMSDataStore.get('categories');
         if (categories[index]) {
-            categories[index].is_visible = !categories[index].is_visible;
-            await CMSDataStore.save('categories', categories);
+            const targetCat = categories[index];
+            targetCat.is_visible = (targetCat.is_visible === false) ? true : false;
+
+            if (targetCat.id) {
+                await CMSDataStore.updateRecord('categories', targetCat.id, { is_visible: targetCat.is_visible });
+            } else if (targetCat.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                await supabaseClient.from('categories').update({ is_visible: targetCat.is_visible }).eq('slug', targetCat.slug);
+            }
+
+            localStorage.setItem(CMSDataStore.getKey('categories'), JSON.stringify(categories));
             await loadCategoriesModule();
             await loadDashboardData();
         }
@@ -534,8 +559,17 @@ async function deleteCategory(index) {
     if (confirm('Are you sure you want to delete this category?')) {
         try {
             const categories = await CMSDataStore.get('categories');
-            categories.splice(index, 1);
-            await CMSDataStore.save('categories', categories);
+            const targetCat = categories[index];
+            if (targetCat) {
+                if (targetCat.id && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                    await supabaseClient.from('categories').delete().eq('id', targetCat.id);
+                } else if (targetCat.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                    await supabaseClient.from('categories').delete().eq('slug', targetCat.slug);
+                }
+
+                categories.splice(index, 1);
+                localStorage.setItem(CMSDataStore.getKey('categories'), JSON.stringify(categories));
+            }
             await loadCategoriesModule();
             await loadDashboardData();
         } catch (err) {
@@ -672,8 +706,16 @@ async function toggleProjectVisibility(index) {
     try {
         const projects = await CMSDataStore.get('projects');
         if (projects[index]) {
-            projects[index].is_visible = !projects[index].is_visible;
-            await CMSDataStore.save('projects', projects);
+            const targetProj = projects[index];
+            targetProj.is_visible = (targetProj.is_visible === false) ? true : false;
+
+            if (targetProj.id) {
+                await CMSDataStore.updateRecord('projects', targetProj.id, { is_visible: targetProj.is_visible });
+            } else if (targetProj.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                await supabaseClient.from('projects').update({ is_visible: targetProj.is_visible }).eq('slug', targetProj.slug);
+            }
+
+            localStorage.setItem(CMSDataStore.getKey('projects'), JSON.stringify(projects));
             await loadProjectsModule();
             await loadDashboardData();
         }
@@ -686,8 +728,17 @@ async function deleteProject(index) {
     if (confirm('Are you sure you want to delete this project?')) {
         try {
             const projects = await CMSDataStore.get('projects');
-            projects.splice(index, 1);
-            await CMSDataStore.save('projects', projects);
+            const targetProj = projects[index];
+            if (targetProj) {
+                if (targetProj.id && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                    await supabaseClient.from('projects').delete().eq('id', targetProj.id);
+                } else if (targetProj.slug && typeof supabaseClient !== 'undefined' && supabaseClient) {
+                    await supabaseClient.from('projects').delete().eq('slug', targetProj.slug);
+                }
+
+                projects.splice(index, 1);
+                localStorage.setItem(CMSDataStore.getKey('projects'), JSON.stringify(projects));
+            }
             await loadProjectsModule();
             await loadDashboardData();
         } catch (err) {
