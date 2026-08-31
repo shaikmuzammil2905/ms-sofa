@@ -10,7 +10,7 @@ const CLOUDINARY_UPLOAD_PRESET = 'ml_default';
 const VISHISTA_SEED_DATA = {
   "categories": [
     {
-      "name": "Modular Workstations",
+      "name": "Workstations",
       "slug": "workstations",
       "description": "Height adjustable sit-stand desks, linear open-plan desking, and acoustic panel partitions",
       "image_url": "images/categories/cat_workstations.jpg",
@@ -19,243 +19,103 @@ const VISHISTA_SEED_DATA = {
       "is_published": true
     },
     {
-      "name": "Height Adjustable Series",
-      "slug": "height-adjustable-series",
-      "description": "Motorized sit-to-stand desks engineered for active workplace ergonomics",
-      "image_url": "images/categories/cat_workstations.jpg",
+      "name": "Tables",
+      "slug": "tables",
+      "description": "Executive director desks, boardroom meeting tables, cafe counters, and training desks",
+      "image_url": "images/categories/cat_tables.png",
       "display_order": 2,
       "is_visible": true,
       "is_published": true
     },
     {
-      "name": "Open Plan Desking Series",
-      "slug": "desking-series",
-      "description": "Modular open-plan linear and back-to-back desking systems",
-      "image_url": "images/categories/cat_workstations.jpg",
+      "name": "Storage",
+      "slug": "storage",
+      "description": "Prelam credenzas, steel filing cabinets, high-density mobile compactors, and employee lockers",
+      "image_url": "images/categories/cat_storage.png",
       "display_order": 3,
       "is_visible": true,
       "is_published": true
     },
     {
-      "name": "Panel Partition Series",
-      "slug": "panel-series",
-      "description": "Acoustic panel-based workstation partitions providing high acoustic privacy",
-      "image_url": "images/categories/cat_workstations.jpg",
+      "name": "Seating",
+      "slug": "seating",
+      "description": "High-performance mesh chairs, executive leather armchairs, training chairs, and cafe seating",
+      "image_url": "images/categories/cat_seating.jpg",
       "display_order": 4,
       "is_visible": true,
       "is_published": true
     },
     {
-      "name": "Tables & Desks",
-      "slug": "tables",
-      "description": "Executive director desks, boardroom meeting tables, cafe counters, and training desks",
-      "image_url": "images/categories/cat_tables.png",
+      "name": "Soft Seating",
+      "slug": "soft-seating",
+      "description": "Executive leather couches, modular lounge sofas, collaborative booths, and pouffes",
+      "image_url": "images/categories/cat_soft_seating.jpg",
       "display_order": 5,
       "is_visible": true,
       "is_published": true
     },
     {
-      "name": "Executive Cabin Tables",
-      "slug": "cabin-tables",
-      "description": "Executive director and managerial desk setups with side return credenzas",
-      "image_url": "images/categories/cat_tables.png",
+      "name": "Pods",
+      "slug": "pods",
+      "description": "Solo phone booths and soundproof acoustic meeting pods",
+      "image_url": "images/categories/cat_pods.jpg",
       "display_order": 6,
       "is_visible": true,
       "is_published": true
     },
     {
-      "name": "Boardroom Meeting Tables",
-      "slug": "meeting-tables",
-      "description": "Large boardroom conference tables equipped with pop-up connectivity boxes",
-      "image_url": "images/categories/cat_tables.png",
+      "name": "Carpets",
+      "slug": "carpets",
+      "description": "Acoustic modular carpet tiles in contemporary geometric patterns",
+      "image_url": "images/categories/cat_carpets.jpg",
       "display_order": 7,
       "is_visible": true,
       "is_published": true
     },
     {
-      "name": "Cafe & Breakout Tables",
-      "slug": "cafe-tables",
-      "description": "Sleek cafe counters and collaborative huddle tables",
-      "image_url": "images/categories/cat_tables.png",
+      "name": "Outdoor",
+      "slug": "outdoor",
+      "description": "Synthetic wicker terrace seating, patio umbrellas, and garden breakout sets",
+      "image_url": "images/categories/cat_outdoor.jpg",
       "display_order": 8,
       "is_visible": true,
       "is_published": true
     },
     {
-      "name": "Training Tables",
-      "slug": "training-tables",
-      "description": "Flip-top and mobile modular training room tables",
-      "image_url": "images/categories/cat_tables.png",
-      "display_order": 9,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Storage Systems",
-      "slug": "storage",
-      "description": "Prelam credenzas, steel filing cabinets, high-density mobile compactors, and employee lockers",
-      "image_url": "images/categories/cat_storage.png",
-      "display_order": 10,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Prelam Storage",
-      "slug": "prelam-storage",
-      "description": "Wooden pre-laminated credenzas and executive pedestals",
-      "image_url": "images/categories/cat_storage.png",
-      "display_order": 11,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Steel & Metal Storage",
-      "slug": "metal-storage",
-      "description": "Powder-coated steel filing cabinets, lateral drawers, and archive units",
-      "image_url": "images/categories/cat_storage.png",
-      "display_order": 12,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Compactor Storage",
-      "slug": "compactor-storage",
-      "description": "High-density mobile rail compactor storage systems",
-      "image_url": "images/categories/cat_storage.png",
-      "display_order": 13,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Employee Locker Systems",
-      "slug": "locker-systems",
-      "description": "Personal keyless employee locker cabinets",
-      "image_url": "images/categories/cat_storage.png",
-      "display_order": 14,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "ArchLabs Seating Catalogue",
-      "slug": "archlabs-seating",
-      "description": "Line-wise Mesh, Executive Leather, Training, Metro Linea, and Cafeteria Collections",
-      "image_url": "images/categories/cat_seating.jpg",
-      "display_order": 15,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Ergonomic Mesh Chairs",
-      "slug": "mesh-chairs",
-      "description": "Breathable mesh back ergonomic office chairs with synchro-tilt mechanism",
-      "image_url": "images/categories/cat_seating.jpg",
-      "display_order": 16,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Executive Leather Chairs",
-      "slug": "leather-chairs",
-      "description": "Top-grain genuine leather high-back executive chairs",
-      "image_url": "images/categories/cat_seating.jpg",
-      "display_order": 17,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Training & Cafe Chairs",
-      "slug": "training-cafe-chairs",
-      "description": "Stackable writing tablet chairs and cafeteria seating",
-      "image_url": "images/categories/cat_seating.jpg",
-      "display_order": 18,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Metro Linea Public Seating",
-      "slug": "metro-linea",
-      "description": "2, 3, and 5-seater heavy-duty public airport and lobby benches",
-      "image_url": "images/categories/cat_seating.jpg",
-      "display_order": 19,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Soft Seating & Lounges",
-      "slug": "soft-seating",
-      "description": "Executive leather couches, modular lounge sofas, collaborative booths, and pouffes",
-      "image_url": "images/categories/cat_soft_seating.jpg",
-      "display_order": 20,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Acoustic Work Pods",
-      "slug": "acoustic-pods",
-      "description": "Solo phone booths and 4-6 person soundproof acoustic meeting pods",
-      "image_url": "images/categories/cat_pods.jpg",
-      "display_order": 21,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Interface Carpets",
-      "slug": "carpets",
-      "description": "Acoustic modular carpet tiles in contemporary geometric patterns",
-      "image_url": "images/categories/cat_carpets.jpg",
-      "display_order": 22,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Outdoor Furniture",
-      "slug": "outdoor",
-      "description": "Synthetic wicker terrace seating, patio umbrellas, and garden breakout sets",
-      "image_url": "images/categories/cat_outdoor.jpg",
-      "display_order": 23,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Educational Solutions",
+      "name": "Educational",
       "slug": "educational",
       "description": "Student classroom desks, library reading carrels, hostel bunk beds, and auditorium chairs",
       "image_url": "images/categories/cat_education.png",
-      "display_order": 24,
-      "is_visible": true,
-      "is_published": true
-    },
-    {
-      "name": "Workspace Accessories",
-      "slug": "accessories",
-      "description": "Dual monitor gas arms, under-desk cable management, and pop-up power modules",
-      "image_url": "images/categories/cat_tables.png",
-      "display_order": 25,
+      "display_order": 9,
       "is_visible": true,
       "is_published": true
     }
   ],
   "subcategories": [
     { "name": "Height Adjustable Series", "slug": "height-adjustable-series", "category_slug": "workstations", "display_order": 1 },
-    { "name": "Open Plan Desking Series", "slug": "desking-series", "category_slug": "workstations", "display_order": 2 },
-    { "name": "Panel Partition Series", "slug": "panel-series", "category_slug": "workstations", "display_order": 3 },
-    { "name": "Executive Cabin Tables", "slug": "cabin-tables", "category_slug": "tables", "display_order": 1 },
-    { "name": "Boardroom Meeting Tables", "slug": "meeting-tables", "category_slug": "tables", "display_order": 2 },
-    { "name": "Cafe & Breakout Tables", "slug": "cafe-tables", "category_slug": "tables", "display_order": 3 },
+    { "name": "Desking Series", "slug": "desking-series", "category_slug": "workstations", "display_order": 2 },
+    { "name": "Panel Series", "slug": "panel-series", "category_slug": "workstations", "display_order": 3 },
+    { "name": "Cabin Tables", "slug": "cabin-tables", "category_slug": "tables", "display_order": 1 },
+    { "name": "Meeting Tables", "slug": "meeting-tables", "category_slug": "tables", "display_order": 2 },
+    { "name": "Cafe Tables", "slug": "cafe-tables", "category_slug": "tables", "display_order": 3 },
     { "name": "Training Tables", "slug": "training-tables", "category_slug": "tables", "display_order": 4 },
     { "name": "Prelam Storage", "slug": "prelam-storage", "category_slug": "storage", "display_order": 1 },
-    { "name": "Steel & Metal Storage", "slug": "metal-storage", "category_slug": "storage", "display_order": 2 },
+    { "name": "Metal Storage", "slug": "metal-storage", "category_slug": "storage", "display_order": 2 },
     { "name": "Compactor Storage", "slug": "compactor-storage", "category_slug": "storage", "display_order": 3 },
-    { "name": "Employee Locker Systems", "slug": "locker-systems", "category_slug": "storage", "display_order": 4 },
-    { "name": "Mesh Series", "slug": "mesh-series", "category_slug": "archlabs-seating", "display_order": 1 },
-    { "name": "Leather Series", "slug": "leather-series", "category_slug": "archlabs-seating", "display_order": 2 },
-    { "name": "Training Series", "slug": "training-series", "category_slug": "archlabs-seating", "display_order": 3 },
-    { "name": "Metro Linea Series", "slug": "metro-linea-series", "category_slug": "archlabs-seating", "display_order": 4 },
-    { "name": "Executive Couches", "slug": "executive-couches", "category_slug": "soft-seating", "display_order": 1 },
-    { "name": "Modular Lounges", "slug": "modular-lounges", "category_slug": "soft-seating", "display_order": 2 },
-    { "name": "Collaborative Booths", "slug": "collaborative-booths", "category_slug": "soft-seating", "display_order": 3 },
-    { "name": "Phone Booths", "slug": "phone-booths", "category_slug": "acoustic-pods", "display_order": 1 },
-    { "name": "Meeting Pods", "slug": "meeting-pods", "category_slug": "acoustic-pods", "display_order": 2 }
+    { "name": "Locker", "slug": "locker", "category_slug": "storage", "display_order": 4 },
+    { "name": "Mesh Chair", "slug": "mesh-chair", "category_slug": "seating", "display_order": 1 },
+    { "name": "Leather Chair", "slug": "leather-chair", "category_slug": "seating", "display_order": 2 },
+    { "name": "Training Chair", "slug": "training-chair", "category_slug": "seating", "display_order": 3 },
+    { "name": "Cafe Chair", "slug": "cafe-chair", "category_slug": "seating", "display_order": 4 },
+    { "name": "Lounge", "slug": "lounge", "category_slug": "soft-seating", "display_order": 1 },
+    { "name": "Sofa", "slug": "sofa", "category_slug": "soft-seating", "display_order": 2 },
+    { "name": "Collaborative", "slug": "collaborative", "category_slug": "soft-seating", "display_order": 3 },
+    { "name": "Pouffe", "slug": "pouffe", "category_slug": "soft-seating", "display_order": 4 },
+    { "name": "Occasional Tables", "slug": "occasional-tables", "category_slug": "soft-seating", "display_order": 5 },
+    { "name": "Classroom", "slug": "classroom", "category_slug": "educational", "display_order": 1 },
+    { "name": "Library", "slug": "library", "category_slug": "educational", "display_order": 2 },
+    { "name": "Hostel", "slug": "hostel", "category_slug": "educational", "display_order": 3 },
+    { "name": "Auditorium", "slug": "auditorium", "category_slug": "educational", "display_order": 4 }
   ],
   "products": [
     {

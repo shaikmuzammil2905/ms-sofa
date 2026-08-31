@@ -143,7 +143,7 @@ async function syncFooterSection() {
     });
 }
 
-// 4. Dynamic Categories Sync (Megamenu, Mobile Drawer, Grids, and Jump Bar)
+// // 4. Dynamic Categories Sync (Megamenu, Mobile Drawer, Grids, and Jump Bar)
 async function syncCategoriesSection() {
     const rawCategories = (await CMSDataStore.get('categories')) || [];
     const rawSubcategories = (await CMSDataStore.get('subcategories')) || [];
@@ -153,101 +153,102 @@ async function syncCategoriesSection() {
     const products = rawProducts.filter(p => p.is_visible !== false && p.is_published !== false);
     const visibleCategories = categories;
 
+    if (visibleCategories.length === 0) return;
+
     // A. Sync Desktop Megamenu Grid
     const megaGrid = document.getElementById('megaMenuCategoryGrid') || document.querySelector('.mega-menu-grid');
-    if (megaGrid && visibleCategories.length > 0) {
-        const existingTitles = Array.from(megaGrid.querySelectorAll('.mega-category-title')).map(el => el.textContent.trim().toLowerCase());
-        
+    if (megaGrid) {
+        let megaHtml = '';
         visibleCategories.forEach(cat => {
-            const catNameLower = cat.name.trim().toLowerCase();
-            const catSlug = cat.slug || catNameLower.replace(/[^a-z0-9]+/g, '-');
-            if (!existingTitles.includes(catNameLower)) {
-                let subItems = rawSubcategories
-                    .filter(s => s.category_slug === catSlug || s.category_slug === cat.name)
-                    .map(s => s.name);
+            const catName = cat.name.trim();
+            const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
-                const catProducts = products.filter(p => p.is_visible !== false && (
-                    (p.category_slug && p.category_slug.toLowerCase() === catSlug) ||
-                    (p.category && p.category.toLowerCase() === catNameLower)
-                ));
+            // Find subcategories belonging to this category from subcategories table or products
+            let subItems = rawSubcategories
+                .filter(s => s.category_slug === catSlug || s.category_slug === catName)
+                .map(s => s.name.trim());
 
-                catProducts.forEach(p => {
-                    if (p.subcategory && !subItems.includes(p.subcategory)) {
-                        subItems.push(p.subcategory);
-                    }
-                });
+            const catProducts = products.filter(p => p.is_visible !== false && (
+                (p.category_slug && p.category_slug.toLowerCase() === catSlug.toLowerCase()) ||
+                (p.category && p.category.toLowerCase() === catName.toLowerCase())
+            ));
 
-                if (subItems.length === 0) {
-                    subItems.push(cat.name);
+            catProducts.forEach(p => {
+                if (p.subcategory && !subItems.includes(p.subcategory.trim())) {
+                    subItems.push(p.subcategory.trim());
                 }
+            });
 
-                const subListHtml = subItems.map(subName => 
-                    `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
+            let subListHtml = '';
+            if (subItems.length > 0) {
+                subListHtml = subItems.map(subName => 
+                    `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
                 ).join('');
+            } else {
+                subListHtml = `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Explore All ${catName}</a></li>`;
+            }
 
-                const catDiv = document.createElement('div');
-                catDiv.innerHTML = `
-                    <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="mega-category-title d-block text-danger" style="font-size: 15px !important; font-weight: 700 !important;">${cat.name}</a>
+            megaHtml += `
+                <div>
+                    <a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">${catName}</a>
                     <ul class="mega-subcategory-list">
                         ${subListHtml}
                     </ul>
-                `;
-                megaGrid.appendChild(catDiv);
-                existingTitles.push(catNameLower);
-            }
+                </div>
+            `;
         });
+        megaGrid.innerHTML = megaHtml;
     }
 
     // B. Sync Mobile Drawer Menu
     const mobileGroup = document.getElementById('mobileMenuCategoryGroup') || document.querySelector('#mobileProductsCollapse .mobile-accordion-group');
-    if (mobileGroup && visibleCategories.length > 0) {
-        const existingMobileTitles = Array.from(mobileGroup.querySelectorAll('a.fw-bold')).map(el => el.textContent.replace('→', '').replace('→', '').trim().toLowerCase());
-
+    if (mobileGroup) {
+        let mobHtml = '';
         visibleCategories.forEach(cat => {
-            const catNameLower = cat.name.trim().toLowerCase();
-            const catSlug = cat.slug || catNameLower.replace(/[^a-z0-9]+/g, '-');
-            if (!existingMobileTitles.includes(catNameLower)) {
-                let subItems = rawSubcategories
-                    .filter(s => s.category_slug === catSlug || s.category_slug === cat.name)
-                    .map(s => s.name);
+            const catName = cat.name.trim();
+            const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
-                const catProducts = products.filter(p => p.is_visible !== false && (
-                    (p.category_slug && p.category_slug.toLowerCase() === catSlug) ||
-                    (p.category && p.category.toLowerCase() === catNameLower)
-                ));
+            let subItems = rawSubcategories
+                .filter(s => s.category_slug === catSlug || s.category_slug === catName)
+                .map(s => s.name.trim());
 
-                catProducts.forEach(p => {
-                    if (p.subcategory && !subItems.includes(p.subcategory)) {
-                        subItems.push(p.subcategory);
-                    }
-                });
-                if (subItems.length === 0) subItems.push(cat.name);
+            const catProducts = products.filter(p => p.is_visible !== false && (
+                (p.category_slug && p.category_slug.toLowerCase() === catSlug.toLowerCase()) ||
+                (p.category && p.category.toLowerCase() === catName.toLowerCase())
+            ));
 
-                const subListHtml = subItems.map(subName =>
-                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
+            catProducts.forEach(p => {
+                if (p.subcategory && !subItems.includes(p.subcategory.trim())) {
+                    subItems.push(p.subcategory.trim());
+                }
+            });
+
+            let subListHtml = '';
+            if (subItems.length > 0) {
+                subListHtml = subItems.map(subName =>
+                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
                 ).join('');
+            } else {
+                subListHtml = `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}">&bull; Explore All ${catName}</a></li>`;
+            }
 
-
-                const mobDiv = document.createElement('div');
-                mobDiv.className = 'p-3 rounded-3';
-                mobDiv.style.cssText = 'background-color: #f8f9fa; border: 1px solid #e9ecef;';
-                mobDiv.innerHTML = `
-                    <a href="product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
-                        ${cat.name} &rarr;
+            mobHtml += `
+                <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                    <a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                        ${catName} &rarr;
                     </a>
                     <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
                         ${subListHtml}
                     </ul>
-                `;
-                mobileGroup.appendChild(mobDiv);
-                existingMobileTitles.push(catNameLower);
-            }
+                </div>
+            `;
         });
+        mobileGroup.innerHTML = mobHtml;
     }
 
     // C. Sync Category Cards Grid
     const grid = document.getElementById('categoriesGridContainer');
-    if (grid && visibleCategories.length > 0) {
+    if (grid) {
         let html = '';
         const defaultCategoryImages = {
             'workstations': 'images/categories/cat_workstations.jpg',
@@ -273,9 +274,7 @@ async function syncCategoriesSection() {
 
         visibleCategories.forEach(cat => {
             const catSlug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const catTargetUrl = cat.slug === 'soft-seating' ? 'product-sofas.html' : 
-                               (cat.slug === 'archlabs-seating' ? 'archlabs-catalogue.html' : 
-                               `product-categories.html#${catSlug}`);
+            const catTargetUrl = `product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}`;
 
             let catImg = cat.image_url;
             if (!catImg || catImg.includes('map') || catImg.includes('logo-symbol') || catImg.includes('collection-1') || defaultCategoryImages[catSlug]) {
@@ -330,19 +329,15 @@ async function syncCategoriesSection() {
 
     // D. Sync Jump to Category Bar
     const jumpContainer = document.querySelector('.sticky-jump-bar .d-flex, .filter-anchor-bar .d-flex');
-    if (jumpContainer && visibleCategories.length > 0) {
-        const existingJumps = Array.from(jumpContainer.querySelectorAll('a')).map(el => el.textContent.trim().toLowerCase());
+    if (jumpContainer) {
+        let jumpHtml = `<span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>`;
         visibleCategories.forEach(cat => {
-            const catNameLower = cat.name.trim().toLowerCase();
-            if (!existingJumps.includes(catNameLower)) {
-                const a = document.createElement('a');
-                a.href = `product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}`;
-                a.className = 'btn rounded-pill px-4 py-2 text-uppercase category-jump-btn';
-                a.textContent = cat.name;
-                jumpContainer.appendChild(a);
-                existingJumps.push(catNameLower);
-            }
+            const catName = cat.name.trim();
+            const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const targetHref = window.location.pathname.includes('product-categories') ? `#${catSlug}` : `product-catalogue-view.html?cat=${encodeURIComponent(catName)}`;
+            jumpHtml += `<a href="${targetHref}" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">${catName}</a>`;
         });
+        jumpContainer.innerHTML = jumpHtml;
     }
 }
 
