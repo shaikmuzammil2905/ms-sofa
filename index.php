@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">Workstations</h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Height Adjustable Series, Desking Series, and Panel Series designed for collaborative and ergonomic team layouts.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
-                            <a href="product-categories.html#workstations" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <a href="product-catalogue-view.html?cat=Workstations" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
                             <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Workstations Series')">Enquire &rarr;</button>
                         </div>
                     </div>
@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">Tables</h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Executive Cabin Tables, Conference Meeting Tables, Cafe Tables, and Modular Training Tables for modern corporate suites.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
-                            <a href="product-categories.html#tables" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <a href="product-catalogue-view.html?cat=Tables" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
                             <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Corporate Tables')">Enquire &rarr;</button>
                         </div>
                     </div>
@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">Storage Systems</h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Prelam Storage Credenzas, Heavy-Duty Metal Filing Cabinets, High-Density Compactor Storage, and Personal Lockers.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
-                            <a href="product-categories.html#storage" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <a href="product-catalogue-view.html?cat=Storage" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
                             <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Storage Systems')">Enquire &rarr;</button>
                         </div>
                     </div>
@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">Ergonomic Seating</h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Premium High-Back Mesh Chairs, Genuine Leather Executive Armchairs, Training Chairs, and Cafe Seating.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
-                            <a href="product-categories.html#seating" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <a href="product-catalogue-view.html?cat=Seating" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
                             <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Ergonomic Chairs')">Enquire &rarr;</button>
                         </div>
                     </div>
@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">Acoustic Work Pods</h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Private Acoustic Phone Pods and Collaborative Meeting Pods engineered for sound isolation and distraction-free calls.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
-                            <a href="product-categories.html#pods" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <a href="product-catalogue-view.html?cat=Single%20Acoustic%20Phone%20Pod" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
                             <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Acoustic Work Pods')">Enquire &rarr;</button>
                         </div>
                     </div>
@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">Interface Carpets</h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">High-performance Interface Carpet Tiles designed for heavy traffic commercial office floors.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
-                            <a href="product-categories.html#carpets" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <a href="product-catalogue-view.html?cat=Interface%20Carpet%20Tiles" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
                             <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Interface Carpet Tiles')">Enquire &rarr;</button>
                         </div>
                     </div>
@@ -401,7 +401,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">Outdoor Furniture</h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Weatherproof Loom Crafts outdoor lounge sets, patio tables, and terrace seating for corporate cafeterias.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
-                            <a href="product-categories.html#outdoor" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <a href="product-catalogue-view.html?cat=Loom%20Crafts%20Terrace%20%26%20Cafe%20Seating" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
                             <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Outdoor Loom Crafts Furniture')">Enquire &rarr;</button>
                         </div>
                     </div>
@@ -419,7 +419,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">Educational Solutions</h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Ergonomic Classroom Desks, Library Furniture, Hostel Storage Units, and Heavy-Duty Auditorium Seating.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
-                            <a href="product-categories.html#educational" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
+                            <a href="product-catalogue-view.html?cat=Classroom%20Desks" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
                             <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Educational Furniture')">Enquire &rarr;</button>
                         </div>
                     </div>

@@ -40,18 +40,18 @@
                             <div class="row g-2" style="font-size: 15.5px !important;">
                                 <div class="col-6">
                                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                        <li><a href="product-categories.html#workstations" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Workstations</a></li>
-                                        <li><a href="product-categories.html#tables" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Tables</a></li>
-                                        <li><a href="product-categories.html#storage" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Storage</a></li>
-                                        <li><a href="archlabs-catalogue.html" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Seating</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Workstations" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Workstations</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Tables" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Tables</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Storage" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Storage</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Seating" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Seating</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-6">
                                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                        <li><a href="product-sofas.html" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Soft Seating</a></li>
-                                        <li><a href="product-categories.html#pods" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Pods</a></li>
-                                        <li><a href="product-categories.html#educational" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Educational</a></li>
-                                        <li><a href="product-categories.html#accessories" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Accessories</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Soft%20Seating" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Soft Seating</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Pods%20%26%20Environment" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Pods</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Educational" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Educational</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Ergonomic%20Arms%20%26%20Power%20Management" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Accessories</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
                             
                             <!-- 1. Workstations -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-catalogue-view.html?cat=Workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Workstations &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
@@ -176,7 +176,7 @@
 
                             <!-- 2. Tables -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#tables" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-catalogue-view.html?cat=Tables" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Tables &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
@@ -189,7 +189,7 @@
 
                             <!-- 3. Storage -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#storage" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-catalogue-view.html?cat=Storage" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Storage &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
@@ -202,7 +202,7 @@
 
                             <!-- 4. Seating -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="archlabs-catalogue.html" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-catalogue-view.html?cat=Seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Seating &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
@@ -215,46 +215,46 @@
 
                             <!-- 5. Soft Seating -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-sofas.html" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-catalogue-view.html?cat=Soft%20Seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Soft Seating &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-sofas.html">&bull; Lounge &amp; Sofas</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-sofas.html">&bull; Collaborative Seating</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-sofas.html">&bull; Pouffe &amp; Occasional Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Lounge%20%26%20Executive%20Sofas">&bull; Lounge &amp; Sofas</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Collaborative%20Seating">&bull; Collaborative Seating</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Pouffes%20%26%20Occasional%20Tables">&bull; Pouffe &amp; Occasional Tables</a></li>
                                 </ul>
                             </div>
 
                             <!-- 6. Pods & Environment -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#pods" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-catalogue-view.html?cat=Pods%20%26%20Environment" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Pods &amp; Environment &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Acoustic%20Pods">&bull; Acoustic Work Pods</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Interface%20Carpets">&bull; Interface Carpet Tiles</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html#outdoor">&bull; Outdoor Furniture</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Loom%20Crafts%20Terrace%20%26%20Cafe%20Seating">&bull; Outdoor Furniture</a></li>
                                 </ul>
                             </div>
 
                             <!-- 7. Educational -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-catalogue-view.html?cat=Educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Educational &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html#educational">&bull; Classroom &amp; Library</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html#educational">&bull; Hostel &amp; Auditorium</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Classroom%20Desks">&bull; Classroom &amp; Library</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Hostel%20Furniture">&bull; Hostel &amp; Auditorium</a></li>
                                 </ul>
                             </div>
 
                             <!-- 8. Accessories -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#accessories" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-catalogue-view.html?cat=Ergonomic%20Arms%20%26%20Power%20Management" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Accessories &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html#accessories">&bull; Workspace Accessories</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Ergonomic%20Arms%20%26%20Power%20Management">&bull; Workspace Accessories</a></li>
                                 </ul>
                             </div>
 
