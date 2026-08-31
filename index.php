@@ -30,7 +30,7 @@
                 </h1>
 
                 <!-- Animated Subheading -->
-                <p class="fs-5 text-white mb-5 hero-subtitle fw-semibold" style="max-width: 720px; line-height: 1.7; font-size: 1.25rem !important; text-shadow: 0 2px 10px rgba(0,0,0,0.7);">
+                <p class="fs-5 text-white mb-5 hero-subtitle fw-semibold" style="max-width: 720px; line-height: 1.7; font-size: 1.25rem !important; text-shadow: 2px 2px 8px #000000, 0 0 12px #000000, 0 2px 4px #000000 !important;">
                     Premium office furniture, interior systems, and turnkey workspace solutions designed for modern corporate businesses, MNCs, educational institutions, and professional environments.
                 </p>
 
@@ -111,7 +111,7 @@
         box-shadow: none !important;
         backdrop-filter: none !important;
         padding: 0 !important;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.9) !important;
+        text-shadow: 2px 2px 8px #000000, 0 0 12px #000000, 0 2px 4px #000000 !important;
     }
 
     .hero-actions {

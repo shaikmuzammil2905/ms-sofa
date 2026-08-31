@@ -46,7 +46,8 @@ async function syncHeroSection() {
     // Update Hero Subtitle / Description
     const subtitleEl = document.querySelector('.hero-subtitle') || document.getElementById('heroDescDisplay');
     if (subtitleEl && hero.description) {
-        subtitleEl.textContent = hero.description;
+        let cleanDesc = hero.description.replace(/\s*across Telangana and Andhra Pradesh\.?/gi, '.').replace(/\.\./g, '.');
+        subtitleEl.textContent = cleanDesc;
     }
 
     // Update Hero Background Images (Supports 3 Slides automatically)
