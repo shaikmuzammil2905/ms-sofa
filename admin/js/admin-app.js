@@ -1397,13 +1397,11 @@ async function saveHeroCMS(e) {
         cleanSlides.push('images/sections/hero-slide-1.png');
     }
 
-    const slide_1 = cleanSlides[0] || 'images/sections/hero-slide-1.png';
-    const slide_2 = cleanSlides[1] || slide_1;
-    const slide_3 = cleanSlides[2] || slide_2;
+    const bg_image_url = cleanSlides[0] || 'images/sections/hero-slide-1.png';
     const background_image = cleanSlides.join('|||');
 
     try {
-        const heroRecord = [{ heading, description, slide_1, slide_2, slide_3, background_image, is_custom_updated: true }];
+        const heroRecord = [{ heading, description, bg_image_url, background_image, is_custom_updated: true }];
         await CMSDataStore.save('hero_sections', heroRecord);
         alert('✓ Hero section and all background slides updated successfully in database!');
     } catch (err) {
