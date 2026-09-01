@@ -221,7 +221,7 @@ function filterProductsTable() {
         const descStr = (prod.description || '').toLowerCase();
         const matchesSearch = !search || nameStr.includes(search) || descStr.includes(search);
 
-        const matchesCategory = !catFilter || prod.category_slug === catFilter;
+        const matchesCategory = !catFilter || isSameCategory(prod.category_slug, catFilter);
 
         const isVis = prod.is_visible !== false;
         const matchesVisibility = !visFilter || (visFilter === 'visible' && isVis) || (visFilter === 'hidden' && !isVis);
@@ -574,10 +574,10 @@ async function deleteProduct(index) {
 }
 
 
-// 5. Module: Categories & Subcategories CMS
+// 5. Module: Categories CMS
 async function loadCategoriesModule() {
     const categories = await CMSDataStore.get('categories');
-    const products = await CMSDataStore.get('products');
+    const subcategories = await CMSDataStore.get('subcategories');
     const tbody = document.getElementById('categoriesTableBody');
     if (tbody) {
         if (!categories || categories.length === 0) {
@@ -587,7 +587,7 @@ async function loadCategoriesModule() {
             categories.forEach((cat, index) => {
                 const isVisible = cat.is_visible !== false;
                 const isPublished = cat.is_published !== false;
-                const prodCount = (products || []).filter(p => p.category_slug === cat.slug).length;
+                const subCount = (subcategories || []).filter(s => isSameCategory(s.category_slug, cat.slug) || isSameCategory(s.category_slug, cat.name) || s.category_id === cat.id).length;
 
                 html += `
                 <tr>
@@ -596,7 +596,7 @@ async function loadCategoriesModule() {
                     </td>
                     <td class="fw-bold text-dark">${cat.name}</td>
                     <td><code>${cat.slug}</code></td>
-                    <td><span class="badge bg-danger-subtle text-danger border border-danger font-monospace px-2 py-1">${prodCount} Products</span></td>
+                    <td><span class="badge bg-primary-subtle text-primary border border-primary font-monospace px-2 py-1">${subCount} Subcategor${subCount === 1 ? 'y' : 'ies'}</span></td>
                     <td>
                         <span class="${isVisible ? 'badge bg-success-subtle text-success border border-success' : 'badge bg-danger-subtle text-danger border border-danger'}">
                             ${isVisible ? 'VISIBLE' : 'HIDDEN'}

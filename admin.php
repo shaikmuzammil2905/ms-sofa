@@ -244,7 +244,7 @@
                                         <th>Image</th>
                                         <th>Category Name</th>
                                         <th>Slug</th>
-                                        <th>Products</th>
+                                        <th>Subcategories</th>
                                         <th>Visibility</th>
                                         <th>Status</th>
                                         <th>Order</th>
