@@ -143,7 +143,17 @@ async function syncFooterSection() {
     });
 }
 
-// // 4. Dynamic Categories Sync (Megamenu, Mobile Drawer, Grids, and Jump Bar)
+function isSameCategory(catSlugOrName, targetSlugOrName) {
+    if (!catSlugOrName || !targetSlugOrName) return false;
+    const s1 = String(catSlugOrName).toLowerCase().replace(/[^a-z0-9]/g, '');
+    const s2 = String(targetSlugOrName).toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (s1 === s2) return true;
+    if (s1.replace(/s$/, '') === s2.replace(/s$/, '')) return true;
+    if (s1 === s2 + 's' || s2 === s1 + 's') return true;
+    return false;
+}
+
+// 4. Dynamic Categories Sync (Megamenu, Mobile Drawer, Grids, and Jump Bar)
 async function syncCategoriesSection() {
     const rawCategories = (await CMSDataStore.get('categories')) || [];
     const rawSubcategories = (await CMSDataStore.get('subcategories')) || [];
@@ -166,12 +176,14 @@ async function syncCategoriesSection() {
 
             // Find subcategories belonging to this category from subcategories table or products
             let subItems = rawSubcategories
-                .filter(s => s.category_slug === catSlug || s.category_slug === catName)
+                .filter(s => isSameCategory(s.category_slug, catSlug) || isSameCategory(s.category_slug, catName))
                 .map(s => (s.name || '').trim());
 
             const catProducts = products.filter(p => p.is_visible !== false && (
-                (p.category_slug && p.category_slug.toLowerCase() === catSlug.toLowerCase()) ||
-                (p.category && p.category.toLowerCase() === catName.toLowerCase())
+                isSameCategory(p.category_slug, catSlug) ||
+                isSameCategory(p.category_slug, catName) ||
+                isSameCategory(p.category, catSlug) ||
+                isSameCategory(p.category, catName)
             ));
 
             catProducts.forEach(p => {
@@ -211,12 +223,14 @@ async function syncCategoriesSection() {
             const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
             let subItems = rawSubcategories
-                .filter(s => s.category_slug === catSlug || s.category_slug === catName)
+                .filter(s => isSameCategory(s.category_slug, catSlug) || isSameCategory(s.category_slug, catName))
                 .map(s => (s.name || '').trim());
 
             const catProducts = products.filter(p => p.is_visible !== false && (
-                (p.category_slug && p.category_slug.toLowerCase() === catSlug.toLowerCase()) ||
-                (p.category && p.category.toLowerCase() === catName.toLowerCase())
+                isSameCategory(p.category_slug, catSlug) ||
+                isSameCategory(p.category_slug, catName) ||
+                isSameCategory(p.category, catSlug) ||
+                isSameCategory(p.category, catName)
             ));
 
             catProducts.forEach(p => {
@@ -285,8 +299,10 @@ async function syncCategoriesSection() {
 
             // Find products belonging to this category
             const catProducts = products.filter(p => p.is_visible !== false && (
-                (p.category_slug && p.category_slug.toLowerCase() === catSlug) ||
-                (p.category && p.category.toLowerCase() === cat.name.toLowerCase())
+                isSameCategory(p.category_slug, catSlug) ||
+                isSameCategory(p.category_slug, cat.name) ||
+                isSameCategory(p.category, catSlug) ||
+                isSameCategory(p.category, cat.name)
             ));
 
             let descText = cat.description;
