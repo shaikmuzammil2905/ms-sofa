@@ -530,7 +530,7 @@
                 return { matchedKey: k, data: pageCatalogueDatabase[k] };
             }
         }
-        return { matchedKey: decoded, data: pageCatalogueDatabase["Workstations"] };
+        return null;
     }
 
     async function loadDynamicCatalogueView() {
