@@ -280,7 +280,6 @@
                             <table class="admin-table align-middle">
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
                                         <th>Subcategory Name</th>
                                         <th>Parent Category</th>
                                         <th>Slug</th>
@@ -548,19 +547,6 @@
                         <div class="mb-3">
                             <label class="form-label fw-semibold fs-7">Display Order</label>
                             <input type="number" id="subcategoryOrderInput" class="form-control" value="0">
-                        </div>
-                        <!-- Subcategory Image Upload -->
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold fs-7">Subcategory Image (Upload Image)</label>
-                            <div class="upload-dropzone" onclick="document.getElementById('subcategoryFileInput').click()">
-                                <div class="text-danger fs-3 mb-1">🖼️</div>
-                                <div class="fw-bold text-dark fs-7">Click to select &amp; upload image</div>
-                            </div>
-                            <input type="file" id="subcategoryFileInput" class="d-none" accept="image/*" onchange="handleImageUploadGeneric(this, 'subcategoryImageUrl', 'subcategoryImagePreview', 'subcategoryImagePreviewContainer')">
-                            <input type="hidden" id="subcategoryImageUrl">
-                            <div id="subcategoryImagePreviewContainer" class="mt-2 text-center d-none">
-                                <img id="subcategoryImagePreview" src="" alt="Preview" style="max-height: 120px; border-radius: 8px; border: 1px solid #e2e8f0; padding: 4px;">
-                            </div>
                         </div>
                     </div>
                     <div class="modal-footer border-top">
