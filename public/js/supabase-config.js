@@ -1337,10 +1337,12 @@ function generateUUID() {
     });
 }
 
+const _cmsMissingTables = new Set();
+
 // Global Store State Manager (Supabase Database Priority + Fail-Safe Seed & Cache Merger)
 const CMSDataStore = {
     get: async function(table) {
-        if (supabaseClient) {
+        if (supabaseClient && !_cmsMissingTables.has(table)) {
             try {
                 let query = supabaseClient.from(table).select('*');
                 if (['products', 'categories', 'subcategories', 'projects', 'featured_collections', 'gallery'].includes(table)) {
@@ -1348,7 +1350,11 @@ const CMSDataStore = {
                 }
                 const { data, error } = await query;
                 
-                if (!error && Array.isArray(data)) {
+                if (error) {
+                    if (error.code === 'PGRST205' || error.message?.includes('schema cache') || error.code === '404') {
+                        _cmsMissingTables.add(table);
+                    }
+                } else if (Array.isArray(data)) {
                     return data;
                 }
             } catch (e) {

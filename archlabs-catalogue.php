@@ -1,82 +1,139 @@
 <?php include('header.php'); ?>
 
-<!-- Page Header Banner -->
-<section class="py-5 bg-dark text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/sections/hero-workspace.jpg') center/cover no-repeat;">
+<!-- Page Header Banner with Filter Controls -->
+<section class="py-5 bg-dark text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)), url('images/sections/hero-workspace.jpg') center/cover no-repeat;">
     <div class="tf-container py-4">
-        <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-bold tracking-widest fs-7">Official Product Catalogue</span>
-        <h1 class="display-4 fw-bold text-white mt-2 mb-3">ArchLabs Seating Collection</h1>
-        <p class="fs-5 text-white-50 max-w-700 mx-auto" style="max-width: 750px;">
-            Engineered for Movement. Designed for Focus. Explore line-wise Mesh, Executive Leather, Training, Metro Linea Public Seating, and Cafeteria Collections.
+        <span id="seriesBadge" class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-bold tracking-widest fs-7">Vishista Signature Line</span>
+        <h1 id="seriesTitle" class="display-4 fw-bold text-white mt-2 mb-3">Our Exclusive Collection</h1>
+        <p id="seriesSubtitle" class="fs-5 text-white-50 max-w-700 mx-auto mb-4" style="max-width: 750px;">
+            ArchLabs Architectural Seating & Turnkey Product Lines. Engineered for Movement. Designed for Focus.
         </p>
+
+        <!-- Filter Action Controls -->
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+            <button type="button" class="btn btn-danger btn-lg px-4 py-2.5 fw-bold text-uppercase rounded-pill shadow-lg d-inline-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#seriesFilterModal" style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                <span>Filter by Series</span>
+            </button>
+
+            <button type="button" id="showAllSeriesBtn" class="btn btn-outline-light btn-lg px-4 py-2.5 fw-bold text-uppercase rounded-pill shadow-sm" onclick="filterExclusiveSeries('all')" style="display: none; font-size: 15px;">
+                View All Series
+            </button>
+        </div>
     </div>
 </section>
 
-<!-- Category Filter Sticky Anchor Bar -->
-<div class="bg-white border-bottom py-3 shadow-md filter-anchor-bar" style="position: sticky; top: 92px; z-index: 95; background-color: #ffffff !important; opacity: 1 !important; border-bottom: 3px solid #d32f2f;">
-    <div class="tf-container overflow-auto">
-        <div class="d-flex align-items-center gap-3 text-nowrap py-1">
-            <span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Filter Series:</span>
-            <a href="#workstations-ha" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Workstations</a>
-            <a href="#tables-cabin" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Tables</a>
-            <a href="#storage-prelam" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Storage</a>
-            <a href="#mesh-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Mesh Series (30 Models)</a>
-            <a href="#leather-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Leather Series (5 Models)</a>
-            <a href="#training-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Training Series (7 Models)</a>
-            <a href="#cafeteria-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Cafeteria Series (7 Models)</a>
-            <a href="#pods" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Acoustic Pods</a>
-            <a href="#carpets" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Interface Carpets</a>
-            <a href="#outdoor" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Outdoor Furniture</a>
-            <a href="#educational" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Educational</a>
-            <a href="#accessories" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Accessories</a>
+<!-- Filter Series Modal -->
+<div class="modal fade" id="seriesFilterModal" tabindex="-1" aria-labelledby="seriesFilterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+            <div class="modal-header bg-dark text-white border-0 px-4 py-3" style="background: linear-gradient(135deg, #111111 0%, #222222 100%);">
+                <div>
+                    <span class="badge bg-danger text-uppercase px-2 py-1 mb-1 fs-7">Catalogue Navigation</span>
+                    <h4 class="modal-title fw-bold text-white mb-0" id="seriesFilterModalLabel">Filter by Product Series</h4>
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4 bg-light">
+                <p class="text-secondary fw-semibold mb-3">Select a series below to isolate and view only that specific collection:</p>
+                <div class="row g-2">
+                    <div class="col-12 mb-1">
+                        <button type="button" class="btn btn-danger w-100 text-start py-2.5 px-3 fw-bold rounded-3" onclick="filterExclusiveSeries('all')" data-bs-dismiss="modal" style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">
+                            ✓ Show All Series (Complete Showcase)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('mesh-series')" data-bs-dismiss="modal">
+                            &bull; Mesh Series (30 Models)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('leather-series')" data-bs-dismiss="modal">
+                            &bull; Leather Series (5 Models)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('training-series')" data-bs-dismiss="modal">
+                            &bull; Training Series (7 Models)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('metro-linea')" data-bs-dismiss="modal">
+                            &bull; Metro Linea Public Seating
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('cafeteria-series')" data-bs-dismiss="modal">
+                            &bull; Cafeteria Series (7 Models)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('workstations-ha')" data-bs-dismiss="modal">
+                            &bull; Workstations - Height Adjustable Series
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('workstations-ds')" data-bs-dismiss="modal">
+                            &bull; Workstations - Desking Series
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('workstations-panel')" data-bs-dismiss="modal">
+                            &bull; Workstations - Panel Series
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('tables-cabin')" data-bs-dismiss="modal">
+                            &bull; Tables - Cabin Tables
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('tables-meeting')" data-bs-dismiss="modal">
+                            &bull; Tables - Meeting Tables
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('storage-prelam')" data-bs-dismiss="modal">
+                            &bull; Storage - Prelam Storage Systems
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('pods')" data-bs-dismiss="modal">
+                            &bull; Acoustic Work Pods
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('carpets')" data-bs-dismiss="modal">
+                            &bull; Interface Carpet Tiles
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('outdoor')" data-bs-dismiss="modal">
+                            &bull; Outdoor Furniture
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('educational')" data-bs-dismiss="modal">
+                            &bull; Educational Solutions
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('accessories')" data-bs-dismiss="modal">
+                            &bull; Workspace Accessories
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-<style>
-    section[id] {
-        scroll-margin-top: 180px !important;
-    }
-    .catalogue-filter-btn {
-        font-size: 1.15rem !important;
-        font-weight: 900 !important;
-        border: 2.5px solid #000000 !important;
-        color: #000000 !important;
-        background-color: #ffffff !important;
-        transition: all 0.2s ease-in-out !important;
-    }
-    .catalogue-filter-btn:hover,
-    .catalogue-filter-btn:focus,
-    .catalogue-filter-btn:active,
-    .catalogue-filter-btn.active {
-        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
-        color: #ffffff !important;
-        border-color: #b71c1c !important;
-        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4) !important;
-        transform: translateY(-2px) !important;
-    }
-</style>
-
-<script>
-    function updateCatalogueBarOffset() {
-        var header = document.querySelector('header.tf-header') || document.querySelector('header');
-        var filterBar = document.querySelector('.filter-anchor-bar');
-        if (header && filterBar) {
-            var headerHeight = header.offsetHeight || 92;
-            filterBar.style.top = headerHeight + 'px';
-        }
-    }
-    window.addEventListener('scroll', updateCatalogueBarOffset);
-    window.addEventListener('resize', updateCatalogueBarOffset);
-    document.addEventListener('DOMContentLoaded', updateCatalogueBarOffset);
-    setTimeout(updateCatalogueBarOffset, 300);
-</script>
 
 <!-- Main Catalogue Container -->
 <div class="py-5 bg-white">
     <div class="tf-container">
 
         <!-- 1. MESH SERIES -->
-        <section id="mesh-series" class="mb-5 pt-4">
+        <section id="mesh-series" class="catalogue-series-section mb-5 pt-4" data-series-slug="mesh-series">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">30 Line-Wise Models</span>
@@ -602,7 +659,7 @@
         </section>
 
         <!-- 2. LEATHER SERIES -->
-        <section id="leather-series" class="mb-5 pt-4 border-top">
+        <section id="leather-series" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="leather-series">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-dark text-white text-uppercase px-2 py-1 fs-7 mb-1">5 Executive Models</span>
@@ -703,7 +760,7 @@
         </section>
 
         <!-- 3. TRAINING SERIES -->
-        <section id="training-series" class="mb-5 pt-4 border-top">
+        <section id="training-series" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="training-series">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-warning text-dark text-uppercase px-2 py-1 fs-7 mb-1">Flexible Learning Solutions</span>
@@ -838,7 +895,7 @@
         </section>
 
         <!-- 4. METRO LINEA PUBLIC SEATING -->
-        <section id="metro-linea" class="mb-5 pt-4 border-top">
+        <section id="metro-linea" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="metro-linea">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-info text-dark text-uppercase px-2 py-1 fs-7 mb-1">Heavy-Duty Public Infrastructure</span>
@@ -905,7 +962,7 @@
         </section>
 
         <!-- 5. CAFETERIA SERIES -->
-        <section id="cafeteria-series" class="mb-4 pt-4 border-top">
+        <section id="cafeteria-series" class="catalogue-series-section mb-4 pt-4 border-top" data-series-slug="cafeteria-series">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-success text-white text-uppercase px-2 py-1 fs-7 mb-1">7 Contemporary Models</span>
@@ -1040,7 +1097,7 @@
         </section>
 
         <!-- WORKSTATIONS CATALOGUE SECTIONS -->
-        <section id="workstations-ha" class="mb-5 pt-4 border-top">
+        <section id="workstations-ha" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="workstations-ha">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Motorized Ergonomic Desks</span>
@@ -1083,7 +1140,7 @@
             </div>
         </section>
 
-        <section id="workstations-ds" class="mb-5 pt-4 border-top">
+        <section id="workstations-ds" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="workstations-ds">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Open-Plan Desking</span>
@@ -1116,7 +1173,7 @@
             </div>
         </section>
 
-        <section id="workstations-ps" class="mb-5 pt-4 border-top">
+        <section id="workstations-panel" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="workstations-panel">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Acoustic Partition Systems</span>
@@ -1140,7 +1197,7 @@
         </section>
 
         <!-- TABLES CATALOGUE SECTIONS -->
-        <section id="tables-cabin" class="mb-5 pt-4 border-top">
+        <section id="tables-cabin" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="tables-cabin">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Executive Cabin Desks</span>
@@ -1173,7 +1230,7 @@
             </div>
         </section>
 
-        <section id="tables-meeting" class="mb-5 pt-4 border-top">
+        <section id="tables-meeting" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="tables-meeting">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Boardroom Conference Tables</span>
@@ -1197,7 +1254,7 @@
         </section>
 
         <!-- STORAGE CATALOGUE SECTIONS -->
-        <section id="storage-prelam" class="mb-5 pt-4 border-top">
+        <section id="storage-prelam" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="storage-prelam">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Office Storage Cabinets</span>
@@ -1221,7 +1278,7 @@
         </section>
 
         <!-- PODS CATALOGUE SECTION -->
-        <section id="pods" class="mb-5 pt-4 border-top">
+        <section id="pods" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="pods">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Sound Isolation Booths</span>
@@ -1245,7 +1302,7 @@
         </section>
 
         <!-- CARPETS CATALOGUE SECTION -->
-        <section id="carpets" class="mb-5 pt-4 border-top">
+        <section id="carpets" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="carpets">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Acoustic Flooring</span>
@@ -1269,7 +1326,7 @@
         </section>
 
         <!-- OUTDOOR CATALOGUE SECTION -->
-        <section id="outdoor" class="mb-5 pt-4 border-top">
+        <section id="outdoor" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="outdoor">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Terrace &amp; Cafe Seating</span>
@@ -1293,7 +1350,7 @@
         </section>
 
         <!-- EDUCATIONAL CATALOGUE SECTION -->
-        <section id="educational" class="mb-5 pt-4 border-top">
+        <section id="educational" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="educational">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Institutional Solutions</span>
@@ -1317,7 +1374,7 @@
         </section>
 
         <!-- ACCESSORIES CATALOGUE SECTION -->
-        <section id="accessories" class="mb-5 pt-4 border-top">
+        <section id="accessories" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="accessories">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Ergonomic Tools</span>
@@ -1351,18 +1408,84 @@
         transform: translateY(-6px);
         box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
     }
+    .series-filter-btn:hover {
+        background-color: #d32f2f !important;
+        color: #ffffff !important;
+        border-color: #d32f2f !important;
+    }
+</style>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        if (window.location.hash) {
-            var targetId = window.location.hash.substring(1);
-            var targetEl = document.getElementById(targetId);
-            if (targetEl) {
-                setTimeout(function() {
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 250);
+function filterExclusiveSeries(slug) {
+    if (!slug) slug = 'all';
+    slug = slug.toLowerCase().replace(/^#/, '');
+
+    const sections = document.querySelectorAll('.catalogue-series-section');
+    const badgeEl = document.getElementById('seriesBadge');
+    const titleEl = document.getElementById('seriesTitle');
+    const subtitleEl = document.getElementById('seriesSubtitle');
+    const showAllBtn = document.getElementById('showAllSeriesBtn');
+
+    if (slug === 'all') {
+        sections.forEach(sec => {
+            sec.style.display = 'block';
+        });
+        if (badgeEl) badgeEl.textContent = 'Vishista Signature Line';
+        if (titleEl) titleEl.textContent = 'Our Exclusive Collection';
+        if (subtitleEl) subtitleEl.textContent = 'ArchLabs Architectural Seating & Turnkey Product Lines. Engineered for Movement. Designed for Focus.';
+        if (showAllBtn) showAllBtn.style.display = 'none';
+        return;
+    }
+
+    let matched = false;
+    sections.forEach(sec => {
+        const secId = (sec.id || '').toLowerCase();
+        const secSlug = (sec.getAttribute('data-series-slug') || '').toLowerCase();
+
+        if (secId === slug || secSlug === slug) {
+            sec.style.display = 'block';
+            sec.classList.remove('border-top');
+            matched = true;
+
+            const secHeading = sec.querySelector('h2');
+            if (secHeading && titleEl) {
+                titleEl.textContent = secHeading.textContent;
             }
+            if (badgeEl) {
+                badgeEl.textContent = 'Exclusive Series Showcase';
+            }
+            if (subtitleEl) {
+                subtitleEl.textContent = 'Viewing isolated series models engineered with precision architecture.';
+            }
+        } else {
+            sec.style.display = 'none';
         }
     });
+
+    if (matched) {
+        if (showAllBtn) showAllBtn.style.display = 'inline-flex';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        // Fallback show all
+        sections.forEach(sec => { sec.style.display = 'block'; });
+        if (showAllBtn) showAllBtn.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const seriesParam = urlParams.get('series') || window.location.hash.replace('#', '');
+    if (seriesParam) {
+        filterExclusiveSeries(seriesParam);
+    }
+});
+
+window.addEventListener('hashchange', function() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+        filterExclusiveSeries(hash);
+    }
+});
 </script>
 
 <?php include('footer.php'); ?>

@@ -2,73 +2,215 @@
 
 <!-- Page Header Banner -->
 <section class="py-5 bg-dark text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/sections/hero-workspace.jpg') center/cover no-repeat;">
-    <div class="tf-container py-5">
-        <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-black tracking-widest" style="font-size: 0.95rem !important;">Corporate Product Catalogue</span>
-        <h1 class="display-3 fw-black text-white mt-2 mb-3" style="font-weight: 900 !important;">Workspace Furniture &amp; Solutions</h1>
-        <p class="text-white mx-auto fw-bold" style="max-width: 850px; font-size: 1.4rem !important; line-height: 1.7; color: #ffffff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+    <div class="tf-container py-4">
+        <div class="mb-3 d-flex justify-content-center align-items-center gap-2">
+            <span id="categoryPageBadge" class="badge bg-danger text-uppercase px-3 py-2 fw-black tracking-widest" style="font-size: 0.95rem !important;">Corporate Product Catalogue</span>
+        </div>
+        <h1 id="categoryPageMainTitle" class="display-4 fw-black text-white mt-2 mb-3" style="font-weight: 900 !important;">Workspace Furniture &amp; Solutions</h1>
+        <p id="categoryPageSubtitle" class="text-white mx-auto fw-bold mb-4" style="max-width: 850px; font-size: 1.25rem !important; line-height: 1.7; color: #ffffff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
             Explore our extensive catalogue of modular workstations, executive desks, ergonomic mesh chairs, acoustic pods, soft seating, carpets, and turnkey systems.
         </p>
+        <div class="d-flex justify-content-center align-items-center gap-3">
+            <a href="index.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold text-uppercase fs-7 shadow-sm">
+                &larr; Back to Home
+            </a>
+            <button type="button" id="viewAllCategoriesBtn" class="btn btn-light text-danger rounded-pill px-4 py-2 fw-bold text-uppercase fs-7 shadow-sm" onclick="selectCategoryFilter('all')" style="display: none;">
+                View All Categories
+            </button>
+        </div>
     </div>
 </section>
 
-<!-- Category Filter Anchor Navigation -->
-<div class="category-jump-bar py-2.5">
+<!-- Interactive Horizontally Scrollable Categories Bar -->
+<div class="category-scroll-nav-wrapper py-3 bg-white border-bottom shadow-sm">
     <div class="tf-container">
-        <div class="d-flex align-items-center gap-2 text-nowrap py-1">
-            <span class="fw-black text-dark me-2 flex-shrink-0" style="font-size: 1.05rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>
-            <a href="products.html?category=workstations" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Workstations</a>
-            <a href="products.html?category=tables" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Tables</a>
-            <a href="products.html?category=storage" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Storage</a>
-            <a href="products.html?category=seating" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Seating</a>
-            <a href="products.html?category=soft-seating" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Soft Seating</a>
-            <a href="products.html?category=pods" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Pods</a>
-            <a href="products.html?category=carpets" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Carpets</a>
-            <a href="products.html?category=outdoor" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Outdoor</a>
-            <a href="products.html?category=educational" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0">Educational</a>
+        <div class="d-flex align-items-center gap-2">
+            <!-- Pinned Fixed Left Controls (Category label + All Categories button) -->
+            <div class="d-flex align-items-center gap-2 flex-shrink-0 pe-2 border-end border-2" style="border-color: #e5e7eb !important;">
+                <span class="fw-bold text-dark flex-shrink-0 d-none d-md-inline" style="font-size: 0.95rem; letter-spacing: 0.5px; color: #111111;">Category:</span>
+                <button type="button" class="btn category-scroll-pill active flex-shrink-0" onclick="selectCategoryFilter('all')">
+                    All Categories
+                </button>
+            </div>
+
+            <!-- Horizontally Scrollable Remaining Categories Container -->
+            <div class="category-scroll-container d-flex align-items-center gap-2 overflow-auto py-1 flex-grow-1 ps-1">
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('workstations')">
+                    Workstations
+                </button>
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('tables')">
+                    Tables
+                </button>
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('storage')">
+                    Storage Systems
+                </button>
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('seating')">
+                    Ergonomic Seating
+                </button>
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('soft-seating')">
+                    Soft Seating &amp; Lounge
+                </button>
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('pods')">
+                    Acoustic Work Pods
+                </button>
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('carpets')">
+                    Interface Carpet Tiles
+                </button>
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('outdoor')">
+                    Outdoor Furniture
+                </button>
+                <button type="button" class="btn category-scroll-pill flex-shrink-0" onclick="selectCategoryFilter('educational')">
+                    Educational Solutions
+                </button>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
-    /* Category Jump Bar Styling */
-    .category-jump-bar {
+    :root {
+        --site-header-height: 60px;
+    }
+    @media (max-width: 991px) {
+        :root {
+            --site-header-height: 52px;
+        }
+    }
+    @media (max-width: 576px) {
+        :root {
+            --site-header-height: 48px;
+        }
+    }
+
+    .category-scroll-nav-wrapper {
         position: sticky !important;
         top: var(--site-header-height, 60px) !important;
-        z-index: 990 !important;
+        z-index: 95 !important;
         background-color: #ffffff !important;
-        border-bottom: 3px solid #d32f2f !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
-        -webkit-overflow-scrolling: touch;
-        overflow-x: auto;
-        width: 100% !important;
+        border-bottom: 2px solid #e5e7eb !important;
+        margin-top: 0 !important;
     }
-    .category-jump-bar::-webkit-scrollbar {
+    .category-scroll-container {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .category-scroll-container::-webkit-scrollbar {
         display: none;
     }
-    .category-jump-btn {
-        font-size: 1rem !important;
-        font-weight: 800 !important;
-        border: 2px solid #000000 !important;
-        color: #000000 !important;
-        background-color: #ffffff !important;
-        transition: all 0.2s ease-in-out !important;
-        white-space: nowrap;
-        text-decoration: none !important;
+    .category-scroll-pill {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 14.5px !important;
+        font-weight: 700 !important;
+        padding: 8px 22px !important;
+        border-radius: 50px !important;
+        border: 1.5px solid #d1d5db !important;
+        color: #1f2937 !important;
+        background-color: #f9fafb !important;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        white-space: nowrap !important;
+        cursor: pointer !important;
     }
-    .category-jump-btn:hover,
-    .category-jump-btn:focus,
-    .category-jump-btn:active,
-    .category-jump-btn.active {
+    .category-scroll-pill:hover {
+        background-color: #fee2e2 !important;
+        color: #d32f2f !important;
+        border-color: #fca5a5 !important;
+        transform: translateY(-1px);
+    }
+    .category-scroll-pill.active {
         background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
         color: #ffffff !important;
         border-color: #b71c1c !important;
-        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3) !important;
-        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35) !important;
+        transform: translateY(-1px);
     }
     @media (max-width: 768px) {
-        .category-jump-btn {
-            font-size: 0.85rem !important;
-            padding: 6px 14px !important;
+        .category-scroll-nav-wrapper {
+            top: var(--site-header-height, 50px) !important;
+            padding-top: 6px !important;
+            padding-bottom: 6px !important;
+        }
+        .category-scroll-pill {
+            font-size: 13px !important;
+            padding: 6px 16px !important;
+        }
+    }
+    @media (max-width: 576px) {
+        .category-scroll-nav-wrapper {
+            top: var(--site-header-height, 48px) !important;
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
+        }
+        .category-scroll-pill {
+            font-size: 12px !important;
+            padding: 5px 12px !important;
+        }
+    }
+
+    /* Category Header & Responsive View All Button */
+    .category-header-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid #d32f2f;
+    }
+    .category-title-text {
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 2.2rem !important;
+        color: #111111 !important;
+        margin-bottom: 0 !important;
+        line-height: 1.2 !important;
+    }
+    .category-view-all-btn {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.95rem !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        padding: 8px 20px !important;
+        border-radius: 6px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(211, 47, 47, 0.25) !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease !important;
+    }
+    .category-view-all-btn:hover {
+        background: linear-gradient(135deg, #b71c1c 0%, #991212 100%) !important;
+        transform: translateY(-1px);
+        color: #ffffff !important;
+        box-shadow: 0 6px 16px rgba(211, 47, 47, 0.35) !important;
+    }
+
+    @media (max-width: 768px) {
+        .category-title-text {
+            font-size: 1.55rem !important;
+        }
+        .category-view-all-btn {
+            font-size: 0.78rem !important;
+            padding: 6px 12px !important;
+            letter-spacing: 0.2px !important;
+            border-radius: 5px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .category-title-text {
+            font-size: 1.35rem !important;
+        }
+        .category-view-all-btn {
+            font-size: 0.72rem !important;
+            padding: 5px 10px !important;
+            letter-spacing: 0px !important;
         }
     }
 </style>
@@ -78,7 +220,7 @@
     <div class="tf-container">
 
         <!-- VISHISTA EXCLUSIVE COLLECTION BANNER -->
-        <div class="bg-dark text-white rounded-4 p-4 p-md-5 mb-5 shadow-lg position-relative overflow-hidden" style="background: linear-gradient(135deg, #111111 0%, #262626 100%); border: 1px solid rgba(255,255,255,0.1);">
+        <div id="exclusiveCollectionBanner" class="bg-dark text-white rounded-4 p-4 p-md-5 mb-5 shadow-lg position-relative overflow-hidden" style="background: linear-gradient(135deg, #111111 0%, #262626 100%); border: 1px solid rgba(255,255,255,0.1);">
             <div class="row align-items-center g-4">
                 <div class="col-lg-6">
                     <h2 class="display-3 fw-black text-white mb-4" style="font-weight: 900 !important; font-size: 3rem !important; letter-spacing: -0.5px; text-shadow: 0 4px 15px rgba(0,0,0,0.5);">Vishista Exclusive Collection</h2>
@@ -95,12 +237,12 @@
         </div>
 
         <!-- 1. WORKSTATIONS -->
-        <section id="workstations" class="mb-5 pt-4">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="workstations" class="category-section-block mb-5 pt-4" data-cat-slug="workstations">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Workstations</h2>
+                    <h2 class="category-title-text">Workstations</h2>
                 </div>
-                <a href="products.html?category=workstations" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Workstations &rarr;</a>
+                <a href="products.html?category=workstations" class="category-view-all-btn">View All Workstations &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -143,12 +285,12 @@
         </section>
 
         <!-- 2. TABLES -->
-        <section id="tables" class="mb-5 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="tables" class="category-section-block mb-5 pt-4 border-top" data-cat-slug="tables">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Tables</h2>
+                    <h2 class="category-title-text">Tables</h2>
                 </div>
-                <a href="products.html?category=tables" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Tables &rarr;</a>
+                <a href="products.html?category=tables" class="category-view-all-btn">View All Tables &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-3">
@@ -203,12 +345,12 @@
         </section>
 
         <!-- 3. STORAGE -->
-        <section id="storage" class="mb-5 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="storage" class="category-section-block mb-5 pt-4 border-top" data-cat-slug="storage">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Storage Systems</h2>
+                    <h2 class="category-title-text">Storage Systems</h2>
                 </div>
-                <a href="products.html?category=storage" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Storage &rarr;</a>
+                <a href="products.html?category=storage" class="category-view-all-btn">View All Storage &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-3">
@@ -263,13 +405,12 @@
         </section>
 
         <!-- 4. SEATING -->
-        <!-- 4. SEATING -->
-        <section id="seating" class="mb-5 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="seating" class="category-section-block mb-5 pt-4 border-top" data-cat-slug="seating">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Ergonomic Seating</h2>
+                    <h2 class="category-title-text">Ergonomic Seating</h2>
                 </div>
-                <a href="products.html?category=seating" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Seating &rarr;</a>
+                <a href="products.html?category=seating" class="category-view-all-btn">View All Seating &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-3">
@@ -324,12 +465,12 @@
         </section>
 
         <!-- 5. SOFT SEATING -->
-        <section id="soft-seating" class="mb-5 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="soft-seating" class="category-section-block mb-5 pt-4 border-top" data-cat-slug="soft-seating">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Soft Seating &amp; Lounge</h2>
+                    <h2 class="category-title-text">Soft Seating &amp; Lounge</h2>
                 </div>
-                <a href="products.html?category=soft-seating" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Soft Seating &rarr;</a>
+                <a href="products.html?category=soft-seating" class="category-view-all-btn">View All Soft Seating &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -372,12 +513,12 @@
         </section>
 
         <!-- 6. PODS -->
-        <section id="pods" class="mb-5 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="pods" class="category-section-block mb-5 pt-4 border-top" data-cat-slug="pods">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Acoustic Work Pods</h2>
+                    <h2 class="category-title-text">Acoustic Work Pods</h2>
                 </div>
-                <a href="products.html?category=pods" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Pods &rarr;</a>
+                <a href="products.html?category=pods" class="category-view-all-btn">View All Pods &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-6">
@@ -408,12 +549,12 @@
         </section>
 
         <!-- 7. CARPETS -->
-        <section id="carpets" class="mb-5 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="carpets" class="category-section-block mb-5 pt-4 border-top" data-cat-slug="carpets">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Interface Carpets</h2>
+                    <h2 class="category-title-text">Interface Carpets</h2>
                 </div>
-                <a href="products.html?category=carpets" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Carpets &rarr;</a>
+                <a href="products.html?category=carpets" class="category-view-all-btn">View All Carpets &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-6">
@@ -432,12 +573,12 @@
         </section>
 
         <!-- 8. OUTDOOR -->
-        <section id="outdoor" class="mb-5 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="outdoor" class="category-section-block mb-5 pt-4 border-top" data-cat-slug="outdoor">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Outdoor Furniture</h2>
+                    <h2 class="category-title-text">Outdoor Furniture</h2>
                 </div>
-                <a href="products.html?category=outdoor" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Outdoor &rarr;</a>
+                <a href="products.html?category=outdoor" class="category-view-all-btn">View All Outdoor &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-6">
@@ -456,12 +597,12 @@
         </section>
 
         <!-- 9. EDUCATIONAL -->
-        <section id="educational" class="mb-5 pt-4 border-top">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-3 border-danger">
+        <section id="educational" class="category-section-block mb-5 pt-4 border-top" data-cat-slug="educational">
+            <div class="category-header-flex">
                 <div>
-                    <h2 class="fw-black text-dark mb-0" style="font-size: 2.4rem !important; font-weight: 900 !important; color: #111111 !important;">Educational Solutions</h2>
+                    <h2 class="category-title-text">Educational Solutions</h2>
                 </div>
-                <a href="products.html?category=educational" class="btn btn-danger btn-lg text-uppercase fw-black shadow-sm py-2 px-4" style="font-size: 1.05rem !important; border-radius: 6px;">View All Educational &rarr;</a>
+                <a href="products.html?category=educational" class="category-view-all-btn">View All Educational &rarr;</a>
             </div>
             <div class="row g-4">
                 <div class="col-md-3">
@@ -518,5 +659,198 @@
     </div>
 </div>
 
-<?php include('footer.php'); ?>
+<script>
+function selectCategoryFilter(categorySlug) {
+    if (!categorySlug) categorySlug = 'all';
+    categorySlug = categorySlug.toLowerCase().trim().replace(/^#/, '');
 
+    const categoryAliases = {
+        'workstation': 'workstations',
+        'workstations': 'workstations',
+        'table': 'tables',
+        'tables': 'tables',
+        'storage': 'storage',
+        'storage-systems': 'storage',
+        'seating': 'seating',
+        'chairs': 'seating',
+        'ergonomic-seating': 'seating',
+        'archlabs-seating': 'seating',
+        'soft-seating': 'soft-seating',
+        'lounge': 'soft-seating',
+        'soft-seating-lounge': 'soft-seating',
+        'pod': 'pods',
+        'pods': 'pods',
+        'acoustic-pods': 'pods',
+        'carpet': 'carpets',
+        'carpets': 'carpets',
+        'carpet-tiles': 'carpets',
+        'interface-carpets': 'carpets',
+        'outdoor': 'outdoor',
+        'outdoor-furniture': 'outdoor',
+        'education': 'educational',
+        'educational': 'educational',
+        'educational-solutions': 'educational'
+    };
+
+    const targetSlug = categoryAliases[categorySlug] || categorySlug;
+    const sections = document.querySelectorAll('.category-section-block');
+    const exclusiveBanner = document.getElementById('exclusiveCollectionBanner');
+    const pageTitle = document.getElementById('categoryPageMainTitle');
+    const pageSubtitle = document.getElementById('categoryPageSubtitle');
+    const badgeEl = document.getElementById('categoryPageBadge');
+    const viewAllBtn = document.getElementById('viewAllCategoriesBtn');
+
+    // Update active state across horizontally scrollable pills
+    document.querySelectorAll('.category-scroll-pill').forEach(pill => {
+        const onclickAttr = pill.getAttribute('onclick') || '';
+        const pillSlugMatch = onclickAttr.match(/selectCategoryFilter\('([^']+)'\)/);
+        const pillSlug = pillSlugMatch ? pillSlugMatch[1] : '';
+
+        if (pillSlug === targetSlug || (targetSlug === 'all' && pillSlug === 'all')) {
+            pill.classList.add('active');
+            if (pillSlug === 'all') {
+                const scrollCont = document.querySelector('.category-scroll-container');
+                if (scrollCont) scrollCont.scrollTo({ left: 0, behavior: 'smooth' });
+            } else if (pill.closest('.category-scroll-container')) {
+                try {
+                    pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } catch(e) {}
+            }
+        } else {
+            pill.classList.remove('active');
+        }
+    });
+
+    if (targetSlug && targetSlug !== 'all') {
+        let matched = false;
+        sections.forEach(sec => {
+            const secId = (sec.id || '').toLowerCase();
+            const secSlug = (sec.getAttribute('data-cat-slug') || '').toLowerCase();
+
+            if (secId === targetSlug || secSlug === targetSlug) {
+                sec.style.display = 'block';
+                sec.classList.remove('border-top');
+                matched = true;
+
+                const catHeading = sec.querySelector('h2');
+                if (catHeading && pageTitle) {
+                    pageTitle.textContent = catHeading.textContent + ' Subcategories';
+                }
+                if (pageSubtitle) {
+                    pageSubtitle.textContent = 'Explore our specialized ' + (catHeading ? catHeading.textContent : targetSlug) + ' subcategories engineered for modern collaborative workspaces.';
+                }
+                if (badgeEl) {
+                    badgeEl.textContent = (catHeading ? catHeading.textContent : targetSlug) + ' Catalogue';
+                }
+            } else {
+                sec.style.display = 'none';
+            }
+        });
+
+        if (matched) {
+            if (exclusiveBanner) {
+                if (targetSlug === 'seating' || targetSlug === 'archlabs-seating') {
+                    exclusiveBanner.style.display = 'block';
+                } else {
+                    exclusiveBanner.style.display = 'none';
+                }
+            }
+            if (viewAllBtn) viewAllBtn.style.display = 'inline-flex';
+            
+            // Update browser URL without reload
+            const newUrl = window.location.pathname + '?category=' + encodeURIComponent(targetSlug);
+            window.history.replaceState({ category: targetSlug }, '', newUrl);
+            return;
+        }
+    }
+
+    // Show all categories & subcategories
+    sections.forEach(sec => {
+        sec.style.display = 'block';
+    });
+    if (exclusiveBanner) exclusiveBanner.style.display = 'block';
+    if (pageTitle) pageTitle.textContent = 'Workspace Furniture & Solutions';
+    if (pageSubtitle) pageSubtitle.textContent = 'Explore our extensive catalogue of modular workstations, executive desks, ergonomic mesh chairs, acoustic pods, soft seating, carpets, and turnkey systems.';
+    if (badgeEl) badgeEl.textContent = 'Corporate Product Catalogue';
+    if (viewAllBtn) viewAllBtn.style.display = 'none';
+
+    const cleanUrl = window.location.pathname;
+    window.history.replaceState({}, '', cleanUrl);
+}
+
+function updateStickyCategoryNavPosition() {
+    const header = document.querySelector('header.header-sticky') || document.querySelector('header');
+    const navWrapper = document.querySelector('.category-scroll-nav-wrapper');
+    if (header && navWrapper) {
+        const headerHeight = Math.round(header.getBoundingClientRect().height || header.offsetHeight || 50);
+        navWrapper.style.top = headerHeight + 'px';
+        document.documentElement.style.setProperty('--site-header-height', headerHeight + 'px');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateStickyCategoryNavPosition();
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialCategory = urlParams.get('category') || urlParams.get('cat') || window.location.hash.replace('#', '') || 'all';
+    selectCategoryFilter(initialCategory);
+});
+
+window.addEventListener('resize', updateStickyCategoryNavPosition);
+window.addEventListener('load', updateStickyCategoryNavPosition);
+
+window.addEventListener('popstate', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const cat = urlParams.get('category') || urlParams.get('cat') || window.location.hash.replace('#', '') || 'all';
+    selectCategoryFilter(cat);
+});
+
+window.addEventListener('hashchange', function() {
+    const cat = window.location.hash.replace('#', '') || 'all';
+    selectCategoryFilter(cat);
+});
+
+// Intercept all in-page and menu clicks targeting categories
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    if (href.includes('product-categories.html') || href.startsWith('#')) {
+        let cat = '';
+        if (href.includes('category=')) {
+            const match = href.match(/category=([^&#]+)/);
+            if (match) cat = decodeURIComponent(match[1]);
+        } else if (href.includes('cat=')) {
+            const match = href.match(/cat=([^&#]+)/);
+            if (match) cat = decodeURIComponent(match[1]);
+        } else if (href.includes('#')) {
+            cat = href.split('#')[1];
+        }
+
+        if (cat) {
+            e.preventDefault();
+            selectCategoryFilter(cat);
+            
+            // Close mobile offcanvas if open
+            const offcanvasEl = document.getElementById('mobileMenu');
+            if (offcanvasEl && typeof bootstrap !== 'undefined') {
+                const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+                if (bsOffcanvas) bsOffcanvas.hide();
+            }
+
+            // Smooth scroll to top of categories
+            const navWrapper = document.querySelector('.category-scroll-nav-wrapper');
+            if (navWrapper) {
+                const headerOffset = 70;
+                const elementPosition = navWrapper.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: Math.max(0, offsetPosition),
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+});
+</script>
+
+<?php include('footer.php'); ?>

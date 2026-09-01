@@ -44,6 +44,7 @@ function compileFullHtml(pageFileName) {
     pageContent = pageContent.replace(/href="index\.php"/g, 'href="index.html"');
     pageContent = pageContent.replace(/href="about\.php"/g, 'href="about.html"');
     pageContent = pageContent.replace(/href="archlabs-catalogue\.php"/g, 'href="archlabs-catalogue.html"');
+    pageContent = pageContent.replace(/href="categories\.php"/g, 'href="categories.html"');
     pageContent = pageContent.replace(/href="product-categories\.php"/g, 'href="product-categories.html"');
     pageContent = pageContent.replace(/href="products\.php"/g, 'href="products.html"');
     pageContent = pageContent.replace(/href="product-sofas\.php"/g, 'href="product-sofas.html"');

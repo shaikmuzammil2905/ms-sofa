@@ -57,6 +57,8 @@ BEGIN
     ) THEN
         ALTER TABLE public.products ADD COLUMN is_published BOOLEAN DEFAULT TRUE;
     END IF;
+END $$;
+
 -- 3B. SUBCATEGORIES TABLE
 CREATE TABLE IF NOT EXISTS public.subcategories (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),

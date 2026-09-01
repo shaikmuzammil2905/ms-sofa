@@ -16,67 +16,6 @@
     </div>
 </section>
 
-<!-- Category Filter Navigation Jump Bar -->
-<div class="category-jump-bar py-2.5">
-    <div class="tf-container">
-        <div class="d-flex align-items-center gap-2 text-nowrap py-1" id="catalogueJumpCategoryList">
-            <span class="fw-black text-dark me-2 flex-shrink-0" style="font-size: 1.05rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>
-            <a href="products.html?category=workstations" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="workstations">Workstations</a>
-            <a href="products.html?category=tables" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="tables">Tables</a>
-            <a href="products.html?category=storage" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="storage">Storage</a>
-            <a href="products.html?category=seating" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="seating">Seating</a>
-            <a href="products.html?category=soft-seating" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="soft-seating">Soft Seating</a>
-            <a href="products.html?category=pods" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="pods">Pods</a>
-            <a href="products.html?category=carpets" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="carpets">Carpets</a>
-            <a href="products.html?category=outdoor" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="outdoor">Outdoor</a>
-            <a href="products.html?category=educational" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="educational">Educational</a>
-        </div>
-    </div>
-</div>
-
-<style>
-    .category-jump-bar {
-        position: sticky !important;
-        top: var(--site-header-height, 60px) !important;
-        z-index: 990 !important;
-        background-color: #ffffff !important;
-        border-bottom: 3px solid #d32f2f !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
-        -webkit-overflow-scrolling: touch;
-        overflow-x: auto;
-        width: 100% !important;
-    }
-    .category-jump-bar::-webkit-scrollbar {
-        display: none;
-    }
-    .category-jump-btn {
-        font-size: 1rem !important;
-        font-weight: 800 !important;
-        border: 2px solid #000000 !important;
-        color: #000000 !important;
-        background-color: #ffffff !important;
-        transition: all 0.2s ease-in-out !important;
-        white-space: nowrap;
-        text-decoration: none !important;
-    }
-    .category-jump-btn:hover,
-    .category-jump-btn:focus,
-    .category-jump-btn:active,
-    .category-jump-btn.active {
-        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
-        color: #ffffff !important;
-        border-color: #b71c1c !important;
-        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3) !important;
-        transform: translateY(-1px) !important;
-    }
-    @media (max-width: 768px) {
-        .category-jump-btn {
-            font-size: 0.85rem !important;
-            padding: 6px 14px !important;
-        }
-    }
-</style>
-
 <!-- Dedicated Catalogue Models Display Section -->
 <div class="py-5 bg-light">
     <div class="tf-container">
@@ -294,13 +233,10 @@
             countBadge.innerText = matchedProducts.length + " Models Available";
         }
 
-        // 7. Render Jump Category Bar with active state
-        renderCatalogueJumpBar(allCategories, resolvedCatSlug, resolvedCatName);
-
-        // 8. Render Products Grid
+        // 7. Render Products Grid
         renderCatalogueProductsGrid(matchedProducts, resolvedCatName);
 
-        // 9. Update Enquiry Actions
+        // 8. Update Enquiry Actions
         var headerBtn = document.getElementById('enquireSeriesHeaderBtn');
         if (headerBtn) {
             headerBtn.onclick = function() {
@@ -314,54 +250,6 @@
                 openEnquiryModal(resolvedCatName + ' Corporate Quote');
             };
         }
-    }
-
-    function renderCatalogueJumpBar(categories, activeSlug, activeName) {
-        var jumpContainer = document.getElementById('catalogueJumpCategoryList');
-        if (!jumpContainer) return;
-
-        var defaultCategories = [
-            { name: 'Workstations', slug: 'workstations' },
-            { name: 'Tables', slug: 'tables' },
-            { name: 'Storage', slug: 'storage' },
-            { name: 'Seating', slug: 'seating' },
-            { name: 'Soft Seating', slug: 'soft-seating' },
-            { name: 'Pods', slug: 'pods' },
-            { name: 'Carpets', slug: 'carpets' },
-            { name: 'Outdoor', slug: 'outdoor' },
-            { name: 'Educational', slug: 'educational' }
-        ];
-
-        var catsToUse = (categories && categories.length > 0) ? categories.filter(function(c) { return c.is_visible !== false; }) : defaultCategories;
-        var normActive = (activeSlug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-
-        var html = '<span class="fw-black text-dark me-2 flex-shrink-0" style="font-size: 1.1rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>';
-
-        catsToUse.forEach(function(cat) {
-            var cSlug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            var cName = cat.name;
-            var normCat = cSlug.toLowerCase().replace(/[^a-z0-9]/g, '');
-            var isActive = (normCat === normActive) || (normCat + 's' === normActive) || (normCat === normActive + 's');
-            var activeClass = isActive ? ' active' : '';
-
-            html += '<a href="products.html?category=' + encodeURIComponent(cSlug) + '" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0' + activeClass + '" data-cat-slug="' + cSlug + '">' + cName + '</a>';
-        });
-
-        jumpContainer.innerHTML = html;
-
-        // Attach click listeners to handle smooth transition & browser history
-        jumpContainer.querySelectorAll('.category-jump-btn').forEach(function(btn) {
-            btn.addEventListener('click', function(e) {
-                var catSlug = this.getAttribute('data-cat-slug');
-                if (catSlug) {
-                    e.preventDefault();
-                    var newUrl = 'products.html?category=' + encodeURIComponent(catSlug);
-                    window.history.pushState({ category: catSlug }, '', newUrl);
-                    loadDynamicCatalogueView(catSlug, '');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        });
     }
 
     function renderCatalogueProductsGrid(products, categoryName) {

@@ -183,15 +183,15 @@ async function syncCategoriesSection() {
             let subListHtml = '';
             if (subItems.length > 0) {
                 subListHtml = subItems.map(subName => 
-                    `<li><a href="products.html?category=${encodeURIComponent(catSlug)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
+                    `<li><a href="product-categories.html?category=${encodeURIComponent(catSlug)}" class="text-dark" style="font-size: 14px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
                 ).join('');
             } else {
-                subListHtml = `<li><a href="products.html?category=${encodeURIComponent(catSlug)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Explore All ${catName}</a></li>`;
+                subListHtml = `<li><a href="product-categories.html?category=${encodeURIComponent(catSlug)}" class="text-dark" style="font-size: 14px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Explore All ${catName}</a></li>`;
             }
 
             megaHtml += `
                 <div>
-                    <a href="products.html?category=${encodeURIComponent(catSlug)}" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">${catName}</a>
+                    <a href="product-categories.html?category=${encodeURIComponent(catSlug)}" class="mega-category-title d-block" style="font-size: 14px !important; font-weight: 800 !important;">${catName}</a>
                     <ul class="mega-subcategory-list">
                         ${subListHtml}
                     </ul>
@@ -228,15 +228,15 @@ async function syncCategoriesSection() {
             let subListHtml = '';
             if (subItems.length > 0) {
                 subListHtml = subItems.map(subName =>
-                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="products.html?category=${encodeURIComponent(catSlug)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
+                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=${encodeURIComponent(catSlug)}">&bull; ${subName}</a></li>`
                 ).join('');
             } else {
-                subListHtml = `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="products.html?category=${encodeURIComponent(catSlug)}">&bull; Explore All ${catName}</a></li>`;
+                subListHtml = `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=${encodeURIComponent(catSlug)}">&bull; Explore All ${catName}</a></li>`;
             }
 
             mobHtml += `
                 <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                    <a href="products.html?category=${encodeURIComponent(catSlug)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                    <a href="product-categories.html?category=${encodeURIComponent(catSlug)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                         ${catName} &rarr;
                     </a>
                     <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
@@ -276,7 +276,7 @@ async function syncCategoriesSection() {
 
         visibleCategories.forEach(cat => {
             const catSlug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const catTargetUrl = `products.html?category=${encodeURIComponent(catSlug)}`;
+            const catTargetUrl = `product-categories.html?category=${encodeURIComponent(catSlug)}`;
 
             let catImg = cat.image_url;
             if (!catImg || catImg.includes('map') || catImg.includes('logo-symbol') || catImg.includes('collection-1') || defaultCategoryImages[catSlug]) {
@@ -330,22 +330,6 @@ async function syncCategoriesSection() {
         });
         grid.innerHTML = html;
     }
-
-    // D. Sync Jump to Category Bar
-    const jumpContainers = document.querySelectorAll('.category-jump-bar .d-flex, .sticky-jump-bar .d-flex, .filter-anchor-bar .d-flex');
-    jumpContainers.forEach(jumpContainer => {
-        // Only update if not on dedicated products page with its own active state management
-        if (jumpContainer.id === 'catalogueJumpCategoryList') return;
-
-        let jumpHtml = `<span class="fw-black text-dark me-2 flex-shrink-0" style="font-size: 1.1rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Jump to Category:</span>`;
-        visibleCategories.forEach(cat => {
-            const catName = cat.name.trim();
-            const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const targetHref = `products.html?category=${encodeURIComponent(catSlug)}`;
-            jumpHtml += `<a href="${targetHref}" class="btn rounded-pill px-3 py-2 text-uppercase category-jump-btn flex-shrink-0" data-cat-slug="${catSlug}">${catName}</a>`;
-        });
-        jumpContainer.innerHTML = jumpHtml;
-    });
 }
 
 // 5. Sync Projects Showcase

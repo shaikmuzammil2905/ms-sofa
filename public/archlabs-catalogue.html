@@ -490,6 +490,234 @@
         .category-jump-bar::-webkit-scrollbar {
             display: none;
         }
+        /* Active Nav Link Indicator Styling */
+        .navigation .menu-item .item-link {
+            transition: all 0.2s ease !important;
+            position: relative;
+            padding: 8px 4px !important;
+            color: #222222 !important;
+        }
+        .navigation .menu-item .item-link:hover,
+        .navigation .menu-item.active > .item-link,
+        .navigation .menu-item .item-link.active {
+            color: #d32f2f !important;
+            font-weight: 800 !important;
+        }
+        .navigation .menu-item.active > .item-link::after,
+        .navigation .menu-item .item-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 4px;
+            right: 4px;
+            height: 3px;
+            background-color: #d32f2f;
+            border-radius: 4px;
+        }
+
+        /* Mobile Drawer Active Link */
+        .mobile-nav-link.active,
+        .mobile-nav-link.active span {
+            color: #d32f2f !important;
+            font-weight: 800 !important;
+            border-left: 3px solid #d32f2f;
+            padding-left: 10px !important;
+        }
+
+        /* Mega Menu Dropdown Styling for Desktop */
+        header.header {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1050 !important;
+            background-color: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+        }
+        header.header .tf-container {
+            position: relative !important;
+        }
+        .header-inner {
+            position: static !important;
+        }
+        .main-menu,
+        .main-menu .navigation,
+        .main-menu .navigation > li.has-child {
+            position: static !important;
+        }
+        .main-menu .navigation .submenu.mega-menu {
+            position: absolute !important;
+            left: 0 !important;
+            right: 0 !important;
+            margin: 6px auto 0 auto !important;
+            width: calc(100% - 30px) !important;
+            max-width: 1220px !important;
+            top: 100% !important;
+            transform: none !important;
+            padding: 0 !important;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18) !important;
+            border-radius: 12px !important;
+            background: #ffffff !important;
+            z-index: 99999 !important;
+            border: 1px solid rgba(0,0,0,0.1) !important;
+        }
+        .mega-menu-grid {
+            display: grid !important;
+            grid-template-columns: repeat(5, 1fr) !important;
+            gap: 20px !important;
+            padding: 24px 26px !important;
+            background: #ffffff !important;
+            border-radius: 12px !important;
+        }
+        @media (max-width: 1300px) {
+            .mega-menu-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 16px !important;
+                padding: 20px !important;
+            }
+        }
+        .mega-category-title {
+            font-size: 14px !important;
+            font-weight: 800 !important;
+            color: #111111 !important;
+            margin-bottom: 10px !important;
+            padding-bottom: 5px !important;
+            border-bottom: 2px solid #d32f2f !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            text-decoration: none !important;
+            display: block !important;
+        }
+        .mega-category-title:hover {
+            color: #d32f2f !important;
+        }
+        .mega-subcategory-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .mega-subcategory-list li {
+            margin-bottom: 7px !important;
+        }
+        .mega-subcategory-list a {
+            color: #444444 !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease, font-weight 0.2s ease, transform 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .mega-subcategory-list a:hover {
+            color: #d32f2f !important;
+            font-weight: 700 !important;
+            transform: translateX(3px);
+        }
+        .desktop-arrow {
+            font-size: 10px !important;
+            margin-left: 3px !important;
+            transition: transform 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .menu-item:hover .desktop-arrow {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Standard Crisp 3-Bar Mobile Hamburger Icon */
+        .mobile-button {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 6px !important;
+            border-radius: 6px !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            background: transparent !important;
+            border: none !important;
+        }
+        .mobile-button:hover,
+        .mobile-button:active {
+            background-color: rgba(211, 47, 47, 0.08) !important;
+        }
+        .mobile-button .burger {
+            width: 24px !important;
+            height: 18px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            position: relative !important;
+            cursor: pointer !important;
+        }
+        .mobile-button .burger span {
+            display: block !important;
+            position: static !important;
+            height: 2.5px !important;
+            width: 24px !important;
+            transition: 0.25s ease !important;
+            background-color: #111111 !important;
+            border-radius: 3px !important;
+            transform: none !important;
+            margin: 0 !important;
+            top: auto !important;
+        }
+        .mobile-button:hover .burger span,
+        .mobile-button:active .burger span {
+            background-color: #d32f2f !important;
+            transform: none !important;
+        }
+
+        /* Viewport Smooth Scrolling, Anti-Horizontal Scroll & Clean Single Scrollbar */
+        :root, html {
+            scroll-behavior: smooth !important;
+            overflow-x: clip !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            overflow-x: clip !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+        #wrapper {
+            position: relative !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* Responsive Mobile Typography Only (Does not alter desktop container widths) */
+        @media (max-width: 768px) {
+            .display-1 { font-size: 2.1rem !important; }
+            .display-2 { font-size: 1.9rem !important; }
+            .display-3 { font-size: 1.7rem !important; }
+            .display-4 { font-size: 1.5rem !important; }
+            h1 { font-size: 1.75rem !important; }
+            h2 { font-size: 1.4rem !important; }
+            h3 { font-size: 1.2rem !important; }
+        }
+
+        @media (max-width: 480px) {
+            .display-1 { font-size: 1.75rem !important; line-height: 1.2 !important; }
+            .display-2 { font-size: 1.55rem !important; line-height: 1.2 !important; }
+            .display-3 { font-size: 1.45rem !important; line-height: 1.25 !important; }
+            .display-4 { font-size: 1.3rem !important; line-height: 1.25 !important; }
+            h1 { font-size: 1.45rem !important; line-height: 1.25 !important; }
+            h2 { font-size: 1.25rem !important; line-height: 1.3 !important; }
+            h3 { font-size: 1.1rem !important; line-height: 1.3 !important; }
+            .site-brand-logo img {
+                height: 38px !important;
+            }
+            .brand-main-title {
+                font-size: 1.15rem !important;
+            }
+            .brand-sub-title {
+                font-size: 0.58rem !important;
+            }
+        }
     </style>
     <script>
         function syncHeaderHeight() {
@@ -503,6 +731,46 @@
         window.addEventListener('resize', syncHeaderHeight);
         window.addEventListener('scroll', syncHeaderHeight, { passive: true });
         document.addEventListener('DOMContentLoaded', syncHeaderHeight);
+
+        // Active Navigation Link Auto-Detection
+        document.addEventListener('DOMContentLoaded', function() {
+            function highlightActiveNavLink() {
+                var path = window.location.pathname.toLowerCase();
+                var page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+                
+                var navLinks = document.querySelectorAll('.navigation .item-link, .mobile-nav-link');
+                
+                navLinks.forEach(function(link) {
+                    var href = (link.getAttribute('href') || '').toLowerCase();
+                    var targetPage = href.substring(href.lastIndexOf('/') + 1).split('?')[0].split('#')[0];
+                    
+                    var isCurrent = false;
+                    if ((page === '' || page === 'index.html' || page === 'index.php') && (targetPage === 'index.html' || targetPage === 'index.php' || targetPage === '')) {
+                        isCurrent = true;
+                    } else if (page.indexOf('about') !== -1 && targetPage.indexOf('about') !== -1) {
+                        isCurrent = true;
+                    } else if ((page.indexOf('product') !== -1 || page.indexOf('archlabs') !== -1) && targetPage.indexOf('product') !== -1) {
+                        isCurrent = true;
+                    } else if (page.indexOf('contact') !== -1 && targetPage.indexOf('contact') !== -1) {
+                        isCurrent = true;
+                    }
+                    
+                    if (isCurrent) {
+                        link.classList.add('active');
+                        if (link.parentElement && link.parentElement.classList.contains('menu-item')) {
+                            link.parentElement.classList.add('active');
+                        }
+                    } else {
+                        link.classList.remove('active');
+                        if (link.parentElement && link.parentElement.classList.contains('menu-item')) {
+                            link.parentElement.classList.remove('active');
+                        }
+                    }
+                });
+            }
+
+            highlightActiveNavLink();
+        });
     </script>
 </head>
 
@@ -540,89 +808,105 @@
                                 <a href="index.html" class="item-link fw-bold" style="font-size: 15px !important; font-weight: 700 !important; color: #222222 !important;">Home</a>
                             </li>
 
-                            <!-- 2. About Us (Dropdown with Chevron Icon) -->
-                            <li class="has-child text-menu menu-item">
-                                <a href="about.html" class="item-link fw-bold d-inline-flex align-items-center gap-1" style="font-size: 15px !important; font-weight: 700 !important; color: #222222 !important;">About Us <span class="desktop-arrow">▼</span></a>
-                                <div class="submenu sub-menu p-3 rounded-3 shadow-lg" style="min-width: 250px;">
-                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-1.5">
-                                        <li><a href="about.html#company-profile" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Company Profile</a></li>
-                                        <li><a href="about.html#director-profile" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Director Journey</a></li>
-                                        <li><a href="about.html#mission-vision" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Mission &amp; Vision</a></li>
-                                        <li><a href="about.html#core-values" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Core Values</a></li>
-                                        <li><a href="about.html#why-choose-us" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Why Choose Us</a></li>
-                                    </ul>
-                                </div>
+                            <!-- 2. About Us -->
+                            <li class="text-menu menu-item">
+                                <a href="about.html" class="item-link fw-bold" style="font-size: 15px !important; font-weight: 700 !important; color: #222222 !important;">About Us</a>
                             </li>
 
                             <!-- 3. Products (Mega Menu Dropdown with Chevron Icon) -->
-                            <li class="has-child has-mega-menu text-menu menu-item">
+                            <li class="has-child text-menu menu-item">
                                 <a href="product-categories.html" class="item-link fw-bold d-inline-flex align-items-center gap-1" style="font-size: 15px !important; font-weight: 700 !important; color: #222222 !important;">Products <span class="desktop-arrow">▼</span></a>
                                 <div class="submenu sub-menu mega-menu">
                                     <div class="mega-menu-grid">
                                         
                                         <!-- 1. Workstations -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Workstations" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Workstations</a>
+                                            <a href="product-categories.html?category=workstations" class="mega-category-title d-block">Workstations</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Height%20Adjustable%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Height Adjustable Series</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Desking%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Desking Series</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Panel%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Panel Series</a></li>
+                                                <li><a href="product-categories.html?category=workstations">&bull; Height Adjustable Series</a></li>
+                                                <li><a href="product-categories.html?category=workstations">&bull; Desking Series</a></li>
+                                                <li><a href="product-categories.html?category=workstations">&bull; Panel Series</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 2. Tables -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Tables" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Tables</a>
+                                            <a href="product-categories.html?category=tables" class="mega-category-title d-block">Tables</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Cabin%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cabin Tables</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Meeting%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Meeting Tables</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Cafe%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cafe Tables</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Training%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Training Tables</a></li>
+                                                <li><a href="product-categories.html?category=tables">&bull; Cabin Tables</a></li>
+                                                <li><a href="product-categories.html?category=tables">&bull; Meeting Tables</a></li>
+                                                <li><a href="product-categories.html?category=tables">&bull; Cafe Tables</a></li>
+                                                <li><a href="product-categories.html?category=tables">&bull; Training Tables</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 3. Storage -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Storage" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Storage</a>
+                                            <a href="product-categories.html?category=storage" class="mega-category-title d-block">Storage</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Prelam%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Prelam Storage</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Metal%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Metal Storage</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Compactor%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Compactor Storage</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Locker" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Locker</a></li>
+                                                <li><a href="product-categories.html?category=storage">&bull; Prelam Storage</a></li>
+                                                <li><a href="product-categories.html?category=storage">&bull; Metal Storage</a></li>
+                                                <li><a href="product-categories.html?category=storage">&bull; Compactor Storage</a></li>
+                                                <li><a href="product-categories.html?category=storage">&bull; Locker</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 4. Seating -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Seating" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Seating</a>
+                                            <a href="product-categories.html?category=seating" class="mega-category-title d-block">Seating</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Mesh%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Mesh Chair</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Leather%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Leather Chair</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Training%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Training Chair</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Cafe%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cafe Chair</a></li>
+                                                <li><a href="product-categories.html?category=seating">&bull; Mesh Chair</a></li>
+                                                <li><a href="product-categories.html?category=seating">&bull; Leather Chair</a></li>
+                                                <li><a href="product-categories.html?category=seating">&bull; Training Chair</a></li>
+                                                <li><a href="product-categories.html?category=seating">&bull; Cafe Chair</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 5. Soft Seating -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Soft%20Seating" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Soft Seating</a>
+                                            <a href="product-categories.html?category=soft-seating" class="mega-category-title d-block">Soft Seating</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Lounge" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Lounge</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Sofa" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Sofa</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Collaborative" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Collaborative</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Pouffe" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Pouffe</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Occasional%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Occasional Tables</a></li>
+                                                <li><a href="product-categories.html?category=soft-seating">&bull; Lounge</a></li>
+                                                <li><a href="product-categories.html?category=soft-seating">&bull; Sofa</a></li>
+                                                <li><a href="product-categories.html?category=soft-seating">&bull; Collaborative</a></li>
+                                                <li><a href="product-categories.html?category=soft-seating">&bull; Pouffe</a></li>
+                                                <li><a href="product-categories.html?category=soft-seating">&bull; Occasional Tables</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- 6. Pods -->
+                                        <div>
+                                            <a href="product-categories.html?category=pods" class="mega-category-title d-block">Pods</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html?category=pods">&bull; Single Acoustic Pod</a></li>
+                                                <li><a href="product-categories.html?category=pods">&bull; Meeting Pod</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- 7. Carpets -->
+                                        <div>
+                                            <a href="product-categories.html?category=carpets" class="mega-category-title d-block">Carpets</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html?category=carpets">&bull; Interface Carpet Tiles</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- 8. Outdoor -->
+                                        <div>
+                                            <a href="product-categories.html?category=outdoor" class="mega-category-title d-block">Outdoor</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-categories.html?category=outdoor">&bull; Terrace &amp; Cafe Seating</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 9. Educational -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Educational" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Educational</a>
+                                            <a href="product-categories.html?category=educational" class="mega-category-title d-block">Educational</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Classroom" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Classroom</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Library" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Library</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Hostel" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Hostel</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Auditorium" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Auditorium</a></li>
+                                                <li><a href="product-categories.html?category=educational">&bull; Classroom</a></li>
+                                                <li><a href="product-categories.html?category=educational">&bull; Library</a></li>
+                                                <li><a href="product-categories.html?category=educational">&bull; Hostel</a></li>
+                                                <li><a href="product-categories.html?category=educational">&bull; Auditorium</a></li>
                                             </ul>
                                         </div>
 
@@ -659,83 +943,140 @@
 
 
 
-<!-- Page Header Banner -->
-<section class="py-5 bg-dark text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/sections/hero-workspace.jpg') center/cover no-repeat;">
+<!-- Page Header Banner with Filter Controls -->
+<section class="py-5 bg-dark text-white text-center position-relative" style="background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)), url('images/sections/hero-workspace.jpg') center/cover no-repeat;">
     <div class="tf-container py-4">
-        <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-bold tracking-widest fs-7">Official Product Catalogue</span>
-        <h1 class="display-4 fw-bold text-white mt-2 mb-3">ArchLabs Seating Collection</h1>
-        <p class="fs-5 text-white-50 max-w-700 mx-auto" style="max-width: 750px;">
-            Engineered for Movement. Designed for Focus. Explore line-wise Mesh, Executive Leather, Training, Metro Linea Public Seating, and Cafeteria Collections.
+        <span id="seriesBadge" class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-bold tracking-widest fs-7">Vishista Signature Line</span>
+        <h1 id="seriesTitle" class="display-4 fw-bold text-white mt-2 mb-3">Our Exclusive Collection</h1>
+        <p id="seriesSubtitle" class="fs-5 text-white-50 max-w-700 mx-auto mb-4" style="max-width: 750px;">
+            ArchLabs Architectural Seating & Turnkey Product Lines. Engineered for Movement. Designed for Focus.
         </p>
+
+        <!-- Filter Action Controls -->
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+            <button type="button" class="btn btn-danger btn-lg px-4 py-2.5 fw-bold text-uppercase rounded-pill shadow-lg d-inline-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#seriesFilterModal" style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                <span>Filter by Series</span>
+            </button>
+
+            <button type="button" id="showAllSeriesBtn" class="btn btn-outline-light btn-lg px-4 py-2.5 fw-bold text-uppercase rounded-pill shadow-sm" onclick="filterExclusiveSeries('all')" style="display: none; font-size: 15px;">
+                View All Series
+            </button>
+        </div>
     </div>
 </section>
 
-<!-- Category Filter Sticky Anchor Bar -->
-<div class="bg-white border-bottom py-3 shadow-md filter-anchor-bar" style="position: sticky; top: 92px; z-index: 95; background-color: #ffffff !important; opacity: 1 !important; border-bottom: 3px solid #d32f2f;">
-    <div class="tf-container overflow-auto">
-        <div class="d-flex align-items-center gap-3 text-nowrap py-1">
-            <span class="fw-black text-dark me-2" style="font-size: 1.35rem !important; font-weight: 900 !important; letter-spacing: 0.5px; color: #000000 !important;">Filter Series:</span>
-            <a href="#workstations-ha" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Workstations</a>
-            <a href="#tables-cabin" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Tables</a>
-            <a href="#storage-prelam" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Storage</a>
-            <a href="#mesh-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Mesh Series (30 Models)</a>
-            <a href="#leather-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Leather Series (5 Models)</a>
-            <a href="#training-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Training Series (7 Models)</a>
-            <a href="#cafeteria-series" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Cafeteria Series (7 Models)</a>
-            <a href="#pods" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Acoustic Pods</a>
-            <a href="#carpets" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Interface Carpets</a>
-            <a href="#outdoor" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Outdoor Furniture</a>
-            <a href="#educational" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Educational</a>
-            <a href="#accessories" class="btn rounded-pill px-4 py-2 text-uppercase catalogue-filter-btn">Accessories</a>
+<!-- Filter Series Modal -->
+<div class="modal fade" id="seriesFilterModal" tabindex="-1" aria-labelledby="seriesFilterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+            <div class="modal-header bg-dark text-white border-0 px-4 py-3" style="background: linear-gradient(135deg, #111111 0%, #222222 100%);">
+                <div>
+                    <span class="badge bg-danger text-uppercase px-2 py-1 mb-1 fs-7">Catalogue Navigation</span>
+                    <h4 class="modal-title fw-bold text-white mb-0" id="seriesFilterModalLabel">Filter by Product Series</h4>
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4 bg-light">
+                <p class="text-secondary fw-semibold mb-3">Select a series below to isolate and view only that specific collection:</p>
+                <div class="row g-2">
+                    <div class="col-12 mb-1">
+                        <button type="button" class="btn btn-danger w-100 text-start py-2.5 px-3 fw-bold rounded-3" onclick="filterExclusiveSeries('all')" data-bs-dismiss="modal" style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">
+                            ✓ Show All Series (Complete Showcase)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('mesh-series')" data-bs-dismiss="modal">
+                            &bull; Mesh Series (30 Models)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('leather-series')" data-bs-dismiss="modal">
+                            &bull; Leather Series (5 Models)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('training-series')" data-bs-dismiss="modal">
+                            &bull; Training Series (7 Models)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('metro-linea')" data-bs-dismiss="modal">
+                            &bull; Metro Linea Public Seating
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('cafeteria-series')" data-bs-dismiss="modal">
+                            &bull; Cafeteria Series (7 Models)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('workstations-ha')" data-bs-dismiss="modal">
+                            &bull; Workstations - Height Adjustable Series
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('workstations-ds')" data-bs-dismiss="modal">
+                            &bull; Workstations - Desking Series
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('workstations-panel')" data-bs-dismiss="modal">
+                            &bull; Workstations - Panel Series
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('tables-cabin')" data-bs-dismiss="modal">
+                            &bull; Tables - Cabin Tables
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('tables-meeting')" data-bs-dismiss="modal">
+                            &bull; Tables - Meeting Tables
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('storage-prelam')" data-bs-dismiss="modal">
+                            &bull; Storage - Prelam Storage Systems
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('pods')" data-bs-dismiss="modal">
+                            &bull; Acoustic Work Pods
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('carpets')" data-bs-dismiss="modal">
+                            &bull; Interface Carpet Tiles
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('outdoor')" data-bs-dismiss="modal">
+                            &bull; Outdoor Furniture
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('educational')" data-bs-dismiss="modal">
+                            &bull; Educational Solutions
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-outline-dark w-100 text-start py-2.5 px-3 fw-bold rounded-3 series-filter-btn" onclick="filterExclusiveSeries('accessories')" data-bs-dismiss="modal">
+                            &bull; Workspace Accessories
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-<style>
-    section[id] {
-        scroll-margin-top: 180px !important;
-    }
-    .catalogue-filter-btn {
-        font-size: 1.15rem !important;
-        font-weight: 900 !important;
-        border: 2.5px solid #000000 !important;
-        color: #000000 !important;
-        background-color: #ffffff !important;
-        transition: all 0.2s ease-in-out !important;
-    }
-    .catalogue-filter-btn:hover,
-    .catalogue-filter-btn:focus,
-    .catalogue-filter-btn:active,
-    .catalogue-filter-btn.active {
-        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
-        color: #ffffff !important;
-        border-color: #b71c1c !important;
-        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4) !important;
-        transform: translateY(-2px) !important;
-    }
-</style>
-
-<script>
-    function updateCatalogueBarOffset() {
-        var header = document.querySelector('header.tf-header') || document.querySelector('header');
-        var filterBar = document.querySelector('.filter-anchor-bar');
-        if (header && filterBar) {
-            var headerHeight = header.offsetHeight || 92;
-            filterBar.style.top = headerHeight + 'px';
-        }
-    }
-    window.addEventListener('scroll', updateCatalogueBarOffset);
-    window.addEventListener('resize', updateCatalogueBarOffset);
-    document.addEventListener('DOMContentLoaded', updateCatalogueBarOffset);
-    setTimeout(updateCatalogueBarOffset, 300);
-</script>
 
 <!-- Main Catalogue Container -->
 <div class="py-5 bg-white">
     <div class="tf-container">
 
         <!-- 1. MESH SERIES -->
-        <section id="mesh-series" class="mb-5 pt-4">
+        <section id="mesh-series" class="catalogue-series-section mb-5 pt-4" data-series-slug="mesh-series">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">30 Line-Wise Models</span>
@@ -1261,7 +1602,7 @@
         </section>
 
         <!-- 2. LEATHER SERIES -->
-        <section id="leather-series" class="mb-5 pt-4 border-top">
+        <section id="leather-series" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="leather-series">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-dark text-white text-uppercase px-2 py-1 fs-7 mb-1">5 Executive Models</span>
@@ -1362,7 +1703,7 @@
         </section>
 
         <!-- 3. TRAINING SERIES -->
-        <section id="training-series" class="mb-5 pt-4 border-top">
+        <section id="training-series" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="training-series">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-warning text-dark text-uppercase px-2 py-1 fs-7 mb-1">Flexible Learning Solutions</span>
@@ -1497,7 +1838,7 @@
         </section>
 
         <!-- 4. METRO LINEA PUBLIC SEATING -->
-        <section id="metro-linea" class="mb-5 pt-4 border-top">
+        <section id="metro-linea" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="metro-linea">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-info text-dark text-uppercase px-2 py-1 fs-7 mb-1">Heavy-Duty Public Infrastructure</span>
@@ -1564,7 +1905,7 @@
         </section>
 
         <!-- 5. CAFETERIA SERIES -->
-        <section id="cafeteria-series" class="mb-4 pt-4 border-top">
+        <section id="cafeteria-series" class="catalogue-series-section mb-4 pt-4 border-top" data-series-slug="cafeteria-series">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-success text-white text-uppercase px-2 py-1 fs-7 mb-1">7 Contemporary Models</span>
@@ -1699,7 +2040,7 @@
         </section>
 
         <!-- WORKSTATIONS CATALOGUE SECTIONS -->
-        <section id="workstations-ha" class="mb-5 pt-4 border-top">
+        <section id="workstations-ha" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="workstations-ha">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Motorized Ergonomic Desks</span>
@@ -1742,7 +2083,7 @@
             </div>
         </section>
 
-        <section id="workstations-ds" class="mb-5 pt-4 border-top">
+        <section id="workstations-ds" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="workstations-ds">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Open-Plan Desking</span>
@@ -1775,7 +2116,7 @@
             </div>
         </section>
 
-        <section id="workstations-ps" class="mb-5 pt-4 border-top">
+        <section id="workstations-panel" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="workstations-panel">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Acoustic Partition Systems</span>
@@ -1799,7 +2140,7 @@
         </section>
 
         <!-- TABLES CATALOGUE SECTIONS -->
-        <section id="tables-cabin" class="mb-5 pt-4 border-top">
+        <section id="tables-cabin" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="tables-cabin">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Executive Cabin Desks</span>
@@ -1832,7 +2173,7 @@
             </div>
         </section>
 
-        <section id="tables-meeting" class="mb-5 pt-4 border-top">
+        <section id="tables-meeting" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="tables-meeting">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Boardroom Conference Tables</span>
@@ -1856,7 +2197,7 @@
         </section>
 
         <!-- STORAGE CATALOGUE SECTIONS -->
-        <section id="storage-prelam" class="mb-5 pt-4 border-top">
+        <section id="storage-prelam" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="storage-prelam">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Office Storage Cabinets</span>
@@ -1880,7 +2221,7 @@
         </section>
 
         <!-- PODS CATALOGUE SECTION -->
-        <section id="pods" class="mb-5 pt-4 border-top">
+        <section id="pods" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="pods">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Sound Isolation Booths</span>
@@ -1904,7 +2245,7 @@
         </section>
 
         <!-- CARPETS CATALOGUE SECTION -->
-        <section id="carpets" class="mb-5 pt-4 border-top">
+        <section id="carpets" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="carpets">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Acoustic Flooring</span>
@@ -1928,7 +2269,7 @@
         </section>
 
         <!-- OUTDOOR CATALOGUE SECTION -->
-        <section id="outdoor" class="mb-5 pt-4 border-top">
+        <section id="outdoor" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="outdoor">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Terrace &amp; Cafe Seating</span>
@@ -1952,7 +2293,7 @@
         </section>
 
         <!-- EDUCATIONAL CATALOGUE SECTION -->
-        <section id="educational" class="mb-5 pt-4 border-top">
+        <section id="educational" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="educational">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Institutional Solutions</span>
@@ -1976,7 +2317,7 @@
         </section>
 
         <!-- ACCESSORIES CATALOGUE SECTION -->
-        <section id="accessories" class="mb-5 pt-4 border-top">
+        <section id="accessories" class="catalogue-series-section mb-5 pt-4 border-top" data-series-slug="accessories">
             <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-2 border-danger">
                 <div>
                     <span class="badge bg-danger text-uppercase px-2 py-1 fs-7 mb-1">Ergonomic Tools</span>
@@ -2010,18 +2351,84 @@
         transform: translateY(-6px);
         box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
     }
+    .series-filter-btn:hover {
+        background-color: #d32f2f !important;
+        color: #ffffff !important;
+        border-color: #d32f2f !important;
+    }
+</style>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        if (window.location.hash) {
-            var targetId = window.location.hash.substring(1);
-            var targetEl = document.getElementById(targetId);
-            if (targetEl) {
-                setTimeout(function() {
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 250);
+function filterExclusiveSeries(slug) {
+    if (!slug) slug = 'all';
+    slug = slug.toLowerCase().replace(/^#/, '');
+
+    const sections = document.querySelectorAll('.catalogue-series-section');
+    const badgeEl = document.getElementById('seriesBadge');
+    const titleEl = document.getElementById('seriesTitle');
+    const subtitleEl = document.getElementById('seriesSubtitle');
+    const showAllBtn = document.getElementById('showAllSeriesBtn');
+
+    if (slug === 'all') {
+        sections.forEach(sec => {
+            sec.style.display = 'block';
+        });
+        if (badgeEl) badgeEl.textContent = 'Vishista Signature Line';
+        if (titleEl) titleEl.textContent = 'Our Exclusive Collection';
+        if (subtitleEl) subtitleEl.textContent = 'ArchLabs Architectural Seating & Turnkey Product Lines. Engineered for Movement. Designed for Focus.';
+        if (showAllBtn) showAllBtn.style.display = 'none';
+        return;
+    }
+
+    let matched = false;
+    sections.forEach(sec => {
+        const secId = (sec.id || '').toLowerCase();
+        const secSlug = (sec.getAttribute('data-series-slug') || '').toLowerCase();
+
+        if (secId === slug || secSlug === slug) {
+            sec.style.display = 'block';
+            sec.classList.remove('border-top');
+            matched = true;
+
+            const secHeading = sec.querySelector('h2');
+            if (secHeading && titleEl) {
+                titleEl.textContent = secHeading.textContent;
             }
+            if (badgeEl) {
+                badgeEl.textContent = 'Exclusive Series Showcase';
+            }
+            if (subtitleEl) {
+                subtitleEl.textContent = 'Viewing isolated series models engineered with precision architecture.';
+            }
+        } else {
+            sec.style.display = 'none';
         }
     });
+
+    if (matched) {
+        if (showAllBtn) showAllBtn.style.display = 'inline-flex';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        // Fallback show all
+        sections.forEach(sec => { sec.style.display = 'block'; });
+        if (showAllBtn) showAllBtn.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const seriesParam = urlParams.get('series') || window.location.hash.replace('#', '');
+    if (seriesParam) {
+        filterExclusiveSeries(seriesParam);
+    }
+});
+
+window.addEventListener('hashchange', function() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+        filterExclusiveSeries(hash);
+    }
+});
 </script>
 
          <!-- Footer -->
@@ -2087,26 +2494,38 @@
                         <!-- Contact Details -->
                         <div class="col-lg-3 col-md-6">
                             <h5 class="text-uppercase fw-extrabold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 17px !important; letter-spacing: 1px !important; font-family: 'Inter', sans-serif !important;">Contact Us</h5>
-                            <div class="d-flex flex-column gap-3 text-white" style="font-size: 15.5px !important;">
+                            <div class="d-flex flex-column gap-3 text-white" style="font-size: 14.5px !important;">
                                 <div class="footer-contact-block">
-                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 15px !important; font-weight: 800 !important;">&bull; Head Office:</strong>
-                                    <span style="line-height: 1.6; display: block; color: #ffffff !important; font-weight: 600;">
+                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 14px !important; font-weight: 800 !important;">&bull; Head Office:</strong>
+                                    <span style="line-height: 1.6; display: block; color: #ffffff !important; font-weight: 600; word-break: break-word; overflow-wrap: anywhere;">
                                         Saishruthi Nilyam, Street No. 4,<br>
                                         Sri Sathya Sai Enclave, Plot No. 109,<br>
                                         Old Bowenpally, Secunderabad, Telangana 500009
                                     </span>
                                 </div>
                                 <div class="footer-contact-block">
-                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 15px !important; font-weight: 800 !important;">&bull; Emails:</strong>
-                                    <div class="d-flex flex-column gap-1" style="font-weight: 600;">
-                                        <a href="mailto:info@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red">&bull; info@vishistaofficesolutions.com</a>
-                                        <a href="mailto:sales@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red">&bull; sales@vishistaofficesolutions.com</a>
-                                        <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red">&bull; kvramana.reddy@vishistaofficesolutions.com</a>
+                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 14px !important; font-weight: 800 !important;">&bull; Emails:</strong>
+                                    <div class="d-flex flex-column gap-2" style="font-weight: 600;">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <span class="text-white flex-shrink-0" style="font-size: 14px;">&bull;</span>
+                                            <a href="mailto:info@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red" style="word-break: break-all; overflow-wrap: anywhere; font-size: 13.5px;">info@vishistaofficesolutions.com</a>
+                                        </div>
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <span class="text-white flex-shrink-0" style="font-size: 14px;">&bull;</span>
+                                            <a href="mailto:sales@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red" style="word-break: break-all; overflow-wrap: anywhere; font-size: 13.5px;">sales@vishistaofficesolutions.com</a>
+                                        </div>
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <span class="text-white flex-shrink-0" style="font-size: 14px;">&bull;</span>
+                                            <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red" style="word-break: break-all; overflow-wrap: anywhere; font-size: 13.5px;">kvramana.reddy@vishistaofficesolutions.com</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="footer-contact-block">
-                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 15px !important; font-weight: 800 !important;">&bull; WhatsApp &amp; Sales:</strong>
-                                    <a href="https://wa.me/919849058444" target="_blank" class="text-white fw-bold text-decoration-none d-inline-block hover-red" style="font-size: 16px !important;">&bull; +91 9849058444</a>
+                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 14px !important; font-weight: 800 !important;">&bull; WhatsApp &amp; Sales:</strong>
+                                    <div class="d-flex align-items-baseline gap-2">
+                                        <span class="text-white flex-shrink-0" style="font-size: 14px;">&bull;</span>
+                                        <a href="https://wa.me/919849058444" target="_blank" class="text-white fw-bold text-decoration-none hover-red" style="font-size: 15px !important; word-break: break-word;">+91 9849058444</a>
+                                    </div>
                                 </div>
                                 <div class="pt-1">
                                     <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-bold px-3 py-2 shadow-sm" style="border-radius: 6px; font-size: 13px; letter-spacing: 0.5px;">
@@ -2123,9 +2542,9 @@
             <!-- Footer Bottom -->
             <div class="footer-bottom mt-4 pt-3 border-top border-secondary-subtle">
                 <div class="tf-container">
-                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-2 py-1">
-                        <p class="mb-0 text-white-50">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
-                        <p class="mb-0 text-white-50">Designed for Corporate &amp; Institutional Workspaces.</p>
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-2 py-1 footer-bottom-content">
+                        <p class="mb-0 text-white-50" style="word-break: break-word; font-size: 13px;">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
+                        <p class="mb-0 text-white-50" style="word-break: break-word; font-size: 13px;">Designed for Corporate &amp; Institutional Workspaces.</p>
                     </div>
                 </div>
             </div>
@@ -2162,21 +2581,11 @@
                     </a>
                 </li>
 
-                <!-- 2. About Us Accordion Dropdown -->
+                <!-- 2. About Us -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" href="#mobileAboutCollapse" role="button" aria-expanded="false" aria-controls="mobileAboutCollapse">
+                    <a class="mobile-nav-link" href="about.html">
                         <span>About Us</span>
-                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                     </a>
-                    <div class="collapse mt-2" id="mobileAboutCollapse">
-                        <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled border-start ps-3 ms-2 border-danger">
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#company-profile">&bull; Company Profile</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#director-profile">&bull; Director Journey</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#mission-vision">&bull; Mission &amp; Vision</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#core-values">&bull; Core Values</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#why-choose-us">&bull; Why Choose Us</a></li>
-                        </ul>
-                    </div>
                 </li>
 
                 <!-- 3. Products Accordion Dropdown -->
@@ -2191,79 +2600,79 @@
                             
                             <!-- 1. Workstations -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Workstations &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Height%20Adjustable%20Series">&bull; Height Adjustable Series</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Desking%20Series">&bull; Desking Series</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Panel%20Series">&bull; Panel Series</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Height Adjustable Series</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Desking Series</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Panel Series</a></li>
                                 </ul>
                             </div>
 
                             <!-- 2. Tables -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Tables" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=tables" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Tables &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Cabin%20Tables">&bull; Cabin Tables</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Meeting%20Tables">&bull; Meeting Tables</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Cafe%20Tables">&bull; Cafe Tables</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Training%20Tables">&bull; Training Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Cabin Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Meeting Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Cafe Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Training Tables</a></li>
                                 </ul>
                             </div>
 
                             <!-- 3. Storage -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Storage" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=storage" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Storage &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Prelam%20Storage">&bull; Prelam Storage</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Metal%20Storage">&bull; Metal Storage</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Compactor%20Storage">&bull; Compactor Storage</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Locker">&bull; Locker</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Prelam Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Metal Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Compactor Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Locker</a></li>
                                 </ul>
                             </div>
 
                             <!-- 4. Seating -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Seating &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Mesh%20Chair">&bull; Mesh Chair</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Leather%20Chair">&bull; Leather Chair</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Training%20Chair">&bull; Training Chair</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Cafe%20Chair">&bull; Cafe Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Mesh Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Leather Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Training Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Cafe Chair</a></li>
                                 </ul>
                             </div>
 
                             <!-- 5. Soft Seating -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Soft%20Seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=soft-seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Soft Seating &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Lounge">&bull; Lounge</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Sofa">&bull; Sofa</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Collaborative">&bull; Collaborative</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Pouffe">&bull; Pouffe</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Occasional%20Tables">&bull; Occasional Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Lounge</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Sofa</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Collaborative</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Pouffe</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Occasional Tables</a></li>
                                 </ul>
                             </div>
 
                             <!-- 9. Educational -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Educational &rarr;
                                 </a>
                                 <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Classroom">&bull; Classroom</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Library">&bull; Library</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Hostel">&bull; Hostel</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Auditorium">&bull; Auditorium</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Classroom</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Library</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Hostel</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Auditorium</a></li>
                                 </ul>
                             </div>
 
@@ -2563,6 +2972,49 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Dedicated Mobile Hamburger Button Handler (Works 100% reliably across all pages)
+            document.addEventListener('click', function(e) {
+                const btn = e.target.closest('.mobile-button, [data-bs-target="#mobileMenu"], a[href="#mobileMenu"]');
+                if (btn) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const offcanvasEl = document.getElementById('mobileMenu');
+                    if (offcanvasEl && typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+                        const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+                        bsOffcanvas.show();
+                    } else if (offcanvasEl) {
+                        offcanvasEl.classList.add('show');
+                        offcanvasEl.style.visibility = 'visible';
+                    }
+                }
+            });
+
+            // Smooth Scroll for in-page section anchors ONLY (excluding modals, collapse, offcanvas)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.hasAttribute('data-bs-toggle') || this.hasAttribute('data-bs-target') || this.classList.contains('mobile-button')) {
+                        return;
+                    }
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId !== '#' && targetId !== '#0' && !targetId.startsWith('#mobile') && !targetId.startsWith('#enquire')) {
+                        try {
+                            const targetEl = document.querySelector(targetId);
+                            if (targetEl && !targetEl.classList.contains('offcanvas') && !targetEl.classList.contains('modal') && !targetEl.classList.contains('collapse')) {
+                                e.preventDefault();
+                                targetEl.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        } catch(err) {}
+                    }
+                });
+            });
+        });
+    </script>
+
     <style>
         .scroll-animatable {
             opacity: 0;
@@ -2581,6 +3033,25 @@
         .clean-hover-card:hover {
             transform: translateY(-6px) !important;
             box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Mobile Responsive Footer Fixes - No Text Cutoff */
+        @media (max-width: 768px) {
+            .footer-contact-block a,
+            .footer-contact-block span {
+                word-break: break-word !important;
+                overflow-wrap: anywhere !important;
+                max-width: 100% !important;
+                font-size: 13.5px !important;
+                line-height: 1.55 !important;
+            }
+            .footer-bottom {
+                padding-bottom: 95px !important; /* Prevents floating WhatsApp & Scroll-To-Top button overlap */
+            }
+            .footer-bottom p {
+                text-align: center !important;
+                font-size: 12.5px !important;
+            }
         }
     </style>
 
