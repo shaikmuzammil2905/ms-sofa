@@ -228,27 +228,6 @@
                                 </ul>
                             </div>
 
-                            <!-- 6. Pods -->
-                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Pods" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
-                                    Pods &rarr;
-                                </a>
-                            </div>
-
-                            <!-- 7. Carpets -->
-                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
-                                    Carpets &rarr;
-                                </a>
-                            </div>
-
-                            <!-- 8. Outdoor -->
-                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Outdoor" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
-                                    Outdoor &rarr;
-                                </a>
-                            </div>
-
                             <!-- 9. Educational -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
                                 <a href="product-catalogue-view.html?cat=Educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">

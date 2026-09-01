@@ -179,12 +179,11 @@ async function syncCategoriesSection() {
                 }
             });
 
-            let subListHtml = '';
-            if (subItems.length > 0) {
-                subListHtml = `<ul class="mega-subcategory-list">` + subItems.map(subName => 
-                    `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
-                ).join('') + `</ul>`;
-            }
+            if (subItems.length === 0) return;
+
+            let subListHtml = `<ul class="mega-subcategory-list">` + subItems.map(subName => 
+                `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
+            ).join('') + `</ul>`;
 
             megaHtml += `
                 <div>
@@ -219,12 +218,11 @@ async function syncCategoriesSection() {
                 }
             });
 
-            let subListHtml = '';
-            if (subItems.length > 0) {
-                subListHtml = `<ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">` + subItems.map(subName =>
-                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
-                ).join('') + `</ul>`;
-            }
+            if (subItems.length === 0) return;
+
+            let subListHtml = `<ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">` + subItems.map(subName =>
+                `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
+            ).join('') + `</ul>`;
 
             mobHtml += `
                 <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">

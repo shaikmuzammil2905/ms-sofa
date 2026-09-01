@@ -231,7 +231,7 @@
         }
         .mega-menu-grid {
             display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
+            grid-template-columns: repeat(3, 1fr) !important;
             gap: 22px 28px !important;
             padding: 26px 30px !important;
             background: #ffffff !important;
@@ -584,21 +584,6 @@
                                                 <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Pouffe" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Pouffe</a></li>
                                                 <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Occasional%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Occasional Tables</a></li>
                                             </ul>
-                                        </div>
-
-                                        <!-- 6. Pods -->
-                                        <div>
-                                            <a href="product-catalogue-view.html?cat=Pods" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Pods</a>
-                                        </div>
-
-                                        <!-- 7. Carpets -->
-                                        <div>
-                                            <a href="product-catalogue-view.html?cat=Carpets" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Carpets</a>
-                                        </div>
-
-                                        <!-- 8. Outdoor -->
-                                        <div>
-                                            <a href="product-catalogue-view.html?cat=Outdoor" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Outdoor</a>
                                         </div>
 
                                         <!-- 9. Educational -->
