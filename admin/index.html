@@ -224,21 +224,18 @@
                     </div>
                 </div>
 
-                <!-- 3. CATEGORIES & SUBCATEGORIES MODULE -->
+                <!-- 3. CATEGORIES MODULE -->
                 <div id="view-categories" class="tab-view-content d-none">
                     <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
                         <div>
-                            <h3 class="fw-bold text-dark mb-1">Category &amp; Subcategory Management</h3>
-                            <p class="text-muted fs-7 mb-0">Manage all main categories and linked subcategories dynamically.</p>
+                            <h3 class="fw-bold text-dark mb-1">Category Management</h3>
+                            <p class="text-muted fs-7 mb-0">Manage all main website product categories dynamically.</p>
                         </div>
-                        <div class="d-flex gap-2">
-                            <button class="btn btn-outline-dark fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddSubcategoryModal()">+ Add Subcategory</button>
-                            <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddCategoryModal()">+ Add Category</button>
-                        </div>
+                        <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddCategoryModal()">+ Add Category</button>
                     </div>
 
                     <!-- Categories Card -->
-                    <div class="admin-card mb-4">
+                    <div class="admin-card">
                         <h5 class="fw-bold text-dark mb-3">Categories</h5>
                         <div class="table-responsive">
                             <table class="admin-table align-middle">
@@ -255,31 +252,6 @@
                                     </tr>
                                 </thead>
                                 <tbody id="categoriesTableBody">
-                                    <!-- Rendered dynamically -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Subcategories Card -->
-                    <div class="admin-card">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="fw-bold text-dark mb-0">Subcategories</h5>
-                            <button class="btn btn-sm btn-outline-danger fw-bold text-uppercase" onclick="openAddSubcategoryModal()">+ Add Subcategory</button>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="admin-table align-middle">
-                                <thead>
-                                    <tr>
-                                        <th>Subcategory Name</th>
-                                        <th>Parent Category</th>
-                                        <th>Slug</th>
-                                        <th>Products</th>
-                                        <th>Order</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="subcategoriesTableBody">
                                     <!-- Rendered dynamically -->
                                 </tbody>
                             </table>
