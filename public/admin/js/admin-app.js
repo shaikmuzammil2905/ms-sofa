@@ -1212,16 +1212,14 @@ function renderHeroSlidesList() {
     let html = '';
     _currentHeroSlides.forEach((slideUrl, idx) => {
         const hasImg = Boolean(slideUrl && slideUrl.trim());
-        const previewBlock = hasImg ? `
-            <div class="position-relative bg-light text-center" style="height: 180px; overflow: hidden;">
-                <img id="heroSlidePreview_${idx}" src="${slideUrl}" alt="Slide ${idx + 1}" class="w-100 h-100" style="object-fit: cover;">
-                <span class="position-absolute top-0 start-0 bg-dark text-white fw-bold px-2 py-1 m-2 rounded fs-7 shadow-sm">Slide ${idx + 1}</span>
-                <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 fw-bold" title="Delete this slide" onclick="deleteHeroSlideItem(${idx})">
-                    ✕ Delete
-                </button>
-            </div>
+        const previewContent = hasImg ? `
+            <img id="heroSlidePreview_${idx}" src="${slideUrl}" alt="Slide ${idx + 1}" class="w-100 h-100" style="object-fit: cover;">
+            <span class="position-absolute top-0 start-0 bg-dark text-white fw-bold px-2 py-1 m-2 rounded fs-7 shadow-sm">Slide ${idx + 1}</span>
+            <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 fw-bold" title="Delete this slide" onclick="deleteHeroSlideItem(${idx})">
+                ✕ Delete
+            </button>
         ` : `
-            <div class="position-relative bg-light text-center d-flex flex-column align-items-center justify-content-center p-3" style="height: 180px; border-bottom: 1px dashed #cbd5e1; cursor: pointer;" onclick="document.getElementById('heroSlideFile_${idx}').click()">
+            <div class="d-flex flex-column align-items-center justify-content-center h-100 p-3" style="border-bottom: 1px dashed #cbd5e1; cursor: pointer;" onclick="document.getElementById('heroSlideFile_${idx}').click()">
                 <div class="text-danger fs-1 mb-1">🖼️</div>
                 <div class="fw-bold text-dark fs-7">No Image Selected</div>
                 <small class="text-muted fs-8">Click to upload photo or enter URL below</small>
@@ -1235,7 +1233,9 @@ function renderHeroSlidesList() {
         html += `
         <div class="col-lg-4 col-md-6">
             <div class="card h-100 border shadow-sm rounded-3 overflow-hidden bg-white">
-                ${previewBlock}
+                <div id="heroSlidePreviewWrap_${idx}" class="position-relative bg-light text-center" style="height: 180px; overflow: hidden;">
+                    ${previewContent}
+                </div>
                 <div class="card-body p-3 d-flex flex-column gap-2">
                     <label class="form-label fw-semibold fs-7 mb-0">Image URL / Path</label>
                     <input type="text" class="form-control form-control-sm" id="heroSlideInput_${idx}" value="${slideUrl || ''}" placeholder="Paste Image URL or Click Upload below..." oninput="onHeroSlideUrlChange(${idx}, this.value)">
@@ -1254,8 +1254,32 @@ function renderHeroSlidesList() {
 }
 
 function onHeroSlideUrlChange(index, val) {
-    _currentHeroSlides[index] = val.trim();
-    renderHeroSlidesList();
+    const trimmed = (val || '').trim();
+    _currentHeroSlides[index] = trimmed;
+    const wrap = document.getElementById(`heroSlidePreviewWrap_${index}`);
+    if (!wrap) return;
+
+    if (trimmed) {
+        wrap.innerHTML = `
+            <img id="heroSlidePreview_${index}" src="${trimmed}" alt="Slide ${index + 1}" class="w-100 h-100" style="object-fit: cover;">
+            <span class="position-absolute top-0 start-0 bg-dark text-white fw-bold px-2 py-1 m-2 rounded fs-7 shadow-sm">Slide ${index + 1}</span>
+            <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 fw-bold" title="Delete this slide" onclick="deleteHeroSlideItem(${index})">
+                ✕ Delete
+            </button>
+        `;
+    } else {
+        wrap.innerHTML = `
+            <div class="d-flex flex-column align-items-center justify-content-center h-100 p-3" style="border-bottom: 1px dashed #cbd5e1; cursor: pointer;" onclick="document.getElementById('heroSlideFile_${index}').click()">
+                <div class="text-danger fs-1 mb-1">🖼️</div>
+                <div class="fw-bold text-dark fs-7">No Image Selected</div>
+                <small class="text-muted fs-8">Click to upload photo or enter URL below</small>
+                <span class="position-absolute top-0 start-0 bg-dark text-white fw-bold px-2 py-1 m-2 rounded fs-7 shadow-sm">Slide ${index + 1}</span>
+                <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 fw-bold" title="Delete this slide" onclick="event.stopPropagation(); deleteHeroSlideItem(${index})">
+                    ✕ Delete
+                </button>
+            </div>
+        `;
+    }
 }
 
 function addHeroSlideItem(defaultUrl = '') {
@@ -1277,11 +1301,10 @@ function deleteHeroSlideItem(index) {
 async function handleHeroSlideUpload(input, index) {
     if (!input.files || !input.files[0]) return;
     const file = input.files[0];
-    const previewEl = document.getElementById(`heroSlidePreview_${index}`);
-    const inputEl = document.getElementById(`heroSlideInput_${index}`);
+    const wrap = document.getElementById(`heroSlidePreviewWrap_${index}`);
 
-    if (previewEl) {
-        previewEl.style.opacity = '0.5';
+    if (wrap) {
+        wrap.style.opacity = '0.5';
     }
 
     try {
@@ -1311,14 +1334,10 @@ async function handleHeroSlideUpload(input, index) {
         }
 
         _currentHeroSlides[index] = imageUrl;
-        if (inputEl) inputEl.value = imageUrl;
-        if (previewEl) {
-            previewEl.src = imageUrl;
-            previewEl.style.opacity = '1';
-        }
+        renderHeroSlidesList();
         alert(`✓ Slide ${index + 1} image uploaded successfully!`);
     } catch (err) {
-        if (previewEl) previewEl.style.opacity = '1';
+        if (wrap) wrap.style.opacity = '1';
         alert(`Slide upload error: ${err.message}`);
     }
 }
