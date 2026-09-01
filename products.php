@@ -75,7 +75,12 @@
             items: [
                 { name: "Model CB-Executive Director Desk", img: "images/categories/cat_tables.png", specs: "Veneer Finish / Leatherette Writing Pad / Side Credenza Storage Unit / Cable Port Boxes", subcategory: "Cabin Tables" },
                 { name: "Model CB-Managerial Side Return Desk", img: "images/categories/cat_tables.jpg", specs: "Prelam Wood Finish / Lockable Drawer Pedestal / Wire Pass Grommets / Modesty Panel", subcategory: "Cabin Tables" },
-                { name: "Model MT-12 Seater Boardroom Table", img: "images/categories/cat_tables.png", specs: "Dual Pop-up Power Box / Boat Shape Top / Heavy Duty Steel Base Frame / Cable Spine Passage", subcategory: "Meeting Tables" }
+                { name: "Model MT-12 Seater Boardroom Table", img: "images/categories/cat_tables.png", specs: "Dual Pop-up Power Box / Boat Shape Top / Heavy Duty Steel Base Frame / Cable Spine Passage", subcategory: "Meeting Tables" },
+                { name: "Model MT-8 Seater Conference Table", img: "images/categories/cat_tables.jpg", specs: "Beveled Edge Top / Integrated Wire Channel / Heavy Sturdy Base / Pop-up Audio-Visual Box", subcategory: "Meeting Tables" },
+                { name: "Model CF-Bistro Round High Table", img: "images/sections/vishista_exclusive.jpg", specs: "Cast Iron Base / Antibacterial Compact Laminate Top / Chrome Ring Footrest", subcategory: "Cafe Tables" },
+                { name: "Model CF-Square Breakout Cafe Table", img: "images/categories/cat_tables.png", specs: "Solid Wood Legs / Scratch Resistant Surface / 4-Seater Compact Design", subcategory: "Cafe Tables" },
+                { name: "Model TR-Foldable Flip-Top Training Table", img: "images/archlabs/pages/page_43.png", specs: "Quick Flip Mechanism / Lockable PU Castor Wheels / Modesty Panel with Perforated Steel", subcategory: "Training Tables" },
+                { name: "Model TR-Mobile Seminar Desk", img: "images/archlabs/pages/page_44.png", specs: "Nesting Modular Frame / Heavy-duty Steel Structure / Integrated Bag Hooks", subcategory: "Training Tables" }
             ]
         },
         "Storage": {
@@ -83,35 +88,69 @@
             desc: "Prelam Storage Credenzas, Heavy-Duty Metal Filing Cabinets, High-Density Compactor Storage, and Personal Lockers.",
             items: [
                 { name: "Model ST-Mobile Pedestal (3 Drawer)", img: "images/categories/cat_storage.png", specs: "Central Keyed Locking / Castor Wheels / Stationary Tray Included / Anti-tilt Mechanism", subcategory: "Prelam Storage" },
-                { name: "Model AC-Gas Spring Dual Monitor Arm", img: "images/categories/cat_workstations.jpg", specs: "VESA Mount / Quick Release Clamp / Integrated Cable Passage", subcategory: "Metal Storage" }
+                { name: "Model ST-Executive Credenza Unit", img: "images/categories/cat_storage.jpg", specs: "Sliding Shutter Prelam Cabinet / Adjustable Internal Shelves / Soft Close Hinges", subcategory: "Prelam Storage" },
+                { name: "Model ST-Steel Filing Cabinet (4 Drawer)", img: "images/categories/cat_storage.jpg", specs: "Heavy-Duty CRCA Steel / Full Extension Ball Bearing Runners / Anti-tilt Safety Lock", subcategory: "Metal Storage" },
+                { name: "Model AC-Gas Spring Dual Monitor Arm", img: "images/categories/cat_workstations.jpg", specs: "VESA Mount / Quick Release Clamp / Integrated Cable Passage", subcategory: "Metal Storage" },
+                { name: "Model CP-High Density Mobile Compactor System", img: "images/header/prd-nav-1.jpg", specs: "Mechanical Wheel Drive / Floor Rail Track / Anti-topple Safety Mechanism / High Density Storage", subcategory: "Compactor Storage" },
+                { name: "Model LK-Multi Tier Employee Personal Locker", img: "images/header/prd-nav-2.jpg", specs: "Electronic Keypad / RFID Lock Support / Ventilation Louvers / Name Card Holder", subcategory: "Locker" }
+            ]
+        },
+        "Seating": {
+            title: "Ergonomic Office Seating Catalogue",
+            desc: "High-performance mesh task chairs, executive leather armchairs, training room seats, and cafe breakout chairs.",
+            items: [
+                { name: "Veloz Ergonomic Mesh Chair", img: "images/archlabs/pages/page_4.png", specs: "Synchro-tilt mechanism, Breathable Korean Mesh, 3D Adjustable Armrests, Nylon Base", subcategory: "Mesh Chair" },
+                { name: "Feather High-Back Task Chair", img: "images/archlabs/pages/page_5.png", specs: "Class-4 Gas Lift, Lumbar Support Slider, Multi-locking Recline, Diecast Aluminium Base", subcategory: "Mesh Chair" },
+                { name: "Eiffel Executive Mesh Chair", img: "images/archlabs/pages/page_6.png", specs: "Integrated Headrest, 2D Lumbar Support, Synchro Mechanism, Heavy-Duty Nylon Base", subcategory: "Mesh Chair" },
+                { name: "Boss High-Back Leather Director Chair", img: "images/archlabs/pages/page_36.png", specs: "Top-grain Genuine Leather, Padded Pillow Armrests, Knee-tilt Mechanism, Chrome Base", subcategory: "Leather Chair" },
+                { name: "Apex Executive Leather Chair", img: "images/archlabs/pages/page_37.png", specs: "Diamond Stitch Leatherette, Polished Aluminium Base, Ergonomic Contour Back", subcategory: "Leather Chair" },
+                { name: "Nexus Training Chair with Tablet", img: "images/archlabs/pages/page_43.png", specs: "Foldable ABS Writing Tablet, Under-seat Wire Storage Basket, Nesting Castor Frame", subcategory: "Training Chair" },
+                { name: "Orbit Seminar Nesting Chair", img: "images/archlabs/pages/page_44.png", specs: "Flip-up Seat Cushion, High-density Molded Foam, Breathable Mesh Back, 4 Castors", subcategory: "Training Chair" },
+                { name: "AC08 Crest Modern Cafe Chair", img: "images/archlabs/pages/page_57.png", specs: "Ergonomic Polypropylene Shell, Chrome Steel Sled Base, Stackable Design", subcategory: "Cafe Chair" },
+                { name: "Bistro Wooden Dining Chair", img: "images/archlabs/pages/page_60.png", specs: "Solid Bentwood Frame, Stain Resistant Seat Cushion, Anti-scratch Glides", subcategory: "Cafe Chair" }
+            ]
+        },
+        "Soft Seating": {
+            title: "Soft Seating & Lounge Catalogue",
+            desc: "Executive sofas, collaborative booth seating, geometrical pouffes, and occasional reception tables.",
+            items: [
+                { name: "Executive Lounge Armchairs", img: "images/categories/cat_soft_seating.jpg", specs: "Single-seat ergonomic lounge armchair in premium acoustic fabric with solid wood base.", subcategory: "Lounge" },
+                { name: "2 & 3-Seater Executive Sofas", img: "images/collection/collection-1.jpg", specs: "Sleek multi-seater reception couch featuring high-resilience foam and stain-resistant upholstery.", subcategory: "Lounge" },
+                { name: "Collaborative Booth Seating", img: "images/collection/collection-2.jpg", specs: "High-back sound dampening acoustic booth creating semi-private discussion nooks in open offices.", subcategory: "Collaborative" },
+                { name: "Geometrical Pouffes & Ottomans", img: "images/sections/s-lookbook-1.jpg", specs: "Flexible circular, hexagonal, and square soft pouffes designed for breakout spaces.", subcategory: "Pouffe" },
+                { name: "Occasional Center Tables", img: "images/categories/cat_tables.png", specs: "Designer low-height coffee table with veneered wood top matching lounge ensembles.", subcategory: "Pouffe" }
             ]
         },
         "Pods": {
             title: "Acoustic Work Pods Catalogue",
             desc: "Private Acoustic Phone Booths and Collaborative Meeting Pods engineered for sound isolation and distraction-free calls.",
             items: [
-                { name: "Model PD-Solo Acoustic Telephone Booth", img: "images/categories/cat_pods.jpg", specs: "Sound Reduction 32dB / Silent Ventilation Fan / Motion Sensor LED / Power Hub", subcategory: "Acoustic Pods" }
+                { name: "Model PD-Solo Acoustic Telephone Booth", img: "images/categories/cat_pods.jpg", specs: "Sound Reduction 32dB / Silent Ventilation Fan / Motion Sensor LED / Power Hub", subcategory: "Single Phone Pod" },
+                { name: "Model PD-4 Person Collaborative Meeting Pod", img: "images/sections/hero-workspace.jpg", specs: "Dual Acoustic Glass Walls / Integrated Sofa Seating / TV Mounting Bracket / 35dB Noise Reduction", subcategory: "Meeting Pod" }
             ]
         },
         "Carpets": {
             title: "Interface Carpet Tiles Catalogue",
             desc: "High-performance modular Interface Carpet Tiles designed for heavy traffic commercial office floors.",
             items: [
-                { name: "Model CP-Acoustic Nylon Modular Tile", img: "images/categories/cat_carpets.jpg", specs: "50x50cm Tiles / Sound Dampening Backing / Stain Shield Treatment", subcategory: "Carpet Flooring" }
+                { name: "Model CP-Acoustic Nylon Modular Tile", img: "images/categories/cat_carpets.jpg", specs: "50x50cm Tiles / Sound Dampening Backing / Stain Shield Treatment", subcategory: "Interface Carpets" }
             ]
         },
         "Outdoor": {
             title: "Outdoor Furniture & Terrace Seating",
             desc: "Weatherproof Loom Crafts outdoor lounge sets, patio tables, and terrace seating for corporate cafeterias.",
             items: [
-                { name: "Model OD-Synthetic Wicker Terrace Lounge", img: "images/categories/cat_outdoor.jpg", specs: "UV-Resistant All-Weather Wicker / Water Repellent Cushions / Aluminium Frame", subcategory: "Terrace & Patio" }
+                { name: "Model OD-Synthetic Wicker Terrace Lounge", img: "images/categories/cat_outdoor.jpg", specs: "UV-Resistant All-Weather Wicker / Water Repellent Cushions / Aluminium Frame", subcategory: "Outdoor Furniture" }
             ]
         },
         "Educational": {
             title: "Educational Solutions Catalogue",
             desc: "Ergonomic Classroom Desks, Library Furniture, Hostel Storage Units, and Heavy-Duty Auditorium Seating.",
             items: [
-                { name: "Model ED-Single Student Ergonomic Desk", img: "images/categories/cat_education.png", specs: "Rounded Wood Edges / Metal Frame / Bag Hook / Under-desk Book Shelf", subcategory: "Classroom" }
+                { name: "Model ED-Single Student Ergonomic Desk", img: "images/categories/cat_education.png", specs: "Rounded Wood Edges / Metal Frame / Bag Hook / Under-desk Book Shelf", subcategory: "Classroom" },
+                { name: "Model ED-Library Study Carrel & Reading Table", img: "images/categories/cat_educational.jpg", specs: "Acoustic Divider Partitions / Wire Management Conduit / Scratchproof High-pressure Laminate", subcategory: "Library" },
+                { name: "Model ED-Heavy Duty Metal Bunk Bed & Locker", img: "images/sections/s-lookbook-1.jpg", specs: "CRCA Powder-Coated Steel / Guard Rails / Safety Ladder / Attached Storage Locker", subcategory: "Hostel" },
+                { name: "Model ED-Tip-Up Cushioned Auditorium Chair", img: "images/categories/cat_seating.jpg", specs: "Automatic Gravity Tip-up Mechanism / Moulded Polyurethane Cushion / Foldable Writing Tablet", subcategory: "Auditorium" }
             ]
         }
     };
@@ -124,6 +163,82 @@
             category: decodeURIComponent(cat).trim(),
             subcategory: decodeURIComponent(subcat).trim()
         };
+    }
+
+    function isSubcatMatch(prodSubcat, querySubcat, prodName) {
+        if (!querySubcat) return true;
+        
+        var qSub = (querySubcat || '').toLowerCase().trim();
+        var pSub = (prodSubcat || '').toLowerCase().trim();
+        var pName = (prodName || '').toLowerCase().trim();
+
+        var normQ = qSub.replace(/[^a-z0-9]/g, '');
+        var normP = pSub.replace(/[^a-z0-9]/g, '');
+
+        // 1. If product has an explicit subcategory, evaluate STRICTLY on subcategory
+        if (normP) {
+            if (normP === normQ) return true;
+            if (normP.includes(normQ) || normQ.includes(normP)) return true;
+
+            // Canonical category-specific subcategory alias matches
+            // Workstations
+            if (normQ.includes('heightadjustable') && normP.includes('heightadjustable')) return true;
+            if (normQ.includes('desking') && normP.includes('desking')) return true;
+            if (normQ.includes('panel') && normP.includes('panel')) return true;
+
+            // Tables
+            if (normQ.includes('cabin') && normP.includes('cabin')) return true;
+            if (normQ.includes('meeting') && normP.includes('meeting')) return true;
+            if (normQ.includes('cafe') && normP.includes('cafe')) return true;
+            if (normQ.includes('training') && normP.includes('training')) return true;
+
+            // Storage
+            if (normQ.includes('prelam') && normP.includes('prelam')) return true;
+            if (normQ.includes('metal') && normP.includes('metal')) return true;
+            if (normQ.includes('compactor') && normP.includes('compactor')) return true;
+            if (normQ.includes('locker') && normP.includes('locker')) return true;
+
+            // Seating
+            if (normQ.includes('mesh') && normP.includes('mesh')) return true;
+            if (normQ.includes('leather') && normP.includes('leather')) return true;
+            if (normQ.includes('training') && normP.includes('training')) return true;
+            if (normQ.includes('cafe') && normP.includes('cafe')) return true;
+
+            // Soft Seating
+            if (normQ.includes('lounge') && (normP.includes('lounge') || normP.includes('sofa'))) return true;
+            if (normQ.includes('collaborative') && normP.includes('collaborative')) return true;
+            if (normQ.includes('pouffe') && (normP.includes('pouffe') || normP.includes('ottoman') || normP.includes('table'))) return true;
+
+            // Educational
+            if (normQ.includes('classroom') && normP.includes('classroom')) return true;
+            if (normQ.includes('library') && normP.includes('library')) return true;
+            if (normQ.includes('hostel') && normP.includes('hostel')) return true;
+            if (normQ.includes('auditorium') && normP.includes('auditorium')) return true;
+
+            // When product has a subcategory set and it doesn't match above, DO NOT leak into other subcategories
+            return false;
+        }
+
+        // 2. Only if product has NO subcategory at all, fallback to model name prefix or keyword
+        var normName = pName.replace(/[^a-z0-9]/g, '');
+        if (normQ.includes('heightadjustable') && (normName.includes('heightadjustable') || normName.includes('sitstand') || normName.includes('motorized') || normName.startsWith('modelha'))) return true;
+        if (normQ.includes('desking') && (normName.includes('desking') || normName.startsWith('modelds'))) return true;
+        if (normQ.includes('panel') && (normName.includes('panel') || normName.includes('partition') || normName.startsWith('modelps'))) return true;
+        if (normQ.includes('cabin') && (normName.includes('cabin') || normName.startsWith('modelcb'))) return true;
+        if (normQ.includes('meeting') && (normName.includes('meeting') || normName.includes('boardroom') || normName.startsWith('modelmt'))) return true;
+        if (normQ.includes('cafe') && (normName.includes('cafe') || normName.startsWith('modelcf'))) return true;
+        if (normQ.includes('training') && (normName.includes('training') || normName.startsWith('modeltr'))) return true;
+        if (normQ.includes('prelam') && (normName.includes('prelam') || normName.includes('pedestal'))) return true;
+        if (normQ.includes('compactor') && normName.includes('compactor')) return true;
+        if (normQ.includes('locker') && normName.includes('locker')) return true;
+        if (normQ.includes('mesh') && normName.includes('mesh')) return true;
+        if (normQ.includes('leather') && normName.includes('leather')) return true;
+        if (normQ.includes('classroom') && (normName.includes('classroom') || normName.includes('student'))) return true;
+        if (normQ.includes('library') && normName.includes('library')) return true;
+        if (normQ.includes('hostel') && (normName.includes('hostel') || normName.includes('bunk'))) return true;
+        if (normQ.includes('auditorium') && normName.includes('auditorium')) return true;
+
+        return false;
     }
 
     async function loadDynamicCatalogueView(categoryParam, subcatParam) {
@@ -158,7 +273,8 @@
                 var cSlugNorm = (c.slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
                 var cNameNorm = (c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
                 return cSlugNorm.startsWith(normCat) || normCat.startsWith(cSlugNorm) ||
-                       cNameNorm.startsWith(normCat) || normCat.startsWith(cNameNorm);
+                       cNameNorm.startsWith(normCat) || normCat.startsWith(cNameNorm) ||
+                       cSlugNorm.includes(normCat) || normCat.includes(cSlugNorm);
             });
         }
 
@@ -171,13 +287,19 @@
         document.title = pageTitle + " - Vishista Office Solutions";
 
         var titleEl = document.getElementById('cataloguePageTitle');
-        if (titleEl) titleEl.innerText = pageTitle + (querySubcat ? "" : " Catalogue");
+        if (titleEl) titleEl.innerText = querySubcat ? (resolvedCatName + ": " + querySubcat) : (resolvedCatName + " Catalogue");
 
         var descEl = document.getElementById('cataloguePageDescription');
         if (descEl) descEl.innerText = resolvedCatDesc;
 
         var headEl = document.getElementById('sectionHeading');
-        if (headEl) headEl.innerText = resolvedCatName + " Models";
+        if (headEl) {
+            if (querySubcat) {
+                headEl.innerHTML = `${querySubcat} Models <a href="products.html?category=${encodeURIComponent(resolvedCatSlug)}" class="badge bg-light text-danger border ms-2 fs-7 align-middle text-decoration-none fw-bold">&times; View All ${resolvedCatName}</a>`;
+            } else {
+                headEl.innerText = resolvedCatName + " Models";
+            }
+        }
 
         // 4. Strict Supabase Product Filtering
         var targetSlugNorm = (resolvedCatSlug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -188,31 +310,55 @@
 
             var pCatSlug = (p.category_slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
             var pCatName = (p.category || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            var pSubcat = (p.subcategory || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            var pSubcat = (p.subcategory || '');
+            var pName = (p.name || '');
 
-            if (querySubcat && normSubcat) {
-                var matchesSub = (pSubcat === normSubcat || pSubcat.includes(normSubcat) || normSubcat.includes(pSubcat));
-                if (matchesSub) return true;
+            // Category check
+            var matchCategory = false;
+            if (targetSlugNorm || targetNameNorm) {
+                var matchSlug = (pCatSlug === targetSlugNorm) ||
+                                (pCatSlug === targetSlugNorm + 's') ||
+                                (pCatSlug === targetSlugNorm.replace(/s$/, '')) ||
+                                (pCatSlug && targetSlugNorm && (pCatSlug.includes(targetSlugNorm) || targetSlugNorm.includes(pCatSlug)));
+
+                var matchName = (pCatName === targetNameNorm) ||
+                                (pCatName === targetNameNorm + 's') ||
+                                (pCatName === targetNameNorm.replace(/s$/, '')) ||
+                                (pCatName && targetNameNorm && (pCatName.includes(targetNameNorm) || targetNameNorm.includes(pCatName)));
+
+                if ((targetSlugNorm === 'seating' || targetNameNorm === 'seating') && (pCatSlug.includes('seating') || pCatSlug.includes('archlabs'))) {
+                    matchSlug = true;
+                }
+
+                matchCategory = matchSlug || matchName;
+            } else {
+                matchCategory = true;
             }
 
-            var matchSlug = (pCatSlug === targetSlugNorm) ||
-                            (pCatSlug === targetSlugNorm + 's') ||
-                            (pCatSlug === targetSlugNorm.replace(/s$/, ''));
+            // Subcategory check: If querySubcat is set, product MUST match subcategory
+            if (querySubcat) {
+                var matchesSub = isSubcatMatch(pSubcat, querySubcat, pName);
+                return matchesSub && (matchCategory || !pCatSlug);
+            }
 
-            var matchName = (pCatName === targetNameNorm) ||
-                            (pCatName === targetNameNorm + 's') ||
-                            (pCatName === targetNameNorm.replace(/s$/, ''));
-
-            return matchSlug || matchName;
+            return matchCategory;
         });
 
         // 5. Fallback if offline or empty
         if (matchedProducts.length === 0 && typeof pageCatalogueDatabase !== 'undefined') {
             for (var key in pageCatalogueDatabase) {
                 var kNorm = key.toLowerCase().replace(/[^a-z0-9]/g, '');
-                if (kNorm === targetSlugNorm || kNorm === targetNameNorm || kNorm + 's' === targetSlugNorm || kNorm === targetSlugNorm + 's') {
+                var isCatMatch = (kNorm === targetSlugNorm || kNorm === targetNameNorm || kNorm + 's' === targetSlugNorm || kNorm === targetSlugNorm + 's' || targetSlugNorm.includes(kNorm) || kNorm.includes(targetSlugNorm));
+                
+                if (isCatMatch || (targetSlugNorm.includes('seating') && kNorm.includes('seating'))) {
                     var seedEntry = pageCatalogueDatabase[key];
-                    matchedProducts = seedEntry.items.map(function(it) {
+                    var items = seedEntry.items || [];
+                    if (querySubcat) {
+                        items = items.filter(function(it) {
+                            return isSubcatMatch(it.subcategory, querySubcat, it.name);
+                        });
+                    }
+                    matchedProducts = items.map(function(it) {
                         return {
                             name: it.name,
                             main_image: it.img,
@@ -234,20 +380,20 @@
         }
 
         // 7. Render Products Grid
-        renderCatalogueProductsGrid(matchedProducts, resolvedCatName);
+        renderCatalogueProductsGrid(matchedProducts, querySubcat || resolvedCatName);
 
         // 8. Update Enquiry Actions
         var headerBtn = document.getElementById('enquireSeriesHeaderBtn');
         if (headerBtn) {
             headerBtn.onclick = function() {
-                openEnquiryModal(resolvedCatName + ' Catalogue');
+                openEnquiryModal((querySubcat ? (resolvedCatName + ' - ' + querySubcat) : resolvedCatName) + ' Catalogue');
             };
         }
 
         var bannerBtn = document.getElementById('enquireBottomBannerBtn');
         if (bannerBtn) {
             bannerBtn.onclick = function() {
-                openEnquiryModal(resolvedCatName + ' Corporate Quote');
+                openEnquiryModal((querySubcat ? (resolvedCatName + ' - ' + querySubcat) : resolvedCatName) + ' Corporate Quote');
             };
         }
     }

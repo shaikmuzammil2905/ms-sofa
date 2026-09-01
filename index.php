@@ -343,12 +343,12 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <a href="product-categories.html?category=seating" class="position-relative overflow-hidden d-block" style="height: 250px; width: 100%; background: #f8f9fa;">
-                        <img src="images/categories/cat_seating.jpg" alt="Ergonomic Seating" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Ergonomic Seating</span>
+                        <img src="images/categories/cat_seating.jpg" alt="Seating" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Seating</span>
                     </a>
                     <div class="card-body p-4 d-flex flex-column">
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">
-                            <a href="product-categories.html?category=seating" class="text-decoration-none text-dark">Ergonomic Seating</a>
+                            <a href="product-categories.html?category=seating" class="text-decoration-none text-dark">Seating</a>
                         </h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Premium High-Back Mesh Chairs, Genuine Leather Executive Armchairs, Training Chairs, and Cafe Seating.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
@@ -383,17 +383,17 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <a href="product-categories.html?category=pods" class="position-relative overflow-hidden d-block" style="height: 250px; width: 100%; background: #f8f9fa;">
-                        <img src="images/categories/cat_pods.jpg" alt="Acoustic Work Pods" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Acoustic Pods</span>
+                        <img src="images/categories/cat_pods.jpg" alt="Pods" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Pods</span>
                     </a>
                     <div class="card-body p-4 d-flex flex-column">
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">
-                            <a href="product-categories.html?category=pods" class="text-decoration-none text-dark">Acoustic Work Pods</a>
+                            <a href="product-categories.html?category=pods" class="text-decoration-none text-dark">Pods</a>
                         </h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Private Acoustic Phone Pods and Collaborative Meeting Pods engineered for sound isolation and distraction-free calls.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
                             <a href="product-categories.html?category=pods" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
-                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Acoustic Work Pods')">Enquire &rarr;</button>
+                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Pods')">Enquire &rarr;</button>
                         </div>
                     </div>
                 </div>
@@ -403,17 +403,17 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <a href="product-categories.html?category=carpets" class="position-relative overflow-hidden d-block" style="height: 250px; width: 100%; background: #f8f9fa;">
-                        <img src="images/categories/cat_carpets.jpg" alt="Interface Carpets" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Carpet Flooring</span>
+                        <img src="images/categories/cat_carpets.jpg" alt="Carpets" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Carpets</span>
                     </a>
                     <div class="card-body p-4 d-flex flex-column">
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">
-                            <a href="product-categories.html?category=carpets" class="text-decoration-none text-dark">Interface Carpets</a>
+                            <a href="product-categories.html?category=carpets" class="text-decoration-none text-dark">Carpets</a>
                         </h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">High-performance Interface Carpet Tiles designed for heavy traffic commercial office floors.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
                             <a href="product-categories.html?category=carpets" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
-                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Interface Carpet Tiles')">Enquire &rarr;</button>
+                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Carpets')">Enquire &rarr;</button>
                         </div>
                     </div>
                 </div>
@@ -423,17 +423,17 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <a href="product-categories.html?category=outdoor" class="position-relative overflow-hidden d-block" style="height: 250px; width: 100%; background: #f8f9fa;">
-                        <img src="images/categories/cat_outdoor.jpg" alt="Outdoor Furniture" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Terrace &amp; Patio</span>
+                        <img src="images/categories/cat_outdoor.jpg" alt="Outdoor" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Outdoor</span>
                     </a>
                     <div class="card-body p-4 d-flex flex-column">
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">
-                            <a href="product-categories.html?category=outdoor" class="text-decoration-none text-dark">Outdoor Furniture</a>
+                            <a href="product-categories.html?category=outdoor" class="text-decoration-none text-dark">Outdoor</a>
                         </h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Weatherproof Loom Crafts outdoor lounge sets, patio tables, and terrace seating for corporate cafeterias.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
                             <a href="product-categories.html?category=outdoor" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
-                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Outdoor Loom Crafts Furniture')">Enquire &rarr;</button>
+                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Outdoor')">Enquire &rarr;</button>
                         </div>
                     </div>
                 </div>
@@ -443,17 +443,17 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <a href="product-categories.html?category=educational" class="position-relative overflow-hidden d-block" style="height: 250px; width: 100%; background: #f8f9fa;">
-                        <img src="images/categories/cat_education.png" alt="Educational Solutions" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Campus Solutions</span>
+                        <img src="images/categories/cat_education.png" alt="Educational" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Educational</span>
                     </a>
                     <div class="card-body p-4 d-flex flex-column">
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">
-                            <a href="product-categories.html?category=educational" class="text-decoration-none text-dark">Educational Solutions</a>
+                            <a href="product-categories.html?category=educational" class="text-decoration-none text-dark">Educational</a>
                         </h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Ergonomic Classroom Desks, Library Furniture, Hostel Storage Units, and Heavy-Duty Auditorium Seating.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
                             <a href="product-categories.html?category=educational" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
-                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Educational Furniture')">Enquire &rarr;</button>
+                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Educational')">Enquire &rarr;</button>
                         </div>
                     </div>
                 </div>
