@@ -221,27 +221,41 @@
             width: 1280px !important;
             max-width: 95vw !important;
             top: 100% !important;
+            max-height: 75vh !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            overscroll-behavior: contain !important;
             padding: 0 !important;
             box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18) !important;
             border-radius: 12px !important;
-            overflow: visible !important;
             background: #ffffff !important;
             z-index: 100001 !important;
             border: 1px solid rgba(0,0,0,0.08) !important;
+            scrollbar-width: thin !important;
+            scrollbar-color: #d32f2f #f1f5f9 !important;
+        }
+        .mega-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .mega-menu::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .mega-menu::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .mega-menu::-webkit-scrollbar-thumb:hover {
+            background: #d32f2f;
         }
         .mega-menu-grid {
             display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 22px 28px !important;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)) !important;
+            gap: 22px 24px !important;
             padding: 26px 30px !important;
             background: #ffffff !important;
             border-radius: 12px !important;
             align-items: start !important;
-        }
-        @media (max-width: 1200px) {
-            .mega-menu-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
         }
         .mega-category-title {
             font-size: 13.5px !important;
@@ -551,8 +565,12 @@
             right: 0 !important;
             margin: 6px auto 0 auto !important;
             width: calc(100% - 30px) !important;
-            max-width: 1220px !important;
+            max-width: 1240px !important;
             top: 100% !important;
+            max-height: 75vh !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            overscroll-behavior: contain !important;
             transform: none !important;
             padding: 0 !important;
             box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18) !important;
@@ -560,21 +578,31 @@
             background: #ffffff !important;
             z-index: 99999 !important;
             border: 1px solid rgba(0,0,0,0.1) !important;
+            scrollbar-width: thin !important;
+            scrollbar-color: #d32f2f #f1f5f9 !important;
+        }
+        .main-menu .navigation .submenu.mega-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .main-menu .navigation .submenu.mega-menu::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .main-menu .navigation .submenu.mega-menu::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .main-menu .navigation .submenu.mega-menu::-webkit-scrollbar-thumb:hover {
+            background: #d32f2f;
         }
         .mega-menu-grid {
             display: grid !important;
-            grid-template-columns: repeat(5, 1fr) !important;
-            gap: 20px !important;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)) !important;
+            gap: 22px 20px !important;
             padding: 24px 26px !important;
             background: #ffffff !important;
             border-radius: 12px !important;
-        }
-        @media (max-width: 1300px) {
-            .mega-menu-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 16px !important;
-                padding: 20px !important;
-            }
+            align-items: start !important;
         }
         .mega-category-title {
             font-size: 14px !important;
