@@ -45,6 +45,7 @@ function compileFullHtml(pageFileName) {
     pageContent = pageContent.replace(/href="about\.php"/g, 'href="about.html"');
     pageContent = pageContent.replace(/href="archlabs-catalogue\.php"/g, 'href="archlabs-catalogue.html"');
     pageContent = pageContent.replace(/href="product-categories\.php"/g, 'href="product-categories.html"');
+    pageContent = pageContent.replace(/href="products\.php"/g, 'href="products.html"');
     pageContent = pageContent.replace(/href="product-sofas\.php"/g, 'href="product-sofas.html"');
     pageContent = pageContent.replace(/href="contact\.php"/g, 'href="contact.html"');
 
@@ -77,6 +78,7 @@ const pages = [
     { src: 'about.php', distHtml: 'about.html' },
     { src: 'archlabs-catalogue.php', distHtml: 'archlabs-catalogue.html' },
     { src: 'product-categories.php', distHtml: 'product-categories.html' },
+    { src: 'products.php', distHtml: 'products.html' },
     { src: 'product-sofas.php', distHtml: 'product-sofas.html' },
     { src: 'product-catalogue-view.php', distHtml: 'product-catalogue-view.html' },
     { src: 'contact.php', distHtml: 'contact.html' },
