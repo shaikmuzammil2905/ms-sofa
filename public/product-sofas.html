@@ -461,18 +461,49 @@
         .product-card-hover:hover img {
             transform: scale(1.03) !important;
         }
-        @media (max-width: 576px) {
-            .card-img-top,
-            .product-card-hover img,
-            .card img.card-img-top {
-                height: 240px !important;
-                max-height: 240px !important;
-                padding: 6px !important;
-                object-fit: contain !important;
-                object-position: center !important;
+        /* Sticky Header and Sticky Category Jump Bar */
+        :root {
+            --site-header-height: 60px;
+        }
+        @media (min-width: 992px) {
+            :root {
+                --site-header-height: 72px;
             }
         }
+        header.header {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1050 !important;
+            background-color: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+        }
+        .category-jump-bar {
+            position: sticky !important;
+            top: var(--site-header-height, 60px) !important;
+            z-index: 990 !important;
+            background-color: #ffffff !important;
+            border-bottom: 3px solid #d32f2f !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+            -webkit-overflow-scrolling: touch;
+            width: 100% !important;
+        }
+        .category-jump-bar::-webkit-scrollbar {
+            display: none;
+        }
     </style>
+    <script>
+        function syncHeaderHeight() {
+            var h = document.querySelector('header.header');
+            if (h) {
+                var height = h.offsetHeight;
+                document.documentElement.style.setProperty('--site-header-height', height + 'px');
+            }
+        }
+        window.addEventListener('load', syncHeaderHeight);
+        window.addEventListener('resize', syncHeaderHeight);
+        window.addEventListener('scroll', syncHeaderHeight, { passive: true });
+        document.addEventListener('DOMContentLoaded', syncHeaderHeight);
+    </script>
 </head>
 
 <body>
