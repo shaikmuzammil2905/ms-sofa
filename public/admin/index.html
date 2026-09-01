@@ -78,12 +78,6 @@
                 <a class="admin-nav-item" data-tab="hero">
                     <span>🖼️ Hero Section</span>
                 </a>
-                <a class="admin-nav-item" data-tab="about">
-                    <span>ℹ️ About Us</span>
-                </a>
-                <a class="admin-nav-item" data-tab="footer">
-                    <span>🦶 Footer CMS</span>
-                </a>
             </div>
 
             <div class="p-3 border-top border-secondary">
@@ -368,54 +362,6 @@
                             </div>
 
                             <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4 py-2">Save Hero Content &rarr;</button>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- 6. ABOUT US MODULE -->
-                <div id="view-about" class="tab-view-content d-none">
-                    <h3 class="fw-bold text-dark mb-2">About Us Content CMS</h3>
-                    <p class="text-muted fs-7 mb-4">Manage corporate overview, vision, and company highlights.</p>
-                    <div class="admin-card">
-                        <form id="aboutCmsForm" onsubmit="saveAboutCMS(event)">
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold fs-7">Section Title</label>
-                                <input type="text" id="aboutTitleInput" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold fs-7">Main Overview Description</label>
-                                <textarea id="aboutDescInput" class="form-control" rows="4"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4 py-2">Save About Us Content &rarr;</button>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- 7. FOOTER CMS MODULE -->
-                <div id="view-footer" class="tab-view-content d-none">
-                    <h3 class="fw-bold text-dark mb-2">Footer &amp; Contact Details CMS</h3>
-                    <p class="text-muted fs-7 mb-4">Manage corporate contact info, office address, phone numbers, and footer text.</p>
-                    <div class="admin-card">
-                        <form id="footerCmsForm" onsubmit="saveFooterCMS(event)">
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold fs-7">Company Overview Description</label>
-                                <textarea id="footerCompanyDescInput" class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <label class="form-label fw-semibold fs-7">Office Address</label>
-                                    <input type="text" id="footerAddressInput" class="form-control">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label fw-semibold fs-7">Phone Number</label>
-                                    <input type="text" id="footerPhoneInput" class="form-control">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label fw-semibold fs-7">Email Address</label>
-                                    <input type="email" id="footerEmailInput" class="form-control">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4 py-2">Save Footer Details &rarr;</button>
                         </form>
                     </div>
                 </div>
