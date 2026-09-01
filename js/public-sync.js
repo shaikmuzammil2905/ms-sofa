@@ -350,46 +350,106 @@ async function syncCategoriesSection() {
     // D. Sync Product Categories Page: Category Scroll Pills
     const scrollContainer = document.querySelector('.category-scroll-container');
     if (scrollContainer) {
-        const pills = scrollContainer.querySelectorAll('.category-scroll-pill');
-        pills.forEach(pill => {
-            const clickAttr = pill.getAttribute('onclick') || '';
-            const match = clickAttr.match(/selectCategoryFilter\(['"]([^'"]+)['"]\)/);
-            if (match && match[1]) {
-                const slugOrId = match[1].toLowerCase().replace(/[^a-z0-9]/g, '');
-                const matchedCat = visibleCategories.find(c => {
-                    const cSlug = (c.slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                    const cName = (c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                    return cSlug === slugOrId || cName === slugOrId ||
-                           cSlug === slugOrId.replace(/s$/, '') || cSlug + 's' === slugOrId ||
-                           cName === slugOrId.replace(/s$/, '') || cName + 's' === slugOrId;
+        const params = new URLSearchParams(window.location.search);
+        const currentCat = (params.get('category') || params.get('cat') || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        
+        let pillsHtml = '';
+        visibleCategories.forEach(cat => {
+            const catSlug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            const normSlug = catSlug.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const isActive = currentCat && (currentCat === normSlug || currentCat.replace(/s$/, '') === normSlug.replace(/s$/, ''));
+            pillsHtml += `
+                <button type="button" class="btn category-scroll-pill ${isActive ? 'active' : ''} flex-shrink-0" onclick="selectCategoryFilter('${catSlug}')">
+                    ${cat.name}
+                </button>
+            `;
+        });
+        scrollContainer.innerHTML = pillsHtml;
+    }
+
+    // E. Sync Category Section Headings and Dynamic Categories on product-categories.html
+    const firstSection = document.querySelector('.category-section-block');
+    const sectionsContainer = firstSection ? firstSection.parentElement : null;
+    if (sectionsContainer && (window.location.pathname.includes('product-categories') || document.querySelector('.category-section-block'))) {
+        visibleCategories.forEach(cat => {
+            const catSlug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            let existingSection = document.querySelector(`.category-section-block[data-cat-slug="${catSlug}"]`) || document.getElementById(catSlug);
+            
+            if (!existingSection) {
+                // Try fuzzy match
+                const allSections = document.querySelectorAll('.category-section-block');
+                allSections.forEach(sec => {
+                    const sSlug = (sec.getAttribute('data-cat-slug') || sec.id || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                    if (isSameCategory(sSlug, catSlug)) existingSection = sec;
                 });
-                if (matchedCat && matchedCat.name) {
-                    pill.textContent = matchedCat.name;
+            }
+
+            if (!existingSection) {
+                // Generate dynamic section for newly created category
+                const catSubs = rawSubcategories.filter(s => isSameCategory(s.category_slug, catSlug) || isSameCategory(s.category_slug, cat.name));
+                const catProducts = products.filter(p => isSameCategory(p.category_slug, catSlug) || isSameCategory(p.category_slug, cat.name));
+                
+                let subCardsHtml = '';
+                if (catSubs.length > 0) {
+                    catSubs.forEach(sub => {
+                        const subProd = catProducts.find(p => p.subcategory === sub.name) || catProducts[0];
+                        const subImg = (subProd && subProd.main_image) || cat.image_url || 'images/categories/cat_workstations.jpg';
+                        subCardsHtml += `
+                            <div class="col-md-4">
+                                <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
+                                    <a href="products.html?category=${encodeURIComponent(catSlug)}&subcat=${encodeURIComponent(sub.name)}">
+                                        <img src="${subImg}" alt="${sub.name}" class="card-img-top" style="background: #ffffff; height: 240px; object-fit: cover;">
+                                    </a>
+                                    <div class="card-body p-4 d-flex flex-column">
+                                        <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">${sub.name}</h3>
+                                        <p class="text-secondary fs-7 mb-4 flex-grow-1">Explore our range of ${sub.name} engineered for modern workspaces.</p>
+                                        <a href="products.html?category=${encodeURIComponent(catSlug)}&subcat=${encodeURIComponent(sub.name)}" class="btn btn-outline-danger btn-sm fw-bold text-uppercase w-100 py-2 mt-auto">View ${sub.name} Catalogue &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    subCardsHtml = `
+                        <div class="col-md-4">
+                            <div class="card border h-100 shadow-sm rounded-4 overflow-hidden">
+                                <a href="products.html?category=${encodeURIComponent(catSlug)}">
+                                    <img src="${cat.image_url || 'images/categories/cat_workstations.jpg'}" alt="${cat.name}" class="card-img-top" style="background: #ffffff; height: 240px; object-fit: cover;">
+                                </a>
+                                <div class="card-body p-4 d-flex flex-column">
+                                    <h3 class="fw-black text-dark mb-2" style="font-size: 1.55rem !important; font-weight: 900 !important; color: #111111 !important;">${cat.name}</h3>
+                                    <p class="text-secondary fs-7 mb-4 flex-grow-1">${cat.description || 'Explore our comprehensive product range.'}</p>
+                                    <a href="products.html?category=${encodeURIComponent(catSlug)}" class="btn btn-outline-danger btn-sm fw-bold text-uppercase w-100 py-2 mt-auto">View ${cat.name} Catalogue &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
                 }
+
+                const newSectionEl = document.createElement('section');
+                newSectionEl.id = catSlug;
+                newSectionEl.className = 'category-section-block mb-5 pt-4 border-top';
+                newSectionEl.setAttribute('data-cat-slug', catSlug);
+                newSectionEl.innerHTML = `
+                    <div class="category-header-flex">
+                        <div>
+                            <h2 class="category-title-text">${cat.name}</h2>
+                        </div>
+                        <a href="products.html?category=${encodeURIComponent(catSlug)}" class="category-view-all-btn">View All ${cat.name} &rarr;</a>
+                    </div>
+                    <div class="row g-4">
+                        ${subCardsHtml}
+                    </div>
+                `;
+                sectionsContainer.appendChild(newSectionEl);
+            } else {
+                const titleEl = existingSection.querySelector('.category-title-text');
+                if (titleEl) titleEl.textContent = cat.name;
+                const viewAllEl = existingSection.querySelector('.category-view-all-btn');
+                if (viewAllEl) viewAllEl.innerHTML = `View All ${cat.name} &rarr;`;
             }
         });
     }
-
-    // E. Sync Category Section Headings on product-categories.html
-    const categorySections = document.querySelectorAll('.category-section-block');
-    categorySections.forEach(section => {
-        const sectionSlug = (section.getAttribute('data-cat-slug') || section.id || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-        if (sectionSlug) {
-            const matchedCat = visibleCategories.find(c => {
-                const cSlug = (c.slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                const cName = (c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                return cSlug === sectionSlug || cName === sectionSlug ||
-                       cSlug === sectionSlug.replace(/s$/, '') || cSlug + 's' === sectionSlug ||
-                       cName === sectionSlug.replace(/s$/, '') || cName + 's' === sectionSlug;
-            });
-            if (matchedCat && matchedCat.name) {
-                const titleEl = section.querySelector('.category-title-text');
-                if (titleEl) titleEl.textContent = matchedCat.name;
-                const viewAllEl = section.querySelector('.category-view-all-btn');
-                if (viewAllEl) viewAllEl.innerHTML = `View All ${matchedCat.name} &rarr;`;
-            }
-        }
-    });
 }
 
 // 5. Sync Projects Showcase
