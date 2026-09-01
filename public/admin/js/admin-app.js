@@ -455,33 +455,30 @@ async function saveProductForm(e) {
     try {
         const products = await CMSDataStore.get('products');
         
-        let newRecord = {
+        let payload = {
             name,
             slug,
             category_slug,
             subcategory,
             price,
-            display_price: false,
-            enquiry_only: true,
             description,
             main_image,
-            image: main_image,
             additional_images: [...currentProductAdditionalImages],
             is_visible,
-            is_published,
-            display_order: products.length + 1,
-            created_at: new Date().toISOString()
+            display_order: products.length + 1
         };
 
         if (indexVal !== '' && !isNaN(indexVal) && products[indexVal]) {
-            newRecord = { ...products[indexVal], ...newRecord, updated_at: new Date().toISOString() };
-            products[indexVal] = newRecord;
+            const existing = products[indexVal];
+            const targetId = existing.id || existing.slug;
+            payload = { ...existing, ...payload, updated_at: new Date().toISOString() };
+            await CMSDataStore.updateRecord('products', targetId, payload);
         } else {
-            products.push(newRecord);
+            payload.created_at = new Date().toISOString();
+            await CMSDataStore.insertRecord('products', payload);
         }
 
-        await CMSDataStore.save('products', products);
-        alert('✓ Product updated and saved successfully!');
+        alert('✓ Product updated and saved successfully to database!');
 
         const modalEl = document.getElementById('productFormModal');
         const modal = bootstrap.Modal.getInstance(modalEl);
@@ -490,7 +487,7 @@ async function saveProductForm(e) {
         await loadProductsModule();
         await loadDashboardData();
     } catch (err) {
-        alert(`❌ Update Failed: ${err.message}`);
+        alert(`❌ Save Failed: ${err.message}`);
     } finally {
         if (submitBtn) {
             submitBtn.disabled = false;
@@ -690,23 +687,24 @@ async function saveSubcategoryForm(e) {
 
     try {
         const subcategories = await CMSDataStore.get('subcategories');
-        let newRecord = {
+        let payload = {
             name,
             slug,
             category_slug,
-            display_order,
-            created_at: new Date().toISOString()
+            display_order
         };
 
         if (indexVal !== '' && !isNaN(indexVal) && subcategories[indexVal]) {
-            newRecord = { ...subcategories[indexVal], ...newRecord, updated_at: new Date().toISOString() };
-            subcategories[indexVal] = newRecord;
+            const existing = subcategories[indexVal];
+            const targetId = existing.id || existing.slug;
+            payload = { ...existing, ...payload };
+            await CMSDataStore.updateRecord('subcategories', targetId, payload);
         } else {
-            subcategories.push(newRecord);
+            payload.created_at = new Date().toISOString();
+            await CMSDataStore.insertRecord('subcategories', payload);
         }
 
-        await CMSDataStore.save('subcategories', subcategories);
-        alert('✓ Subcategory saved successfully!');
+        alert('✓ Subcategory saved successfully to database!');
 
         const modalEl = document.getElementById('subcategoryFormModal');
         const modal = bootstrap.Modal.getInstance(modalEl);
@@ -803,26 +801,26 @@ async function saveCategoryForm(e) {
 
     try {
         const categories = await CMSDataStore.get('categories');
-        let newRecord = {
+        let payload = {
             name,
             slug,
             description,
             image_url,
             display_order,
-            is_visible,
-            is_published,
-            created_at: new Date().toISOString()
+            is_visible
         };
 
         if (indexVal !== '' && !isNaN(indexVal) && categories[indexVal]) {
-            newRecord = { ...categories[indexVal], ...newRecord, updated_at: new Date().toISOString() };
-            categories[indexVal] = newRecord;
+            const existing = categories[indexVal];
+            const targetId = existing.id || existing.slug;
+            payload = { ...existing, ...payload, updated_at: new Date().toISOString() };
+            await CMSDataStore.updateRecord('categories', targetId, payload);
         } else {
-            categories.push(newRecord);
+            payload.created_at = new Date().toISOString();
+            await CMSDataStore.insertRecord('categories', payload);
         }
 
-        await CMSDataStore.save('categories', categories);
-        alert('✓ Category saved successfully!');
+        alert('✓ Category saved successfully to database!');
 
         const modalEl = document.getElementById('categoryFormModal');
         const modal = bootstrap.Modal.getInstance(modalEl);
@@ -996,26 +994,27 @@ async function saveProjectForm(e) {
 
     try {
         const projects = await CMSDataStore.get('projects');
-        let newRecord = {
+        let payload = {
             title,
             slug,
             location,
             description,
             main_image,
             display_order,
-            is_visible: true,
-            created_at: new Date().toISOString()
+            is_visible: true
         };
 
         if (indexVal !== '' && !isNaN(indexVal) && projects[indexVal]) {
-            newRecord = { ...projects[indexVal], ...newRecord, updated_at: new Date().toISOString() };
-            projects[indexVal] = newRecord;
+            const existing = projects[indexVal];
+            const targetId = existing.id || existing.slug;
+            payload = { ...existing, ...payload, updated_at: new Date().toISOString() };
+            await CMSDataStore.updateRecord('projects', targetId, payload);
         } else {
-            projects.push(newRecord);
+            payload.created_at = new Date().toISOString();
+            await CMSDataStore.insertRecord('projects', payload);
         }
 
-        await CMSDataStore.save('projects', projects);
-        alert('✓ Project saved successfully!');
+        alert('✓ Project saved successfully to database!');
 
         const modalEl = document.getElementById('projectFormModal');
         const modal = bootstrap.Modal.getInstance(modalEl);

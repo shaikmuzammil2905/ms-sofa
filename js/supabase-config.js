@@ -1268,10 +1268,18 @@ const VISHISTA_SEED_DATA = {
   ]
 };
 
-// Initialize Supabase Client if SDK is loaded
-let supabaseClient = null;
-if (typeof supabase !== 'undefined' && supabase.createClient) {
-    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// // Initialize Supabase Client dynamically if SDK is loaded
+let _supabaseClientInstance = null;
+
+function getSupabaseClient() {
+    if (!_supabaseClientInstance && typeof supabase !== 'undefined' && supabase.createClient) {
+        try {
+            _supabaseClientInstance = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        } catch (e) {
+            console.error('[Supabase Client Init Error]', e);
+        }
+    }
+    return _supabaseClientInstance;
 }
 
 // Cloudinary Direct Upload Helper with Fail-Safe Data URL Fallback
@@ -1339,12 +1347,49 @@ function generateUUID() {
 
 const _cmsMissingTables = new Set();
 
+// Allowed Postgres columns matching live Supabase tables
+const CMS_TABLE_COLUMNS = {
+    products: ['id', 'name', 'slug', 'category_id', 'category_slug', 'subcategory', 'description', 'features', 'price', 'main_image', 'additional_images', 'is_featured', 'is_visible', 'display_order', 'created_at', 'updated_at'],
+    categories: ['id', 'name', 'slug', 'description', 'image_url', 'display_order', 'is_visible', 'created_at', 'updated_at'],
+    subcategories: ['id', 'category_id', 'category_slug', 'name', 'slug', 'display_order', 'created_at'],
+    projects: ['id', 'title', 'slug', 'location', 'description', 'main_image', 'gallery_images', 'is_visible', 'display_order', 'created_at', 'updated_at'],
+    hero_sections: ['id', 'heading', 'subheading', 'description', 'primary_btn_text', 'primary_btn_link', 'secondary_btn_text', 'secondary_btn_link', 'bg_image_url', 'background_image', 'is_visible', 'updated_at'],
+    about_sections: ['id', 'title', 'subtitle', 'main_description', 'secondary_description', 'image_url', 'experience_years', 'btn_text', 'btn_link', 'is_visible', 'updated_at'],
+    footer_content: ['id', 'company_description', 'address', 'email_primary', 'email_secondary', 'email_director', 'phone', 'email', 'phone_primary', 'whatsapp_number', 'directions_url', 'copyright_text', 'updated_at'],
+    website_settings: ['id', 'site_title', 'tagline', 'contact_email', 'contact_phone', 'address', 'hero_badge_text', 'created_at', 'updated_at'],
+    enquiries: ['id', 'full_name', 'email', 'phone', 'company', 'requirement_category', 'product_interest', 'message', 'status', 'created_at']
+};
+
+function sanitizeRecord(table, record) {
+    if (!record || typeof record !== 'object') return record;
+    const allowed = CMS_TABLE_COLUMNS[table];
+    if (!allowed) return { ...record };
+
+    const clean = {};
+    const rec = { ...record };
+
+    if (!rec.main_image && rec.image) {
+        rec.main_image = rec.image;
+    }
+    if (table === 'hero_sections' && !rec.background_image && rec.slide_1) {
+        rec.background_image = [rec.slide_1, rec.slide_2, rec.slide_3].filter(Boolean).join(',');
+    }
+
+    for (const key of allowed) {
+        if (rec[key] !== undefined) {
+            clean[key] = rec[key];
+        }
+    }
+    return clean;
+}
+
 // Global Store State Manager (Supabase Database Priority + Fail-Safe Seed & Cache Merger)
 const CMSDataStore = {
     get: async function(table) {
-        if (supabaseClient && !_cmsMissingTables.has(table)) {
+        const client = getSupabaseClient();
+        if (client && !_cmsMissingTables.has(table)) {
             try {
-                let query = supabaseClient.from(table).select('*');
+                let query = client.from(table).select('*');
                 if (['products', 'categories', 'subcategories', 'projects', 'featured_collections', 'gallery'].includes(table)) {
                     query = query.order('display_order', { ascending: true });
                 }
@@ -1354,11 +1399,12 @@ const CMSDataStore = {
                     if (error.code === 'PGRST205' || error.message?.includes('schema cache') || error.code === '404') {
                         _cmsMissingTables.add(table);
                     }
-                } else if (Array.isArray(data)) {
+                    console.warn(`[CMSDataStore] Supabase fetch notice for '${table}':`, error.message);
+                } else if (Array.isArray(data) && data.length > 0) {
                     return data;
                 }
             } catch (e) {
-                console.warn(`[CMSDataStore] Supabase fetch notice for '${table}':`, e.message);
+                console.warn(`[CMSDataStore] Supabase fetch exception for '${table}':`, e.message);
             }
         }
         const seedItems = (typeof VISHISTA_SEED_DATA !== 'undefined' && VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) ? VISHISTA_SEED_DATA[table] : [];
@@ -1366,84 +1412,90 @@ const CMSDataStore = {
     },
 
     save: async function(table, records) {
-        if (!supabaseClient) return records;
-        try {
-            let { data, error } = await supabaseClient.from(table).upsert(records).select();
-            if (error && error.message && error.message.includes('is_published')) {
-                const cleanedRecords = records.map(r => {
-                    const copy = { ...r };
-                    delete copy.is_published;
-                    return copy;
-                });
-                const res = await supabaseClient.from(table).upsert(cleanedRecords).select();
-                error = res.error;
+        const client = getSupabaseClient();
+        if (!client) throw new Error('Supabase client is not connected.');
+
+        const isArray = Array.isArray(records);
+        const list = isArray ? records : [records];
+        const sanitizedList = list.map(r => sanitizeRecord(table, r));
+
+        for (const item of sanitizedList) {
+            if (item.id) {
+                const { error } = await client.from(table).upsert(item, { onConflict: 'id' });
+                if (error) throw new Error(`Supabase save error on '${table}': ${error.message}`);
+            } else if (item.slug && ['categories', 'products', 'projects', 'subcategories'].includes(table)) {
+                const { data: existing } = await client.from(table).select('id').eq('slug', item.slug).maybeSingle();
+                if (existing && existing.id) {
+                    const { error } = await client.from(table).update(item).eq('id', existing.id);
+                    if (error) throw new Error(`Supabase update error on '${table}': ${error.message}`);
+                } else {
+                    const { error } = await client.from(table).insert([item]);
+                    if (error) throw new Error(`Supabase insert error on '${table}': ${error.message}`);
+                }
+            } else {
+                const { data: existingRows } = await client.from(table).select('id').limit(1);
+                if (existingRows && existingRows.length > 0 && ['hero_sections', 'about_sections', 'footer_content', 'website_settings'].includes(table)) {
+                    const { error } = await client.from(table).update(item).eq('id', existingRows[0].id);
+                    if (error) throw new Error(`Supabase update error on '${table}': ${error.message}`);
+                } else {
+                    const { error } = await client.from(table).insert([item]);
+                    if (error) throw new Error(`Supabase insert error on '${table}': ${error.message}`);
+                }
             }
-            if (error) {
-                console.error(`[CMSDataStore] Supabase SAVE error for '${table}':`, error);
-            }
-            return await this.get(table);
-        } catch (e) {
-            console.error(`[CMSDataStore] Save failed for table '${table}':`, e.message);
-            return await this.get(table);
         }
+        return await this.get(table);
     },
 
     insertRecord: async function(table, record) {
-        if (!supabaseClient) return await this.get(table);
-        try {
-            let { data, error } = await supabaseClient.from(table).insert([record]).select();
-            if (error && error.message && error.message.includes('is_published')) {
-                const cleanRec = { ...record };
-                delete cleanRec.is_published;
-                const res = await supabaseClient.from(table).insert([cleanRec]).select();
-                error = res.error;
-            }
-            if (error) {
-                console.error(`[CMSDataStore] Supabase INSERT error for '${table}':`, error);
-            }
-            return await this.get(table);
-        } catch(e) {
-            console.error(`[CMSDataStore] Insert failed for table '${table}':`, e.message);
-            return await this.get(table);
-        }
+        const client = getSupabaseClient();
+        if (!client) throw new Error('Supabase client is not connected.');
+        const clean = sanitizeRecord(table, record);
+        const { data, error } = await client.from(table).insert([clean]).select();
+        if (error) throw new Error(`Supabase insert error on '${table}': ${error.message}`);
+        return await this.get(table);
     },
 
-    updateRecord: async function(table, id, record) {
-        if (!supabaseClient) return await this.get(table);
-        try {
-            let { data, error } = await supabaseClient.from(table).update(record).eq('id', id).select();
-            if (error && error.message && error.message.includes('is_published')) {
-                const cleanedRecord = { ...record };
-                delete cleanedRecord.is_published;
-                const res = await supabaseClient.from(table).update(cleanedRecord).eq('id', id).select();
+    updateRecord: async function(table, identifier, record) {
+        const client = getSupabaseClient();
+        if (!client) throw new Error('Supabase client is not connected.');
+        const clean = sanitizeRecord(table, record);
+        let error = null;
+
+        if (typeof identifier === 'string' && identifier.length === 36 && identifier.includes('-')) {
+            const res = await client.from(table).update(clean).eq('id', identifier).select();
+            error = res.error;
+        } else {
+            const res = await client.from(table).update(clean).eq('slug', identifier).select();
+            if (res.error || !res.data || res.data.length === 0) {
+                const resById = await client.from(table).update(clean).eq('id', identifier).select();
+                error = resById.error;
+            } else {
                 error = res.error;
             }
-            if ((error || !data || data.length === 0) && id) {
-                let resBySlug = await supabaseClient.from(table).update(record).eq('slug', id).select();
-                if (resBySlug.error && resBySlug.error.message.includes('is_published')) {
-                    const cleanedRecord = { ...record };
-                    delete cleanedRecord.is_published;
-                    resBySlug = await supabaseClient.from(table).update(cleanedRecord).eq('slug', id).select();
-                }
-            }
-            return await this.get(table);
-        } catch (e) {
-            console.error(`[CMSDataStore] Update failed for '${table}':`, e.message);
-            return await this.get(table);
         }
+        if (error) throw new Error(`Supabase update error on '${table}': ${error.message}`);
+        return await this.get(table);
     },
 
     deleteRecord: async function(table, identifier) {
-        if (!identifier || !supabaseClient) return await this.get(table);
-        try {
-            if (typeof identifier === 'string' && identifier.includes('-') && identifier.length !== 36) {
-                await supabaseClient.from(table).delete().eq('slug', identifier);
+        const client = getSupabaseClient();
+        if (!client) throw new Error('Supabase client is not connected.');
+        if (!identifier) return await this.get(table);
+
+        let error = null;
+        if (typeof identifier === 'string' && identifier.length === 36 && identifier.includes('-')) {
+            const res = await client.from(table).delete().eq('id', identifier);
+            error = res.error;
+        } else {
+            const res = await client.from(table).delete().eq('slug', identifier);
+            if (res.error) {
+                const resById = await client.from(table).delete().eq('id', identifier);
+                error = resById.error;
             } else {
-                await supabaseClient.from(table).delete().eq('id', identifier);
+                error = res.error;
             }
-        } catch (err) {
-            console.warn(`[CMSDataStore] Supabase DELETE notice for '${table}':`, err.message);
         }
+        if (error) throw new Error(`Supabase delete error on '${table}': ${error.message}`);
         return await this.get(table);
     }
 };
@@ -1454,7 +1506,7 @@ if (typeof window !== 'undefined') {
     window.CLOUDINARY_CLOUD_NAME = CLOUDINARY_CLOUD_NAME;
     window.CLOUDINARY_UPLOAD_PRESET = CLOUDINARY_UPLOAD_PRESET;
     window.VISHISTA_SEED_DATA = VISHISTA_SEED_DATA;
-    window.supabaseClient = supabaseClient;
+    window.getSupabaseClient = getSupabaseClient;
     window.uploadToCloudinary = uploadToCloudinary;
     window.CMSDataStore = CMSDataStore;
 }
