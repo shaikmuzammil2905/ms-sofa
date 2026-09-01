@@ -589,25 +589,16 @@
                                         <!-- 6. Pods -->
                                         <div>
                                             <a href="product-catalogue-view.html?cat=Pods" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Pods</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Pods" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Acoustic Phone &amp; Meeting Pods</a></li>
-                                            </ul>
                                         </div>
 
                                         <!-- 7. Carpets -->
                                         <div>
                                             <a href="product-catalogue-view.html?cat=Carpets" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Carpets</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Carpets" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Interface Carpet Tiles</a></li>
-                                            </ul>
                                         </div>
 
                                         <!-- 8. Outdoor -->
                                         <div>
                                             <a href="product-catalogue-view.html?cat=Outdoor" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Outdoor</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Outdoor" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Terrace &amp; Cafe Seating</a></li>
-                                            </ul>
                                         </div>
 
                                         <!-- 9. Educational -->

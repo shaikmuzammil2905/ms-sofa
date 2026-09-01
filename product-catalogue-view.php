@@ -525,7 +525,7 @@
         var normalizedQuery = decoded.toLowerCase().replace(/[^a-z0-9]/g, '');
         for (var k in pageCatalogueDatabase) {
             var normalizedK = k.toLowerCase().replace(/[^a-z0-9]/g, '');
-            if (normalizedK === normalizedQuery || normalizedK.includes(normalizedQuery) || normalizedQuery.includes(normalizedK)) {
+            if (normalizedK === normalizedQuery) {
                 return { matchedKey: k, data: pageCatalogueDatabase[k] };
             }
         }
@@ -567,24 +567,14 @@
 
             var pSubcat = (p.subcategory || '').toLowerCase().replace(/[^a-z0-9]/g, '');
             var pCatSlug = (p.category_slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            var pName = (p.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
             if (querySubcat) {
-                if (pSubcat === normQuery || pSubcat.includes(normQuery) || normQuery.includes(pSubcat)) return true;
-                if (pName.includes(normQuery)) return true;
-                return false;
+                // Exact match on subcategory ONLY
+                return pSubcat === normQuery;
             }
 
-            if (pSubcat === normCat || pCatSlug === normCat) return true;
-            if (pSubcat.includes(normCat) || normCat.includes(pSubcat)) return true;
-            if (pCatSlug.includes(normCat) || normCat.includes(pCatSlug)) return true;
-            if (pName.includes(normCat) || normCat.includes(pName)) return true;
-
-            if (matchedCatObj && matchedCatObj.slug) {
-                var cSlugNorm = matchedCatObj.slug.toLowerCase().replace(/[^a-z0-9]/g, '');
-                if (pCatSlug === cSlugNorm || pCatSlug.includes(cSlugNorm)) return true;
-            }
-            return false;
+            // Exact match on category ONLY
+            return pCatSlug === normCat;
         });
 
         // 3. Fallback to hardcoded seed dataset if query matches pre-seeded categories and no custom DB records found

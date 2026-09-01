@@ -233,9 +233,6 @@
                                 <a href="product-catalogue-view.html?cat=Pods" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Pods &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Pods">&bull; Acoustic Phone &amp; Meeting Pods</a></li>
-                                </ul>
                             </div>
 
                             <!-- 7. Carpets -->
@@ -243,9 +240,6 @@
                                 <a href="product-catalogue-view.html?cat=Carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Carpets &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Carpets">&bull; Interface Carpet Tiles</a></li>
-                                </ul>
                             </div>
 
                             <!-- 8. Outdoor -->
@@ -253,9 +247,6 @@
                                 <a href="product-catalogue-view.html?cat=Outdoor" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Outdoor &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Outdoor">&bull; Terrace &amp; Cafe Seating</a></li>
-                                </ul>
                             </div>
 
                             <!-- 9. Educational -->

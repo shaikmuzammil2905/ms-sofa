@@ -587,25 +587,16 @@
                                         <!-- 6. Pods -->
                                         <div>
                                             <a href="product-catalogue-view.html?cat=Pods" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Pods</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Pods" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Acoustic Phone &amp; Meeting Pods</a></li>
-                                            </ul>
                                         </div>
 
                                         <!-- 7. Carpets -->
                                         <div>
                                             <a href="product-catalogue-view.html?cat=Carpets" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Carpets</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Carpets" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Interface Carpet Tiles</a></li>
-                                            </ul>
                                         </div>
 
                                         <!-- 8. Outdoor -->
                                         <div>
                                             <a href="product-catalogue-view.html?cat=Outdoor" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Outdoor</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Outdoor" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Terrace &amp; Cafe Seating</a></li>
-                                            </ul>
                                         </div>
 
                                         <!-- 9. Educational -->
@@ -1177,7 +1168,7 @@
         var normalizedQuery = decoded.toLowerCase().replace(/[^a-z0-9]/g, '');
         for (var k in pageCatalogueDatabase) {
             var normalizedK = k.toLowerCase().replace(/[^a-z0-9]/g, '');
-            if (normalizedK === normalizedQuery || normalizedK.includes(normalizedQuery) || normalizedQuery.includes(normalizedK)) {
+            if (normalizedK === normalizedQuery) {
                 return { matchedKey: k, data: pageCatalogueDatabase[k] };
             }
         }
@@ -1219,24 +1210,14 @@
 
             var pSubcat = (p.subcategory || '').toLowerCase().replace(/[^a-z0-9]/g, '');
             var pCatSlug = (p.category_slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            var pName = (p.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
             if (querySubcat) {
-                if (pSubcat === normQuery || pSubcat.includes(normQuery) || normQuery.includes(pSubcat)) return true;
-                if (pName.includes(normQuery)) return true;
-                return false;
+                // Exact match on subcategory ONLY
+                return pSubcat === normQuery;
             }
 
-            if (pSubcat === normCat || pCatSlug === normCat) return true;
-            if (pSubcat.includes(normCat) || normCat.includes(pSubcat)) return true;
-            if (pCatSlug.includes(normCat) || normCat.includes(pCatSlug)) return true;
-            if (pName.includes(normCat) || normCat.includes(pName)) return true;
-
-            if (matchedCatObj && matchedCatObj.slug) {
-                var cSlugNorm = matchedCatObj.slug.toLowerCase().replace(/[^a-z0-9]/g, '');
-                if (pCatSlug === cSlugNorm || pCatSlug.includes(cSlugNorm)) return true;
-            }
-            return false;
+            // Exact match on category ONLY
+            return pCatSlug === normCat;
         });
 
         // 3. Fallback to hardcoded seed dataset if query matches pre-seeded categories and no custom DB records found
@@ -1556,9 +1537,6 @@
                                 <a href="product-catalogue-view.html?cat=Pods" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Pods &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Pods">&bull; Acoustic Phone &amp; Meeting Pods</a></li>
-                                </ul>
                             </div>
 
                             <!-- 7. Carpets -->
@@ -1566,9 +1544,6 @@
                                 <a href="product-catalogue-view.html?cat=Carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Carpets &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Carpets">&bull; Interface Carpet Tiles</a></li>
-                                </ul>
                             </div>
 
                             <!-- 8. Outdoor -->
@@ -1576,9 +1551,6 @@
                                 <a href="product-catalogue-view.html?cat=Outdoor" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Outdoor &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Outdoor">&bull; Terrace &amp; Cafe Seating</a></li>
-                                </ul>
                             </div>
 
                             <!-- 9. Educational -->
