@@ -197,16 +197,12 @@ async function syncCategoriesSection() {
                 subListHtml = subItems.map(subName => 
                     `<li><a href="products.html?category=${encodeURIComponent(catSlug)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
                 ).join('');
-            } else {
-                subListHtml = `<li><a href="products.html?category=${encodeURIComponent(catSlug)}" class="text-dark" style="font-size: 14px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Explore All ${catName}</a></li>`;
             }
 
             megaHtml += `
                 <div>
                     <a href="products.html?category=${encodeURIComponent(catSlug)}" class="mega-category-title d-block" style="font-size: 14px !important; font-weight: 800 !important;">${catName}</a>
-                    <ul class="mega-subcategory-list">
-                        ${subListHtml}
-                    </ul>
+                    ${subListHtml ? `<ul class="mega-subcategory-list">${subListHtml}</ul>` : ''}
                 </div>
             `;
         });
@@ -244,8 +240,6 @@ async function syncCategoriesSection() {
                 subListHtml = subItems.map(subName =>
                     `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="products.html?category=${encodeURIComponent(catSlug)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
                 ).join('');
-            } else {
-                subListHtml = `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="products.html?category=${encodeURIComponent(catSlug)}">&bull; Explore All ${catName}</a></li>`;
             }
 
             mobHtml += `
@@ -253,9 +247,7 @@ async function syncCategoriesSection() {
                     <a href="products.html?category=${encodeURIComponent(catSlug)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                         ${catName} &rarr;
                     </a>
-                    <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                        ${subListHtml}
-                    </ul>
+                    ${subListHtml ? `<ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">${subListHtml}</ul>` : ''}
                 </div>
             `;
         });
