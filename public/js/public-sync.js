@@ -160,13 +160,14 @@ async function syncCategoriesSection() {
     if (megaGrid) {
         let megaHtml = '';
         visibleCategories.forEach(cat => {
-            const catName = cat.name.trim();
+            const catName = (cat.name || '').trim();
+            if (!catName) return;
             const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
             // Find subcategories belonging to this category from subcategories table or products
             let subItems = rawSubcategories
                 .filter(s => s.category_slug === catSlug || s.category_slug === catName)
-                .map(s => s.name.trim());
+                .map(s => (s.name || '').trim());
 
             const catProducts = products.filter(p => p.is_visible !== false && (
                 (p.category_slug && p.category_slug.toLowerCase() === catSlug.toLowerCase()) ||
@@ -205,12 +206,13 @@ async function syncCategoriesSection() {
     if (mobileGroup) {
         let mobHtml = '';
         visibleCategories.forEach(cat => {
-            const catName = cat.name.trim();
+            const catName = (cat.name || '').trim();
+            if (!catName) return;
             const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
             let subItems = rawSubcategories
                 .filter(s => s.category_slug === catSlug || s.category_slug === catName)
-                .map(s => s.name.trim());
+                .map(s => (s.name || '').trim());
 
             const catProducts = products.filter(p => p.is_visible !== false && (
                 (p.category_slug && p.category_slug.toLowerCase() === catSlug.toLowerCase()) ||

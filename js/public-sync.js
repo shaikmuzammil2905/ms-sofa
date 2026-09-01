@@ -160,13 +160,14 @@ async function syncCategoriesSection() {
     if (megaGrid) {
         let megaHtml = '';
         visibleCategories.forEach(cat => {
-            const catName = cat.name.trim();
+            const catName = (cat.name || '').trim();
+            if (!catName) return;
             const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
             // Find subcategories belonging to this category from subcategories table or products
             let subItems = rawSubcategories
                 .filter(s => s.category_slug === catSlug || s.category_slug === catName)
-                .map(s => s.name.trim());
+                .map(s => (s.name || '').trim());
 
             const catProducts = products.filter(p => p.is_visible !== false && (
                 (p.category_slug && p.category_slug.toLowerCase() === catSlug.toLowerCase()) ||
@@ -179,16 +180,21 @@ async function syncCategoriesSection() {
                 }
             });
 
-            if (subItems.length === 0) return;
-
-            let subListHtml = `<ul class="mega-subcategory-list">` + subItems.map(subName => 
-                `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
-            ).join('') + `</ul>`;
+            let subListHtml = '';
+            if (subItems.length > 0) {
+                subListHtml = subItems.map(subName => 
+                    `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
+                ).join('');
+            } else {
+                subListHtml = `<li><a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Explore All ${catName}</a></li>`;
+            }
 
             megaHtml += `
                 <div>
                     <a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">${catName}</a>
-                    ${subListHtml}
+                    <ul class="mega-subcategory-list">
+                        ${subListHtml}
+                    </ul>
                 </div>
             `;
         });
@@ -200,12 +206,13 @@ async function syncCategoriesSection() {
     if (mobileGroup) {
         let mobHtml = '';
         visibleCategories.forEach(cat => {
-            const catName = cat.name.trim();
+            const catName = (cat.name || '').trim();
+            if (!catName) return;
             const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
             let subItems = rawSubcategories
                 .filter(s => s.category_slug === catSlug || s.category_slug === catName)
-                .map(s => s.name.trim());
+                .map(s => (s.name || '').trim());
 
             const catProducts = products.filter(p => p.is_visible !== false && (
                 (p.category_slug && p.category_slug.toLowerCase() === catSlug.toLowerCase()) ||
@@ -218,18 +225,23 @@ async function syncCategoriesSection() {
                 }
             });
 
-            if (subItems.length === 0) return;
-
-            let subListHtml = `<ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">` + subItems.map(subName =>
-                `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
-            ).join('') + `</ul>`;
+            let subListHtml = '';
+            if (subItems.length > 0) {
+                subListHtml = subItems.map(subName =>
+                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
+                ).join('');
+            } else {
+                subListHtml = `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}">&bull; Explore All ${catName}</a></li>`;
+            }
 
             mobHtml += `
                 <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
                     <a href="product-catalogue-view.html?cat=${encodeURIComponent(catName)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                         ${catName} &rarr;
                     </a>
-                    ${subListHtml}
+                    <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                        ${subListHtml}
+                    </ul>
                 </div>
             `;
         });

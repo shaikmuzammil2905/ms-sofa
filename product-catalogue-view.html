@@ -1201,8 +1201,12 @@
                 return pSubcat === normQuery;
             }
 
-            // Exact match on category ONLY
-            return pCatSlug === normCat;
+            // Resilient matching for category
+            if (pCatSlug === normCat) return true;
+            if (normCat === 'pods' && pCatSlug === 'acousticpods') return true;
+            if (normCat === 'acousticpods' && pCatSlug === 'pods') return true;
+            
+            return false;
         });
 
         // 3. Fallback to hardcoded seed dataset if query matches pre-seeded categories and no custom DB records found
