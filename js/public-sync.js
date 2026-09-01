@@ -195,15 +195,15 @@ async function syncCategoriesSection() {
             let subListHtml = '';
             if (subItems.length > 0) {
                 subListHtml = subItems.map(subName => 
-                    `<li><a href="product-categories.html?category=${encodeURIComponent(catSlug)}" class="text-dark" style="font-size: 14px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
+                    `<li><a href="products.html?category=${encodeURIComponent(catSlug)}&subcat=${encodeURIComponent(subName)}" class="text-dark" style="font-size: 14px !important; font-weight: 600 !important; color: #333333 !important;">&bull; ${subName}</a></li>`
                 ).join('');
             } else {
-                subListHtml = `<li><a href="product-categories.html?category=${encodeURIComponent(catSlug)}" class="text-dark" style="font-size: 14px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Explore All ${catName}</a></li>`;
+                subListHtml = `<li><a href="products.html?category=${encodeURIComponent(catSlug)}" class="text-dark" style="font-size: 14px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Explore All ${catName}</a></li>`;
             }
 
             megaHtml += `
                 <div>
-                    <a href="product-categories.html?category=${encodeURIComponent(catSlug)}" class="mega-category-title d-block" style="font-size: 14px !important; font-weight: 800 !important;">${catName}</a>
+                    <a href="products.html?category=${encodeURIComponent(catSlug)}" class="mega-category-title d-block" style="font-size: 14px !important; font-weight: 800 !important;">${catName}</a>
                     <ul class="mega-subcategory-list">
                         ${subListHtml}
                     </ul>
@@ -242,15 +242,15 @@ async function syncCategoriesSection() {
             let subListHtml = '';
             if (subItems.length > 0) {
                 subListHtml = subItems.map(subName =>
-                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=${encodeURIComponent(catSlug)}">&bull; ${subName}</a></li>`
+                    `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="products.html?category=${encodeURIComponent(catSlug)}&subcat=${encodeURIComponent(subName)}">&bull; ${subName}</a></li>`
                 ).join('');
             } else {
-                subListHtml = `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=${encodeURIComponent(catSlug)}">&bull; Explore All ${catName}</a></li>`;
+                subListHtml = `<li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="products.html?category=${encodeURIComponent(catSlug)}">&bull; Explore All ${catName}</a></li>`;
             }
 
             mobHtml += `
                 <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                    <a href="product-categories.html?category=${encodeURIComponent(catSlug)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                    <a href="products.html?category=${encodeURIComponent(catSlug)}" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                         ${catName} &rarr;
                     </a>
                     <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
