@@ -363,17 +363,17 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm h-100 rounded-3 overflow-hidden product-cat-card" style="transition: all 0.3s ease;">
                     <a href="product-categories.html?category=soft-seating" class="position-relative overflow-hidden d-block" style="height: 250px; width: 100%; background: #f8f9fa;">
-                        <img src="images/categories/cat_soft_seating.jpg" alt="Soft Seating & Lounge" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
-                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Lounge &amp; Sofas</span>
+                        <img src="images/categories/cat_soft_seating.jpg" alt="Soft Seating" class="w-100 h-100" style="object-fit: cover; object-position: center; width: 100% !important; height: 100% !important; transition: transform 0.5s ease;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white fs-7 px-3 py-1 m-3 rounded-pill fw-bold shadow-sm">Soft Seating</span>
                     </a>
                     <div class="card-body p-4 d-flex flex-column">
                         <h3 class="fw-black text-dark mb-2" style="font-size: 1.65rem !important; font-weight: 900 !important; color: #111111 !important; font-family: 'Inter', sans-serif;">
-                            <a href="product-categories.html?category=soft-seating" class="text-decoration-none text-dark">Soft Seating &amp; Lounge</a>
+                            <a href="product-categories.html?category=soft-seating" class="text-decoration-none text-dark">Soft Seating</a>
                         </h3>
                         <p class="text-secondary mb-4 flex-grow-1" style="font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.6 !important; color: #333333 !important;">Lounge Chairs, Executive Sofas, Modular Collaborative Seating, Pouffes, and Occasional Center Tables.</p>
                         <div class="d-flex align-items-center justify-content-between pt-2 border-top">
                             <a href="product-categories.html?category=soft-seating" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3 py-2" style="font-size: 13px;">Explore Category</a>
-                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Soft Seating & Sofas')">Enquire &rarr;</button>
+                            <button type="button" class="btn btn-link text-danger fw-extrabold p-0 text-decoration-none" style="font-size: 15px;" onclick="openEnquiryModal('Soft Seating')">Enquire &rarr;</button>
                         </div>
                     </div>
                 </div>

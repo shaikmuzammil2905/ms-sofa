@@ -330,6 +330,50 @@ async function syncCategoriesSection() {
         });
         grid.innerHTML = html;
     }
+
+    // D. Sync Product Categories Page: Category Scroll Pills
+    const scrollContainer = document.querySelector('.category-scroll-container');
+    if (scrollContainer) {
+        const pills = scrollContainer.querySelectorAll('.category-scroll-pill');
+        pills.forEach(pill => {
+            const clickAttr = pill.getAttribute('onclick') || '';
+            const match = clickAttr.match(/selectCategoryFilter\(['"]([^'"]+)['"]\)/);
+            if (match && match[1]) {
+                const slugOrId = match[1].toLowerCase().replace(/[^a-z0-9]/g, '');
+                const matchedCat = visibleCategories.find(c => {
+                    const cSlug = (c.slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                    const cName = (c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                    return cSlug === slugOrId || cName === slugOrId ||
+                           cSlug === slugOrId.replace(/s$/, '') || cSlug + 's' === slugOrId ||
+                           cName === slugOrId.replace(/s$/, '') || cName + 's' === slugOrId;
+                });
+                if (matchedCat && matchedCat.name) {
+                    pill.textContent = matchedCat.name;
+                }
+            }
+        });
+    }
+
+    // E. Sync Category Section Headings on product-categories.html
+    const categorySections = document.querySelectorAll('.category-section-block');
+    categorySections.forEach(section => {
+        const sectionSlug = (section.getAttribute('data-cat-slug') || section.id || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (sectionSlug) {
+            const matchedCat = visibleCategories.find(c => {
+                const cSlug = (c.slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                const cName = (c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                return cSlug === sectionSlug || cName === sectionSlug ||
+                       cSlug === sectionSlug.replace(/s$/, '') || cSlug + 's' === sectionSlug ||
+                       cName === sectionSlug.replace(/s$/, '') || cName + 's' === sectionSlug;
+            });
+            if (matchedCat && matchedCat.name) {
+                const titleEl = section.querySelector('.category-title-text');
+                if (titleEl) titleEl.textContent = matchedCat.name;
+                const viewAllEl = section.querySelector('.category-view-all-btn');
+                if (viewAllEl) viewAllEl.innerHTML = `View All ${matchedCat.name} &rarr;`;
+            }
+        }
+    });
 }
 
 // 5. Sync Projects Showcase
