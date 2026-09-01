@@ -300,8 +300,7 @@
                 { name: "Model AC-Gas Spring Dual Monitor Arm", img: "images/categories/cat_workstations.jpg", specs: "VESA Mount / Quick Release Clamp / Integrated Cable Passage" },
                 { name: "Model AC-Pop-Up Power & Data Module", img: "images/categories/cat_workstations.jpg", specs: "2 Power Sockets / USB-C Fast Charger / HDMI Pass Through" }
             ]
-        }
-    };
+        },
 
         "Mesh Chair": {
             title: "Ergonomic Mesh Seating Catalogue",
