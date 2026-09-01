@@ -78,6 +78,92 @@
             letter-spacing: 2.2px;
             margin-top: 3px;
         }
+        @media (max-width: 576px) {
+            .site-brand-logo {
+                gap: 8px;
+            }
+            .site-brand-logo img {
+                height: 38px !important;
+            }
+            .brand-main-title {
+                font-size: 17px !important;
+            }
+            .brand-sub-title {
+                font-size: 8px !important;
+                letter-spacing: 1.2px !important;
+            }
+            .nav-enquire-btn {
+                padding: 6px 12px !important;
+                font-size: 11px !important;
+            }
+        }
+        @media (max-width: 380px) {
+            .site-brand-logo {
+                gap: 6px;
+            }
+            .site-brand-logo img {
+                height: 32px !important;
+            }
+            .brand-main-title {
+                font-size: 14px !important;
+            }
+            .brand-sub-title {
+                font-size: 7px !important;
+                letter-spacing: 0.8px !important;
+            }
+            .nav-enquire-btn {
+                padding: 5px 8px !important;
+                font-size: 10px !important;
+            }
+        }
+
+        /* Continuous Scrolling Marquee Animation for Section Cards */
+        .scrolling-marquee-container {
+            overflow: hidden !important;
+            width: 100% !important;
+            position: relative !important;
+            padding: 10px 0 !important;
+        }
+        .scrolling-marquee-track {
+            display: flex !important;
+            gap: 24px !important;
+            width: max-content !important;
+            animation: marqueeContinuous 30s linear infinite !important;
+        }
+        .scrolling-marquee-track:hover {
+            animation-play-state: paused !important;
+        }
+        @keyframes marqueeContinuous {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* High-Visibility Product Card & Subcategory Text Styling (Matching image copy 70.png) */
+        .card-body h4, .card-body h5 {
+            font-size: 1.3rem !important;
+            font-weight: 800 !important;
+            color: #111111 !important;
+        }
+        .card-body p, .card-body p.text-secondary {
+            font-size: 1.05rem !important;
+            font-weight: 600 !important;
+            color: #333333 !important;
+            line-height: 1.6 !important;
+        }
+        .product-cat-card h4 {
+            font-size: 1.4rem !important;
+            font-weight: 800 !important;
+            color: #111111 !important;
+        }
+        .product-cat-card p {
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            color: #333333 !important;
+        }
+        .badge {
+            font-size: 0.85rem !important;
+            font-weight: 700 !important;
+        }
+
         .nav-enquire-btn {
             background-color: #d32f2f;
             color: #ffffff !important;
@@ -101,8 +187,14 @@
         }
 
         /* Desktop Mega Menu & Standard Dropdown Positioning Fix */
+        header, .header, .header-sticky {
+            z-index: 1030 !important;
+            position: sticky !important;
+            top: 0;
+        }
         .header-inner {
             position: relative !important;
+            z-index: 1030 !important;
         }
         .main-menu .navigation > li.has-child {
             position: relative !important;
@@ -119,7 +211,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
             border-radius: 8px !important;
             padding: 16px !important;
-            z-index: 99999 !important;
+            z-index: 100001 !important;
             border: 1px solid rgba(0,0,0,0.08) !important;
         }
         .mega-menu {
@@ -134,7 +226,7 @@
             border-radius: 12px !important;
             overflow: visible !important;
             background: #ffffff !important;
-            z-index: 99999 !important;
+            z-index: 100001 !important;
             border: 1px solid rgba(0,0,0,0.08) !important;
         }
         .mega-menu-grid {
@@ -254,24 +346,30 @@
             color: #d32f2f !important;
         }
 
-        /* Sticky Filter Anchor Bar Offset Fix for Desktop & Mobile */
-        .filter-anchor-bar {
-            top: 70px !important;
+        /* Universal Rock-Solid Sticky Filter Anchor Bar & Jump Bar for Desktop & Mobile */
+        .filter-anchor-bar,
+        .sticky-jump-bar {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 72px !important;
+            z-index: 900 !important;
             background-color: #ffffff !important;
-            z-index: 990 !important;
-            border-bottom: 1px solid #e2e8f0 !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+            border-bottom: 2px solid #d32f2f !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
         }
         @media (max-width: 1199px) {
-            .filter-anchor-bar {
-                top: 0 !important;
+            .filter-anchor-bar,
+            .sticky-jump-bar {
+                top: 70px !important;
             }
         }
-        .filter-anchor-bar .tf-container {
+        .filter-anchor-bar .tf-container,
+        .sticky-jump-bar .tf-container {
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
-        .filter-anchor-bar .tf-container::-webkit-scrollbar {
+        .filter-anchor-bar .tf-container::-webkit-scrollbar,
+        .sticky-jump-bar .tf-container::-webkit-scrollbar {
             display: none;
         }
 
@@ -435,85 +533,91 @@
                                         
                                         <!-- 1. Workstations -->
                                         <div>
-                                            <a href="product-categories.html#workstations" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Workstations</a>
+                                            <a href="product-catalogue-view.html?cat=Workstations" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Workstations</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-categories.html#workstations" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Height Adjustable Series</a></li>
-                                                <li><a href="product-categories.html#workstations" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Desking Series</a></li>
-                                                <li><a href="product-categories.html#workstations" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Panel Series</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Height%20Adjustable%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Height Adjustable Series</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Desking%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Desking Series</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Panel%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Panel Series</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 2. Tables -->
                                         <div>
-                                            <a href="product-categories.html#tables" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Tables</a>
+                                            <a href="product-catalogue-view.html?cat=Tables" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Tables</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-categories.html#tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cabin Tables</a></li>
-                                                <li><a href="product-categories.html#tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Meeting Tables</a></li>
-                                                <li><a href="product-categories.html#tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cafe Tables</a></li>
-                                                <li><a href="product-categories.html#tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Training Tables</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Cabin%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cabin Tables</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Meeting%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Meeting Tables</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Cafe%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cafe Tables</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Training%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Training Tables</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 3. Storage -->
                                         <div>
-                                            <a href="product-categories.html#storage" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Storage</a>
+                                            <a href="product-catalogue-view.html?cat=Storage" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Storage</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-categories.html#storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Prelam Storage</a></li>
-                                                <li><a href="product-categories.html#storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Metal Storage</a></li>
-                                                <li><a href="product-categories.html#storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Compactor Storage</a></li>
-                                                <li><a href="product-categories.html#storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Locker</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Prelam%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Prelam Storage</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Metal%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Metal Storage</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Compactor%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Compactor Storage</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Locker" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Locker</a></li>
                                             </ul>
                                         </div>
 
-                                        <!-- 4. Seating (ArchLabs Featured Box) -->
-                                        <div class="bg-light p-3 rounded-3 border">
-                                            <a href="archlabs-catalogue.html" class="mega-category-title d-block text-danger" style="font-size: 15px !important; font-weight: 700 !important;">Seating</a>
+                                        <!-- 4. Seating -->
+                                        <div>
+                                            <a href="product-catalogue-view.html?cat=Seating" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Seating</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="archlabs-catalogue.html#mesh-series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Mesh Chair</a></li>
-                                                <li><a href="archlabs-catalogue.html#leather-series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Leather Chair</a></li>
-                                                <li><a href="archlabs-catalogue.html#training-series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Training Chair</a></li>
-                                                <li><a href="archlabs-catalogue.html#cafeteria-series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cafe Chair</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Mesh%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Mesh Chair</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Leather%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Leather Chair</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Training%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Training Chair</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Cafe%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cafe Chair</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 5. Soft Seating -->
                                         <div>
-                                            <a href="product-sofas.html" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Soft Seating</a>
+                                            <a href="product-catalogue-view.html?cat=Soft%20Seating" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Soft Seating</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-sofas.html" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Lounge</a></li>
-                                                <li><a href="product-sofas.html" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Sofa</a></li>
-                                                <li><a href="product-sofas.html" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Collaborative</a></li>
-                                                <li><a href="product-sofas.html" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Pouffe</a></li>
-                                                <li><a href="product-sofas.html" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Occasional Tables</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Lounge" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Lounge</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Sofa" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Sofa</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Collaborative" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Collaborative</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Pouffe" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Pouffe</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Occasional%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Occasional Tables</a></li>
                                             </ul>
                                         </div>
 
-                                        <!-- 6. Pods & Environment -->
+                                        <!-- 6. Pods -->
                                         <div>
-                                            <a href="product-categories.html#pods" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Pods &amp; Environment</a>
+                                            <a href="product-catalogue-view.html?cat=Pods" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Pods</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-categories.html#pods" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Pods</a></li>
-                                                <li><a href="product-categories.html#carpets" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Carpets</a></li>
-                                                <li><a href="product-categories.html#outdoor" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Outdoor</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Pods" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Acoustic Phone &amp; Meeting Pods</a></li>
                                             </ul>
                                         </div>
 
-                                        <!-- 7. Educational -->
+                                        <!-- 7. Carpets -->
                                         <div>
-                                            <a href="product-categories.html#educational" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Educational</a>
+                                            <a href="product-catalogue-view.html?cat=Carpets" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Carpets</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-categories.html#educational" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Classroom</a></li>
-                                                <li><a href="product-categories.html#educational" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Library</a></li>
-                                                <li><a href="product-categories.html#educational" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Hostel</a></li>
-                                                <li><a href="product-categories.html#educational" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Auditorium</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Carpets" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Interface Carpet Tiles</a></li>
                                             </ul>
                                         </div>
 
-                                        <!-- 8. Accessories -->
+                                        <!-- 8. Outdoor -->
                                         <div>
-                                            <a href="product-categories.html#accessories" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Accessories</a>
+                                            <a href="product-catalogue-view.html?cat=Outdoor" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Outdoor</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-categories.html#accessories" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Accessories</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Outdoor" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Terrace &amp; Cafe Seating</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- 9. Educational -->
+                                        <div>
+                                            <a href="product-catalogue-view.html?cat=Educational" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Educational</a>
+                                            <ul class="mega-subcategory-list">
+                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Classroom" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Classroom</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Library" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Library</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Hostel" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Hostel</a></li>
+                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Auditorium" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Auditorium</a></li>
                                             </ul>
                                         </div>
 
@@ -546,3 +650,5 @@
             </div>
         </header>
         <!-- End header -->
+
+

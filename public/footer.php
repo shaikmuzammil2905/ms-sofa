@@ -40,18 +40,19 @@
                             <div class="row g-2" style="font-size: 15.5px !important;">
                                 <div class="col-6">
                                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                        <li><a href="product-categories.html#workstations" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Workstations</a></li>
-                                        <li><a href="product-categories.html#tables" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Tables</a></li>
-                                        <li><a href="product-categories.html#storage" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Storage</a></li>
-                                        <li><a href="archlabs-catalogue.html" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Seating</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Workstations" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Workstations</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Tables" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Tables</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Storage" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Storage</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Seating" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Seating</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-6">
                                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                        <li><a href="product-sofas.html" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Soft Seating</a></li>
-                                        <li><a href="product-categories.html#pods" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Pods</a></li>
-                                        <li><a href="product-categories.html#educational" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Educational</a></li>
-                                        <li><a href="product-categories.html#accessories" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Accessories</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Soft%20Seating" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Soft Seating</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Pods" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Pods</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Carpets" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Carpets</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Outdoor" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Outdoor</a></li>
+                                        <li><a href="product-catalogue-view.html?cat=Educational" class="text-white text-decoration-none hover-red py-1 d-block" style="font-weight: 600 !important;">&bull; Educational</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -162,57 +163,111 @@
                     <div class="collapse mt-2" id="mobileProductsCollapse">
                         <div class="mobile-accordion-group d-flex flex-column gap-2">
                             
-                            <!-- Workstations -->
-                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-1">
+                            <!-- 1. Workstations -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Workstations &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="product-categories.html#workstations">&bull; Height Adjustable Series</a></li>
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#leather-series">&bull; Leather Series (5 Models)</a></li>
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#training-series">&bull; Training Series (7 Models)</a></li>
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#metro-linea">&bull; Metro Linea Public Seating</a></li>
-                                    <li><a class="mobile-sub-link fw-bold text-dark" href="archlabs-catalogue.html#cafeteria-series">&bull; Cafeteria Series (7 Models)</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Height%20Adjustable%20Series">&bull; Height Adjustable Series</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Desking%20Series">&bull; Desking Series</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Panel%20Series">&bull; Panel Series</a></li>
                                 </ul>
                             </div>
 
-                            <!-- Sub Category B: Office Furniture & Workstations -->
-                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
-                                    Office Furniture &amp; Systems &rarr;
+                            <!-- 2. Tables -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Tables" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                    Tables &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
-                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Modular Workstations</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#workstations">&bull; Height Adjustable Desks</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cabin &amp; Executive Tables</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Meeting &amp; Conference Tables</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#storage">&bull; Office Storage &amp; Compactors</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Cabin%20Tables">&bull; Cabin Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Meeting%20Tables">&bull; Meeting Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Cafe%20Tables">&bull; Cafe Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Training%20Tables">&bull; Training Tables</a></li>
                                 </ul>
                             </div>
 
-                            <!-- Sub Category C: Soft Seating & Lounges -->
-                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-sofas.html" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
-                                    Soft Seating &amp; Lounges &rarr;
+                            <!-- 3. Storage -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Storage" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                    Storage &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
-                                    <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Executive Sofas &amp; Lounges</a></li>
-                                    <li><a class="mobile-sub-link" href="product-sofas.html">&bull; Collaborative Seating</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#pods">&bull; Acoustic Work Pods</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#tables">&bull; Cafe &amp; Breakout Seating</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Prelam%20Storage">&bull; Prelam Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Metal%20Storage">&bull; Metal Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Compactor%20Storage">&bull; Compactor Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Locker">&bull; Locker</a></li>
                                 </ul>
                             </div>
 
-                            <!-- Sub Category D: Flooring & Accessories -->
-                            <div class="p-2 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-categories.html#carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2">
-                                    Flooring &amp; Accessories &rarr;
+                            <!-- 4. Seating -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                    Seating &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0">
-                                    <li><a class="mobile-sub-link" href="product-categories.html#carpets">&bull; Interface Carpet Tiles</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#outdoor">&bull; Outdoor Workspace Furniture</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#educational">&bull; Educational Solutions</a></li>
-                                    <li><a class="mobile-sub-link" href="product-categories.html#accessories">&bull; Workspace Accessories</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Mesh%20Chair">&bull; Mesh Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Leather%20Chair">&bull; Leather Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Training%20Chair">&bull; Training Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Cafe%20Chair">&bull; Cafe Chair</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 5. Soft Seating -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Soft%20Seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                    Soft Seating &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Lounge">&bull; Lounge</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Sofa">&bull; Sofa</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Collaborative">&bull; Collaborative</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Pouffe">&bull; Pouffe</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Occasional%20Tables">&bull; Occasional Tables</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 6. Pods -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Pods" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                    Pods &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Pods">&bull; Acoustic Phone &amp; Meeting Pods</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 7. Carpets -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                    Carpets &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Carpets">&bull; Interface Carpet Tiles</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 8. Outdoor -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Outdoor" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                    Outdoor &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Outdoor">&bull; Terrace &amp; Cafe Seating</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 9. Educational -->
+                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                                <a href="product-catalogue-view.html?cat=Educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                    Educational &rarr;
+                                </a>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Classroom">&bull; Classroom</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Library">&bull; Library</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Hostel">&bull; Hostel</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Auditorium">&bull; Auditorium</a></li>
                                 </ul>
                             </div>
 
@@ -249,6 +304,40 @@
         <span class="whatsapp-text">Chat on WhatsApp</span>
     </a>
 
+    <!-- Product Quick View Modal (Video 3 Requirement) -->
+    <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 14px; overflow: hidden;">
+                <div class="modal-header bg-dark text-white border-0 px-4 py-3" style="background: linear-gradient(135deg, #111111 0%, #222222 100%);">
+                    <div>
+                        <span class="badge bg-danger text-uppercase px-2 py-1 mb-1 fs-7" id="productModalBadge">Product Details</span>
+                        <h4 class="modal-title fw-bold text-white mb-0" id="productModalTitle">Product Details</h4>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 bg-white">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-6 text-center">
+                            <div class="p-3 bg-light rounded-3 border">
+                                <img id="productModalImg" src="" alt="Product Image" class="img-fluid rounded-3" style="max-height: 320px; object-fit: contain; width: 100%;">
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex flex-column">
+                            <h3 id="productModalName" class="fw-black text-dark mb-2" style="font-size: 1.6rem !important; font-weight: 900 !important; color: #111111 !important;">Product Name</h3>
+                            <div class="mb-3">
+                                <span id="productModalPrice" class="badge bg-danger fs-6 px-3 py-2 fw-bold">Enquire for Price</span>
+                            </div>
+                            <p id="productModalDesc" class="text-secondary fw-semibold fs-6 mb-4" style="line-height: 1.65; color: #333333 !important;">Detailed product specifications and features...</p>
+                            <div class="mt-auto d-grid gap-2">
+                                <button type="button" id="productModalEnquireBtn" class="btn btn-danger btn-lg text-uppercase fw-black py-3 shadow-md" style="border-radius: 8px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none;">ENQUIRE NOW &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Corporate Enquiry Modal -->
     <div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -261,46 +350,78 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4 bg-white">
-                    <form id="modalEnquiryForm" onsubmit="event.preventDefault(); alert('Thank you for your enquiry! Our workspace team will contact you shortly.'); bootstrap.Modal.getInstance(document.getElementById('enquireModal')).hide();">
+                    <form id="modalEnquiryForm" onsubmit="handleEnquirySubmit(event)">
                         <div class="mb-3">
-                            <label class="form-label text-dark fw-medium fs-7 mb-1">Product / Service of Interest</label>
-                            <input type="text" id="modalProductInput" class="form-control" placeholder="ArchLabs Seating, Workstations, Turnkey Interiors, etc." style="border-radius: 6px; padding: 10px 14px;">
+                            <label class="form-label text-dark fw-bold mb-2" style="font-size: 1.25rem !important; color: #111111 !important;">Product / Service of Interest</label>
+                            <input type="text" id="modalProductInput" class="form-control" placeholder="ArchLabs Seating, Workstations, Turnkey Interiors, etc." style="border-radius: 6px; padding: 14px 16px; font-size: 1.15rem !important; font-weight: 600 !important; color: #111111 !important;">
                         </div>
                         <div class="row g-3 mb-3">
                             <div class="col-md-6">
-                                <label class="form-label text-dark fw-medium fs-7 mb-1">Your Name *</label>
-                                <input type="text" class="form-control" required placeholder="Full Name" style="border-radius: 6px; padding: 10px 14px;">
+                                <label class="form-label text-dark fw-bold mb-2" style="font-size: 1.25rem !important; color: #111111 !important;">Your Name *</label>
+                                <input type="text" class="form-control" required placeholder="Full Name" style="border-radius: 6px; padding: 14px 16px; font-size: 1.15rem !important; font-weight: 600 !important; color: #111111 !important;">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label text-dark fw-medium fs-7 mb-1">Company Name</label>
-                                <input type="text" class="form-control" placeholder="Organization" style="border-radius: 6px; padding: 10px 14px;">
+                                <label class="form-label text-dark fw-bold mb-2" style="font-size: 1.25rem !important; color: #111111 !important;">Company Name</label>
+                                <input type="text" class="form-control" placeholder="Organization" style="border-radius: 6px; padding: 14px 16px; font-size: 1.15rem !important; font-weight: 600 !important; color: #111111 !important;">
                             </div>
                         </div>
                         <div class="row g-3 mb-3">
                             <div class="col-md-6">
-                                <label class="form-label text-dark fw-medium fs-7 mb-1">Phone Number *</label>
-                                <input type="tel" class="form-control" required placeholder="Mobile Number" style="border-radius: 6px; padding: 10px 14px;">
+                                <label class="form-label text-dark fw-bold mb-2" style="font-size: 1.25rem !important; color: #111111 !important;">Phone Number *</label>
+                                <input type="tel" class="form-control" required placeholder="Mobile Number" style="border-radius: 6px; padding: 14px 16px; font-size: 1.15rem !important; font-weight: 600 !important; color: #111111 !important;">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label text-dark fw-medium fs-7 mb-1">Email Address *</label>
-                                <input type="email" class="form-control" required placeholder="name@company.com" style="border-radius: 6px; padding: 10px 14px;">
+                                <label class="form-label text-dark fw-bold mb-2" style="font-size: 1.25rem !important; color: #111111 !important;">Email Address *</label>
+                                <input type="email" class="form-control" required placeholder="name@company.com" style="border-radius: 6px; padding: 14px 16px; font-size: 1.15rem !important; font-weight: 600 !important; color: #111111 !important;">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label text-dark fw-medium fs-7 mb-1">Message / Project Requirements</label>
-                            <textarea class="form-control" rows="3" placeholder="Specify floor size, seating capacity, timeline, or location..." style="border-radius: 6px; padding: 10px 14px;"></textarea>
+                            <label class="form-label text-dark fw-bold mb-2" style="font-size: 1.25rem !important; color: #111111 !important;">Message / Project Requirements</label>
+                            <textarea class="form-control" rows="3" placeholder="Specify floor size, seating capacity, timeline, or location..." style="border-radius: 6px; padding: 14px 16px; font-size: 1.15rem !important; font-weight: 600 !important; color: #111111 !important;"></textarea>
                         </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-danger w-100 justify-content-center text-uppercase fw-bold" style="padding: 12px; border-radius: 6px; background-color: #d32f2f; border: none;">Submit Enquiry</button>
-                            <a href="https://wa.me/919849058444" target="_blank" class="btn btn-outline-success w-100 fw-bold d-flex align-items-center justify-content-center gap-2" style="padding: 10px; border-radius: 6px;">
-                                Chat Directly on WhatsApp (+91 9849058444)
-                            </a>
+                        <div class="d-grid pt-2">
+                            <button type="submit" class="btn btn-danger w-100 justify-content-center text-uppercase fw-black shadow-sm py-3" style="border-radius: 6px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border: none; font-size: 16px; letter-spacing: 0.5px;">Submit Enquiry</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Animated Toast Notification Popup Container -->
+    <div id="enquiryToastPopup" class="position-fixed top-0 end-0 p-4" style="z-index: 10555; display: none;">
+        <div class="toast show align-items-center text-white bg-dark border-0 shadow-lg p-3" style="border-radius: 12px; background: linear-gradient(135deg, #111 0%, #222 100%) !important; min-width: 320px; animation: popupBounce 0.5s ease-out;">
+            <div class="d-flex align-items-center">
+                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center me-3" style="width: 42px; height: 42px; font-size: 20px; flex-shrink: 0;">✓</div>
+                <div class="flex-grow-1">
+                    <h6 class="fw-bold mb-1 text-white">Enquiry Received!</h6>
+                    <p class="mb-0 fs-7 text-white-50">Thank you! Our workspace team will contact you shortly.</p>
+                </div>
+                <button type="button" class="btn-close btn-close-white ms-2" onclick="document.getElementById('enquiryToastPopup').style.display='none'"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function handleEnquirySubmit(e) {
+        e.preventDefault();
+        const modalEl = document.getElementById('enquireModal');
+        if (modalEl) {
+            const modalInstance = bootstrap.Modal.getInstance(modalEl);
+            if (modalInstance) modalInstance.hide();
+        }
+        const toast = document.getElementById('enquiryToastPopup');
+        if (toast) {
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 5000);
+        } else {
+            alert('Thank you for your enquiry! Our workspace team will contact you shortly.');
+        }
+        e.target.reset();
+    }
+    </script>
 
     <style>
         .whatsapp-float-btn {
@@ -413,8 +534,61 @@
                 });
             }
         });
+        // IntersectionObserver for Smooth Scroll Reveal Animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-animated-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const animatableElements = document.querySelectorAll('.card, .product-cat-card, .scrolling-marquee-container');
+            animatableElements.forEach((el, index) => {
+                el.classList.add('scroll-animatable');
+                el.style.transitionDelay = ((index % 3) * 0.12) + 's';
+                scrollObserver.observe(el);
+            });
+        });
+
+        // Smooth Card Hover Micro-Animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const hoverCards = document.querySelectorAll('.card, .product-cat-card');
+            hoverCards.forEach(card => {
+                card.classList.add('clean-hover-card');
+            });
+        });
     </script>
+
+    <style>
+        .scroll-animatable {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-animated-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Clean Card Hover Micro-Animations */
+        .clean-hover-card {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .clean-hover-card:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1) !important;
+        }
+    </style>
 
 </body>
 
 </html>
+
