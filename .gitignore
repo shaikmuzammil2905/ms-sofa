@@ -2,4 +2,8 @@ node_modules/
 .DS_Store
 *.log
 *.mp4
+*.zip
+rakesh.zip
 image copy*.png
+.env
+.env.local
