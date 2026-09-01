@@ -74,6 +74,19 @@ async function syncHeroSection() {
         });
         html += `<div class="hero-bg-overlay"></div>`;
         wrapper.innerHTML = html;
+
+        if (window._heroSliderInterval) {
+            clearInterval(window._heroSliderInterval);
+        }
+        const newSlides = wrapper.querySelectorAll('.hero-slide');
+        if (newSlides.length > 1) {
+            let curIdx = 0;
+            window._heroSliderInterval = setInterval(() => {
+                newSlides[curIdx].classList.remove('active');
+                curIdx = (curIdx + 1) % newSlides.length;
+                newSlides[curIdx].classList.add('active');
+            }, 2000);
+        }
     }
 }
 

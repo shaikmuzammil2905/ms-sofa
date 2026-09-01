@@ -76,8 +76,8 @@
         background-size: cover;
         background-position: center center;
         opacity: 0;
-        transform: scale(1.05);
-        transition: opacity 1.5s ease-in-out, transform 7s ease-out;
+        transform: scale(1.04);
+        transition: opacity 0.8s ease-in-out, transform 2.5s ease-out;
     }
     .hero-slide.active {
         opacity: 1;
@@ -224,13 +224,14 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const slides = document.querySelectorAll('.hero-slide');
-    if (slides.length > 0) {
+    if (slides.length > 1) {
         let currentSlide = 0;
-        setInterval(() => {
+        if (window._heroSliderInterval) clearInterval(window._heroSliderInterval);
+        window._heroSliderInterval = setInterval(() => {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }, 4500);
+        }, 2000);
     }
 });
 </script>
