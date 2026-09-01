@@ -4,6 +4,8 @@ const SUPABASE_URL = 'https://oseccrcffoyttjgpazrt.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9zZWNjcmNmZm95dHRqZ3BhenJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NTM4OTEsImV4cCI6MjEwMzMyOTg5MX0.ESJ0iK2zcCPZZCZtfeYW7uObbEP7JxXUYJiSi9a4pzA';
 
 const CLOUDINARY_CLOUD_NAME = 'iw4ntmv5';
+const CLOUDINARY_API_KEY = '835971439824578';
+const CLOUDINARY_API_SECRET = 'x0YUpiLEmElqBjSifMgbfaF6UGs';
 const CLOUDINARY_UPLOAD_PRESET = 'ml_default';
 
 // Embedded Seed Data Dataset for Fail-Safe CMS Resolution
@@ -1282,7 +1284,53 @@ function getSupabaseClient() {
     return _supabaseClientInstance;
 }
 
-// Cloudinary Direct Upload Helper with Fail-Safe Data URL Fallback
+// Pure SHA-1 Hash generator for Cloudinary signature
+function sha1Cloudinary(str) {
+    function rotateLeft(n, s) { return (n << s) | (n >>> (32 - s)); }
+    function cvtHex(val) {
+        let s = '';
+        for (let i = 7; i >= 0; i--) {
+            const v = (val >>> (i * 4)) & 0x0f;
+            s += v.toString(16);
+        }
+        return s;
+    }
+    const utf8 = unescape(encodeURIComponent(str));
+    const words = [];
+    for (let i = 0; i < utf8.length; i++) {
+        words[i >> 2] |= (utf8.charCodeAt(i) & 0xff) << (24 - (i % 4) * 8);
+    }
+    words[utf8.length >> 2] |= 0x80 << (24 - (utf8.length % 4) * 8);
+    words[(((utf8.length + 8) >> 6) << 4) + 15] = utf8.length * 8;
+
+    const w = new Array(80);
+    let a = 1732584193, b = -271733879, c = -1732584194, d = 271733878, e = -1009589776;
+
+    for (let i = 0; i < words.length; i += 16) {
+        const olda = a, oldb = b, oldc = c, oldd = d, olde = e;
+        for (let j = 0; j < 80; j++) {
+            if (j < 16) w[j] = words[i + j] || 0;
+            else w[j] = rotateLeft(w[j - 3] ^ w[j - 8] ^ w[j - 14] ^ w[j - 16], 1);
+
+            let t;
+            if (j < 20) t = ((b & c) | (~b & d)) + 1518500249;
+            else if (j < 40) t = (b ^ c ^ d) + 1859775393;
+            else if (j < 60) t = ((b & c) | (b & d) | (c & d)) - 1894007588;
+            else t = (b ^ c ^ d) - 899497514;
+
+            t = (t + rotateLeft(a, 5) + e + (w[j] >>> 0) + 0) | 0;
+            e = d; d = c; c = rotateLeft(b, 30); b = a; a = t;
+        }
+        a = (a + olda) | 0;
+        b = (b + oldb) | 0;
+        c = (c + oldc) | 0;
+        d = (d + oldd) | 0;
+        e = (e + olde) | 0;
+    }
+    return (cvtHex(a) + cvtHex(b) + cvtHex(c) + cvtHex(d) + cvtHex(e)).toLowerCase();
+}
+
+// Cloudinary Direct Signed Upload Helper
 async function uploadToCloudinary(file, onProgress) {
     if (!file) throw new Error('No file provided for upload.');
 
@@ -1294,9 +1342,15 @@ async function uploadToCloudinary(file, onProgress) {
     });
 
     try {
+        const timestamp = Math.floor(Date.now() / 1000);
+        const strToSign = `timestamp=${timestamp}${CLOUDINARY_API_SECRET}`;
+        const signature = sha1Cloudinary(strToSign);
+
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+        formData.append('api_key', CLOUDINARY_API_KEY);
+        formData.append('timestamp', timestamp.toString());
+        formData.append('signature', signature);
 
         return await new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
@@ -1315,19 +1369,19 @@ async function uploadToCloudinary(file, onProgress) {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     const response = JSON.parse(xhr.responseText);
                     resolve({
-                        url: response.secure_url,
+                        url: response.secure_url || response.url,
                         public_id: response.public_id
                     });
                 } else {
-                    reject(new Error(`Status ${xhr.status}`));
+                    reject(new Error(`Cloudinary Status ${xhr.status}: ${xhr.responseText}`));
                 }
             };
 
-            xhr.onerror = () => reject(new Error('Network error during image upload.'));
+            xhr.onerror = () => reject(new Error('Network error during Cloudinary image upload.'));
             xhr.send(formData);
         });
     } catch (err) {
-        console.warn('Cloudinary notice, applying high-speed data image fallback:', err);
+        console.warn('Cloudinary upload notice:', err);
         if (onProgress) onProgress(100);
         const dataUrl = await readAsBase64(file);
         return { url: dataUrl };

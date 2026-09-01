@@ -286,6 +286,7 @@
                             <table class="admin-table align-middle">
                                 <thead>
                                     <tr>
+                                        <th>Image</th>
                                         <th>Subcategory Name</th>
                                         <th>Parent Category</th>
                                         <th>Slug</th>

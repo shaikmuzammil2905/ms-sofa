@@ -706,6 +706,33 @@ async function renderDedicatedSubcategoriesTable() {
         return;
     }
 
+    const defaultSubcategoryImages = {
+        'prelam-storage': 'images/products/storage_prelam.png',
+        'metal-storage': 'images/products/storage_metal.png',
+        'compactor-storage': 'images/products/storage_compactor.png',
+        'locker': 'images/products/storage_locker.png',
+        'height-adjustable-series': 'images/categories/cat_workstations.jpg',
+        'desking-series': 'images/products/workstation_desking.png',
+        'panel-series': 'images/products/workstation_panel.png',
+        'cabin-tables': 'images/products/table_cabin.png',
+        'meeting-tables': 'images/products/table_meeting.png',
+        'cafe-tables': 'images/products/table_cafe.png',
+        'training-tables': 'images/products/table_training.png',
+        'mesh-chair': 'images/products/seating_mesh.jpg',
+        'leather-chair': 'images/products/seating_leather.jpg',
+        'training-chair': 'images/products/seating_training.jpg',
+        'cafe-chair': 'images/products/seating_cafe.jpg',
+        'lounge': 'images/products/soft_lounge.jpg',
+        'sofa': 'images/products/soft_sofa.jpg',
+        'collaborative': 'images/products/soft_collab.jpg',
+        'pouffe': 'images/products/soft_pouffe.jpg',
+        'occasional-tables': 'images/products/soft_tables.jpg',
+        'classroom': 'images/products/edu_classroom.png',
+        'library': 'images/products/edu_library.png',
+        'hostel': 'images/products/edu_hostel.png',
+        'auditorium': 'images/products/edu_auditorium.png'
+    };
+
     let html = '';
     list.forEach((sub, i) => {
         const realIndex = (subcategories || []).indexOf(sub);
@@ -717,9 +744,15 @@ async function renderDedicatedSubcategoriesTable() {
         });
         const parentName = parentCat ? parentCat.name : (sub.category_slug || 'General');
         const prodCount = (products || []).filter(p => p.subcategory === sub.name || p.subcategory === sub.slug).length;
+        const subSlugKey = (sub.slug || (sub.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-'));
+        const subProd = (products || []).find(p => p.subcategory === sub.name || p.subcategory === sub.slug);
+        const subImg = sub.image_url || (subProd && (subProd.main_image || subProd.image)) || defaultSubcategoryImages[subSlugKey] || (parentCat && parentCat.image_url) || 'images/logo/logo-symbol.png';
 
         html += `
         <tr>
+            <td>
+                <img src="${subImg}" alt="${sub.name}" style="width: 44px; height: 44px; object-fit: cover; border-radius: 6px; background: #fff;" onerror="this.src='images/logo/logo-symbol.png'">
+            </td>
             <td class="fw-bold text-dark fs-6">${sub.name}</td>
             <td><span class="badge bg-light text-dark border px-2 py-1">${parentName}</span></td>
             <td><code>${sub.slug || '-'}</code></td>
@@ -744,6 +777,9 @@ async function openAddSubcategoryModal() {
     document.getElementById('subcategoryIdInput').value = '';
     document.getElementById('subcategoryNameInput').value = '';
     document.getElementById('subcategoryOrderInput').value = '0';
+    document.getElementById('subcategoryImageUrl').value = '';
+    document.getElementById('subcategoryImagePreviewContainer').classList.add('d-none');
+    document.getElementById('subcategoryImagePreview').src = '';
 
     const modal = new bootstrap.Modal(document.getElementById('subcategoryFormModal'));
     modal.show();
@@ -751,16 +787,29 @@ async function openAddSubcategoryModal() {
 
 async function editSubcategoryModal(index) {
     const subcategories = await CMSDataStore.get('subcategories');
+    const products = await CMSDataStore.get('products');
+    const categories = await CMSDataStore.get('categories');
     const sub = subcategories[index];
     if (!sub) return;
 
     const selectEl = document.getElementById('subcategoryCategorySelect');
     await populateCategoryDropdown(selectEl, sub.category_slug);
 
+    const subProd = (products || []).find(p => p.subcategory === sub.name || p.subcategory === sub.slug);
+    const fallbackImg = sub.image_url || (subProd && (subProd.main_image || subProd.image)) || '';
+
     document.getElementById('subcategoryModalTitle').textContent = 'Edit Subcategory';
     document.getElementById('subcategoryIdInput').value = index;
     document.getElementById('subcategoryNameInput').value = sub.name || '';
     document.getElementById('subcategoryOrderInput').value = sub.display_order || 0;
+    document.getElementById('subcategoryImageUrl').value = sub.image_url || fallbackImg;
+
+    if (sub.image_url || fallbackImg) {
+        document.getElementById('subcategoryImagePreview').src = sub.image_url || fallbackImg;
+        document.getElementById('subcategoryImagePreviewContainer').classList.remove('d-none');
+    } else {
+        document.getElementById('subcategoryImagePreviewContainer').classList.add('d-none');
+    }
 
     const modal = new bootstrap.Modal(document.getElementById('subcategoryFormModal'));
     modal.show();
@@ -1168,6 +1217,34 @@ async function deleteProject(index) {
 // 7. Module: Hero CMS
 let _currentHeroSlides = [];
 
+function parseHeroSlideList(hero) {
+    if (!hero) return ['images/sections/hero-slide-1.png', 'images/sections/hero-slide-2.png', 'images/sections/hero-slide-3.png'];
+    if (hero.background_image) {
+        const raw = String(hero.background_image).trim();
+        if (raw.startsWith('[') && raw.endsWith(']')) {
+            try {
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+            } catch (e) {}
+        }
+        if (raw.includes('|||')) {
+            return raw.split('|||').map(s => s.trim()).filter(Boolean);
+        }
+        if (raw.startsWith('data:image')) {
+            return [raw];
+        }
+        const split = raw.split(',').map(s => s.trim()).filter(Boolean);
+        if (split.length > 0) return split;
+    }
+    const legacy = [hero.slide_1, hero.slide_2, hero.slide_3].filter(Boolean);
+    if (legacy.length > 0) return legacy;
+    return [
+        'images/sections/hero-slide-1.png',
+        'images/sections/hero-slide-2.png',
+        'images/sections/hero-slide-3.png'
+    ];
+}
+
 async function loadHeroModule() {
     const heroData = await CMSDataStore.get('hero_sections');
     const hero = (heroData && heroData[0]) ? heroData[0] : {
@@ -1182,21 +1259,7 @@ async function loadHeroModule() {
     if (document.getElementById('heroHeadingInput')) document.getElementById('heroHeadingInput').value = hero.heading || '';
     if (document.getElementById('heroDescInput')) document.getElementById('heroDescInput').value = hero.description || '';
     
-    _currentHeroSlides = [];
-    if (hero.background_image) {
-        _currentHeroSlides = hero.background_image.split(',').map(s => s.trim()).filter(Boolean);
-    }
-    if (_currentHeroSlides.length === 0) {
-        [hero.slide_1, hero.slide_2, hero.slide_3].filter(Boolean).forEach(s => _currentHeroSlides.push(s));
-    }
-    if (_currentHeroSlides.length === 0) {
-        _currentHeroSlides = [
-            'images/sections/hero-slide-1.png',
-            'images/sections/hero-slide-2.png',
-            'images/sections/hero-slide-3.png'
-        ];
-    }
-
+    _currentHeroSlides = parseHeroSlideList(hero);
     renderHeroSlidesList();
 }
 
@@ -1308,34 +1371,12 @@ async function handleHeroSlideUpload(input, index) {
     }
 
     try {
-        let imageUrl = '';
-        if (typeof CLOUDINARY_CLOUD_NAME !== 'undefined' && CLOUDINARY_CLOUD_NAME && CLOUDINARY_CLOUD_NAME !== 'YOUR_CLOUD_NAME') {
-            const formData = new FormData();
-            formData.append('file', file);
-            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET || 'ml_default');
-
-            const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
-                method: 'POST',
-                body: formData
-            });
-            const data = await res.json();
-            if (data.secure_url) {
-                imageUrl = data.secure_url;
-            }
-        }
-
-        if (!imageUrl) {
-            // Fallback to local Data URL
-            imageUrl = await new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onload = (e) => resolve(e.target.result);
-                reader.readAsDataURL(file);
-            });
-        }
+        const uploadResult = await uploadToCloudinary(file);
+        const imageUrl = uploadResult.url;
 
         _currentHeroSlides[index] = imageUrl;
         renderHeroSlidesList();
-        alert(`✓ Slide ${index + 1} image uploaded successfully!`);
+        alert(`✓ Slide ${index + 1} image uploaded successfully to Cloudinary!`);
     } catch (err) {
         if (wrap) wrap.style.opacity = '1';
         alert(`Slide upload error: ${err.message}`);
@@ -1359,12 +1400,12 @@ async function saveHeroCMS(e) {
     const slide_1 = cleanSlides[0] || 'images/sections/hero-slide-1.png';
     const slide_2 = cleanSlides[1] || slide_1;
     const slide_3 = cleanSlides[2] || slide_2;
-    const background_image = cleanSlides.join(',');
+    const background_image = cleanSlides.join('|||');
 
     try {
         const heroRecord = [{ heading, description, slide_1, slide_2, slide_3, background_image, is_custom_updated: true }];
         await CMSDataStore.save('hero_sections', heroRecord);
-        alert('✓ Hero section and background slides updated successfully in database!');
+        alert('✓ Hero section and all background slides updated successfully in database!');
     } catch (err) {
         alert(`Failed to update Hero section: ${err.message}`);
     } finally {

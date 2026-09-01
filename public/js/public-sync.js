@@ -55,7 +55,22 @@ async function syncHeroSection() {
     if (wrapper) {
         let slideImages = [];
         if (hero.background_image) {
-            slideImages = hero.background_image.split(',').map(s => s.trim()).filter(Boolean);
+            const raw = String(hero.background_image).trim();
+            if (raw.startsWith('[') && raw.endsWith(']')) {
+                try {
+                    const parsed = JSON.parse(raw);
+                    if (Array.isArray(parsed) && parsed.length > 0) slideImages = parsed;
+                } catch (e) {}
+            }
+            if (slideImages.length === 0 && raw.includes('|||')) {
+                slideImages = raw.split('|||').map(s => s.trim()).filter(Boolean);
+            }
+            if (slideImages.length === 0 && raw.startsWith('data:image')) {
+                slideImages = [raw];
+            }
+            if (slideImages.length === 0) {
+                slideImages = raw.split(',').map(s => s.trim()).filter(Boolean);
+            }
         }
         if (slideImages.length === 0) {
             [hero.slide_1, hero.slide_2, hero.slide_3].filter(Boolean).forEach(s => slideImages.push(s));
