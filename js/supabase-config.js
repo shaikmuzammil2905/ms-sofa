@@ -92,157 +92,37 @@ const VISHISTA_SEED_DATA = {
     }
   ],
   "subcategories": [
-    {
-      "name": "Height Adjustable Series",
-      "slug": "height-adjustable-series",
-      "category_slug": "workstations",
-      "display_order": 1
-    },
-    {
-      "name": "Desking Series",
-      "slug": "desking-series",
-      "category_slug": "workstations",
-      "display_order": 2
-    },
-    {
-      "name": "Panel Series",
-      "slug": "panel-series",
-      "category_slug": "workstations",
-      "display_order": 3
-    },
-    {
-      "name": "Cabin Tables",
-      "slug": "cabin-tables",
-      "category_slug": "tables",
-      "display_order": 1
-    },
-    {
-      "name": "Meeting Tables",
-      "slug": "meeting-tables",
-      "category_slug": "tables",
-      "display_order": 2
-    },
-    {
-      "name": "Cafe Tables",
-      "slug": "cafe-tables",
-      "category_slug": "tables",
-      "display_order": 3
-    },
-    {
-      "name": "Training Tables",
-      "slug": "training-tables",
-      "category_slug": "tables",
-      "display_order": 4
-    },
-    {
-      "name": "Prelam Storage",
-      "slug": "prelam-storage",
-      "category_slug": "storage",
-      "display_order": 1
-    },
-    {
-      "name": "Metal Storage",
-      "slug": "metal-storage",
-      "category_slug": "storage",
-      "display_order": 2
-    },
-    {
-      "name": "Compactor Storage",
-      "slug": "compactor-storage",
-      "category_slug": "storage",
-      "display_order": 3
-    },
-    {
-      "name": "Locker",
-      "slug": "locker",
-      "category_slug": "storage",
-      "display_order": 4
-    },
-    {
-      "name": "Mesh Chair",
-      "slug": "mesh-chair",
-      "category_slug": "seating",
-      "display_order": 1
-    },
-    {
-      "name": "Leather Chair",
-      "slug": "leather-chair",
-      "category_slug": "seating",
-      "display_order": 2
-    },
-    {
-      "name": "Training Chair",
-      "slug": "training-chair",
-      "category_slug": "seating",
-      "display_order": 3
-    },
-    {
-      "name": "Cafe Chair",
-      "slug": "cafe-chair",
-      "category_slug": "seating",
-      "display_order": 4
-    },
-    {
-      "name": "Lounge",
-      "slug": "lounge",
-      "category_slug": "soft-seating",
-      "display_order": 1
-    },
-    {
-      "name": "Sofa",
-      "slug": "sofa",
-      "category_slug": "soft-seating",
-      "display_order": 2
-    },
-    {
-      "name": "Collaborative",
-      "slug": "collaborative",
-      "category_slug": "soft-seating",
-      "display_order": 3
-    },
-    {
-      "name": "Pouffe",
-      "slug": "pouffe",
-      "category_slug": "soft-seating",
-      "display_order": 4
-    },
-    {
-      "name": "Occasional Tables",
-      "slug": "occasional-tables",
-      "category_slug": "soft-seating",
-      "display_order": 5
-    },
-    {
-      "name": "Classroom",
-      "slug": "classroom",
-      "category_slug": "educational",
-      "display_order": 1
-    },
-    {
-      "name": "Library",
-      "slug": "library",
-      "category_slug": "educational",
-      "display_order": 2
-    },
-    {
-      "name": "Hostel",
-      "slug": "hostel",
-      "category_slug": "educational",
-      "display_order": 3
-    },
-    {
-      "name": "Auditorium",
-      "slug": "auditorium",
-      "category_slug": "educational",
-      "display_order": 4
-    }
+    { "name": "Height Adjustable Series", "slug": "height-adjustable-series", "category_slug": "workstations", "display_order": 1 },
+    { "name": "Desking Series", "slug": "desking-series", "category_slug": "workstations", "display_order": 2 },
+    { "name": "Panel Series", "slug": "panel-series", "category_slug": "workstations", "display_order": 3 },
+    { "name": "Cabin Tables", "slug": "cabin-tables", "category_slug": "tables", "display_order": 1 },
+    { "name": "Meeting Tables", "slug": "meeting-tables", "category_slug": "tables", "display_order": 2 },
+    { "name": "Cafe Tables", "slug": "cafe-tables", "category_slug": "tables", "display_order": 3 },
+    { "name": "Training Tables", "slug": "training-tables", "category_slug": "tables", "display_order": 4 },
+    { "name": "Prelam Storage", "slug": "prelam-storage", "category_slug": "storage", "display_order": 1 },
+    { "name": "Metal Storage", "slug": "metal-storage", "category_slug": "storage", "display_order": 2 },
+    { "name": "Compactor Storage", "slug": "compactor-storage", "category_slug": "storage", "display_order": 3 },
+    { "name": "Locker", "slug": "locker", "category_slug": "storage", "display_order": 4 },
+    { "name": "Mesh Chair", "slug": "mesh-chair", "category_slug": "seating", "display_order": 1 },
+    { "name": "Leather Chair", "slug": "leather-chair", "category_slug": "seating", "display_order": 2 },
+    { "name": "Training Chair", "slug": "training-chair", "category_slug": "seating", "display_order": 3 },
+    { "name": "Cafe Chair", "slug": "cafe-chair", "category_slug": "seating", "display_order": 4 },
+    { "name": "Lounge", "slug": "lounge", "category_slug": "soft-seating", "display_order": 1 },
+    { "name": "Sofa", "slug": "sofa", "category_slug": "soft-seating", "display_order": 2 },
+    { "name": "Collaborative", "slug": "collaborative", "category_slug": "soft-seating", "display_order": 3 },
+    { "name": "Pouffe", "slug": "pouffe", "category_slug": "soft-seating", "display_order": 4 },
+    { "name": "Occasional Tables", "slug": "occasional-tables", "category_slug": "soft-seating", "display_order": 5 },
+    { "name": "Classroom", "slug": "classroom", "category_slug": "educational", "display_order": 1 },
+    { "name": "Library", "slug": "library", "category_slug": "educational", "display_order": 2 },
+    { "name": "Hostel", "slug": "hostel", "category_slug": "educational", "display_order": 3 },
+    { "name": "Auditorium", "slug": "auditorium", "category_slug": "educational", "display_order": 4 }
   ],
   "products": [
     {
       "name": "Veloz Mesh Chair",
       "slug": "veloz-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Veloz ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_4.png",
@@ -256,8 +136,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Feather Mesh Chair",
       "slug": "feather-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Feather ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_5.png",
@@ -271,8 +151,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Eiffel Mesh Chair",
       "slug": "eiffel-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Eiffel ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_6.png",
@@ -286,8 +166,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Mustang Mesh Chair",
       "slug": "mustang-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Mustang ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_7.png",
@@ -301,8 +181,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Bravo Mesh Chair",
       "slug": "bravo-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Bravo ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_8.png",
@@ -316,8 +196,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Polar Mesh Chair",
       "slug": "polar-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Polar ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_9.png",
@@ -331,8 +211,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Glanza Mesh Chair",
       "slug": "glanza-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Glanza ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_10.png",
@@ -346,8 +226,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Yaris Mesh Chair",
       "slug": "yaris-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Yaris ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_11.png",
@@ -361,8 +241,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Quartz Mesh Chair",
       "slug": "quartz-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Quartz ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_12.png",
@@ -376,8 +256,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Ditto Mesh Chair",
       "slug": "ditto-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Ditto ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_13.png",
@@ -391,8 +271,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Velfire Mesh Chair",
       "slug": "velfire-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Velfire ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_14.png",
@@ -406,8 +286,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Optimus Mesh Chair",
       "slug": "optimus-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Optimus ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_15.png",
@@ -421,8 +301,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Zoom Mesh Chair",
       "slug": "zoom-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Zoom ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_16.png",
@@ -436,8 +316,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Comfy Mesh Chair",
       "slug": "comfy-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Comfy ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_17.png",
@@ -451,8 +331,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Rio Mesh Chair",
       "slug": "rio-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Rio ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_18.png",
@@ -466,8 +346,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Hilite Mesh Chair",
       "slug": "hilite-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Hilite ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_19.png",
@@ -481,8 +361,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Ecco Mesh Chair",
       "slug": "ecco-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Ecco ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_20.png",
@@ -496,8 +376,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Vento Mesh Chair",
       "slug": "vento-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Vento ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_21.png",
@@ -511,8 +391,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Aura Mesh Chair",
       "slug": "aura-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Aura ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_22.png",
@@ -526,8 +406,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Dynamic Mesh Chair",
       "slug": "dynamic-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Dynamic ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_23.png",
@@ -541,8 +421,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Butterfly Mesh Chair",
       "slug": "butterfly-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Butterfly ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_24.png",
@@ -556,8 +436,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Mystic Mesh Chair",
       "slug": "mystic-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Mystic ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_25.png",
@@ -571,8 +451,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Breeze Mesh Chair",
       "slug": "breeze-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Breeze ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_26.png",
@@ -586,8 +466,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Matrix 1 Mesh Chair",
       "slug": "matrix-1-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Matrix 1 ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_27.png",
@@ -601,8 +481,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Marvel 1 & 2 Mesh Chair",
       "slug": "marvel-1-2-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Marvel 1 & 2 ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_28.png",
@@ -616,8 +496,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Jazz Mesh Chair",
       "slug": "jazz-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Jazz ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_29.png",
@@ -631,8 +511,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Flash Mesh Chair",
       "slug": "flash-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Flash ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_30.png",
@@ -646,8 +526,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Bonai Mesh Chair",
       "slug": "bonai-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Bonai ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_31.png",
@@ -661,8 +541,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "X Mesh Mesh Chair",
       "slug": "x-mesh-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "X Mesh ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_32.png",
@@ -676,8 +556,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Spenser Mesh Chair",
       "slug": "spenser-mesh-chair",
-      "category_slug": "seating",
-      "subcategory": "Mesh Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Mesh Series",
       "description": "Spenser ergonomic office chair featuring synchro-tilt mechanism, breathable mesh back, adjustable lumbar support, and heavy-duty nylon base.",
       "specifications": "Synchro-tilt mechanism, Class-4 Gas Lift, Breathable Korean Mesh, Nylon/Diecast Base.",
       "main_image": "images/archlabs/pages/page_33.png",
@@ -691,8 +571,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Luxe Leather Chair",
       "slug": "luxe-leather-chair",
-      "category_slug": "seating",
-      "subcategory": "Leather Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Leather Series",
       "description": "Luxe executive leather chair with top-grain leather upholstery, deep cushioning, and polished aluminium armrests.",
       "specifications": "Top-grain Genuine Leather, Knee-Tilt Lock Mechanism, Polished Diecast Aluminium Base.",
       "main_image": "images/archlabs/pages/page_36.png",
@@ -706,8 +586,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Elara Leather Chair",
       "slug": "elara-leather-chair",
-      "category_slug": "seating",
-      "subcategory": "Leather Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Leather Series",
       "description": "Elara executive leather chair with top-grain leather upholstery, deep cushioning, and polished aluminium armrests.",
       "specifications": "Top-grain Genuine Leather, Knee-Tilt Lock Mechanism, Polished Diecast Aluminium Base.",
       "main_image": "images/archlabs/pages/page_37.png",
@@ -721,8 +601,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Regent Leather Chair",
       "slug": "regent-leather-chair",
-      "category_slug": "seating",
-      "subcategory": "Leather Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Leather Series",
       "description": "Regent executive leather chair with top-grain leather upholstery, deep cushioning, and polished aluminium armrests.",
       "specifications": "Top-grain Genuine Leather, Knee-Tilt Lock Mechanism, Polished Diecast Aluminium Base.",
       "main_image": "images/archlabs/pages/page_38.png",
@@ -736,8 +616,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Forma Leather Chair",
       "slug": "forma-leather-chair",
-      "category_slug": "seating",
-      "subcategory": "Leather Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Leather Series",
       "description": "Forma executive leather chair with top-grain leather upholstery, deep cushioning, and polished aluminium armrests.",
       "specifications": "Top-grain Genuine Leather, Knee-Tilt Lock Mechanism, Polished Diecast Aluminium Base.",
       "main_image": "images/archlabs/pages/page_39.png",
@@ -751,8 +631,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Nero Leather Chair",
       "slug": "nero-leather-chair",
-      "category_slug": "seating",
-      "subcategory": "Leather Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Leather Series",
       "description": "Nero executive leather chair with top-grain leather upholstery, deep cushioning, and polished aluminium armrests.",
       "specifications": "Top-grain Genuine Leather, Knee-Tilt Lock Mechanism, Polished Diecast Aluminium Base.",
       "main_image": "images/archlabs/pages/page_40.png",
@@ -766,8 +646,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Arc Standard Chair",
       "slug": "arc-standard-chair",
-      "category_slug": "seating",
-      "subcategory": "Training Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Training Series",
       "description": "Arc Standard training chair engineered for seminars, classrooms, and corporate learning centers.",
       "specifications": "Stackable steel frame, optional foldable writing tablet, high-density foam seat.",
       "main_image": "images/archlabs/pages/page_42.png",
@@ -781,8 +661,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Cove Cushioned Chair",
       "slug": "cove-cushioned-chair",
-      "category_slug": "seating",
-      "subcategory": "Training Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Training Series",
       "description": "Cove Cushioned training chair engineered for seminars, classrooms, and corporate learning centers.",
       "specifications": "Stackable steel frame, optional foldable writing tablet, high-density foam seat.",
       "main_image": "images/archlabs/pages/page_43.png",
@@ -796,8 +676,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Pivot Writing Table Chair",
       "slug": "pivot-writing-table-chair",
-      "category_slug": "seating",
-      "subcategory": "Training Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Training Series",
       "description": "Pivot Writing Table training chair engineered for seminars, classrooms, and corporate learning centers.",
       "specifications": "Stackable steel frame, optional foldable writing tablet, high-density foam seat.",
       "main_image": "images/archlabs/pages/page_44.png",
@@ -811,8 +691,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Pivot Full Writing Table Chair",
       "slug": "pivot-full-writing-table-chair",
-      "category_slug": "seating",
-      "subcategory": "Training Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Training Series",
       "description": "Pivot Full Writing Table training chair engineered for seminars, classrooms, and corporate learning centers.",
       "specifications": "Stackable steel frame, optional foldable writing tablet, high-density foam seat.",
       "main_image": "images/archlabs/pages/page_45.png",
@@ -826,8 +706,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Stack Storage Variants Chair",
       "slug": "stack-storage-variants-chair",
-      "category_slug": "seating",
-      "subcategory": "Training Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Training Series",
       "description": "Stack Storage Variants training chair engineered for seminars, classrooms, and corporate learning centers.",
       "specifications": "Stackable steel frame, optional foldable writing tablet, high-density foam seat.",
       "main_image": "images/archlabs/pages/page_46.png",
@@ -841,8 +721,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "ArchTwin Chair",
       "slug": "archtwin-chair",
-      "category_slug": "seating",
-      "subcategory": "Training Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Training Series",
       "description": "ArchTwin training chair engineered for seminars, classrooms, and corporate learning centers.",
       "specifications": "Stackable steel frame, optional foldable writing tablet, high-density foam seat.",
       "main_image": "images/archlabs/pages/page_47.png",
@@ -856,8 +736,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "ArchTwin Flip-Up Table Chair",
       "slug": "archtwin-flip-up-table-chair",
-      "category_slug": "seating",
-      "subcategory": "Training Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Training Series",
       "description": "ArchTwin Flip-Up Table training chair engineered for seminars, classrooms, and corporate learning centers.",
       "specifications": "Stackable steel frame, optional foldable writing tablet, high-density foam seat.",
       "main_image": "images/archlabs/pages/page_48.png",
@@ -871,8 +751,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Metro Linea 2 Seater",
       "slug": "metro-linea-2-seater",
-      "category_slug": "soft-seating",
-      "subcategory": "Lounge",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Metro Linea",
       "description": "Metro Linea 2 Seater heavy-duty perforated steel beam seating for airports, waiting rooms, and public lobbies.",
       "specifications": "Perforated steel seats, chrome plated beam legs, anti-skid rubber feet.",
       "main_image": "images/archlabs/pages/page_50.png",
@@ -886,8 +766,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Metro Linea 3 Seater",
       "slug": "metro-linea-3-seater",
-      "category_slug": "soft-seating",
-      "subcategory": "Lounge",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Metro Linea",
       "description": "Metro Linea 3 Seater heavy-duty perforated steel beam seating for airports, waiting rooms, and public lobbies.",
       "specifications": "Perforated steel seats, chrome plated beam legs, anti-skid rubber feet.",
       "main_image": "images/archlabs/pages/page_51.png",
@@ -901,8 +781,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Metro Linea 5 Seater",
       "slug": "metro-linea-5-seater",
-      "category_slug": "soft-seating",
-      "subcategory": "Lounge",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Metro Linea",
       "description": "Metro Linea 5 Seater heavy-duty perforated steel beam seating for airports, waiting rooms, and public lobbies.",
       "specifications": "Perforated steel seats, chrome plated beam legs, anti-skid rubber feet.",
       "main_image": "images/archlabs/pages/page_52.png",
@@ -916,8 +796,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "AC01 Stack Chair",
       "slug": "ac01-stack-chair",
-      "category_slug": "seating",
-      "subcategory": "Cafe Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Cafeteria Series",
       "description": "AC01 Stack Chair modern cafeteria chair designed for corporate pantries, food courts, and dining halls.",
       "specifications": "Polypropylene moulded shell / bentwood timber frame, chrome steel legs.",
       "main_image": "images/archlabs/pages/page_54.png",
@@ -931,8 +811,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "AC02 Curve Chair",
       "slug": "ac02-curve-chair",
-      "category_slug": "seating",
-      "subcategory": "Cafe Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Cafeteria Series",
       "description": "AC02 Curve Chair modern cafeteria chair designed for corporate pantries, food courts, and dining halls.",
       "specifications": "Polypropylene moulded shell / bentwood timber frame, chrome steel legs.",
       "main_image": "images/archlabs/pages/page_55.png",
@@ -946,8 +826,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "AC03 Arc Chair",
       "slug": "ac03-arc-chair",
-      "category_slug": "seating",
-      "subcategory": "Cafe Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Cafeteria Series",
       "description": "AC03 Arc Chair modern cafeteria chair designed for corporate pantries, food courts, and dining halls.",
       "specifications": "Polypropylene moulded shell / bentwood timber frame, chrome steel legs.",
       "main_image": "images/archlabs/pages/page_56.png",
@@ -961,8 +841,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "AC04 Spindle Chair",
       "slug": "ac04-spindle-chair",
-      "category_slug": "seating",
-      "subcategory": "Cafe Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Cafeteria Series",
       "description": "AC04 Spindle Chair modern cafeteria chair designed for corporate pantries, food courts, and dining halls.",
       "specifications": "Polypropylene moulded shell / bentwood timber frame, chrome steel legs.",
       "main_image": "images/archlabs/pages/page_57.png",
@@ -976,8 +856,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "AC06 Timber Chair",
       "slug": "ac06-timber-chair",
-      "category_slug": "seating",
-      "subcategory": "Cafe Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Cafeteria Series",
       "description": "AC06 Timber Chair modern cafeteria chair designed for corporate pantries, food courts, and dining halls.",
       "specifications": "Polypropylene moulded shell / bentwood timber frame, chrome steel legs.",
       "main_image": "images/archlabs/pages/page_58.png",
@@ -991,8 +871,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "AC07 Lounge Chair",
       "slug": "ac07-lounge-chair",
-      "category_slug": "seating",
-      "subcategory": "Cafe Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Cafeteria Series",
       "description": "AC07 Lounge Chair modern cafeteria chair designed for corporate pantries, food courts, and dining halls.",
       "specifications": "Polypropylene moulded shell / bentwood timber frame, chrome steel legs.",
       "main_image": "images/archlabs/pages/page_59.png",
@@ -1006,8 +886,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "AC08 Crest Chair",
       "slug": "ac08-crest-chair",
-      "category_slug": "seating",
-      "subcategory": "Cafe Chair",
+      "category_slug": "archlabs-seating",
+      "subcategory": "Cafeteria Series",
       "description": "AC08 Crest Chair modern cafeteria chair designed for corporate pantries, food courts, and dining halls.",
       "specifications": "Polypropylene moulded shell / bentwood timber frame, chrome steel legs.",
       "main_image": "images/archlabs/pages/page_60.png",
@@ -1171,8 +1051,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Model PD-Solo Acoustic Telephone Booth",
       "slug": "model-pd-solo-acoustic-telephone-booth",
-      "category_slug": "pods",
-      "subcategory": null,
+      "category_slug": "acoustic-pods",
+      "subcategory": "Acoustic Work Pods",
       "description": "Sound-insulated solo acoustic phone pod equipped with silent ventilation fan, LED lighting, and power outlets.",
       "specifications": "Commercial grade materials, BIFMA certified hardware, 5-year warranty.",
       "main_image": "images/categories/cat_pods.jpg",
@@ -1187,7 +1067,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Model CP-Acoustic Nylon Modular Tile",
       "slug": "model-cp-acoustic-nylon-modular-tile",
       "category_slug": "carpets",
-      "subcategory": null,
+      "subcategory": "Interface Carpets",
       "description": "High-performance modular carpet tiles with sound-absorbing recycled cushion backing.",
       "specifications": "Commercial grade materials, BIFMA certified hardware, 5-year warranty.",
       "main_image": "images/categories/cat_carpets.jpg",
@@ -1202,7 +1082,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Model OD-Synthetic Wicker Terrace Lounge",
       "slug": "model-od-synthetic-wicker-terrace-lounge",
       "category_slug": "outdoor",
-      "subcategory": null,
+      "subcategory": "Outdoor Furniture",
       "description": "Weather-resistant synthetic wicker terrace lounge set with UV-protected outdoor cushions.",
       "specifications": "Commercial grade materials, BIFMA certified hardware, 5-year warranty.",
       "main_image": "images/categories/cat_outdoor.jpg",
@@ -1217,7 +1097,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Model ED-Single Student Ergonomic Desk",
       "slug": "model-ed-single-student-ergonomic-desk",
       "category_slug": "educational",
-      "subcategory": "Classroom",
+      "subcategory": "Educational Solutions",
       "description": "Ergonomic classroom desk & chair combo with book bag hook and wire storage rack.",
       "specifications": "Commercial grade materials, BIFMA certified hardware, 5-year warranty.",
       "main_image": "images/categories/cat_education.png",
@@ -1231,8 +1111,8 @@ const VISHISTA_SEED_DATA = {
     {
       "name": "Model AC-Gas Spring Dual Monitor Arm",
       "slug": "model-ac-gas-spring-dual-monitor-arm",
-      "category_slug": "storage",
-      "subcategory": "Metal Storage",
+      "category_slug": "accessories",
+      "subcategory": "Workspace Accessories",
       "description": "Full-motion dual monitor gas spring arm with desk clamp and integrated cable management clips.",
       "specifications": "Commercial grade materials, BIFMA certified hardware, 5-year warranty.",
       "main_image": "images/categories/cat_tables.png",
@@ -1247,7 +1127,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Executive Lounge Armchairs",
       "slug": "executive-lounge-armchairs",
       "category_slug": "soft-seating",
-      "subcategory": "Lounge",
+      "subcategory": "Lounge & Executive Sofas",
       "description": "Single-seat ergonomic lounge armchairs in premium leather or acoustic fabric upholstery.",
       "specifications": "High resilience foam, premium fabric / leatherette, hardwood frame.",
       "main_image": "images/categories/cat_soft_seating.jpg",
@@ -1262,7 +1142,7 @@ const VISHISTA_SEED_DATA = {
       "name": "2 & 3-Seater Executive Sofas",
       "slug": "2-3-seater-executive-sofas",
       "category_slug": "soft-seating",
-      "subcategory": "Lounge",
+      "subcategory": "Lounge & Executive Sofas",
       "description": "Sleek multi-seater reception couches featuring high-resilience foam cushioning.",
       "specifications": "High resilience foam, premium fabric / leatherette, hardwood frame.",
       "main_image": "images/collection/collection-1.jpg",
@@ -1277,7 +1157,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Collaborative Booth Seating",
       "slug": "collaborative-booth-seating",
       "category_slug": "soft-seating",
-      "subcategory": "Collaborative",
+      "subcategory": "Collaborative Seating",
       "description": "High-back sound dampening collaborative booths creating semi-private discussion nooks.",
       "specifications": "High resilience foam, premium fabric / leatherette, hardwood frame.",
       "main_image": "images/collection/collection-2.jpg",
@@ -1292,7 +1172,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Geometrical Pouffes & Ottomans",
       "slug": "geometrical-pouffes-ottomans",
       "category_slug": "soft-seating",
-      "subcategory": "Pouffe",
+      "subcategory": "Pouffes & Ottomans",
       "description": "Flexible circular, hexagonal, and square soft pouffes for breakout areas.",
       "specifications": "High resilience foam, premium fabric / leatherette, hardwood frame.",
       "main_image": "images/sections/s-lookbook-1.jpg",
@@ -1307,7 +1187,7 @@ const VISHISTA_SEED_DATA = {
       "name": "Occasional Center Tables",
       "slug": "occasional-center-tables",
       "category_slug": "soft-seating",
-      "subcategory": "Occasional Tables",
+      "subcategory": "Occasional Center Tables",
       "description": "Designer low-height coffee tables with veneered wood or marble tops.",
       "specifications": "High resilience foam, premium fabric / leatherette, hardwood frame.",
       "main_image": "images/categories/cat_tables.png",
@@ -1386,6 +1266,180 @@ const VISHISTA_SEED_DATA = {
       "display_order": 3
     }
   ]
+};
+
+// Initialize Supabase Client if SDK is loaded
+let supabaseClient = null;
+if (typeof supabase !== 'undefined' && supabase.createClient) {
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+}
+
+// Cloudinary Direct Upload Helper with Fail-Safe Data URL Fallback
+async function uploadToCloudinary(file, onProgress) {
+    if (!file) throw new Error('No file provided for upload.');
+
+    const readAsBase64 = (f) => new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = () => resolve(URL.createObjectURL(f));
+        reader.readAsDataURL(f);
+    });
+
+    try {
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+        return await new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`);
+
+            if (onProgress && xhr.upload) {
+                xhr.upload.onprogress = (e) => {
+                    if (e.lengthComputable) {
+                        const percent = Math.round((e.loaded / e.total) * 100);
+                        onProgress(percent);
+                    }
+                };
+            }
+
+            xhr.onload = () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const response = JSON.parse(xhr.responseText);
+                    resolve({
+                        url: response.secure_url,
+                        public_id: response.public_id
+                    });
+                } else {
+                    reject(new Error(`Status ${xhr.status}`));
+                }
+            };
+
+            xhr.onerror = () => reject(new Error('Network error during image upload.'));
+            xhr.send(formData);
+        });
+    } catch (err) {
+        console.warn('Cloudinary notice, applying high-speed data image fallback:', err);
+        if (onProgress) onProgress(100);
+        const dataUrl = await readAsBase64(file);
+        return { url: dataUrl };
+    }
+}
+
+function generateUUID() {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+        return crypto.randomUUID();
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+// Global Store State Manager (Supabase Database Priority + Fail-Safe Seed & Cache Merger)
+const CMSDataStore = {
+    get: async function(table) {
+        if (supabaseClient) {
+            try {
+                let query = supabaseClient.from(table).select('*');
+                if (['products', 'categories', 'subcategories', 'projects', 'featured_collections', 'gallery'].includes(table)) {
+                    query = query.order('display_order', { ascending: true });
+                }
+                const { data, error } = await query;
+                
+                if (!error && Array.isArray(data)) {
+                    return data;
+                }
+            } catch (e) {
+                console.warn(`[CMSDataStore] Supabase fetch notice for '${table}':`, e.message);
+            }
+        }
+        const seedItems = (typeof VISHISTA_SEED_DATA !== 'undefined' && VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) ? VISHISTA_SEED_DATA[table] : [];
+        return seedItems;
+    },
+
+    save: async function(table, records) {
+        if (!supabaseClient) return records;
+        try {
+            let { data, error } = await supabaseClient.from(table).upsert(records).select();
+            if (error && error.message && error.message.includes('is_published')) {
+                const cleanedRecords = records.map(r => {
+                    const copy = { ...r };
+                    delete copy.is_published;
+                    return copy;
+                });
+                const res = await supabaseClient.from(table).upsert(cleanedRecords).select();
+                error = res.error;
+            }
+            if (error) {
+                console.error(`[CMSDataStore] Supabase SAVE error for '${table}':`, error);
+            }
+            return await this.get(table);
+        } catch (e) {
+            console.error(`[CMSDataStore] Save failed for table '${table}':`, e.message);
+            return await this.get(table);
+        }
+    },
+
+    insertRecord: async function(table, record) {
+        if (!supabaseClient) return await this.get(table);
+        try {
+            let { data, error } = await supabaseClient.from(table).insert([record]).select();
+            if (error && error.message && error.message.includes('is_published')) {
+                const cleanRec = { ...record };
+                delete cleanRec.is_published;
+                const res = await supabaseClient.from(table).insert([cleanRec]).select();
+                error = res.error;
+            }
+            if (error) {
+                console.error(`[CMSDataStore] Supabase INSERT error for '${table}':`, error);
+            }
+            return await this.get(table);
+        } catch(e) {
+            console.error(`[CMSDataStore] Insert failed for table '${table}':`, e.message);
+            return await this.get(table);
+        }
+    },
+
+    updateRecord: async function(table, id, record) {
+        if (!supabaseClient) return await this.get(table);
+        try {
+            let { data, error } = await supabaseClient.from(table).update(record).eq('id', id).select();
+            if (error && error.message && error.message.includes('is_published')) {
+                const cleanedRecord = { ...record };
+                delete cleanedRecord.is_published;
+                const res = await supabaseClient.from(table).update(cleanedRecord).eq('id', id).select();
+                error = res.error;
+            }
+            if ((error || !data || data.length === 0) && id) {
+                let resBySlug = await supabaseClient.from(table).update(record).eq('slug', id).select();
+                if (resBySlug.error && resBySlug.error.message.includes('is_published')) {
+                    const cleanedRecord = { ...record };
+                    delete cleanedRecord.is_published;
+                    resBySlug = await supabaseClient.from(table).update(cleanedRecord).eq('slug', id).select();
+                }
+            }
+            return await this.get(table);
+        } catch (e) {
+            console.error(`[CMSDataStore] Update failed for '${table}':`, e.message);
+            return await this.get(table);
+        }
+    },
+
+    deleteRecord: async function(table, identifier) {
+        if (!identifier || !supabaseClient) return await this.get(table);
+        try {
+            if (typeof identifier === 'string' && identifier.includes('-') && identifier.length !== 36) {
+                await supabaseClient.from(table).delete().eq('slug', identifier);
+            } else {
+                await supabaseClient.from(table).delete().eq('id', identifier);
+            }
+        } catch (err) {
+            console.warn(`[CMSDataStore] Supabase DELETE notice for '${table}':`, err.message);
+        }
+        return await this.get(table);
+    }
 };
 
 if (typeof window !== 'undefined') {

@@ -1339,231 +1339,106 @@ function generateUUID() {
 
 // Global Store State Manager (Supabase Database Priority + Fail-Safe Seed & Cache Merger)
 const CMSDataStore = {
-    getKey: (table) => `vishista_cms_${table}`,
-
-    getDeletedSet: function(table) {
-        try {
-            const raw = localStorage.getItem(`vishista_cms_deleted_${table}`);
-            return new Set(raw ? JSON.parse(raw) : []);
-        } catch (e) {
-            return new Set();
-        }
-    },
-
-    markDeleted: function(table, identifier) {
-        if (!identifier) return;
-        try {
-            const raw = localStorage.getItem(`vishista_cms_deleted_${table}`);
-            const list = raw ? JSON.parse(raw) : [];
-            if (!list.includes(identifier)) {
-                list.push(identifier);
-                localStorage.setItem(`vishista_cms_deleted_${table}`, JSON.stringify(list));
-            }
-        } catch (e) {}
-    },
-
     get: async function(table) {
-        const seedItems = (typeof VISHISTA_SEED_DATA !== 'undefined' && VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) ? VISHISTA_SEED_DATA[table] : [];
-        const deletedSet = this.getDeletedSet(table);
-        
-        let storedItems = [];
-
-        // 1. Try LocalStorage Cache
-        const cached = localStorage.getItem(this.getKey(table));
-        if (cached) {
-            try {
-                const parsed = JSON.parse(cached);
-                if (Array.isArray(parsed) && parsed.length > 0) {
-                    storedItems = parsed;
-                }
-            } catch (e) {}
-        }
-
-        // 2. Fetch directly from Supabase DB if available
         if (supabaseClient) {
             try {
-                const { data, error } = await supabaseClient.from(table).select('*');
-                if (!error && Array.isArray(data) && data.length > 0) {
-                    storedItems = data;
+                let query = supabaseClient.from(table).select('*');
+                if (['products', 'categories', 'subcategories', 'projects', 'featured_collections', 'gallery'].includes(table)) {
+                    query = query.order('display_order', { ascending: true });
+                }
+                const { data, error } = await query;
+                
+                if (!error && Array.isArray(data)) {
+                    return data;
                 }
             } catch (e) {
                 console.warn(`[CMSDataStore] Supabase fetch notice for '${table}':`, e.message);
             }
         }
-
-        // 3. Build merged master dataset starting with seed items
-        const itemMap = new Map();
-
-        seedItems.forEach(s => {
-            const key = s.slug || (s.name ? s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '') || s.id;
-            itemMap.set(key, { ...s, id: s.id || generateUUID() });
-        });
-
-        storedItems.forEach(item => {
-            const key = item.slug || (item.name ? item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '') || item.id;
-            if (itemMap.has(key)) {
-                itemMap.set(key, { ...itemMap.get(key), ...item });
-            } else {
-                itemMap.set(key, item);
-            }
-        });
-
-        // 4. Exclude explicitly deleted items
-        const masterList = Array.from(itemMap.values()).filter(item => {
-            const idMatch = item.id && deletedSet.has(item.id);
-            const slugMatch = item.slug && deletedSet.has(item.slug);
-            return !idMatch && !slugMatch;
-        });
-
-        try {
-            localStorage.setItem(this.getKey(table), JSON.stringify(masterList));
-        } catch(e) {}
-
-        return masterList;
+        const seedItems = (typeof VISHISTA_SEED_DATA !== 'undefined' && VISHISTA_SEED_DATA && VISHISTA_SEED_DATA[table]) ? VISHISTA_SEED_DATA[table] : [];
+        return seedItems;
     },
 
     save: async function(table, records) {
-        const deletedSet = this.getDeletedSet(table);
-        const sanitizedRecords = (records || []).map(r => {
-            const item = { ...r };
-            if (!item.id || item.id === '' || item.id === 'null') {
-                item.id = generateUUID();
-            }
-            return item;
-        }).filter(item => !deletedSet.has(item.id) && !deletedSet.has(item.slug));
-
-        localStorage.setItem(this.getKey(table), JSON.stringify(sanitizedRecords));
-
-        if (!supabaseClient) {
-            return sanitizedRecords;
-        }
-
+        if (!supabaseClient) return records;
         try {
-            let { data, error } = await supabaseClient.from(table).upsert(sanitizedRecords).select();
-
+            let { data, error } = await supabaseClient.from(table).upsert(records).select();
             if (error && error.message && error.message.includes('is_published')) {
-                const cleanedRecords = sanitizedRecords.map(r => {
+                const cleanedRecords = records.map(r => {
                     const copy = { ...r };
-                    if (copy.is_published !== undefined) {
-                        if (copy.is_visible === undefined) copy.is_visible = copy.is_published;
-                        delete copy.is_published;
-                    }
+                    delete copy.is_published;
                     return copy;
                 });
                 const res = await supabaseClient.from(table).upsert(cleanedRecords).select();
                 error = res.error;
-                data = res.data;
             }
-
             if (error) {
                 console.error(`[CMSDataStore] Supabase SAVE error for '${table}':`, error);
-                return sanitizedRecords;
             }
-
             return await this.get(table);
         } catch (e) {
             console.error(`[CMSDataStore] Save failed for table '${table}':`, e.message);
-            return sanitizedRecords;
+            return await this.get(table);
         }
     },
 
     insertRecord: async function(table, record) {
-        if (!supabaseClient) {
-            const current = await this.get(table);
-            current.push(record);
-            return this.save(table, current);
-        }
-
-        let payload = [record];
-        let { data, error } = await supabaseClient.from(table).insert(payload).select();
-
-        if (error && error.message && error.message.includes('is_published')) {
-            const cleanRec = { ...record };
-            if (cleanRec.is_published !== undefined) {
-                if (cleanRec.is_visible === undefined) cleanRec.is_visible = cleanRec.is_published;
+        if (!supabaseClient) return await this.get(table);
+        try {
+            let { data, error } = await supabaseClient.from(table).insert([record]).select();
+            if (error && error.message && error.message.includes('is_published')) {
+                const cleanRec = { ...record };
                 delete cleanRec.is_published;
+                const res = await supabaseClient.from(table).insert([cleanRec]).select();
+                error = res.error;
             }
-            const res = await supabaseClient.from(table).insert([cleanRec]).select();
-            error = res.error;
-            data = res.data;
+            if (error) {
+                console.error(`[CMSDataStore] Supabase INSERT error for '${table}':`, error);
+            }
+            return await this.get(table);
+        } catch(e) {
+            console.error(`[CMSDataStore] Insert failed for table '${table}':`, e.message);
+            return await this.get(table);
         }
-
-        if (error) {
-            console.error(`[CMSDataStore] Supabase INSERT error for '${table}':`, error);
-            const current = await this.get(table);
-            current.push(record);
-            return this.save(table, current);
-        }
-
-        return this.get(table);
     },
 
     updateRecord: async function(table, id, record) {
-        const current = (await this.get(table)) || [];
-        const idx = current.findIndex(r => r.id === id || r.slug === id);
-        if (idx !== -1) {
-            current[idx] = { ...current[idx], ...record };
-            localStorage.setItem(this.getKey(table), JSON.stringify(current));
-        }
-
-        if (!supabaseClient) {
-            return current;
-        }
-
+        if (!supabaseClient) return await this.get(table);
         try {
             let { data, error } = await supabaseClient.from(table).update(record).eq('id', id).select();
-
             if (error && error.message && error.message.includes('is_published')) {
                 const cleanedRecord = { ...record };
-                if (cleanedRecord.is_published !== undefined) {
-                    if (cleanedRecord.is_visible === undefined) cleanedRecord.is_visible = cleanedRecord.is_published;
-                    delete cleanedRecord.is_published;
-                }
+                delete cleanedRecord.is_published;
                 const res = await supabaseClient.from(table).update(cleanedRecord).eq('id', id).select();
                 error = res.error;
             }
-
             if ((error || !data || data.length === 0) && id) {
                 let resBySlug = await supabaseClient.from(table).update(record).eq('slug', id).select();
                 if (resBySlug.error && resBySlug.error.message.includes('is_published')) {
                     const cleanedRecord = { ...record };
-                    if (cleanedRecord.is_published !== undefined) {
-                        if (cleanedRecord.is_visible === undefined) cleanedRecord.is_visible = cleanedRecord.is_published;
-                        delete cleanedRecord.is_published;
-                    }
+                    delete cleanedRecord.is_published;
                     resBySlug = await supabaseClient.from(table).update(cleanedRecord).eq('slug', id).select();
                 }
             }
-
             return await this.get(table);
         } catch (e) {
             console.error(`[CMSDataStore] Update failed for '${table}':`, e.message);
-            return current;
+            return await this.get(table);
         }
     },
 
     deleteRecord: async function(table, identifier) {
-        if (!identifier) return this.get(table);
-
-        this.markDeleted(table, identifier);
-
-        const current = (await this.get(table)) || [];
-        const updated = current.filter(r => r.id !== identifier && r.slug !== identifier);
-        localStorage.setItem(this.getKey(table), JSON.stringify(updated));
-
-        if (supabaseClient) {
-            try {
-                if (typeof identifier === 'string' && identifier.includes('-') && identifier.length !== 36) {
-                    await supabaseClient.from(table).delete().eq('slug', identifier);
-                } else {
-                    await supabaseClient.from(table).delete().eq('id', identifier);
-                }
-            } catch (err) {
-                console.warn(`[CMSDataStore] Supabase DELETE notice for '${table}':`, err.message);
+        if (!identifier || !supabaseClient) return await this.get(table);
+        try {
+            if (typeof identifier === 'string' && identifier.includes('-') && identifier.length !== 36) {
+                await supabaseClient.from(table).delete().eq('slug', identifier);
+            } else {
+                await supabaseClient.from(table).delete().eq('id', identifier);
             }
+        } catch (err) {
+            console.warn(`[CMSDataStore] Supabase DELETE notice for '${table}':`, err.message);
         }
-
-        return updated;
+        return await this.get(table);
     }
 };
 
