@@ -335,32 +335,37 @@
 
                 <!-- 5. HERO SECTION MODULE -->
                 <div id="view-hero" class="tab-view-content d-none">
-                    <h3 class="fw-bold text-dark mb-2">Hero Section CMS</h3>
-                    <p class="text-muted fs-7 mb-4">Update the homepage main hero banner heading, subtitle, and background image.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <h3 class="fw-bold text-dark mb-1">Hero Section CMS</h3>
+                            <p class="text-muted fs-7 mb-0">Manage homepage main hero banner heading, subtitle, and dynamic carousel background slides.</p>
+                        </div>
+                    </div>
                     <div class="admin-card">
                         <form id="heroCmsForm" onsubmit="saveHeroCMS(event)">
                             <div class="mb-3">
                                 <label class="form-label fw-semibold fs-7">Hero Heading (HTML Supported)</label>
                                 <input type="text" id="heroHeadingInput" class="form-control" placeholder="Transforming Workspaces.<br><span class=&quot;text-gradient-red&quot;>Elevating Possibilities.</span>">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-4">
                                 <label class="form-label fw-semibold fs-7">Subheading Description</label>
                                 <textarea id="heroDescInput" class="form-control" rows="3"></textarea>
                             </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-4">
-                                    <label class="form-label fw-semibold fs-7">Hero Slide 1 Image URL</label>
-                                    <input type="text" id="heroBgImageInput" class="form-control" placeholder="images/sections/hero-slide-1.png">
+
+                            <!-- Dynamic Hero Slides Manager -->
+                            <div class="mb-4 pt-3 border-top">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-0">Hero Carousel Background Slides</h5>
+                                        <small class="text-muted">Add, upload, preview, or remove background images for the animated hero slider.</small>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-danger btn-sm fw-bold text-uppercase px-3" onclick="addHeroSlideItem()">+ Add New Hero Slide</button>
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="form-label fw-semibold fs-7">Hero Slide 2 Image URL</label>
-                                    <input type="text" id="heroBgImageInput2" class="form-control" placeholder="images/sections/hero-slide-2.png">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label fw-semibold fs-7">Hero Slide 3 Image URL</label>
-                                    <input type="text" id="heroBgImageInput3" class="form-control" placeholder="images/sections/hero-slide-3.png">
+                                <div id="heroSlidesListContainer" class="row g-3">
+                                    <!-- Rendered dynamically -->
                                 </div>
                             </div>
+
                             <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4 py-2">Save Hero Content &rarr;</button>
                         </form>
                     </div>

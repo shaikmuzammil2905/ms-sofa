@@ -50,28 +50,17 @@ async function syncHeroSection() {
         subtitleEl.textContent = cleanDesc;
     }
 
-    // Update Hero Background Images (Supports 3 Slides automatically)
-    const slides = document.querySelectorAll('.hero-slide');
-    if (slides && slides.length > 0) {
+    // Update Hero Background Images (Dynamic Multi-Slide Support)
+    const wrapper = document.querySelector('.hero-bg-animated-wrapper');
+    if (wrapper) {
         let slideImages = [];
-        if (hero.slide_1 || hero.slide_2 || hero.slide_3) {
-            slideImages = [
-                hero.slide_1 || 'images/sections/hero-slide-1.png',
-                hero.slide_2 || 'images/sections/hero-slide-2.png',
-                hero.slide_3 || 'images/sections/hero-slide-3.png'
-            ];
-        } else if (hero.background_image) {
-            const splitImgs = hero.background_image.split(',').map(s => s.trim()).filter(Boolean);
-            if (splitImgs.length > 1) {
-                slideImages = splitImgs;
-            } else if (splitImgs.length === 1) {
-                slideImages = [
-                    splitImgs[0],
-                    'images/sections/hero-slide-2.png',
-                    'images/sections/hero-slide-3.png'
-                ];
-            }
-        } else {
+        if (hero.background_image) {
+            slideImages = hero.background_image.split(',').map(s => s.trim()).filter(Boolean);
+        }
+        if (slideImages.length === 0) {
+            [hero.slide_1, hero.slide_2, hero.slide_3].filter(Boolean).forEach(s => slideImages.push(s));
+        }
+        if (slideImages.length === 0) {
             slideImages = [
                 'images/sections/hero-slide-1.png',
                 'images/sections/hero-slide-2.png',
@@ -79,15 +68,12 @@ async function syncHeroSection() {
             ];
         }
 
-        slides.forEach((slide, index) => {
-            const imgUrl = slideImages[index % slideImages.length];
-            if (imgUrl) {
-                slide.style.backgroundImage = `url('${imgUrl}')`;
-                slide.style.backgroundSize = 'cover';
-                slide.style.backgroundPosition = 'center center';
-                slide.style.backgroundRepeat = 'no-repeat';
-            }
+        let html = '';
+        slideImages.forEach((imgUrl, i) => {
+            html += `<div class="hero-slide ${i === 0 ? 'active' : ''}" style="background-image: url('${imgUrl}'); background-size: cover; background-position: center center; background-repeat: no-repeat;"></div>`;
         });
+        html += `<div class="hero-bg-overlay"></div>`;
+        wrapper.innerHTML = html;
     }
 }
 

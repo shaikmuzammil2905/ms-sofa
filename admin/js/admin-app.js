@@ -1144,6 +1144,8 @@ async function deleteProject(index) {
 
 
 // 7. Module: Hero CMS
+let _currentHeroSlides = [];
+
 async function loadHeroModule() {
     const heroData = await CMSDataStore.get('hero_sections');
     const hero = (heroData && heroData[0]) ? heroData[0] : {
@@ -1158,37 +1160,162 @@ async function loadHeroModule() {
     if (document.getElementById('heroHeadingInput')) document.getElementById('heroHeadingInput').value = hero.heading || '';
     if (document.getElementById('heroDescInput')) document.getElementById('heroDescInput').value = hero.description || '';
     
-    let slide1 = hero.slide_1 || '';
-    let slide2 = hero.slide_2 || '';
-    let slide3 = hero.slide_3 || '';
-
-    if (!slide1 && hero.background_image) {
-        const parts = hero.background_image.split(',').map(s => s.trim());
-        slide1 = parts[0] || 'images/sections/hero-slide-1.png';
-        slide2 = parts[1] || 'images/sections/hero-slide-2.png';
-        slide3 = parts[2] || 'images/sections/hero-slide-3.png';
+    _currentHeroSlides = [];
+    if (hero.background_image) {
+        _currentHeroSlides = hero.background_image.split(',').map(s => s.trim()).filter(Boolean);
+    }
+    if (_currentHeroSlides.length === 0) {
+        [hero.slide_1, hero.slide_2, hero.slide_3].filter(Boolean).forEach(s => _currentHeroSlides.push(s));
+    }
+    if (_currentHeroSlides.length === 0) {
+        _currentHeroSlides = [
+            'images/sections/hero-slide-1.png',
+            'images/sections/hero-slide-2.png',
+            'images/sections/hero-slide-3.png'
+        ];
     }
 
-    if (document.getElementById('heroBgImageInput')) document.getElementById('heroBgImageInput').value = slide1 || 'images/sections/hero-slide-1.png';
-    if (document.getElementById('heroBgImageInput2')) document.getElementById('heroBgImageInput2').value = slide2 || 'images/sections/hero-slide-2.png';
-    if (document.getElementById('heroBgImageInput3')) document.getElementById('heroBgImageInput3').value = slide3 || 'images/sections/hero-slide-3.png';
+    renderHeroSlidesList();
+}
+
+function renderHeroSlidesList() {
+    const container = document.getElementById('heroSlidesListContainer');
+    if (!container) return;
+
+    if (_currentHeroSlides.length === 0) {
+        container.innerHTML = `<div class="col-12 text-center py-4 text-muted">No hero slides found. Click "+ Add New Hero Slide" above to add background images.</div>`;
+        return;
+    }
+
+    let html = '';
+    _currentHeroSlides.forEach((slideUrl, idx) => {
+        html += `
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border shadow-sm rounded-3 overflow-hidden bg-white">
+                <div class="position-relative bg-light text-center" style="height: 180px; overflow: hidden;">
+                    <img id="heroSlidePreview_${idx}" src="${slideUrl || 'images/sections/hero-slide-1.png'}" alt="Slide ${idx + 1}" class="w-100 h-100" style="object-fit: cover;" onerror="this.src='images/sections/hero-slide-1.png'">
+                    <span class="position-absolute top-0 start-0 bg-dark text-white fw-bold px-2 py-1 m-2 rounded fs-7 shadow-sm">Slide ${idx + 1}</span>
+                    <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 fw-bold" title="Delete this slide" onclick="deleteHeroSlideItem(${idx})">
+                        ✕ Delete
+                    </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column gap-2">
+                    <label class="form-label fw-semibold fs-7 mb-0">Image URL / Path</label>
+                    <input type="text" class="form-control form-control-sm" id="heroSlideInput_${idx}" value="${slideUrl || ''}" placeholder="Image URL or upload..." oninput="onHeroSlideUrlChange(${idx}, this.value)">
+                    
+                    <div class="d-flex gap-2 mt-1">
+                        <button type="button" class="btn btn-sm btn-outline-dark w-100 fw-bold fs-7 py-2" onclick="document.getElementById('heroSlideFile_${idx}').click()">
+                            📤 Upload Image
+                        </button>
+                        <input type="file" id="heroSlideFile_${idx}" class="d-none" accept="image/*" onchange="handleHeroSlideUpload(this, ${idx})">
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    });
+    container.innerHTML = html;
+}
+
+function onHeroSlideUrlChange(index, val) {
+    _currentHeroSlides[index] = val.trim();
+    const preview = document.getElementById(`heroSlidePreview_${index}`);
+    if (preview && val.trim()) {
+        preview.src = val.trim();
+    }
+}
+
+function addHeroSlideItem(defaultUrl = '') {
+    _currentHeroSlides.push(defaultUrl || 'images/sections/hero-slide-1.png');
+    renderHeroSlidesList();
+}
+
+function deleteHeroSlideItem(index) {
+    if (_currentHeroSlides.length <= 1) {
+        alert('You must have at least 1 hero background slide.');
+        return;
+    }
+    if (confirm(`Are you sure you want to delete Slide ${index + 1}?`)) {
+        _currentHeroSlides.splice(index, 1);
+        renderHeroSlidesList();
+    }
+}
+
+async function handleHeroSlideUpload(input, index) {
+    if (!input.files || !input.files[0]) return;
+    const file = input.files[0];
+    const previewEl = document.getElementById(`heroSlidePreview_${index}`);
+    const inputEl = document.getElementById(`heroSlideInput_${index}`);
+
+    if (previewEl) {
+        previewEl.style.opacity = '0.5';
+    }
+
+    try {
+        let imageUrl = '';
+        if (typeof CLOUDINARY_CLOUD_NAME !== 'undefined' && CLOUDINARY_CLOUD_NAME && CLOUDINARY_CLOUD_NAME !== 'YOUR_CLOUD_NAME') {
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET || 'ml_default');
+
+            const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
+                method: 'POST',
+                body: formData
+            });
+            const data = await res.json();
+            if (data.secure_url) {
+                imageUrl = data.secure_url;
+            }
+        }
+
+        if (!imageUrl) {
+            // Fallback to local Data URL
+            imageUrl = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (e) => resolve(e.target.result);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        _currentHeroSlides[index] = imageUrl;
+        if (inputEl) inputEl.value = imageUrl;
+        if (previewEl) {
+            previewEl.src = imageUrl;
+            previewEl.style.opacity = '1';
+        }
+        alert(`✓ Slide ${index + 1} image uploaded successfully!`);
+    } catch (err) {
+        if (previewEl) previewEl.style.opacity = '1';
+        alert(`Slide upload error: ${err.message}`);
+    }
 }
 
 async function saveHeroCMS(e) {
     e.preventDefault();
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Saving Hero Content...'; }
+
     const heading = document.getElementById('heroHeadingInput').value;
     const description = document.getElementById('heroDescInput').value;
-    const slide_1 = document.getElementById('heroBgImageInput') ? document.getElementById('heroBgImageInput').value : 'images/sections/hero-slide-1.png';
-    const slide_2 = document.getElementById('heroBgImageInput2') ? document.getElementById('heroBgImageInput2').value : 'images/sections/hero-slide-2.png';
-    const slide_3 = document.getElementById('heroBgImageInput3') ? document.getElementById('heroBgImageInput3').value : 'images/sections/hero-slide-3.png';
-    const background_image = `${slide_1},${slide_2},${slide_3}`;
+    
+    // Collect non-empty slides
+    const cleanSlides = _currentHeroSlides.map(s => String(s).trim()).filter(Boolean);
+    if (cleanSlides.length === 0) {
+        cleanSlides.push('images/sections/hero-slide-1.png');
+    }
+
+    const slide_1 = cleanSlides[0] || 'images/sections/hero-slide-1.png';
+    const slide_2 = cleanSlides[1] || slide_1;
+    const slide_3 = cleanSlides[2] || slide_2;
+    const background_image = cleanSlides.join(',');
 
     try {
         const heroRecord = [{ heading, description, slide_1, slide_2, slide_3, background_image, is_custom_updated: true }];
         await CMSDataStore.save('hero_sections', heroRecord);
-        alert('✓ Hero section updated successfully in database!');
+        alert('✓ Hero section and background slides updated successfully in database!');
     } catch (err) {
         alert(`Failed to update Hero section: ${err.message}`);
+    } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Save Hero Content &rarr;'; }
     }
 }
 
@@ -1281,6 +1408,10 @@ window.saveSubcategoryForm = saveSubcategoryForm;
 window.deleteSubcategory = deleteSubcategory;
 window.loadSubcategoriesModule = loadSubcategoriesModule;
 window.renderDedicatedSubcategoriesTable = renderDedicatedSubcategoriesTable;
+window.addHeroSlideItem = addHeroSlideItem;
+window.deleteHeroSlideItem = deleteHeroSlideItem;
+window.handleHeroSlideUpload = handleHeroSlideUpload;
+window.onHeroSlideUrlChange = onHeroSlideUrlChange;
 window.onProductCategoryChange = onProductCategoryChange;
 window.handleAdditionalProductImageUpload = handleAdditionalProductImageUpload;
 window.removeAdditionalProductImage = removeAdditionalProductImage;
