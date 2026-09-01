@@ -69,6 +69,9 @@
                 <a class="admin-nav-item" data-tab="categories">
                     <span>🏷️ Categories</span>
                 </a>
+                <a class="admin-nav-item" data-tab="subcategories">
+                    <span>📑 Subcategories</span>
+                </a>
                 <a class="admin-nav-item" data-tab="projects">
                     <span>🏢 Projects</span>
                 </a>
@@ -277,6 +280,49 @@
                                     </tr>
                                 </thead>
                                 <tbody id="subcategoriesTableBody">
+                                    <!-- Rendered dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3B. DEDICATED SUBCATEGORIES MODULE -->
+                <div id="view-subcategories" class="tab-view-content d-none">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                        <div>
+                            <h3 class="fw-bold text-dark mb-1">Subcategory Management</h3>
+                            <p class="text-muted fs-7 mb-0">View all existing subcategories, filter by category, or create new subcategories dynamically.</p>
+                        </div>
+                        <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddSubcategoryModal()">+ Add Subcategory</button>
+                    </div>
+
+                    <div class="admin-card">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <h5 class="fw-bold text-dark mb-0">Subcategories List</h5>
+                                <span id="dedicatedSubcategoryCountBadge" class="badge bg-danger-subtle text-danger border fw-bold">0 Subcategories</span>
+                            </div>
+                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                <label class="fs-7 fw-semibold text-muted mb-0">Filter by Category:</label>
+                                <select id="dedicatedSubcategoryFilterSelect" class="form-select form-select-sm" style="min-width: 180px;" onchange="renderDedicatedSubcategoriesTable()">
+                                    <option value="">All Categories</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="admin-table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Subcategory Name</th>
+                                        <th>Parent Category</th>
+                                        <th>Slug</th>
+                                        <th>Linked Products</th>
+                                        <th>Display Order</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dedicatedSubcategoriesTableBody">
                                     <!-- Rendered dynamically -->
                                 </tbody>
                             </table>

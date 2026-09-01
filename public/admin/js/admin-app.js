@@ -145,6 +145,7 @@ function switchTab(tabName) {
     if (tabName === 'dashboard') loadDashboardData();
     if (tabName === 'products') loadProductsModule();
     if (tabName === 'categories') loadCategoriesModule();
+    if (tabName === 'subcategories') loadSubcategoriesModule();
     if (tabName === 'projects') loadProjectsModule();
     if (tabName === 'hero') loadHeroModule();
     if (tabName === 'about') loadAboutModule();
@@ -638,6 +639,81 @@ async function loadSubcategoriesTable() {
     tbody.innerHTML = html;
 }
 
+async function loadSubcategoriesModule() {
+    const categories = await CMSDataStore.get('categories');
+    const filterSelect = document.getElementById('dedicatedSubcategoryFilterSelect');
+    if (filterSelect) {
+        const currentVal = filterSelect.value;
+        let html = '<option value="">All Categories</option>';
+        (categories || []).forEach(cat => {
+            const slug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            const isSel = (currentVal === slug || currentVal === cat.name) ? 'selected' : '';
+            html += `<option value="${slug}" ${isSel}>${cat.name}</option>`;
+        });
+        filterSelect.innerHTML = html;
+    }
+    await renderDedicatedSubcategoriesTable();
+}
+
+async function renderDedicatedSubcategoriesTable() {
+    const subcategories = await CMSDataStore.get('subcategories');
+    const categories = await CMSDataStore.get('categories');
+    const products = await CMSDataStore.get('products');
+    const tbody = document.getElementById('dedicatedSubcategoriesTableBody');
+    const countBadge = document.getElementById('dedicatedSubcategoryCountBadge');
+    if (!tbody) return;
+
+    const filterSelect = document.getElementById('dedicatedSubcategoryFilterSelect');
+    const filterVal = filterSelect ? filterSelect.value : '';
+
+    let list = subcategories || [];
+    if (filterVal) {
+        list = list.filter(s => {
+            const sSlug = (s.category_slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const fSlug = filterVal.toLowerCase().replace(/[^a-z0-9]/g, '');
+            return sSlug === fSlug || sSlug.replace(/s$/, '') === fSlug.replace(/s$/, '') || sSlug + 's' === fSlug || fSlug + 's' === sSlug;
+        });
+    }
+
+    if (countBadge) {
+        countBadge.textContent = `${list.length} Subcategor${list.length === 1 ? 'y' : 'ies'}`;
+    }
+
+    if (list.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="text-center py-4 text-muted">No subcategories found${filterVal ? ' for this category' : ''}. Click "+ Add Subcategory" to create one.</td></tr>`;
+        return;
+    }
+
+    let html = '';
+    list.forEach((sub, i) => {
+        const realIndex = (subcategories || []).indexOf(sub);
+        const parentCat = (categories || []).find(c => {
+            const cSlug = (c.slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const cName = (c.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const sCat = (sub.category_slug || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            return cSlug === sCat || cName === sCat || cSlug.replace(/s$/, '') === sCat.replace(/s$/, '');
+        });
+        const parentName = parentCat ? parentCat.name : (sub.category_slug || 'General');
+        const prodCount = (products || []).filter(p => p.subcategory === sub.name || p.subcategory === sub.slug).length;
+
+        html += `
+        <tr>
+            <td class="fw-bold text-dark fs-6">${sub.name}</td>
+            <td><span class="badge bg-light text-dark border px-2 py-1">${parentName}</span></td>
+            <td><code>${sub.slug || '-'}</code></td>
+            <td><span class="badge bg-primary-subtle text-primary border font-monospace px-2 py-1">${prodCount} Products</span></td>
+            <td>${sub.display_order || realIndex + 1}</td>
+            <td>
+                <div class="action-btn-group d-flex gap-1">
+                    <button class="btn btn-sm btn-primary px-2 py-1 fs-7" onclick="editSubcategoryModal(${realIndex})">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger px-2 py-1 fs-7" onclick="deleteSubcategory(${realIndex})">Delete</button>
+                </div>
+            </td>
+        </tr>`;
+    });
+    tbody.innerHTML = html;
+}
+
 async function openAddSubcategoryModal() {
     const selectEl = document.getElementById('subcategoryCategorySelect');
     await populateCategoryDropdown(selectEl);
@@ -711,6 +787,7 @@ async function saveSubcategoryForm(e) {
         if (modal) modal.hide();
 
         await loadCategoriesModule();
+        await loadSubcategoriesModule();
     } catch (err) {
         alert(`❌ Subcategory Save Failed: ${err.message}`);
     } finally {
@@ -739,6 +816,7 @@ async function deleteSubcategory(index) {
         if (targetSub.slug) await CMSDataStore.deleteRecord('subcategories', targetSub.slug);
 
         await loadCategoriesModule();
+        await loadSubcategoriesModule();
     } catch (err) {
         alert(`Subcategory deletion failed: ${err.message}`);
     }
@@ -1201,6 +1279,8 @@ window.openAddSubcategoryModal = openAddSubcategoryModal;
 window.editSubcategoryModal = editSubcategoryModal;
 window.saveSubcategoryForm = saveSubcategoryForm;
 window.deleteSubcategory = deleteSubcategory;
+window.loadSubcategoriesModule = loadSubcategoriesModule;
+window.renderDedicatedSubcategoriesTable = renderDedicatedSubcategoriesTable;
 window.onProductCategoryChange = onProductCategoryChange;
 window.handleAdditionalProductImageUpload = handleAdditionalProductImageUpload;
 window.removeAdditionalProductImage = removeAdditionalProductImage;
