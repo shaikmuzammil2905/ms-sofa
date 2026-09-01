@@ -6,9 +6,7 @@
 <section class="hero-animated-section position-relative text-white overflow-hidden py-5 d-flex align-items-center" style="min-height: 88vh;">
     <!-- Animated Background Image Container with Auto Slider -->
     <div class="hero-bg-animated-wrapper">
-        <div class="hero-slide active" style="background-image: url('images/sections/hero-slide-1.png');"></div>
-        <div class="hero-slide" style="background-image: url('images/sections/hero-slide-2.png');"></div>
-        <div class="hero-slide" style="background-image: url('images/sections/hero-slide-3.png');"></div>
+        <div class="hero-slide active" style="background-image: url('https://res.cloudinary.com/iw4ntmv5/image/upload/v1788282110/hcunvmhptsrfbjizt5bk.jpg');"></div>
         <div class="hero-bg-overlay"></div>
     </div>
 
@@ -221,20 +219,7 @@
     }
 </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const slides = document.querySelectorAll('.hero-slide');
-    if (slides.length > 1) {
-        let currentSlide = 0;
-        if (window._heroSliderInterval) clearInterval(window._heroSliderInterval);
-        window._heroSliderInterval = setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 2000);
-    }
-});
-</script>
+<!-- Company Introduction Section -->
 
 <!-- Company Introduction Section -->
 <section class="py-5 bg-light">

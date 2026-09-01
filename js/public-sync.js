@@ -72,16 +72,22 @@ async function syncHeroSection() {
                 slideImages = raw.split(',').map(s => s.trim()).filter(Boolean);
             }
         }
-        if (slideImages.length === 0) {
-            [hero.slide_1, hero.slide_2, hero.slide_3].filter(Boolean).forEach(s => slideImages.push(s));
+        if (slideImages.length === 0 && hero.bg_image_url) {
+            slideImages = [hero.bg_image_url];
         }
         if (slideImages.length === 0) {
             slideImages = [
-                'images/sections/hero-slide-1.png',
-                'images/sections/hero-slide-2.png',
-                'images/sections/hero-slide-3.png'
+                'https://res.cloudinary.com/iw4ntmv5/image/upload/v1788282110/hcunvmhptsrfbjizt5bk.jpg'
             ];
         }
+
+        const currentSerialized = wrapper.getAttribute('data-current-slides') || '';
+        const newSerialized = slideImages.join('|||');
+        if (currentSerialized === newSerialized && wrapper.querySelectorAll('.hero-slide').length === slideImages.length) {
+            // Slides have not changed, keep current carousel uninterrupted
+            return;
+        }
+        wrapper.setAttribute('data-current-slides', newSerialized);
 
         let html = '';
         slideImages.forEach((imgUrl, i) => {
