@@ -274,7 +274,7 @@ async function syncCategoriesSection() {
 
         visibleCategories.forEach(cat => {
             const catSlug = cat.slug || cat.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            let catTargetUrl = `product-categories.html#${catSlug}`;
+            let catTargetUrl = `product-catalogue-view.html?cat=${encodeURIComponent(cat.name)}`;
             if (catSlug === 'soft-seating') {
                 catTargetUrl = 'product-sofas.html';
             }
@@ -339,7 +339,7 @@ async function syncCategoriesSection() {
         visibleCategories.forEach(cat => {
             const catName = cat.name.trim();
             const catSlug = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const targetHref = window.location.pathname.includes('product-categories') ? `#${catSlug}` : `product-categories.html#${catSlug}`;
+            const targetHref = window.location.pathname.includes('product-categories') ? `#${catSlug}` : `product-catalogue-view.html?cat=${encodeURIComponent(catName)}`;
             jumpHtml += `<a href="${targetHref}" class="btn rounded-pill px-4 py-2 text-uppercase category-jump-btn">${catName}</a>`;
         });
         jumpContainer.innerHTML = jumpHtml;
