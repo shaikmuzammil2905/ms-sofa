@@ -293,14 +293,36 @@ async function populateCategoryDropdown(selectEl, selectedSlug) {
     selectEl.innerHTML = html;
 }
 
+function isSameCategory(c1, c2) {
+    if (!c1 || !c2) return false;
+    const s1 = String(c1).toLowerCase().replace(/[^a-z0-9]/g, '');
+    const s2 = String(c2).toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (s1 === s2) return true;
+    if (s1.replace(/s$/, '') === s2.replace(/s$/, '')) return true;
+    if (s1 === s2 + 's' || s2 === s1 + 's') return true;
+    return false;
+}
+
 async function onProductCategoryChange(selectedSubcategory) {
     const catSelect = document.getElementById('productCategorySelect');
     const subSelect = document.getElementById('productSubcategorySelect');
     if (!catSelect || !subSelect) return;
 
-    const catSlug = catSelect.value;
+    const catVal = catSelect.value;
+    const categories = await CMSDataStore.get('categories');
     const subcategories = await CMSDataStore.get('subcategories');
-    const filteredSubs = (subcategories || []).filter(s => s.category_slug === catSlug);
+
+    // Find matching category object
+    const matchedCategory = (categories || []).find(c => isSameCategory(c.slug, catVal) || isSameCategory(c.name, catVal) || c.id === catVal);
+    const catId = matchedCategory ? matchedCategory.id : null;
+    const catSlug = matchedCategory ? matchedCategory.slug : catVal;
+
+    const filteredSubs = (subcategories || []).filter(s => 
+        (catId && s.category_id === catId) ||
+        isSameCategory(s.category_slug, catVal) ||
+        isSameCategory(s.category_slug, catSlug) ||
+        (matchedCategory && isSameCategory(s.category_slug, matchedCategory.name))
+    );
 
     let html = '<option value="">General / None</option>';
     filteredSubs.forEach(sub => {
@@ -1189,19 +1211,34 @@ function renderHeroSlidesList() {
 
     let html = '';
     _currentHeroSlides.forEach((slideUrl, idx) => {
+        const hasImg = Boolean(slideUrl && slideUrl.trim());
+        const previewBlock = hasImg ? `
+            <div class="position-relative bg-light text-center" style="height: 180px; overflow: hidden;">
+                <img id="heroSlidePreview_${idx}" src="${slideUrl}" alt="Slide ${idx + 1}" class="w-100 h-100" style="object-fit: cover;">
+                <span class="position-absolute top-0 start-0 bg-dark text-white fw-bold px-2 py-1 m-2 rounded fs-7 shadow-sm">Slide ${idx + 1}</span>
+                <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 fw-bold" title="Delete this slide" onclick="deleteHeroSlideItem(${idx})">
+                    ✕ Delete
+                </button>
+            </div>
+        ` : `
+            <div class="position-relative bg-light text-center d-flex flex-column align-items-center justify-content-center p-3" style="height: 180px; border-bottom: 1px dashed #cbd5e1; cursor: pointer;" onclick="document.getElementById('heroSlideFile_${idx}').click()">
+                <div class="text-danger fs-1 mb-1">🖼️</div>
+                <div class="fw-bold text-dark fs-7">No Image Selected</div>
+                <small class="text-muted fs-8">Click to upload photo or enter URL below</small>
+                <span class="position-absolute top-0 start-0 bg-dark text-white fw-bold px-2 py-1 m-2 rounded fs-7 shadow-sm">Slide ${idx + 1}</span>
+                <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 fw-bold" title="Delete this slide" onclick="event.stopPropagation(); deleteHeroSlideItem(${idx})">
+                    ✕ Delete
+                </button>
+            </div>
+        `;
+
         html += `
         <div class="col-lg-4 col-md-6">
             <div class="card h-100 border shadow-sm rounded-3 overflow-hidden bg-white">
-                <div class="position-relative bg-light text-center" style="height: 180px; overflow: hidden;">
-                    <img id="heroSlidePreview_${idx}" src="${slideUrl || 'images/sections/hero-slide-1.png'}" alt="Slide ${idx + 1}" class="w-100 h-100" style="object-fit: cover;" onerror="this.src='images/sections/hero-slide-1.png'">
-                    <span class="position-absolute top-0 start-0 bg-dark text-white fw-bold px-2 py-1 m-2 rounded fs-7 shadow-sm">Slide ${idx + 1}</span>
-                    <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 fw-bold" title="Delete this slide" onclick="deleteHeroSlideItem(${idx})">
-                        ✕ Delete
-                    </button>
-                </div>
+                ${previewBlock}
                 <div class="card-body p-3 d-flex flex-column gap-2">
                     <label class="form-label fw-semibold fs-7 mb-0">Image URL / Path</label>
-                    <input type="text" class="form-control form-control-sm" id="heroSlideInput_${idx}" value="${slideUrl || ''}" placeholder="Image URL or upload..." oninput="onHeroSlideUrlChange(${idx}, this.value)">
+                    <input type="text" class="form-control form-control-sm" id="heroSlideInput_${idx}" value="${slideUrl || ''}" placeholder="Paste Image URL or Click Upload below..." oninput="onHeroSlideUrlChange(${idx}, this.value)">
                     
                     <div class="d-flex gap-2 mt-1">
                         <button type="button" class="btn btn-sm btn-outline-dark w-100 fw-bold fs-7 py-2" onclick="document.getElementById('heroSlideFile_${idx}').click()">
@@ -1218,14 +1255,11 @@ function renderHeroSlidesList() {
 
 function onHeroSlideUrlChange(index, val) {
     _currentHeroSlides[index] = val.trim();
-    const preview = document.getElementById(`heroSlidePreview_${index}`);
-    if (preview && val.trim()) {
-        preview.src = val.trim();
-    }
+    renderHeroSlidesList();
 }
 
 function addHeroSlideItem(defaultUrl = '') {
-    _currentHeroSlides.push(defaultUrl || 'images/sections/hero-slide-1.png');
+    _currentHeroSlides.push(defaultUrl || '');
     renderHeroSlidesList();
 }
 
