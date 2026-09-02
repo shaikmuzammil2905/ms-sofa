@@ -531,49 +531,50 @@
             border-radius: 4px;
         }
 
-        /* Mobile Drawer Layout & Alignment */
+        /* Mobile Drawer Layout & Perfect Alignment */
         #mobileMenu.offcanvas {
             width: 320px !important;
             max-width: 85vw !important;
             background-color: #ffffff !important;
         }
         #mobileMenu .offcanvas-header {
-            padding: 16px 20px !important;
+            padding: 16px !important;
             border-bottom: 1px solid #f0f0f0 !important;
         }
         #mobileMenu .offcanvas-body {
-            padding: 16px 20px !important;
+            padding: 16px !important;
         }
         #mobileMenu .nav-item {
-            margin-bottom: 4px !important;
+            margin-bottom: 2px !important;
             width: 100% !important;
         }
         #mobileMenu .mobile-nav-link {
             font-size: 16px !important;
-            font-weight: 600 !important;
+            font-weight: 700 !important;
             color: #111111 !important;
-            padding: 12px 14px !important;
-            border-radius: 8px !important;
+            padding: 12px 0px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
             text-decoration: none !important;
-            transition: all 0.2s ease !important;
+            transition: color 0.2s ease !important;
             border: none !important;
             outline: none !important;
             box-shadow: none !important;
             width: 100% !important;
             line-height: 1.4 !important;
+            background: transparent !important;
         }
         #mobileMenu .mobile-nav-link:hover {
             color: #d32f2f !important;
-            background-color: #f8f9fa !important;
+            background: transparent !important;
         }
         #mobileMenu .mobile-nav-link.active,
         #mobileMenu .mobile-nav-link.active span {
             color: #d32f2f !important;
             font-weight: 800 !important;
             background: transparent !important;
+            padding-left: 0 !important;
         }
         #mobileMenu .mobile-nav-link::before,
         #mobileMenu .mobile-nav-link::after,
@@ -587,15 +588,14 @@
             display: inline-flex !important;
             align-items: center !important;
             justify-content: center !important;
-            width: 30px !important;
-            height: 30px !important;
-            min-width: 30px !important;
+            width: 28px !important;
+            height: 28px !important;
+            min-width: 28px !important;
             border-radius: 50% !important;
-            background-color: #f3f4f6 !important;
+            background-color: #f0f0f0 !important;
             color: #444444 !important;
             transition: all 0.25s ease !important;
             margin-left: auto !important;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.06) !important;
         }
         #mobileMenu [aria-expanded="true"] .chevron-box {
             transform: rotate(180deg) !important;
