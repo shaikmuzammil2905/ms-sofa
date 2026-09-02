@@ -25,9 +25,8 @@
 <div class="category-scroll-nav-wrapper py-3 bg-white border-bottom shadow-sm">
     <div class="tf-container">
         <div class="d-flex align-items-center gap-2">
-            <!-- Pinned Fixed Left Controls (Category label + All Categories button) -->
+            <!-- Pinned Fixed Left Controls (All Categories button) -->
             <div class="d-flex align-items-center gap-2 flex-shrink-0 pe-2 border-end border-2" style="border-color: #e5e7eb !important;">
-                <span class="fw-bold text-dark flex-shrink-0 d-none d-md-inline" style="font-size: 0.95rem; letter-spacing: 0.5px; color: #111111;">Category:</span>
                 <button type="button" class="btn category-scroll-pill active flex-shrink-0" onclick="selectCategoryFilter('all')">
                     All Categories
                 </button>
@@ -97,6 +96,13 @@
     }
     .category-scroll-container::-webkit-scrollbar {
         display: none;
+    }
+    .category-bar-label {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 1.35rem !important;
+        font-weight: 800 !important;
+        color: #111111 !important;
+        letter-spacing: 0.5px !important;
     }
     .category-scroll-pill {
         font-family: 'Inter', sans-serif !important;

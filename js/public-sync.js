@@ -22,7 +22,6 @@ async function initPublicSync() {
             syncAboutSection(),
             syncFooterSection(),
             syncCategoriesSection(),
-            syncProjectsSection(),
             syncProductPages()
         ]);
     } catch (e) {
@@ -655,11 +654,11 @@ function initEnquiryFormHandler() {
             const emailInput = enquiryModalForm.querySelector('input[type="email"]') ? enquiryModalForm.querySelector('input[type="email"]').value.trim() : '';
             const messageInput = enquiryModalForm.querySelector('textarea') ? enquiryModalForm.querySelector('textarea').value.trim() : '';
 
-            let waMessage = `Hi Vishista Office Solutions,\n\nI am interested in your workspace products.\n\n📌 *Product/Service:* ${productName}\n👤 *Name:* ${nameInput}`;
-            if (companyInput) waMessage += `\n🏢 *Company:* ${companyInput}`;
-            if (phoneInput) waMessage += `\n📞 *Phone:* ${phoneInput}`;
-            if (emailInput) waMessage += `\n✉️ *Email:* ${emailInput}`;
-            if (messageInput) waMessage += `\n📝 *Notes:* ${messageInput}`;
+            let waMessage = `Hi Vishista Office Solutions,\n\nI am interested in your workspace products.\n\nProduct/Service: ${productName}\nName: ${nameInput}`;
+            if (companyInput) waMessage += `\nCompany: ${companyInput}`;
+            if (phoneInput) waMessage += `\nPhone: ${phoneInput}`;
+            if (emailInput) waMessage += `\nEmail: ${emailInput}`;
+            if (messageInput) waMessage += `\nNotes: ${messageInput}`;
 
             const targetPhone = '919849058444';
             const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(waMessage)}`;

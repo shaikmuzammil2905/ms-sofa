@@ -44,7 +44,6 @@ function showAdminDashboard() {
     loadDashboardData();
     loadProductsModule();
     loadCategoriesModule();
-    loadProjectsModule();
     switchTab('dashboard');
 }
 
@@ -141,12 +140,10 @@ function switchTab(tabName) {
 
     toggleMobileSidebar(false);
 
-    // Load data for module
     if (tabName === 'dashboard') loadDashboardData();
     if (tabName === 'products') loadProductsModule();
     if (tabName === 'categories') loadCategoriesModule();
     if (tabName === 'subcategories') loadSubcategoriesModule();
-    if (tabName === 'projects') loadProjectsModule();
     if (tabName === 'hero') loadHeroModule();
     if (tabName === 'about') loadAboutModule();
     if (tabName === 'footer') loadFooterModule();
@@ -172,11 +169,9 @@ async function handleImageUploadGeneric(input, hiddenInputId, previewImgId, prev
 async function loadDashboardData() {
     const products = await CMSDataStore.get('products');
     const categories = await CMSDataStore.get('categories');
-    const projects = await CMSDataStore.get('projects');
 
     if (document.getElementById('statTotalProducts')) document.getElementById('statTotalProducts').textContent = products ? products.length : 0;
     if (document.getElementById('statTotalCategories')) document.getElementById('statTotalCategories').textContent = categories ? categories.length : 0;
-    if (document.getElementById('statTotalProjects')) document.getElementById('statTotalProjects').textContent = projects ? projects.length : 0;
 
     const publishedCount = (products || []).filter(p => p.is_visible !== false && p.is_published !== false).length;
     if (document.getElementById('statPublishedItems')) document.getElementById('statPublishedItems').textContent = publishedCount;
@@ -1001,169 +996,6 @@ async function deleteCategory(index) {
         alert(`Category deletion failed: ${err.message}`);
     }
 }
-
-
-
-// 6. Module: Projects CMS
-async function loadProjectsModule() {
-    const projects = await CMSDataStore.get('projects');
-    const tbody = document.getElementById('projectsTableBody');
-    if (!tbody) return;
-
-    if (!projects || projects.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted">No projects found. Click "+ Add Project" to showcase a new installation.</td></tr>`;
-        return;
-    }
-
-    let html = '';
-    projects.forEach((proj, index) => {
-        const isVisible = proj.is_visible !== false;
-        html += `
-        <tr>
-            <td>
-                <img src="${proj.main_image || 'images/sections/hero-workspace.jpg'}" alt="${proj.title}" style="width: 48px; height: 36px; object-fit: cover; border-radius: 6px; background: #fff;" onerror="this.src='images/sections/hero-workspace.jpg'">
-            </td>
-            <td class="fw-bold">${proj.title}</td>
-            <td><span class="badge bg-light text-dark border">${proj.location || 'Hyderabad'}</span></td>
-            <td class="fs-7 text-muted">${proj.description || '-'}</td>
-            <td>${proj.display_order || index + 1}</td>
-            <td><span class="${isVisible ? 'badge-published' : 'badge-hidden'}">${isVisible ? 'Published' : 'Hidden'}</span></td>
-            <td>
-                <div class="action-btn-group d-flex gap-1">
-                    <button class="btn btn-sm btn-primary px-2 py-1" onclick="editProjectModal(${index})">Edit</button>
-                    <button class="btn btn-sm btn-outline-warning px-2 py-1" onclick="toggleProjectVisibility(${index})">${isVisible ? 'Hide' : 'Show'}</button>
-                    <button class="btn btn-sm btn-outline-danger px-2 py-1" onclick="deleteProject(${index})">Delete</button>
-                </div>
-            </td>
-        </tr>`;
-    });
-    tbody.innerHTML = html;
-}
-
-function openAddProjectModal() {
-    document.getElementById('projectModalTitle').textContent = 'Add New Project';
-    document.getElementById('projectIdInput').value = '';
-    document.getElementById('projectTitleInput').value = '';
-    document.getElementById('projectLocationInput').value = '';
-    document.getElementById('projectDescInput').value = '';
-    document.getElementById('projectOrderInput').value = '0';
-    document.getElementById('projectMainImageUrl').value = '';
-    document.getElementById('projectImagePreviewContainer').classList.add('d-none');
-    document.getElementById('projectImagePreview').src = '';
-
-    const modal = new bootstrap.Modal(document.getElementById('projectFormModal'));
-    modal.show();
-}
-
-async function editProjectModal(index) {
-    const projects = await CMSDataStore.get('projects');
-    const proj = projects[index];
-    if (!proj) return;
-
-    document.getElementById('projectModalTitle').textContent = 'Edit Project';
-    document.getElementById('projectIdInput').value = index;
-    document.getElementById('projectTitleInput').value = proj.title || '';
-    document.getElementById('projectLocationInput').value = proj.location || '';
-    document.getElementById('projectDescInput').value = proj.description || '';
-    document.getElementById('projectOrderInput').value = proj.display_order || 0;
-    document.getElementById('projectMainImageUrl').value = proj.main_image || '';
-
-    if (proj.main_image) {
-        document.getElementById('projectImagePreview').src = proj.main_image;
-        document.getElementById('projectImagePreviewContainer').classList.remove('d-none');
-    } else {
-        document.getElementById('projectImagePreviewContainer').classList.add('d-none');
-    }
-
-    const modal = new bootstrap.Modal(document.getElementById('projectFormModal'));
-    modal.show();
-}
-
-async function saveProjectForm(e) {
-    e.preventDefault();
-    const submitBtn = e.target.querySelector('button[type="submit"]');
-    if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Saving...'; }
-
-    const indexVal = document.getElementById('projectIdInput').value;
-    const title = document.getElementById('projectTitleInput').value.trim();
-    const location = document.getElementById('projectLocationInput').value.trim();
-    const description = document.getElementById('projectDescInput').value.trim();
-    const display_order = parseInt(document.getElementById('projectOrderInput').value || '0', 10);
-    const main_image = document.getElementById('projectMainImageUrl').value.trim() || 'images/sections/hero-workspace.jpg';
-    const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-
-    try {
-        const projects = await CMSDataStore.get('projects');
-        let payload = {
-            title,
-            slug,
-            location,
-            description,
-            main_image,
-            display_order,
-            is_visible: true
-        };
-
-        if (indexVal !== '' && !isNaN(indexVal) && projects[indexVal]) {
-            const existing = projects[indexVal];
-            const targetId = existing.id || existing.slug;
-            payload = { ...existing, ...payload, updated_at: new Date().toISOString() };
-            await CMSDataStore.updateRecord('projects', targetId, payload);
-        } else {
-            payload.created_at = new Date().toISOString();
-            await CMSDataStore.insertRecord('projects', payload);
-        }
-
-        alert('✓ Project saved successfully to database!');
-
-        const modalEl = document.getElementById('projectFormModal');
-        const modal = bootstrap.Modal.getInstance(modalEl);
-        if (modal) modal.hide();
-
-        await loadProjectsModule();
-        await loadDashboardData();
-    } catch (err) {
-        alert(`❌ Project Save Failed: ${err.message}`);
-    } finally {
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Save Project &rarr;'; }
-    }
-}
-
-async function toggleProjectVisibility(index) {
-    try {
-        const projects = await CMSDataStore.get('projects');
-        if (projects && projects[index]) {
-            const targetProj = projects[index];
-            targetProj.is_visible = (targetProj.is_visible === false) ? true : false;
-
-            const identifier = targetProj.id || targetProj.slug;
-            await CMSDataStore.updateRecord('projects', identifier, { is_visible: targetProj.is_visible });
-
-            await loadProjectsModule();
-            await loadDashboardData();
-        }
-    } catch (err) {
-        alert(`Visibility update failed: ${err.message}`);
-    }
-}
-
-async function deleteProject(index) {
-    if (confirm('Are you sure you want to delete this project?')) {
-        try {
-            const projects = await CMSDataStore.get('projects');
-            const targetProj = projects[index];
-            if (targetProj) {
-                if (targetProj.id) await CMSDataStore.deleteRecord('projects', targetProj.id);
-                if (targetProj.slug) await CMSDataStore.deleteRecord('projects', targetProj.slug);
-            }
-            await loadProjectsModule();
-            await loadDashboardData();
-        } catch (err) {
-            alert(`Project deletion failed: ${err.message}`);
-        }
-    }
-}
-
 
 // 7. Module: Hero CMS
 let _currentHeroSlides = [];

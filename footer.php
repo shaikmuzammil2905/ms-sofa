@@ -124,23 +124,18 @@
     <!-- Mobile Menu Offcanvas Drawer -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 380px; max-width: 90vw;">
         <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
-            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 230px;">
-                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 40px; width: auto; flex-shrink: 0;">
+            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 38px; width: auto; flex-shrink: 0;">
                 <div style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
-                    <span style="font-size: 17px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
-                    <span style="font-size: 8.5px; font-weight: 700; color: #555555; letter-spacing: 1.3px; margin-top: 2px;">OFFICE SOLUTIONS</span>
+                    <span style="font-size: 16px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
+                    <span style="font-size: 8px; font-weight: 700; color: #555555; letter-spacing: 1.1px; margin-top: 2px;">OFFICE SOLUTIONS</span>
                 </div>
             </a>
-            <div class="d-flex align-items-center gap-2">
-                <button type="button" class="btn btn-danger btn-sm fw-bold px-3 py-1 text-uppercase" style="font-size: 12px; border-radius: 4px; background-color: #d32f2f; border: none;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
-                    Enquire
-                </button>
-                <button type="button" class="btn-close text-reset ms-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-        <div class="offcanvas-body p-3">
-            <ul class="nav flex-column gap-1 mb-4 list-unstyled">
+        <div class="offcanvas-body p-3 d-flex flex-column justify-content-between">
+            <ul class="nav flex-column gap-1 mb-4 list-unstyled w-100">
                 <!-- 1. Home -->
                 <li class="nav-item">
                     <a class="mobile-nav-link" href="index.html">
@@ -170,7 +165,7 @@
                                 <a href="product-categories.html?category=workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Workstations &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Height Adjustable Series</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Desking Series</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Panel Series</a></li>
@@ -182,7 +177,7 @@
                                 <a href="product-categories.html?category=tables" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Tables &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Cabin Tables</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Meeting Tables</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Cafe Tables</a></li>
@@ -195,7 +190,7 @@
                                 <a href="product-categories.html?category=storage" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Storage &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Prelam Storage</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Metal Storage</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Compactor Storage</a></li>
@@ -208,7 +203,7 @@
                                 <a href="product-categories.html?category=seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Seating &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Mesh Chair</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Leather Chair</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Training Chair</a></li>
@@ -221,7 +216,7 @@
                                 <a href="product-categories.html?category=soft-seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Soft Seating &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Lounge</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Sofa</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Collaborative</a></li>
@@ -235,7 +230,7 @@
                                 <a href="product-categories.html?category=educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Educational &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Classroom</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Library</a></li>
                                     <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Hostel</a></li>
@@ -256,7 +251,7 @@
             </ul>
 
             <!-- Action Buttons -->
-            <div class="d-grid gap-2 pt-3 border-top">
+            <div class="d-grid gap-2 pt-3">
                 <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase shadow-sm" style="background-color: #d32f2f; border: none; border-radius: 6px; font-size: 14px; letter-spacing: 0.5px;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
                     ENQUIRE NOW
                 </button>

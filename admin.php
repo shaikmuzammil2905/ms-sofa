@@ -72,9 +72,6 @@
                 <a class="admin-nav-item" data-tab="subcategories">
                     <span>📑 Subcategories</span>
                 </a>
-                <a class="admin-nav-item" data-tab="projects">
-                    <span>🏢 Projects</span>
-                </a>
                 <a class="admin-nav-item" data-tab="hero">
                     <span>🖼️ Hero Section</span>
                 </a>
@@ -109,7 +106,7 @@
                 <div id="view-dashboard" class="tab-view-content">
                     <h3 class="fw-bold text-dark mb-4">Dashboard Overview</h3>
                     <div class="row g-4 mb-4">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="stat-card">
                                 <div class="stat-icon bg-danger-subtle text-danger">🪑</div>
                                 <div>
@@ -118,7 +115,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="stat-card">
                                 <div class="stat-icon bg-primary-subtle text-primary">🏷️</div>
                                 <div>
@@ -127,16 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="stat-card">
-                                <div class="stat-icon bg-success-subtle text-success">🏢</div>
-                                <div>
-                                    <div id="statTotalProjects" class="stat-val">3</div>
-                                    <div class="stat-lbl">Projects</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="stat-card">
                                 <div class="stat-icon bg-warning-subtle text-warning">✅</div>
                                 <div>
@@ -152,7 +140,6 @@
                         <div class="d-flex flex-wrap gap-2">
                             <button class="btn btn-danger fw-bold text-uppercase fs-7" onclick="openAddProductModal()">+ Add New Product</button>
                             <button class="btn btn-outline-dark fw-bold text-uppercase fs-7" onclick="openAddCategoryModal()">+ Add New Category</button>
-                            <button class="btn btn-outline-dark fw-bold text-uppercase fs-7" onclick="openAddProjectModal()">+ Add New Project</button>
                         </div>
                     </div>
                 </div>
@@ -296,36 +283,7 @@
                     </div>
                 </div>
 
-                <!-- 4. PROJECTS MODULE -->
-                <div id="view-projects" class="tab-view-content d-none">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div>
-                            <h3 class="fw-bold text-dark mb-1">Projects &amp; Case Studies</h3>
-                            <p class="text-muted fs-7 mb-0">Manage featured client installations and corporate fitout projects.</p>
-                        </div>
-                        <button class="btn btn-danger fw-bold text-uppercase fs-7 px-3 py-2" onclick="openAddProjectModal()">+ Add Project</button>
-                    </div>
-                    <div class="admin-card">
-                        <div class="table-responsive">
-                            <table class="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>Image</th>
-                                        <th>Project Title</th>
-                                        <th>Location</th>
-                                        <th>Description</th>
-                                        <th>Display Order</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="projectsTableBody">
-                                    <!-- Rendered dynamically -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- 5. HERO SECTION MODULE -->
                 <div id="view-hero" class="tab-view-content d-none">
@@ -558,55 +516,7 @@
         </div>
     </div>
 
-    <!-- 5. ADD / EDIT PROJECT MODAL -->
-    <div class="modal fade" id="projectFormModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header border-bottom">
-                    <h5 id="projectModalTitle" class="modal-title fw-bold">Add Project</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form id="projectForm" onsubmit="saveProjectForm(event)">
-                    <div class="modal-body p-4">
-                        <input type="hidden" id="projectIdInput">
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold fs-7">Project Title *</label>
-                            <input type="text" id="projectTitleInput" class="form-control" required placeholder="e.g. TCS Hitech City Corporate Office">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold fs-7">Location</label>
-                            <input type="text" id="projectLocationInput" class="form-control" placeholder="e.g. Hyderabad, Telangana">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold fs-7">Description</label>
-                            <textarea id="projectDescInput" class="form-control" rows="3" placeholder="Project details, workstations installed, turnkey interiors..."></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold fs-7">Display Order</label>
-                            <input type="number" id="projectOrderInput" class="form-control" value="0">
-                        </div>
-                        <!-- Project Image Upload -->
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold fs-7">Project Image (Upload Image) *</label>
-                            <div class="upload-dropzone" onclick="document.getElementById('projectFileInput').click()">
-                                <div class="text-danger fs-3 mb-1">🖼️</div>
-                                <div class="fw-bold text-dark fs-7">Click to select &amp; upload image</div>
-                            </div>
-                            <input type="file" id="projectFileInput" class="d-none" accept="image/*" onchange="handleImageUploadGeneric(this, 'projectMainImageUrl', 'projectImagePreview', 'projectImagePreviewContainer')">
-                            <input type="hidden" id="projectMainImageUrl">
-                            <div id="projectImagePreviewContainer" class="mt-2 text-center d-none">
-                                <img id="projectImagePreview" src="" alt="Preview" style="max-height: 120px; border-radius: 8px; border: 1px solid #e2e8f0; padding: 4px;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer border-top">
-                        <button type="button" class="btn btn-light fw-semibold" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-danger fw-bold text-uppercase px-4">Save Project &rarr;</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Bootstrap 5 Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

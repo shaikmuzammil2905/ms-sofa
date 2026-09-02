@@ -221,27 +221,41 @@
             width: 1280px !important;
             max-width: 95vw !important;
             top: 100% !important;
+            max-height: 75vh !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            overscroll-behavior: contain !important;
             padding: 0 !important;
             box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18) !important;
             border-radius: 12px !important;
-            overflow: visible !important;
             background: #ffffff !important;
             z-index: 100001 !important;
             border: 1px solid rgba(0,0,0,0.08) !important;
+            scrollbar-width: thin !important;
+            scrollbar-color: #d32f2f #f1f5f9 !important;
+        }
+        .mega-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .mega-menu::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .mega-menu::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .mega-menu::-webkit-scrollbar-thumb:hover {
+            background: #d32f2f;
         }
         .mega-menu-grid {
             display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 22px 28px !important;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)) !important;
+            gap: 22px 24px !important;
             padding: 26px 30px !important;
             background: #ffffff !important;
             border-radius: 12px !important;
             align-items: start !important;
-        }
-        @media (max-width: 1200px) {
-            .mega-menu-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
         }
         .mega-category-title {
             font-size: 13.5px !important;
@@ -291,8 +305,10 @@
             font-size: 16px !important;
             font-weight: 700 !important;
             color: #111111 !important;
-            padding: 14px 8px !important;
-            border-bottom: 1px solid #f0f0f0 !important;
+            padding: 12px 8px !important;
+            border: none !important;
+            border-left: none !important;
+            border-bottom: none !important;
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
@@ -425,14 +441,14 @@
             margin-bottom: 6px !important;
         }
         .mobile-nested-group {
-            padding-left: 12px !important;
-            border-left: 2px solid #e2e8f0 !important;
-            margin-left: 10px !important;
+            padding-left: 8px !important;
+            border-left: none !important;
+            margin-left: 0 !important;
             margin-top: 4px !important;
             margin-bottom: 8px !important;
         }
         .mobile-nested-group.archlabs-border {
-            border-left-color: #d32f2f !important;
+            border-left: none !important;
         }
 
         /* Universal Attractive Product & Catalogue Card Image Fitting (Fixes Mobile Cropping) */
@@ -463,18 +479,428 @@
         .product-card-hover:hover img {
             transform: scale(1.03) !important;
         }
-        @media (max-width: 576px) {
-            .card-img-top,
-            .product-card-hover img,
-            .card img.card-img-top {
-                height: 240px !important;
-                max-height: 240px !important;
-                padding: 6px !important;
-                object-fit: contain !important;
-                object-position: center !important;
+        /* Sticky Header and Sticky Category Jump Bar */
+        :root {
+            --site-header-height: 60px;
+        }
+        @media (min-width: 992px) {
+            :root {
+                --site-header-height: 72px;
+            }
+        }
+        header.header {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1050 !important;
+            background-color: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+        }
+        .category-jump-bar {
+            position: sticky !important;
+            top: var(--site-header-height, 60px) !important;
+            z-index: 990 !important;
+            background-color: #ffffff !important;
+            border-bottom: 3px solid #d32f2f !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+            -webkit-overflow-scrolling: touch;
+            width: 100% !important;
+        }
+        .category-jump-bar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Active Nav Link Indicator Styling */
+        .navigation .menu-item .item-link {
+            transition: all 0.2s ease !important;
+            position: relative;
+            padding: 8px 4px !important;
+            color: #222222 !important;
+        }
+        .navigation .menu-item .item-link:hover,
+        .navigation .menu-item.active > .item-link,
+        .navigation .menu-item .item-link.active {
+            color: #d32f2f !important;
+            font-weight: 800 !important;
+        }
+        .navigation .menu-item.active > .item-link::after,
+        .navigation .menu-item .item-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 4px;
+            right: 4px;
+            height: 3px;
+            background-color: #d32f2f;
+            border-radius: 4px;
+        }
+
+        /* Mobile Drawer Layout & Alignment */
+        #mobileMenu.offcanvas {
+            width: 320px !important;
+            max-width: 85vw !important;
+            background-color: #ffffff !important;
+        }
+        #mobileMenu .offcanvas-header {
+            padding: 16px 20px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+        }
+        #mobileMenu .offcanvas-body {
+            padding: 16px 20px !important;
+        }
+        #mobileMenu .nav-item {
+            margin-bottom: 4px !important;
+            width: 100% !important;
+        }
+        #mobileMenu .mobile-nav-link {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            color: #111111 !important;
+            padding: 12px 14px !important;
+            border-radius: 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            width: 100% !important;
+            line-height: 1.4 !important;
+        }
+        #mobileMenu .mobile-nav-link:hover {
+            color: #d32f2f !important;
+            background-color: #f8f9fa !important;
+        }
+        #mobileMenu .mobile-nav-link.active,
+        #mobileMenu .mobile-nav-link.active span {
+            color: #d32f2f !important;
+            font-weight: 800 !important;
+            background: transparent !important;
+        }
+        #mobileMenu .mobile-nav-link::before,
+        #mobileMenu .mobile-nav-link::after,
+        #mobileMenu .mobile-nav-link *::before,
+        #mobileMenu .mobile-nav-link *::after {
+            display: none !important;
+            content: none !important;
+            border: none !important;
+        }
+        #mobileMenu .chevron-box {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 30px !important;
+            height: 30px !important;
+            min-width: 30px !important;
+            border-radius: 50% !important;
+            background-color: #f3f4f6 !important;
+            color: #444444 !important;
+            transition: all 0.25s ease !important;
+            margin-left: auto !important;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.06) !important;
+        }
+        #mobileMenu [aria-expanded="true"] .chevron-box {
+            transform: rotate(180deg) !important;
+            background-color: #d32f2f !important;
+            color: #ffffff !important;
+        }
+
+        /* Mega Menu Dropdown Styling for Desktop */
+        header.header {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1050 !important;
+            background-color: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+        }
+        header.header .tf-container {
+            position: relative !important;
+        }
+        .header-inner {
+            position: static !important;
+        }
+        .main-menu,
+        .main-menu .navigation,
+        .main-menu .navigation > li.has-child {
+            position: static !important;
+        }
+        .main-menu .navigation .submenu.mega-menu {
+            position: absolute !important;
+            left: 0 !important;
+            right: 0 !important;
+            margin: 6px auto 0 auto !important;
+            width: calc(100% - 30px) !important;
+            max-width: 1240px !important;
+            top: 100% !important;
+            max-height: 75vh !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            overscroll-behavior: contain !important;
+            transform: none !important;
+            padding: 0 !important;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18) !important;
+            border-radius: 12px !important;
+            background: #ffffff !important;
+            z-index: 99999 !important;
+            border: 1px solid rgba(0,0,0,0.1) !important;
+            scrollbar-width: thin !important;
+            scrollbar-color: #d32f2f #f1f5f9 !important;
+        }
+        .main-menu .navigation .submenu.mega-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .main-menu .navigation .submenu.mega-menu::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .main-menu .navigation .submenu.mega-menu::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .main-menu .navigation .submenu.mega-menu::-webkit-scrollbar-thumb:hover {
+            background: #d32f2f;
+        }
+        .mega-menu-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)) !important;
+            gap: 22px 20px !important;
+            padding: 24px 26px !important;
+            background: #ffffff !important;
+            border-radius: 12px !important;
+            align-items: start !important;
+        }
+        .mega-category-title {
+            font-size: 14px !important;
+            font-weight: 800 !important;
+            color: #111111 !important;
+            margin-bottom: 10px !important;
+            padding-bottom: 5px !important;
+            border-bottom: 2px solid #d32f2f !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            text-decoration: none !important;
+            display: block !important;
+        }
+        .mega-category-title:hover {
+            color: #d32f2f !important;
+        }
+        .mega-subcategory-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .mega-subcategory-list li {
+            margin-bottom: 7px !important;
+        }
+        .mega-subcategory-list a {
+            color: #444444 !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease, font-weight 0.2s ease, transform 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .mega-subcategory-list a:hover {
+            color: #d32f2f !important;
+            font-weight: 700 !important;
+            transform: translateX(3px);
+        }
+        .desktop-arrow {
+            font-size: 10px !important;
+            margin-left: 3px !important;
+            transition: transform 0.2s ease !important;
+            display: inline-block !important;
+        }
+        .menu-item:hover .desktop-arrow {
+            transform: rotate(180deg) !important;
+            color: #d32f2f !important;
+        }
+
+        /* Standard Crisp 3-Bar Mobile Hamburger Icon */
+        .mobile-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            background: transparent;
+            border: none;
+        }
+        @media (max-width: 1199.98px) {
+            .mobile-button {
+                display: inline-flex !important;
+            }
+        }
+        @media (min-width: 1200px) {
+            .mobile-button,
+            [data-bs-target="#mobileMenu"],
+            a[href="#mobileMenu"] {
+                display: none !important;
+            }
+        }
+        .mobile-button:hover,
+        .mobile-button:active {
+            background-color: rgba(211, 47, 47, 0.08) !important;
+        }
+        .mobile-button .burger {
+            width: 24px !important;
+            height: 18px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            position: relative !important;
+            cursor: pointer !important;
+        }
+        .mobile-button .burger span {
+            display: block !important;
+            position: static !important;
+            height: 2.5px !important;
+            width: 24px !important;
+            transition: 0.25s ease !important;
+            background-color: #111111 !important;
+            border-radius: 3px !important;
+            transform: none !important;
+            margin: 0 !important;
+            top: auto !important;
+        }
+        .mobile-button:hover .burger span,
+        .mobile-button:active .burger span {
+            background-color: #d32f2f !important;
+            transform: none !important;
+        }
+
+        /* Viewport Smooth Scrolling, Anti-Horizontal Scroll & Clean Single Scrollbar */
+        :root, html {
+            scroll-behavior: smooth !important;
+            overflow-x: clip !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            overflow-x: clip !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+        #wrapper {
+            position: relative !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* Responsive Mobile Typography Only (Does not alter desktop container widths) */
+        @media (max-width: 768px) {
+            .display-1 { font-size: 2.1rem !important; }
+            .display-2 { font-size: 1.9rem !important; }
+            .display-3 { font-size: 1.7rem !important; }
+            .display-4 { font-size: 1.5rem !important; }
+            h1 { font-size: 1.75rem !important; }
+            h2 { font-size: 1.4rem !important; }
+            h3 { font-size: 1.2rem !important; }
+        }
+
+        @media (max-width: 480px) {
+            .display-1 { font-size: 1.75rem !important; line-height: 1.2 !important; }
+            .display-2 { font-size: 1.55rem !important; line-height: 1.2 !important; }
+            .display-3 { font-size: 1.45rem !important; line-height: 1.25 !important; }
+            .display-4 { font-size: 1.3rem !important; line-height: 1.25 !important; }
+            h1 { font-size: 1.45rem !important; line-height: 1.25 !important; }
+            h2 { font-size: 1.25rem !important; line-height: 1.3 !important; }
+            h3 { font-size: 1.1rem !important; line-height: 1.3 !important; }
+            .site-brand-logo img {
+                height: 38px !important;
+            }
+            .brand-main-title {
+                font-size: 1.15rem !important;
+            }
+            .brand-sub-title {
+                font-size: 0.58rem !important;
             }
         }
     </style>
+    <script>
+        function syncHeaderHeight() {
+            var h = document.querySelector('header.header');
+            if (h) {
+                var height = h.offsetHeight;
+                document.documentElement.style.setProperty('--site-header-height', height + 'px');
+            }
+        }
+        window.addEventListener('load', syncHeaderHeight);
+        window.addEventListener('resize', syncHeaderHeight);
+        window.addEventListener('scroll', syncHeaderHeight, { passive: true });
+        document.addEventListener('DOMContentLoaded', syncHeaderHeight);
+
+        // Active Navigation Link Auto-Detection
+        document.addEventListener('DOMContentLoaded', function() {
+            function highlightActiveNavLink() {
+                var path = window.location.pathname.toLowerCase();
+                var page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+                
+                var navLinks = document.querySelectorAll('.navigation .item-link, .mobile-nav-link');
+                
+                var isHomePage = (page === '' || page === 'index.html' || page === 'index.php');
+                var isAboutPage = (page.indexOf('about') !== -1);
+                var isProductPage = (page.indexOf('product') !== -1 || page.indexOf('archlabs') !== -1);
+                var isContactPage = (page.indexOf('contact') !== -1);
+
+                navLinks.forEach(function(link) {
+                    var href = (link.getAttribute('href') || '').toLowerCase();
+                    var isCurrent = false;
+
+                    if (href === 'index.html' || href === 'index.php' || href === '/' || href === './') {
+                        if (isHomePage) isCurrent = true;
+                    } else if (href.indexOf('about') !== -1) {
+                        if (isAboutPage) isCurrent = true;
+                    } else if (href.indexOf('product') !== -1 || href.indexOf('archlabs') !== -1) {
+                        if (isProductPage) isCurrent = true;
+                    } else if (href.indexOf('contact') !== -1) {
+                        if (isContactPage) isCurrent = true;
+                    }
+                    
+                    if (isCurrent) {
+                        link.classList.add('active');
+                        if (link.classList.contains('mobile-nav-link')) {
+                            link.style.setProperty('color', '#d32f2f', 'important');
+                            link.style.setProperty('font-weight', '800', 'important');
+                            var innerSpan = link.querySelector('span');
+                            if (innerSpan) {
+                                innerSpan.style.setProperty('color', '#d32f2f', 'important');
+                                innerSpan.style.setProperty('font-weight', '800', 'important');
+                            }
+                        }
+                        if (link.parentElement && link.parentElement.classList.contains('menu-item')) {
+                            link.parentElement.classList.add('active');
+                        }
+                    } else {
+                        link.classList.remove('active');
+                        if (link.classList.contains('mobile-nav-link')) {
+                            link.style.removeProperty('color');
+                            link.style.removeProperty('font-weight');
+                            var innerSpan = link.querySelector('span');
+                            if (innerSpan) {
+                                innerSpan.style.removeProperty('color');
+                                innerSpan.style.removeProperty('font-weight');
+                            }
+                        }
+                        if (link.parentElement && link.parentElement.classList.contains('menu-item')) {
+                            link.parentElement.classList.remove('active');
+                        }
+                    }
+                });
+            }
+
+            highlightActiveNavLink();
+        });
+    </script>
 </head>
 
 <body>
@@ -511,113 +937,95 @@
                                 <a href="index.html" class="item-link fw-bold" style="font-size: 15px !important; font-weight: 700 !important; color: #222222 !important;">Home</a>
                             </li>
 
-                            <!-- 2. About Us (Dropdown with Chevron Icon) -->
-                            <li class="has-child text-menu menu-item">
-                                <a href="about.html" class="item-link fw-bold d-inline-flex align-items-center gap-1" style="font-size: 15px !important; font-weight: 700 !important; color: #222222 !important;">About Us <span class="desktop-arrow">▼</span></a>
-                                <div class="submenu sub-menu p-3 rounded-3 shadow-lg" style="min-width: 250px;">
-                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-1.5">
-                                        <li><a href="about.html#company-profile" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Company Profile</a></li>
-                                        <li><a href="about.html#director-profile" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Director Journey</a></li>
-                                        <li><a href="about.html#mission-vision" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Mission &amp; Vision</a></li>
-                                        <li><a href="about.html#core-values" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Core Values</a></li>
-                                        <li><a href="about.html#why-choose-us" class="text-dark text-decoration-none d-block py-1.5 px-2 rounded-2 hover-red" style="font-family: 'Inter', sans-serif; font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Why Choose Us</a></li>
-                                    </ul>
-                                </div>
+                            <!-- 2. About Us -->
+                            <li class="text-menu menu-item">
+                                <a href="about.html" class="item-link fw-bold" style="font-size: 15px !important; font-weight: 700 !important; color: #222222 !important;">About Us</a>
                             </li>
 
                             <!-- 3. Products (Mega Menu Dropdown with Chevron Icon) -->
-                            <li class="has-child has-mega-menu text-menu menu-item">
+                            <li class="has-child text-menu menu-item">
                                 <a href="product-categories.html" class="item-link fw-bold d-inline-flex align-items-center gap-1" style="font-size: 15px !important; font-weight: 700 !important; color: #222222 !important;">Products <span class="desktop-arrow">▼</span></a>
                                 <div class="submenu sub-menu mega-menu">
                                     <div class="mega-menu-grid">
                                         
-                                        <!-- 1. Workstations -->
+                                         <!-- 1. Workstations -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Workstations" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Workstations</a>
+                                            <a href="products.html?category=workstations" class="mega-category-title d-block">Workstations</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Height%20Adjustable%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Height Adjustable Series</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Desking%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Desking Series</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Workstations&subcat=Panel%20Series" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Panel Series</a></li>
+                                                <li><a href="products.html?category=workstations&subcat=Height+Adjustable+Series">&bull; Height Adjustable Series</a></li>
+                                                <li><a href="products.html?category=workstations&subcat=Desking+Series">&bull; Desking Series</a></li>
+                                                <li><a href="products.html?category=workstations&subcat=Panel+Series">&bull; Panel Series</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 2. Tables -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Tables" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Tables</a>
+                                            <a href="products.html?category=tables" class="mega-category-title d-block">Tables</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Cabin%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cabin Tables</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Meeting%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Meeting Tables</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Cafe%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cafe Tables</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Tables&subcat=Training%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Training Tables</a></li>
+                                                <li><a href="products.html?category=tables&subcat=Cabin+Tables">&bull; Cabin Tables</a></li>
+                                                <li><a href="products.html?category=tables&subcat=Meeting+Tables">&bull; Meeting Tables</a></li>
+                                                <li><a href="products.html?category=tables&subcat=Cafe+Tables">&bull; Cafe Tables</a></li>
+                                                <li><a href="products.html?category=tables&subcat=Training+Tables">&bull; Training Tables</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 3. Storage -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Storage" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Storage</a>
+                                            <a href="products.html?category=storage" class="mega-category-title d-block">Storage</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Prelam%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Prelam Storage</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Metal%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Metal Storage</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Compactor%20Storage" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Compactor Storage</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Storage&subcat=Locker" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Locker</a></li>
+                                                <li><a href="products.html?category=storage&subcat=Prelam+Storage">&bull; Prelam Storage</a></li>
+                                                <li><a href="products.html?category=storage&subcat=Metal+Storage">&bull; Metal Storage</a></li>
+                                                <li><a href="products.html?category=storage&subcat=Compactor+Storage">&bull; Compactor Storage</a></li>
+                                                <li><a href="products.html?category=storage&subcat=Locker">&bull; Locker</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 4. Seating -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Seating" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Seating</a>
+                                            <a href="products.html?category=seating" class="mega-category-title d-block">Seating</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Mesh%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Mesh Chair</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Leather%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Leather Chair</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Training%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Training Chair</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Seating&subcat=Cafe%20Chair" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Cafe Chair</a></li>
+                                                <li><a href="products.html?category=seating&subcat=Mesh+Chair">&bull; Mesh Chair</a></li>
+                                                <li><a href="products.html?category=seating&subcat=Leather+Chair">&bull; Leather Chair</a></li>
+                                                <li><a href="products.html?category=seating&subcat=Training+Chair">&bull; Training Chair</a></li>
+                                                <li><a href="products.html?category=seating&subcat=Cafe+Chair">&bull; Cafe Chair</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 5. Soft Seating -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Soft%20Seating" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Soft Seating</a>
+                                            <a href="products.html?category=soft-seating" class="mega-category-title d-block">Soft Seating</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Lounge" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Lounge</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Sofa" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Sofa</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Collaborative" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Collaborative</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Pouffe" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Pouffe</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Occasional%20Tables" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Occasional Tables</a></li>
+                                                <li><a href="products.html?category=soft-seating&subcat=Lounge">&bull; Lounge</a></li>
+                                                <li><a href="products.html?category=soft-seating&subcat=Sofa">&bull; Sofa</a></li>
+                                                <li><a href="products.html?category=soft-seating&subcat=Collaborative">&bull; Collaborative</a></li>
+                                                <li><a href="products.html?category=soft-seating&subcat=Pouffe">&bull; Pouffe</a></li>
+                                                <li><a href="products.html?category=soft-seating&subcat=Occasional+Tables">&bull; Occasional Tables</a></li>
                                             </ul>
                                         </div>
 
                                         <!-- 6. Pods -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Pods" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Pods</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Pods" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Acoustic Phone &amp; Meeting Pods</a></li>
-                                            </ul>
+                                            <a href="products.html?category=pods" class="mega-category-title d-block">Pods</a>
                                         </div>
 
                                         <!-- 7. Carpets -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Carpets" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Carpets</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Carpets" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Interface Carpet Tiles</a></li>
-                                            </ul>
+                                            <a href="products.html?category=carpets" class="mega-category-title d-block">Carpets</a>
                                         </div>
 
                                         <!-- 8. Outdoor -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Outdoor" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Outdoor</a>
-                                            <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Outdoor" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Terrace &amp; Cafe Seating</a></li>
-                                            </ul>
+                                            <a href="products.html?category=outdoor" class="mega-category-title d-block">Outdoor</a>
                                         </div>
 
                                         <!-- 9. Educational -->
                                         <div>
-                                            <a href="product-catalogue-view.html?cat=Educational" class="mega-category-title d-block" style="font-size: 15px !important; font-weight: 700 !important;">Educational</a>
+                                            <a href="products.html?category=educational" class="mega-category-title d-block">Educational</a>
                                             <ul class="mega-subcategory-list">
-                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Classroom" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Classroom</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Library" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Library</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Hostel" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Hostel</a></li>
-                                                <li><a href="product-catalogue-view.html?cat=Educational&subcat=Auditorium" class="text-dark" style="font-size: 14.5px !important; font-weight: 600 !important; color: #333333 !important;">&bull; Auditorium</a></li>
+                                                <li><a href="products.html?category=educational&subcat=Classroom">&bull; Classroom</a></li>
+                                                <li><a href="products.html?category=educational&subcat=Library">&bull; Library</a></li>
+                                                <li><a href="products.html?category=educational&subcat=Hostel">&bull; Hostel</a></li>
+                                                <li><a href="products.html?category=educational&subcat=Auditorium">&bull; Auditorium</a></li>
                                             </ul>
                                         </div>
 

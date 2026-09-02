@@ -2478,6 +2478,13 @@ header.header-sticky.tf-header-landing {
   background-color: #d32f2f;
   transform: none !important;
 }
+@media (min-width: 1200px) {
+  .mobile-button,
+  [data-bs-target="#mobileMenu"],
+  a[href="#mobileMenu"] {
+    display: none !important;
+  }
+}
 
 .navigation .menu-heading {
   font-size: 18px;
@@ -13439,5 +13446,50 @@ form .form-content-2 {
     flex-wrap: wrap;
   }
 }
-
 /*# sourceMappingURL=styles.css.map */
+
+/* Mobile Drawer Links: STRICTLY NO BORDERS, LINES OR PSEUDO ELEMENTS */
+#mobileMenu,
+#mobileMenu * {
+    box-sizing: border-box;
+}
+#mobileMenu .nav-item,
+#mobileMenu .mobile-nav-link,
+#mobileMenu .mobile-nav-link *,
+#mobileMenu .mobile-nav-link.active,
+#mobileMenu .mobile-nav-link.active * {
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#mobileMenu .mobile-nav-link::before,
+#mobileMenu .mobile-nav-link::after,
+#mobileMenu .mobile-nav-link *::before,
+#mobileMenu .mobile-nav-link *::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+}
+#mobileMenu .mobile-nav-link {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+    padding: 12px 0px !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+#mobileMenu .mobile-nav-link:hover,
+#mobileMenu .mobile-nav-link:hover span {
+    color: #d32f2f !important;
+}
+#mobileMenu .mobile-nav-link.active,
+#mobileMenu .mobile-nav-link.active span {
+    color: #d32f2f !important;
+    font-weight: 800 !important;
+    background: transparent !important;
+    padding-left: 0 !important;
+}

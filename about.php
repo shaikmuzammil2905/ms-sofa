@@ -246,53 +246,6 @@
     </div>
 </section>
 
-<!-- Featured Projects & Case Studies Section -->
-<section class="py-5 bg-light border-top">
-    <div class="tf-container py-4">
-        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
-            <div>
-                <span class="text-danger fw-black text-uppercase tracking-wider d-block mb-2" style="font-size: 1.15rem !important; letter-spacing: 1.5px; font-weight: 800 !important; color: #d32f2f !important;">Our Installations</span>
-                <h2 class="display-6 fw-extrabold text-dark mb-0" style="font-weight: 800 !important;">Featured Corporate Projects</h2>
-            </div>
-            <p class="text-secondary fw-semibold mb-0" style="max-width: 480px; font-size: 1.05rem;">A showcase of modern commercial spaces and executive environments delivered by Vishista Office Solutions.</p>
-        </div>
-        
-        <div id="projectsGridContainer" class="row g-4">
-            <!-- Dynamic CMS Projects rendered from Supabase / seed -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white product-card-hover">
-                    <img src="images/sections/hero-workspace.jpg" alt="Corporate Tech Hub" class="card-img-top" style="height: 240px; object-fit: cover;">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <span class="badge bg-danger text-white align-self-start mb-2">Hyderabad, Telangana</span>
-                        <h4 class="fw-bold text-dark mb-2">Corporate Tech Hub</h4>
-                        <p class="text-secondary fs-7 mb-0">500-seater modular workstation installation with acoustic panel partitions and executive director cabins.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white product-card-hover">
-                    <img src="images/categories/cat_tables.png" alt="Financial Services Regional HQ" class="card-img-top" style="height: 240px; object-fit: cover;">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <span class="badge bg-danger text-white align-self-start mb-2">Gachibowli, Hyderabad</span>
-                        <h4 class="fw-bold text-dark mb-2">Financial Services Regional HQ</h4>
-                        <p class="text-secondary fs-7 mb-0">Executive ArchLabs leather seating, high-density compactor storage, and 20-seater boardroom meeting tables.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white product-card-hover">
-                    <img src="images/categories/cat_pods.jpg" alt="Global R&D Center" class="card-img-top" style="height: 240px; object-fit: cover;">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <span class="badge bg-danger text-white align-self-start mb-2">Genome Valley, Hyderabad</span>
-                        <h4 class="fw-bold text-dark mb-2">Global R&amp;D Center</h4>
-                        <p class="text-secondary fs-7 mb-0">Soundproof acoustic meeting pods, collaborative lounge sofa booths, and interface carpet tile flooring.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Call to Action Banner -->
 <section class="py-5 text-white" style="background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);">
     <div class="tf-container text-center py-4">

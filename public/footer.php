@@ -61,26 +61,38 @@
                         <!-- Contact Details -->
                         <div class="col-lg-3 col-md-6">
                             <h5 class="text-uppercase fw-extrabold text-white mb-3 pb-2 border-bottom border-danger" style="font-size: 17px !important; letter-spacing: 1px !important; font-family: 'Inter', sans-serif !important;">Contact Us</h5>
-                            <div class="d-flex flex-column gap-3 text-white" style="font-size: 15.5px !important;">
+                            <div class="d-flex flex-column gap-3 text-white" style="font-size: 14.5px !important;">
                                 <div class="footer-contact-block">
-                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 15px !important; font-weight: 800 !important;">&bull; Head Office:</strong>
-                                    <span style="line-height: 1.6; display: block; color: #ffffff !important; font-weight: 600;">
+                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 14px !important; font-weight: 800 !important;">&bull; Head Office:</strong>
+                                    <span style="line-height: 1.6; display: block; color: #ffffff !important; font-weight: 600; word-break: break-word; overflow-wrap: anywhere;">
                                         Saishruthi Nilyam, Street No. 4,<br>
                                         Sri Sathya Sai Enclave, Plot No. 109,<br>
                                         Old Bowenpally, Secunderabad, Telangana 500009
                                     </span>
                                 </div>
                                 <div class="footer-contact-block">
-                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 15px !important; font-weight: 800 !important;">&bull; Emails:</strong>
-                                    <div class="d-flex flex-column gap-1" style="font-weight: 600;">
-                                        <a href="mailto:info@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red">&bull; info@vishistaofficesolutions.com</a>
-                                        <a href="mailto:sales@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red">&bull; sales@vishistaofficesolutions.com</a>
-                                        <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red">&bull; kvramana.reddy@vishistaofficesolutions.com</a>
+                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 14px !important; font-weight: 800 !important;">&bull; Emails:</strong>
+                                    <div class="d-flex flex-column gap-2" style="font-weight: 600;">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <span class="text-white flex-shrink-0" style="font-size: 14px;">&bull;</span>
+                                            <a href="mailto:info@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red" style="word-break: break-all; overflow-wrap: anywhere; font-size: 13.5px;">info@vishistaofficesolutions.com</a>
+                                        </div>
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <span class="text-white flex-shrink-0" style="font-size: 14px;">&bull;</span>
+                                            <a href="mailto:sales@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red" style="word-break: break-all; overflow-wrap: anywhere; font-size: 13.5px;">sales@vishistaofficesolutions.com</a>
+                                        </div>
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <span class="text-white flex-shrink-0" style="font-size: 14px;">&bull;</span>
+                                            <a href="mailto:kvramana.reddy@vishistaofficesolutions.com" class="text-white text-decoration-none hover-red" style="word-break: break-all; overflow-wrap: anywhere; font-size: 13.5px;">kvramana.reddy@vishistaofficesolutions.com</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="footer-contact-block">
-                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 15px !important; font-weight: 800 !important;">&bull; WhatsApp &amp; Sales:</strong>
-                                    <a href="https://wa.me/919849058444" target="_blank" class="text-white fw-bold text-decoration-none d-inline-block hover-red" style="font-size: 16px !important;">&bull; +91 9849058444</a>
+                                    <strong class="text-danger d-block mb-1 text-uppercase tracking-wider" style="font-size: 14px !important; font-weight: 800 !important;">&bull; WhatsApp &amp; Sales:</strong>
+                                    <div class="d-flex align-items-baseline gap-2">
+                                        <span class="text-white flex-shrink-0" style="font-size: 14px;">&bull;</span>
+                                        <a href="https://wa.me/919849058444" target="_blank" class="text-white fw-bold text-decoration-none hover-red" style="font-size: 15px !important; word-break: break-word;">+91 9849058444</a>
+                                    </div>
                                 </div>
                                 <div class="pt-1">
                                     <a href="https://maps.app.goo.gl/Svm1wBx323dVFtx18" target="_blank" class="btn btn-danger btn-sm text-uppercase fw-bold px-3 py-2 shadow-sm" style="border-radius: 6px; font-size: 13px; letter-spacing: 0.5px;">
@@ -97,9 +109,9 @@
             <!-- Footer Bottom -->
             <div class="footer-bottom mt-4 pt-3 border-top border-secondary-subtle">
                 <div class="tf-container">
-                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-2 py-1">
-                        <p class="mb-0 text-white-50">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
-                        <p class="mb-0 text-white-50">Designed for Corporate &amp; Institutional Workspaces.</p>
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-7 gap-2 py-1 footer-bottom-content">
+                        <p class="mb-0 text-white-50" style="word-break: break-word; font-size: 13px;">&copy; 2026 Vishista Office Solutions Pvt Ltd. All Rights Reserved.</p>
+                        <p class="mb-0 text-white-50" style="word-break: break-word; font-size: 13px;">Designed for Corporate &amp; Institutional Workspaces.</p>
                     </div>
                 </div>
             </div>
@@ -112,23 +124,18 @@
     <!-- Mobile Menu Offcanvas Drawer -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 380px; max-width: 90vw;">
         <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
-            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none" style="max-width: 230px;">
-                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 40px; width: auto; flex-shrink: 0;">
+            <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 38px; width: auto; flex-shrink: 0;">
                 <div style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
-                    <span style="font-size: 17px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
-                    <span style="font-size: 8.5px; font-weight: 700; color: #555555; letter-spacing: 1.3px; margin-top: 2px;">OFFICE SOLUTIONS</span>
+                    <span style="font-size: 16px; font-weight: 800; color: #d32f2f; letter-spacing: 0.5px;">VISHISTA</span>
+                    <span style="font-size: 8px; font-weight: 700; color: #555555; letter-spacing: 1.1px; margin-top: 2px;">OFFICE SOLUTIONS</span>
                 </div>
             </a>
-            <div class="d-flex align-items-center gap-2">
-                <button type="button" class="btn btn-danger btn-sm fw-bold px-3 py-1 text-uppercase" style="font-size: 12px; border-radius: 4px; background-color: #d32f2f; border: none;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
-                    Enquire
-                </button>
-                <button type="button" class="btn-close text-reset ms-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-        <div class="offcanvas-body p-3">
-            <ul class="nav flex-column gap-1 mb-4 list-unstyled">
+        <div class="offcanvas-body p-3 d-flex flex-column justify-content-between">
+            <ul class="nav flex-column gap-1 mb-4 list-unstyled w-100">
                 <!-- 1. Home -->
                 <li class="nav-item">
                     <a class="mobile-nav-link" href="index.html">
@@ -136,21 +143,11 @@
                     </a>
                 </li>
 
-                <!-- 2. About Us Accordion Dropdown -->
+                <!-- 2. About Us -->
                 <li class="nav-item">
-                    <a class="mobile-nav-link" href="#mobileAboutCollapse" role="button" aria-expanded="false" aria-controls="mobileAboutCollapse">
+                    <a class="mobile-nav-link" href="about.html">
                         <span>About Us</span>
-                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                     </a>
-                    <div class="collapse mt-2" id="mobileAboutCollapse">
-                        <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled border-start ps-3 ms-2 border-danger">
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#company-profile">&bull; Company Profile</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#director-profile">&bull; Director Journey</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#mission-vision">&bull; Mission &amp; Vision</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#core-values">&bull; Core Values</a></li>
-                            <li><a class="mobile-sub-link fw-bold text-dark" href="about.html#why-choose-us">&bull; Why Choose Us</a></li>
-                        </ul>
-                    </div>
                 </li>
 
                 <!-- 3. Products Accordion Dropdown -->
@@ -165,109 +162,79 @@
                             
                             <!-- 1. Workstations -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=workstations" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Workstations &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Height%20Adjustable%20Series">&bull; Height Adjustable Series</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Desking%20Series">&bull; Desking Series</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Workstations&subcat=Panel%20Series">&bull; Panel Series</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Height Adjustable Series</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Desking Series</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=workstations">&bull; Panel Series</a></li>
                                 </ul>
                             </div>
 
                             <!-- 2. Tables -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Tables" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=tables" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Tables &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Cabin%20Tables">&bull; Cabin Tables</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Meeting%20Tables">&bull; Meeting Tables</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Cafe%20Tables">&bull; Cafe Tables</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Tables&subcat=Training%20Tables">&bull; Training Tables</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Cabin Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Meeting Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Cafe Tables</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=tables">&bull; Training Tables</a></li>
                                 </ul>
                             </div>
 
                             <!-- 3. Storage -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Storage" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=storage" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Storage &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Prelam%20Storage">&bull; Prelam Storage</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Metal%20Storage">&bull; Metal Storage</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Compactor%20Storage">&bull; Compactor Storage</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Storage&subcat=Locker">&bull; Locker</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Prelam Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Metal Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Compactor Storage</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=storage">&bull; Locker</a></li>
                                 </ul>
                             </div>
 
                             <!-- 4. Seating -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Seating &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Mesh%20Chair">&bull; Mesh Chair</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Leather%20Chair">&bull; Leather Chair</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Training%20Chair">&bull; Training Chair</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Seating&subcat=Cafe%20Chair">&bull; Cafe Chair</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Mesh Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Leather Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Training Chair</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=seating">&bull; Cafe Chair</a></li>
                                 </ul>
                             </div>
 
                             <!-- 5. Soft Seating -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Soft%20Seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=soft-seating" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Soft Seating &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Lounge">&bull; Lounge</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Sofa">&bull; Sofa</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Collaborative">&bull; Collaborative</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Pouffe">&bull; Pouffe</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Soft%20Seating&subcat=Occasional%20Tables">&bull; Occasional Tables</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- 6. Pods -->
-                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Pods" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
-                                    Pods &rarr;
-                                </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Pods">&bull; Acoustic Phone &amp; Meeting Pods</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- 7. Carpets -->
-                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Carpets" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
-                                    Carpets &rarr;
-                                </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Carpets">&bull; Interface Carpet Tiles</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- 8. Outdoor -->
-                            <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Outdoor" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
-                                    Outdoor &rarr;
-                                </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Outdoor">&bull; Terrace &amp; Cafe Seating</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Lounge</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Sofa</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Collaborative</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Pouffe</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=soft-seating">&bull; Occasional Tables</a></li>
                                 </ul>
                             </div>
 
                             <!-- 9. Educational -->
                             <div class="p-3 rounded-3" style="background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                <a href="product-catalogue-view.html?cat=Educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
+                                <a href="product-categories.html?category=educational" class="fw-bold text-dark fs-6 text-decoration-none d-block mb-2" style="font-family: 'Inter', sans-serif; font-size: 15px !important; font-weight: 700 !important; color: #111111 !important;">
                                     Educational &rarr;
                                 </a>
-                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2" style="border-left: 2px solid #d32f2f;">
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Classroom">&bull; Classroom</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Library">&bull; Library</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Hostel">&bull; Hostel</a></li>
-                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-catalogue-view.html?cat=Educational&subcat=Auditorium">&bull; Auditorium</a></li>
+                                <ul class="nav flex-column gap-1 mobile-nested-group list-unstyled m-0 ps-2">
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Classroom</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Library</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Hostel</a></li>
+                                    <li><a class="mobile-sub-link text-dark" style="font-family: 'Inter', sans-serif; font-size: 13.5px !important; font-weight: 600 !important; color: #333333 !important;" href="product-categories.html?category=educational">&bull; Auditorium</a></li>
                                 </ul>
                             </div>
 
@@ -284,7 +251,7 @@
             </ul>
 
             <!-- Action Buttons -->
-            <div class="d-grid gap-2 pt-3 border-top">
+            <div class="d-grid gap-2 pt-3">
                 <button type="button" class="btn btn-danger w-100 fw-bold py-2 text-uppercase shadow-sm" style="background-color: #d32f2f; border: none; border-radius: 6px; font-size: 14px; letter-spacing: 0.5px;" data-bs-toggle="modal" data-bs-target="#enquireModal" data-bs-dismiss="offcanvas">
                     ENQUIRE NOW
                 </button>
@@ -567,6 +534,49 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Dedicated Mobile Hamburger Button Handler (Works 100% reliably across all pages)
+            document.addEventListener('click', function(e) {
+                const btn = e.target.closest('.mobile-button, [data-bs-target="#mobileMenu"], a[href="#mobileMenu"]');
+                if (btn) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const offcanvasEl = document.getElementById('mobileMenu');
+                    if (offcanvasEl && typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+                        const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+                        bsOffcanvas.show();
+                    } else if (offcanvasEl) {
+                        offcanvasEl.classList.add('show');
+                        offcanvasEl.style.visibility = 'visible';
+                    }
+                }
+            });
+
+            // Smooth Scroll for in-page section anchors ONLY (excluding modals, collapse, offcanvas)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.hasAttribute('data-bs-toggle') || this.hasAttribute('data-bs-target') || this.classList.contains('mobile-button')) {
+                        return;
+                    }
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId !== '#' && targetId !== '#0' && !targetId.startsWith('#mobile') && !targetId.startsWith('#enquire')) {
+                        try {
+                            const targetEl = document.querySelector(targetId);
+                            if (targetEl && !targetEl.classList.contains('offcanvas') && !targetEl.classList.contains('modal') && !targetEl.classList.contains('collapse')) {
+                                e.preventDefault();
+                                targetEl.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        } catch(err) {}
+                    }
+                });
+            });
+        });
+    </script>
+
     <style>
         .scroll-animatable {
             opacity: 0;
@@ -585,6 +595,25 @@
         .clean-hover-card:hover {
             transform: translateY(-6px) !important;
             box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Mobile Responsive Footer Fixes - No Text Cutoff */
+        @media (max-width: 768px) {
+            .footer-contact-block a,
+            .footer-contact-block span {
+                word-break: break-word !important;
+                overflow-wrap: anywhere !important;
+                max-width: 100% !important;
+                font-size: 13.5px !important;
+                line-height: 1.55 !important;
+            }
+            .footer-bottom {
+                padding-bottom: 95px !important; /* Prevents floating WhatsApp & Scroll-To-Top button overlap */
+            }
+            .footer-bottom p {
+                text-align: center !important;
+                font-size: 12.5px !important;
+            }
         }
     </style>
 

@@ -305,8 +305,10 @@
             font-size: 16px !important;
             font-weight: 700 !important;
             color: #111111 !important;
-            padding: 14px 8px !important;
-            border-bottom: 1px solid #f0f0f0 !important;
+            padding: 12px 8px !important;
+            border: none !important;
+            border-left: none !important;
+            border-bottom: none !important;
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
@@ -439,14 +441,14 @@
             margin-bottom: 6px !important;
         }
         .mobile-nested-group {
-            padding-left: 12px !important;
-            border-left: 2px solid #e2e8f0 !important;
-            margin-left: 10px !important;
+            padding-left: 8px !important;
+            border-left: none !important;
+            margin-left: 0 !important;
             margin-top: 4px !important;
             margin-bottom: 8px !important;
         }
         .mobile-nested-group.archlabs-border {
-            border-left-color: #d32f2f !important;
+            border-left: none !important;
         }
 
         /* Universal Attractive Product & Catalogue Card Image Fitting (Fixes Mobile Cropping) */
@@ -531,13 +533,76 @@
             border-radius: 4px;
         }
 
-        /* Mobile Drawer Active Link */
-        .mobile-nav-link.active,
-        .mobile-nav-link.active span {
+        /* Mobile Drawer Layout & Alignment */
+        #mobileMenu.offcanvas {
+            width: 320px !important;
+            max-width: 85vw !important;
+            background-color: #ffffff !important;
+        }
+        #mobileMenu .offcanvas-header {
+            padding: 16px 20px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+        }
+        #mobileMenu .offcanvas-body {
+            padding: 16px 20px !important;
+        }
+        #mobileMenu .nav-item {
+            margin-bottom: 4px !important;
+            width: 100% !important;
+        }
+        #mobileMenu .mobile-nav-link {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            color: #111111 !important;
+            padding: 12px 14px !important;
+            border-radius: 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            width: 100% !important;
+            line-height: 1.4 !important;
+        }
+        #mobileMenu .mobile-nav-link:hover {
+            color: #d32f2f !important;
+            background-color: #f8f9fa !important;
+        }
+        #mobileMenu .mobile-nav-link.active,
+        #mobileMenu .mobile-nav-link.active span {
             color: #d32f2f !important;
             font-weight: 800 !important;
-            border-left: 3px solid #d32f2f;
-            padding-left: 10px !important;
+            background: transparent !important;
+        }
+        #mobileMenu .mobile-nav-link::before,
+        #mobileMenu .mobile-nav-link::after,
+        #mobileMenu .mobile-nav-link *::before,
+        #mobileMenu .mobile-nav-link *::after {
+            display: none !important;
+            content: none !important;
+            border: none !important;
+        }
+        #mobileMenu .chevron-box {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 30px !important;
+            height: 30px !important;
+            min-width: 30px !important;
+            border-radius: 50% !important;
+            background-color: #f3f4f6 !important;
+            color: #444444 !important;
+            transition: all 0.25s ease !important;
+            margin-left: auto !important;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.06) !important;
+        }
+        #mobileMenu [aria-expanded="true"] .chevron-box {
+            transform: rotate(180deg) !important;
+            background-color: #d32f2f !important;
+            color: #ffffff !important;
         }
 
         /* Mega Menu Dropdown Styling for Desktop */
@@ -653,15 +718,27 @@
 
         /* Standard Crisp 3-Bar Mobile Hamburger Icon */
         .mobile-button {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 6px !important;
-            border-radius: 6px !important;
-            cursor: pointer !important;
-            text-decoration: none !important;
-            background: transparent !important;
-            border: none !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            background: transparent;
+            border: none;
+        }
+        @media (max-width: 1199.98px) {
+            .mobile-button {
+                display: inline-flex !important;
+            }
+        }
+        @media (min-width: 1200px) {
+            .mobile-button,
+            [data-bs-target="#mobileMenu"],
+            a[href="#mobileMenu"] {
+                display: none !important;
+            }
         }
         .mobile-button:hover,
         .mobile-button:active {
@@ -770,28 +847,50 @@
                 
                 var navLinks = document.querySelectorAll('.navigation .item-link, .mobile-nav-link');
                 
+                var isHomePage = (page === '' || page === 'index.html' || page === 'index.php');
+                var isAboutPage = (page.indexOf('about') !== -1);
+                var isProductPage = (page.indexOf('product') !== -1 || page.indexOf('archlabs') !== -1);
+                var isContactPage = (page.indexOf('contact') !== -1);
+
                 navLinks.forEach(function(link) {
                     var href = (link.getAttribute('href') || '').toLowerCase();
-                    var targetPage = href.substring(href.lastIndexOf('/') + 1).split('?')[0].split('#')[0];
-                    
                     var isCurrent = false;
-                    if ((page === '' || page === 'index.html' || page === 'index.php') && (targetPage === 'index.html' || targetPage === 'index.php' || targetPage === '')) {
-                        isCurrent = true;
-                    } else if (page.indexOf('about') !== -1 && targetPage.indexOf('about') !== -1) {
-                        isCurrent = true;
-                    } else if ((page.indexOf('product') !== -1 || page.indexOf('archlabs') !== -1) && targetPage.indexOf('product') !== -1) {
-                        isCurrent = true;
-                    } else if (page.indexOf('contact') !== -1 && targetPage.indexOf('contact') !== -1) {
-                        isCurrent = true;
+
+                    if (href === 'index.html' || href === 'index.php' || href === '/' || href === './') {
+                        if (isHomePage) isCurrent = true;
+                    } else if (href.indexOf('about') !== -1) {
+                        if (isAboutPage) isCurrent = true;
+                    } else if (href.indexOf('product') !== -1 || href.indexOf('archlabs') !== -1) {
+                        if (isProductPage) isCurrent = true;
+                    } else if (href.indexOf('contact') !== -1) {
+                        if (isContactPage) isCurrent = true;
                     }
                     
                     if (isCurrent) {
                         link.classList.add('active');
+                        if (link.classList.contains('mobile-nav-link')) {
+                            link.style.setProperty('color', '#d32f2f', 'important');
+                            link.style.setProperty('font-weight', '800', 'important');
+                            var innerSpan = link.querySelector('span');
+                            if (innerSpan) {
+                                innerSpan.style.setProperty('color', '#d32f2f', 'important');
+                                innerSpan.style.setProperty('font-weight', '800', 'important');
+                            }
+                        }
                         if (link.parentElement && link.parentElement.classList.contains('menu-item')) {
                             link.parentElement.classList.add('active');
                         }
                     } else {
                         link.classList.remove('active');
+                        if (link.classList.contains('mobile-nav-link')) {
+                            link.style.removeProperty('color');
+                            link.style.removeProperty('font-weight');
+                            var innerSpan = link.querySelector('span');
+                            if (innerSpan) {
+                                innerSpan.style.removeProperty('color');
+                                innerSpan.style.removeProperty('font-weight');
+                            }
+                        }
                         if (link.parentElement && link.parentElement.classList.contains('menu-item')) {
                             link.parentElement.classList.remove('active');
                         }
