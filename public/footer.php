@@ -122,7 +122,7 @@
     <!-- /wrapper -->
 
     <!-- Mobile Menu Offcanvas Drawer -->
-    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 380px; max-width: 90vw;">
+    <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu" tabindex="-1" style="width: 310px; max-width: 85vw;">
         <div class="offcanvas-header d-flex align-items-center justify-content-between p-3 border-bottom">
             <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
                 <img src="images/logo/logo-mark.png?v=2" alt="Vishista Logo" style="height: 38px; width: auto; flex-shrink: 0;">
@@ -135,26 +135,26 @@
         </div>
 
         <div class="offcanvas-body p-3 d-flex flex-column justify-content-between">
-            <ul class="nav flex-column gap-1 mb-4 list-unstyled w-100">
+            <ul class="nav flex-column gap-2 mb-4 list-unstyled w-100">
                 <!-- 1. Home -->
-                <li class="nav-item">
-                    <a class="mobile-nav-link" href="index.html">
+                <li class="nav-item w-100">
+                    <a class="mobile-nav-link w-100 d-flex align-items-center justify-content-between" href="index.html">
                         <span>Home</span>
                     </a>
                 </li>
 
                 <!-- 2. About Us -->
-                <li class="nav-item">
-                    <a class="mobile-nav-link" href="about.html">
+                <li class="nav-item w-100">
+                    <a class="mobile-nav-link w-100 d-flex align-items-center justify-content-between" href="about.html">
                         <span>About Us</span>
                     </a>
                 </li>
 
                 <!-- 3. Products Accordion Dropdown -->
-                <li class="nav-item">
-                    <a class="mobile-nav-link" href="#mobileProductsCollapse" role="button" aria-expanded="false" aria-controls="mobileProductsCollapse">
+                <li class="nav-item w-100">
+                    <a class="mobile-nav-link w-100 d-flex align-items-center justify-content-between" href="#mobileProductsCollapse" role="button" aria-expanded="false" aria-controls="mobileProductsCollapse">
                         <span>Products</span>
-                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                        <span class="chevron-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                     </a>
                     
                     <div class="collapse mt-2" id="mobileProductsCollapse">
@@ -243,8 +243,8 @@
                 </li>
 
                 <!-- 4. Contact Us -->
-                <li class="nav-item">
-                    <a class="mobile-nav-link" href="contact.html">
+                <li class="nav-item w-100">
+                    <a class="mobile-nav-link w-100 d-flex align-items-center justify-content-between" href="contact.html">
                         <span>Contact Us</span>
                     </a>
                 </li>

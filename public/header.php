@@ -288,14 +288,14 @@
             transform: translateX(3px);
         }
 
-        /* Mobile Offcanvas Drawer Sizing & Accordion Styling (Matching image copy 8.png) */
+        /* Mobile Offcanvas Drawer Sizing & Alignment */
         .offcanvas.canvas-mb {
-            width: 380px !important;
-            max-width: 90vw !important;
+            width: 310px !important;
+            max-width: 85vw !important;
             background-color: #ffffff !important;
         }
         .offcanvas-header {
-            padding: 16px 20px !important;
+            padding: 16px !important;
             border-bottom: 1px solid #e9ecef !important;
             background-color: #ffffff !important;
         }
@@ -305,13 +305,14 @@
             font-size: 16px !important;
             font-weight: 700 !important;
             color: #111111 !important;
-            padding: 12px 8px !important;
+            padding: 10px 0px !important;
             border: none !important;
             border-left: none !important;
             border-bottom: none !important;
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
+            width: 100% !important;
             text-decoration: none !important;
             transition: all 0.2s ease !important;
         }
@@ -535,7 +536,7 @@
 
         /* Mobile Drawer Layout & Perfect Alignment */
         #mobileMenu.offcanvas {
-            width: 320px !important;
+            width: 310px !important;
             max-width: 85vw !important;
             background-color: #ffffff !important;
         }
@@ -546,15 +547,23 @@
         #mobileMenu .offcanvas-body {
             padding: 16px !important;
         }
-        #mobileMenu .nav-item {
-            margin-bottom: 2px !important;
+        #mobileMenu ul.nav {
             width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        #mobileMenu .nav-item {
+            margin-bottom: 4px !important;
+            width: 100% !important;
+            display: block !important;
         }
         #mobileMenu .mobile-nav-link {
             font-size: 16px !important;
             font-weight: 700 !important;
             color: #111111 !important;
-            padding: 12px 0px !important;
+            padding: 10px 0px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
